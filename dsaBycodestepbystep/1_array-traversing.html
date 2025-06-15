@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data = [3, 3, 4, 5, 6, 7, 8, 9, 1];
+        for (let i = 0; i < data.length; i++) { // traversing 
+            document.write(`Array ${i} is : ${data[i]} <br>`);
+            // console.log(`${data[i]}<br>`);
+        };
+        function clicked() {
+
+            let value = document.getElementById('el').value
+            if (value > data.length) {
+                alert(` ${value} is not a valid no. provide valid no`)
+            } else if (value >= 0) {
+
+                alert(data[value])
+            } else {
+                alert('provide valid input , greater than or equal to 0')
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text " id="el" />
+    <button onclick="clicked()"> get element </button>
+</body>
+
+</html>
