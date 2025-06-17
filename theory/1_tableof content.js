@@ -1,3 +1,228 @@
+/**
+🔹 JavaScript Cheat Sheet
+📌 Basics
+var / let / const – Variable declarations
+
+Data Types – string, number, boolean, null, undefined, symbol, bigint, object
+
+Type Coercion – Implicit vs Explicit
+
+== vs === – Loose vs Strict equality
+
+📌 Functions
+Function Declaration
+Function Expression
+Arrow Functions
+First-Class Functions – Functions as values
+Higher-Order Functions – Accept/return functions
+
+📌 Scope & Closures
+Global vs Local Scope
+Lexical Scope
+Closure – Inner function remembers outer variables
+
+📌 Asynchronous JS
+Callbacks
+Promises
+Async/Await
+Event Loop, Call Stack, Callback Queue, Web APIs
+
+📌 Objects & Arrays
+Object.assign(), spread/rest, destructuring
+map(), filter(), reduce(), forEach()
+
+📌 ES6+ Features
+Destructuring
+Template Literals
+Modules (import/export)
+Default Parameters
+Optional Chaining (?.)
+Nullish Coalescing (??) 
+
+----------------------------------------------------------------------
+The nullish coalescing operator (??) in JavaScript is a logical operator, lets us pick a default value if a variable is null or undefined. It returns the left-hand value if it's not null or undefined, otherwise it returns the right-hand value.
+
+How It Works
+The ?? operator checks if the left-hand operand is nullish (null or undefined).
+If the left-hand operand is nullish, it evaluates to the right-hand operand.
+If the left-hand operand is not nullish (e.g., 0, false, "", or any other value), it evaluates to the left-hand operand.
+Key Points
+Nullish means only null or undefined. Other falsy values like 0, false, or "" (empty string) are not considered nullish.
+It’s different from the logical OR operator (||), which treats all falsy values (e.g., 0, false, "", NaN) as conditions to fall back to the default.
+
+Example 1: Basic Usage
+let user = null;
+let defaultName = "Guest";
+
+console.log(user ?? defaultName); // Output: "Guest"
+
+user = "Alice";
+console.log(user ?? defaultName); // Output: "Alice"
+
+Example 2: Difference Between ?? and ||
+let value = 0;
+
+console.log(value || 42); // Output: 42 (because 0 is falsy)
+console.log(value ?? 42); // Output: 0 (because 0 is not nullish)
+
+Example 3: Chaining with Multiple Values
+let a = null;
+let b = undefined;
+let c = "Hello";
+
+console.log(a ?? b ?? c); // Output: "Hello"
+
+Example 4: With Objects
+let config = {
+  timeout: null,
+  retries: 3
+};
+
+let timeout = config.timeout ?? 5000;
+console.log(timeout); // Output: 5000 (because config.timeout is null)
+
+Example 5: Combining with Optional Chaining (?.)
+let user = {
+  settings: {
+    theme: null
+  }
+};
+
+let theme = user.settings?.theme ?? "default";
+console.log(theme); // Output: "default"
+
+----------------------------------------------------------------------
+
+🔹 Node.js Cheat Sheet
+📌 Core Concepts
+Single-threaded, Non-blocking I/O
+
+Modules: require / import
+---------------------------------------------------------------------------
+In Node.js, modules are reusable pieces of code that we can include in your program.
+1. require
+What is it? A function used in Node.js to load modules (built-in, external, or your own files).
+
+Used in: CommonJS modules (the older, default module system in Node.js).
+
+---------------------------------------------------------------------------
+2. import
+What is it? A modern way to load modules, part of the ES Modules (ESM) standard.
+How it works:
+have "type": "module" in package.json.
+---------------------------------------------------------------------------
+
+Event Loop (libuv)
+
+Global objects: __dirname, process, Buffer
+
+📌 Modules
+fs – File system
+path – File paths
+http – Server creation
+events – EventEmitter
+worker_threads – CPU intensive task handling
+
+📌 Package Management
+npm / yarn
+package.json, dependencies, devDependencies
+
+📌 Frameworks
+Express.js – Web server
+
+Middleware – functions with req, res, next
+
+📌 Environment
+.env + dotenv – manage secrets
+
+🔹 Git Cheat Sheet
+
+📌 Git Basics
+
+bash
+git init                   # Initialize repo
+git clone <url>           # Clone repo
+git add .                 # Stage all files
+git commit -m "msg"       # Commit changes
+git status                # Show file changes
+git log                   # View commit history
+
+📌 Branching
+
+git branch                # List branches
+git checkout -b feature   # New branch
+git merge feature         # Merge branch
+git rebase main           # Rebase
+
+📌 Remote Commands
+
+git remote -v             # Show remotes
+git push origin main      # Push code
+git pull origin main      # Pull code
+
+📌 Undo/Reset
+
+git reset --soft HEAD~1   # Undo last commit (keep changes)
+git checkout -- <file>    # Discard changes in file
+
+🔹 Redis Cheat Sheet
+
+📌 Basics
+In-memory key-value store
+Used for caching, sessions, real-time data
+
+📌 Commands
+SET key value             # Set key
+GET key                   # Get value
+DEL key                   # Delete key
+EXPIRE key seconds        # Set TTL
+INCR key                  # Increment
+DECR key                  # Decrement
+LPUSH list val            # Push to list
+LRANGE list 0 -1          # Get all list items
+📌 Pub/Sub
+bash
+Copy
+Edit
+PUBLISH channel msg
+SUBSCRIBE channel
+📌 Node Integration
+Use ioredis or redis npm package
+
+🔹 AWS Cheat Sheet
+
+📌 Common Services
+Service	Use Case
+EC2	Virtual servers
+S3	File storage
+RDS	Relational DB (MySQL, etc)
+Lambda	Serverless functions
+CloudWatch	Monitoring/logs
+IAM	Access control
+VPC	Network configuration
+
+📌 AWS CLI
+aws configure               # Set credentials
+aws s3 ls                   # List buckets
+aws ec2 describe-instances  # List EC2s
+
+📌 EC2
+Launch VM
+Use SSH to connect
+Install apps manually
+
+📌 S3
+aws s3 cp file.txt s3://mybucket/
+
+📌 Lambda
+Upload Node.js/Python function
+
+Trigger via HTTP or S3 events 
+
+
+ */
+
+
 let introduction_of_javascript
 
 let Variables_and_Datatypes_in_JavaScript
@@ -9,16 +234,14 @@ let Variables_and_Datatypes_in_JavaScript
 A variable is like a container that holds data that can be reused or updated later in the program. In JavaScript, variables are declared using the keywords var, let, or const.
 
 2.datatypes
-primitive datatypes: number,string,boolean,undefined, null, symbol,  bigint.
-non- primitive datatypes : object, arrray , function
+primitive datatypes: number,string,boolean,undefined, null, symbol, bigint.
+non- primitive datatypes : object, arrray, function
 
 ===========================================================================
 */
 
 // 3. Global and Local variables in JavaScript
 /*
-
-
 ---------------------------------------------------------------------------
  * JavaScript Let
 
@@ -29,7 +252,6 @@ non- primitive datatypes : object, arrray , function
 3. No Redeclaration
 
 Temporal Dead Zone (TDZ)
-The Temporal Dead Zone (TDZ) in JavaScript is a behavior that applies to variables declared with let and const. It refers to the period between the start of a scope and the point where the variable is declared and initialized.
 ------------------------------------------------------------------
 
 JavaScript const
@@ -40,7 +262,8 @@ JavaScript const
 3. Must Be Initialized
 
 4. Immutable Binding, Not Value
-const makes the variable binding immutable, but if the value is an object or array, you can still modify its properties or contents.
+const makes the variable binding immutable, but if the value is an object or array, we can still modify its properties or contents.
+
 const obj = { name: "Pranjal" };
 obj.name = "Nanda";
 console.log(obj.name);//nanda
@@ -55,6 +278,7 @@ console.log(arr);  /[ 1, 2, 3, 4 ]
  JavaScript Var Statement
 
  Features of var Keyword
+
 function testVar() {
     var x = 10;
     console.log(x); // Output: 10
@@ -70,7 +294,7 @@ Hoisting
 
  */
 
-// JS Operators
+let JS_Operators
 /**
   JavaScript operators are symbols or keywords used to perform operations on values and variables. They are the building blocks of JavaScript expressions and can manipulate data in various ways.
 

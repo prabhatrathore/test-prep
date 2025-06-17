@@ -1176,6 +1176,48 @@ console.log(stud1.company);
 This is essentially a simple example of object-oriented programming.  Therefore, the output will be ‘abc’ as we are accessing the property of the student object.
 
 ------------------------------------------------------------------------------------------------
+const b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+for (var i = 0; i < 10; i++) {
+  setTimeout(() => console.log(b[i]), 1000);
+}  
+
+🔍 Explanation:
+🔁 for (var i = 0; i < 10; i++)
+This is a basic for loop that runs 10 times, with i going from 0 to 9.
+
+🕒 setTimeout(() => console.log(b[i]), 1000);
+This schedules a delayed execution of the function (after 1000ms = 1 second).
+
+Inside the callback, b[i] is printed.
+
+⚠️ The Gotcha: var Scope
+The key thing here is:
+
+var is function-scoped, not block-scoped.
+
+By the time the setTimeout executes (after 1 second), the loop has already finished.
+
+So the value of i is already 10 when console.log(b[i]) runs.
+
+📦 What is b[10]?
+The b array has values from index 0 to 9.
+
+b[10] is undefined because the 10th index doesn't exist.
+output 
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+
+
 ------------------------------------------------------------------------------------------------
 
 */
