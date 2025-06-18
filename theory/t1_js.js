@@ -69,7 +69,7 @@ Simplicity. JavaScript is relatively simple to learn and implement.
 ---------------------------------------------------------------------------------------------------------
 */
 
-let DISADVANTAGES_OF_JS={
+let DISADVANTAGES_OF_JS = {
 
 }
 /*
@@ -557,7 +557,7 @@ for (let num of range(1, 5)) {
 }
   */
 
-let WeakMap 
+let WeakMap
 
 /*
 ---------------------------------------------------------------------------------------------------------
@@ -1011,8 +1011,8 @@ function add(a, b, c) {
 
 // Curried version
 function curryAdd(a) {
-  return function(b) {
-    return function(c) {
+  return function (b) {
+    return function (c) {
       return a + b + c;
     };
   };
@@ -1217,7 +1217,164 @@ undefined
 undefined
 undefined
 
-
 ------------------------------------------------------------------------------------------------
+*/
+
+/*
+🔹 OOPs (Object-Oriented Programming) 
+Definition:
+A programming style that uses objects to structure code for reusability, modularity, and clarity.
+  
+Benefits:
+
+Reusable code (DRY)
+Easier to manage large projects
+Organized and modular
+Easier to debug
+
+🔸 Core Concepts of OOP:
+Concept 	    Description
+Class	        Blueprint of an object (like a template)
+Object	      Instance of a class (actual usable thing made from blueprint)
+Constructor	  Special method called when object is created (used for initialization)
+Method	      Function inside a class
+Inheritance	  One class can use properties/methods of another using extends & super()
+Encapsulation	Hiding internal details and showing only essentials (via class structure)
+Polymorphism	Same method behaves differently in different classes
+
+🔸 Example:
+*/
+class Car {
+  constructor(brand) {
+    this.brand = brand;
+  }
+  drive() {
+    console.log(`${this.brand} is driving`);
+  }
+}
+
+const car1 = new Car("BMW");
+car1.drive(); // BMW is driving
+/*
+-------------------------------------------------------------------------------
+🔸 Types of Methods:
+Type	                 Syntax Example               	Notes
+Constructor	          constructor() {}	          Auto-called on object creation
+Normal Method        	drive() {}	               Called via object like car.drive()
+Static Method	        static details() {}	       Called via class, not object (Car.details())
+
+--------------------------------------------------------------------------------------------
+🔸 Inheritance Example:
+*/
+class Employee {
+  constructor(name) {
+    this.name = name;
+  }
+  show() {
+    console.log(`Employee: ${this.name}`);
+  }
+}
+
+class Manager extends Employee {
+  show() {
+    super.show(); // calls parent method
+    console.log(`Role: Manager`);
+  }
+}
+
+const m = new Manager("Ravi");
+m.show();
+// Employee: Ravi
+// Role: Manager
+
+/*
+🔸 Summary (For Interview Quick Recall):
+Class = Blueprint
+
+Object = Instance of Class
+
+Constructor = Auto-run when object created
+
+this = Refers to current object
+
+super() = Call parent class methods/properties
+
+Static Method = No need to create object
+
+Inheritance = extends + super()
+
+
+🔹 Encapsulation | Abstraction | Polymorphism (OOP Pillars)-----------------------------------------
+✅ 1. Encapsulation
+Definition:
+Wrapping data (variables) and methods (functions) into a single unit — a class.
+
+Goal: Protect data and prevent direct access from outside.
+
+Example:
+
+js
+Copy
+Edit
+class Person {
+  constructor(name) {
+    let _name = name; // private
+    this.getName = () => _name; // public getter
+  }
+}
+const p = new Person("Ravi");
+console.log(p.getName()); // Ravi
+🧠 Think of it like: Medicine capsule — everything wrapped inside.
+
+✅ 2. Abstraction
+Definition:
+Hiding complex details and showing only the essentials to the user.
+
+Goal: Show what an object does, hide how it does.
+
+Example:
+
+js
+Copy
+Edit
+class Car {
+  startEngine() { // abstraction: user just calls this
+    this._injectFuel();
+    this._ignite();
+    console.log("Engine started");
+  }
+  _injectFuel() {}  // internal
+  _ignite() {}       // internal
+}
+🧠 Think of it like: You drive a car without knowing how the engine works.
+
+✅ 3. Polymorphism
+Definition:
+Same function name behaves differently for different classes.
+
+Goal: Reuse function names across multiple classes.
+
+Example:
+
+js
+Copy
+Edit
+class Animal {
+  sound() { console.log("Animal makes sound"); }
+}
+class Dog extends Animal {
+  sound() { console.log("Dog barks"); }
+}
+const a = new Animal();
+const d = new Dog();
+a.sound(); // Animal makes sound
+d.sound(); // Dog barks
+🧠 Think of it like: Same remote button — controls TV, AC, Fan differently.
+
+⚡ Final One-Liner Recap:
+Pillar	Purpose	Keyword
+Encapsulation	Protect and bundle data	class
+Abstraction	Show only required details	methods
+Polymorphism	One method, many forms	override
 
 */

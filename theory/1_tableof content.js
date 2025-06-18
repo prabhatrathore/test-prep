@@ -40,7 +40,7 @@ Optional Chaining (?.)
 Nullish Coalescing (??) 
 
 ----------------------------------------------------------------------
-The nullish coalescing operator (??) in JavaScript is a logical operator, lets us pick a default value if a variable is null or undefined. It returns the left-hand value if it's not null or undefined, otherwise it returns the right-hand value.
+The nullish coalescing operator (??) in JavaScript is a logical operator, pick a default value if a variable is null or undefined. It returns the left-hand value if it's not null or undefined, otherwise it returns the right-hand value.
 
 How It Works
 The ?? operator checks if the left-hand operand is nullish (null or undefined).

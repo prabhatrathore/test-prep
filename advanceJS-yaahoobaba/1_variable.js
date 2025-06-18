@@ -27,11 +27,14 @@ if (true) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // initialization, condition, increment
+
 for (var i1 = 1; i1 <= 5; i1++) {
+
 }
 console.log(i1, "line 3111")//  can access the variable   -- answer --- 6 , line 31 
+
 // Scope of i1 with var
-// Since var is used, i1 is not block-scoped to the for loop. Instead, it is hoisted to the global scope. This means i1 remains accessible after the loop ends.
+// Since var is used, i1 is not block-scoped to the 'for loop'. Instead, it is hoisted to the global scope. This means i1 remains accessible after the loop ends.
 
 // After the loop, i1 holds the value 6 (the value that caused the loop to exit).
 
@@ -80,6 +83,7 @@ setTimeout(() => {
     console.log(k, "line 56")//  can access the variable, here var case we got amswer 
     // answer is 6 
 }, 1000);
+
 //but in 'const' case error we got: assignment to constant variable
 
 
@@ -103,13 +107,13 @@ for (let l = 0; l < 5; l++) {
 for (var n = 0; n < 3; n++) {
     (function (i) {
         setTimeout(() => {
-            console.log(n, "22222222222222");
+            console.log(n, "22222222222222@!#",i);
         }, 2000);
     })(n);
 }
-// 3 22222222222222
-// 3 22222222222222
-// 3 22222222222222
+// 3 22222222222222@!# 0
+// 3 22222222222222@!# 1
+// 3 22222222222222@!# 2
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -119,10 +123,10 @@ for (var n = 0; n < 3; n++) {
 //     }, 1000)
 // }
 
-// 5 line 76       // //
-// 5 line 76      // //
-// 5 line 76     // //
-// 5 line 76    // //
+// 5 line 76   // //
+// 5 line 76   // //
+// 5 line 76   // //
+// 5 line 76   // //
 // 5 line 76   // //
 
 /////////////////////////////////////////////////////////////////////////////////////////////

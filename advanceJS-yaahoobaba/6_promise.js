@@ -24,7 +24,7 @@ console.log("==============1111111===============");
 
 /**
 * prmoise.all()
-* agar ek se jyada h promise, to 10,100 to har ek ke liye possible nhi h individual case likhna 
+* agar ek se jyada h promise,  10,100 to har ek ke liye possible nhi h individual case likhna 
 
 so that case promise.all() ka use kr skte ye check krega saare promise ko  
 if all promsie resolve tabhi then function call hoga , 

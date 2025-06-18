@@ -1,7 +1,4 @@
 /**
- 
-
-
 -----------------------------------------------------------------------------------------------------------
 GIT 
 
@@ -9,6 +6,7 @@ What is the difference between Git and GitHub?
 Answer:
 Git: A distributed version control system (dvcs) for tracking code changes locally.
 GitHub: A hosting service for Git repositories, adding collaboration tools like pull requests and code reviews.
+
 ----------------------------------------------------------
 
 Commands:
@@ -45,7 +43,6 @@ Answer: A branch is a separate line of development within a repository, allowing
 
 : A pull request (PR) is a GitHub feature to propose and review changes from one branch to another
 
-
 What is the difference between git fetch and git pull?
 Answer:
 git fetch [alias]: Downloads updates from a remote repository without merging.
@@ -64,6 +61,7 @@ git config --global user.email "[email]": Sets your email.
 What is the HEAD in Git?
 Answer: HEAD is a pointer of the current branch or commit we’re working on. It typically points to the latest commit in the active branch.
 
+----------------------------------------------------------------------------------------------------------
 What is a merge conflict and how do you resolve it?
 Answer: A merge conflict occurs when Git cannot automatically resolve changes (e.g., same lines edited in two branches). To resolve:
 
@@ -75,9 +73,10 @@ What is the staging area in Git?
 Answer: The staging area (or index) is an intermediate layer where changes are prepared before committing. Use git add [file] to stage changes
 
 What is GitHub Actions, and how is it used?
-Answer: GitHub Actions is a CI/CD tool for automating workflows (e.g., testing, deployment).
+Answer: GitHub Actions is a CI/CD tool for automating workflows (e.g., testing,& deployment).
 
 *******************************************************************************************************
+
 JavaScript Notes Summary
 History of JavaScript
 
@@ -87,7 +86,7 @@ First called Mocha.
 Renamed to LiveScript.
 Finally named JavaScript for marketing, as Java was popular, but Java and JavaScript are unrelated.
 
-
+-----------------------------------------------------------------------------------------------------
 Browser Wars:
 Netscape used JavaScript.
 Microsoft’s Internet Explorer copied features and created JScript.
@@ -101,28 +100,22 @@ ES1 (1997): First version.
 ES5 (2009): Added new features.
 ES6 (2015): Major update, also called Modern JavaScript.
 
-
-Since 2015, new features are released yearly by the TC39 committee.
-
-
+Since 2015, new features are released yearly by the TC39 committee
 
 Convert String to Number:
 Add a plus sign (+) before a string.
 Example: let str = "169"; console.log(typeof (+str)); → Outputs number.
 
-
 Convert Number to String:
 Add an empty string ("") to a number.
 Example: let num = 10; console.log(typeof (num + "")); → Outputs string.
-
-
+---------------------------------------------------------------------------------------------
 
 Strings in JavaScript
 
 Definition: Strings store text (words, sentences) and use zero-based indexing (first character is at index 0).
 Examples:
 let str = "pro"; (stores "pro").
-
 
 Common String Methods:
 trim(): Removes extra spaces.
@@ -136,7 +129,7 @@ toUpperCase(): Converts to uppercase.
 lastIndexOf(): Finds the last position of a substring.
 toLowerCase(): Converts to lowercase.
 
-
+--------------------------------------------------------------------------------
 
 Undefined and Null
 
@@ -147,15 +140,22 @@ Accessing a non-existing object property.
 Accessing an array element out of bounds.
 
 
-Example: let str; console.log(str); → Outputs undefined.
+Example:
+ let str;
+  console.log(str);
+ → Outputs undefined.
 
-
+-------------------------------------------------------------------
 Null:
 Means "no value" and is explicitly assigned.
 Type of null is object.
 Treated as false in conditions.
-Example: let val = null; console.log(typeof val); → Outputs object.
+Example: 
+let val = null;
+ console.log(typeof val); 
+ → Outputs object.
 
+-------------------------------------------------------------------
 
 BigInt
 
@@ -166,25 +166,26 @@ Use BigInt(): let num = BigInt(9816543219865252772);.
 
 
 Note: Does not support decimal values.
-
+---------------------------------------------------------------------------
 Ternary Operator
 
 Definition: A short way to write conditional statements (also called conditional operator).
 Syntax: let variable = condition ? valueIfTrue : valueIfFalse;.
-Example:let age = 18;
+Example:
+let age = 18;
 let result = age >= 18 ? "Adult" : "Minor";
 console.log(result); // Outputs "Adult"
 
 
 Explanation: If age >= 18 is true, result is "Adult", else "Minor".
 
+-----------------------------------------------------------------------------------------
 Map Data Structure
 
-Purpose: Similar to objects but allows any value as keys (objects only allow strings or symbols).
+Purpose: Similar to objects but allows any value as keys.
 Example:const person = new Map();
 person.set("Name", "Alex");
 console.log(person); // Outputs: Map { "Name" => "Alex" }
-
 
 Methods:
 get(key): Gets the value for a key.
@@ -211,13 +212,12 @@ Example:const person = {
 person.about(); // Outputs "My name is Alex"
 
 
-
 The this Keyword
 
 Purpose: Refers to the object executing the current code.
 
 Example:
-
+------------------------------------------------------------------
 function info() {
   console.log(`My name is ${this.name}`);
 }
@@ -256,7 +256,6 @@ myFun("Hey"); // Outputs "Hey Alex"
 
 ------------------------------------------------------------------------------
 
-
 Prototypes
 
 Purpose: Add new properties or methods to an object constructor.
@@ -265,13 +264,14 @@ function Person() {
   this.name = "John";
   this.age = 23;
 }
+
 Person.prototype.greet = function() {
   console.log(`Hi, I'm ${this.name}`);
 };
 const person = new Person();
 person.greet(); // Outputs "Hi, I'm John"
 
-
+-------------------------------------------------------------------
 
 The new Keyword
 
@@ -283,13 +283,14 @@ Points this to the new object.
 Executes the constructor function with this.
 Returns the new object.
 
-
 */
 
 /*
 **************************************************
 
-Clustering in Node.js leverages multiple CPU cores to improve the performance of a Node.js application. Since Node.js is single-threaded by default, it runs on a single process, utilizing only one CPU core. The cluster module in Node.js allows us to create multiple worker processes that share the same server port, enabling parallel processing and better handling of concurrent requests.
+Clustering means using all CPU cores to run our Node.js app faster.
+
+Since Node.js is single-threaded by default, it runs on a single process, utilizing only one CPU core. The cluster module allows us to create multiple worker processes that share the same server port, enabling parallel processing and better handling of concurrent requests.
 
 
 Key Concepts of Clustering
@@ -297,7 +298,7 @@ Master Process: The main process that spawns and manages worker processes.
 
 Worker Processes: Child processes that handle incoming requests. Each worker runs its own event loop and can process tasks independently.
 
-Load Balancing: The master process distributes incoming connections across workers, typically in a round-robin fashion.
+Load Balancing: The master process distributes incoming connections across workers, (typically in a round-robin fashion_).
 Inter-Process Communication (IPC): Workers can communicate with the master process or other workers using messaging.
 
 How Clustering Works
@@ -344,13 +345,18 @@ Check if Master: cluster.isMaster determines if the process is the master. If tr
 Fork Workers: The master forks a worker for each CPU core using cluster.fork().
 Worker Crash Handling: The exit event listener restarts a worker if it crashes.
 Worker Process: Each worker creates an HTTP server listening on port 8000. The master distributes incoming requests among workers.
+
 Shared Port: All workers share the same port (8000), and the master handles load balancing.
 Benefits of Clustering
+
 Improved Performance: Utilizes multiple CPU cores, increasing throughput for CPU-intensive tasks or high-concurrency scenarios.
+
 Scalability: Handles more simultaneous connections, ideal for web servers or APIs.
+
 Resilience: The master can restart crashed workers, improving reliability.
 No External Dependencies: The cluster module is built into Node.js, requiring no additional packages.
 Limitations
+
 State Management: Workers don’t share memory, so state (e.g., sessions) must be managed externally (e.g., using Redis or a database).
 Not for All Workloads: Clustering is most effective for I/O-heavy applications (e.g., HTTP servers). CPU-bound tasks may require other solutions like worker threads.
 Increased Complexity: Managing multiple processes and IPC adds complexity to the application.
@@ -392,8 +398,16 @@ Use worker threads (via the worker_threads module) within workers for CPU-intens
 If you need a deeper dive into any specific aspect (e.g., IPC, sticky sessions, or performance testing), let me know!
 
 
+fork and spawn in node.js
 
+Key Differences
 
-
+Feature            	spawn                                                 	fork
+Purpose	           Runs any command or executable	                         Runs a Node.js script
+Process Type	     General child process                                   Node.js child process
+Communication	     Streams (stdin, stdout, stderr)	                       IPC channel + streams
+Use Case         	 External commands, streaming data                     	 Node.js scripts, parallel tasks
+Performance	       Lightweight for external commands	                     Slightly heavier due to Node.js env
+Node.js Specific  	No, works with any command                  	         Yes, only for Node.js scripts
 
 */
