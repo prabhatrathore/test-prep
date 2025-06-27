@@ -4,6 +4,22 @@ WebSockets provide a full-duplex, bidirectional communication channel over a sin
 
 WebSockets allow both the client and server to send messages at any time, making them ideal for applications requiring instant updates, such as chat apps, live notifications,
 
+--------------------------------------------------------------------------------
+
+🔹 1. Full-Duplex (💬 Two-way communication)
+Full-duplex means:
+👉 Both client and server can send messages to each other at the same time.
+
+----------------------------------------------------------------------------
+
+🔹 2. TCP (Transmission Control Protocol)
+TCP is a reliable connection-based protocol used to send data over the internet.
+
+Key points:
+Ensures all data reaches in correct order 📦📦📦
+Keeps a stable connection (not like random one-time messages)
+
+Used by HTTP, HTTPS, and WebSockets
 
 -----------------------------------------------------------------------------------
 1:) Establishes a persistent connection between client and server after an HTTP handshake.
@@ -11,13 +27,14 @@ WebSockets allow both the client and server to send messages at any time, making
 3:) Uses low overhead: After the initial handshake, messages have minimal headers, reducing latency compared to HTTP polling.
 4:) Supports real-time use cases: Ideal for live updates, such as stock changes, chat messages, or notifications.
  
-
-
 Comparison with HTTP:
 
 HTTP: Request-response, stateless, higher latency for real-time (requires polling or long polling).
 WebSockets: Persistent, stateful, low-latency, ideal for SupplyMatch’s real-time stock updates.
 
+🕐 What is Latency?
+Latency = Time delay ⏳
+It’s the time taken between sending a request and getting a response.
 
 ----------------------------------------------------------------------------------
 
@@ -54,20 +71,19 @@ Library built on WebSockets with additional features.
 */
 
 /**
- 
 Containerization is a lightweight virtualization technology that allows applications and their dependencies to be packaged into standardized, isolated units called containers.
 
 What is Docker?
-Docker is an open-source platform for containerization that:
-Packages applications and dependencies into containers using OS-level virtualization.
-Uses images (read-only templates) to create containers, ensuring consistency across environments.
+Docker is a tool that helps us:
 
+✅ Package our app with everything it needs (code + libraries)
+✅ Into a container (a lightweight, isolated environment)
+✅ So it works anywhere — your laptop, server, or cloud — without any issues
  */
 
 /**
- * 
-/**
- * 
+ 
+
  app.use(express.json()) //This middleware parses incoming requests with JSON payloads
 
 
@@ -82,7 +98,6 @@ Uses images (read-only templates) to create containers, ensuring consistency acr
 // Example of nested data with extended: true:
 // Input: user[name]=John&user[age]=30
 // Output: req.body = { user: { name: "John", age: "30" } }
-
 
 
    jwt.verify(token, 'squareboat', {

@@ -11,7 +11,7 @@ how to solve this ?
 ----------------------------------------------------------------
 -- explain Left join, Right join. In mysql
 
--- explain Cluster
+-- explain Cluster 
 
 -- explain Stream
 
@@ -21,7 +21,7 @@ how to solve this ?
 /**
  * next topic is dsa
  
-waht is data structure ?
+what is data structure ?
 data structure is a way to store and organize data so that it can be used effeciently.
 as per name indicates itself that organizing the data in memory.
 
@@ -32,7 +32,7 @@ data structure has two type
 1: primitive data structure 
 2: non-primitve data structure 
 
-in primitive data structure, we have int,pointer, char, float, double
+in primitive data structure, we have int, pointer, char, float, double
 
 in non-primitive data structure, we have (linear, non-linear) d.s.
 
@@ -58,7 +58,9 @@ Multiple requests:- If thousands of users are searching data simultaneously on a
 To solve this problems, data structures are used. Data is organized to form a data structure in a such way that all items are not required to be searched and require data can be searched instantly.
 
 ----------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------
+    
 ----------------------------------------------------------------------------------------------------------
 
+----------------------------------------------------------------------------------------------------------
+  
  */

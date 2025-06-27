@@ -41,13 +41,12 @@ Answer: git status Shows the current state of the working directory and staging 
 What is a branch in Git?
 Answer: A branch is a separate line of development within a repository, allowing work on features or fixes without affecting the main branch (e.g., main).
 
-: A pull request (PR) is a GitHub feature to propose and review changes from one branch to another
+: A pull request (PR) is a GitHub feature to review changes from one branch to another
 
 What is the difference between git fetch and git pull?
 Answer:
 git fetch [alias]: Downloads updates from a remote repository without merging.
 git pull: Fetches and merges remote changes into the current branch.
-
 
 What is a .gitignore file?
 Answer: A .gitignore file, exclude files from being tracked by Git, preventing unwanted commits
@@ -115,7 +114,8 @@ Strings in JavaScript
 
 Definition: Strings store text (words, sentences) and use zero-based indexing (first character is at index 0).
 Examples:
-let str = "pro"; (stores "pro").
+let str = "pro"; 
+(stores "pro").
 
 Common String Methods:
 trim(): Removes extra spaces.
@@ -138,7 +138,6 @@ Returned when:
 A variable is declared but not assigned a value.
 Accessing a non-existing object property.
 Accessing an array element out of bounds.
-
 
 Example:
  let str;
@@ -176,32 +175,15 @@ let age = 18;
 let result = age >= 18 ? "Adult" : "Minor";
 console.log(result); // Outputs "Adult"
 
-
 Explanation: If age >= 18 is true, result is "Adult", else "Minor".
 
 -----------------------------------------------------------------------------------------
-Map Data Structure
-
-Purpose: Similar to objects but allows any value as keys.
-Example:const person = new Map();
-person.set("Name", "Alex");
-console.log(person); // Outputs: Map { "Name" => "Alex" }
-
-Methods:
-get(key): Gets the value for a key.
-set(key, value): Adds or updates a key-value pair.
-delete(key): Removes a key-value pair.
-clear(): Removes all key-value pairs.
-has(key): Checks if a key exists (returns true or false).
-keys(): Returns an iterator of all keys.
-
-
-
+-----------------------------------------------------------------------------
 Methods in Objects
-
 Definition: A function inside an object is called a method.
 
-Example:const person = {
+Example:
+const person = {
   name: "Alex",
   age: 21,
   about: function() {
@@ -211,9 +193,8 @@ Example:const person = {
 
 person.about(); // Outputs "My name is Alex"
 
-
+-----------------------------------------------------------------------
 The this Keyword
-
 Purpose: Refers to the object executing the current code.
 
 Example:
@@ -225,12 +206,13 @@ function info() {
 const person = { name: "Cody", about: info };
 person.about(); // Outputs "My name is Cody"
 
-
 Explanation: this refers to the person object when about is called.
+---------------------------------------------------------------------------------------
 
 Call, Apply, and Bind Methods
 
 Purpose: Control the value of this in functions.
+
 Call:
 Invokes a function with a specified this and arguments.
 
@@ -268,6 +250,7 @@ function Person() {
 Person.prototype.greet = function() {
   console.log(`Hi, I'm ${this.name}`);
 };
+
 const person = new Person();
 person.greet(); // Outputs "Hi, I'm John"
 
@@ -306,6 +289,7 @@ The cluster module forks multiple worker processes (usually one per CPU core).
 The master process listens for incoming connections and delegates them to workers.
 Each worker runs the same application code but operates independently, handling its share of requests.
 If a worker crashes, the master can restart it to maintain reliability.
+
 Example: Basic Clustering in Node.js
 Here’s a simple example using the cluster module to create a clustered HTTP server:
 
@@ -347,6 +331,8 @@ Worker Crash Handling: The exit event listener restarts a worker if it crashes.
 Worker Process: Each worker creates an HTTP server listening on port 8000. The master distributes incoming requests among workers.
 
 Shared Port: All workers share the same port (8000), and the master handles load balancing.
+--------------------------------------------------
+
 Benefits of Clustering
 
 Improved Performance: Utilizes multiple CPU cores, increasing throughput for CPU-intensive tasks or high-concurrency scenarios.
@@ -354,16 +340,28 @@ Improved Performance: Utilizes multiple CPU cores, increasing throughput for CPU
 Scalability: Handles more simultaneous connections, ideal for web servers or APIs.
 
 Resilience: The master can restart crashed workers, improving reliability.
+
 No External Dependencies: The cluster module is built into Node.js, requiring no additional packages.
+
+---------------------------------------------------------------
+
 Limitations
 
-State Management: Workers don’t share memory, so state (e.g., sessions) must be managed externally (e.g., using Redis or a database).
+State Management: Workers don’t share memory, so state (e.g., sessions) must be managed externally (e.g., using Redis or a 
+database).
+
 Not for All Workloads: Clustering is most effective for I/O-heavy applications (e.g., HTTP servers). CPU-bound tasks may require other solutions like worker threads.
+
 Increased Complexity: Managing multiple processes and IPC adds complexity to the application.
+
 Best Practices
+
 Match Worker Count to CPU Cores: Use os.cpus().length to determine the number of workers for optimal resource utilization.
+
 Handle Worker Crashes: Implement cluster.on('exit') to restart failed workers.
+
 Use External State Management: For applications requiring shared state, use tools like Redis or a database.
+
 Monitor Performance: Test whether clustering improves performance for your specific use case, as overhead from forking processes can sometimes outweigh benefits for low-traffic apps.
 Consider PM2 for Production: While the cluster module is great for simple clustering, tools like PM2 offer advanced features like process management, monitoring, and zero-downtime restarts.
 Example with PM2
@@ -371,13 +369,11 @@ For production, you might use PM2 to manage clustering. Install PM2:
 
 bash
 
-Copy
+
 npm install -g pm2
 Run your app with clustering:
 
-bash
-
-Copy
+--------------------------------------------------------------------
 pm2 start app.js -i max
 The -i max flag tells PM2 to create a worker for each CPU core.
 
@@ -386,9 +382,11 @@ High-Traffic Web Servers: Clustering shines in handling many HTTP requests concu
 API Servers: Distributes API requests across workers for better throughput.
 Real-Time Apps: For apps using WebSockets (e.g., with Socket.IO), clustering can help scale connections.
 
+----------------------------------------------------------------------------
 When Not to Use Clustering 
 Single-Threaded Tasks: If your app is heavily CPU-bound (e.g., machine learning inference), consider worker threads or offloading to a separate service.
 Low Traffic: For small-scale apps, the overhead of managing workers may not be worth it.
+--------------------------------------------------------------------------------
 Advanced Clustering
 For more complex scenarios, you can:
 
@@ -397,12 +395,11 @@ Implement custom load balancing by configuring how the master distributes connec
 Use worker threads (via the worker_threads module) within workers for CPU-intensive tasks.
 If you need a deeper dive into any specific aspect (e.g., IPC, sticky sessions, or performance testing), let me know!
 
-
 fork and spawn in node.js
 
 Key Differences
 
-Feature            	spawn                                                 	fork
+Feature            	spawn                                                  	fork
 Purpose	           Runs any command or executable	                         Runs a Node.js script
 Process Type	     General child process                                   Node.js child process
 Communication	     Streams (stdin, stdout, stderr)	                       IPC channel + streams
@@ -410,4 +407,263 @@ Use Case         	 External commands, streaming data                     	 Node.
 Performance	       Lightweight for external commands	                     Slightly heavier due to Node.js env
 Node.js Specific  	No, works with any command                  	         Yes, only for Node.js scripts
 
+----------------------------------------------------------------------------------------------------------------
+The spawn function is designed to run any command or executable as a general child process, using streams (stdin, stdout, stderr) for communication, making it lightweight for external commands and streaming data, and is not specific to Node.js. In contrast, the fork function is tailored for running Node.js scripts as a Node.js-specific child process, utilizing an IPC channel alongside streams for communication, suited for parallel tasks in Node.js, but is slightly heavier due to the Node.js environment setup.
 */
+
+/**
+// const  a2 = 10;
+// function f() {
+//     a2 = 9
+//     console.log(a2)//assignment to constant variable
+// }
+// f();
+
+// The code snippet provided declares a constant variable a2 and initializes it with the value of 10. Then, it defines a function f that attempts to reassign a new value of 9 to a2. However, when f is executed, it throws an error "assignment to constant variable" because a2 is a constant variable and cannot be reassigned a new value.
+
+// In JavaScript, const is a keyword used to declare a variable whose value cannot be reassigned once it has been initialized. 
+// This behavior is different from variables declared with var or let, which can be reassigned new values.
+
+// In this case, since a2 is a constant variable, any attempt to modify its value after it has been initialized will result in an error being thrown at runtime. The error message "assignment to constant variable" indicates that you are attempting to modify a constant variable, which is not allowed.
+
+// const  a2 = 10;90
+// function f() {
+//    let a2 = 9
+//     console.log(a2)//9
+// }
+// f();
+////////////////////////////////////////////////////////////////////
+// let  a2 = 10;
+// function f() {
+//     a2 = 9  
+//     console.log(a2)//9
+// }
+// f();
+// console.log(a2,"aaaaa")//9
+////////////////////////////////////////////////////////////////
+let  a2 = 10;
+function f(a2) {
+    a2 = 9  
+    console.log(a2)//9
+}
+f(a2);
+console.log(a2,"2222222222222")//  10  
+// //========================================
+
+// //====================
+
+a = {}
+const b = { key: "b" }
+const c = { key: "n" }
+const d = { n: 3 }
+a[b] = 98
+console.log(a, "aaaaaa ")//{ '[object Object]': 98 }
+console.log(JSON.stringify(a), "a22222aaaaa ")//{"[object Object]":98} 
+console.log(a[b], "a[bbbbbb")//98
+console.log(a, "##AS()*")//123   // { '[object Object]': 98 }
+a[c] = 123
+console.log(a, "@@AS()*")//123   // { '[object Object]': 123 }
+a[d] = 6
+console.log(a, "!!AS()*")//123  // { '[object Object]': 6 }
+a['e'] = 1
+a[{ d: 'update' }] = 31
+a[{}] = 32
+console.log(a[b], "()*")//123  //32 
+console.log(a, "AS()*")//123    { '[object Object]': 32, e: 1 } AS()*
+
+let string1 = '324e-1'
+string1 = Number(string1)
+
+
+console.log(string1, "string1string1")//    32.4 string1string1
+
+// '324e-1' is in scientific notation, meaning:
+// 324 × 10⁻¹ = 32.4
+
+// ------------------------------------------------------------------------------------------
+//setinterval 
+//setinterval ,settimeout ki tarh hee h .
+/**
+ * settimout hamare function ko call kr rha tha kuch time baad 
+ */
+console.log('script start');
+setInterval(() => {
+    let sum = 0
+    // for (let i = 10; i >= 0; i--) {
+    //     sum += i
+    // }
+    // console.log('setinterval===', sum)
+    while (sum < 10) {
+        sum++
+    };
+    sum++
+    // console.log("setinterval", Math.floor(Math.random() * 10));
+}, 1000);
+
+console.log('after script')
+
+
+let kl = 4
+function so() {
+    console.log(kl)//Cannot access 'kl' before initialization
+    let kl = 9
+}
+so()
+
+//callback understand
+function task1(caalback) {
+    console.log('function 1 is done')
+    caalback()
+};
+
+task1(() => {
+    console.log("2nd function is print")
+});
+
+//e.g3 on callback ==================
+
+// function addTwoNumber(num1, num2, onsuccess, onfailure) {
+//     console.log(`there is two num which we add ${num1},${num2}`)
+//     if (typeof num1 === 'number' && typeof num2 === 'number') {
+//         onsuccess(num1, num2)
+
+//     } else {
+//         onfailure()
+//     }
+// }
+
+// function onsuccess(number1, number2) {
+//     console.log(number1 + number2)
+// }
+// function onfailure() {
+//     console.log('wrong input')
+//     console.log('invalid input ')
+// }
+// addTwoNumber(2, '3', onsuccess, onfailure)
+
+//e.g4======================================= same qurstion
+
+function addTwoNumber(num1, num2, onsuccess, onfailure) {
+    // console.log(`there is two num which we add ${num1},${num2}`)
+    if (typeof num1 === 'number' && typeof num2 === 'number') {
+        onsuccess(num1, num2)
+    } else {
+        onfailure()
+    }
+};
+
+// function onsuccess(number1, number2) {
+//     console.log(number1 + number2)
+// }
+// function onfailure() {
+//     console.log('wrong input')
+//     console.log('invalid input ')
+// }
+
+addTwoNumber(2, 3, (number1, number2) => {
+    console.log(number1 + number2, 'onsuccess print ')
+}, () => {
+    console.log('wrong input')
+    console.log('invalid input ')
+});
+
+// -------------------------------------------------------------------
+//synchronous programmig vs asynchronous programming
+
+//synchronous programming 
+// console.log('beforee loop')
+for (let i = 0; i < 1000; i++) {
+    // console.log("inside", i)
+}
+
+// console.log('after loop')
+//j.s is synchronous programming and single threaded.
+//line by line execute hota hai code..
+//===================================
+
+//asynchronus programming
+/**
+ * 
+ * first take a look at set time out function
+ * set time out ek function lega as a input and saath mai lega time 
+ * ye function kitni der baad run krana h 
+ */
+// console.log('script-start')
+
+function start() {
+    console.log('hello world,inside setitmeout =====')
+}
+setTimeout(start, 2000)
+
+// console.log('script-end')
+
+//e.g.2.==============settime out with 0 sec
+// console.log('strart file ')
+// setTimeout(() => { console.log('hello,settimeout with zero second') }, 0)
+
+// console.log("befre looping")
+//====================
+for (let i = 0; i < 10; i++) {
+    // console.log('inside for-loop', i)
+}
+// console.log("after settimenot")
+//alanalyse
+
+/**
+ * first line execute, then j.s. ko nhi pta settimeout ke baare mai
+ *  to ye browser ke pass bhj dega 
+ * browser ke pass rhega aur execute krke result return kr dega. 
+ *0 second baad 
+ but js next line pr mmove krega aur execute krega aaage ka code 
+ browser wala return last mai print hoga 
+ */
+
+//--------------------------------------------------------=
+let promise1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('promise resolve');
+    }, 2000);
+});
+// console.log('inbetween promise');
+async function sol(req, res) {
+    let arr = await promise1
+    console.log(arr)
+    console.log('promise after')
+};
+// sol()
+
+for (var i = 0; i < 3; i++) { //change var , let const
+    // change let ,var const 
+}
+console.log('===i"value===', i)
+
+//=======parameter destructuring
+let obj = {
+    "name": "alex",
+    age: 12,
+    address: 'delhi'
+};
+function sol2({ name, age }) {
+    console.log(name, '===name')//alex ===name
+    console.log(age)  //12
+};
+sol2(obj)
+console.log("=========================");
+//=========================================
+
+//============set========
+
+let set2 = new Set()
+// A JavaScript Set is a collection of unique values. Each value can only occur once in a Set. A Set can hold any value of any data type.
+
+set2.add('e0ee')
+set2.add('wjengwigw')
+// set2.clear()     // clear property :to clear the set 
+//  set2.delete("eeeeeeeeee")//delete property :specific element to delete 
+let result = set2.has("eeeeeeeeee")// has property tell the element exist or not 
+console.log(result)
+console.log('=====  ==============')
+console.log(set2)
+arr = [...set2];
+console.log(arr)
+ 

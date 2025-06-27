@@ -27,7 +27,7 @@ function sol(arr, n) {
         return 'num shoud be less than arr.length'
     } else {
         let result = 0;
-        for (let i = 0; i < arr.length - n + 1; i++) {
+        for (let i = 0; i < arr.length - n + 1; i++) {//7
             let tmp = 0;//
             for (let j = 0; j < n; j++) {
                 tmp += arr[i + j]  //1  3   6  10

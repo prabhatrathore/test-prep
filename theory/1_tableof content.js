@@ -19,13 +19,13 @@ Higher-Order Functions – Accept/return functions
 📌 Scope & Closures
 Global vs Local Scope
 Lexical Scope
-Closure – Inner function remembers outer variables
+Closure – Inner function remembers outer function's variables
 
 📌 Asynchronous JS
 Callbacks
 Promises
 Async/Await
-Event Loop, Call Stack, Callback Queue, Web APIs
+Event Loop, Call Stack, Callback Queue, Web APIs . 
 
 📌 Objects & Arrays
 Object.assign(), spread/rest, destructuring

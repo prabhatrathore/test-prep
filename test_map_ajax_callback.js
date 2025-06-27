@@ -6,8 +6,8 @@ let str = "stringgg"
 str.toLocaleUpperCase()//anothing
 
 let obj = {
-    name: "ram", 
-    address: "delhi", 
+    name: "ram",
+    address: "delhi",
     phone: 12345
 }
 // console.log(Object.entries(obj),"entries")
@@ -46,45 +46,71 @@ for (let el of string) {
 // console.log(temparr2, "temparra 22")
 ///////////////////////////////////////////////////////////////////////////////////
 /**
-In JavaScript, new Map() creates a Map object, which is a collection of key-value pairs where keys and values can be of any type (e.g., strings, numbers, objects, etc.). Unlike regular objects, Maps maintain the insertion order of elements and allow keys of any data type, not just strings or symbols.
-
-Simple Definition
-A Map is like a dictionary or lookup table that stores data as pairs of keys and values. we can add, retrieve, update, or remove key-value pairs, and it remembers the order in which we added them.
  
+In JavaScript, new Map() creates a Map object, which is a collection of key-value pairs where keys and values can be of any type (e.g., strings, numbers, objects, etc.). Unlike regular objects, Maps maintain the insertion order of elements and allow keys of any data type, not just strings or symbols.
+we can add, retrieve, update, or remove key-value pairs, and it remembers the order in which we added them.
+
+Purpose: Similar to objects but allows any value as keys.
+Example:
+const person = new Map();
+person.set("Name", "Alex");
+console.log(person); // Outputs: Map { "Name" => "Alex" }
+-----------------------------------------------------------------------------
+Methods:
+get(key): Gets the value for a key.
+set(key, value): Adds or updates a key-value pair.
+delete(key): Removes a key-value pair.
+clear(): Removes all key-value pairs.
+has(key): Checks if a key exists (returns true or false).
+keys(): Returns an iterator of all keys.
+
  */
+
+// example 
 let objItems = new Map()
 objItems.set(2, 2)
 objItems.set(12, 22)
 // console.log(objItems,"objItems")
+// console.log(o)
+let object1 = new Map()
+let temp = { name: "map first" }
+object1.set(temp, "first map initialise")
+// object1.clear()
+// object1.delete(temp)
+// console.log(object1, '???????????????????????????????', object1.has(temp),  object1.get(temp),object1.keys())
 
+// -------------------------------------------------------------------------------
 let obj1 = {
     name: "abc", age: 23
 }
+
 let obj2 = {
     name: "xyz",
     age: 13,
     about: function sol(params) {
-        console.log(this.name, this.age)
+        console.log(this.name, this.age, "call the function ++++")
     }
 }
 
-obj2.about?.call(obj1)
+// obj2.about?.call(obj1)
 // obj2.about()
+// ---------------------------------------------------------------------------
 
 function sol(parm, arr) {
     console.log(parm + parm.name, "aoy", arr)//[object Object]xyz aoy [ 'hi' ] 
     console.log(JSON.stringify(parm) + parm.name, "aoy", arr)//{"name":"xyz","age":13}xyz aoy [ 'hi' ]
 }
 // sol(obj2,["hi"])
-
+// ------------------------------------------------------------------------
 let obj3 = new Object(null)
-console.log(obj3, "231==")//{}
+// console.log(obj3, "231==")//{}
 obj3.name = "update"
-console.log(obj3, "231")//{name :'update'}
+// console.log(obj3, "231")//{name :'update'}
 obj3 - Object.create({})
 obj3.age = 9
-console.log(obj3, "obj3333")//{ name: 'update', age: 9 }
+// console.log(obj3, "obj3333")//{ name: 'update', age: 9 }
 
+// ------------------------------------------------------------------------
 
 /**
 AJAX (Asynchronous JavaScript and XML)
@@ -141,9 +167,7 @@ axios.get("data.json")
 /**
  * 
  * A callback is a function passed as an argument to another function
-
 This technique allows a function to call another function
-
 A callback function can run after another function has finished executed.
 
 */
@@ -169,7 +193,7 @@ function change(element, text, style, time, onsuccess, onfailure) {
 
 //promise represent krta hai future value hame abhi nhi pta ,baad mai pta chlegi 
 console.log("script start");
- arr = ['box', 'pen', ''];
+arr = ['box', 'pen', ''];
 const promise = new Promise((res, rej) => {  //here we create a promise object 
     if (arr.includes('box') && arr.includes('pen') && arr.includes('erase')) {
         res('goods available');
@@ -187,10 +211,13 @@ promise.then((msg) => {
 //promise ek object hee hai 
 // promise ko consume browser and result dega object ke andar
 console.log("script end");
+// -----------------------------------------------------------------------------------------
 
+// -----------------------------------------------------------------------------------------
 //script end, ke baad hee promise wala kaam hoga
 //====function return promise
 const bucket = ['rice', 'vegetable', ''];
+
 function sol() {
     return new Promise((resolve, reject) => {
         if (bucket.includes('rice') && bucket.includes('vegetable') && bucket.includes('salt')) {
@@ -228,4 +255,3 @@ sol2()
 
 
 
-    

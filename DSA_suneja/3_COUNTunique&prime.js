@@ -24,6 +24,7 @@ for (let j = 1; j <= arr.length; j++) {// 1
 };
 console.log(i, "unique element==")
 //==================================================
+
 //solurion by technical   suneja=============
 function sol(arr) {
     if (Array.length) {
@@ -36,7 +37,6 @@ function sol(arr) {
         }
         return i + 1 //beacuse ye zero se chalega
     } else { return 'array is empty' }
-
 }
 // let result = sol([1, 2, 3, 2, 3, 4, 4])
 //          i     j           

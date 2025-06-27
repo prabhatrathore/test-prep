@@ -8,12 +8,12 @@
  HTTP vs HTTPS
 HTTP (HyperText Transfer Protocol)  
 
-HTTP is a protocol for transferring data over the web. It’s the foundation of communication between a client (e.g., browser) and a server.
+HTTP is a protocol for transferring data over the web. http is the foundation of communication between a client (e.g., browser) and a server.
+
 Port: Uses port 80 by default.
 
 Security: Not secure—data is sent in plain text, making it vulnerable to interception (e.g., man-in-the-middle attacks).
 Use Case: Suitable for non-sensitive data (e.g., static websites).
-
 
 HTTPS (HTTP Secure)
 
@@ -24,44 +24,55 @@ Security: Encrypts data between the client and server, ensuring privacy, integri
 Use Case: Essential for sensitive data (e.g., login forms, payment gateways).
 Certificate: Requires an SSL/TLS certificate issued by a Certificate Authority (CA) to verify the server’s identity.
 
-
+--------------------------------------------------------------------------------------------------------------
 How Does a URL Work?
 A URL (Uniform Resource Locator) is an address that identifies a resource on the internet.
-
---------------------------------------------------------------------------------------------------------------
 
 How a URL Works (Step-by-Step)
 
 1:) User Enters URL: The user types a URL (e.g., https://www.example.com/candidates?name=Ram) into their browser.
 
- ( domain name system )
+( domain name system )
+
 2:) DNS Resolution: The browser sends the domain (www.example.com) to a DNS server, which resolves it to an IP address (e.g., 192.0.2.1).
 
 3:) Connection to Server:
 The browser establishes a connection to the server at the IP address on port 443 (for HTTPS).
 For HTTPS, an SSL/TLS handshake occurs: the server presents its SSL certificate, the client verifies it, and they negotiate an encryption key.
 
-
-
 */
+
 function findSecondSmallest(arr) {// hard one 
     if (arr.length < 2) return null;
 
-    let min1 = Infinity;
-    let min2 = Infinity;
+    let first_smallest = Infinity; // 4 , -1  , -5
+    let second_smallest = Infinity;  // infinity , 4 , 2,-1
 
     for (let num of arr) {
-        if (num < min1) {
-            min2 = min1;
-            min1 = num;
-        } else if (num > min1 && num < min2) {
-            min2 = num;
+        if (num < first_smallest) {
+            second_smallest = first_smallest; // infinity
+            first_smallest = num;  // 4
+        } else if (num > first_smallest && num < second_smallest) {
+            second_smallest = num;// 2 
         }
     }
-
-    return (min2 === Infinity) ? null : min2;
+console.log(first_smallest,'first_smalless',second_smallest,"second_")
+    return (second_smallest === Infinity) ? null : second_smallest;
 }
-// console.log(findSecondSmallest([4, -1, 2, -5, 0, -5])); // Output: -1
+
+function second(arr) {
+    if (arr.length) return null
+    let firstsmallest = Infinity
+    let secondSmalles = Infinity
+    for (let lee of arr) {
+        if (lee < firstsmallest) {
+            secondSmalles = firstsmallest
+        }
+    }
+}
+
+// console.log(second([4, -1, 2, -5, 30, 5]), "find__SecondSmallest"); // Output: -1
+console.log(findSecondSmallest([4, 12, 2, -5, 10, 5]), "find__SecondSmallest"); // Output: -1
 // console.log(findSecondSmallest([1, -2, 3])); // Output: null
 // console.log(findSecondSmallest([2, 2, 2])); // Output: null
 // console.log(findSecondSmallest([-5, -5, -4])); // Output: -4
@@ -153,7 +164,7 @@ console.log(null == undefined, " console.log(null == undefined);");
 ORM converts code objects to database tables.
 
 An ORM (Object-Relational Mapping) is a programming technique or tool that acts as a bridge between a relational database and object-oriented programming languages like JavaScript (in the context of your Node.js/Sequelize project).
- It allows developers to interact with a database using objects and methods in their programming language instead of writing raw SQL queries.
+ ORM allows developers to interact with a database using objects and methods in their programming language instead of writing raw SQL queries.
 
 ------------------------------------------------------------------------------------------------------
 
@@ -176,7 +187,8 @@ Sharding: Sharding is a database partitioning technique that splits a large MySQ
 Indexing and Optimization: Add indexes on frequently queried columns (e.g., product_id, stock_quantity) and optimize queries
 
 Caching: Use Redis. 
-Partitioning : MySQL’s built-in table partitioning (e.g., PARTITION BY RANGE) keeps data on one server but splits tables logically.  
+Partitioning is a way to split a large table into smaller, more manageable pieces (called partitions),
+but it still acts like a single table when we query it.
 
 -----------------------------------------------------------------------------------------------------------
 
@@ -187,8 +199,7 @@ Deadlocks happen when two or more transactions hold locks on resources and each 
 
 ---------------
 How would you secure a MySQL database data?
-User Authentication:
-Create role-based users with minimal privileges
+User Authentication : Create role-based users with minimal privileges.
 
 Encryption:
 Enable SSL/TLS for data in transit.
@@ -211,6 +222,7 @@ SELECT p.name, i.stock_quantity
 FROM product p 
 INNER JOIN inventory i ON p.product_id = i.product_id
 WHERE i.stock_inventory > 0 
+---------------------------------------------------------------------------------------- 
 ----------------------------------------------------------------------------------------
 
 *****left join*******************************************************************************
@@ -259,7 +271,7 @@ BLOB: Stores binary data, like images, videos, or files, not just text.
 ************************************************************************************
 Date/Time Types (DATE, DATETIME, TIMESTAMP, TIME):
 
-These are for dates and times.
+These are four dates and times.
 DATE: Stores just a date (like 2025-06-08).
 DATETIME: Stores both date and time (like 2025-06-08 17:37:00).
 TIMESTAMP: Similar to DATETIME but often used for tracking when something was created or updated, and it can adjust to time zones.
@@ -291,11 +303,11 @@ Better for calculations needing more accuracy or for very large/small numbers (e
 Example: Storing precise scientific data like 0.000000123456789
 
 Key Difference:
-FLOAT is like a lightweight version for less precise needs, while DOUBLE is for when you need more accuracy or bigger numbers.
+FLOAT is like a lightweight version for less precise needs, while DOUBLE is for when we need more accuracy or bigger numbers.
 
 -------------------------------------------------------------------------------------
 JSON:
-* This is for storing structured data, like a mini-database within a field.
+* JSON is for storing structured data, like a mini-database within a field.
 * It holds JSON objects (like {"name": "John", "age": 25}), which are useful for storing complex data that can be easily read or processed by apps.
 -------------------------------------------------------------------------------------
 
@@ -312,10 +324,9 @@ YYYY-MM-DD HH:MM:SS
 Q:) What is a foreign key, and how would you use it in databases? 
 A:) A foreign key is a field in one table that links to the primary key of another table. 
 
-For example, in a customers table that stores customer information, each customer has a unique customer_id—in another table called transactions (which stores purchase records), we use customer_id as a foreign key. The customer_id in the transactions table will link each purchase to a specific customer in the customers table.
+For example, in a customers table that stores customer information, each customer has a unique customer_id—in another table called 'transactions' (which stores purchase records), we use customer_id as a foreign key. The customer_id in the transactions table will link each purchase to a specific customer in the customers table.
 
 Here’s how that looks in SQL:
-
 
 CREATE TABLE customers (
     customer_id INT PRIMARY KEY,
@@ -357,7 +368,7 @@ A subquery (also known as a nested query) is nested inside another query. It bre
 *********************************
 employees (stores employee details):
 
-id | name       | salary | department_id
+id  | name       | salary | department_id
 ----+------------+--------+---------------
  1  | Alice      | 50000  | 10
  2  | Bob        | 60000  | 10
@@ -398,8 +409,9 @@ Q:) What is the significance of the AUTO_INCREMENT attribute in MySQL?
 A view is a saved query that works like a virtual table. With this, we can take a complex query, give it a name, and use it like a table for future queries. This way, we don’t have to retype the entire query every time.
 
 ----------------------------------- --------------------------------------------------
+
 What are system-versioned tables, and how do they work? 
-System-versioned tables maintain a full history of changes made in a table. Since they keep previous versions of each row, we can use them to audit and recover data.
+System-versioned tables maintain a full history of changes made in a table. Since they keep previous versions of each row, we can use them to audit and recover data .
 
 -------------------------------------------------------------------------------------
 Q.) What are MySQL transactions, and how do you use them?

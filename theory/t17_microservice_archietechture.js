@@ -33,11 +33,6 @@ Advantages of Microservices
 
 
 
-
-
-
-
-
  */
 /**
  // inventory-service/index.js
@@ -93,6 +88,7 @@ app.put('/inventory/:productId', async (req, res) => {
 
 app.listen(3001, () => console.log('Inventory Service running on port 3001'));
  */
+
 /**
  // notification-service/index.js
 const mysql = require('mysql2/promise');

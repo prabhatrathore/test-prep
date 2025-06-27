@@ -3,8 +3,6 @@
 // // let arr = [-5, -4, -3, -2, 0, 2, 4, 6, 8] //input
 // //output =first pair chahiye jiska sum zero hai [-4,4]   
 
-
-
 // function sol12(arr) {
 //     for (let i = 0; i < arr.length; i++) { // if we want all pairs
 //         for (let j = i+1; j < arr.length; j++) {
@@ -16,7 +14,7 @@
 //     }
 // }
 
-
+//////----------------------------------------------------------
 // let result3 = sol12([-5, -4, -3, -2, 0, 2, 4, 6, 8]);
 // console.log(result3, '11111111===========');
 
@@ -65,7 +63,6 @@ console.log(answer);
 //     let left = 0        // 1
 //     let right = arr.length - 1 //  8  6  4 
 //     while (left < right) {
-
 //         console.log('inside============')
 //         if (arr[left] + arr[right] == 0) {
 //             return [arr[left], arr[right]]
@@ -78,6 +75,7 @@ console.log(answer);
 //     }
 
 // }
+
 
 // const sol3 = sol2([-5, -4, -3, -2, 0, 2, 4, 6, 8]);
 // console.log(sol3)

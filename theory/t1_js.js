@@ -3,7 +3,9 @@ let WHat_is_Javascript
 
 /**
 1) WHat is Javascript:
-JavaScript is a scripting programming language used client side that allows developers to make web pages interactive.***
+JavaScript is a scripting programming language used in client side that allows us (developers) to make web pages interactive.***
+
+ A scripting language is a kind of programming language that is used to automate the execution of operations in a runtime environment. 
 
 JavaScript is an object-based scripting language, meaning it uses objects to represent data and functionality,
 JavaScript is also cross-platform, which means it can be run on any device that has a web browser,
@@ -11,8 +13,7 @@ JavaScript follow synchronous pattern
 it is single threaded.
 
 Dynamic Typing *************
-JavaScript is dynamically typed, which means:
-we don’t need to mention the type of a variable.
+JavaScript is dynamically typed, which means: we don’t need to mention the type of a variable.
 A variable can hold any type of value, and it can change later.
 
 let x = 10;           // x is a number
@@ -20,14 +21,11 @@ x = "Hello";         // now x is a string
 x = [1, 2, 3];      // now x is an array
 x = { name: "JS" } // now x is an object
 
-
- A scripting language is a kind of programming language that is used to automate the execution of operations in a runtime environment. 
-
   ------------------------------------------------------------------------------------------------------------
   Q: Why JavaScript is known as a lightweight programming language ?
-  JavaScript is considered a lightweight language due to its low CPU usage, minimalist syntax, and ease of implementation.
+  JavaScript is considered a lightweight language due to its low CPU usage, minimalist syntax,  ease of implementation.
   
-  JavaScript is often described as lightweight because it was originally designed to run in browsers with minimal resource demands. It executes client-side tasks (like DOM manipulation) without requiring heavy computation
+ and it was originally designed to run in browsers with minimal resource demands. It executes client-side tasks (like DOM manipulation) without requiring heavy computation
   
   ------------------------------------------------------------------------------------------------------------
 
@@ -35,7 +33,6 @@ Q: Is JavaScript compiled or interpreted?
 A: JavaScript is primarily interpreted, but modern engines use Just-In-Time (JIT) compilation, so it is technically both. It starts by interpreting and then compiles frequently used code to machine code at runtime for better performance.
 
 🚀 Modern JS Engines (Compiled Just-in-Time - JIT)
-
 Modern engines use Just-in-Time (JIT) compilation to make JavaScript run faster.
 
 Instead of just interpreting code line-by-line (slow), JIT compiles JavaScript into machine code right before execution.
@@ -43,7 +40,6 @@ Instead of just interpreting code line-by-line (slow), JIT compiles JavaScript i
 It combines:
 Interpreter: Quickly runs code initially.
 Compiler: Converts frequently used code into optimized machine code for speed.
- 
 --------------------------------------------------------------------------------------------
 
 */
@@ -106,7 +102,7 @@ JavaScript was designed to be single-threaded because of its main job in the bro
 
 
 The Event Loop and Asynchronous Behavior:
-JavaScript uses  single-threaded, non-blocking model with an event loop to handle concurrency without multiple threads.
+JavaScript uses single-threaded, non-blocking model with an event loop to handle concurrency without multiple threads.
 The event loop manages the execution of code, handling tasks like DOM events, timers (setTimeout), and asynchronous operations (e.g., fetching data with fetch).
 
 How it works:
@@ -133,16 +129,14 @@ Yes, JavaScript is a programming language that is used primarily for web develop
 */
 let FUNCTION_SCOPE_AND_GLOBAL_SCOPE
 // Function-Scoped or Globally Scoped
-
 /*
-
   Function-Scoped
 A variable declared with var is function-scoped, meaning it’s only accessible within the function where it’s defined in. If it’s not inside a function, it becomes globally scoped.
 
 **********************************************************************************************
 
 Globally Scoped
- A variable declared with var outside any function (or without var in non-strict mode) is globally scoped, meaning it’s accessible everywhere in our program, including inside functions, loops, or any other code.
+A variable declared with var outside any function (or without var in non-strict mode) is globally scoped, meaning it’s accessible everywhere in our program, including inside functions, loops, or any other code.
 
 Example with our code:
 
@@ -155,6 +149,25 @@ function test() {
 test(); // Outputs: 2
 
 */
+let w = 2;
+console.log(w); // Accessible here
+function test() {
+  console.log(w); // Also accessible here
+}
+/**
+In JavaScript, whether a variable declared with let w = 2 is globally scoped depends on where it is declared:
+
+If declared outside any function or block: Yes, w is in the global scope and accessible throughout the entire script (or module, if using ES modules). For example:
+
+In this case, w is globally scoped because it’s declared at the top level of the script.
+If declared inside a block or function: If w is declared inside a block (e.g., {}), function, or other scope, it is not globally scoped and is only accessible within that block or function due to let’s block-scoping behavior. For example:
+
+-------------------------------------------------------------------------------------
+In JavaScript, if you declare const t = 3 in the first line of a script (outside any function or block), it behaves similarly to let in terms of scope but with key differences due to const’s properties:
+
+Global Scope: If const t = 3 is declared at the top level of a script (outside any block or function), it is in the global scope for that script and accessible throughout the script. For example:
+
+ */
 
 let rem;
 let Rem;
@@ -176,7 +189,7 @@ console.log(Name); // Doe
  
 ========================================================
 In simple terms, "interactivity" refers to how much a user can interact with a web page or application. JavaScript is a programming language that is commonly used in web development to add interactivity to websites.
-
+  
 With JavaScript, we can create interactive features such as drop-down menus, pop-up windows, sliders, animations, and more. These features can respond to user actions such as clicks, mouse movements, or keyboard inputs, allowing users to interact with the website and its content in meaningful ways.
 
 For example, with JavaScript, a user can click a button to show or hide content on a web page, or drag and drop items to rearrange them. JavaScript can also be used to validate form inputs, perform calculations, and even create interactive games.
@@ -208,11 +221,7 @@ Undefined variables are those that are declared in the program but have not been
 */
 
 let type_of_function_in_js
-
-// Types of functions IN JS:
-
 /**
- Types of functions:
  There are two types of functions: named functions and anonymous functions.
 
 A named function is a function that has a name. It can be defined using the function keyword followed by the function name, a set of parentheses, and a set of curly braces that enclose the function's body.--
@@ -241,9 +250,7 @@ An Immediately Invoked Function ( known as IIFE and pronounced as IIFY) is a fun
 
  */
 
-
-
-// feature of js
+let feature_of_js
 /*
 
 🌟 Core Features of JavaScript
@@ -284,15 +291,10 @@ JavaScript can directly manipulate the DOM, handle events, interact with browser
 let, const for block-scoped variables
 
 Arrow functions () => {}
-
 Template literals `Hello ${name}`
-
 Destructuring { name } = obj
-
 Modules (import, export)
-
 Classes
-
 Promises & async/await
 */
 
@@ -300,29 +302,27 @@ Promises & async/await
 var str = '   hello-world   '
 // str.trim()
 var str2 = str.trim()
-// console.log(charAt(str))
-console.log(str.length) //17
-console.log(str2.length) //// 11 
-console.log('====111====')
-let temp = str.slice(0, 4)
-console.log(temp, "@@@ slice first ") // h 
-console.log(typeof temp, "@@@ slice typeof check ") // string
-console.log(str.slice(0, 4), "a slice first ") // h 
-console.log(typeof str.slice(0, 4), "a slice typeof check ") // string 
-console.log(str2.slice(0, 4), "a slice seclond ")  // hell 
+// console.log(str.length,"line567") //17
+// console.log(str2.length) //// 11 
+// console.log('====111====')
+let temp = str.slice(0, 4)  //
+// console.log(temp, "@@@ slice first ") // h 
+// console.log(typeof temp, "@@@ slice typeof check ") // string
+// console.log(str.slice(0, 4), "a slice first ") // h 
+// console.log(typeof str.slice(0, 4), "a slice typeof check ") // string 
+// console.log(str2.slice(0, 4), "a slice seclond ")  // hell 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-console.log(str.charAt(4))  //e 
-console.log(str2.charAt(4))  //o 
-console.log('=================================')
-console.log(str.indexOf('h'))  //3
-console.log(str.lastIndexOf('h')) //3
-// ========================================================================================================================
+// console.log(str.charAt(4))  //e 
+// console.log(str2.charAt(4))  //o 
+// console.log('=================================')
+// console.log(str.indexOf('h'))  //3
+// console.log(str.lastIndexOf('h')) //3
 
 // ========================================================================================================================
-console.log('================================================================================================== =======')
+// console.log('================================================================================================== =======')
 let tempAr = [3, 4, 5, 6, 6, 2, 1]
-console.log(tempAr?.slice(0, 2), " EEEEEEEEE__ ===== ")
+console.log(tempAr?.slice(0, 2), " EEEEEEEEE__ ===== ")//[ 3, 4 ]  
 
 //tostring()
 //toUpperCase()
@@ -348,8 +348,16 @@ console.log("Hello".substring(3, 1)); // "el"
 Both are similar, but:
 
 substring() does not support negative indexes
+example: 
+let str = "Hello";
+console.log(str.substring(-2, 3)); // Treats -2 as 0, outputs "Hel"
+If we pass a negative index to substring(), it treats it as 0.
 
-slice() does support negative values
+slice() does support negative indexes (e.g., -1 refers to the last character)
+let str = "Hello";
+console.log(str.slice(-2, 5)); // Outputs "lo"
+console.log(str.slice(-3, -1)); // Outputs "ll"
+
  ======================================================================================================= 
  🔍 What is slice() in JavaScript?
  
@@ -367,31 +375,77 @@ console.log(arr.slice(-3));      // [30, 40, 50]
 console.log(arr.slice(-4, -1));  // [20, 30, 40]
 
  =======================================================================================================
-===================================================
-
  */
 
 /**
  * array method:
- * array length: it return the number of elements in an array.
+ * array length: it return the number of elements in an array & returns the new length.
  * array push: it add element to the end of the array. 
- * array pop: it remove the last element from an array and return remove element.
- * array shift. 
- * array unshift.
- * array sort .
- * array reverse:
- * 
+ * array pop: it remove the last element from an array and return removed element.
+ * array shift : Removes the first element from an array and returns that element. 
+ * array unshift : Adds one or more elements to the beginning of an array and returns the new length.
+ * array sort : Sorts the elements of an array in place (mutates the array) and returns the sorted array..
+ * array reverse:Reverses the order of elements in an array in place and returns the reversed array.
+ let arr = [1, 2, 3];
+arr.reverse(); // [3, 2, 1] 
+
+------------------------------------------------------------------------------------------------
+ Additional Array Methods Commonly used : 
+Array.forEach() :
+Executes a provided function once for each array element. Does not return anything (returns undefined)
+Array.map()
+Description: Creates a new array with the results of calling a provided function on every element.
+------------------------------------------------------------------------------------------------
+Array.filter()
+Description: Creates a new array with all elements that pass a test
+------------------------------------------------------------------------------------------------
+Array.reduce()
+Description: Reduces an array to a single value by executing a reducer function for each element, accumulating a result.
+------------------------------------------------------------------------------------------------
+
+Array.find()
+Description: Returns the first element that satisfies a provided testing function, or undefined if none found.
+------------------------------------------------------------------------------------------------
+
+Array.findIndex()
+Description: Returns the index of the first element that satisfies a testing function, or -1 if none found.
+let arr = [1, 2, 3];
+let index = arr.findIndex(num => num > 2); // 2
+------------------------------------------------------------------------------------------------
+Array.includes()
+Description: Checks if an array contains a specific value, returning true or false
+let arr = [1, 2, 3];
+console.log(arr.includes(2)); // true
+-------------------------------------------------------------------------------------------------
+Array.join()
+Description: Joins all elements of an array into a string, optionally with a separator.
+--------------------------------------------------------------------------------------------------
+Array.slice()
+Description: Returns a shallow copy of a portion of an array, specified by start and end indices (end not included). Supports negative indices.
+let arr = [1, 2, 3, 4];
+let sliced = arr.slice(1, 3); // [2, 3]
+-------------------------------------------------------------------------------------------------
+Array.splice()
+Description: Modifies an array by removing, replacing, or adding elements at a specified index. Returns removed elements.
+let arr = [1, 2, 3, 4];
+arr.splice(1, 2, 'new'); // Removes [2, 3], adds 'new'
+console.log(arr); // [1, 'new', 4]
+
+Array.concat()
+Description: Merges two or more arrays, returning a new array without modifying the originals.
+
+
  */
 var ae = "eeee"
 ae = 'helo'// reassign krra h ye 
-console.log(ae) ///helo
+// console.log(ae) ///helo
 
 obj = {
   firstName: 3,
   lastname: 4, age: 5, address: 6
 }
 for (let value in obj) {
-  console.log(value)
+  // console.log(value)
 }
 //
 // firstName
@@ -401,16 +455,22 @@ for (let value in obj) {
 /**
  * Object.entries takes an object and return the key value pairs 
  */
-console.log(Object.entries(obj), "Object.entries(obj)")
+// console.log(Object.entries(obj), "Object.entries(obj)")
+[
+  ['firstName', 3],
+  ['lastname', 4],
+  ['age', 5],
+  ['address', 6]
+]
+
 /**
  * Variables declared with let and const are also hoisted but,
- *  unlike var , are not initialized with a default value. 
+ *  unlike var, are not initialized with a default value. 
  */
 
-// console.log(ab)
+// console.log(ab)// ReferenceError: Cannot access 'ab' before initialization
 const ab = 9
 {
-
 }
 
 function abc(a) {
@@ -421,26 +481,19 @@ function abc(a) {
   return sd
 }
 let rr = abc("hello")
-console.log(rr('world'), "lp");   ///opo hello and world lp
+// console.log(rr('world'), "lp");   ///opo hello and world
 // rr()
-//===========================================================
+//=========================================================---------------------------------------==
 let ee = ['rty', 'ppp', 'ertyu'];
 function sol(string) {
   return string.length === 3
 }
 let res = ee.find(sol)
-console.log(res) //rty
-
-/**
- 
-
- */
+// console.log(res) //rty
 
 /**
  "debugger” in JavaScript?
- 
  debugger is helpful for finding and fixing errors in JavaScript code.
-
  */
 
 /**
@@ -448,15 +501,12 @@ console.log(res) //rty
 NaN stands for "Not-a-Number".
 
 It’s a special value in JavaScript that means:
-
 “This value is not a valid number.”
 
 ------------------------------------------------------------
-
 typeof of NaN will return a Number.
 
 To check if a value is NaN, we use the isNaN() function,
-
 Note- isNaN() function converts the given value to a Number type, and then equates to NaN.
 
 isNaN("Hello")  // Returns true
@@ -477,8 +527,6 @@ characteristics
 Duplicate arguments are not allowed by developers:
 
 In 'non-strict' mode, JavaScript allows functions to have duplicate parameter names, which can lead to confusion or errors, as the last parameter with the same name overrides earlier ones. For example:
-javascript
-
 
 function example(a, a) {
   console.log(a); // Only the last 'a' is used
@@ -499,13 +547,14 @@ function let() {
 }
 
 In strict mode, using reserved keywords as identifiers (e.g., function or parameter names) results in a SyntaxError:
-"use strict";
+ "use strict";
 function let() { // SyntaxError: Unexpected strict mode reserved word
   console.log("This will not work");
 }
-
  */
+
 let Closures
+
 /**
  What Are Closures in JavaScript?
 Closures are functions that have access to variables from an outer function scope even after the outer function has finished executing. They “remember” the environment in which they were created.
@@ -524,12 +573,9 @@ JavaScript can throw a variety of errors, including:
 Syntax errors: Syntax errors occur when the JavaScript code is not syntactically correct.
 Runtime errors: Runtime errors occur when the JavaScript code is executed and there is a problem.
 Logical errors: Logical errors occur when the JavaScript code does not do what it is supposed to do.
-
-
 */
 
 let memoization;
-
 /*
 Q:) what is memoization?
 Memoization in JavaScript is an optimization technique used to improve the performance of functions by caching their results based on the input parameters. When a function is called with the same inputs multiple times, memoization allows the function to return the cached result instead of recomputing it, saving time and computational resources.
@@ -545,7 +591,7 @@ Arrow functions are a concise shorter way for writing JavaScript functions.
 ---------------------------------------------------------------------------------------------------------
 A generator function is a special type of function that can be paused and resumed during its execution.
 
-Using with for...of
+Using with for...of*********************
 function* range(start, end) {
   for (let i = start; i <= end; i++) {
     yield i;
@@ -558,14 +604,12 @@ for (let num of range(1, 5)) {
   */
 
 let WeakMap
-
 /*
 ---------------------------------------------------------------------------------------------------------
 WeakMap in JavaScript is a collection of key/value pairs, where keys must be objects  and values can be any data type.
-
 A WeakMap is a special kind of Map in JavaScript 
 
-let weakMap = new WeakMap();
+let weakMap = new WeakMap();  
 
 let obj = { name: "John" };
 
@@ -580,7 +624,7 @@ Only objects (or symbols in newer JS versions) can be keys (e.g., {} or new Obje
 
 Weak References: If a key object is no longer referenced elsewhere in the code, it can be garbage-collected, and its entry is automatically removed from the WeakMap.
 
-Non-Iterable: You can’t loop through a WeakMap (no .keys(), .values(), or .entries()), ensuring privacy and preventing accidental leaks.
+Non-Iterable: we can’t loop through a WeakMap (no .keys(), .values(), or .entries()), ensuring privacy and preventing accidental leaks.
 
 Limited Methods: Supports only .set(key, value), .get(key), .has(key), and .delete(key).
 
@@ -602,8 +646,7 @@ Ideal for associating metadata with DOM elements, objects, or API responses with
 Limitations
 Non-Iterable: Can’t loop through entries, so not suitable for cases where you need to access all keys/values.
 Object Keys Only: Limits flexibility compared to Map, which allows any key type.
-Debugging: Harder to inspect since you can’t see all entries.
-
+Debugging: Harder to inspect since we can’t see all entries.
 
 -----------------------------------------------------------------------------------------------------------
 
@@ -613,12 +656,10 @@ Once obj is set to null, the object is eligible for garbage collection, and the 
 
 🧠 Summary:
 WeakMap is like a Map, but:
-
 Keys must be objects
-
 Entries can be garbage collected if the object is no longer used
-
 It’s not iterable
+
 */
 
 let WeakSet
@@ -626,12 +667,9 @@ let WeakSet
 ---------------------------------------------------------------------------------------------------------
 
 🔍 What is WeakSet?
-A WeakSet is a special type of Set in JavaScript where:
- 
+A WeakSet is a special type of Set in JavaScript where: 
 It only stores objects (no primitive values like numbers or strings).
-
 The objects in a WeakSet are weakly referenced, meaning:
-
 If no other reference to an object exists, it can be garbage collected.
 
 let weakSet = new WeakSet();
@@ -645,18 +683,15 @@ console.log(weakSet.has(user)); // true
 user = null;
 // Now the object may be garbage collected
 
-❌ What You Can’t Do with WeakSet:
+❌ What we Can’t Do with WeakSet:
 
 weakSet.forEach(...);  // ❌ Not allowed
 console.log(weakSet.size);  // ❌ Not available
 
 🧠 Summary:
 WeakSet is like a Set, but:
-
 Only stores objects
-
 Stored objects are weakly held
-
 It’s not iterable and doesn’t expose its content
 */
 
@@ -666,14 +701,13 @@ What Is the Difference Between Function Declarations and Function Expressions?
 Function declarations are defined using the function keyword, while function expressions are defined by assigning a function to a variable. Function declarations are hoisted, while function expressions are not.
 
 //function declaration
-function multiple (a*b){
+function multiple (a,b){
 return a*b
 }
 
 //function expression 
-const ad =function (a,b){
-return a+b}
-
+const ad = function (a,b){
+return a+b }
 
 console.log(3,3)//9
 console.log(ad(2,3)) //5
@@ -688,14 +722,11 @@ Once the tab or window is closed, the data is cleared
 
 ---------------------------------------------------------------------------------------------------------
 */
-
 /**
  * The reduce() function is used to reduce an array to a single value by applying a function to each element and accumulating the result.
 
 🧠 Simple Explanation:
 It takes all items in an array, processes them, and gives one final value.
-
-
 */
 
 let t = [3, 4, 5, 6]
@@ -705,9 +736,7 @@ let t1 = t.reduce((a, b) => {
 
 
 // acc = accumulator (stores the total so far)
-
 // curr = current number in the array
-
 // 0 = initial value
 console.log(t1, "rrrrr  ")
 
@@ -720,11 +749,31 @@ console.log(t1, "rrrrr  ")
  Arrays can only store primitive data types and objects.
  
  Objects are indexed by strings. 
-  Objects can store primitive data types, objects and arrays.
+  Objects can store primitive data types, objects,function and arrays.
  
  ---------------------------------------------------------------------------------------------------------
  Browser Object Model is known as BOM.Browser Object Model allows users to interact with the browser. 
  
+ ---------------------------------------------------------------------------------------------------------
+ In JavaScript, the typeof operator is used to determine the type of a given value or variable.
+ function myFunc() {}
+console.log(typeof myFunc); // "function"
+----------------------------------------------
+const myFunc = function() {};
+console.log(typeof myFunc); // "function"
+
+const myArrowFunc = () => {};
+console.log(typeof myArrowFunc); // "function"
+
+const obj = { method: function() {} };
+console.log(typeof obj.method); // "function"
+ console.log(typeof NaN); // "number"
+ console.log(typeof {}); // "object"
+console.log(typeof []); // "object"
+console.log(typeof null); // "object" (common interview gotcha)
+const isFunction = fn => typeof fn === "function";
+console.log(isFunction(() => {})); // true
+console.log(isFunction("not a function")); // false
  ---------------------------------------------------------------------------------------------------------
 
 Prototype Design Pattern in JavaScript is a way to create new objects by copying an existing object, called a prototype, instead of starting from scratch. This pattern is useful when we want to create objects that are similar to an existing object, with some or all of its properties and values already set.
@@ -828,7 +877,7 @@ When we pass an object to a function, the function gets a copy of the reference 
 
 If we modify the object’s properties using that reference, the changes affect the original object because both the original reference and the copied reference point to the same object in memory.
 
-But if we try to replace the entire object (by assigning a new object to the parameter), the original object doesn’t change because you’re only modifying the copied reference, not the original one.
+But if we try to replace the entire object (by assigning a new object to the parameter), the original object doesn’t change because we’re only modifying the copied reference, not the original one.
 
 Case 1: Modifying an Object’s Properties (Looks Like Pass-by-Reference)
 function modifyObject(obj) {
@@ -839,7 +888,7 @@ const myObject = { name: "Bob" };
 modifyObject(myObject);
 console.log(myObject.name); // Outputs: "Alice"
 
-
+----------------------------------------------------------------------------------
 Case 2: Replacing the Entire Object (Shows Pass-by-Value)
 
 function replaceObject(obj) {
@@ -868,10 +917,12 @@ let default_parameter = {
 }
 /**
     The concept of default parameters is a new feature introduced in the ES6 version of JavaScript. This allows us to give default values to function parameters. Let's take an example,
-function sum(x = 3, y = 5) {
+ 
+    function sum(x = 3, y = 5) {
     // return sum
     return x + y;
 }
+
 console.log(sum(5, 15));  // 20 
 console.log(sum(7));        // 12
 console.log(sum());          // 8
@@ -879,9 +930,6 @@ In the above example, the default value of x is 3 and the default value of y is 
 sum(5, 15) - When both arguments are passed, x takes 5 and y takes 15.
 sum(7) - When 7 is passed to the sum() function, x takes 7 and y takes default value 5.
 sum() - When no argument is passed to the sum() function, x takes default value 3 and y takes default value 5.
-
-
-
 
  */
 
@@ -937,9 +985,19 @@ function test(x = 1) {
   console.log(x);
 }
 // passing undefined
+
 // takes default value 1
 test(undefined); // 1
+*/
 
+function test(x = 19) {
+  console.log(x, "pppppppppp");
+}
+// passing undefined
+
+// takes default value 19
+test(undefined); // 19
+/*
 ---------------------------------------------------------------------------------------
 ternary operator
 
@@ -953,10 +1011,9 @@ Template literals in JavaScript use backticks (`) instead of quotes to create st
 With template literals, we can use both single and double quotes inside a string.
 -----------------------------------------------------------------------------------------
 
-
 What is Arguments Binding?
 
-When you call a function in JavaScript, the values you pass (arguments) are "bound" to the function's parameters in the order they are defined. This binding determines what values the parameters will hold inside the function.
+When we call a function in JavaScript, the values we pass (arguments) are "bound" to the function's parameters in the order they are defined. This binding determines what values the parameters will hold inside the function.
 
 function example(a, b) {
     console.log(a, b);
@@ -964,19 +1021,13 @@ function example(a, b) {
 example(5, 10); // a is bound to 5, b is bound to 10
 
 -----------------------------------------------------------------------------------------
-
 -----------------------------------------------------------------------------------------
-
 */
-
-
-
-
-
 
 /**
  * Type coercion in JavaScript only coerces to the string, number, and Boolean primitive types. There's no way in JavaScript to coerce a value type to object or function .
 Type Coercion refers to the process of automatic or implicit conversion of values from one data type to another. This includes conversion from Number to String, String to Number, Boolean to Number etc. when different types of operators are applied to the values.
+
 String to Number Conversion
   var w = 10 - '5';//5
         var x = 10 * '5';//50
@@ -986,18 +1037,38 @@ Boolean to Number
 var x = true + 2;//3  
         var y = false + 2;//2
 console.log(true=="true")// default boolean (true) 1 deta hai
+
 4. The Equality Operator
       var x = (10 == '10');//true
    var y = (true == 1);//true
      var z = (true == 'true');//false
 
-Scope chain: Whenever our code tries to access a variable during the function call, it starts the searching from local variables. And if the variable is not found, it'll continue searching in its outer scope or parent functions' scope until it reaches the global scope and completes searching for the variable there
+Scope chain: Whenever our code tries to access a variable during the function call, it starts the searching from local variables. And if the variable is not found, it'll continue searching in its outer scope or parent functions' scope until it reaches the global scope and completes searching for the variable there.
 
+--------------------------------------------------------------------------------------
+*/
+let exec_and_test;
+/*
 What is the difference between exec () and test () methods in javascript?
-test () and exec () are RegExp expression methods used in javascript. 
-We'll use exec () to search a string for a specific pattern, and if it finds it, it'll return the pattern directly; else, it'll return an 'empty' result.
-We will use a test () to find a string for a specific pattern. It will return the Boolean value 'true' on finding the given text otherwise, it will return 'false'
+Both test() and exec() are JavaScript RegExp methods used to match patterns in strings, but they differ in their output and use:
+test(): Checks if a string contains a pattern and returns a boolean (true if found, false if not).
+*/
 
+const regex = /hello/;
+console.log(regex.test("hello world")); // true
+console.log(regex.test("world")); // false
+/*
+===============================================================
+
+exec(): Searches a string for a pattern and returns an array with the matched text, groups, index, and input if found, or null if not.
+===============================================================
+*/
+
+const regex1 = /hello/;
+console.log(regex1.exec("hello world")); // ["hello", index: 0, input: "hello world", groups: undefined]
+console.log(regex1.exec("world")); // null
+
+/*
 -------------------------------------------------------------------------------
 
 Currying in JavaScript is a functional programming technique where a function with multiple arguments is transformed into a sequence of functions, each taking a single argument. Instead of taking all arguments at once, a curried (curry) function returns a new function for each argument until all arguments are provided, then it computes the result

@@ -1,12 +1,12 @@
 // var, let, const variable
 // in var 
 var x = 'hello';
-var x = 'abd' //we can redeclare the variable 
-x = 'change-value' // reassign  the variable as well. 
+var x = 'abd' //we can re-declare the variable 
+x = 'change-value' // reassign the variable as well. 
 
 // in let
 let y = 'hello ';
-// let y='world'  //cannot redcalre the same variable
+// let y='world'  //cannot re-declare the same variable
 y = 'words-change value' //reassign the variable can be done.
 
 // in const 
@@ -28,7 +28,7 @@ if (true) {
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // initialization, condition, increment
 
-for (var i1 = 1; i1 <= 5; i1++) {
+for (var i1 = 1;    i1 <= 5;    i1++) {
 
 }
 console.log(i1, "line 3111")//  can access the variable   -- answer --- 6 , line 31 
@@ -44,6 +44,7 @@ console.log(i1, "line 3111")//  can access the variable   -- answer --- 6 , line
 
 // for (let j = 1; j <= 5; j++) {
 // }
+
 // console.log(j, "line 38::")//  ReferenceError: j is not defined
 
 //////////////////////////////////////////////////////////////
@@ -80,7 +81,7 @@ setTimeout(() => {
     for (var k = 1; k <= 5; k++) {
 
     }
-    console.log(k, "line 56")//  can access the variable, here var case we got amswer 
+    console.log(k, "line 56")//  can access the variable, here 'var' case we got amswer 
     // answer is 6 
 }, 1000);
 
@@ -114,7 +115,10 @@ for (var n = 0; n < 3; n++) {
 // 3 22222222222222@!# 0
 // 3 22222222222222@!# 1
 // 3 22222222222222@!# 2
+// Why:
 
+// n is 3 because the loop finishes before the timeouts trigger, and n is a var (shared across all iterations).
+// i is 0, 1, 2 because the IIFE creates a new scope for each iteration, capturing the value of n at that moment.
 /////////////////////////////////////////////////////////////////////////////////////////
 
 // for (var i = 0; i < 5; i++) {

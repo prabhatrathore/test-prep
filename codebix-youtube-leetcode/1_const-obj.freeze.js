@@ -1,13 +1,11 @@
 // CREATED A BLOG FOR THIS --DONE
 
 /**
- * difference between const and object.freeze()
- * 
- * const applies to binding it means it will create a immutable binding 
- *  that mean we assign a new value to binding
- * 
- * object.freeze works on value and more specifically, object values .it makes an object immutable that means we cannot change the properties
- * 
+  difference between const and object.freeze()
+ 
+ const: Prevents reassigning a variable to a new value, but allows modifying the content of objects or arrays.
+ Object.freeze(): Makes an object's properties immutable, so we can't be changed, added, or removed.
+  
  */
 
 let obj = {
@@ -28,14 +26,29 @@ console.log(typeof a)// undefined
 console.log(typeof b)// 3 
 
 
+const arr = [1, 2];
+arr.push(3); // Works (modifies content)
+arr = [4, 5]; // Error (can't reassign)
+
+const obj = { a: 1 };
+Object.freeze(obj);
+obj.a = 2; // Fails (properties immutable)
 
 
+// Array with Freeze:
+
+const numbers = [1, 2, 3];
+Object.freeze(numbers);
+numbers.push(4); // Fails: Cannot modify array
+numbers[0] = 5; // Fails: Cannot change elements
+
+// Nested Objects (Shallow Freeze)
+const data = { user: { name: "John" } };
+Object.freeze(data);
+data.user.name = "Jane"; // Works: Nested objects are not frozen
+data.user = {}; // Fails: Cannot change top-level property
 
 
-
-
-
-// In JavaScript, both const and freeze are used to declare variables with values that cannot be changed.
 
 // const is a keyword used to declare a variable that cannot be reassigned a new value. This means that once a const variable is assigned a value, that value cannot be changed. For example:
 
