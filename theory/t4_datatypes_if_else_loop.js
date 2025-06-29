@@ -1,27 +1,21 @@
-
 let JavaScript_Data_Types
-
 /*
 JavaScript Data Types
 JavaScript provides different data-types to hold different types of Values. 
 There are two types of data types in Java Script:
 
 1. Primitive data type: it means ,it represent single value ,pass by value, immutable
-2. Non- primitive data type: an object which represents a collection of values.
+2. Non- primitive data type: an object which represents a collection of values,an array, function
 */
 
 // var a = 40//holding number
 var b = "Rahul"; // holding String
-
 /*
 JavaScript Primitive data types
-
 String: represents Sequence of characters e.g. "hello" 
-
 Number: represents numeric Values e.g. 100
-
 Boolean Represents boolean Value either false or true
-Underfined: represents undefined Value.
+Undefined: represents undefined Value.
 Null: represents null i.e. no value at all.
 BigInt - This data type is used to store numbers which are above the limitation of the Number data type.
 Symbol - It is a new data type introduced in the ES6 version of javascript. It is used to store an anonymous and unique value.
@@ -29,11 +23,34 @@ Example :
 
 var symbol1 = Symbol('symbol');
 typeof Symbol('symbol') // Returns Symbol
-----------------------------------------------------------------------------------------------------------
+-------------------------------------------------------
+const s1 = Symbol("id");
+const s2 = Symbol("id");
 
-1:)Primitive: Primitive value are immutable. Primitive are pass by value.means To store single values at a time e.g. 
+console.log(s1 === s2); // false
+✔️ Even though both symbols have the same description "id",
+they are completely unique and different.
 
-String,Number,Boolean, Undefined, Null.
+❓ Why use Symbol?
+To create unique property keys in objects that will never clash with other keys.
+----------------------------------------------------------------------------------
+🔧 Practical Use Case:
+  const id = Symbol("id");
+
+const user = {
+  name: "Prabhat",
+  [id]: 123
+};
+
+console.log(user); // { name: 'Prabhat', [Symbol(id)]: 123 }
+console.log(user[id]); // 123
+💡 Key Points about Symbol:
+Cannot be auto-converted to string: If you try alert(id), it throws error. You must use id.toString().
+
+*/
+/*----------------------------------------------------------------------------------------------------------
+
+1:)Primitive: Primitive value are immutable. Primitive are pass by value.means To store single values at a time 
 
 Primitive types: Primitive data types can store only a single value.
 
@@ -53,9 +70,7 @@ var z = y;
 In the above example, the assign operator knows that the value assigned to y is a primitive type (number type in this case), so when the second line code executes, where the value of y is assigned to z, the assign operator takes the value of y (234) and allocates a new space in the memory and returns the address. Therefore, variable z is not pointing to the location of variable y, instead, it is pointing to a new location in the memory.
 
 var y = #8454; // y pointing to address of the value 234
-
 var z = y; 
-     
 var z = #5411; // z pointing to a completely new address of the value 234
      
 // Changing the value of y
@@ -66,7 +81,6 @@ From the above example, we can see that primitive data types when passed to anot
  
  */
 
-
 /*
 In JavaScript, when we pass a primitive data type (such as Number, String, Boolean, Undefined, Null, or Symbol) to a function, it is passed by value. This means that a copy of the value is created and passed to the function, so that the original value remains unchanged.
 
@@ -76,21 +90,18 @@ For example:
 let x = 10;
 
 function changeValue(num) {
-    num = 20;
+  num = 20;
 }
 
 changeValue(x);
-console.log(x);  // Output: 10
+console.log(x);  // Output : 10
 
 /*
-
 In this example, the 'changeValue' function takes a num parameter, which is a primitive data type (Number). When we call changeValue(x), a copy of the value of x (10) is passed to the function. Within the function, we assign a new value of 20 to num. However, this change does not affect the original value of x, which remains 10.
 This is because primitive data types are passed by value in JavaScript, meaning that a copy of the value is created and passed to the function, so that the original value remains unchanged
 
-
 2:) Non Primitive
 (To store multiple values)->( value are mutable) (pass by reference):Object,Array.
-
 
 Non-primitive types
 To store multiple and complex values, non-primitive data types are used.
@@ -98,11 +109,10 @@ To store multiple and complex values, non-primitive data types are used.
 In JavaScript, when we pass an object (including arrays and functions) to a function, it is passed by reference. This means that a reference to the object, is passed to the function.
 For example:
 */
-
 let person = { name: "John Doe", age: 26 };
 
 function changeName(obj) {
-obj.name = "Jane Do111e";
+  obj.name = "Jane Do111e";
 }
 
 changeName(person);
@@ -110,12 +120,11 @@ console.log(person.name);  // Output: "Jane Do111e"
 
 /*
 In this example, the changeName function takes an obj parameter, which is an object. When we call changeName(person), a reference to the person object is passed to the function. Within the function, we change the name property of the object to "Jane Doe".
+
 Since objects are passed by reference in JavaScript, this change is reflected in the original person object, so that its name property is now "Jane Doe".
 This is because objects in JavaScript are passed by reference, meaning that a reference to the object, rather than a copy of its value, is passed to the function. Any changes made to the object within the function are therefore reflected in the original object, as it is the same object.
 
-
-11) The keyword is a reference variable that refers to the current object.For example:
-
+11) The keyword is a reference variable that refers to the current object. For example :
 
 13)The parseInt() function is used to convert numbers between different bases. 
 parseInt() takes the string to be converted as its first parameter. 
@@ -124,22 +133,22 @@ The second parameter is the base of the given string.
 Mutable is a type of variable that can be changed. In JavaScript, only objects and arrays are mutable, not primitive values.
 
 3. What is mutable?  
-Ans-A mutable object is an object whose state can be modified after it is created. 
+Ans - A mutable object is an object whose state can be modified after it is created. 
 
-Immutables are the objects whose state cannot be changed once it is created. Strings and Numbers are Immutable.  
+Immutables are the those, whose state cannot be changed once it is created. Strings and Numbers are Immutable.  
  
 */
 
-let x1= {}, y = {name:"Ronny"},z = {name:"John"};
+let x1 = {}, y = { name: "Ronny" }, z = { name: "John" };
 let t;
-let t1={}
-x1[y] = {name:"Vivek"};
+let t1 = {}
+x1[y] = { name: "Vivek" };
 
-x1[z] = {name:"Akki"};
+x1[z] = { name: "Akki" };
 
 console.log(x1[y]);  /// { name: 'Akki' }
-console.log(x1[t1],'D');//{ name: 'Akki' } D
-console.log(x1,'ggggg'); //{ '[object Object]': { name: 'Akki' } } ggggg
+console.log(x1[t1], 'D');//{ name: 'Akki' } D
+console.log(x1, 'ggggg'); //{ '[object Object]': { name: 'Akki' } } ggggg
 /*
 In JavaScript, when an object is used as a key in another object, it is automatically converted to a string using the toString() method. In this case, both y and z are objects, so they will be converted to strings and used as keys in the x1 object.
 
@@ -271,8 +280,8 @@ It evaluates the Content only if expression is true.
 Example
 */
 var a13 = 20;
-if (a13>10) {
-// document. Write ("value of a is grater than 10");
+if (a13 > 10) {
+  // document. Write ("value of a is grater than 10");
 
 }
 /*
@@ -313,19 +322,19 @@ document. Write ("a is not equal to 10, 15 or 20"); 3
 
 
 
- JavaScript Switch Statement
+ JavaScript Switch Statement
 Use the switch statement to select one of many code blocks to be executed.
 
 Syntax
 switch(expression) {
-  case x:
-    // code block
-    break;
-  case y:
-    // code block
-    break;
-  default:
-    // code block
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
 }
 
 JavaScript Loops
@@ -340,7 +349,7 @@ There are four types of loops in JavaScript.
 The JavaScript for loop iterates the elements for the fixed number of times. It should be used if number of iteration is known. The syntax of for loop is given below.
 for (initialization; condition; increment)  
   {  
-      code to be executed  
+      code to be executed  
   }  
 Let’s see the simple example of for loop in javascript.
 
@@ -405,12 +414,12 @@ Post-increment (x++): Returns the current value, then increments the variable.
 
 */
 let x2 = 5;
-console.log(++x2,'WWWWWW'); // 6
-console.log(x2,"!!!!!!!!!!"); // 6 
+console.log(++x2, 'WWWWWW'); // 6
+console.log(x2, "!!!!!!!!!!"); // 6 
 
 let y2 = 10;
 console.log(y2++); //10 
-console.log(y2,"hj22"); // 11
+console.log(y2, "hj22"); // 11
 
 
 let a4 = 3;

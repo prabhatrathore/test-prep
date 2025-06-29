@@ -6,8 +6,6 @@ let JavaScript_Objects
 JavaScript is object-based and prototype-based, but now also supports class-based syntax (from ES6).
 You can create objects with or without using classes
 
-
-
 Creating Objects in JavaScript
 
 There are 3 Ways to create objects.
@@ -83,10 +81,7 @@ Object.assign(target, source);
 console.log(target); // outputs: { city: 'New York', name: 'John', age: 30 }
 
 // In this example, the properties name and age from the source object are copied to the target object using Object.assign().
-
-
 /*
----------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
 
 

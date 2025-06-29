@@ -1057,6 +1057,8 @@ test(): Checks if a string contains a pattern and returns a boolean (true if fou
 const regex = /hello/;
 console.log(regex.test("hello world")); // true
 console.log(regex.test("world")); // false
+// const t2 =/hello/
+// console.log(t2?.test)
 /*
 ===============================================================
 
@@ -1072,8 +1074,7 @@ console.log(regex1.exec("world")); // null
 -------------------------------------------------------------------------------
 
 Currying in JavaScript is a functional programming technique where a function with multiple arguments is transformed into a sequence of functions, each taking a single argument. Instead of taking all arguments at once, a curried (curry) function returns a new function for each argument until all arguments are provided, then it computes the result
-
- */
+*/
 
 // Regular function
 function add(a, b, c) {
@@ -1088,9 +1089,18 @@ function curryAdd(a) {
     };
   };
 }
+function hg(a) {
+
+  return function (g) {
+    return function (j) {
+      return a + g + j
+    }
+  }
+}
+console.log(hg(3)(4)(5))//12  
 
 // Usage
-console.log(curryAdd(1)(2)(3)); // Output: 6
+// console.log(curryAdd(1)(2)(3)); // Output: 6
 
 // Partial application
 const add1 = curryAdd(1); // Returns a function waiting for b
@@ -1100,14 +1110,93 @@ console.log(add1and2(3)); // Output: 6
 /**
  Benefits of Currying in JavaScript
  Function Reusability:
-Curried functions are modular, enabling you to reuse logic with different arguments.
+Curried (curry) functions are modular, enabling you to reuse logic with different arguments.
 Delayed Execution:
 Arguments are evaluated only when all are provided, allowing flexible control over when the function runs. This is useful for lazy evaluation or deferred computations.
 
-
+-------------------------------------------------------------------------------------------
 Negatives of Currying in JavaScript
 Increased Complexity:
 Currying can make code harder to read and understand, especially for developers unfamiliar with functional programming. Nested function calls like f(a)(b)(c) can feel unintuitive compared to f(a, b, c).
+
+------------------------------------------------------------------------------------
+functional programming explain ?
+✅ Functional Programming (FP) is a programming style where:
+we write functions as building blocks.
+Functions are pure (no side effects).
+You focus on what to do, not how to do it.
+----------------------------------
+Core Concepts of FP in JS
+Pure Functions
+
+Always return the same output for same input.
+No side effects (don’t change external data).
+function add(a, b) {
+  return a + b;
+}
+// No dependency on external data, no modification outside.
+------------------------------------------------------------------
+First-Class Functions
+
+ In JavaScript, functions are first-class citizens.
+➡️ This means:
+    Functions can be stored in variables.
+    Passed as arguments to other functions.
+    Returned from other functions.
+
+function greet(name) {
+  return "Hello, " + name;
+}
+
+function processUser(name, callback) {
+  return callback(name);
+}
+
+console.log(processUser("Prabhat", greet)); // Hello, Prabhat
+-----------------------------------------------------------------------
+ => Higher-Order Functions
+✅ A Higher-Order Function (HOF) is a function that:
+Takes another function as an argument, or
+Returns another function.
+
+const numbers = [1, 2, 3, 4];
+const squared = numbers.map(num => num * num);
+console.log(squared); // [1, 4, 9, 16]
+------------------------------------------------
+map, filter, reduce are?
+✅ They are Higher-Order Functions.
+➡️ Because they take a function as an argument (the callback you pass to map, filter, or reduce).
+🔹 Example with map:
+const nums = [1, 2, 3];
+const doubled = nums.map(x => x * 2);
+
+------------------------------------------------------------------------------------
+✅ The find method is used on arrays to find the first element that satisfies a given condition.
+
+➡️ It returns the first matching element, or undefined if no match is found.
+const numbers = [5, 12, 8, 130, 44];
+const found = numbers.find(element => element > 10);
+console.log(found); // 12
+
+------------------------------------------------------------------------------------
+🚀 Is find a higher-order function?
+✅ Yes, it is a higher-order function.
+➡️ Why?
+Because find takes a function (callback) as an argument to decide which element to return.
+
+------------------------------------------------------------------------------------
+
+⚡ How does First-Class relate to Higher-Order?
+✔️ First-class functions are a language feature (JS treats functions like variables).
+✔️ Higher-order functions are a use-case or implementation (functions that take or return functions).
+
+🔑 In simple words:
+First-class functions = capability
+Higher-order functions = usage of that capability
+
+------------------------------------------------------------------------------------
+
+
 
 ------------------------------------------------------------------------------------
 Scope Chain: in js 
@@ -1195,8 +1284,13 @@ Key points to remember about classes:
 
 Unlike functions, classes are not hoisted. A class cannot be used before it is declared.
 A class can inherit properties and methods from other classes by using the extend keyword.
-All the syntaxes inside the class must follow the strict mode(‘use strict’) of javascript. An error will be thrown if the strict mode rules are not followed
+All the syntaxes inside the class must follow the strict mode(‘use strict’) of javascript. An error will be thrown if the strict mode rules are not followed. 
 
+------------------------------------------------------------------------------------------------
+ Quick Tips
+✅ map, filter, reduce, find are Higher-Order Functions
+✅ splice, sort, reverse, push, pop, shift, unshift modify original array
+✅ slice, map, filter, concat return new arrays (don’t mutate original)
 ------------------------------------------------------------------------------------------------
 What would be the output of the below JavaScript code?
 var a = 10;
@@ -1209,41 +1303,50 @@ a += typeof abc;
 
 }
 
-console.log(a);
+console.log(a);//////10undefined
+Here, function abc(){} is a function expression inside an if condition.
 
-The output of this JavaScript code will be 10undefined. The if condition statement in the code evaluates using eval. Hence, eval(function abc(){}) will return function abc(){}.
+✅ In JavaScript:
+function abc(){} evaluates to the function object itself, which is truthy.
+So, the if block runs.
 
-Inside the if statement, executing typeof ABC returns undefined because the if statement code executes at run time while the statement inside the if condition is being evaluated.
-
+🔍 Key Point
+In this context:
+abc is NOT defined in the outer scope.
+The function expression function abc(){} does not create abc in the outer scope.
+In function expressions with names (named function expressions), the name is only available inside the function itself, not outside.
+////////////
 ------------------------------------------------------------------------------------------------
-
-
+*/
+let t4 = 2
+if (function el() { }) {
+  t4 = t4 + typeof el
+}
+// console.log(t4, "t44444444444")
+/*
 . What will be the output of the following code?
-var Bar = Function Foo()
-
-{
-
-return 11;
-
+*/
+var Bar = function Foo() {
+  return 11;
 };
 
-typeof Foo();
-
+// console.log(typeof Foo(), "llllllllll")//ReferenceError: Foo is not defined
+/*
 The output would be a reference error since a function definition can only have a single reference variable as its name.  
 ------------------------------------------------------------------------------------------------
 What will be the output of the following code?
+*/
 var Student = {
-
   college: "abc",
-
 };
 
 var stud1 = Object.create(Student);
 
 delete stud1.college;
+// delete Student.college;
 
-console.log(stud1.company);
-
+console.log(stud1.college, "eeeeeeeeeeeeeeeeee!!!!!!");
+/*
 This is essentially a simple example of object-oriented programming.  Therefore, the output will be ‘abc’ as we are accessing the property of the student object.
 
 ------------------------------------------------------------------------------------------------
@@ -1326,6 +1429,7 @@ class Car {
 
 const car1 = new Car("BMW");
 car1.drive(); // BMW is driving
+
 /*
 -------------------------------------------------------------------------------
 🔸 Types of Methods:
@@ -1376,6 +1480,7 @@ Inheritance = extends + super()
 
 
 🔹 Encapsulation | Abstraction | Polymorphism (OOP Pillars)-----------------------------------------
+
 ✅ 1. Encapsulation
 Definition:
 Wrapping data (variables) and methods (functions) into a single unit — a class.
@@ -1384,9 +1489,6 @@ Goal: Protect data and prevent direct access from outside.
 
 Example:
 
-js
-Copy
-Edit
 class Person {
   constructor(name) {
     let _name = name; // private
