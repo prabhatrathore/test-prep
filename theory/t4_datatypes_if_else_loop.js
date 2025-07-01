@@ -173,19 +173,16 @@ console.log((a1 == b1));//true
 console.log((a1 === b1));///false
 
 /*
-what is concurrent  in node js
+what is concurrent in node js
 Concurrency is an essential feature of Node. js that enables it to handle large numbers of I/O operations simultaneously, without blocking the execution thread. This concurrency model allows Node. js to handle many requests concurrently, resulting in improved application performance.
-
 */
 
 /*
 JavaScript Operators
 JavaScript Operators are symbols that are used to perform Operations on operands.
 
-
 Arithmetic Operators: use to perform arithmetic operation on the operands.
 E.g:
- 
 Operator	Description	Example
 +	Addition	10+20 = 30
 -	Subtraction	20-10 = 10
@@ -194,7 +191,7 @@ Operator	Description	Example
 %	Modulus (Remainder)	20%10 = 0
 ++	Increment	var a=10; a++; Now a = 11
 --	Decrement	var a=10; a--; Now a = 9
-
+-------------------------------------------------------------------------------------
 
 Comparison Operators:
 
@@ -209,8 +206,6 @@ Operator	Description	Example
 <	Less than	20<10 = false
 <=	Less than or equal to	20<=10 = false
 
-
-
 Logical Operators:
 
 The following operators are known as JavaScript logical operators.
@@ -222,11 +217,9 @@ The following operators are known as JavaScript logical operators.
 OR ( | | ) operator - If the first value is truthy, then the first value is returned. Otherwise, always the second value gets returned.
 
 AND ( && ) operator - If both the values are truthy, always the second value is returned. If the first value is falsy then the first value is returned or if the second value is falsy then the second value is returned.
-
-
+--------------------------------------------------------------------------------------------
 
 Assignment Operators: 
-The following operators are known as JavaScript assignment operators.
 Operator	Description	Example
 =	Assign	10+10 = 20
 +=	Add and assign	var a=10; a+=20; Now a = 30
@@ -234,8 +227,6 @@ Operator	Description	Example
 *=	Multiply and assign	var a=10; a*=20; Now a = 200
 /=	Divide and assign	var a=10; a/=2; Now a = 5
 %=	Modulus and assign	var a=10; a%=2; Now a = 0
-
-
 
 Java Script Special Operators
 The following Operators are known as JavaScript Special operators.
@@ -255,14 +246,6 @@ Typeof: Checks the type of object .
 
 Void : it discards the expression's return value. 
 Yield: checks what is returned in a generator by the generator's interator.
-*/
-
-
-/*
-
-*/
-/*
-
 */
 /*
 Java Script If- else
@@ -285,43 +268,31 @@ if (a13 > 10) {
 
 }
 /*
-
 JavaScript if... else statement 
-
 If evaluates the content whether condition is true of false.
 
 Example
-<script>
 Var a = 20;
 if (a% 2 = 0) {
 document. Write ("a is even number");
 3 else {
 document. Write ("a is odd number ");.
-</script>
-
+-------------------------------------------------------------------------
 JavaScript If... else if statement
-
 It evaluates the content only if expression is true.
 Example
-<script>
 Var a = 20;
 if (a== 10){
 document. Write ("a is equal to 10");
-Defe
-14
+
 else if (a = = 15) {
 document. Write ("a is equal to 15");
-3
 else if (a== 20){
 document. Write ("a is equal to 20");
 else{
 document. Write ("a is not equal to 10, 15 or 20"); 3
-</script>
 
-
-
-
-
+----------------------------------------------------------------------------------
  JavaScript Switch Statement
 Use the switch statement to select one of many code blocks to be executed.
 
@@ -338,7 +309,7 @@ switch(expression) {
 }
 
 JavaScript Loops
-The JavaScript loops are used to iterate (to say or do again or again and again) the piece of code using for, while, do while or for-in loops. It makes the code compact. It is mostly used in array.
+JavaScript loops repeat a block of code multiple times. They make code shorter and are mostly used to go through arrays.
 There are four types of loops in JavaScript.
 1.for loop
 2.while loop
@@ -353,26 +324,20 @@ for (initialization; condition; increment)  
   }  
 Let’s see the simple example of for loop in javascript.
 
-1.<script>  
-2.for (i=1; i<=5; i++)  
-3.{  
-4.document.write(i + "<br/>")  
-5.}  
-6.</script>  
-
-
-
+for (i=1; i<=5; i++)  
+{  
+document.write(i + "<br/>")  
+}  
+----------------------------------------------------------------------------------------------------
 
 2) JavaScript while loop
-1.The while loop in JavaScript is a control structure that allows you to repeatedly execute a block of code as long as a certain condition is true. The basic syntax of a while loop is:while (condition)  
-2.{  
-3.    code to be executed  
-4.}  
+The while loop in JavaScript is a control structure that allows us to repeatedly execute a block of code as long as a certain condition is true. The basic syntax of a while loop is:
+while (condition)  
+{  
+    code to be executed  
+}  
 
-while (condition) {
-  // code to be executed
-}
-Here, condition is a boolean expression that evaluates to either true or false. If the condition is true, the code within the loop is executed. Once the code has finished executing, the condition is re-evaluated. If the condition is still true, the code within the loop is executed again. This continues until the condition evaluates to false, at which point the loop terminates and the program continues with the next line of code after the loop.
+Here, condition is a boolean expression that evaluates to either true or false. If the condition is true, the code within the loop is executed. Once the code has finished executing, the condition is re-evaluated.  If the condition is still true, the code within the loop is executed again. This continues until the condition evaluates to false,
 For example:
 let count = 1;
 
@@ -388,24 +353,17 @@ In this example, the while loop continues to execute as long as count is less th
 4
 5
 
-
-
-
+-----------------------------------------------------------------------------------------
 
 3) JavaScript do while loop
 The JavaScript do while loop iterates the elements for the infinite number of times like while loop. But, code is executed at least once whether condition is true or false. The syntax of do while loop is given below.
-1.do{  
-2.    code to be executed  
-3.}while (condition);  
-
-
+do{  
+    code to be executed  
+}while (condition);  
+-----------------------------------------------------------------------------------
 
 4) JavaScript for in loop
 The JavaScript for in loop is used to iterate the properties of an object. 
-
-
-
-
 
 */
 /*
@@ -414,8 +372,8 @@ Post-increment (x++): Returns the current value, then increments the variable.
 
 */
 let x2 = 5;
-console.log(++x2, 'WWWWWW'); // 6
-console.log(x2, "!!!!!!!!!!"); // 6 
+console.log(++x2, 'WWWWWW');// 6
+console.log(x2, "!!!!!!!!!!");// 6 
 
 let y2 = 10;
 console.log(y2++); //10 
@@ -443,7 +401,7 @@ function test(x) {
   return ++x + x++;    //  2 + 2
 }
 let x3 = 1;
-console.log(test(x3));  //  4   --doubt
+console.log(test(x3));  //  4  --doubt
 console.log(x3);   // 1
 
 
@@ -470,16 +428,3 @@ let a = 4;
 let b5 = a++ + ++a + a--;   // 4  + 6 +6
 console.log(a, b5);  // 5, 16
 
-
-/*
-
-*/
-/*
-
-*/
-/*
-
-*/
-/*
-
-*/

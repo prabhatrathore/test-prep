@@ -9,8 +9,8 @@ let a = this;
 console.log(a);  // Window {}
 
 this.name = 'Sarah';
-console.log(window.name); // Sarah
-// Here, this.name is the same as window.name.
+console.log(this.name); // Sarah
+// Here, this.name is the same as this.name.
 
 /*
 
@@ -28,7 +28,7 @@ greet(); // Window {}
 
 3. this Inside Constructor Function
 In JavaScript, constructor functions are used to create objects. When a function is used as a constructor function, this refers to the object inside which it is used. For example,
-
+*/
 function Person() {
     this.name = 'Jack';
     console.log(this);
@@ -36,16 +36,24 @@ function Person() {
 
 let person1 = new Person();
 console.log(person1.name);
-Output
+// Output
+// Person {name: "Jack"}
+// Jack
 
-Person {name: "Jack"}
-Jack
+function P(name) {
+    this.name = name
+
+}
+let t = new P("ramji")
+console.log(t, 'tttt')
+/*
+-------------------------------------------------------------------
 Here, this refers to the person1 object. That's why, person1.name gives us Jack.
 
 Note: When this is used with ES6 classes, it refers to the object inside which it is used (similar to constructor functions).
 
 4. this Inside Object Method
-When this is used inside an object's method, this refers to the object it lies within. For example,
+When this is used inside an object's method, this refers to the object itself . For example,
 
 const person = {
     name : 'Jack',
@@ -61,13 +69,13 @@ const person = {
 
 person.greet();
 Output
-
 {name: "Jack", age: 25, greet: ƒ}
 Jack
 In the above example, this refers to the person object.
+------------------------------------------------------------------------------------------------
 
 5. this Inside Inner Function
-When you access this inside an inner function (inside a method), this refers to the global object. For example,
+When we access this inside an inner function (inside a method), this refers to the global object. For example,
 
 const person = {
     name : 'Jack',
@@ -187,3 +195,8 @@ function greet() {
 greet.call(this); // Jack
 When you pass this with the call() function, greet() is treated as the method of the this object (global object in this case).
  */
+function A(n) {
+    this.name = n
+}
+let te = new A("shyaaaam")
+console.log(te, "ffffffffff")

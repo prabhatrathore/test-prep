@@ -2,7 +2,15 @@
 everything is object in js 
 javacript is template based not class based means hum directly  object create kr skte .
 
-there are three way to create object 
+Q: In JavaScript, how many different methods can you make an object?
+// Object.
+// using Class.
+// create Method.
+// Object Literals.
+// using Function.
+// Object Constructor.
+
+
 1:) object literal 
 2:) by creating instance of object directly (using new keyword)
 3:) by using an object constructor (using new keyword)
@@ -52,4 +60,3 @@ var e = new employee(1, "rrrra", 220000) //ye constructor h
 for (let value in e) {
     console.log(value, ":", e[value])
 }
-console.log("=============2222222222222======")

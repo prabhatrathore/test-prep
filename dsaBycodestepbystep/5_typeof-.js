@@ -108,7 +108,7 @@ function hello1() {   // e.g. of closure means execution time ke upr outer funct
 }
 var innerFunc = hello1()
 console.log(innerFunc())
-console.log("=====closure==question===")
+
 function closure() {
     var a = 6
     function inner(num) {
@@ -118,7 +118,6 @@ function closure() {
 }
 let res = closure()
 console.log(res(10))
-console.log("======555555555======")
 function closure2(b) {
 
     return (a) => {

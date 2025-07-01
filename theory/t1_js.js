@@ -1,8 +1,5 @@
-
 let WHat_is_Javascript
-
 /**
-1) WHat is Javascript:
 JavaScript is a scripting programming language used in client side that allows us (developers) to make web pages interactive.***
 
  A scripting language is a kind of programming language that is used to automate the execution of operations in a runtime environment. 
@@ -10,9 +7,9 @@ JavaScript is a scripting programming language used in client side that allows u
 JavaScript is an object-based scripting language, meaning it uses objects to represent data and functionality,
 JavaScript is also cross-platform, which means it can be run on any device that has a web browser,
 JavaScript follow synchronous pattern
-it is single threaded.
+it is single threaded .
 
-Dynamic Typing *************
+Dynamic Typing ****
 JavaScript is dynamically typed, which means: we don’t need to mention the type of a variable.
 A variable can hold any type of value, and it can change later.
 
@@ -20,7 +17,8 @@ let x = 10;           // x is a number
 x = "Hello";         // now x is a string
 x = [1, 2, 3];      // now x is an array
 x = { name: "JS" } // now x is an object
-
+*/
+/*
   ------------------------------------------------------------------------------------------------------------
   Q: Why JavaScript is known as a lightweight programming language ?
   JavaScript is considered a lightweight language due to its low CPU usage, minimalist syntax,  ease of implementation.
@@ -111,7 +109,6 @@ JavaScript has a call stack (where code executes), a task queue (for pending tas
 When an async operation (e.g., setTimeout) is encountered, it’s sent away (offloaded)  to the web API. Once the operation is ready, its callback is placed in the task queue.
 The event loop continuously checks the call stack. If the stack is empty, it takes the next task from the queue and pushes it to the stack for execution.
 
-
 console.log("Start");
 setTimeout(() => console.log("Timeout"), 0);
 console.log("End");
@@ -119,6 +116,65 @@ console.log("End");
 Output: Start, End, Timeout
 
 -----------------------------------------------------------------------------------------------------------
+ 
+---example---------------------------------------------
+console.log("1");
+
+setTimeout(() => {
+  console.log("2");
+}, 1000);
+
+console.log("3");
+----------------------------------------------------------------------------
+
+🧠 1. Call Stack (Main Execution)
+This is where code is executed line by line.
+
+console.log("1") → goes into the stack → runs → pops out.
+
+setTimeout(...) → goes into the stack → passed to Web APIs → pops out.
+
+console.log("3") → runs next.
+
+So the stack looks like:
+
+| console.log("1") | → done
+| setTimeout(...)  | → passed to Web API
+| console.log("3") | → done
+
+
+🌐 2. Web APIs
+These are provided by the browser (or Node) to handle asynchronous stuff outside the main thread.
+
+---------------------------------------------------------------------------------------------------
+In our case:
+
+setTimeout(() => console.log("2"), 1000)
+Web API starts a timer in the background.
+Once 1000ms is over, this callback run:
+() => console.log("2")
+
+---------------------------------------------------------------------------------------------------------
+🗂️ 3. Callback Queue (aka Task Queue or Message Queue)
+After the timer ends, the callback is added to this queue.
+
+But it will not run immediately.
+Instead, it waits until the Call Stack is empty.
+
+🔁 4. Event Loop – The Boss
+The Event Loop keeps checking:
+
+“Is the call stack empty?”
+If yes, it picks the first task from the Callback Queue and pushes it into the Call Stack to execute.
+
+So here:
+
+After console.log("3") finishes, the call stack becomes empty.
+
+Event Loop picks () => console.log("2") and runs it.
+
+
+
 -------------------------------------------------------------------------
 
 JavaScript is a programming language .explain 
@@ -586,8 +642,7 @@ Recursion is a technique where a function call itself until it arrive at a resul
 
 ----------------------------------------------------------------------------------------------------
 
-Arrow functions are a concise shorter way for writing JavaScript functions.
-
+Arrow functions were introduced in the ES6 version of javascript. They provide us with a new and shorter syntax for declaring functions. Arrow functions can only be used as a function expression
 ---------------------------------------------------------------------------------------------------------
 A generator function is a special type of function that can be paused and resumed during its execution.
 
@@ -1551,3 +1606,46 @@ Abstraction	Show only required details	methods
 Polymorphism	One method, many forms	override
 
 */
+function afg(){
+
+}
+console.log(typeof afg,"aaaaaaaaaaaaaaaa")//function 
+console.log(typeof NaN,"aaaaaaaaaaaaaaaa")//number 
+// What will be the result of the following code?
+let x = 10;
+let y = (x++, x + 1, x * 2);
+console.log(y);//22
+
+// Explanation:
+
+// The comma operator ( , ) evaluates all expressions but returns the value of the last one.
+// x++ increments x to 11, but the result of this expression is the original 10.
+// x + 1 becomes 11 + 1 = 12, and the final expression x * 2 evaluates to 11 * 2 = 22, which is assigned to y.
+/**
+ console.log('A');
+setTimeout(() => console.log('B'), 0);
+Promise.resolve().then(() => console.log('C'));
+console.log('D');//A D C B
+
+Explanation:
+
+The synchronous code runs first, logging 'A' and 'D'.
+Promise callbacks (microtasks) are executed before setTimeout (macrotasks). So 'C' is logged before 'B'.
+
+***************************************************************
+What will be the output of this recursive function?
+function foo(num) {
+  if (num === 0) return 1;
+  return num + foo(num - 1);
+}
+console.log(foo(3)); //3
+Explanation:
+
+The function works recursively:
+foo(3) → 3 + foo(2)
+foo(2) → 2 + foo(1)
+foo(1) → 1 + foo(0)
+foo(0) → 1
+So, the total is 3 + 2 + 1 + 1 = 7.
+
+ */

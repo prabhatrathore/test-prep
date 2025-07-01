@@ -26,22 +26,23 @@ An application programming interface key is a unique identifier used to authenti
 
  3: HMAC
 HMAC stands for Hash-based Message Authentication Code.
-
 A digital signature using a hash algorithm (e.g., MD5, SHA-1) to ensure data integrity and authenticity.
 
 4: OAuth 
-Allows users to grant apps or websites access to their data on other platforms (e.g., Google, Facebook) without sharing passwords.
+A way to let apps or websites use our data from other platforms (like Google or Facebook) without giving them our password.
 
-Why it’s great: It’s secure because your password stays private, and we control what data the app can access. Big platforms like Google, Facebook, and Twitter use OAuth to let third-party apps (e.g., social media tools or login services) connect safely.
+🔹 Why it’s good:
+our password stays safe and secret.
+You can control what data they can see.
 
-For example, when we “Sign in with Google” on a website, that’s OAuth at work!
-
+🔹 Example:
+When you click “Sign in with Google” on a website, it uses OAuth to log you in safely.
 --------------------------------------------------------------------------------------------------------------
 
 Q3😊 What Is JWT? 
 JWT (JSON Web Token) is a compact, self-contained way to securely transmit information between parties, often used for authentication and authorization. It’s like a digital passport that proves who we are and what we’re allowed to do.
 
-Simple Explanation:
+
 A JWT is a string of characters that contains three parts, separated by dots (.):
 
 Header: Defines the token type (JWT) and the signing algorithm (e.g., HMAC SHA256).
@@ -77,18 +78,13 @@ What is a token?
 A token is a string of characters that represents a piece of information, often used for authentication or authorization in systems (like APIs or web applications).
 
 (In the context of JWT (JSON Web Token), a token is a digitally signed string that contains encoded data (like user identity or permissions) and is used to verify a user’s identity or access rights securely.)
-
- 
-
-
  */
 
 /**
-
 -----------------------------------------------------------------------------------------------
 HTTP status codes are three-digit numbers returned by a server to indicate the outcome of a client’s request 
 
-They tell you whether the request was successful, failed, or needs further action. They’re grouped into five categories:
+They tell us whether the request was successful, failed, or needs further action. They’re grouped into five categories:
 
 Simple Breakdown of Status Code Categories:
 1xx (Informational): Request received, processing continues (rarely seen by users).

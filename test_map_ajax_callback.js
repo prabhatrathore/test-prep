@@ -45,39 +45,6 @@ for (let el of string) {
 }
 // console.log(temparr2, "temparra 22")
 ///////////////////////////////////////////////////////////////////////////////////
-/**
- 
-In JavaScript, new Map() creates a Map object, which is a collection of key-value pairs where keys and values can be of any type (e.g., strings, numbers, objects, etc.). Unlike regular objects, Maps maintain the insertion order of elements and allow keys of any data type, not just strings or symbols.
-we can add, retrieve, update, or remove key-value pairs, and it remembers the order in which we added them.
-
-Purpose: Similar to objects but allows any value as keys.
-Example:
-const person = new Map();
-person.set("Name", "Alex");
-console.log(person); // Outputs: Map { "Name" => "Alex" }
------------------------------------------------------------------------------
-Methods:
-get(key): Gets the value for a key.
-set(key, value): Adds or updates a key-value pair.
-delete(key): Removes a key-value pair.
-clear(): Removes all key-value pairs.
-has(key): Checks if a key exists (returns true or false).
-keys(): Returns an iterator of all keys.
-
- */
-
-// example 
-let objItems = new Map()
-objItems.set(2, 2)
-objItems.set(12, 22)
-// console.log(objItems,"objItems")
-// console.log(o)
-let object1 = new Map()
-let temp = { name: "map first" }
-object1.set(temp, "first map initialise")
-// object1.clear()
-// object1.delete(temp)
-// console.log(object1, '???????????????????????????????', object1.has(temp),  object1.get(temp),object1.keys())
 
 // -------------------------------------------------------------------------------
 let obj1 = {
@@ -189,9 +156,7 @@ function change(element, text, style, time, onsuccess, onfailure) {
 
 }
 
-///////////====================promises======================================
 
-//promise represent krta hai future value hame abhi nhi pta ,baad mai pta chlegi 
 console.log("script start");
 arr = ['box', 'pen', ''];
 const promise = new Promise((res, rej) => {  //here we create a promise object 

@@ -1,11 +1,46 @@
 /**
- * 
+ 
+In JavaScript, new Map() creates a Map object, which is a collection of key-value pairs where keys and values can be of any type (e.g., strings, numbers, objects, etc.). Unlike regular objects, Maps maintain the insertion order of elements and allow keys of any data type, not just strings or symbols.
+
+we can add, retrieve, update, or remove key-value pairs, and it remembers the order in which we added them.
+
+Purpose: Similar to objects but allows any value as keys.
+Example:
+const person = new Map();
+person.set("Name", "Alex");
+console.log(person); // Outputs: Map { "Name" => "Alex" }
+-----------------------------------------------------------------------------
+
+Methods:
+get(key): Gets the value for a key.
+set(key, value): Adds or updates a key-value pair.
+delete(key): Removes a key-value pair.
+clear(): Removes all key-value pairs.
+has(key): Checks if a key exists (returns true or false).
+keys(): Returns an iterator of all keys.
+
+ */
+
+// example 
+let objItems = new Map()
+objItems.set(2, 2)
+objItems.set(12, 22)
+// console.log(objItems,"objItems")
+// console.log(o)
+let object1 = new Map()
+let temp = { name: "map first" }
+object1.set(temp, "first map initialise")
+// object1.clear()
+// object1.delete(temp)
+// console.log(object1, '???????????????????????????????', object1.has(temp),  object1.get(temp),object1.keys())
+
+/**
+ 
   map Function
  The map function takes an array, applies a transformation to each element, and returns a new array with the transformed values. The new array always has the same number of elements as the original array
 
  filter Function
  The filter function takes an array, checks each element against a condition, and returns a new array with only the elements that pass the condition.
-
 
  Array Method .forEach()
 The .forEach() method executes a callback function on each of the elements in an array in order.
@@ -146,6 +181,83 @@ const user = { name: "Alex" };
 const boundFunction = sayHi.bind(user);
 boundFunction(); // Outputs: Hi, Alex
 .......................................................................
+
+
+9) What do you understand by the first class function in JavaScript?
+🔹 1. First-Class Functions in JavaScript
+✅ Meaning:
+In JavaScript, functions are treated like values (just like numbers or strings).
+
+This means you can:
+
+Store them in variables
+Pass them as arguments to other functions
+Return them from functions
+
+🧠 Simple Definition:
+"Functions that can be assigned to a variable, passed as arguments, or returned — just like regular data — are called first-class functions."
+
+🧪 Example:
+const greet = function() {
+  console.log("Hello!");
+};
+
+function saySomething(fn) {
+  fn();  // calling the function passed as argument
+}
+
+saySomething(greet);  // Output: Hello!
+
+----------------------------------------------------------------------------------------------
+
+🔹 2. Higher-Order Functions
+✅ Meaning:
+A higher-order function is a function that takes another function as an argument OR returns a function.
+
+In short:
+
+“Function that works with other functions — either by taking them or returning them.”
+
+✨ Examples:
+1. Takes a function as an argument:
+function myHigherOrderFunction(arr, fn) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(fn(arr[i]));
+  }
+  return result;
+}
+
+function square(x) {
+  return x * x;
+}
+
+console.log(myHigherOrderFunction([1, 2, 3], square));
+// Output: [1, 4, 9]
+
+2. Returns a function:
+
+function addNumber(n) {
+  return function(x) {
+    return x + n;
+  };
+}
+
+const addFive = addNumber(5);
+console.log(addFive(10));  // Output: 15
+
+✅ Built-in Higher-Order Functions in JS:
+Some popular ones:
+
+map()
+filter()
+reduce()
+
+🔚 Summary
+Concept	                 Explanation
+First-Class Function	Functions are treated like variables (can be stored, passed, returned)
+Higher-Order Function	Functions that take or return other functions
+    
 .......................................................................
 .......................................................................
 .......................................................................

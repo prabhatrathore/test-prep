@@ -1,15 +1,11 @@
 let JavaScript_Objects
-
 /*
- JavaScript Objects
-
 JavaScript is object-based and prototype-based, but now also supports class-based syntax (from ES6).
-You can create objects with or without using classes
+we can create objects with or without using classes
 
 Creating Objects in JavaScript
 
 There are 3 Ways to create objects.
-
 
 🟢 1. Using Object Literal (Most Common Way)
 
@@ -20,17 +16,15 @@ let person = {
 
 console.log(person.name);  // Output: John
 
-
 Using object literals: Object literals are a shorthand way of creating objects, and they are one of the most commonly used methods for creating objects in JavaScript. Object literals use curly braces {} to define the properties and values of an object.
 ------------------------------------------------------------------------------------------------
 
 2) By creating instance of Object
 
-The syntax of creating object directly..
-
+The syntax of creating object directly.
 Var object name = new Object();
 
-Here, 'new' key word is used to create object..
+Here, 'new' keyword is used to create object..
 
 let obj = new Object();
 obj.name = "John";
@@ -53,20 +47,13 @@ let person2 = new Person("Jane", 25);
 
 console.log(person1.name);  // Output: John
 console.log(person2.age);   // Output: 25
-
-
-
+------------------------------------------------------------------------------------------
 An object constructor is a special type of function that is used to create objects in JavaScript. It is defined using the "new" operator, followed by the constructor name, and can be used to create multiple instances of the same object, each with its own set of properties and methods. 
 Here is an example of how to use an object constructor in JavaScript:
-
-
 */
 
 let JavaScript_Object_Methods
 /*
- 
-Java Script Object Methods
-
 1. Object.assign()
 👉 Object.assign() is used to copy properties from one object (source) to another (target).
 It adds or updates properties in the target object and returns the updated object.
@@ -80,13 +67,8 @@ var target = { city: 'New York' };
 Object.assign(target, source);
 console.log(target); // outputs: { city: 'New York', name: 'John', age: 30 }
 
-// In this example, the properties name and age from the source object are copied to the target object using Object.assign().
 /*
----------------------------------------------------------------------------------------------------------
-
-
-2. Object.create() is used to create a new object that inherits from another object (acts as its prototype)..
- 
+2. Object.create() makes a new object using another object as its prototype.
 Here's an example:
 */
 var prototype = {
@@ -95,22 +77,16 @@ var prototype = {
   }
 };
 
-var john = Object.create(prototype, {
-  name: { value: 'A1 John' },
-  age: { value: 30 }
-});
-
+var john = Object.create(prototype)
+user.name = "John";
 john.sayHello(); // outputs "Hello, my name is John"
+
+let object_define_property
 /*
-In this example, the prototype object is used as the prototype for the john object created using Object.create(). The john object inherits the sayHello method from the prototype object.
-
-
 -----------------------------------------------------------------------------------------------------------
-
-
 3. Object.define Property() This method is used to describe some behavioral attributes of the property.
 
-What: A method to add or modify a property on an object and control its behavior (e.g., writable, enumerable, configurable).
+ A method to add or modify a property on an object and control its behavior (e.g., writable, enumerable, configurable).
 
 var person = {};
 
@@ -126,29 +102,23 @@ person.name = "Jane";
 console.log(person.name); // still outputs "John"
 
 In this example, the Object.defineProperty() method is used to add a property name to the person object. The value attribute is set to "John", and the writable attribute is set to false, so the value of the name property cannot be changed. The enumerable attribute is set to true, so the name property will show up in a for-in loop or when using Object.keys(). The configurable attribute is set to true, so the property can be deleted or its attributes can be modified later.
-
 --------------------------------------------------------------------------------------------------
-
-5.Object.entries() This method returns an array with arrays of the key, Value pairs…
-
-The first element in each array is the property key, and the second element is the value.
-Here's an example:
+*/
+let object_entries
+/*
+Object.entries() : This method returns an array with arrays of the key, Value pairs…
 
 var person = { name: 'John', age: 30 };
 
 var entries = Object.entries(person);
 console.log(entries); // outputs: [ ['name', 'John'], ['age', 30] ]
 
------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------
-
-6.
-Object.freeze() is a method in JavaScript that prevents an object from being modified. It makes the object and its properties read-only and non-configurable, meaning that its properties cannot be added, removed, or modified, and its attributes cannot be changed.
+*/
+let object_freeze
+/*
+Object.freeze() is a method in JavaScript that prevents an object from being modified. It makes the object and its properties read-only , meaning that its properties cannot be added, removed, or modified.
 
 Here's an example:
-
 var person = { name: 'John', age: 30 };
 Object.freeze(person);
 
@@ -161,10 +131,9 @@ console.log(person.address); // undefined
 delete person.age;
 console.log(person.age); // 30
 
----------------------------------------------------------------------------------------------------------
+*/
 
----------------------------------------------------------------------------------------------------------
-
+/*
 9. Object.get Own Property Names()
 The method returns an array of all properties found.
 
@@ -189,8 +158,6 @@ Checks if two values are the same, handling edge cases like NaN and -0.
 console.log(Object.is(NaN, NaN)); // true
 console.log(Object.is(0, -0)); // false
 console.log(NaN === NaN); // false (Object.is is stricter)
-
-
 
 ----------------------------------------------------------------------------------
 14 Object. is Frozen()
@@ -226,7 +193,7 @@ console.log(obj.greet()); // Hello
 
 ------------------------------------------------------------------------------------------------
 
-19. Object. Seal()
+19. Object.Seal()
 Prevents adding/deleting properties but allows modifying existing property values.
 const obj = { name: "John" };
 Object.seal(obj);
@@ -244,27 +211,24 @@ console.log(Object.values(obj)); // ["John", 30]
 ----------------------------------------------------------------------------
 
 */
-
+let aray;
 /*
 JavaScript Array
 JavaScript array is an object that represents a collection of any type of elements. There are 3 Ways to construct array in Javascript:
-
 */
-
 /*
 1)JavaScript array literal:
  
 Var arrayname = [value 1, Value 2...... ValueN];
 
-
-2) JavaScript Array directly
-Var array name = new Array();
+  2) JavaScript Array directly
+  Var arra_name = new Array();
 Here, new keyword is used to create instance of array.
+----------------------------------------------------------------------------
 
-
-2)JavaScript array constructor: 
+ JavaScript array constructor: 
 Here, you need to create instance of array by passing arguments in constructor so that we don't have to provide value explicitly.
-In JavaScript, the Array constructor is used to create arrays. An array is a collection of values that can be of any type, including numbers, strings, objects, and other arrays.
+In JavaScript, the Array constructor is used to create arrays.
 Here's an example:
 var numbers = new Array(1, 2, 3);
 console.log(numbers); // outputs: [ 1, 2, 3 ]
@@ -273,28 +237,27 @@ var names = new Array('John', 'Jane', 'Jim');
 console.log(names); // outputs: [ 'John', 'Jane', 'Jim' ]
 
 ------------------------------------------------------------------------------------
-
+*/
+let array_methods; 
+/*
 JavaScript Array Methods
 1. Concat()
 It returns a new array object that contains two or more merged arrays.
- 
 
 2. copyWithin()
 It Copies the part of the given array with its own elements and returns the modified array.
 
-3. entries (
+3. entries ()
 It Creates an iterator object and a loop that iterates. Over each key/value pair.
 4. every
 It determines whether all the elements of an array. are staisfying the provided function Conditions.
 5. flat U
 It Creates a new array carrying Sub-array elements Concatenated recursively till the specified depth..
 
-
-6.
-Flat MAP()
+6. Flat MAP()
 It maps all array elements via mapping function than flattens the result into a new array.
 
-7. Fill0
+7. Fill()
 It fills elements into an array with static values.
 
 8. for Each()
@@ -350,7 +313,6 @@ let index = fruits.indexOf('banana');
 console.log(index); // Output: 1
 
 
-
 1.join() - Joins all elements of an array into a string.
 
 let fruits = ['apple', 'banana', 'cherry'];
@@ -376,7 +338,7 @@ return number % 2 === 0;
 
 /*  
 JavaScript string
-The JavaScript string is an object that represents a sequence of characters.
+The JavaScript string is represents a sequence of characters.
 There are 2 Ways to create string in Javascript
 1
 By string literal
@@ -395,13 +357,11 @@ It provides the char value present at the specified index.
 let str = "Hello World";
 console.log(str.charAt(0)); // Output: "H"
 
-
 2. Char Code At
 It provides the Unicode value of a character present at the
 Specified index.
 let str = "Hello World";
 console.log(str.charCodeAt(0)); // Output: 72
-
                                                   
 3. Concat()                         
 It provides a combination of two or more strings.          
@@ -409,44 +369,33 @@ let str1 = "Hello";
 let str2 = " World";
 console.log(str1.concat(str2)); // Output: "Hello World"
 
-
-
 4. index Of()
 It provides the position of a chap value present in the given string.
 
 let str = "Hello World";
 console.log(str.indexOf("o")); // Output: 4
 
-
 5. last Index Of ()
 It provides the position of a char value present in the given String by searching a character from the last position.
 let str = "Hello World";
 console.log(str.lastIndexOf("o")); // Output: 7
 
-
 6. Search()
 It searches a specified regular expression in a given string and returns its position if a match occurs.
-
 
 let str = "Hello World";
 console.log(str.search(/o/)); // Output: 4
 
-
 7. match()
-
 It Searches a specified regular expression in a given string and returns that regular expression If a match occurs.
 let str = "Hello World";
 console.log(str.match(/o/)); // Output: [ "o" ]
 
-
-
-8. replace ()
+8. replace()
 It replaces a given string with the specified. replacement.
-
 
 let str = "Hello World";
 console.log(str.replace("World", "Universe")); // Output: "Hello Universe"
-
 
 9. Substr()
 It is used to fetch the part of the given string On the basis of the specified starting position and length.
@@ -462,7 +411,7 @@ let str = "Hello World";
 console.log(str.substring(0, 5)); // Output: "Hello"
 
 
-11.toLower Case()
+11.toLowerCase()
 It converts the given string into lowercase letter.
 
 
@@ -476,8 +425,6 @@ It Converts the given string into lowercase letter on the basis of host?s curren
 
 let str = "Hello World";
 console.log(str.toLocaleLowerCase()); // Output: "hello world"
-
-
 
 13. to Upper Case ()
 It Converts the given string into uppercase letter.
@@ -583,15 +530,10 @@ it returns the integer value between 0 and that represents the day of the week o
 11. getUTC Full Years ()
 it returns the integer value that represents the
 year on the basis of universal time..
-  Pg 50
- 
-  
   */
 
 /**
- 
 Comparison: Object vs Map
-
 
 Iteration
 
@@ -603,7 +545,7 @@ Directly iterable with for...of, forEach, or entries/keys/values.
  
 Property Access
 object:
-	Dot (obj.key) or bracket (obj["key"]) notation.
+  Dot (obj.key) or bracket (obj["key"]) notation.
   
   map
   get(key) and set(key, value) methods.

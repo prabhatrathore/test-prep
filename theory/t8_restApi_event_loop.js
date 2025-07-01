@@ -1,47 +1,4 @@
 /**
- 
-What is the Event Loop in JS ?
-The event loop is a way of JavaScript of handling asynchronous tasks (like timers, API calls, or events) while keeping the code running smoothly. JavaScript is single-threaded, meaning it can only do one thing at a time, but the event loop makes it seem like it’s doing many things at once by managing asynchronous operations.
-
-
-How It Works 
-Call Stack: A LIFO structure where JavaScript executes synchronous code. Each function call creates a stack frame, and it’s popped when the function completes.
-
-Web APIs: Browser-provided features (e.g., setTimeout, fetch, DOM events) that handle asynchronous tasks outside the JavaScript engine. They send callbacks to the task queue or microtask queue upon completion.
-
-Task Queue (Macrotask Queue): A queue for callbacks from asynchronous operations like setTimeout, DOM events, or AJAX. Tasks are processed one at a time when the call stack is empty.
-
-Microtask Queue: A higher-priority queue for tasks like promise resolutions or queueMicrotask. It’s processed before the task queue when the call stack is empty.
-
-Event Loop: Continuously checks if the call stack is empty. If so, it first processes all microtasks, then moves the next macrotask from the task queue to the call stack.
-
-console.log("Start");
-setTimeout(() => console.log("Timeout"), 0);
-Promise.resolve().then(() => console.log("Promise"));
-console.log("End");
---------------------------------------------------------------------
-Start
-End
-Promise
-Timeout
-
-console.log("Start") runs synchronously (call stack).
-setTimeout is a Web API; its callback is sent to the task queue after 0ms.
-Promise.resolve().then schedules a microtask in the microtask queue.
-console.log("End") runs synchronously (call stack).
-Call stack is empty, so the event loop processes the microtask queue first (Promise logs).
-Then, it processes the task queue (Timeout logs).
-----------------------------------------------------------------------------------------------------
-(function() {
- console.log("Timer done"); 
- })
-  to the Web API environment.
-console.log("End") runs next and prints "End". The call stack is now empty.
-After 2 seconds, the setTimeout callback is moved to the task queue.
-The event loop sees the call stack is empty, takes the callback from the task queue, and pushes it to the call stack.
-The callback runs, printing "Timer done".
- */
-
 
 /****
  * 

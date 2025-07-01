@@ -149,74 +149,7 @@ The different types of security implementations within Node.js include error han
 -------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------
 */
-let event_loop_explain
-
 /*
-The event loop in Node.js is a mechanism that allows it to handle multiple tasks asynchronously using a single-threaded architecture.
-
----example---------------------------------------------
-console.log("1");
-
-setTimeout(() => {
-  console.log("2");
-}, 1000);
-
-console.log("3");
-----------------------------------------------------------------------------
-
-🧠 1. Call Stack (Main Execution)
-This is where code is executed line by line.
-
-console.log("1") → goes into the stack → runs → pops out.
-
-setTimeout(...) → goes into the stack → passed to Web APIs → pops out.
-
-console.log("3") → runs next.
-
-So the stack looks like:
-
-| console.log("1") | → done
-| setTimeout(...)  | → passed to Web API
-| console.log("3") | → done
-
-
-🌐 2. Web APIs
-These are provided by the browser (or Node) to handle asynchronous stuff outside the main thread.
-
----------------------------------------------------------------------------------------------------
-In our case:
-
-setTimeout(() => console.log("2"), 1000)
-
-Web API starts a timer in the background.
-
-Once 1000ms is over, this callback run:
-
-() => console.log("2")
-
----------------------------------------------------------------------------------------------------------
-🗂️ 3. Callback Queue (aka Task Queue or Message Queue)
-After the timer ends, the callback is added to this queue.
-
-But it will not run immediately.
-
-Instead, it waits until the Call Stack is empty.
-
-🔁 4. Event Loop – The Boss
-The Event Loop keeps checking:
-
-“Is the call stack empty?”
-If yes, it picks the first task from the Callback Queue and pushes it into the Call Stack to execute.
-
-So here:
-
-After console.log("3") finishes, the call stack becomes empty.
-
-Event Loop picks () => console.log("2") and runs it.
-
-
----------------------------------------------------------------------------------------------------------
-
 
 Node.js uses an event loop to handle multiple requests at the same time.
 
@@ -269,9 +202,7 @@ Node.js supports two categories of data type - primitive and non-primitive.
 ----------------------------------------------------------------------------------------------
 
 */
-
 let what_are_the_api_in_nodejs
-
 /*
 Node.js provides a large number of built-in APIs, including but not limited to:
 
@@ -290,15 +221,12 @@ These are just a few examples of the many built-in APIs that Node.js provides. A
 
 Sure, here are a few examples of using some of the built-in APIs in Node.js:
 
-1.const fs = require('fs');
-2.
-3.fs.readFile('myfile.txt', 'utf8', (err, data) => {
-4.  if (err) throw err;
-5.  console.log(data);
-6.});
-7.
-8.
+const fs = require('fs');
 
+fs.readFile('myfile.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
 -----------------------------------------------------------------------------
 
 HTTP API - creating a simple HTTP server:
@@ -318,81 +246,6 @@ HTTP API - creating a simple HTTP server:
 /*
 
 ------------------------------------------------------------------------------------------------------
-
-9) What do you understand by the first class function in JavaScript?
-🔹 1. First-Class Functions in JavaScript
-✅ Meaning:
-In JavaScript, functions are treated like values (just like numbers or strings).
-
-This means you can:
-
-Store them in variables
-Pass them as arguments to other functions
-Return them from functions
-
-🧠 Simple Definition:
-"Functions that can be assigned to a variable, passed as arguments, or returned — just like regular data — are called first-class functions."
-
-🧪 Example:
-const greet = function() {
-  console.log("Hello!");
-};
-
-function saySomething(fn) {
-  fn();  // calling the function passed as argument
-}
-
-saySomething(greet);  // Output: Hello!
-
-----------------------------------------------------------------------------------------------
-
-🔹 2. Higher-Order Functions
-✅ Meaning:
-A higher-order function is a function that takes another function as an argument OR returns a function.
-
-In short:
-
-“Function that works with other functions — either by taking them or returning them.”
-
-✨ Examples:
-1. Takes a function as an argument:
-function myHigherOrderFunction(arr, fn) {
-  const result = [];
-  for (let i = 0; i < arr.length; i++) {
-    result.push(fn(arr[i]));
-  }
-  return result;
-}
-
-function square(x) {
-  return x * x;
-}
-
-console.log(myHigherOrderFunction([1, 2, 3], square));
-// Output: [1, 4, 9]
-
-2. Returns a function:
-
-function addNumber(n) {
-  return function(x) {
-    return x + n;
-  };
-}
-
-const addFive = addNumber(5);
-console.log(addFive(10));  // Output: 15
-
-✅ Built-in Higher-Order Functions in JS:
-Some popular ones:
-
-map()
-filter()
-reduce()
-
-🔚 Summary
-Concept	                 Explanation
-First-Class Function	Functions are treated like variables (can be stored, passed, returned)
-Higher-Order Function	Functions that take or return other functions
 
 
 -------------------------------------------
@@ -753,8 +606,10 @@ In JavaScript, promises are a way to handle asynchronous operations. They are ob
 Promise States: A promise can be in one of three states:
 
 Pending: The initial state before the promise is fulfilled or rejected.
-Fulfilled: The state when the promise is successfully resolved with a value.
 Rejected: The state when the promise encounters an error or fails, providing a reason for the failure.
+Fulfilled: The state when the promise is successfully resolved with a value.
+Settled - This state represents that the promise has been either rejected or fulfilled.
+
 Promise Creation: Promises are created using the Promise constructor. The constructor takes a single function (executor) as an argument, which is called immediately and receives two functions as parameters: resolve and reject. You use these functions to either fulfill or reject the promise based on the outcome of your asynchronous operation.
 
 Chaining: Promises allow you to chain multiple asynchronous operations together. The then() method is used to attach fulfillment and rejection handlers to a promise. Each then() call returns a new promise, which enables chaining. Chained promises allow you to sequence asynchronous operations in a more readable and manageable way.
