@@ -16,12 +16,11 @@ git add [file]: Stages a file for the next commit.
 git branch: Lists branches, with * indicating the active branch.
 git branch [branch-name]: Creates a new branch.
 
-git checkout: Switches to another branch (incomplete; should be git checkout [branch-name]).
+git checkout [branch-name]: Switches to another branch.
 git merge [branch]: Merges the specified branch into the current branch.
 git log: Shows commit history.
 
 git diff branchB...branchA: Shows differences in branchA not in branchB.
-
 -------------------------------------------------------------------------------------------------------
 
 What is a Git repository?
@@ -29,7 +28,6 @@ Answer: A repository (repo) is a storage location for a project’s files and th
 
 how do you initialize a Git repository?
 Answer: Run 'git init' in a project directory to create a new Git repository, initializing a .git subdirectory.
-
 ------------------------------------------------------------------------------------------------------
 
 What is a commit?
@@ -207,39 +205,9 @@ const person = { name: "Cody", about: info };
 person.about(); // Outputs "My name is Cody"
 
 Explanation: this refers to the person object when about is called.
----------------------------------------------------------------------------------------
-
-Call, Apply, and Bind Methods
-
-Purpose: Control the value of this in functions.
-
-Call:
-Invokes a function with a specified this and arguments.
-
-Example:
-function say(greet) {
-  console.log(`${greet} ${this.name}`);
-}
-const user = { name: "Alex" };
-say.call(user, "Hello"); // Outputs "Hello Alex"
-
-------------------------------------------------
-
-Apply:
-Like call, but arguments are passed as an array.
-Example:say.apply(user, ["Hi"]); // Outputs "Hi Alex"
-
----------------------------------------------------------------------------
-
-Bind:
-Returns a new function with a fixed this and optional arguments.
-Example:const myFun = say.bind(user);
-myFun("Hey"); // Outputs "Hey Alex"
-
 ------------------------------------------------------------------------------
 
 Prototypes
-
 Purpose: Add new properties or methods to an object constructor.
 Example:
 function Person() {
@@ -257,7 +225,6 @@ person.greet(); // Outputs "Hi, I'm John"
 -------------------------------------------------------------------
 
 The new Keyword
-
 Purpose: Creates a new object from a constructor function.
 Steps:
 Creates a new empty object.
@@ -265,150 +232,6 @@ Sets the object’s prototype.
 Points this to the new object.
 Executes the constructor function with this.
 Returns the new object.
-
-*/
-
-/*
-**************************************************
-
-Clustering means using all CPU cores to run our Node.js app faster.
-
-Since Node.js is single-threaded by default, it runs on a single process, utilizing only one CPU core. The cluster module allows us to create multiple worker processes that share the same server port, enabling parallel processing and better handling of concurrent requests.
-
-
-Key Concepts of Clustering
-Master Process: The main process that spawns and manages worker processes.
-
-Worker Processes: Child processes that handle incoming requests. Each worker runs its own event loop and can process tasks independently.
-
-Load Balancing: The master process distributes incoming connections across workers, (typically in a round-robin fashion_).
-Inter-Process Communication (IPC): Workers can communicate with the master process or other workers using messaging.
-
-How Clustering Works
-The cluster module forks multiple worker processes (usually one per CPU core).
-The master process listens for incoming connections and delegates them to workers.
-Each worker runs the same application code but operates independently, handling its share of requests.
-If a worker crashes, the master can restart it to maintain reliability.
-
-Example: Basic Clustering in Node.js
-Here’s a simple example using the cluster module to create a clustered HTTP server:
-
-
---------------------------------------------------------------------------
-const cluster = require('cluster');
-const http = require('http');
-const numCPUs = require('os').cpus().length; // Number of CPU cores
-
-if (cluster.isMaster) {
-  // Master process
-  console.log(`Master ${process.pid} is running`);
-
-  // Fork workers equal to the number of CPU cores
-  for (let i = 0; i < numCPUs; i++) {
-    cluster.fork();
-  }
-
-  // Handle worker exit
-  cluster.on('exit', (worker, code, signal) => {
-    console.log(`Worker ${worker.process.pid} died`);
-    // Restart the worker
-    cluster.fork();
-  });
-} else {
-  // Worker process
-  http.createServer((req, res) => {
-    res.writeHead(200);
-    res.end(`Hello from worker ${process.pid}`);
-  }).listen(8000);
-
-  console.log(`Worker ${process.pid} started`);
-}
-
-Explanation of the Code
-Check if Master: cluster.isMaster determines if the process is the master. If true, it spawns workers.
-Fork Workers: The master forks a worker for each CPU core using cluster.fork().
-Worker Crash Handling: The exit event listener restarts a worker if it crashes.
-Worker Process: Each worker creates an HTTP server listening on port 8000. The master distributes incoming requests among workers.
-
-Shared Port: All workers share the same port (8000), and the master handles load balancing.
---------------------------------------------------
-
-Benefits of Clustering
-
-Improved Performance: Utilizes multiple CPU cores, increasing throughput for CPU-intensive tasks or high-concurrency scenarios.
-
-Scalability: Handles more simultaneous connections, ideal for web servers or APIs.
-
-Resilience: The master can restart crashed workers, improving reliability.
-
-No External Dependencies: The cluster module is built into Node.js, requiring no additional packages.
-
----------------------------------------------------------------
-
-Limitations
-
-State Management: Workers don’t share memory, so state (e.g., sessions) must be managed externally (e.g., using Redis or a 
-database).
-
-Not for All Workloads: Clustering is most effective for I/O-heavy applications (e.g., HTTP servers). CPU-bound tasks may require other solutions like worker threads.
-
-Increased Complexity: Managing multiple processes and IPC adds complexity to the application.
-
-Best Practices
-
-Match Worker Count to CPU Cores: Use os.cpus().length to determine the number of workers for optimal resource utilization.
-
-Handle Worker Crashes: Implement cluster.on('exit') to restart failed workers.
-
-Use External State Management: For applications requiring shared state, use tools like Redis or a database.
-
-Monitor Performance: Test whether clustering improves performance for your specific use case, as overhead from forking processes can sometimes outweigh benefits for low-traffic apps.
-Consider PM2 for Production: While the cluster module is great for simple clustering, tools like PM2 offer advanced features like process management, monitoring, and zero-downtime restarts.
-Example with PM2
-For production, you might use PM2 to manage clustering. Install PM2:
-
-bash
-
-
-npm install -g pm2
-Run your app with clustering:
-
---------------------------------------------------------------------
-pm2 start app.js -i max
-The -i max flag tells PM2 to create a worker for each CPU core.
-
-When to Use Clustering
-High-Traffic Web Servers: Clustering shines in handling many HTTP requests concurrently.
-API Servers: Distributes API requests across workers for better throughput.
-Real-Time Apps: For apps using WebSockets (e.g., with Socket.IO), clustering can help scale connections.
-
-----------------------------------------------------------------------------
-When Not to Use Clustering 
-Single-Threaded Tasks: If your app is heavily CPU-bound (e.g., machine learning inference), consider worker threads or offloading to a separate service.
-Low Traffic: For small-scale apps, the overhead of managing workers may not be worth it.
---------------------------------------------------------------------------------
-Advanced Clustering
-For more complex scenarios, you can:
-
-Use sticky sessions for WebSocket or session-based apps (e.g., with the sticky-session package).
-Implement custom load balancing by configuring how the master distributes connections.
-Use worker threads (via the worker_threads module) within workers for CPU-intensive tasks.
-If you need a deeper dive into any specific aspect (e.g., IPC, sticky sessions, or performance testing), let me know!
-
-fork and spawn in node.js
-
-Key Differences
-
-Feature            	spawn                                                  	fork
-Purpose	           Runs any command or executable	                         Runs a Node.js script
-Process Type	     General child process                                   Node.js child process
-Communication	     Streams (stdin, stdout, stderr)	                       IPC channel + streams
-Use Case         	 External commands, streaming data                     	 Node.js scripts, parallel tasks
-Performance	       Lightweight for external commands	                     Slightly heavier due to Node.js env
-Node.js Specific  	No, works with any command                  	         Yes, only for Node.js scripts
-
-----------------------------------------------------------------------------------------------------------------
-The spawn function is designed to run any command or executable as a general child process, using streams (stdin, stdout, stderr) for communication, making it lightweight for external commands and streaming data, and is not specific to Node.js. In contrast, the fork function is tailored for running Node.js scripts as a Node.js-specific child process, utilizing an IPC channel alongside streams for communication, suited for parallel tasks in Node.js, but is slightly heavier due to the Node.js environment setup.
 */
 
 /**
@@ -470,6 +293,7 @@ a[{ d: 'update' }] = 31
 a[{}] = 32
 console.log(a[b], "()*")//123  //32 
 console.log(a, "AS()*")//123    { '[object Object]': 32, e: 1 } AS()*
+---------------------------------------------------------------------------------------
 
 let string1 = '324e-1'
 string1 = Number(string1)

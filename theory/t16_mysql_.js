@@ -39,7 +39,6 @@ How a URL Works (Step-by-Step)
 3:) Connection to Server:
 The browser establishes a connection to the server at the IP address on port 443 (for HTTPS).
 For HTTPS, an SSL/TLS handshake occurs: the server presents its SSL certificate, the client verifies it, and they negotiate an encryption key.
-
 */
 
 function findSecondSmallest(arr) {// hard one 
@@ -253,7 +252,7 @@ product_id | name   | stock_quantity
 Q:) What are the main data types available in MySQL?
 A:) MySQL supports a variety of data types categorized as:
 
-Numeric: INT, DECIMAL, FLOAT, DOUBLE, etc.
+Numeric: INT, DECIMAL, FLOAT, DOUBLE etc.
 String: CHAR, VARCHAR, TEXT, BLOB.
 Date/time: DATE, DATETIME, TIMESTAMP, TIME.
 JSON: For storing JSON objects.
@@ -303,7 +302,7 @@ Better for calculations needing more accuracy or for very large/small numbers (e
 Example: Storing precise scientific data like 0.000000123456789
 
 Key Difference:
-FLOAT is like a lightweight version for less precise needs, while DOUBLE is for when we need more accuracy or bigger numbers.
+FLOAT is like a lightweight version for less accuracy (precise) needs, while DOUBLE is for when we need more accuracy or bigger numbers.
 
 -------------------------------------------------------------------------------------
 JSON:
@@ -622,7 +621,7 @@ Higher server load: Rendering HTML for each request is resource-intensive.
 Slower interactions: Page navigation may require full server requests unless combined with client-side JavaScript.
 Complexity: Server-side logic (e.g., templating) can be more complex.
 
-
+----------------------------------------------------------------------------------------
 
 WebSockets, Polling, and Long Polling
 
@@ -635,7 +634,7 @@ The client initiates a WebSocket connection (via ws:// or wss://).
 The connection stays open, enabling the server to push data to the client (and vice versa) instantly.
 Unlike HTTP, it’s not request-response; both sides can send data anytime.
 
-
+---------------------------------------------------------------------------------------------
 
 Cons:
 Complex setup: Requires a WebSocket server (e.g., ws library in Node.js).
@@ -647,7 +646,7 @@ What is it? The client repeatedly sends HTTP requests (e.g., via AJAX) at regula
 
 Long Polling
 What is it? An improvement over polling where the client sends a request, and the server holds the connection open until new data is available.
-
+-----------------------------------------------------
 
 
 Comparison: WebSockets, Polling, Long Polling

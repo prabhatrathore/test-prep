@@ -3,7 +3,7 @@
 var x = 'hello';
 var x = 'abd' //we can re-declare the variable 
 x = 'change-value' // reassign the variable as well. 
-
+// ---------------------------------------------
 // in let
 let y = 'hello ';
 // let y='world'  //cannot re-declare the same variable
@@ -17,7 +17,6 @@ const z = 'pppp';
 if (true) {
     var x1 = 'line number 18'
 }
-
 console.log(x1, 'line 21')  //can access the variable 'x1'
 
 if (true) {
@@ -26,10 +25,9 @@ if (true) {
 // console.log(y1,"twenty six") //ReferenceError: y1 is not defined
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
+
 // initialization, condition, increment
-
 for (var i1 = 1;    i1 <= 5;    i1++) {
-
 }
 console.log(i1, "line 3111")//  can access the variable   -- answer --- 6 , line 31 
 

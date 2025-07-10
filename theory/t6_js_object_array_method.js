@@ -37,7 +37,7 @@ console.log(obj.age);  // Output: 30
 -------------------------------------------------------------------------------------
 🔵 3. Using Constructor Function
 
-function Person(name, age) {
+function Person(name, age) {  
   this.name = name;
   this.age = age;
 }

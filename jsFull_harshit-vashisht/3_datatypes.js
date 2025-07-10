@@ -1,21 +1,13 @@
-/**
- * primitive datatypes
- * string  "ram"
- * boolean true/false
- * number 443
- * undefined 
- * null
- * bigint
- * 
- */
+
 let age = 3
 let firstname = 'ram'
 console.log(typeof age);       // number
 console.log(typeof firstname);//string
 console.log(typeof (age + '')); //string
 age = String(age)
-console.log(typeof age);
+console.log(typeof age);//string
 console.log("===11111111111========")
+
 let num1 = '23';
 console.log(typeof num1);//string
 console.log(typeof +num1)//number
@@ -25,7 +17,7 @@ console.log('======22222222==========');
 var str1 = "ram";
 var str2 = 'shyam';
 fullname = str1 + ' ' + str2;
-console.log(fullname);
+console.log(fullname);//ram shyam
 str1 = '34'
 str2 = '23'
 number = str1 + str2
@@ -49,13 +41,21 @@ console.log(number3 + number4);//4n
 // == vs ===
 let num4 = '4';
 let num5 = 4
-console.log(num4 == num5);//true
+console.log(num4 == num5, 'wwwwwwww');//true
 console.log(num4 === num5);//false
-console.log(num4 < num5)//fasle
+console.log(num4 < num5, 'gggggg')//false
 console.log(num4 > num5);//false
 console.log(num4 != num5, 'not-equal') //false 
 console.log(num4 !== num5) //true
+num4 = null
+num5;
+console.log(num4 < num5, 'aaaaaa ____gggggg')//false
+console.log(num4 > num5);//false
 
+num4 = "[]"
+num5;
+console.log(num4 < num5, '#####___gggggg')//false
+console.log(num4 > num5);//false
 
 let a = 1
 let b = ""

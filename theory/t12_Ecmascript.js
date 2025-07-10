@@ -254,7 +254,6 @@ Example: Person.prototype.greet = function() {
 
 Explanation: Enables inheritance, foundational for ES6 classes.
 
-Call, Apply, Bind :
 Pre-ES6, but critical in ES6+ for functional programming.
 Example: say.call(user, "Hello");.
 

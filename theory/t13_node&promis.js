@@ -1,35 +1,28 @@
-
+// Can you describe your experience in developing RESTful APIs using Node.js and Express?
 
 /**
   Definition
 
-  Node.js is a JavaScript runtime environment that enables server-side JavaScript execution, allowing developers to build web applications using a single language across client and server.
+  Node.js is a open-source, cross-platform JavaScript runtime environment that enables server-side JavaScript execution, allowing developers to build web applications using a single language across client and server.
   
- 
  Purpose --------------------------------
-
 Provides an efficient and scalable platform for developing high-performance web applications.
 Ideal for real-time applications, such as chat apps, streaming services, and e-commerce platforms.
 
 Core Architecture-------------------------
 
-Built on V8 JavaScript Engine.
+Built on chrome's V8 JavaScript Engine.
 
-1. Utilizes Google’s V8 engine, which compiles JavaScript to native machine code for fast execution.
+1. Utilizes Google chrome’s V8 engine, which compiles JavaScript to native machine code for fast execution.
 Inherits a single-threaded design from V8, aligning with JavaScript’s browser-based origins.
 
 2. Single-Threaded Event Loop
-
 Processes tasks (e.g., HTTP requests) asynchronously using a single-threaded event loop.
-
 Queues incoming requests and responds when data is ready, avoiding the need for multiple threads.
-
 (Simplifies development by eliminating complexities of multi-threaded programming.)
 
 Event-Driven, Non-Blocking I/O Model-----------------
-
 Handles I/O operations (e.g., file system, network requests) asynchronously, preventing blocking of the main thread.
-
 Enables efficient management of a large number of concurrent connections with minimal overhead.
 
 -------------------------------------------------------
@@ -40,26 +33,21 @@ Key Advantages
  Allows developers to use JavaScript for both client-side and server-side development, streamlining workflows.
 
  Scalability
-
  Non-blocking I/O and event-driven architecture support high concurrency, making it suitable for scalable applications.
 
  Performance---------------------------
-
  Optimized for real-time applications due to its lightweight and asynchronous nature.
 
  Ecosystem
-
  Backed by a large, active community contributing to a vast ecosystem of modules, packages (via npm), and tools.
 
  Supports diverse use cases, from APIs to microservices.
 
 Node.js is asynchronous and event-driven. All API's of Node.js library are non-blocking, and its server doesn't wait for an API to return data. It moves to the next API after calling it, and a notification mechanism of Events of Node.js responds to the server from the previous API call.
-
  ---------------------------------
 
  Limitations
-
- Single-Threaded Design Constraints
+ Single-Threaded Design Constraints.
 
  CPU-Bound Tasks: Heavy computations (e.g., image processing, cryptography) can block the event loop, degrading performance.
 
@@ -78,16 +66,13 @@ If we give Node.js a CPU-heavy task (like image processing, complex calculations
 This means:
 
 Other users have to wait 😤
-
 The app may become slow or unresponsive ⚠️
 
 ✅ Mitigation: Worker Threads--------------------------------------------------
 To fix this, Node.js gives us a tool: worker_threads module.
 
 Think of Worker Threads like hiring an assistant 👨‍💼🧠:
-
 You give heavy tasks to this assistant.
-
 Your main thread keeps working smoothly and doesn't get overloaded.
 
 Example tasks to offload:
@@ -108,9 +93,145 @@ new Worker(`
 console.log("Main thread keeps working!");
 
 ---------------------------------------------------------------------------------------------------------
- Clustering: Leverage Node.js’s cluster module to utilize multiple CPU cores by running multiple processes.
+/*
+**************************************************
+
+Clustering is a technique in Node.js to create multiple processes (workers) that run simultaneously and share the same server port.
+Since Node.js is single-threaded by default, node.js runs on a single process, utilizing only one CPU core. The cluster module allows us to create multiple worker processes that share the same server port, enabling parallel processing and better handling of concurrent requests.
+
+Key Concepts of Clustering
+Master Process: The main process that spawns and manages worker processes.
+
+Worker Processes: Child processes that handle incoming requests. Each worker runs its own event loop and can process tasks independently.
+
+Load Balancing: The master process distributes incoming connections across workers, (typically in a round-robin fashion_).
+Inter-Process Communication (IPC): Workers can communicate with the master process or other workers using messaging.
+
+How Clustering Works
+The cluster module forks multiple worker processes (usually one per CPU core).
+The master process listens for incoming connections and delegates them to workers.
+Each worker runs the same application code but operates independently, handling its share of requests.
+If a worker crashes, the master can restart it to maintain reliability.
+
+Example: Basic Clustering in Node.js
+Here’s a simple example using the cluster module to create a clustered HTTP server:
+
+--------------------------------------------------------------------------
+const cluster = require('cluster');
+const http = require('http');
+const numCPUs = require('os').cpus().length; // Number of CPU cores
+
+if (cluster.isMaster) {
+  // Master process
+  console.log(`Master ${process.pid} is running`);
+
+  // Fork workers equal to the number of CPU cores
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork();
+  }
+
+  // Handle worker exit
+  cluster.on('exit', (worker, code, signal) => {
+    console.log(`Worker ${worker.process.pid} died`);
+    // Restart the worker
+    cluster.fork();
+  });
+} else {
+  // Worker process
+  http.createServer((req, res) => {
+    res.writeHead(200);
+    res.end(`Hello from worker ${process.pid}`);
+  }).listen(8000);
+
+  console.log(`Worker ${process.pid} started`);
+}
+
+Explanation of the Code
+Check if Master: cluster.isMaster determines if the process is the master. If true, it spawns workers.
+Fork Workers: The master forks a worker for each CPU core using cluster.fork().
+Worker Crash Handling: The exit event listener restarts a worker if it crashes.
+Worker Process: Each worker creates an HTTP server listening on port 8000. The master distributes incoming requests among workers.
+
+Shared Port: All workers share the same port (8000), and the master handles load balancing.
+--------------------------------------------------
+
+Benefits of Clustering
+
+Improved Performance: Utilizes multiple CPU cores, increasing throughput for CPU-intensive tasks or high-concurrency scenarios.
+Scalability: Handles more simultaneous connections, ideal for web servers or APIs.
+Resilience: The master can restart crashed workers, improving reliability.
+No External Dependencies: The cluster module is built into Node.js, requiring no additional packages.
+---------------------------------------------------------------
+
+Limitations
+
+State Management: Workers don’t share memory, so state (e.g., sessions) must be managed externally (e.g., using Redis or a 
+database).
+
+Not for All Workloads: Clustering is most effective for I/O-heavy applications (e.g., HTTP servers). CPU-bound tasks may require other solutions like worker threads.
+
+Increased Complexity: Managing multiple processes and IPC adds complexity to the application.
+
+Best Practices----------------------------
+
+Match Worker Count to CPU Cores: Use os.cpus().length to determine the number of workers for optimal resource utilization.
+
+Handle Worker Crashes: Implement cluster.on('exit') to restart failed workers.
+
+Use External State Management: For applications requiring shared state, use tools like Redis or a database.
+
+Monitor Performance: Test whether clustering improves performance for your specific use case, as overhead from forking processes can sometimes outweigh benefits for low-traffic apps.
+Consider PM2 for Production: While the cluster module is great for simple clustering, tools like PM2 offer advanced features like process management, monitoring, and zero-downtime restarts.
+Example with PM2
+For production, you might use PM2 to manage clustering. Install PM2:
+
+bash
 
 
+npm install -g pm2
+Run your app with clustering:
+
+--------------------------------------------------------------------
+pm2 start app.js -i max
+The -i max flag tells PM2 to create a worker for each CPU core.
+
+When to Use Clustering
+High-Traffic Web Servers: Clustering shines in handling many HTTP requests concurrently.
+API Servers: Distributes API requests across workers for better throughput.
+Real-Time Apps: For apps using WebSockets (e.g., with Socket.IO), clustering can help scale connections.
+
+----------------------------------------------------------------------------
+When Not to Use Clustering 
+Single-Threaded Tasks: If your app is heavily CPU-bound (e.g., machine learning inference), consider worker threads or offloading to a separate service.
+Low Traffic: For small-scale apps, the overhead of managing workers may not be worth it.
+--------------------------------------------------------------------------------
+Advanced Clustering
+For more complex scenarios, you can:
+
+Use sticky sessions for WebSocket or session-based apps (e.g., with the sticky-session package).
+Implement custom load balancing by configuring how the master distributes connections.
+Use worker threads (via the worker_threads module) within workers for CPU-intensive tasks.
+If you need a deeper dive into any specific aspect (e.g., IPC, sticky sessions, or performance testing), let me know!
+
+fork and spawn in node.js
+
+Key Differences
+
+Feature            	spawn                                                  	fork
+Purpose	             Runs any command or executable	                         Runs a Node.js script
+Process Type	     General child process                                   Node.js child process
+Communication	     Streams (stdin, stdout, stderr)	                       IPC channel + streams
+Use Case         	 External commands, streaming data                     	 Node.js scripts, parallel tasks
+Performance	       Lightweight for external commands	                     Slightly heavier due to Node.js env
+Node.js Specific  	No, works with any command                  	         Yes, only for Node.js scripts
+
+----------------------------------------------------------------------------------------------------------------
+The spawn function is designed to run any command or executable as a general child process, using streams (stdin, stdout, stderr) for communication, making it lightweight for external commands and streaming data, and is not specific to Node.js. 
+
+In contrast, the fork function is tailored for running Node.js scripts as a Node.js-specific child process, utilizing an IPC channel alongside streams for communication, suited for parallel tasks in Node.js, but is slightly heavier due to the Node.js environment setup.
+----------------------------------------------------------------------------------------------------
+What is a, fork in NodeJS?
+Fork is a method in NodeJS that is used to create child processes. It helps to handle the increasing workload. It creates a new instance of the engine which enables multiple processes to run the code.
 ----------------------------------------------------------------------------------------------------
 explain the different purposes of Node.js:
 
@@ -125,10 +246,28 @@ some features of Node.js?
 It is fast, scalable, open-source, and asynchronous.
 
 ----------------------------------------------------------------------------------------------------
-
 /////////////////////////////////////////////////////////////////////////////////////////////=========*********
-Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It is an open source framework developed and maintained by the Node.js foundation.
+(((Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It is an open source framework developed and maintained by the Node.js foundation.)))
 
+Q 4. What is express?  
+Express is light weight web framework of node.js 
+   
+express is fast, unopiniated (no proper file structure provided), minimalist web framwork for node.js 
+
+core features of Express framework − 
+Express is used for designing and building web applications quickly and easily. 
+ 
+1)express : Allows us to set up middlewares to respond to HTTP Requests. 
+
+-------------------------------------------------------------------------------------------------------------
+Why use Node.js?
+Node.js makes building scalable network programs easy. Some of its advantages include:
+
+It is generally fast
+It rarely blocks
+It offers a unified programming language and data type
+Everything is asynchronous. 
+It yields great concurrency.
 -------------------------------------------------------------------------------------------------------------
 
 Why does Google use V8 for Node.js?
@@ -140,12 +279,10 @@ Unit testing in Node.js is a process of testing individual units of code.
 -------------------------------------------------------------------------------------------------------------
 Some examples of async functions are setTimeout(), setInterval(),
 -------------------------------------------------------------------------------------------------------------
-
 -------------------------------------------------------------------------------------------------------------
 
 What are security implementations within Node.js?
 The different types of security implementations within Node.js include error handling, authentications and authorization, data sanitization, encryption, and logging and monitoring.
-
 -------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------
 */
@@ -172,11 +309,8 @@ Explain Node.js web application architecture?
 A web application distinguishes into 4 layers:
 
 Client Layer: Web browsers or mobile apps that send HTTP requests to the server.
-
 Server Layer: Web server that receives client requests and sends responses.
-
 Business Layer: Application server that processes requests, interacting with the data layer.
-
 Data Layer: The Data layer contains databases or any source of data.
 ------------------------------------------------------
 
@@ -196,7 +330,6 @@ Yes, Node.js can be run on Windows
 ----------------------------------------------------------------------------------------------
 
 What are the two data types categories in Node.js?
-
 Node.js supports two categories of data type - primitive and non-primitive.
 
 ----------------------------------------------------------------------------------------------
@@ -377,17 +510,15 @@ What are the four functions of middleware systems?
 Data management, application services, messaging, authentication, and API management are all commonly handled by middleware. 
 
 ----------------------------------------------------------
-
 What are the 3 types of middleware?
-Middleware functions can be divided into three main categories: application-specific, information-exchange and management and support middleware
-
+Middleware functions can be divided into three main categories: application-specific, information-exchange and management,
+ and support middleware
 
 Middleware is software that acts as a bridge between different applications, systems, or components, enabling them to communicate and share data. It’s often used in distributed systems, web development (like in Node.js), or networked applications. The statement you provided categorizes middleware into three types: application-specific, information-exchange, and management and support middleware. Below, I’ll explain each category in simple terms, with a focus on their role in systems like Node.js (since you mentioned the "Node shell" earlier).
 
 1. Application-Specific Middleware
-What It Is: This type of middleware is designed for a specific application or purpose. It handles tasks unique to a particular program or system, tailored to its needs.
-How It Works: It processes requests or data in a way that’s customized for the application’s logic or requirements.
-
+ This type of middleware is designed for a specific application or purpose. It handles tasks unique to a particular program or system, tailored to its needs.
+How It Works: It processes requests or data in a way that’s customized for the application’s logic or requirements. 
 
 information-Exchange Middleware
  This middleware focuses on enabling communication and data exchange between different systems, applications, or services, often across networks or platforms.
@@ -397,8 +528,6 @@ How It Works: It standardizes or translates data formats, protocols, or messages
 Management and Support Middleware
 What It Is: This middleware provides tools and services to manage, monitor, or support the operation of applications or systems, often focusing on performance, security, or maintenance.
 How It Works: It handles tasks like logging, error handling, load balancing, or ensuring system reliability, rather than directly processing application data.
-
-
 
 const express = require('express');
 const app = express();
@@ -424,8 +553,6 @@ app.get('/', (req, res) => {
 
 app.listen(3000, () => console.log('Server running on port 3000'));
 
-
-
 ----------------------------------------------------------
 object is an instance of class
 
@@ -434,7 +561,6 @@ An object in JavaScript is a data structure that stores data as key-value pairs,
 ----------------------------------------------------------
 
 Q 7. What are route and application level middlewares?/////// 
-
 Route based middlewares  
 
 class {
@@ -450,7 +576,7 @@ Routes are the way in which the client requests are handled by the application e
 Application Level Middleware are bound to an instance of express, using app.use() also called as global middleware.
 Application Level Middleware is used globally for example whenever an API is hit the app.use method hits first then goes to the routes part of it. 
  
-Q 8. How do you decide which code should go in an application level middleware vs which one is suitable for a route level middleware /////////// 
+Q 8. How do you decide which code should go in an application level middleware vs which one is suitable for a route level middleware. 
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 Types of Middleware:
@@ -509,26 +635,22 @@ Asynchronous JavaScript: Asynchronous code allows the program to be executed imm
 const getProductDetails = async function (req, res) { 
 } 
 
-
-
 Q 16. Where would you use asynchronous functions? 
 functions running in parallel with other functions are called asynchronous . 
 
 A good example is JavaScript setTimeout().
 
- a. when our project or peace of project works on parallelization. Or performing independent tasks in parallel.  
+a. when our project or peace of project works on parallelization. Or performing independent tasks in parallel.  
 b.Where we dont need to work sequentially
 c. we can achieve the outcomes much faster
  
-
  14. Where would you use synchronous functions? 
  Answer 
 a. when our project or peace of project works on Serialization. Or performing dependent tasks in sequence. 
- b.Where we need to work sequentially.  
+b.Where we need to work sequentially.  
 c. we can achieve the outcomes accurately and it makes our system easier to evolve and more resilient to failure.  
 For example- let take a project where product, customer and order is their here all the feature are related to each other so this features are inter-depended, so we will use synchronous function. 
  
-
  */
 
 /**
@@ -563,13 +685,7 @@ sol()
     }).then((value) => {    //then sirf promise pr lgta hai
         console.log(value) //
     })
-
-
-
 /**
- 
-
-
  
 
 
@@ -592,16 +708,13 @@ address: "delhi"
 //  console.log(Object.keys(obj),"12345")
 console.log(typeof Object.keys(obj), "123456789")//object
 console.log(Array.isArray(Object.keys(obj)), "qwerty")//true
-
-
-
-
+*/
+let promise2_prmosedefination
 /**
-
 all concept of promises in javascript?
 
-In JavaScript, promises are a way to handle asynchronous operations. They are objects that represent the eventual completion or failure of an asynchronous operation and allow you to write asynchronous code. 
- Promises have become a core part of JavaScript and are widely used in modern JavaScript applications. Here are the key concepts related to promises:
+In JavaScript, promises are a way to handle asynchronous operations. promise are objects that represent the eventual completion or failure of an asynchronous operation and allow you to write asynchronous code. 
+ Promises have become a core part of JavaScript and are widely used in modern JavaScript applications. Here are the key concepts related to promises
 
 Promise States: A promise can be in one of three states:
 
@@ -618,7 +731,7 @@ Handling Errors: Promises provide a mechanism to handle errors using the catch()
 
 Promise.all(): The Promise.all() method takes an array of promises as an argument and returns a new promise. This new promise is fulfilled when all the promises in the array are fulfilled, or it is rejected when any of the promises in the array is rejected. It allows you to wait for multiple asynchronous operations to complete simultaneously.
 
-Promise.race(): The Promise.race() method takes an array of promises as an argument and returns a new promise. This new promise is settled as soon as any of the promises in the array is settled, whether fulfilled or rejected. It can be used when you want to respond to the result of the first asynchronous operation that completes.
+Promise.race() : The Promise.race() method takes an array of promises as an argument and returns a new promise. This new promise is settled as soon as any of the promises in the array is settled, whether fulfilled or rejected. It can be used when you want to respond to the result of the first asynchronous operation that completes.
 
 Promise.resolve() and Promise.reject(): These static methods are used to create already fulfilled or already rejected promises, respectively. Promise.resolve() creates a promise that is resolved with a given value, while Promise.reject() creates a promise that is rejected with a given reason.
 
@@ -626,13 +739,10 @@ Async/Await : Introduced in newer versions of JavaScript, the async/await syntax
 
 These are the fundamental concepts of promises in JavaScript. Understanding and utilizing promises effectively can greatly improve the readability and maintainability of your asynchronous code.
 
-
 */
 
 
 /**
- * 
- * 
 // for (let i=0;i<4;i++){
 //     setInterval(()=>{
 // console.log(i,"#@# ii")
@@ -676,9 +786,6 @@ new Promise((resolve, reject) => {
 })
  */
 
-
-
-
 ///
 // 
 let obj = {
@@ -710,39 +817,27 @@ new Promise((resolve, reject) => {
 // console.log(ab)
 //  */
 
-
-
-
-
 let aq = [2, 3, 4, 5, 6, 7]
 arr = aq.fill(0, 1, 22)
 console.log(arr)
 
 // This JavaScript code creates an array aq with values [2, 3, 4, 5, 6, 7]. It then calls the fill method on this array with three arguments:
 
-
 // The first argument 0 specifies the value to fill the array with.
-
 // The second argument 1 specifies the index at which to start filling the array. In this case, it starts filling from index 1, which corresponds to the second element in the array.
 
 // The third argument 22 specifies the index at which to stop filling the array. However, since this index is greater than the length of the array, it is ignored and the filling continues until the end of the array.
 
 // Therefore, the resulting array arr will be [2, 0, 0, 0, 0, 0], since all elements from index 1 onwards are replaced with 0 by the fill method. This modified array is then logged to the console.
 
-
-
 /***
- 
 Node.js REPL Shell
-The Node.js REPL is an interactive shell that comes with Node.js, allowing developers to execute JavaScript code line-by-line in a command-line environment. It’s often referred to as the "Node shell" because it provides a way to interact with Node.js directly from the terminal or command prompt.
+REPL in NodeJS stands for Read, Evaluate, Print, and Loop. It is a computer environment similar to the shell which is useful for writing and debugging code as it executes the code in on go.
 
-Key Features of the Node.js REPL:
-Read-Eval-Print Loop: You type JavaScript code, the REPL evaluates it, prints the result, and waits for the next input.
-Access: Start it by typing node in your terminal (after installing Node.js) without specifying a file. This opens the REPL with a > prompt.
-Use Cases:
-Testing JavaScript Code: Quickly test snippets of JavaScript or Node.js-specific code without writing a full script.
-Debugging: Experiment with Node.js modules, APIs, or logic interactively.
-Learning: Explore JavaScript or Node.js features in real-time.
+Read: It reads the input provided by the user (JavaScript expressions or commands).
+Eval: It evaluates the input (executes the code).
+Print: It prints the result of the evaluation to the console.
+Loop: It loops back, allowing you to enter more code and get immediate result
 
 $ node
 > console.log('Hello, Node!')
@@ -766,9 +861,116 @@ NPM Ecosystem: Node Package Manager offers over 50,000 bundles to help developer
 Real-Time Applications: Perfect for data-intensive, real-time apps as it doesn't wait for APIs to return data.
 Unified Codebase: The Same code is used for both server and client, improving synchronization.
 Easy for JavaScript Developers: Since NodeJS is based on JavaScript, web developers can easily integrate it into their projects.
-
-
  */
 
+/**
+ What is control flow in NodeJS?
+Control flow in NodeJS refers to the sequence in which statements and functions are executed. It manages the order of execution, handling asynchronous operations, callbacks, and error handling to ensure smooth program flow . 
+
+What are the main disadvantages of NodeJS?
+Here are some main disadvantages of NodeJS listed below:
+
+Single-threaded nature: It may not fully utilize multi-core CPUs, limiting performance.
+NoSQL preference: Relational databases like MySQL aren't commonly used.
+Rapid API changes: Frequent updates can introduce instability and compatibility issues.
+ ----------------------------------------------------------------------------------------------
+
+✅ What is a Buffer in Node.js?
+Buffer is used to handle raw binary data in Node.js.
+📌 Key points
+It is like an array, but stores only binary data.
+Used when dealing with file systems, streams, or network data.
+
+---------------------------------------------------------------------------------------
+What are streams in NodeJS?
+In NodeJS, streams are a powerful way to handle data in chunks rather than loading the entire data into memory. Streams allow for the efficient processing of large volumes of data, especially where the data size is too large to fit into memory all at once.
+There are four types of the Streams:
+
+Readable Streams: These streams allow you to read data. For example, reading data from a file or receiving HTTP request data. Example:
+fs.createReadStream() or http.IncomingMessage.
+
+Writable Streams: These streams allow you to write data. For example, writing data to a file or sending HTTP response data. Example:
+ fs.createWriteStream() or http.ServerResponse.
+ 
+ Duplex Streams: These are both readable and writable. You can both read and write data using the same stream. Example: A TCP socket.
+
+ Transform Streams: These are a type of duplex stream where the data is transformed or modify as it is read and written. Example: A zlib stream to compress or decompress data.
+
+-------------------------------------------------------------------------------------------
+
+ Explain the crypto module in NodeJS.
+The crypto module is used for encrypting, decrypting, or hashing any type of data. This encryption and decryption basically help to secure and add a layer of authentication to the data. The main use case of the crypto module is to convert the plain readable text to an encrypted format and decrypt it when required.
 
 
+
+Explain the use of the timers module in NodeJS.
+The Timers module in NodeJS contains various functions that allow us to execute a block of code or a function after a set period.
+ setTimeout() method
+  setImmediate() method
+  setInterval() method
+
+
+
+  Explain the use of the passport module in NodeJS
+The passport module is used for adding authentication features to our website or web app. It implements authentication measure which helps to perform sign-in operations
+
+What is CORS in NodeJS?
+CORS stands for Cross-Origin Resource Sharing.
+cors is a security feature in browsers.
+cors decides which websites can request data from our server.
+📌 Why is it needed?
+By default, browsers block requests coming from different origins (domain, port, or protocol) for security reasons.
+-----------------------------------------------------------------------------------------
+Explain the tls module in NodeJS..
+The tls module provides an implementation of the Transport Layer Security (TLS) and Secure Socket Layer (SSL) protocols that are built on top of OpenSSL. 
+It helps to establish a secure connection on the network.
+----------------------------------------------------------------------------------------------
+
+Can you access DOM in Node?
+No, you cannot access the DOM in NodeJS because NodeJS is a server-side environment, while the DOM (Document Object Model) is a client-side concept used in browsers to interact with HTML and XML documents.
+
+
+
+What is piping in NodeJS?
+In NodeJS, piping refers to the process of passing the output of one stream directly into another stream. piping allows data to flow through multiple streams without needing to store it in memory.
+--------------------------------------------------------------------------------------------
+How to manage sessions in NodeJS?
+Session management can be done in NodeJS by using the express-session module. It helps in saving the data in the key-value form. In this module, the session data is not saved in the cookie itself, just the session ID
+--------------------------------------------------------------------------------------
+ 
+concept of stub in Node.js?
+Stubs are used in writing tests which are an important part of development.
+--------------------------------------------------------------------------------------
+
+ Describe the exit codes of Node.js?
+Exit codes give us an idea of how a process got terminated or the reason behind termination. 
+
+--------------------------------------------------------------------------------------
+
+✅ What is an Event Emitter in Node.js?
+EventEmitter is a class in Node.js used to handle events.
+EventEmitter allows objects to emit (send) events and listen (react) to events.
+
+EventEmitter lets your app do something when a specific event happens.
+--------------------------------------------------------------------------------------
+
+ Differentiate between process.nextTick() and setImmediate()  in node.js 
+
+ ✅ process.nextTick()
+process.nextTick() is a function in Node.js that schedules a callback to run immediately after the current function finishes execution, but before the event loop continues
+
+✅ setImmediate()
+setImmediate() is a function in Node.js that schedules a callback to run on the next iteration (cycle) of the event loop, after I/O events are processed.
+
+
+What is Libuv?
+Libuv is a library used by Node.js to handle asynchronous I/O operations in a non-blocking way.
+Libuv is the engine that powers Node.js to handle multiple tasks without getting blocked
+
+Libuv provides the event loop.
+The event loop is the mechanism that uses Libuv to run asynchronous tasks efficiently.
+//////////////////////////////
+Event Loop is like a manager, checking a task list and doing tasks one by one quickly.
+Libuv is the engine that powers this manager to handle everything smoothly. 
+
+*/

@@ -23,7 +23,7 @@ Used by HTTP, HTTPS, and WebSockets
 
 -----------------------------------------------------------------------------------
 1:) Establishes a persistent connection between client and server after an HTTP handshake.
-2:) Allows bidirectional communication: Both client and server can push data without waiting for a request.
+2:) Allows bi-directional communication: Both client and server can push data without waiting for a request.
 3:) Uses low overhead: After the initial handshake, messages have minimal headers, reducing latency compared to HTTP polling.
 4:) Supports real-time use cases: Ideal for live updates, such as stock changes, chat messages, or notifications.
  
@@ -82,7 +82,6 @@ Docker is a tool that helps us:
  */
 
 /**
- 
 
  app.use(express.json()) //This middleware parses incoming requests with JSON payloads
 

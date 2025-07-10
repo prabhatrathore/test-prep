@@ -2,14 +2,13 @@
  What is Authentication? 
 Authentication is the process of recognizing a user's identity.
 
-( Username and password combination is the most popular authentication mechanism, and it is also known as password authentication.)  
+Username and password combination is the most popular authentication mechanism, and it is also known as password authentication.  
   
 In simple terms, authentication is the process of verifying who a user is, while authorization is the process of verifying what they have access to.
 
 -------------------------------------------------------------------------------------------------
 
 Q1:  What is Authorization ? 
- 
 Authorization is the process of identifying (determining) what resources or actions a verified user is allowed to access or perform.
 
 ----------------------------------------------------------------------------------------------
@@ -42,12 +41,11 @@ When you click “Sign in with Google” on a website, it uses OAuth to log you 
 Q3😊 What Is JWT? 
 JWT (JSON Web Token) is a compact, self-contained way to securely transmit information between parties, often used for authentication and authorization. It’s like a digital passport that proves who we are and what we’re allowed to do.
 
-
 A JWT is a string of characters that contains three parts, separated by dots (.):
 
-Header: Defines the token type (JWT) and the signing algorithm (e.g., HMAC SHA256).
-Payload: Contains claims (data) like user ID, roles, or expiration time.
-Signature: Verifies the token’s authenticity, ensuring it hasn’t been tampered with.
+🔹 Header: Information about the token and how it is secured.
+🔹 Payload: The actual data or claims inside the token.
+🔹 Signature: A security code to check if the token is safe and unmodified.
 
 These parts are encoded in Base64 and look like this: header.payload.signature.
 
@@ -55,6 +53,11 @@ Cons:
 1. Tokens can’t be revoked easily unless stored server-side or using short expiration times.
 2. Sensitive data in the payload can be read (it’s Base64-encoded, not encrypted) unless encrypted separately.
 
+-------------------------------------------------------------------------------------------------------------
+What is a token? 
+A token is a string of characters that represents a piece of information, often used for authentication or authorization in systems (like APIs or web applications).
+
+(In the context of JWT (JSON Web Token), a token is a digitally signed string that contains encoded data (like user identity or permissions) and is used to verify a user’s identity or access rights securely.)
 -------------------------------------------------------------------------------------------------------------
 
 Q4😊 What Is JSON?  
@@ -74,10 +77,6 @@ JSON is like a structured way to organize data using key-value pairs. It’s com
 JWT uses JSON to structure its header and payload (e.g., user info or permissions), which are then encoded in Base64 and signed to create a secure token.
 ---------------------------------------------------------------------------------------------
 
-What is a token? 
-A token is a string of characters that represents a piece of information, often used for authentication or authorization in systems (like APIs or web applications).
-
-(In the context of JWT (JSON Web Token), a token is a digitally signed string that contains encoded data (like user identity or permissions) and is used to verify a user’s identity or access rights securely.)
  */
 
 /**
@@ -167,7 +166,7 @@ These codes indicate an error caused by the client, such as invalid requests or 
 --429 Too Many Requests: The client has exceeded the rate limit (used for rate limiting, as you previously asked).
 431 Request Header Fields Too Large: The request headers are too large for the server to process.
 451 Unavailable For Legal Reasons: The resource is unavailable due to legal restrictions (e.g., censorship).
-
+-------------------------------------------------------------------------------------------------------------
 
 5xx: Server Errors
 These codes indicate that the server failed to fulfill a valid request due to an error on its end.
@@ -196,7 +195,6 @@ Purpose: Ensures confidentiality by protecting data from unauthorized access. On
 Types:
 Symmetric Encryption: Uses the same key for encryption and decryption (e.g., AES, DES).
 Asymmetric Encryption: Uses a pair of keys— public for encryption, private for decryption (e.g., RSA, ECC).
-
 
 Hashing
  Hashing converts data into a fixed-length string (hash value or digest) using a hash function. It’s a one-way process, meaning the original data cannot be retrieved from the hash.

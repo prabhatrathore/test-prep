@@ -44,7 +44,9 @@ let result = sol([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 7);
 console.log(result);
 //time complexity binary hogi O(log(n)) linear se bahAtr MAANI  jaati h 
 
-let a = [1, 2, 3]; let b = [1, 2, 3]; console.log(a == b);
+let a = [1, 2, 3]; 
+let b = [1, 2, 3];
+ console.log(a == b);
 
 
 /**

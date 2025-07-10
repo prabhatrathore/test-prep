@@ -109,7 +109,6 @@ Merge two sorted arrays
 Rotate an array
 
 2. Strings
-
 String manipulation (reverse, palindrome check, anagram check)
 Common problems:
 Reverse a string

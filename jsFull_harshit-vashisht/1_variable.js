@@ -1,8 +1,6 @@
 /**
  * intro to variable 
- * variable can store some information. 
- * we can use that information later.
- * we can change the value later.
+ * variable can store some information. we can use or change that information later.
  */
 
 // declaring a variable 
@@ -46,29 +44,27 @@ lastName = "sita "//assign the value is possible
 console.log(lastName);
 
 /**
- * in const variable 
- * neither  redeclare nor reassign the value after the declaring the variable
- *  
+ * in const variable : neither redeclare nor reassign the value after the declaring the variable
  */
 
 const name1 = 'ram';
 // name1 = 'sonu'; //type error :assignment to constant variable 
-console.log(name1)
-console.log('=======1111111111111 ========');
+// console.log(name1)
 
 let num = 22;
-// console.log(typeof (num + '')) //change nummber to string
+// console.log(typeof (num + '')) //change number to string
 // console.log(typeof String(num))
 //===============================
+
 let str1 = '21'
 let str2 = '11'
-// console.log(+str1+ +str2) // add two num
+// console.log(+str1+ +str2,":::::::???") // add two num //32
 //===============================
-// console.log(2 !== '2') //false
-//=====================================
+// console.log(2 !== '2',"EEEEEEEEEEEEe") //true
 // console.log(1==='1') //false
-console.log(1 && "0", "11111111111");//0 becasue ye dono true hai aur last wala show hoga 
+// console.log(1 && "0", "11111111111");//0 becasue ye dono true hai aur last wala show hoga 
 //========================================
+
 let num2 = 9
 let winning = Math.floor(Math.random() * 10);
 // console.log(winning)
@@ -98,7 +94,6 @@ switch (day) {
     default:
         console.log('error occur');
 };
-console.log("=====22222222222=========")
 //=============================================
 let total = 0;
 let i = 0
@@ -112,36 +107,39 @@ while (i < 100) {
 //====================================
 let fruit = ['mango', 'apple', 'grapes']
 ab = fruit[0].charAt(3)
-console.log(ab, '2222=2=2=2=2=2')
-console.log([0])
-console.log(fruit[0].length)
+// console.log(ab, '2222=2=2=2=2=2') // g
+// console.log([0]) // [ 0 ]
+// console.log(fruit[0].length)//5
 //==================================
+
 //==passby value
 let a = 0
 let b = a
-// console.log(a)
-// console.log(b)
-// a++
-// console.log(a)
-// console.log(b)
+// console.log(a)//0
+// console.log(b) //0
+a++
+// console.log(a) // 1
+// console.log(b,"WWWWWWWWWWWww")//0
 //==================================
-//==================================
+
 // how to clone array 
 let array = [1, 2, 3, 4, 5];
 let array2 = array.slice(0);//created new array in memory and allocated new address 
 let array3 = array //allocate same array and address
-// console.log(array==array2)
-// console.log(array)
-// console.log(array2)
-// console.log(array===array3)//pass by referenceThe
+
+// console.log(array==array2) //false
+// console.log(array)//[ 1, 2, 3, 4, 5 ]
+// console.log(array2)//[ 1, 2, 3, 4, 5 ]
+// console.log(array===array3,"????????")//pass by referenceThe  //true
 //  slice() method does not change the original array.
 //===========================================
+
 let ab2 = '234'
 arr2 = [1, 2, 3, 4, 5]
-console.log(arr2 == array)
+// console.log(arr2 == array,'-----pl,lp')// false
 // console.log(ab2.reverse)
 //=================================
-console.log("33333333333==========")
+
 // object store key value Pair
 // object dont have index 
 // how to access data from object
@@ -159,6 +157,7 @@ const obj = {
 
 obj[key] = "qwert@gmail.com"// fetch key variable value as key
 obj['gender'] = 'male'
+
 // console.log(obj)
 // {
 //   name: 'abc',
@@ -168,11 +167,11 @@ obj['gender'] = 'male'
 //   email: 'qwert@gmail.com',
 //   gender: 'male'
 // }
-console.log('=================================')
+
 // how to iterate Object.
 //only for in loop
 for (let key in obj) { // attribute name = key 
-    console.log(key, '======', obj[key])
+    // console.log(key, '======', obj[key])
 };
 /**
  * name ====== abc
@@ -204,8 +203,8 @@ person hobbies : [ 'guitar', 'sitar', 'hitar' ] of-loop
 email : qwert@gmail.com of-loop
 gender : male of-loop
  */
-console.log('=================================')
-//==========commputed property
+
+//=commputed property
 const key1 = 'value1';
 const key2 = 'value2';
 

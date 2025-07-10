@@ -26,28 +26,49 @@ console.log(typeof a)// undefined
 console.log(typeof b)// 3 
 
 
-const arr = [1, 2];
+let arr = [1, 2];
 arr.push(3); // Works (modifies content)
 arr = [4, 5]; // Error (can't reassign)
 
-const obj = { a: 1 };
-Object.freeze(obj);
-obj.a = 2; // Fails (properties immutable)
+// const obj = { a: 1 };
+// Object.freeze(obj);
+// obj.a = 2; // Fails (properties immutable)
 
 
 // Array with Freeze:
 
 const numbers = [1, 2, 3];
 Object.freeze(numbers);
-numbers.push(4); // Fails: Cannot modify array
+// numbers.push(4); // Fails: Cannot modify array
 numbers[0] = 5; // Fails: Cannot change elements
+console.log(numbers,'numbeeeeeeeeeeeeeee')
 
 // Nested Objects (Shallow Freeze)
 const data = { user: { name: "John" } };
 Object.freeze(data);
-data.user.name = "Jane"; // Works: Nested objects are not frozen
+data.user.name = "Jan111e"; // Works: Nested o bjects are not frozen
 data.user = {}; // Fails: Cannot change top-level property
+// console.log(data,"dattttttttttttttttttttttt")//{ user: { name: 'Jan111e' } }
+//if nested object being freeze also then 
 
+function deepFreeze(obj) {
+  // Freeze all properties that are objects
+  Object.keys(obj).forEach(key => {
+    if (typeof obj[key] === 'object' && obj[key] !== null && !Object.isFrozen(obj[key])) {
+      deepFreeze(obj[key]); // Recursively freeze nested objects
+    }
+  });
+  // Freeze the object itself
+  return Object.freeze(obj);
+}
+
+// Example usage
+const data = { user: { name: "John" } };
+deepFreeze(data);
+
+data.user.name = "Jane"; // Fails: Nested object is now frozen
+console.log(data.user.name); // Output: "John"
+// -------------------------------------------------------------------------------------
 
 
 // const is a keyword used to declare a variable that cannot be reassigned a new value. This means that once a const variable is assigned a value, that value cannot be changed. For example:
@@ -57,8 +78,10 @@ data.user = {}; // Fails: Cannot change top-level property
 // freeze is a method that can be used on an object to make its properties immutable. Once an object is frozen, its properties cannot be added, deleted, or modified. For example:
 
 
-// const myObj = { a: 1, b: 2 };
-// Object.freeze(myObj);
-// myObj.c = 3; // This will not add a new property because the object is frozen
-// myObj.a = 5; // This will not modify the existing property because the object is frozen
+const myObj = { a: 1, b: 2 };
+Object.freeze(myObj);
+myObj.c = 3; // This will not add a new property because the object is frozen
+myObj.a = 5; // This will not modify the existing property because the object is frozen
 // In summary, const is used to declare variables that cannot be reassigned, while freeze is used to make an object and its properties immutable.
+
+console.log(myObj,'myobj222')

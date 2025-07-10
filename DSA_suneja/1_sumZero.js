@@ -1,7 +1,7 @@
 // // find the pair which has sum zero
 // // checking sum zero,
 // // let arr = [-5, -4, -3, -2, 0, 2, 4, 6, 8] //input
-// //output =first pair chahiye jiska sum zero hai [-4,4]   
+// //  output   =  first pair chahiye jiska sum zero hai [-4,4]   
 
 // function sol12(arr) {
 //     for (let i = 0; i < arr.length; i++) { // if we want all pairs

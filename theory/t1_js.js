@@ -7,7 +7,7 @@ JavaScript is a scripting programming language used in client side that allows u
 JavaScript is an object-based scripting language, meaning it uses objects to represent data and functionality,
 JavaScript is also cross-platform, which means it can be run on any device that has a web browser,
 JavaScript follow synchronous pattern
-it is single threaded .
+it is single threaded.
 
 Dynamic Typing ****
 JavaScript is dynamically typed, which means: we don’t need to mention the type of a variable.
@@ -18,6 +18,22 @@ x = "Hello";         // now x is a string
 x = [1, 2, 3];      // now x is an array
 x = { name: "JS" } // now x is an object
 */
+let rem;
+let Rem;
+
+let JAVASCRIPT_CASE_SENSITIVE_LANGUAGE
+
+/**
+ Is JavaScript a case-sensitive language?
+Yes, JavaScript is a case sensitive language.
+It means uppercase and lowercase letters are treated as different.
+let name = "John";
+let Name = "Doe";
+
+console.log(name); // John
+console.log(Name); // Doe
+ */
+
 /*
   ------------------------------------------------------------------------------------------------------------
   Q: Why JavaScript is known as a lightweight programming language ?
@@ -39,32 +55,27 @@ It combines:
 Interpreter: Quickly runs code initially.
 Compiler: Converts frequently used code into optimized machine code for speed.
 --------------------------------------------------------------------------------------------
-
 */
 let ADVANTAGES_OF_USING_JAVASCRIPT = {
-
 }
-
 /*
 -- Light Weight Scripting Language******
 means it is made for data handling at the browser (only) & due to its low CPU usage, minimalist syntax, and ease of implementation.
 
--- Server interaction is less
---  Feedback to the visitors is immediate
--- Interactivity is high
--- Interfaces are rich
+--> Server interaction is less
+-->  Feedback to the visitors is immediate
+--> Interactivity is high
+--> Interfaces are rich
 Speed. Client-side JavaScript is very fast because it can be run immediately within the client-side browser. ...
 Simplicity. JavaScript is relatively simple to learn and implement.
 
    The biggest advantage of JavaScript having ability to support all modern browsers and produce an equivalent result.
 
 -> One of the main uses of JavaScript is to create dynamic and interactive websites. JavaScript can be used to manipulate the content and styling of a web page, add interactivity through event handling, and communicate with web servers to update content without requiring a full page refresh.
-
 ---------------------------------------------------------------------------------------------------------
 */
 
 let DISADVANTAGES_OF_JS = {
-
 }
 /*
 3)
@@ -77,32 +88,34 @@ Reading and writing of files is not allowed
 
  the programming languages that are compiled first before running, scripting languages do not compile the file and execute the file without being compiled.
  
- 
  ******************************************************************************
  */
-
 
 // What is an Interpreted Programming Language?
 /*
 ******************************************************************************
 Originally, JavaScript was interpreted, meaning the browser read and executed the code line-by-line at runtime.
 
-
 Question: “Is JavaScript a programming language or a scripting language?”
 Answer: JavaScript is both. It began as a scripting language for web browsers, automating tasks like DOM manipulation. But with modern features (e.g., ES6 classes, modules), it’s a full programming language we used everywhere from front-end to back-end development (e.g., with Node.js).
  
+JavaScript is a programming language .explain 
+Yes, JavaScript is a programming language that is used primarily for web development, but can also be used for other purposes such as server-side programming, desktop applications, and mobile app development. 
+
 -------------------------------------------------------------------------
 
 JavaScript code is a single thread, which means that code can only do one task at a time
 
 ❓ Why is JavaScript single-threaded?
 JavaScript was designed to be single-threaded because of its main job in the browser: interact with the DOM (the web page).
-
-
+---------------------------------------------------------------------------------------
+*/
+let event_loop
+/*
 The Event Loop and Asynchronous Behavior:
 JavaScript uses single-threaded, non-blocking model with an event loop to handle concurrency without multiple threads.
 The event loop manages the execution of code, handling tasks like DOM events, timers (setTimeout), and asynchronous operations (e.g., fetching data with fetch).
-
+--------------------------------------------------------------------
 How it works:
 JavaScript has a call stack (where code executes), a task queue (for pending tasks), and a web API (for async operations like timers or HTTP requests).
 
@@ -114,9 +127,7 @@ setTimeout(() => console.log("Timeout"), 0);
 console.log("End");
 
 Output: Start, End, Timeout
-
------------------------------------------------------------------------------------------------------------
- 
+-------------------------------------------------------------------------------------------------
 ---example---------------------------------------------
 console.log("1");
 
@@ -129,11 +140,8 @@ console.log("3");
 
 🧠 1. Call Stack (Main Execution)
 This is where code is executed line by line.
-
 console.log("1") → goes into the stack → runs → pops out.
-
 setTimeout(...) → goes into the stack → passed to Web APIs → pops out.
-
 console.log("3") → runs next.
 
 So the stack looks like:
@@ -142,10 +150,8 @@ So the stack looks like:
 | setTimeout(...)  | → passed to Web API
 | console.log("3") | → done
 
-
 🌐 2. Web APIs
 These are provided by the browser (or Node) to handle asynchronous stuff outside the main thread.
-
 ---------------------------------------------------------------------------------------------------
 In our case:
 
@@ -163,36 +169,25 @@ Instead, it waits until the Call Stack is empty.
 
 🔁 4. Event Loop – The Boss
 The Event Loop keeps checking:
-
 “Is the call stack empty?”
-If yes, it picks the first task from the Callback Queue and pushes it into the Call Stack to execute.
+If yes, it picks the next task from the Callback Queue and pushes it into the Call Stack to execute.
 
 So here:
 
 After console.log("3") finishes, the call stack becomes empty.
-
 Event Loop picks () => console.log("2") and runs it.
-
-
-
 -------------------------------------------------------------------------
-
-JavaScript is a programming language .explain 
-Yes, JavaScript is a programming language that is used primarily for web development, but can also be used for other purposes such as server-side programming, desktop applications, and mobile app development. 
-
 **********************************************************************************************
-
 */
 let FUNCTION_SCOPE_AND_GLOBAL_SCOPE
-// Function-Scoped or Globally Scoped
+
 /*
   Function-Scoped
 A variable declared with var is function-scoped, meaning it’s only accessible within the function where it’s defined in. If it’s not inside a function, it becomes globally scoped.
-
 **********************************************************************************************
 
-Globally Scoped
-A variable declared with var outside any function (or without var in non-strict mode) is globally scoped, meaning it’s accessible everywhere in our program, including inside functions, loops, or any other code.
+Globally Scoped.......
+A variable declared with var outside any function (or without 'var' in non-strict mode) is globally scoped, meaning it’s accessible everywhere in our program, including inside functions, loops, or any other code.
 
 Example with our code:
 
@@ -203,15 +198,16 @@ function test() {
     console.log(ret); // ret is still accessible inside this function
 }
 test(); // Outputs: 2
-
 */
+
 let w = 2;
 console.log(w); // Accessible here
 function test() {
   console.log(w); // Also accessible here
 }
+
 /**
-In JavaScript, whether a variable declared with let w = 2 is globally scoped depends on where it is declared:
+In JavaScript, whether a variable declared with 'let w = 2' is globally scoped depends on where it is declared.
 
 If declared outside any function or block: Yes, w is in the global scope and accessible throughout the entire script (or module, if using ES modules). For example:
 
@@ -222,24 +218,8 @@ If declared inside a block or function: If w is declared inside a block (e.g., {
 In JavaScript, if you declare const t = 3 in the first line of a script (outside any function or block), it behaves similarly to let in terms of scope but with key differences due to const’s properties:
 
 Global Scope: If const t = 3 is declared at the top level of a script (outside any block or function), it is in the global scope for that script and accessible throughout the script. For example:
-
  */
 
-let rem;
-let Rem;
-
-let JAVASCRIPT_CASE_SENSITIVE_LANGUAGE
-
-/**
- Is JavaScript a case-sensitive language?
-Yes, JavaScript is a case sensitive language.
-It means uppercase and lowercase letters are treated as different.
-let name = "John";
-let Name = "Doe";
-
-console.log(name); // John
-console.log(Name); // Doe
- */
 
 /**
  
@@ -249,12 +229,8 @@ In simple terms, "interactivity" refers to how much a user can interact with a w
 With JavaScript, we can create interactive features such as drop-down menus, pop-up windows, sliders, animations, and more. These features can respond to user actions such as clicks, mouse movements, or keyboard inputs, allowing users to interact with the website and its content in meaningful ways.
 
 For example, with JavaScript, a user can click a button to show or hide content on a web page, or drag and drop items to rearrange them. JavaScript can also be used to validate form inputs, perform calculations, and even create interactive games.
-
-
  */
-
 let Undefined_AND_NULL
-
 /**
  What is the difference between null & undefined ?
  Undefined means a variable has been declared but has not yet been assigned a value. On the other hand,
@@ -303,18 +279,16 @@ Note that in the example above, the function is assigned to a variable (sum), so
 in this case, the function is defined and invoked immediately without being assigned to a variable
 
 An Immediately Invoked Function ( known as IIFE and pronounced as IIFY) is a function that runs as soon as it is defined.
-
  */
 
 let feature_of_js
 /*
-
 🌟 Core Features of JavaScript
 ✅ Lightweight and Interpreted
 JavaScript is a lightweight language and runs directly in the browser. No need to compile manually.
 
 ✅ Dynamic Typing
-You don’t need to declare variable types (like int, string, etc.).
+we  don’t need to declare variable types (like int, string, etc.).
 Example:
 
 let x = 10;  // number  
@@ -360,7 +334,6 @@ var str = '   hello-world   '
 var str2 = str.trim()
 // console.log(str.length,"line567") //17
 // console.log(str2.length) //// 11 
-// console.log('====111====')
 let temp = str.slice(0, 4)  //
 // console.log(temp, "@@@ slice first ") // h 
 // console.log(typeof temp, "@@@ slice typeof check ") // string
@@ -375,7 +348,7 @@ let temp = str.slice(0, 4)  //
 // console.log(str.indexOf('h'))  //3
 // console.log(str.lastIndexOf('h')) //3
 
-// ========================================================================================================================
+// ========================================================================================================
 // console.log('================================================================================================== =======')
 let tempAr = [3, 4, 5, 6, 6, 2, 1]
 console.log(tempAr?.slice(0, 2), " EEEEEEEEE__ ===== ")//[ 3, 4 ]  
@@ -429,7 +402,6 @@ let arr = [10, 20, 30, 40, 50];
 
 console.log(arr.slice(-3));      // [30, 40, 50]
 console.log(arr.slice(-4, -1));  // [20, 30, 40]
-
  =======================================================================================================
  */
 
@@ -453,7 +425,7 @@ Array.map()
 Description: Creates a new array with the results of calling a provided function on every element.
 ------------------------------------------------------------------------------------------------
 Array.filter()
-Description: Creates a new array with all elements that pass a test
+Description: Creates a new array with all elements that pass a test.
 ------------------------------------------------------------------------------------------------
 Array.reduce()
 Description: Reduces an array to a single value by executing a reducer function for each element, accumulating a result.
@@ -489,8 +461,6 @@ console.log(arr); // [1, 'new', 4]
 
 Array.concat()
 Description: Merges two or more arrays, returning a new array without modifying the originals.
-
-
  */
 var ae = "eeee"
 ae = 'helo'// reassign krra h ye 
@@ -558,7 +528,6 @@ NaN stands for "Not-a-Number".
 
 It’s a special value in JavaScript that means:
 “This value is not a valid number.”
-
 ------------------------------------------------------------
 typeof of NaN will return a Number.
 
@@ -588,6 +557,7 @@ function example(a, a) {
   console.log(a); // Only the last 'a' is used
 }
 --------------------------------------------------------------------------------------------------
+
 "use strict";
 function example(a, a) { // SyntaxError: Duplicate parameter name not allowed in this context
   console.log(a);
@@ -661,10 +631,8 @@ for (let num of range(1, 5)) {
 let WeakMap
 /*
 ---------------------------------------------------------------------------------------------------------
-WeakMap in JavaScript is a collection of key/value pairs, where keys must be objects  and values can be any data type.
+WeakMap in JavaScript is a collection of key/value pairs, where keys must be objects and values can be any data type.
 A WeakMap is a special kind of Map in JavaScript 
-
-let weakMap = new WeakMap();  
 
 let obj = { name: "John" };
 
@@ -672,6 +640,7 @@ let weakMap = new WeakMap();
 weakMap.set(obj, "secret value");
 
 console.log(weakMap.get(obj)); // "secret value"
+---------------------------------------------------------------------------
 
 Key Features of WeakMap
 Keys Must Be Objects: 
@@ -682,7 +651,7 @@ Weak References: If a key object is no longer referenced elsewhere in the code, 
 Non-Iterable: we can’t loop through a WeakMap (no .keys(), .values(), or .entries()), ensuring privacy and preventing accidental leaks.
 
 Limited Methods: Supports only .set(key, value), .get(key), .has(key), and .delete(key).
-
+--------------------------------------------------------------------
 
 Benefits of WeakMap
 Memory Efficiency:
@@ -714,7 +683,6 @@ WeakMap is like a Map, but:
 Keys must be objects
 Entries can be garbage collected if the object is no longer used
 It’s not iterable
-
 */
 
 let WeakSet
@@ -801,7 +769,7 @@ console.log(t1, "rrrrr  ")
  An object is a data structure that can store a collection of properties.
  
  Arrays are indexed by numbers.
- Arrays can only store primitive data types and objects.
+-*-*-*-*- (Arrays can only store primitive data types and objects.)
  
  Objects are indexed by strings. 
   Objects can store primitive data types, objects,function and arrays.
@@ -1153,7 +1121,14 @@ function hg(a) {
   }
 }
 console.log(hg(3)(4)(5))//12  
-
+function as(e) {
+  return function (g) {
+    return function (h) {
+      return e + g + h
+    }
+  }
+}
+// console.log(as(2)(4)(5),"wwww")  
 // Usage
 // console.log(curryAdd(1)(2)(3)); // Output: 6
 
@@ -1251,8 +1226,6 @@ Higher-order functions = usage of that capability
 
 ------------------------------------------------------------------------------------
 
-
-
 ------------------------------------------------------------------------------------
 Scope Chain: in js 
  if the javascript engine does not find the variable in local scope, it tries to check for the variable in the outer scope. If the variable does not exist in the outer scope, it tries to find the variable in the global scope.
@@ -1262,7 +1235,6 @@ What is the use of a constructor function in javascript?
 Constructor functions are used to create objects in javascript.
 
 When do we use constructor functions?
-
 If we want to create multiple objects having similar properties and methods, constructor functions are used.
 
 Note- The name of a constructor function should always be written in Pascal Notation: every word should start with a capital letter.
@@ -1299,8 +1271,9 @@ Browser Object Model is known as BOM. It allows users to interact with the brows
  What are classes in javascript?
 Introduced in the ES6 version, classes are nothing but syntactic sugars for constructor functions. They provide a new way of declaring constructor functions in javascript.  Below are the examples of how classes are declared and used:
 
-// Before ES6 version, using constructor functions
-function Student(name,rollNumber,grade,section){
+// Before ES6 version, using constructor functions*/
+
+function Student(name, rollNumber, grade, section) {
   this.name = name;
   this.rollNumber = rollNumber;
   this.grade = grade;
@@ -1308,7 +1281,7 @@ function Student(name,rollNumber,grade,section){
 }
 
 // Way to add methods to a constructor function
-Student.prototype.getDetails = function(){
+Student.prototype.getDetails = function () {
   return 'Name: ${this.name}, Roll no: ${this.rollNumber}, Grade: ${this.grade}, Section:${this.section}';
 }
 
@@ -1317,9 +1290,10 @@ let student1 = new Student("Vivek", 354, "6th", "A");
 student1.getDetails();
 // Returns Name: Vivek, Roll no:354, Grade: 6th, Section:A
 
+// -------------------------------------------------------------------------------------------------
 // ES6 version classes
-class Student{
-  constructor(name,rollNumber,grade,section){
+class Student1 {
+  constructor(name, rollNumber, grade, section) {
     this.name = name;
     this.rollNumber = rollNumber;
     this.grade = grade;
@@ -1327,16 +1301,19 @@ class Student{
   }
 
   // Methods can be directly added inside the class
-  getDetails(){
+  getDetails() {
     return 'Name: ${this.name}, Roll no: ${this.rollNumber}, Grade:${this.grade}, Section:${this.section}';
   }
 }
 
-let student2 = new Student("Garry", 673, "7th", "C");
+let student2 = new Student1("Garry", 673, "7th", "C");
 student2.getDetails();
 // Returns Name: Garry, Roll no:673, Grade: 7th, Section:C
-Key points to remember about classes:
 
+
+/*
+Key points to remember about classes:
+---------------------------------------------------------------------------------------------------
 Unlike functions, classes are not hoisted. A class cannot be used before it is declared.
 A class can inherit properties and methods from other classes by using the extend keyword.
 All the syntaxes inside the class must follow the strict mode(‘use strict’) of javascript. An error will be thrown if the strict mode rules are not followed. 
@@ -1470,6 +1447,7 @@ Method	      Function inside a class
 Inheritance	  One class can use properties/methods of another using extends & super()
 Encapsulation	Hiding internal details and showing only essentials (via class structure)
 Polymorphism	Same method behaves differently in different classes
+abstruction   : show only relevant details for users and hide other details
 
 🔸 Example:
 */
@@ -1520,17 +1498,12 @@ m.show();
 /*
 🔸 Summary (For Interview Quick Recall):
 Class = Blueprint
-
 Object = Instance of Class
-
 Constructor = Auto-run when object created
-
 this = Refers to current object
 
 super() = Call parent class methods/properties
-
 Static Method = No need to create object
-
 Inheritance = extends + super()
 
 
@@ -1562,9 +1535,6 @@ Goal: Show what an object does, hide how it does.
 
 Example:
 
-js
-Copy
-Edit
 class Car {
   startEngine() { // abstraction: user just calls this
     this._injectFuel();
@@ -1583,10 +1553,7 @@ Same function name behaves differently for different classes.
 Goal: Reuse function names across multiple classes.
 
 Example:
-
-js
-Copy
-Edit
+*/
 class Animal {
   sound() { console.log("Animal makes sound"); }
 }
@@ -1597,6 +1564,9 @@ const a = new Animal();
 const d = new Dog();
 a.sound(); // Animal makes sound
 d.sound(); // Dog barks
+
+/*
+
 🧠 Think of it like: Same remote button — controls TV, AC, Fan differently.
 
 ⚡ Final One-Liner Recap:
@@ -1604,17 +1574,18 @@ Pillar	Purpose	Keyword
 Encapsulation	Protect and bundle data	class
 Abstraction	Show only required details	methods
 Polymorphism	One method, many forms	override
+inheritance : 
 
 */
-function afg(){
+function afg() {
 
 }
-console.log(typeof afg,"aaaaaaaaaaaaaaaa")//function 
-console.log(typeof NaN,"aaaaaaaaaaaaaaaa")//number 
+console.log(typeof afg, "aaaaaaaaaaaaaaaa")//function 
+console.log(typeof NaN, "aaaaaaaaaaaaaaaa")//number 
 // What will be the result of the following code?
-let x = 10;
-let y = (x++, x + 1, x * 2);
-console.log(y);//22
+// let x = 10;
+// let y = (x++, x + 1, x * 2);
+// console.log(y);//22
 
 // Explanation:
 
@@ -1648,4 +1619,61 @@ foo(1) → 1 + foo(0)
 foo(0) → 1
 So, the total is 3 + 2 + 1 + 1 = 7.
 
+🔥 Difference between Prototypal Inheritance and Classical Inheritance in JavaScript
+✅ 1. Classical Inheritance
+✔ What is it?
+
+Common in languages like Java, C++.
+Uses classes and objects.
+You create a class (blueprint), then make objects (instances) from it.
+Inheritance happens by extending classes.
+
+
+✅ 2. Prototypal Inheritance (JavaScript)
+✔ What is it?
+
+JavaScript’s way of inheritance.
+
+Uses objects inheriting from other objects directly.
+
+Each object has a hidden [[Prototype]] reference (accessed via __proto__ or Object.getPrototypeOf()).
+
+💡 Example:
+*/
+let animal = {
+  eat() {
+    console.log("Eating...");
+  }
+};
+
+let dog = Object.create(animal);
+dog.bark = function () {
+  console.log("Barking...");
+};
+
+dog.eat(); // Eating...
+dog.bark(); // Barking...
+/*
+✅ What are JavaScript Design Patterns?
+🔹 Meaning:
+Common solutions to problems that come up while building apps. They make code cleaner, reusable, and stable.
+
+🔹 Three main types:
+
+Creational Patterns:
+How to create objects efficiently.
+(e.g., Factory, Singleton)
+
+Structural Patterns:
+How to organise and combine objects to build bigger systems.
+(e.g., Adapter, Decorator)
+
+Behavioral Patterns:
+How objects communicate and interact with each other.
+(e.g., Observer, Strategy)
+
+
+✅ Difference between Async/Await and Generators
+Generators pause and resume code execution.
+Async/Await waits for promises to resolve to write asynchronous code like synchronous code.
  */

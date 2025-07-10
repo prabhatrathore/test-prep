@@ -191,3 +191,76 @@ function sol2() {
 sol2()
 //==============================
 //default parameter
+// ✅ 1. What is lexical scope in JavaScript?
+// 🔹 Meaning:
+// Where a variable is defined decides its scope.
+// Inner functions can access variables of outer functions.
+function outer() {
+  let x = 10;
+  function inner() {
+    console.log(x); // 10
+  }
+  inner();
+}
+/**
+ ✅ 2. How does lexical scoping work with this keyword?
+🔹 Answer:
+Lexical scope and this are different.
+
+this depends on how a function is called, not where it’s defined.
+
+Lexical scope is based on where it’s written in code.
+
+✅ 3. What is the use of void(0)?
+🔹 Simple meaning:
+Runs an expression without returning anything.
+Often used in <a href="javascript:void(0)"> to do nothing and prevent page reload
+
+✅ 5. What are Web Workers?
+🔹 Simple answer:
+They run JavaScript in background threads, so heavy tasks don’t block UI.
+
+💡 Use case: Data processing without freezing the page.
+✅ 6. Explain debouncing and throttling.
+🔹 Debouncing:
+Runs a function after a delay, and resets timer if called again.
+(e.g., search bar input)
+
+🔹 Throttling:
+Runs a function at fixed intervals, ignoring extra calls in between.
+
+(function() { var a = b = 5; })();
+console.log(typeof a); // undefined (a is local)
+console.log(typeof b); // number (b becomes global)
+
+Why?
+b = 5 is like window.b = 5 but a is var scoped inside function.
+
+-------------------------------------------------------------------------------------------
+
+const car = {
+  name: 'Toyota',
+  getName: function() {
+    return this.name;
+  },
+};
+
+const getCarName = car.getName;
+console.log(getCarName()); // ???
+Why?
+Because this is not bound to car here; it becomes undefined or window depending on strict mode.
+-----------------------------------------------------------------------------------------------------
+let arr = new Array(3).fill([]);
+arr[0].push(10);
+console.log(arr); //[ [10], [10], [10] ]
+Why?
+All array slots refer to the same inner array object.
+
+--------------------------------
+const obj = { x: 1 };
+const { x, x: y } = obj;
+console.log(y); // 1
+Why?
+x: y assigns obj.x to new variable y.
+
+ */

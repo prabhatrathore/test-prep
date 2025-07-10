@@ -18,7 +18,7 @@ function existsInString(stringValue, search) {
 }
 console.log(existsInString('red', 'r')); // prints 'true';
 console.log(existsInString('red', 'b')); // prints 'false'
-console.log('============222222222====');
+
 let firstName = 'ram-shyam';
 console.log(firstName[4])  // s
 
@@ -30,7 +30,7 @@ console.log(lastName.length); //24
 let res = lastName.trim()
 console.log(res.length)//9
 console.log(res)
-console.log("================================");
+
 console.log(res.toUpperCase());
 //slice
 let newString = res.slice(0, 3)

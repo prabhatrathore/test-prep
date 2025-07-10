@@ -7,7 +7,7 @@ Data Types – string, number, boolean, null, undefined, symbol, bigint, object
 
 Type Coercion – Implicit vs Explicit
 
-== vs === – Loose vs Strict equality
+== vs === – Loose comparision vs Strict equality comparision
 
 📌 Functions
 Function Declaration
@@ -58,7 +58,7 @@ console.log(user ?? defaultName); // Output: "Guest"
 
 user = "Alice";
 console.log(user ?? defaultName); // Output: "Alice"
-
+-----------------------------------------------------------------------------------
 Example 2: Difference Between ?? and ||
 let value = 0;
 
@@ -102,12 +102,11 @@ Modules: require / import
 In Node.js, modules are reusable pieces of code that we can include in your program.
 1. require
 What is it? A function used in Node.js to load modules (built-in, external, or your own files).
-
 Used in: CommonJS modules (the older, default module system in Node.js).
-
 ---------------------------------------------------------------------------
+
 2. import
-What is it? A modern way to load modules, part of the ES Modules (ESM) standard.
+What is it? A modern way to load modules, part of the ES Modules ESM standard.
 How it works:
 have "type": "module" in package.json.
 ---------------------------------------------------------------------------
@@ -136,7 +135,6 @@ Middleware – functions with req, res, next
 .env + dotenv – manage secrets
 
 🔹 Git Cheat Sheet
-
 📌 Git Basics
 
 bash
@@ -234,7 +232,7 @@ let Variables_and_Datatypes_in_JavaScript
 A variable is like a container that holds data that can be reused or updated later in the program. In JavaScript, variables are declared using the keywords var, let, or const.
 
 2.datatypes
-primitive datatypes: number,string,boolean,undefined, null, symbol, bigint.
+primitive datatypes: number, string, boolean, undefined, null, symbol, bigint.
 non- primitive datatypes : object, arrray, function
 
 ===========================================================================
@@ -264,16 +262,15 @@ JavaScript const
 4. Immutable Binding, Not Value
 const makes the variable binding immutable, but if the value is an object or array, we can still modify its properties or contents.
 
-const obj = { name: "Pranjal" };
+const obj = { name : "Pranjal" };
 obj.name = "Nanda";
-console.log(obj.name);//nanda
+console.log(obj.name); // nanda
 
 const arr = [1, 2, 3];
 arr.push(4);
-console.log(arr);  /[ 1, 2, 3, 4 ]
+console.log(arr);  // [ 1, 2, 3, 4 ]
 
 5. No Redeclaration
-
 --------------------------------------------------------------------------------------------
  JavaScript Var Statement
 
@@ -289,9 +286,7 @@ The variable x is declared using var inside the testVar function, so it is only 
 Since x is not defined globally, calling console.log(x); outside testVar causes a ReferenceError, as x does not exist in the global scope.
 
 3. Re-declaration of Variables
-
 Hoisting
-
  */
 
 let JS_Operators
@@ -385,7 +380,6 @@ console.log(status);
 Output
 Adult
 condition ? expression1 : expression2 evaluates expression1 if the condition is true, otherwise evaluates expression2.
-
 -----------------------------------------------------------------------------------------------
 
 7. JavaScript Comma Operator
@@ -397,7 +391,8 @@ console.log(res);
 
 Output
 3
---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+
 JavaScript Unary Operators
 Unary operators operate on a single operand (e.g., increment, decrement).
 
@@ -501,7 +496,7 @@ function greet(name) {
 }
 
 console.log(greet("Alisha"));
-
+---------------------------------------------------------------------------------------------------------
 
 7. Throw Statement
 The throw statement is used to create custom errors in JavaScript. It is often used in conjunction with try...catch to handle errors.
@@ -524,9 +519,6 @@ try {
 
 9. Break and Continue Statements
 The break and continue statements are used within loops. break exits the loop, while continue skips to the next iteration.
-
-
-
 
 for (let i = 0; i < 10; i++) {
     if (i === 5) {
@@ -579,13 +571,10 @@ do {
 
 4. JavaScript for-in Loop
 The for...in loop is used to iterate over the properties of an object. It only iterate over keys of an object which have their enumerable property set to “true”.
-
 Syntax
-
 for (let key in object) {
     // Code to execute
 }
-
 
 const obj = { name: "Ashish", age: 25 };
 for (let key in obj) {
@@ -603,23 +592,8 @@ for (let value of iterable) {
     // Code to execute
 }
 
-
-
 let a = [1, 2, 3, 4, 5];
 for (let val of a) {
     console.log(val);
 }
-    
-
- */
-
-
-/**
- 
- */
-
-
-
-/**
- 
  */

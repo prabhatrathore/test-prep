@@ -123,11 +123,11 @@ cat.makeSound(); // Outputs: Meow
  * 
  
 What is an API?  
-API allows interactions between systems by following a set of standards and PROTOCOLS in order to share ,FEATURE ,INFORMATION and DATA.
+API allows interactions between systems by following a set of standards and PROTOCOLS in order to share, FEATURE, INFORMATION and DATA.
 API ACTS AS an interface between different applications.
 
 What is a REST API?
- A REST API is a way for two computer programs (like a web app and a server) to talk to each other over the internet sing simple rules. It uses the HTTP protocol (the same thing your browser uses to load websites) to send and receive data.
+ A REST API is a way for two computer programs (like a web app and a server) to talk to each other over the internet using simple rules. It uses the HTTP protocol (the same thing your browser uses to load websites) to send and receive data.
 
 Details:
 
@@ -152,9 +152,10 @@ Key Difference Between REST API and RESTful API
 REST API: Any API that uses REST principles (like HTTP methods for communication).
 RESTful API: A REST API that fully follows REST’s strict rules (e.g., stateless, resource-based URLs, proper HTTP methods).
 
-
 Question: “What’s the difference between a REST API and a RESTful API?”
-Answer: A REST API is a way for apps to communicate over the internet using HTTP methods like GET and POST. A RESTful API is a REST API that strictly follows REST rules, like using proper HTTP methods, organizing data as resources, and being stateless.
+Answer: A REST API is a way for apps to communicate over the internet using HTTP methods like GET and POST.
+ A RESTful API is a REST API that strictly follows REST rules, like using proper HTTP methods, organizing data as resources, and being stateless.
+
 Question: “Why use a RESTful API?”
 Answer: It makes communication between apps easier, more predictable, and scalable because it follows standard rules that all developers understand.
 
@@ -164,11 +165,8 @@ Answer: It makes communication between apps easier, more predictable, and scalab
 What are the features of RESTful apis?  
 
 It is an architecture style to develop web application. 
-
 Use http protocol as a communication interface.
-
 It tranfer data through http methods. 
-
  
 
 – GET: collects information from a resource  
@@ -246,11 +244,6 @@ The key components of an HTTP request are:
 3.Headers: Headers provide additional information about the request, such as the content type, user agent, cookies, and authentication credentials.
 4.Body: The request body contains any data being sent to the server, such as form data or JSON payload.
 
-
-
-
-
-
 ------------------------------------------------------------------------------------------------------  
 What are the key components of an HTTP response?  
 HTTP Response broadly has 3 main components:   
@@ -266,8 +259,6 @@ The key components of an HTTP response are:
 3.Body: The response body contains the data returned by the server, such as HTML, JSON, or binary data.
 Both requests and responses can also include other components, such as cookies, authentication tokens, and caching directives, depending on the specific use case and requirements of the application.
 
-
-
 ---------------------------------------------------------------------------------------------------------  
 What are the multiple ways to send data in an HTTP request. This data could be used for creating a resource or fetching a resource from a server.  
 Body ,query ,params  
@@ -275,7 +266,6 @@ Body ,query ,params
 Body params :
 Body of the request which contains all the data that the server needs to successfullly process the request. 
 -----------------------------------------------------------------------------------------------------------------------  
-
 
 What is the difference between path and query parameters. When should you use them?  
 The first difference between query and path parameters is their position in the URL. 
@@ -365,6 +355,7 @@ Every content in the REST architecture is considered a resource.
 
 What do you understand by RESTful Web Services?
 RESTful web services are services that follow REST architecture. REST stands for Representational State Transfer and uses HTTP protocol (web protocol) for implementation.
+-------------------------------------------------------------------------------
 4. What are the features of RESTful Web Services?
 Every RESTful web service has the following features:
 The service is based on the Client-Server model.
@@ -372,6 +363,7 @@ Every RESTful web service has the following features:
 The medium of communication between the client and server is called “Messaging”.
 Resources are accessible to the service by means/through of URIs.
 
+*------------------------------------------------------------------------------
 
 10. Define Messaging in terms of RESTful web services.
 The technique of sending a message from the REST client to the REST server in the form of an HTTP request and the server responding back with the response as HTTP Response is called Messaging.

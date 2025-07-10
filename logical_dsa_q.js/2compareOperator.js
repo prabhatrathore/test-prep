@@ -137,7 +137,7 @@ console.log(array1, "array1")
 console.log(array2, "array2")
 console.log(array1 == array2, "123")
 console.log(array1 === array2, "12w3")
-console.log([] === [], "-=123")
+// console.log([] === [], "-=123")
 console.log([] == [], "-=09123")
 let obj = { a: 3, b: 9 }
 let obj2 = obj
