@@ -13,11 +13,10 @@
  * 
  * allow users to communicate i.e. access and manipulate the DB.
  * allow user to retrieve data from DB.
- * allow user to create , update ,modify and delete the DB
- * 
+ * allow user to create, update, modify and delete the DB
+  
  * SQL is a language for defining the structure od a DB.
- * 
- * 
+   
  * what is data?
  * simple facts and figures.
  * 
@@ -25,38 +24,6 @@
  * 
  * what is DATABASE  ?
  * db is a organised collection of data/information so that it can be easily accessed, managed and updated.
- * 
- * SQL DATA types:
- * 
- * numeric-
- *  bit (bahot kam data store kr skte )
- * tinyint
- * smallint
- * int
- * bigint
- * decimal
- * numeric
- * float
- * real
- * 
- * 
- * character/string-
- * char-- ( ek fixed length of character h);
- * varchar --(variable length character store krna ho tb );
- * text----
- * 
- * date/time--
- * date
- * time
- * datetime
- * timestamp
- * year
- * 
- * 
- * miscellaneous---
- * json
- * xml
- *  
  * 
  */
 /**
@@ -83,14 +50,13 @@
  * DDL mai hum new object bana skte h or hata skte h
  * 
  * command                               description
- * create       === creates objects in the database/database objects.
+ * create       ===    creates objects in the database/database objects.
  * alter        ===    alters the structure of the DB /DB objects. (ek table hai osme ek naya column     ad      kr skte).
- * 
+  
  * drop         ===    delete obj from DB (delete all record and table also permanently);
- * truncate     ===   remove all records from a table permanently.(logicall structure rhega);
- * rename       ===      rename an object.
- * 
- * 
+ * truncate     ===    remove all records from a table permanently.(logicall structure rhega);
+ * rename       ===    rename an object.
+  
  * create command
  *  syntax       table'name
  * CREATE TABLE employees (                  //

@@ -95,19 +95,6 @@ Does JavaScript support automatic type conversion?
 Yes, JavaScript does support automatic type conversion. It is the common way of type conversion used by JavaScript developers.
 
 .......................................................................
-q:) What is the use of isNaN function?
-isNaN converts the argument to a Number and returns true if the resulting value NOT a Number
-
-typeof of a NaN will return a Number . 
-To check if a value is NaN, we use the isNaN() function,
-
-**Note- isNaN() function converts the given value to a Number type, and then equates to NaN.
-isNaN("Hello")  // Returns true
-isNaN(345)   // Returns false
-isNaN('1')  // Returns false, since '1' is converted to Number type which results in 0 ( a number) 
-isNaN(true) // Returns false, since true converted to Number type results in 1 ( a number)
-isNaN(false) // Returns false
-isNaN(undefined) // Returns true
 
 .......................................................................
 

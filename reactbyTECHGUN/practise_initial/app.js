@@ -70,10 +70,6 @@ console.log("+======spread operator ==========rest operator=========")
  */
 //destrcuting on array and object
 
-//reference and primitive types 
-/**
- * in primitive types 
- */
 
 let obj = {
     name: "abc"

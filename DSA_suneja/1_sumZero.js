@@ -115,7 +115,7 @@ a.toUpperCase()
 // console.log(a, "aaa")
 b = a.toUpperCase()
 // console.log(b, "bbb")
-// console.log(isNaN('0'),'WQWQSAXZCDFV') //true
+// console.log(isNaN('0'),'WQWQSAXZCDFV') //false
 // console.log(isNaN(0),'AXZ') //false
 // console.log(!isNaN(0),'AZ#@') //true
 // console.log(Boolean(3))//true 

@@ -6,12 +6,12 @@
   Node.js is a open-source, cross-platform JavaScript runtime environment that enables server-side JavaScript execution, allowing developers to build web applications using a single language across client and server.
   
  Purpose --------------------------------
-Provides an efficient and scalable platform for developing high-performance web applications.
+node.js Provides an efficient and scalable platform for developing high-performance web applications.
 Ideal for real-time applications, such as chat apps, streaming services, and e-commerce platforms.
 
 Core Architecture-------------------------
 
-Built on chrome's V8 JavaScript Engine.
+node.js Built on chrome's V8 JavaScript Engine for speed.
 
 1. Utilizes Google chrome’s V8 engine, which compiles JavaScript to native machine code for fast execution.
 Inherits a single-threaded design from V8, aligning with JavaScript’s browser-based origins.
@@ -25,6 +25,8 @@ Event-Driven, Non-Blocking I/O Model-----------------
 Handles I/O operations (e.g., file system, network requests) asynchronously, preventing blocking of the main thread.
 Enables efficient management of a large number of concurrent connections with minimal overhead.
 
+Cross-platform means Node.js can run on multiple operating systems
+without needing major changes.
 -------------------------------------------------------
 
 Key Advantages
@@ -45,41 +47,27 @@ Key Advantages
 
 Node.js is asynchronous and event-driven. All API's of Node.js library are non-blocking, and its server doesn't wait for an API to return data. It moves to the next API after calling it, and a notification mechanism of Events of Node.js responds to the server from the previous API call.
  ---------------------------------
-
- Limitations
- Single-Threaded Design Constraints.
-
- CPU-Bound Tasks: Heavy computations (e.g., image processing, cryptography) can block the event loop, degrading performance.
-
- (Cryptography is the process of hiding or coding information)
+(Cryptography is the process of hiding or coding information)
  
-Impact: Delays in processing other tasks, leading to reduced responsiveness.
+ Limitations of node.js
+ 🔹 Single-threaded problem:
+Node.js runs on one main thread.
+Good for I/O tasks (reading files, database calls).
+Bad for CPU-heavy tasks (image processing, encryption, big calculations).
 
- Mitigation Strategies
-Node.js is single-threaded by default — it handles all tasks using one main thread (thanks to the event loop).
+❌ Why bad?
+Heavy tasks block the main thread.
+Other users/tasks have to wait.
+App becomes slow or unresponsive.
+--------------------------------------------------
+✅ Solution: Worker Threads
+Use worker_threads module.
 
-That’s fine for tasks like reading files, accessing a database, or handling many users.
-BUT… 😣
-
-If we give Node.js a CPU-heavy task (like image processing, complex calculations, or data crunching), it will block the main thread.
-
-This means:
-
-Other users have to wait 😤
-The app may become slow or unresponsive ⚠️
-
-✅ Mitigation: Worker Threads--------------------------------------------------
-To fix this, Node.js gives us a tool: worker_threads module.
-
-Think of Worker Threads like hiring an assistant 👨‍💼🧠:
-You give heavy tasks to this assistant.
-Your main thread keeps working smoothly and doesn't get overloaded.
-
-Example tasks to offload:
-
-Big loops or calculations
+Like giving heavy work to an assistant, so main thread remains free.
+📌 Example tasks to offload:
 Image/video processing
-Compression/encryption
+Big calculations
+Compression or encryption
 
 --------------------------example ---------------------------
 
@@ -94,6 +82,23 @@ console.log("Main thread keeps working!");
 
 ---------------------------------------------------------------------------------------------------------
 /*
+1.How do you handle requests and responses in a Node.js server?
+In Node.js, we can use the built-in http module to create a server that listens for incoming requests and sends back responses. To handle requests, we can use the request event on the server object, which provides information about the request such as the HTTP method, URL, and headers. To send a response, we can use the response object, which has methods like write() and end() to send data back to the client
+**************************************************
+
+Can you describe your experience with using npm, the Node.js package manager?
+Npm is a package manager for Node.js that allows us to install and manage third-party libraries and packages in our Node.js projects. I have used npm to install various packages in my projects, such as libraries for handling HTTP requests, parsing JSON data, and performing unit tests. I have also used npm to manage dependencies and to publish my own packages.
+**************************************************
+How do you debug Node.js applications
+✅ 1. Using console.log()
+The simplest method.
+
+Insert console.log() statements to print variable values or flow status.
+✅ 2. Using Node.js built-in debugger
+Run with the inspect flag:
+
+✅ 3. Using Chrome DevTools
+Start Node with inspect:
 **************************************************
 
 Clustering is a technique in Node.js to create multiple processes (workers) that run simultaneously and share the same server port.
@@ -972,5 +977,11 @@ The event loop is the mechanism that uses Libuv to run asynchronous tasks effici
 //////////////////////////////
 Event Loop is like a manager, checking a task list and doing tasks one by one quickly.
 Libuv is the engine that powers this manager to handle everything smoothly. 
+
+Continuous Integration and Continuous Deployment (CI/CD) in Node.js Development
+Continuous Integration (CI) and Continuous Deployment (CD) automate the process of testing and deploying Node.js applications:
+
+CI: Automatically build and test code changes in a shared repository whenever a new commit is pushed.
+CD: Automatically deploy tested code changes to production or staging environments based on predefined criteria (e.g., passing tests, code review approval).
 
 */

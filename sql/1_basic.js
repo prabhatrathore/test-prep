@@ -8,14 +8,14 @@
  * 
  * 
  * object based logical model:
- * in this entity relationship model aataa 
- * 
+  in this entity relationship model aataa 
+  
  * ye blue print bnakr deta 
  * 
  * e.g. employee, department 
  *  deparment      :  tech,
  *  employeee name :  sam  
- * to sam aur tech ke bich mai kya  relation h
+ * to sam aur tech ke bich mai kya relation h
  * ya fir do employee h :sam aur mat =>inn dono ke bich mai kya relation h 
  * ek manager ho skte dusra uske niche ho skta 
  * 

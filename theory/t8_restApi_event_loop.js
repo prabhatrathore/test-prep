@@ -1,8 +1,6 @@
 /**
 
-/****
- * 
- * 
+
  * 1. Encapsulation
  Encapsulation is bundling data (properties) and the methods (functions) that work on that data into a single unit (an object), while hiding the details from the outside world.
 
@@ -123,16 +121,21 @@ cat.makeSound(); // Outputs: Meow
  * 
  
 What is an API?  
-API allows interactions between systems by following a set of standards and PROTOCOLS in order to share, FEATURE, INFORMATION and DATA.
-API ACTS AS an interface between different applications.
+API allows interactions between systems by following a set of standards and PROTOCOLS in order to share FEATURE, INFORMATION and DATA.
+(API ACTS AS an interface between different applications).
+api act as a bridge between frontend and backend.it allow two application to talk to each other.
 
 What is a REST API?
- A REST API is a way for two computer programs (like a web app and a server) to talk to each other over the internet using simple rules. It uses the HTTP protocol (the same thing your browser uses to load websites) to send and receive data.
+=>A REST API is a way for two computer programs (like a web app and a server) to talk to each other over the internet using simple rules. It uses the HTTP protocol (the same thing your browser uses to load websites) to send and receive data.
+=>it is a type of api that follow certain rules. 
+ 
 
 Details:
 
 Architecture Style: REST (Representational State Transfer) is a set of guidelines for building web applications that communicate efficiently.
 HTTP Protocol: It uses HTTP methods like GET (to fetch data), POST (to send data), PUT (to update data), and DELETE (to remove data).
+put method: used to update  existing data completely
+patch method: used to partially update existing data. 
 Data Transfer: It sends and receives data in formats like JSON or XML.
 
 

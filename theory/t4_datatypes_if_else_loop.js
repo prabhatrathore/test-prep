@@ -56,9 +56,7 @@ Cannot be auto-converted to string: If you try alert(id), it throws error. You m
 */
 /*----------------------------------------------------------------------------------------------------------
 
-1:)Primitive: Primitive value are immutable. Primitive are pass by value.means To store single values at a time 
-
-Primitive types: Primitive data types can store only a single value.
+1:)Primitive: Primitive value are immutable. Primitive are pass by value, store single values at a time 
 
 typeof of primitive types :
 typeof "John Doe" // Returns "string"

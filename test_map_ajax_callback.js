@@ -127,11 +127,7 @@ axios.get("data.json")
 ✅ Easy and handles errors better
 ✅ Supports older browsers too
 
-
  */
-
-
-
 /**
  * 
  * A callback is a function passed as an argument to another function
@@ -218,6 +214,36 @@ sol2()
     .then(() => { console.log("resolve---") })
     .catch(() => { console.log('reject==') })
 
+// why json over ajax
+/**
+ JSON (JavaScript Object Notation) is often preferred over other data formats when used with AJAX (Asynchronous JavaScript and XML) for the following reasons, explained simply:
 
+Lightweight and Simple: JSON is a compact, text-based format that's easy to read and write for both humans and machines. It uses key-value pairs, making it simpler than XML, which has verbose tags.
+
+Native JavaScript Support: JSON is a subset of JavaScript, so it’s directly parsed into JavaScript objects using JSON.parse(). This eliminates extra parsing steps needed for XML, making it faster and more efficient.
+
+Smaller Data Size: JSON typically results in smaller payloads compared to XML, reducing network transfer time in AJAX requests, which improves performance.
+
+Wide Compatibility: JSON is supported by virtually all modern APIs and programming languages, making it a universal choice for data exchange in AJAX calls.
+
+Easier to Work With: JSON’s structure (objects, arrays, strings, numbers) aligns naturally with JavaScript, allowing straightforward manipulation compared to XML’s complex DOM parsing.
+Example:
+Using JSON with AJAX:
+
+fetch('/api/data')
+  .then(response => response.json()) // Directly parse JSON
+  .then(data => console.log(data.name)); // Access data easily
+With XML, you’d need to parse the XML DOM, which is more cumbersome:
+
+fetch('/api/data')
+  .then(response => response.text())
+  .then(xml => {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xml, 'text/xml');
+    console.log(xmlDoc.getElementsByTagName('name')[0].textContent);
+  });
+Why JSON Wins:
+JSON’s simplicity, speed, and ease of use in JavaScript make it the go-to choice for AJAX over XML or other formats. If you need specific use cases or examples, let me know!
+ */
 
 

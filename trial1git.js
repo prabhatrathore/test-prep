@@ -1,3 +1,4 @@
+
 /**
 -----------------------------------------------------------------------------------------------------------
 GIT 
@@ -109,7 +110,6 @@ Example: let num = 10; console.log(typeof (num + "")); → Outputs string.
 ---------------------------------------------------------------------------------------------
 
 Strings in JavaScript
-
 Definition: Strings store text (words, sentences) and use zero-based indexing (first character is at index 0).
 Examples:
 let str = "pro"; 
@@ -139,8 +139,7 @@ Accessing an array element out of bounds.
 
 Example:
  let str;
-  console.log(str);
- → Outputs undefined.
+  console.log(str);  → Outputs undefined.
 
 -------------------------------------------------------------------
 Null:
@@ -155,7 +154,6 @@ let val = null;
 -------------------------------------------------------------------
 
 BigInt
-
 Purpose: Handles large numbers beyond 2^53 - 1 (JavaScript’s safe integer limit).
 Declaration:
 Add n to a number: let num = 9816543219865252772n;.
@@ -193,8 +191,9 @@ person.about(); // Outputs "My name is Alex"
 
 -----------------------------------------------------------------------
 The this Keyword
-Purpose: Refers to the object executing the current code.
-
+(Purpose: Refers to the object executing the current code.)
+ 
+'this' refers to the object that is currently executing the function or method.
 Example:
 ------------------------------------------------------------------
 function info() {
@@ -208,7 +207,8 @@ Explanation: this refers to the person object when about is called.
 ------------------------------------------------------------------------------
 
 Prototypes
-Purpose: Add new properties or methods to an object constructor.
+Prototypes allow us to add properties or methods to an object constructor, making them available to all instances created from that constructor.
+
 Example:
 function Person() {
   this.name = "John";
@@ -221,17 +221,26 @@ Person.prototype.greet = function() {
 
 const person = new Person();
 person.greet(); // Outputs "Hi, I'm John"
+-----------------------------------------------------------
+How it works:
+Person is a constructor function.
+Person.prototype.greet adds the greet method to the Person prototype.
+All instances of Person (like person) inherit the greet method via the prototype chain.
+Calling person.greet() accesses this.name from the instance, outputting "Hi, I'm John".
+
+Prototypes are shared across all instances, making them memory-efficient for methods.
 
 -------------------------------------------------------------------
 
 The new Keyword
 Purpose: Creates a new object from a constructor function.
 Steps:
-Creates a new empty object.
-Sets the object’s prototype.
-Points this to the new object.
-Executes the constructor function with this.
-Returns the new object.
+-> Creates a new empty object.
+-> Sets the object’s prototype.
+-> Points this to the new object.
+-> Executes the constructor function with this.
+-> Returns the new object.
+
 */
 
 /**
@@ -332,7 +341,7 @@ function so() {
     console.log(kl)//Cannot access 'kl' before initialization
     let kl = 9
 }
-so()
+// so()
 
 //callback understand
 function task1(caalback) {
@@ -431,7 +440,7 @@ for (let i = 0; i < 10; i++) {
     // console.log('inside for-loop', i)
 }
 // console.log("after settimenot")
-//alanalyse
+//analyse
 
 /**
  * first line execute, then j.s. ko nhi pta settimeout ke baare mai
@@ -482,12 +491,14 @@ let set2 = new Set()
 
 set2.add('e0ee')
 set2.add('wjengwigw')
+let t = { name: 'ram' }
+set2.add(t)
 // set2.clear()     // clear property :to clear the set 
 //  set2.delete("eeeeeeeeee")//delete property :specific element to delete 
-let result = set2.has("eeeeeeeeee")// has property tell the element exist or not 
-console.log(result)
-console.log('=====  ==============')
-console.log(set2)
+let result = set2.has("e0ee")// has property tell the element exist or not 
+let result1 = set2.has(t)// has property tell the element exist or not 
+console.log(result, "WSDCVBVCD", result1, "resultg22222")
+// console.log('=====  ==============')
+console.log(set2, "BBBBBB")
 arr = [...set2];
-console.log(arr)
- 
+console.log(arr, 'XSWEDC')
