@@ -4,6 +4,7 @@ The async keyword is used to define an asynchronous function that returns a Prom
 An async function always returns a Promise, even if we don’t explicitly return one. we can use .then() to handle the resolved value.
 Async/Await makes it easier to write promises. 
 */
+
 async function name(parameter1, parameter2, parameterN) {
     // statements
 }

@@ -194,6 +194,8 @@ The this Keyword
 (Purpose: Refers to the object executing the current code.)
  
 'this' refers to the object that is currently executing the function or method.
+this keyword is used in a constructor function, this refers to the object when the object is created
+
 Example:
 ------------------------------------------------------------------
 function info() {
@@ -204,6 +206,15 @@ const person = { name: "Cody", about: info };
 person.about(); // Outputs "My name is Cody"
 
 Explanation: this refers to the person object when about is called.
+-------------------------------------------------------------------------------
+// constructor function
+function Person () {
+    this.name = 'John',
+}
+// create object
+const person1 = new Person();
+// access properties
+console.log(person1.name);  // John
 ------------------------------------------------------------------------------
 
 Prototypes

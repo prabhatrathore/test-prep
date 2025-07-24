@@ -718,14 +718,15 @@ let promise2_prmosedefination
 /**
 all concept of promises in javascript?
 
-In JavaScript, promises are a way to handle asynchronous operations. promise are objects that represent the eventual completion or failure of an asynchronous operation and allow you to write asynchronous code. 
+In JavaScript, promises are a way to handle asynchronous operations. promise are objects that represent the eventual completion or failure of an asynchronous operation and allow us to write asynchronous code in a more manageable way than using callbacks.
+
  Promises have become a core part of JavaScript and are widely used in modern JavaScript applications. Here are the key concepts related to promises
 
 Promise States: A promise can be in one of three states:
 
 Pending: The initial state before the promise is fulfilled or rejected.
-Rejected: The state when the promise encounters an error or fails, providing a reason for the failure.
 Fulfilled: The state when the promise is successfully resolved with a value.
+Rejected: The state when the promise encounters an error or fails, providing a reason for the failure.
 Settled - This state represents that the promise has been either rejected or fulfilled.
 
 Promise Creation: Promises are created using the Promise constructor. The constructor takes a single function (executor) as an argument, which is called immediately and receives two functions as parameters: resolve and reject. You use these functions to either fulfill or reject the promise based on the outcome of your asynchronous operation.
@@ -745,7 +746,7 @@ Async/Await : Introduced in newer versions of JavaScript, the async/await syntax
 These are the fundamental concepts of promises in JavaScript. Understanding and utilizing promises effectively can greatly improve the readability and maintainability of your asynchronous code.
 
 */
-
+// Syntax defines the set of rules for writing programs. 
 
 /**
 // for (let i=0;i<4;i++){

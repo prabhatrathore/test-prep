@@ -2,7 +2,7 @@
 🔹 JavaScript Cheat Sheet
 📌 Basics
 var / let / const – Variable declarations
-Data Types – string, number, boolean, null, undefined, symbol, bigint, object
+Data Types – primitive(string, number, boolean, null, undefined, symbol, bigint,) & non-primitive data type(object,array)
 Type Coercion – Implicit vs Explicit
 == vs === –> Loose comparision vs Strict equality comparision
 
@@ -22,12 +22,12 @@ Closure – Inner function remembers outer function's variables.
 Callbacks
 Promises
 Async/Await
-Event Loop, Call Stack, Callback Queue, Web APIs. 
+Event Loop -> (Call Stack, Callback Queue, Web APIs). 
 
 📌 Objects & Arrays
 Object.assign(), spread/rest, destructuring, map(), filter(), reduce(), forEach()
 
-📌 ES6+ Features
+📌 ES6+ ( 2015 ) Features : 
 Destructuring
 Template Literals
 Modules (import/export)
@@ -40,33 +40,34 @@ The nullish coalescing operator (??) in JavaScript is a logical operator, pick a
 
 How It Works
 The ?? operator checks if the left-hand operand is nullish (null or undefined).
-If the left-hand operand is nullish, it return right-hand operand.
-If the left-hand operand is not nullish (e.g., 0, false, "", or any other value), it return to the left-hand operand.
-Key Points
+If the left-hand operand is nullish, then it return right-hand operand.
 Nullish means only null or undefined. Other falsy values like 0, false, or "" (empty string) are not considered nullish.
-It’s different from the logical OR operator (||), which treats all falsy values (e.g., 0, false, "", NaN) as conditions to fall back to the default.
 
-Example 1: Basic Usage
+It’s different from the logical OR operator (||), which treats all falsy values (e.g., 0, false, "", NaN) as conditions to fall back to the default.
+---------------------------------------------------------------------------
+Example 1: 
 let user = null;
 let defaultName = "Guest";
-
 console.log(user ?? defaultName); // Output: "Guest"
+--------------------------------------------------------------------
 
 user = "Alice";
 console.log(user ?? defaultName); // Output: "Alice"
 -----------------------------------------------------------------------------------
+
 Example 2: Difference Between ?? and ||
 let value = 0;
 console.log(value || 42); // Output: 42 (because 0 is falsy)
 console.log(value ?? 42); // Output: 0 (because 0 is not nullish)
 ----------------------------------------------------------------------------------
+
 Example 3: Chaining with Multiple Values
 let a = null;
 let b = undefined;
 let c = "Hello";
-
 console.log(a ?? b ?? c); // Output: "Hello"
 -------------------------------------------------------------------------
+
 Example 4: With Objects
 let config = {
   timeout: null,
@@ -76,6 +77,7 @@ let config = {
 let timeout = config.timeout ?? 5000;
 console.log(timeout); // Output: 5000 (because config.timeout is null)
 ---------------------------------------------------------------------------------
+
 Example 5: Combining with Optional Chaining (?.)
 let user = {
   settings: {
@@ -94,19 +96,17 @@ Modules: require / import
 ---------------------------------------------------------------------------------------------
 In Node.js, modules are reusable pieces of code that we can include in your program.
 1. require
-What is it? A function used in Node.js to load modules (built-in, external, or your own files).
+ A 'require' function used in Node.js to load modules (built-in, external, or your own files).
 Used in: CommonJS modules (the older, default module system in Node.js).
 ---------------------------------------------------------------------------
 
 2. import
-What is it? A modern way to load modules, part of the ES Modules..
+ A modern way to load modules, part of the ES Modules..
 How it works:
 have "type": "module" in package.json.
 ---------------------------------------------------------------------------
-
-Event Loop (libuv)
-
 Global objects: __dirname, process, Buffer
+------------------------------------------------------
 
 📌 Modules
 fs – File system
@@ -125,12 +125,14 @@ Middleware – functions with req, res, next
 
 📌 Environment
 .env + dotenv – manage secrets
-
+*/
+let git
+/*
 🔹 Git Cheat Sheet
 📌 Git Basics
 
 bash
-git init                   # Initialize repo
+git init                  # Initialize repo
 git clone <url>           # Clone repo
 git add .                 # Stage all files
 git commit -m "msg"       # Commit changes
@@ -154,7 +156,9 @@ git pull origin main      # Pull code
 
 git reset --soft HEAD~1   # Undo last commit (keep changes)
 git checkout -- <file>    # Discard changes in file
-
+*/
+let redis
+/*
 🔹 Redis Cheat Sheet
 
 📌 Basics
@@ -176,7 +180,9 @@ PUBLISH channel msg
 SUBSCRIBE channel
 📌 Node Integration
 Use ioredis or redis npm package
-
+*/
+let aws
+/*
 🔹 AWS Cheat Sheet
 
 📌 Common Services
@@ -207,7 +213,6 @@ Upload Node.js/Python function
 
 Trigger via HTTP or S3 events 
  */
-let introduction_of_javascript
 
 let Variables_and_Datatypes_in_JavaScript
 /**
@@ -228,7 +233,6 @@ non- primitive datatypes : object, arrray, function
  Key Features of let
 1. Block Scope
 2. Hoisting  :  While variables declared with let are hoisted, they are not initialized.
-
 3. No Redeclaration
 
 Temporal Dead Zone (TDZ)
@@ -237,11 +241,12 @@ Temporal Dead Zone (TDZ)
 JavaScript const
 1. Block Scope
 2. No Reassignment
-3. Must Be Initialized
+3. Must Be Initialized at the time declaration.
 4. Immutable Binding, Not Value
-   const makes the variable binding immutable, but if the value is an object or array, we can still modify its properties or contents.
+'const' makes the 'variable' binding immutable, but if the value is an object or array, we can still modify its properties or contents.
+5. No Redeclaration
 */
-const obj = { name : "Pranjal" };
+const obj = { name: "Pranjal" };
 obj.name = "Nanda";
 obj.new = "Nanda-new";
 // console.log(obj.name); // nanda
@@ -251,28 +256,33 @@ const arr = [1, 2, 3];
 arr.push(4);
 // console.log(arr);  // [ 1, 2, 3, 4 ]
 /*
-5. No Redeclaration
 --------------------------------------------------------------------------------------------
- JavaScript Var Statement
  Features of var Keyword
 function testVar() {
     var x = 10;
     console.log(x); // Output: 10
 }
-
 console.log(x); // Error: x is not defined
-The variable x is declared using 'var' inside the 'testVar' function, so it is only accessible within that function. Trying to access 'x' outside the function results in an error.
-Since 'x' is not defined globally, calling console.log(x); outside testVar causes a ReferenceError, as x does not exist in the global scope.
+-------------------------------------------------------------------------------------------
+The variable "x" is declared using 'var' inside the 'testVar' function, so it is only accessible within that function. Trying to access 'x' outside the function results in an 'error'.
+Since 'x' is not defined globally, calling console.log(x); outside testVar causes a ReferenceError, as 'x' does not exist in the global scope.
 
 3. Re-declaration of Variables
-Hoisting
  */
 
-let JS_Operators
+let JS_Operators_or_operation
 /**
   JavaScript operators are symbols or keywords used to perform operations on values and variables. They are the building blocks of JavaScript expressions and can manipulate data in various ways.
 
-. JavaScript Arithmetic Operators
+1. JavaScript Arithmetic Operators.
+2. JavaScript Assignment Operators.
+3. JavaScript Comparison Operators.
+4. JavaScript Logical Operators.
+5. JavaScript ternary Operators.
+6. JavaScript Unary Operators.
+-----------------------------------------------------------------------------------------------
+
+1. JavaScript Arithmetic Operators
 Arithmetic Operators perform mathematical calculations like addition, subtraction, multiplication, etc.
 
 const sum = 5 + 3; // Addition
@@ -280,10 +290,10 @@ const diff = 10 - 2; // Subtraction
 const p = 4 * 2; // Multiplication
 const q = 8 / 2; // Division
 console.log(sum, diff, p, q);
-
 Output
 8 8 8 4
 --------------------------------------------------------------------------------------------------
+
 2. JavaScript Assignment Operators
 Assignment operators are used to assign values to variables. They can also perform operations like addition or multiplication before assigning the value.
 
@@ -291,10 +301,10 @@ let n = 10;
 n += 5;
 n *= 2;
 console.log(n);
-
 Output
 30
 ------------------------------------------------------------------------------------------------------
+
 3. JavaScript Comparison Operators
 Comparison operators compare two values and return a boolean (true or false). They are useful for making decisions in conditional statements.
 
@@ -308,7 +318,7 @@ false
 === checks for strict equality (both type and value).
 Other operators include <, <=, >=, and !==.
 --------------------------------------------------------------------------------------------------------
-JavaScript Logical Operators
+JavaScript Logical Operators: manipulate Boolean values 
 --------------------------------------------------------------------------------------------------------
 
 JavaScript Bitwise Operators
@@ -345,7 +355,6 @@ Output
 | performs a bitwise OR.
 ^ performs a bitwise XOR.
 ~ performs a bitwise NOT.
-
 --------------------------------------------------------------------------------------------------------
  JavaScript Ternary Operator
 The ternary operator is a shorthand for conditional statements. It takes three operands.
@@ -360,7 +369,7 @@ condition ? expression1 : expression2 evaluates expression1 if the condition is 
 -----------------------------------------------------------------------------------------------
 
 7. JavaScript Comma Operator
-Comma Operator (,) mainly evaluates its operands from left to right sequentially and returns the value of the rightmost operand.
+Comma Operator (,) mainly evaluates its operands (value) from left to right sequentially and returns the value of the rightmost operand (value).
 
 let n1, n2
 const res = (n1 = 1, n2 = 2, n1 + n2);
@@ -399,13 +408,10 @@ true
 true
 in checks if a property exists in an object.
 instanceof checks if an object is an instance of a constructor.
-
 ------------------------------------------------------------------------------------------------------
 
-10. JavaScript BigInt Operators
+10. JavaScript BigInt Operators.
 BigInt operators allow calculations with numbers beyond the safe integer range.
-
-
 -------------------------------------------------------------------------------------------
 const big1 = 123456789012345678901234567890n;
 const big2 = 987654321098765432109876543210n;
@@ -414,9 +420,9 @@ console.log(big1 + big2);
 Output
 1111111110111111111011111111100n
 
+------------------------------------------------------------------------------
 Operations like addition, subtraction, and multiplication work with BigInt.
 Use n suffix to denote BigInt literals.
-
 -----------------------------------------------------------------------------------------------
 
 11. JavaScript String Operators
@@ -434,7 +440,6 @@ Hello World
 ---------------------------------------------------------------------------------------------
 12. JavaScript Chaining Operator (?.)
 The optional chaining operator allows safe access to deeply nested properties without throwing errors if the property doesn’t exist.
-
 ------------------------------------------------------------------------------------------------
 
 const obj = { name: "Aman", address: { city: "Delhi" } };
@@ -448,26 +453,20 @@ undefined
 Returns undefined if the property doesn’t exist.
 --------------------------------------------------------------------------------------------------------
 */
-
-// JavaScript Statements
+let type_of_statement_in_js
 /**
- Types of Statements
  1. Variable Declarations (var, let, const)
- 2. Assignment Statement
- An assignment statement is used to assign a value to a variable.
-
- 3. Expression Statements
-
- 4. Control Flow Statements
+ 2. Assignment Statement: An assignment statement is used to assign a value to a variable.
+ 3. Expression Statements.
+ 4. Control Flow Statements.
  Control flow statements are used to control the order in which statements are executed in a program. Examples include if, else, switch, while, and for loops.
 
-5. Function Declarations
-A function declaration is a statement that defines a function in JavaScript. Functions are reusable blocks of code designed to perform specific tasks.
+5. Function Declarations.
+  A function declaration is a statement that defines a function in JavaScript. Functions are reusable peice (blocks) of code designed to perform specific tasks.
 
 function greet(name) {
     return "Hello, " + name;
 }
-
 console.log(greet("Alisha"));
 ---------------------------------------------------------------------------------------------------------
 
@@ -479,7 +478,7 @@ function checkAge(age) {
         throw new Error("Age must be 18 or older");
     }
 }
-
+----------------------------------------------------------------------------------------------------------
 8. Try...Catch Statement
 The try...catch statement is used to handle exceptions in JavaScript. The code inside the try block is executed, and if an error occurs, the code inside the catch block will handle the error.
 
@@ -489,7 +488,7 @@ try {
 } catch (error) {
     console.error("An error occurred:", error.message);
 }
-
+---------------------------------------------------------------------------------------------------
 9. Break and Continue Statements
 The break and continue statements are used within loops. break exits the loop, while continue skips to the next iteration.
 
@@ -510,7 +509,6 @@ Loops in JavaScript are used to reduce repetitive tasks by continuosly executing
 The for loop repeats a block of code a specific number of times. It contains initialization, condition, and increment/decrement in one line.
 
 Syntax
-
 for (initialization; condition; increment/decrement) {
     // Code to execute
 }
@@ -518,40 +516,49 @@ for (initialization; condition; increment/decrement) {
 2. JavaScript while Loop
 The while loop executes as long as the condition is true. It can be thought of as a repeating if statement. 
 
-Syntax
-
+Syntax:
 while (condition) {
     // Code to execute
+    }
+    */
+let i = 0
+while (i < 5) {
+    console.log(`execture :${i}`, i)
+    i++
 }
-
+/*
 3. JavaScript do-while Loop
 The do-while loop is similar to while loop except it executes the code block at least once before checking the condition.
 
 Syntax
-
 do {
-    // Code to execute
+// Code to execute
 } while (condition);
 
 let i = 0;
 do {
-    console.log("Iteration:", i);
-    i++;
+console.log("Iteration:", i);
+i++;
 } while (i < 3);
 -----------------------------------------------------------------------------------------
 
 4. JavaScript for-in Loop
-The for...in loop is used to iterate over the properties of an object. It only iterate over keys of an object which have their enumerable property set to “true”.
+The for...in loop is used to iterate over the properties of an object or array 's element. It only iterate over keys of an object which have their enumerable property set to “true”.
+
 Syntax
+*/
 for (let key in object) {
-    // Code to execute
+// Code to execute
 }
 
 const obj = { name: "Ashish", age: 25 };
 for (let key in obj) {
-    console.log(key, ":", obj[key]);
+console.log(key, ":", obj[key]);
 }
-
+for(let w in [3,4,5,6]){
+    console.log(w,"www")
+}
+/*
 ------------------------------------------------------------------------------------------------
 
 5. JavaScript for-of Loop
@@ -559,10 +566,10 @@ The for...of loop is used to iterate over iterable objects like arrays, strings,
 
 Syntax
 for (let value of iterable) {
-    // Code to execute
+// Code to execute
 }
 let a = [1, 2, 3, 4, 5];
 for (let val of a) {
-    console.log(val);
+console.log(val);
 }
- */
+*/

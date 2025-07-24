@@ -37,26 +37,35 @@ console.log(Name); // Doe
 /*
   ------------------------------------------------------------------------------------------------------------
   Q: Why JavaScript is known as a lightweight programming language ?
-  JavaScript is considered a lightweight language due to its low CPU usage, minimalist syntax,  ease of implementation.
+  JavaScript is considered a lightweight language due to its low CPU usage, minimalist syntax, ease of implementation.
   
  and it was originally designed to run in browsers with minimal resource demands. It executes client-side tasks (like DOM manipulation) without requiring heavy computation
   ------------------------------------------------------------------------------------------------------------
 
-Q: Is JavaScript compiled or interpreted?
+Q: Is JavaScript compiled or interpreted? 
 A: JavaScript is primarily interpreted, but modern engines use Just-In-Time (JIT) compilation, so it is technically both. It starts by interpreting and then compiles frequently used code to machine code at runtime for better performance.
 
 🚀 Modern JS Engines (Compiled Just-in-Time - JIT)
 Modern engines use Just-in-Time (JIT) compilation to make JavaScript run faster.
 
 Instead of just interpreting code line-by-line (slow), JIT compiles JavaScript into machine code right before execution.
+---------------------------------------
+JIT Compiler: A JIT compiler converts code into byte code first. Then, at runtime, it changes the byte code into machine-readable code, which makes the program run faster.
 
 It combines:
 Interpreter: Quickly runs code initially.
 Compiler: Converts frequently used code into optimized machine code for speed.
 --------------------------------------------------------------------------------------------
 */
+
+/**
+Why is JavaScript interpreted not compiled?
+Whether JavaScript is compiled or interpreted depends on the environment in which it is run. If it runs in older browsers, it's interpreted. If it runs in modern browsers, it's compiled.
+*/
+
 let ADVANTAGES_OF_USING_JAVASCRIPT = {
 }
+
 /*
 -- Light Weight Scripting Language******
 means it is made for data handling at the browser (only) & due to its low CPU usage, minimalist syntax, and ease of implementation.
@@ -88,20 +97,21 @@ Reading and writing of files is not allowed
 
 // What is an Interpreted Programming Language?
 /*
-******************************************************************************
 Originally, JavaScript was interpreted, meaning the browser read and executed the code line-by-line at runtime.
+******************************************************************************
 
 Question: “Is JavaScript a programming language or a scripting language?”
 Answer: JavaScript is both. It began as a scripting language for web browsers, automating tasks like DOM manipulation. But with modern features (e.g., ES6 classes, modules), it’s a full programming language we used everywhere from front-end to back-end development (e.g., with Node.js).
- 
-JavaScript is a programming language .explain 
+ -----------------------------------------------------------------------------------
+
+JavaScript is a programming language. explain 
 Yes, JavaScript is a programming language that is used primarily for web development, but can also be used for other purposes such as server-side programming, desktop applications, and mobile app development. 
--------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 
 JavaScript code is a single thread, which means that code can only do one task at a time
 
 ❓ Why is JavaScript single-threaded?
-JavaScript was designed to be single-threaded because of its main job in the browser: interact with the DOM (the web page).
+JavaScript was designed to be single-threaded because of its main job in the browser: interact with the DOM (the web page).  
 ---------------------------------------------------------------------------------------
 */
 let event_loop
@@ -121,11 +131,11 @@ JavaScript has a call stack (where code executes), a task queue (for pending tas
 
 When an async operation (e.g., setTimeout) is encountered, it’s sent away (offloaded)  to the web API. Once the operation is ready, its callback is placed in the task queue.
 The event loop continuously checks the call stack. If the stack is empty, it takes the next task from the queue and pushes it to the stack for execution.
-
+---------------------------------------------------------------------------------------
 console.log("Start");
 setTimeout(() => console.log("Timeout"), 0);
 console.log("End");
-
+0
 Output: Start, End, Timeout
 -------------------------------------------------------------------------------------------------
 ---example---------------------------------------------
@@ -316,22 +326,21 @@ JavaScript can directly manipulate the DOM, handle events, interact with browser
 
 🧠 Extra: Modern JavaScript (ES6+ Features) 2015
 let, const for block-scoped variables
-
 Arrow functions () => {}
 Template literals `Hello ${name}`
 Destructuring { name } = obj
 Modules (import, export)
 Classes
-Promises & async/await
+Promises 
 */
 
 // string method 
 var str = '   hello-world   '
-// str.trim()
+// str.trim()// not working here becos we cannot assign here in variable.
 var str2 = str.trim()
 // console.log(str.length,"line567") //17
 // console.log(str2.length) //// 11 
-let temp = str.slice(0, 4)  //
+let temp = str.slice(0, 4)  // 
 // console.log(temp, "@@@ slice first ") // h 
 // console.log(typeof temp, "@@@ slice typeof check ") // string
 // console.log(str.slice(0, 4), "a slice first ") // h 
@@ -367,19 +376,18 @@ let SUBSTRING;
 The substring() method is used to extract a part of a string, between two specified indexes (positions).
 only applicable on string not array.
  The substring() method extracts characters from start to end (exclusive).
+ The substring() method does not change the original string.
+ If startIndex > endIndex, JavaScript automatically swaps them.
 let str = "JavaScript";
 let result = str.substring(0, 4);
 console.log(result); // "Java"
 
- The substring() method does not change the original string.
  
- If startIndex > endIndex, JavaScript automatically swaps them.
-console.log("Hello".substring(3, 1)); // "el"
+console.log("Hello".substring(3, 1)); // "el" /// swap kr dia 
 
  =======================================================================================================
  ❗Difference from slice():
 Both are similar, but:
-
 substring() does not support negative indexes, only applicable on string not array
 
 example: 
@@ -427,6 +435,7 @@ arr.reverse(); // [3, 2, 1]
  Additional Array Methods Commonly used : 
 Array.forEach() :
 Executes a provided function once for each array element. Does not return anything (returns undefined)
+------------------------------------------------------------------------------------------------
 Array.map()
 Description: Creates a new array with the results of calling a provided function on every element.
 ------------------------------------------------------------------------------------------------
@@ -494,7 +503,7 @@ console.log(Object.values(obj), "{{{{{{{{{{{{{{{{{{{")//[3,4,5,6]
 // age
 // address
 /**
- * Object.entries takes an object and return the key value pairs 
+ * Object.entries takes an object and return the key value pairs in array.
  */
 // console.log(Object.entries(obj), "Object.entries(obj)")
 // [
@@ -547,7 +556,7 @@ It’s a special value in JavaScript that means:
 typeof of NaN will return a Number.
 
 To check if a value is NaN, we use the isNaN() function,
-Note- isNaN() function converts the given value to a Number type, and then equates to NaN.
+Note- isNaN() function converts the given value to a Number type, and then equates to NaN .
 
 isNaN("Hello")  // Returns true
 isNaN(345)   // Returns false
