@@ -272,7 +272,6 @@ It tests if the passed value ia an array.
 11. join()
 It joins the elements of an array as a string.
 
-
 1.push() - Adds an element to the end of an array.
 
 let fruits = ['apple', 'banana', 'cherry'];
@@ -284,7 +283,6 @@ console.log(fruits); // Output: ['apple', 'banana', 'cherry', 'orange']
 let fruits = ['apple', 'banana', 'cherry'];
 fruits.pop();
 console.log(fruits); // Output: ['apple', 'banana']
-
 
 1.unshift() - Adds an element to the beginning of an array.
 
@@ -403,25 +401,20 @@ It is used to fetch the part of the given string On the basis of the specified s
 let str = "Hello World";
 console.log(str.substr(0, 5)); // Output: "Hello"
 
-
 10. Substring()
 It is used to fetch the part of the given string On the basis of the specified index.
 
 let str = "Hello World";
 console.log(str.substring(0, 5)); // Output: "Hello"
 
-
 11.toLowerCase()
 It converts the given string into lowercase letter.
-
 
 let str = "Hello World";
 console.log(str.toLowerCase()); // Output: "hello world"
 
-
 12. to Locale Lower Case()
 It Converts the given string into lowercase letter on the basis of host?s current locale.
-
 
 let str = "Hello World";
 console.log(str.toLocaleLowerCase()); // Output: "hello world"
@@ -489,11 +482,12 @@ console.log(str.split(" "));  // Output: [ "Hello", "World" ]
 
  JavaScript Date Object:
 
-The JavaScript date object can be used to get years. month and day. You Can display a timer on the Webpage by the help of Javascript date object.
+The JavaScript date object can be used to get years, month and day. You Can display a timer on the Webpage by the help of Javascript date object.
 Constructor
 You can use 4 Variant of Date constructor to create date object.
 2. Date (milliseconds) 3 Date (date String)
 Date (year, month, day, hours, minutes, seconds, milliseconds).
+
 JavaScript Date Methods
 1.getDate()
 It returns the integer value between 1 and 31 that represents the day for the specified date on the boss. of local time.

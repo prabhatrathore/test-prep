@@ -1,38 +1,3 @@
-/**
- 
-In JavaScript, new Map() creates a Map object, which is a collection of key-value pairs where keys and values can be of any type (e.g., strings, numbers, objects, etc.). Unlike regular objects, Maps maintain the insertion order of elements and allow keys of any data type, not just strings or symbols.
-
-we can add, retrieve, update, or remove key-value pairs, and it remembers the order in which we added them.
-
-Purpose: Similar to objects but allows any value as keys.
-Example:
-const person = new Map();
-person.set("Name", "Alex");
-console.log(person); // Outputs: Map { "Name" => "Alex" }
------------------------------------------------------------------------------
-
-Methods:
-get(key): Gets the value for a key.
-set(key, value): Adds or updates a key-value pair.
-delete(key): Removes a key-value pair.
-clear(): Removes all key-value pairs.
-has(key): Checks if a key exists (returns true or false).
-keys(): Returns an iterator of all keys.
-
- */
-
-// example 
-let objItems = new Map()
-objItems.set(2, 2)
-objItems.set(12, 22)
-// console.log(objItems,"objItems")
-// console.log(o)
-let object1 = new Map()
-let temp = { name: "map first" }
-object1.set(temp, "first map initialise")
-// object1.clear()
-// object1.delete(temp)
-// console.log(object1, '???????????????????????????????', object1.has(temp),  object1.get(temp),object1.keys())
 
 /**
  
@@ -42,7 +7,7 @@ object1.set(temp, "first map initialise")
  filter Function
  The filter function takes an array, checks each element against a condition, and returns a new array with only the elements that pass the condition.
 
- Array Method .forEach()
+ Array Method.forEach()
 The .forEach() method executes a callback function on each of the elements in an array in order.
 const numbers = [28, 77, 45, 99, 27]; 
 numbers.forEach(number => {  
@@ -156,7 +121,7 @@ console.log(counter()); // Outputs: 2
 .......................................................................
 
 How Does bind Relate to Higher-Order Functions?
-Answer: bind is an HOF because it returns a new function with a fixed this value (as discussed in your earlier question about call, apply, bind).
+Answer: bind is an HOF because it returns a new function with a fixed this value.
 Example:
 javascript
 
@@ -248,7 +213,7 @@ Higher-Order Function	Functions that take or return other functions
 .......................................................................
 .......................................................................
 .......................................................................
-.......................................................................
+......................................................................
 .......................................................................
 .......................................................................
 */

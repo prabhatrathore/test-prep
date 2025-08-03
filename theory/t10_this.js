@@ -1,8 +1,34 @@
 /**
- * In JavaScript, this keyword refers to the object where it is called.
+ * In JavaScript, 'this' keyword refers to the object where it is called.
 
 1. this Inside Global Scope
 When this is used alone, this refers to the global object (window object in browsers). For example,
+--------------------------------------------------------------------------------
+
+'this' refers to the object that is currently executing the function or method.
+
+'this' keyword is used in a constructor function, this refers to the object when the object is created using constructor function
+
+Example:
+----------------------------------------------------------------------
+function info() {
+  console.log(`My name is ${this.name}`);
+}
+
+const person = { name: "Cody", about: info };
+person.about(); // Outputs "My name is Cody"
+
+Explanation: this refers to the person object when about is called.
+-------------------------------------------------------------------------------
+// constructor function
+function Person () {
+    this.name = 'John',
+}
+// create object
+const person1 = new Person();
+// access properties
+console.log(person1.name);  // John
+
 */
 
 let a = this;
@@ -26,7 +52,7 @@ function greet() {
 
 greet(); // Window {}
 
-3. this Inside Constructor Function
+3. 'this' Inside Constructor Function
 In JavaScript, constructor functions are used to create objects. When a function is used as a constructor function, this refers to the object inside which it is used. For example,
 */
 function Person() {

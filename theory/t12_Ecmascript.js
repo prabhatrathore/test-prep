@@ -1,16 +1,12 @@
-
-/**
- 
+/** 
 1. EcmaScript (ES) Overview
-ECMAScript is the standard for JavaScript, defined by Ecma International to ensure JavaScript works the same way across different browsers and platforms.
+ECMAScript is the standard for JavaScript,defined by Ecma International to ensure JavaScript works the same way across different browsers and platforms.
 
 EcmaScript provides rules for JavaScript, ensuring code runs the same way everywhere.
 Significance: Standardization enabled cross-browser compatibility, making JavaScript a reliable choice for web development.
 
 2. ES1 (1997)
-
  The first EcmaScript version, released in 1997.
-
  “First Ecmascript: ES1 → 1997.”
 
 Features:
@@ -72,7 +68,7 @@ Widely supported, still used in legacy projects.
 
  “ES6 (ES2015) → 2015 (Biggest update for JS). ES6 is also known as Modern Javascript.”
 
-Let and Const:
+Let and Const:********************************************
 let: Block-scoped variable (unlike var, which is function-scoped).
 const: Block-scoped, cannot be reassigned (but mutable for objects/arrays).
 Example:
@@ -80,13 +76,13 @@ Example:
   const y = 20;.
 Explanation: Improves variable scoping, reducing bugs from var’s hoisting.
 
-Arrow Functions:
+Arrow Functions:************************************************
 Shorter syntax for functions, with lexical this binding.
 Example: const add = (a, b) => a + b;.
 
 Explanation: Simplifies function writing and fixes this issues in callbacks.
 -------------------------------------------------------------------------------------------------
-Template Literals:
+Template Literals:***********************
 
 String interpolation with backticks (`) and ${}.
 
@@ -97,13 +93,13 @@ Example:
 Explanation: Makes string formatting easier and more readable.
 --------------------------------------------------------------------------------------------------
 
-Destructuring:
+Destructuring:***********************************************
 Extracts values from arrays/objects into variables.
 Example: let {name, age} = {name: "Alex", age: 21};.
 Explanation: Simplifies data extraction, common in modern frameworks.
 --------------------------------------------------------------------------------------------------
 
-Default Parameters:
+Default Parameters:----------------------------------------------
 Functions can have default values for parameters.
 Example:
  function greet(name = "Guest") {
@@ -166,7 +162,7 @@ Known as “Modern JavaScript” due to its widespread adoption.
  “Ecma have a technical community known as TC39 had decided that for 2015. We release java script with new features every year (Annual release).”
 Key Features (Selected Post-ES6 Features):
 
-ES2016 (ES7):
+ES2016 (ES7):*--------------------------------------------
 Array.prototype.includes:
 Checks if an array contains a value.
 Example: [1, 2, 3].includes(2); // true.
@@ -179,18 +175,18 @@ Explanation: Cleaner syntax for power calculations.
 ***********************************************************************************************
 
 ES2017 (ES8):
-Async/Await:
+Async/Await:-------------------------------
 Simplifies working with Promises.
 
 Example: async function fetchData() { let data = await fetch(url); return data; }.
 Explanation: Makes async code look synchronous, improving readability.
 
-Object.entries() and Object.values():
+Object.entries() and Object.values():---------------------------
 
 Example: Object.entries({a: 1, b: 2}); // [['a', 1], ['b', 2]].
 Explanation: Easier object iteration.
 
-ES2018 (ES9):
+ES2018 (ES9):-----------------------------------
 Rest/Spread for Objects:
 
 Example: let {x, ...rest} = {x: 1, y: 2, z: 3}; // rest = {y: 2, z: 3}.

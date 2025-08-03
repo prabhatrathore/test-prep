@@ -1,20 +1,16 @@
-
 /**
 ✖✖✖✖ ✖✖✖✖
-
 Hoisting is a default behaviour of javascript where all the variable and function declarations are moved on top of their scope before code execution.
 
 ✔️ Function declarations are fully hoisted (both declaration + definition).
 ✔️ Variable declarations are hoisted but not their initializations.
 
 **Note - Variable initializations are not hoisted, only variable declarations are hoisted:
-
 */
-
 // example of variable declarations 
-console.log(x); // Output: undefined
+// console.log(x); // Output: undefined
 var x = 5;
-console.log(x); // Output: 5
+// console.log(x); // Output: 5
 
 // example of Variable initializations
 ////////////////////////////////////////////////////////////
@@ -76,7 +72,7 @@ const c = 30;
 
 function sol8(a, b) {
     return (c) => {
-        console.log(c,"inside a function")
+        console.log(c, "inside a function")
         return a * b
     }
 };
@@ -146,7 +142,7 @@ let arr1 = 'outside-function'
 function sol() {
     const array = () => {
         console.log('inside functon array')
-      }
+    }
     array()
 }
 sol()
@@ -173,9 +169,9 @@ sol()
 function sol1() {
     if (true) {
         var first = 'function called===' //change var , let, const 
-        console.log(first,"pl---plp-")
+        console.log(first, "pl---plp-")
     }
-    console.log(first,"-------");
+    console.log(first, "-------");
 }
 sol1()
 
@@ -192,23 +188,20 @@ sol2()
 //==============================
 //default parameter
 // ✅ 1. What is lexical scope in JavaScript?
-// 🔹 Meaning:
 // Where a variable is defined decides its scope.
 // Inner functions can access variables of outer functions.
 function outer() {
-  let x = 10;
-  function inner() {
-    console.log(x); // 10
-  }
-  inner();
+    let x = 10;
+    function inner() {
+        console.log(x); // 10
+    }
+    inner();
 }
 /**
  ✅ 2. How does lexical scoping work with this keyword?
 🔹 Answer:
 Lexical scope and this are different.
-
 this depends on how a function is called, not where it’s defined.
-
 Lexical scope is based on where it’s written in code.
 
 ✅ 3. What is the use of void(0)?
@@ -218,49 +211,52 @@ Often used in <a href="javascript:void(0)"> to do nothing and prevent page reloa
 
 ✅ 5. What are Web Workers?
 🔹 Simple answer:
-They run JavaScript in background threads, so heavy tasks don’t block UI.
+Web Workers run JavaScript in background threads, so heavy tasks don’t block UI.
 
 💡 Use case: Data processing without freezing the page.
 ✅ 6. Explain debouncing and throttling.
 🔹 Debouncing:
 Runs a function after a delay, and resets timer if called again.
 (e.g., search bar input)
-
+Executes only after a pause.
+---------------------------------------------------------------------------------
 🔹 Throttling:
 Runs a function at fixed intervals, ignoring extra calls in between.
+Limits function execution rate.
 
-(function() { var a = b = 5; })();
+(function() { var a = b = 5; })(); 
 console.log(typeof a); // undefined (a is local)
 console.log(typeof b); // number (b becomes global)
 
 Why?
 b = 5 is like window.b = 5 but a is var scoped inside function.
-
 -------------------------------------------------------------------------------------------
-
+*/
 const car = {
-  name: 'Toyota',
-  getName: function() {
-    return this.name;
-  },
+    name: 'Toyota',
+    getName: function () {
+        return this.name;
+    },
 };
 
 const getCarName = car.getName;
 console.log(getCarName()); // ???
-Why?
+/*Why?
 Because this is not bound to car here; it becomes undefined or window depending on strict mode.
 -----------------------------------------------------------------------------------------------------
-let arr = new Array(3).fill([]);
+*/
+arr = new Array(3).fill([]);
+console.log(arr, 'aaaaa#$')
 arr[0].push(10);
-console.log(arr); //[ [10], [10], [10] ]
-Why?
+console.log(arr, 'VCAS'); //[ [10], [10], [10] ]
+/*Why?
 All array slots refer to the same inner array object.
 
---------------------------------
-const obj = { x: 1 };
-const { x, x: y } = obj;
-console.log(y); // 1
-Why?
+--------------------------------*/
+const obj = { xf: 1 };
+const { xf, xf: y } = obj;
+console.log(y, "GGG", xf, "{{{{"); // 1 GGG 1 {{{{
+/*Why?
 x: y assigns obj.x to new variable y.
 
  */

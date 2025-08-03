@@ -50,7 +50,7 @@ nest new nest_app
 main.ts file work as a entry point of project 
 --------------------------------------------------------------------------
 DECORATORS ******************************
-special functions  that add metadata (providing special feature) to classes  or methods. 
+special functions that add metadata (providing special feature) to classes or methods. 
 start with @ symbol (e.g. @contrller(), @get())
 
 --------------------------------------------------------------------------
@@ -120,23 +120,19 @@ NestJS uses DI to manage class dependencies efficiently. For example, services a
 
 --------------------------------------------------------------------------
 🔶 8. What is middleware in NestJS and how is it used?
-Answer:
-Middleware is a function executed before route handlers. Used for logging, authentication, etc.
+Answer: Middleware is a function executed before route handlers. Used for logging, authentication, etc.
 --------------------------------------------------------------------------
 
 🔶 9. What is a Pipe in NestJS?
-Answer:
-Pipes are used for data validation and transformation before reaching route handlers. 
+Answer: Pipes are used for data validation and transformation before reaching route handlers. 
 
 --------------------------------------------------------------------------
 🔶 10. What is an Interceptor in NestJS?
-Answer:
-Interceptors are used for transforming responses, adding extra logic before/after method execution, logging, caching, etc.
+Answer: Interceptors are used for transforming responses, adding extra logic before/after method execution, logging, caching, etc.
 --------------------------------------------------------------------------
 
 🔶 11. What is a Guard in NestJS?
-Answer:
-Guards determine whether a request is handled by the route handler. Mainly used for authentication and authorization.
+Answer: Guards determine whether a request is handled by the route handler. Mainly used for authentication and authorization.
 
 --------------------------------------------------------------------------
 3. What is the use of decorators in NestJS?
@@ -152,6 +148,7 @@ Using Promises, async/await, and RxJS Observables (for streams, interceptors, et
 Answer:
 Using Promises, async/await, and RxJS Observables (for streams, interceptors, etc.). NestJS supports both styles seamlessly.
 --------------------------------------------------------------------------
+TypeScript is developed and maintained by Microsoft, it compiles down to plain JavaScript, making it compatible with all JavaScript environments, including web browsers and Node.js.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 */ 

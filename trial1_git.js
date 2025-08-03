@@ -1,4 +1,3 @@
-
 /**
 -----------------------------------------------------------------------------------------------------------
 GIT 
@@ -7,7 +6,6 @@ What is the difference between Git and GitHub?
 Answer:
 Git: A distributed version control system (dvcs) for tracking code changes locally.
 GitHub: A hosting service for Git repositories, adding collaboration tools like pull requests and code reviews.
-
 ----------------------------------------------------------
 
 Commands:
@@ -54,11 +52,11 @@ How do you set up user information in Git?
 Answer: Use:
 git config --global user.name "[name]": Sets your name.
 git config --global user.email "[email]": Sets your email.
-
+----------------------------------------------------------------------------------------------------------
 
 What is the HEAD in Git?
 Answer: HEAD is a pointer of the current branch or commit we’re working on. It typically points to the latest commit in the active branch.
-
+----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 What is a merge conflict and how do you resolve it?
 Answer: A merge conflict occurs when Git cannot automatically resolve changes (e.g., same lines edited in two branches). To resolve:
@@ -89,7 +87,6 @@ Browser Wars:
 Netscape used JavaScript.
 Microsoft’s Internet Explorer copied features and created JScript.
 
-
 EcmaScript:
 To standardize scripting across browsers, Ecma International (founded 1996) created EcmaScript.
 JavaScript + Ecma rules = EcmaScript.
@@ -103,6 +100,7 @@ Since 2015, new features are released yearly by the TC39 committee
 Convert String to Number:
 Add a plus sign (+) before a string.
 Example: let str = "169"; console.log(typeof (+str)); → Outputs number.
+---------------------------------------------------------------------------------------------
 
 Convert Number to String:
 Add an empty string ("") to a number.
@@ -126,7 +124,6 @@ indexOf(): Finds the position of a substring.
 toUpperCase(): Converts to uppercase.
 lastIndexOf(): Finds the last position of a substring.
 toLowerCase(): Converts to lowercase.
-
 --------------------------------------------------------------------------------
 
 Undefined and Null
@@ -135,12 +132,11 @@ Undefined:
 Returned when:
 A variable is declared but not assigned a value.
 Accessing a non-existing object property.
-Accessing an array element out of bounds.
+Accessing an array's element out of bounds.
 
 Example:
  let str;
   console.log(str);  → Outputs undefined.
-
 -------------------------------------------------------------------
 Null:
 Means "no value" and is explicitly assigned.
@@ -150,7 +146,6 @@ Example:
 let val = null;
  console.log(typeof val); 
  → Outputs object.
-
 -------------------------------------------------------------------
 
 BigInt
@@ -159,22 +154,8 @@ Declaration:
 Add n to a number: let num = 9816543219865252772n;.
 Use BigInt(): let num = BigInt(9816543219865252772);.
 
-
-Note: Does not support decimal values.
+Note: bigint Does not support decimal values.
 ---------------------------------------------------------------------------
-Ternary Operator
-
-Definition: A short way to write conditional statements (also called conditional operator).
-Syntax: let variable = condition ? valueIfTrue : valueIfFalse;.
-Example:
-let age = 18;
-let result = age >= 18 ? "Adult" : "Minor";
-console.log(result); // Outputs "Adult"
-
-Explanation: If age >= 18 is true, result is "Adult", else "Minor".
-
------------------------------------------------------------------------------------------
------------------------------------------------------------------------------
 Methods in Objects
 Definition: A function inside an object is called a method.
 
@@ -188,33 +169,7 @@ const person = {
 };
 
 person.about(); // Outputs "My name is Alex"
-
 -----------------------------------------------------------------------
-The this Keyword
-(Purpose: Refers to the object executing the current code.)
- 
-'this' refers to the object that is currently executing the function or method.
-this keyword is used in a constructor function, this refers to the object when the object is created
-
-Example:
-------------------------------------------------------------------
-function info() {
-  console.log(`My name is ${this.name}`);
-}
-
-const person = { name: "Cody", about: info };
-person.about(); // Outputs "My name is Cody"
-
-Explanation: this refers to the person object when about is called.
--------------------------------------------------------------------------------
-// constructor function
-function Person () {
-    this.name = 'John',
-}
-// create object
-const person1 = new Person();
-// access properties
-console.log(person1.name);  // John
 ------------------------------------------------------------------------------
 
 Prototypes

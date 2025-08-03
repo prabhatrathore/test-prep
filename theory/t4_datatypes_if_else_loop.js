@@ -129,7 +129,6 @@ This is because objects in JavaScript are passed by reference, meaning that a re
 parseInt() takes the string to be converted as its first parameter. 
 The second parameter is the base of the given string.
 
-
 3. What is mutable?  
 Ans - A mutable object is an object whose state can be modified after creation. 
 Mutable is a type of variable that can be changed. In JavaScript, only objects and arrays are mutable, not primitive values.

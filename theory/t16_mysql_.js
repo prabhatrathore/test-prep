@@ -31,7 +31,7 @@ How a URL Works (Step-by-Step)
 
 1:) User Enters URL: The user types a URL (e.g., https://www.example.com/candidates?name=Ram) into their browser.
 
-( domain name system )
+(domain name system)
 
 2:) DNS Resolution: The browser sends the domain (www.example.com) to a DNS server, which resolves it to an IP address (e.g., 192.0.2.1).
 
@@ -156,14 +156,12 @@ console.log(`Third smallest number: ${findThirdSmallest(arr2)}`); // Output: 0
 
 console.log(null == undefined, " console.log(null == undefined);");
 
-
 /**
-
 ORM converts code objects to database tables.
 
-An ORM (Object-Relational Mapping) is a  tool that acts as a bridge between a relational database and object-oriented programming languages like JavaScript (in the context of your Node.js/Sequelize project).
+An ORM (Object-Relational Mapping) is a tool that acts as a bridge between a relational database and object-oriented programming languages like JavaScript (in the context of our Node.js/Sequelize project).
 
-👉 ORM is a tool that connects your code to your database.
+👉 ORM is a tool that connects our code to our database.
 👉 It changes code objects into database tables and back.
 🔹 Why use it?
 
@@ -210,9 +208,7 @@ Each one is waiting for the other to finish and release its lock. Both blocking 
 
 How would you secure a MySQL database data?
 User Authentication : Create role-based users with minimal privileges.
-
 Encryption: Enable SSL/TLS for data in transit.
-
 Access Control: Restrict access to specific IPs:
 role based access : 
 ---------------------------------------------------------------------------------------------------
@@ -324,7 +320,6 @@ Q:) How is DATE different from DATETIME in MySQL?
 The DATE function in MySQL stores the date in year, month, and day format: 
 
 YYYY-MM-DD
-
 However, the DATETIME function stores the date with the time, and it looks like this: 
 
 YYYY-MM-DD HH:MM:SS 
@@ -444,8 +439,6 @@ SET genre = 'Sci-Fi', description = 'temporary'
 WHERE movie_title = 'Inception' AND year = 2010;
 
 **********************************************************************
-
-
 *****************
 Interpretation 1: Update Movies That Are Either (Inception in 2010) or Fiction
 If we want to update movies that are either 'Inception' from 2010 or of type 'fiction', the query is correct as written, but you should:
@@ -491,7 +484,6 @@ For example, we can use a trigger to automatically log a change or update anothe
 Why does adding an index make SQL queries faster? 
 If there's no index, the database will have to scan each row to find a specific entry. An index acts like a table of contents, allowing the database to access the relevant rows. So, adding an index cuts down the search time and makes queries run faster. 
 -------------------------------------------------------------------------------------
-
 
 Why would a large application use database sharding? Also, tell me about the challenges with it. 
 
@@ -737,38 +729,40 @@ Querying can be less standardized than SQL, varying by database type.
 
 ----------------------------------------------------------------------------------------
  What is “Namespace” in MongoDB?
-MongoDB stores BSON (Binary Interchange and Structure Object Notation) objects in the collection. The concatenation of the collection name and database name is called a namespace
+MongoDB stores BSON (Binary Interchange and Structure Object Notation) objects in the collection.
+
+The concatenation of the collection name and database name is called a namespace.
 
 What is Replication in Mongodb?
 Replication in MongoDB is the process of keeping multiple copies of the same data on different servers
-
 -------------------------------------------------------------------------------
+
 Comparing MySQL and MongoDB depends on your project's needs, as they serve different purposes. MySQL is a relational database, while MongoDB is a NoSQL database. Below is a simple comparison to help you understand their differences and decide which is better for your use case.
 
 MySQL vs. MongoDB: Key Differences
 
 Aspect	MySQL	
-Type	Relational database (uses tables with rows and columns).
-Data Structure	Fixed schema (predefined tables with columns).
-Query Language	Uses SQL (standardized query language).
-Scalability	Scales vertically (needs more powerful servers).
-ACID Compliance	Fully ACID-compliant (ensures reliable transactions).
-Data Types	Structured data (e.g., numbers, strings in fixed columns).
-    Performance	Fast for structured data and complex joins.
- Use Cases	Financial systems, e-commerce, apps needing complex queries and joins.    
-Examples	Banking systems, traditional CMS, inventory management.
+Type	         Relational database (uses tables with rows and columns).
+Data Structure	 Fixed schema (predefined tables with columns).
+Query Language	 Uses SQL (standardized query language).
+Scalability	     Scales vertically (needs more powerful servers).
+ACID Compliance	 Fully ACID-compliant (ensures reliable transactions).
+Data Types	     Structured data (e.g., numbers, strings in fixed columns).
+    Performance	 Fast for structured data and complex joins.
+ Use Cases	     Financial systems, e-commerce, apps needing complex queries and joins.    
+Examples	     Banking systems, traditional CMS, inventory management.
 
 MongoDB
-Type	NoSQL database (uses JSON-like documents).
+Type	        NoSQL database (uses JSON-like documents).
 Data Structure	Flexible schema (documents can have different fields).
 Query Language	Uses MongoDB Query Language (MQL) or JavaScript-like queries.
 Scalability:	Scales horizontally (adds more servers easily).
 ACID Compliance	Offers eventual consistency; less strict on ACID for better performance.
-    Data Types Unstructured/semi-structured data (e.g., JSON, arrays, nested objects).
- Performance   Fast for large-scale, unstructured data and simple queries.
+    Data Types  Unstructured/semi-structured data (e.g., JSON, arrays, nested objects).
+ Performance    Fast for large-scale, unstructured data and simple queries.
 
-Use Cases	Web apps, real-time analytics, content management, IoT.
-	Examples  Social media platforms, product catalogs, event logging.
+Use Cases	    Web apps, real-time analytics, content management, IoT.
+	Examples    Social media platforms, product catalogs, event logging.
 
 
     Pros and Cons
@@ -778,6 +772,7 @@ Reliable for transactions (e.g., banking, where data accuracy is critical).
 Standardized SQL makes it easy to learn and use across systems.
 Great for structured data and complex relationships (e.g., joining multiple tables).
 Mature, widely used, with strong community support.
+
 Cons:
 Fixed schema makes changes harder (e.g., adding new columns requires altering tables).
 Vertical scaling can be expensive (needs more powerful hardware).
@@ -795,9 +790,6 @@ Querying is less standardized, requiring learning MongoDB-specific syntax.
 Not ideal for complex relationships or heavy joins.
 
 
-A Replica Set in MongoDB is a group of servers (called nodes) that maintain identical copies of the same data to ensure reliability and availability. It’s the core mechanism MongoDB uses for replication (as you asked about earlier), allowing data to be duplicated across multiple servers.
-
-
 ----------------------------------------------------------------------------------
 How does MongoDB ensure high availability?
 👉 MongoDB uses replica sets.
@@ -807,10 +799,10 @@ How does MongoDB ensure high availability?
 When to use MongoDB instead of MySQL?
 
 👉 Use MongoDB when:
-✅ You have unstructured or flexible data
-✅ Your data model changes frequently
-✅ You need high write speed and scalability
-✅ You are building real-time apps like chat, IoT, analytics
+✅ ou have unstructured or flexible data
+✅ our data model changes frequently
+✅ our need high write speed and scalability
+✅  building real-time apps like chat, IoT, analytics
 
 🔑 In one line:
 Choose MongoDB for flexible, fast-changing data and MySQL for structured, relational data.
@@ -839,6 +831,7 @@ a 3-byte incrementing counter, initialized to a random value
 Oplog stores all database changes to keep replicas updated.
 ----------------------------------------------------------------------------------
 🔹 What is Aggregation in MongoDB?
+when the data is not available directly then we use aggregation pipline here in this output of one pipe will be input of second pipe and so on because we fetch data from different tables.
 
 👉 Aggregation is a way to process and combine data from multiple documents.
 ✅ It helps to filter, group, sort, and calculate data to get meaningful results.
@@ -857,10 +850,10 @@ Journaling saves changes in a log first to protect data from crashes.
 
 👉 MongoDB is schema-less because:
 ✅ It stores data in JSON-like documents, which can have different fields and structures.
-✅ You don’t need to define a fixed schema before adding data.
+✅ we don’t need to define a fixed schema before adding data.
 
 🔑 In one line:
-MongoDB is schema-less to let you store flexible and varied data easily.
+MongoDB is schema-less to let us store flexible and varied data easily.
 ----------------------------------------------------------------------------------
 
 🔹 What is a storage engine in MongoDB?
@@ -879,6 +872,7 @@ Embedded Documents: Store related data within a single document (like JSON). For
 References: Store IDs linking to other documents (similar to foreign keys). For example, a user document might reference a separate posts collection. Best for one-to-many or many-to-many relationships.
 
 Simple Explanation: You either keep related data together in one document (embedding) or link documents using IDs (referencing), depending on your data needs.
+---------------------------------------------------------------------------------------------
 
 ******Use of Capped Collection in MongoDB
 A capped collection is a fixed-size collection that automatically overwrites old data when it reaches its size limit, acting like a circular buffer.
