@@ -16,13 +16,13 @@ Higher-Order Functions –> Accept/return functions
 📌 Scope & Closures
 Global vs Local Scope
 Lexical Scope: (also called Static Scope) means:
-👉 The accessibility of variables is determined by where they are written in the code — at the time of writing, not at runtime.
+👉 The accessibility of variables, where they are written in the code — at the time of writing, not at runtime.
 A variable is accessible only inside the block/function where it is defined, and inside its inner (nested) functions
 
 Closure – Inner function remembers outer function's variables.
 
 📌 Asynchronous JS
-Callbacks
+ Callbacks
 Promises
 Async/Await
 Event Loop -> (Call Stack, Callback Queue, Web APIs). 
@@ -119,7 +119,7 @@ Used in: CommonJS modules (the older, default module system in Node.js).
 2. import
  A modern way to load modules, part of the ES Modules..
 How it works:
-have "type": "module" in package.json.
+have "type": "module" in package.json file.
 ---------------------------------------------------------------------------
 Global objects: __dirname, process, Buffer
 ------------------------------------------------------
@@ -174,8 +174,12 @@ let redis
 /*
 🔹 Redis Cheat Sheet
 📌 Basics
-redis is an open source data structure server.
-Redis is primarily used as an in-memory data store, cache, database, and message broker
+Redis is a free, open-source tool that stores data in memory instead on disk, which makes it super fast.
+
+It's mainly used for:
+Storing data temporarily (cache)
+Saving key-value data (like a simple database)
+Sharing messages between different parts of an app (message broker)
 
 📌 Commands
 SET key value             # Set key
@@ -242,9 +246,9 @@ non-primitive datatypes : object, arrray, function
 
  Key Features of let
 1. Block Scope
-2. Hoisting  :  While variables declared with let are hoisted, but they are not initialized.
-3. No Redeclaration
-4. re-assign can possible
+2. Hoisting  :  While variables declared with let  are hoisted, but they are not initialized.
+3. No Redeclaration.
+4. re-assign can possible.
 ------------------------------------------------------------------
 Temporal Dead Zone (TDZ)
 ---------------------------------------------------------------------------
@@ -351,7 +355,6 @@ Flips the value.
 Example:
 !true  // false
 !false // true
-
 --------------------------------------------------------------------------------------------------------
 
 JavaScript Bitwise Operators
@@ -402,7 +405,7 @@ condition ? expression1 : expression2 evaluates expression1 if the condition is 
 ---------------------------------------------------------------------------------------------------------
 
 7. JavaScript Comma Operator
-Comma Operator (,) mainly evaluates its operands (value) from left to right sequentially and returns the value of the rightmost operand (value).
+Comma Operator (,) mainly evaluates its operands (value) from left to right sequentially and returns the rightmost operand (value).
 
 let n1, n2
 const res = (n1 = 1, n2 = 2, n1 + n2);
@@ -604,6 +607,11 @@ let a = [1, 2, 3, 4, 5];
 for (let val of a) {
 console.log(val);
 }
++---------------------------------------------------------------------------
+-**-*/
+let low_level_design_in_node_js
+/*
+*-
 low level design in node js
 Low-Level Design (LLD) in Node.js focuses on the detailed implementation of individual components, modules, and functions within a larger system. It translates the high-level architectural decisions into concrete blueprints for coding, ensuring maintainability, scalability, and efficiency.
 
@@ -644,15 +652,14 @@ lastName = 'Khan',
 fullName () {
 return `${person.firstName}
 ${person.lastname}`
-}
+     }
 }
 
 in fullName(), we're using a template literal.
 console.log(person.fullName) //Gulraiz Khan
-
+-----------------------------------------------------------------------------------------
 
 setter
-what is setter 
 we use setter to change (mutate) the property.
 
 */
@@ -673,7 +680,7 @@ console.log(student.firstName);  //Sarah
 
 // In the above example, the setter method is used to change
 // the value of an object.
-// 
+//
 // set changeName(newName){
 //     set changeName(newName)
 // }
@@ -683,6 +690,6 @@ console.log(student.firstName);  //Sarah
 /**
 async and await make promises easier to write"
 async makes a function return a Promise.
-await makes a function wait for a Promise.
+await makes a function wait for a Promise to resolve or reject.
  
  */

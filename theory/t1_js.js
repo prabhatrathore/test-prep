@@ -7,7 +7,7 @@ JavaScript is a scripting programming language used in client side that allows u
 JavaScript is an object-based scripting language, meaning it uses objects to represent data and functionality,
 JavaScript is also cross-platform, which means it can be run on any device that has a web browser,
 JavaScript follow synchronous pattern
-it is single threaded.
+JavaScript code is a single thread, which means that code can only do one task at a time
 
 Dynamic Typing ****
 JavaScript is dynamically typed, which means: we don’t need to mention the type of a variable.
@@ -53,7 +53,6 @@ Instead of just interpreting code line-by-line (slow), JIT compiles JavaScript i
 JIT Compiler: A JIT compiler converts code into byte code first. Then, at runtime, it changes the byte code into machine-readable code, which makes the program run faster.
 --------------------------------------------------------------------------------------------
 */
-
 /**
 Why is JavaScript interpreted not compiled?
 Whether JavaScript is compiled or interpreted depends on the environment in which it is run. If it runs in older browsers, it's interpreted. If it runs in modern browsers, it's compiled.
@@ -104,8 +103,6 @@ JavaScript is a programming language. explain
 Yes, JavaScript is a programming language that is used primarily for web development, but can also be used for other purposes such as server-side programming, desktop applications, and mobile app development. 
 -----------------------------------------------------------------------------------------
 
-JavaScript code is a single thread, which means that code can only do one task at a time
-
 ❓ Why is JavaScript single-threaded?
 JavaScript was designed to be single-threaded because of its main job in the browser: interact with the DOM (the web page).  
 ---------------------------------------------------------------------------------------
@@ -119,7 +116,7 @@ let event_loop
 The Event Loop and Asynchronous Behavior:
 JavaScript uses single-threaded, non-blocking model with an event loop to handle concurrency without multiple threads.
 The event loop manages the execution of code, handling tasks like DOM events, timers (setTimeout), and asynchronous operations (e.g., fetching data with fetch).
---------------------------------------------------------------------
+---------------------------------------------------------------------------
 How it works:
 JavaScript has a call stack (where code executes), a task queue (for pending tasks), and a web API (for async operations like timers or HTTP requests).
 
@@ -155,7 +152,7 @@ So the stack looks like:
 | console.log("3") | → done
 
 🌐 2. Web APIs
-These are provided by the browser (or Node) to handle asynchronous stuff outside the main thread.
+Web APIs are provided by the browser (or Node) to handle asynchronous stuff outside the main thread.
 ---------------------------------------------------------------------------------------------------
 In our case:
 
@@ -188,8 +185,9 @@ Promises (.then(), .catch())
 Mutation Observers
 process.nextTick() (Node.js only)
 -------------------------------------------------------------------------
+
 Execution Context
-An Execution Context is the environment in which JavaScript code is executed. It consists of:
+An Execution Context is the environment in which JavaScript code is executed. It consists of
 
 Global Execution Context (GEC) – Created when the JavaScript file runs.
 Function Execution Context (FEC) – Created when a function is invoked.
@@ -220,12 +218,12 @@ A variable declared with var is function-scoped, meaning it’s only accessible 
 **********************************************************************************************
 
 Globally Scoped.......
-A variable declared with var outside any function (or without 'var' in non-strict mode) is globally scoped, meaning it’s accessible everywhere in our program, including inside functions, loops, or any other code.
+A variable declared with var outside any function ((or without 'var' in non-strict mode)) is globally scoped, meaning it’s accessible everywhere in our program, including inside functions, loops, or any other code.
 
 Example with our code:
 
 var ret = 2; // Globally scoped because it’s not inside a function
-console.log(ret ** 2, 'line 75******2@@***'); // ret is accessible
+console.log(ret ** 2, 'line 75******@@***'); // ret is accessible
 
 function test() {
     console.log(ret); // ret is still accessible inside this function
@@ -245,26 +243,27 @@ In JavaScript, whether a variable declared with 'let w = 2' is globally scoped d
 If declared outside any function or block: Yes, w is in the global scope and accessible throughout the entire script (or module, if using ES modules). For example:
 
 In this case, w is globally scoped because it’s declared at the top level of the script.
-If declared inside a block or function: If w is declared inside a block (e.g., {}), function, or other scope, it is not globally scoped and is only accessible within that block or function due to let’s block-scoping behavior. For example:
+If declared inside a block or function: If 'w' is declared inside a block (e.g., {}), function, or other scope, it is not globally scoped and is only accessible within that block or function due to let’s block-scoping behavior. For example:
 
 -------------------------------------------------------------------------------------
-In JavaScript, if you declare const t = 3 in the first line of a script (outside any function or block), it behaves similarly to let in terms of scope but with key differences due to const’s properties:
+In JavaScript, if we declare const t = 3 in the first line of a script (outside any function or block), it behaves similarly to 'let' in terms of scope but with key differences due to const’s properties:
 
 Global Scope: If const t = 3 is declared at the top level of a script (outside any block or function), it is in the global scope for that script and accessible throughout the script. For example:
- */
+*/
 /**
 ========================================================
 In simple terms, "interactivity" refers to how much a user can interact with a web page or application. JavaScript is a programming language that is commonly used in web development to add interactivity to websites.
   
 With JavaScript, we can create interactive features such as drop-down menus, pop-up windows, sliders, animations, and more. These features can respond to user actions such as clicks, mouse movements, or keyboard inputs, allowing users to interact with the website and its content in meaningful ways.
 
-For example, with JavaScript, a user can click a button to show or hide content on a web page, or drag and drop items to rearrange them. JavaScript can also be used to validate form inputs, perform calculations, and even create interactive games.
+For example, with JavaScript, a user can click a button to show or hide content on a web page. JavaScript can also be used to validate form inputs, perform calculations, and even create interactive games.
  */
 let Undefined_AND_NULL
 /**
  What is the difference between null & undefined ?
  Undefined means a variable has been declared but has not yet been assigned a value. On the other hand,
- null is an assignment value. It can be assigned to a variable as a representation of no value. Also, undefined and null are two distinct types: undefined is a type itself (undefined) while null is an object
+ null is an assignment value. null can be assigned to a variable as a representation of no value. 
+ Also, undefined and null are two distinct types: undefined is a type itself (undefined) while null is an object
  
   Storing a value in a variable is called variable initialization
    */
@@ -368,9 +367,9 @@ let temp = str.slice(0, 4)  //
 // console.log(str2.charAt(4))  //o 
 // console.log(str.indexOf('h'))  //3
 // console.log(str.lastIndexOf('h')) //3
-// console.log('================================================================================================== =======')
+// console.log('================================================================ =======')
 let tempAr = [3, 4, 5, 6, 6, 2, 1]
-// console.log(tempAr?.slice(0, 2), " EEE__+=== ")//[ 3, 4 ] 
+// console.log(tempAr?.slice(0, 2), "+=== ==")//[ 3, 4 ] 
 tempAr = 'tempArRDRFRGR'
 let th = tempAr.substring(3, 1)
 // console.log(th, "popop@!@#") // em popop@!@# // swap krra
@@ -399,7 +398,7 @@ let SUBSTRING;
 
 /**
 The substring() method is used to extract a part of a string, between two specified indexes (positions).
-only applicable on string not array.
+  substring()    only applicable on string not array.
  The substring() method extracts characters from start to end (exclusive).
  The substring() method does not change the original string.
  If startIndex > endIndex, JavaScript automatically swaps them.
@@ -412,13 +411,13 @@ console.log("Hello".substring(3, 1)); // "el" /// swap kr dia
  =======================================================================================================
  ❗Difference from slice():
 Both are similar, but:
-substring() does not support negative indexes, only applicable on string not array
+substring() does not support negative indexes,
 
 example: 
 */
 let str6 = "Hello";
 // console.log(str6.substring(-2, 3),")(*&^%$#@"); // Treats -2 as 0, outputs "Hel"
-// console.log(str6.substring(-2, -31),")(*&^%$#@"); // Treats -2 as 0, & -3 as 0 outputs ""
+// console.log(str6.substring(-2, -3),")(*&^%$#@"); // Treats -2 as 0, & -3 as 0 outputs ""
 /*
 If we pass a negative index to substring(), it treats it as 0.
 --------------------------------------------------------------------------------------------
@@ -493,6 +492,7 @@ Description: Returns the index of the first element that satisfies a testing fun
 let arr = [1, 2, 3];
 let index = arr.findIndex(num => num > 2); // 2
 ------------------------------------------------------------------------------------------------
+
 Array.includes()
 Description: Checks if an array or string contains a specific value, returning true or false
 let arr = [1, 2, 3];
@@ -515,13 +515,13 @@ Description: Modifies an array by removing, replacing, or adding elements at a s
 */
 let arr4 = [1, 2, 3, 4];
 // let tf = arr4.splice(1, 2, 'new'); // Removes [2, 3], adds 'new'
-// console.log(arr4, 'AAAAAAA', 'tftftftf', tf); // [1, 'new', 4]tftftftf [ 2, 3 ]
+// console.log(arr4, 'AAAAAAA', 'tftftftf', tf); // [1, 'new', 4] tftftftf [ 2, 3 ]
 arr4.splice(1, -10, 'new'); // Removes nothing, adds 'new'
 // console.log(arr4, 'AAAAAAA'); // [ 1, 'new', 2, 3, 4 ]
 /*
 Array.concat()
-Description: Merges two or more arrays, returning a new array without modifying the originals.
- */
+Merges two or more arrays, returning a new array without modifying the originals.
+*/
 let nam = 'happy'
 let year = 'twenty'
 let next = nam.concat(" ", year)
@@ -592,13 +592,13 @@ let is_nan
 🔍 What is NaN in JavaScript?
 NaN stands for "Not-a-Number".
 
-It’s a special value in JavaScript that means:
-“This value is not a valid number.”
+It’s a special value in JavaScript that means “This value is not a valid number.”
 ------------------------------------------------------------
 typeof of NaN will return a Number.
 
 To check if a value is NaN, we use the isNaN() function,
-Note- isNaN() function converts the given value to a Number type, and then equates to NaN .
+isNaN converts the argument to a Number and returns true if the resulting value is NOT a Number
+Note- isNaN() function converts the given value to a Number type, and then equates to NaN.
 
 isNaN("Hello")  // Returns true
 isNaN(345)   // Returns false
@@ -606,12 +606,7 @@ isNaN('1')  // Returns false, since '1' is converted to Number type which result
 isNaN(true) // Returns false, since true converted to Number type results in 1 ( a number)
 isNaN(false) // Returns false
 isNaN(undefined) // Returns true 
-
 ---------------------------------------------------------------
-q:) What is the use of isNaN function?
-isNaN converts the argument to a Number and returns true if the resulting value NOT a Number
-
-**Note- isNaN() function converts the given value to a Number type, and then equates to NaN.
    */
 let strict
 /**
@@ -652,11 +647,11 @@ function let() { // SyntaxError: Unexpected strict mode reserved word
 let Closures
 /**
  What Are Closures in JavaScript?
- Inner function remembers outer function's variables. 
-
-Closures are functions that have access to the variables from their outer function scope even after the outer function has finished executing. They “remember” the environment in which they were created.
-
-Closures are an ability of a function to remember the variables that are declared in its outer scope.
+ 
+ Closures are functions that have access to the variables from their outer function scope even after the outer function has finished executing. They “remember” the environment in which they were created.
+ 
+ -> Closures are an ability of a function to remember the variables that are declared in its outer scope.
+ -> Inner function remembers outer function's variables. 
 -----------------------------------------------------------------------------------------------------
 */
 
@@ -684,13 +679,13 @@ Arrow functions were introduced in the ES6 version of javascript. They provide u
 ---------------------------------------------------------------------------------------------------------
 A generator function is a special type of function that can be paused and resumed during its execution.
   */
-function* generator() {
+function* generator1() {
   console.log("first")
   yield 100
   console.log('second')
   yield 2000
 }
-let gene = generator()
+let gene = generator1()
 //  console.log(gene.next(),"{{{{{{{{{{{")
 //  first
 // { value: 100, done: false } {{{{{{{{{{{
@@ -742,7 +737,7 @@ let set = new Set([1, 2, 3, 3]);
 console.log(set); // {1, 2, 3} (duplicates removed)
 ------------------------------------------------------------------------------------
 A Set stores unique values.
-When you add objects, they are only considered unique if their reference is different — even if the content is same.
+When we add objects, they are only considered unique if their reference is different — even if the content is same.
  */
 let mySet = new Set();
 let obj1 = { name: "Alice" };
@@ -752,7 +747,7 @@ mySet.add(obj2);
 // console.log(mySet.size); // 👉 2
 // Even though obj1 and obj2 look the same, they're stored as separate entries because they have different references in memory.
 // -------------------------------------------------------------------------------------
- mySet = new Set();
+mySet = new Set();
 
 mySet.add({ a: 1 });
 mySet.add({ a: 1 });
@@ -848,7 +843,7 @@ let weakSet = new WeakSet();
 
 // console.log(typeof WeakSet, '>>>>>>>>>>>>>>>>>>>'); // Should print "function".
 let user = { name: "Alice" };
-console.log(typeof globalThis.WeakSet,"/////////\\\\\\\\\\\\"); // Should print "function"
+console.log(typeof globalThis.WeakSet, "/////////\\\\\\\\\\\\"); // Should print "function"
 // let weakSet = new WeakSet();
 // console.log(weakSet.has(user),'::::::::::::::::::::'); // true
 // weakSet.add(user);
