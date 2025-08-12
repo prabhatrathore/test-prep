@@ -2,7 +2,7 @@
 
 /**
   Definition
-  Node.js is a open-source, cross-platform JavaScript runtime environment that enables server-side JavaScript execution, allowing developers to build web applications using a single language across client and server.
+  Node.js is a open-source, cross-platform JavaScript runtime environment that enables server-side JavaScript execution, (( allowing developers to build web applications using a single language across client and server)).
   
  Purpose -----------------------------------------------------------------------------------------------
 node.js Provides an efficient and scalable platform for developing high-performance web applications.
@@ -19,6 +19,7 @@ Inherits a single-threaded design from V8, aligning with JavaScript’s browser-
 Processes tasks (e.g., HTTP requests) asynchronously using a single-threaded event loop.
 Queues incoming requests and responds when data is ready, avoiding the need for multiple threads.
 (Simplifies development by eliminating complexities of multi-threaded programming.)
+
 
 Event-Driven, Non-Blocking I/O Model-----------------
 Handles I/O operations (e.g., file system, network requests) asynchronously, preventing blocking of the main thread.
@@ -45,7 +46,8 @@ Key Advantages
 
 Node.js is asynchronous and event-driven. All API's of Node.js library are non-blocking, and its server doesn't wait for an API to return data. It moves to the next API after calling it, and a notification mechanism of Events of Node.js responds to the server from the previous API call.
  -------------------------------------------------------------------------------------
-(Cryptography is the process of hiding or coding information)
+
+(Cryptography is the process of hiding (or coding) information)
  
  Limitations of node.js
  🔹 Single-threaded problem:
@@ -58,6 +60,7 @@ Heavy tasks block the main thread.
 Other users/tasks have to wait.
 App becomes slow or unresponsive.
 --------------------------------------------------
+
 ✅ Solution: Worker Threads
 Use worker_threads module.
 
@@ -85,6 +88,8 @@ In Node.js, we can use the built-in http module to create a server that listens 
 ------------------------------------------------------------------
 const express = require('express');
 const app = express();
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 app.get('/', (req, res) => {
   res.send('Hello from Express Server!');
@@ -104,7 +109,7 @@ Can you describe your experience with using npm, the Node.js package manager?
 or 
 How do you manage packages in your NodeJS project?
 
-Npm is a package manager for Node.js that allows us to install and manage third-party libraries and packages in our Node.js projects. I have used npm to install various packages in my projects, such as libraries for handling HTTP requests, parsing JSON data, and performing unit tests. I have also used npm to manage dependencies and to publish my own packages.
+Npm is a package manager for Node.js that allows us to install and manage third-party libraries and packages in our Node.js projects. 
 ******************************************************************************************
 
 How do you debug Node.js applications
@@ -120,6 +125,7 @@ Start Node with inspect:
 **************************************************
 
 Clustering is a technique in Node.js to create multiple processes (workers) that run simultaneously and share the same server port.
+
 Since Node.js is single-threaded by default, node.js runs on a single process, utilizing only one CPU core. The cluster module allows us to create multiple worker processes that share the same server port, enabling parallel processing and better handling of concurrent requests.
 
 Key Concepts of Clustering
@@ -149,6 +155,7 @@ process: It returns the child process which is global.
 send(): It sends a message from worker to master or vice versa. 
 kill(): It is used to kill the current worker.
 --------------------------------------------------------------------------
+
 const cluster = require('cluster');
 const http = require('http');
 const numCPUs = require('os').cpus().length; // Number of CPU cores
@@ -261,9 +268,11 @@ The spawn function is designed to run any command or executable as a general chi
 
 In contrast, the fork function is tailored for running Node.js scripts as a Node.js-specific child process, utilizing an IPC channel alongside streams for communication, suited for parallel tasks in Node.js, but is slightly heavier due to the Node.js environment setup.
 ----------------------------------------------------------------------------------------------------
+
 What is a, fork in NodeJS?
 Fork is a method in NodeJS that is used to create child processes. It helps to handle the increasing workload. It creates a new instance of the v8 engine which enables multiple processes to run the code.
 ----------------------------------------------------------------------------------------------------
+
 explain the different purposes of Node.js:
 
 1.Real-time web applications: Node.js is great for building web applications that require real-time communication between the server and the client, such as chat applications, online gaming platforms, and live streaming services.
@@ -278,11 +287,12 @@ It is fast, scalable, open-source, and asynchronous.
 
 ----------------------------------------------------------------------------------------------------
 /////////////////////////////////////////////////////////////////////////////////////////////=========*********
-(((Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It is an open source framework developed and maintained by the Node.js foundation.)))
+(((Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. )))
 
 Q 4. What is express?  
 Express is light weight web framework of node.js    
 express is fast, unopiniated (no proper file structure provided), minimalist web framwork for node.js 
+It is an open source framework developed and maintained by the Node.js foundation.
 
 core features of Express framework − 
 Express is used for designing and building web applications quickly and easily. 
@@ -331,7 +341,6 @@ Node.js provides a facility of no buffering. Its application never buffers any d
 -------------------------------------------------------------------------------------------------------------
 */
 let Nodejs_web_application_architecture
-
 /*
 --------------------------------------------------------------------------------------------------------
 Explain Node.js web application architecture?
@@ -437,7 +446,7 @@ Another useful file is package-lock.json, which records the exact versions of pa
 ------------------------------------------------------------------------------------
 
 Q.1:What are modules in Nodejs. Do you know any commonly used modules 
-Ans. Module is a function or grp of similar function. They are grouped together within a file and contain the code to execute a specific task when called.  
+A module in Node.js is a block of code that provides specific functionality, which can be reused across different parts of an application
 
 Some are : built in module 
 Node.js has a set of built-in modules which we can use without any further installation  
@@ -510,8 +519,13 @@ The express.Router() function is used to create a new router object. This functi
 
  in index.js
 const route = require('./routes/route.js'); 
-app.use('/', route);   (ye global middleware h)  
+app.use('/', route);   (ye global middleware h)
+-----------------------------------------------------------------------------------------
 
+object is an instance of class
+
+An object in JavaScript is a data structure that stores data as key-value pairs, allowing us to group related properties and methods together.
+----------------------------------------------------------------------------------------------
 
 Body-parser 
 Body-parser is third party NPM and work as a middleware which helps to convert  
@@ -520,9 +534,9 @@ Body-parser is third party NPM and work as a middleware which helps to convert
 app.use('/', route) is global middleware.  
 
 6. What are middlewares and why do you need them? 
- Middleware is a function that gets executed during the request-response cycle of an application. 
+ Middleware is a function that gets executed during the request-response cycle of an application performing tasks like logging, authentication, and data processing. 
 middleware sits between endpoint and handlers.
-it manages the flow of control & code reusability
+it manages the flow of control & code reusability 
  
  -----------------------------------------------------------------------------------------------
 What are the four functions of middleware systems?
@@ -540,15 +554,6 @@ Middleware is software that acts as a bridge between different applications, sys
 1. Application-Specific Middleware
  This type of middleware is designed for a specific application or purpose. It handles tasks unique to a particular program or system.
 How It Works: It processes requests or data in a way that’s customized for the application’s logic or requirements. 
-
-information-Exchange Middleware
- This middleware focuses on enabling communication and data exchange between different systems, applications, or services, often across networks or platforms.
-How It Works: It standardizes or translates data formats, protocols, or messages so that different systems (e.g., a web server and a database) can understand each other.
-
-Management and Support Middleware
-What It Is: This middleware provides tools and services to manage, monitor, or support the operation of applications or systems, often focusing on performance, security, or maintenance.
-How It Works: It handles tasks like logging, error handling, load balancing
--------------------------------------------------------------------------
 const express = require('express');
 const app = express();
 
@@ -559,9 +564,20 @@ app.use((req, res, next) => {
   }
   next();
 });
-------------------------------------------------------------------------------------------------
-// 2. Information-Exchange Middleware (e.g., parsing JSON data)
+-------------------------------------------------------------------------
+
+information-Exchange Middleware   (e.g., parsing JSON data)
+This middleware focuses on enabling communication and data exchange between different systems, applications, or services, often across networks or platforms.
+How It Works: It standardizes or translates data formats, protocols, or messages so that different systems (e.g., a web server and a database) can understand each other.
+-------------------------------------------------------------------------
 app.use(express.json()); // Handles JSON data exchange between client and server
+-------------------------------------------------------------------------
+
+Management and Support Middleware
+What It Is: This middleware provides tools and services to manage, monitor, or support the operation of applications or systems, often focusing on performance, security, or maintenance.
+How It Works: It handles tasks like logging, error handling, load balancing
+
+------------------------------------------------------------------------------------------------
 -----------------------------------
 // 3. Management and Support Middleware (e.g., logging)
 const morgan = require('morgan');
@@ -574,9 +590,7 @@ app.get('/', (req, res) => {
 app.listen(3000, () => console.log('Server running on port 3000'));
 
 ----------------------------------------------------------
-object is an instance of class
 
-An object in JavaScript is a data structure that stores data as key-value pairs, allowing us to group related properties and methods together.
 ----------------------------------------------------------
 
 Q 7. What are route and application level middlewares?/////// 
@@ -594,7 +608,9 @@ Application level middleware are bound to an instance of express, using app.use(
 Routes are the way in which the client requests are handled by the application endpoints or it is a mechanism where HTTP requests are routed to the code that handles them.
 Application Level Middleware are bound to an instance of express, using app.use() also called as global middleware.
 Application Level Middleware is used globally for example whenever an API is hit the app.use method hits first then goes to the routes part of it. 
- 
+ --------------------------------------------------------------------------------------------------------
+
+
 Q 8. How do you decide which code should go in an application level middleware vs which one is suitable for a route level middleware. 
 Application-Level Middleware
 Use it when the logic should apply to all routes in your app.
@@ -607,11 +623,13 @@ Authentication for the entire app
 ✅ Think: “Does this apply globally?” → Application-level
 app.use(logger); // applies to all routes
 -------------------------------------------------------------------------------------------
+
 Quick Rule:
 
 Use application-level for global tasks,
 Use route-level for targeted tasks.
 -------------------------------------------------------------------------------------------
+
 outer-Level Middleware
 Use it when the logic is needed only for specific routes.
 
@@ -619,7 +637,9 @@ Examples:
 Checking permissions for a specific route
 Validating request data for a particular endpoint
 Route-specific logging or caching
+
 ✅ Think: “Is this only needed here?” → Route-level
+
 app.get('/admin', checkAdmin, (req, res) => {
   res.send('Admin panel');
 });
@@ -712,23 +732,23 @@ promise.then((value) => { console.log(value) })
 Promise.resolve('3').then((value) => { console.log(value) })
 //======================================================
 function sol() { //promise chaning
-    return new Promise((resolve, reject) => {
-        resolve('foo')
-    })
+  return new Promise((resolve, reject) => {
+    resolve('foo')
+  })
 }
 sol()
-    .then((value) => {
-        console.log(value, 'pppppp')
-        value += ' baar '
-        return value //yaha promise return ho rha h. mtlb abb hum promise pr .then lga skte h
-    }
-    ).then((value) => {
-        console.log(value, "nbhgvf")
-        value += ' one'
-        return value
-    }).then((value) => {    //then sirf promise pr lgta hai
-        console.log(value) //
-    })
+  .then((value) => {
+    console.log(value, 'pppppp')
+    value += ' baar '
+    return value //yaha promise return ho rha h. mtlb abb hum promise pr .then lga skte h
+  }
+  ).then((value) => {
+    console.log(value, "nbhgvf")
+    value += ' one'
+    return value
+  }).then((value) => {    //then sirf promise pr lgta hai
+    console.log(value) //
+  })
 /**
  
 let arr = ['a', 'v', 'x', 'e']
@@ -833,12 +853,12 @@ new Promise((resolve, reject) => {
 ///
 // 
 let obj = {
-    name: "ram",
-    age: 9,
-    address: "delhi"
+  name: "ram",
+  age: 9,
+  address: "delhi"
 }
 function sol(greet) {
-    console.log(greet, this.name + this.age)
+  console.log(greet, this.name + this.age)
 }
 sol.call(obj, 'hello')
 //===================
@@ -853,10 +873,10 @@ obj_invite("greeek")
 
 //=========
 new Promise((resolve, reject) => {
-    setTimeout(() => {
-        console.log("first")
-        resolve()
-    }, 2000)
+  setTimeout(() => {
+    console.log("first")
+    resolve()
+  }, 2000)
 }).then(() => { console.log("firstsecond") })
 // console.log(ab)
 //  */
@@ -1084,6 +1104,12 @@ ESLint can be used with any IDE to ensure a consistent coding style which furthe
 --------------------------------------------------------------------------------
 Why is Node.js single-threaded?
 Node.js was created explicitly as an experiment in async processing. This was to try a new theory of doing async processing on a single thread over the existing thread-based implementation of scaling via different frameworks.
+
+
+Is Node.js single-threaded?
+Yes, Node.js is single-threaded but uses event-driven
+architecture and non-blocking I/O to handle multiple
+requests efficiently
 
 
 What is the default scope of Node.js application?

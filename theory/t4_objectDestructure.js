@@ -9,8 +9,9 @@ const obj3 = {
     country: 'india'
 };
 
-let { band, age: val2, ...restProperty } = obj3
+let { band,age:f, age: val2, ...restProperty } = obj3
 // console.log(band) // annfo-=-=3
+// console.log(f,':::"""') // 11231
 // console.log(val2) // 11231
 // console.log(restProperty) // { adrress: 'rza 31 dabri ', city: 'new delhi', country: 'india' };
 

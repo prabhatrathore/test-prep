@@ -32,7 +32,7 @@ var name1 = "xyz";
 console.log(name); // ReferenceError: name is not defined
 let name = "xyz";
 
-30. What is a Temporal Dead Zone?
+What is a Temporal Dead Zone?
 It is a behaviour (phase) where we try to access a variable before it is initialized.
 
 Examples of temporal dead zone:
@@ -186,7 +186,6 @@ function sol2() {
 }
 sol2()
 //==============================
-//default parameter
 // ✅ 1. What is lexical scope in JavaScript?
 // Where a variable is defined decides its scope.
 // Inner functions can access variables of outer functions.
@@ -199,35 +198,34 @@ function outer() {
 }
 /**
  ✅ 2. How does lexical scoping work with this keyword?
-🔹 Answer:
-Lexical scope and this are different.
+Lexical scope and 'this' are different.
 this depends on how a function is called, not where it’s defined.
 Lexical scope is based on where it’s written in code.
+---------------------------------------------------------------------------------
 
 ✅ 3. What is the use of void(0)?
-🔹 Simple meaning:
 Runs an expression without returning anything.
 Often used in <a href="javascript:void(0)"> to do nothing and prevent page reload
+---------------------------------------------------------------------------------
 
 ✅ 5. What are Web Workers?
-🔹 Simple answer:
 Web Workers run JavaScript in background threads, so heavy tasks don’t block UI.
-
 💡 Use case: Data processing without freezing the page.
+---------------------------------------------------------------------------------
+
 ✅ 6. Explain debouncing and throttling.
-🔹 Debouncing:
-Runs a function after a delay, and resets timer if called again.
+🔹 Debouncing: Runs a function after a delay, and resets timer if called again.
 (e.g., search bar input)
 Executes only after a pause.
 ---------------------------------------------------------------------------------
 🔹 Throttling:
 Runs a function at fixed intervals, ignoring extra calls in between.
 Limits function execution rate.
-
+*/
 (function() { var a = b = 5; })(); 
-console.log(typeof a); // undefined (a is local)
-console.log(typeof b); // number (b becomes global)
-
+console.log(typeof a,"???>"); // undefined (a is local)
+console.log(typeof b,"EDFGBV",b); // number (b becomes global)
+/*
 Why?
 b = 5 is like window.b = 5 but a is var scoped inside function.
 -------------------------------------------------------------------------------------------
@@ -240,7 +238,7 @@ const car = {
 };
 
 const getCarName = car.getName;
-console.log(getCarName()); // ???
+console.log(getCarName(),"wwwwwwwasa"); // ???
 /*Why?
 Because this is not bound to car here; it becomes undefined or window depending on strict mode.
 -----------------------------------------------------------------------------------------------------
@@ -253,10 +251,10 @@ console.log(arr, 'VCAS'); //[ [10], [10], [10] ]
 All array slots refer to the same inner array object.
 
 --------------------------------*/
-const obj = { xf: 1 };
+const obj = { xf: 11 };
 const { xf, xf: y } = obj;
 console.log(y, "GGG", xf, "{{{{"); // 1 GGG 1 {{{{
 /*Why?
-x: y assigns obj.x to new variable y.
+xf: y assigns obj.xf to new variable y.
 
  */

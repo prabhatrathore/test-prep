@@ -1,5 +1,5 @@
 /**
- nest is a progressive node.js framwork for building efficient and scalable server-side applications.
+ nest is a progressive node.js framework for building efficient and scalable server-side applications.
 
 build with typescript and heavily inspired by angular. 
 uses moduler architecture for better organization . 

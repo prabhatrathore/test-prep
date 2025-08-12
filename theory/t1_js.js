@@ -863,6 +863,7 @@ Only stores objects.
 Stored objects are weakly held.
 It’s not iterable and doesn’t expose its content.
 */
+let Function_Declarations_and_Function_Expressions
 /*
 ---------------------------------------------------------------------------------------------------------
 What Is the Difference Between Function Declarations and Function Expressions?
@@ -901,7 +902,7 @@ document.cookie = "token=12345; expires=Fri, 31 Dec 2025 12:00:00 UTC";
 */
 
 /**
- What Is the Difference Between an Array and an Object in JavaScript?
+ What Is the Difference Between an Array and an Object in JavaScript ? ? ? ? ?
  An array is a data structure that can store a collection of values. 
  An object is a data structure that can store a collection of properties.
  
@@ -910,8 +911,7 @@ document.cookie = "token=12345; expires=Fri, 31 Dec 2025 12:00:00 UTC";
 let tgb = [3, "ghar", { r: 3 }, function f() { }, []]
 /*
  Objects are indexed by strings.  
-  Objects can store primitive data types, objects,function and arrays.
- 
+ Objects can store primitive data types, objects,function and arrays.
  ---------------------------------------------------------------------------------------------------------
  Browser Object Model is known as BOM.
  Browser Object Model allows users to interact with the browser. 
@@ -1096,7 +1096,7 @@ sum(); // 4
 // The default value of z is the sum of x and y
 
 /**
-If you reference the parameter that has not been initialized yet, you will get an error. For example,
+If you reference the parameter that has not been initialized yet, we will get an error. For example,
 
 function sum( x = y, y = 1 ) {
     console.log( x + y);
@@ -1109,7 +1109,7 @@ ReferenceError: Cannot access 'y' before initialization
 -----------------------------------------------------------------------------------------------------
 
 Example 2:
- Passing Function Value as Default Value using a function in default value expression
+ Passing Function Value as Default Value using a function in default value expression . 
 
 const sum = () => 15;
 
@@ -1156,12 +1156,11 @@ ternary operator
 
 The ternary operator in JavaScript is a shorthand for an if-else statement, written as condition ? valueIfTrue_statement : valueIfFalse_statement,
 
-now if condition is true then just after question mark ? statement is run  else after colon statement run.
+now if condition is true then just after question mark ? statement is run else after colon statement run.
 
 -----------------------------------------------------------------------------------------
 Template Strings (also called Template Literals):
 A feature in JavaScript introduced in ES6.
-
 
 Template literals in JavaScript use backticks (`) instead of quotes to create strings, allowing us to easily add variables and expressions inside them without concatenation.
 With template literals, we can use both single and double quotes inside a string.
@@ -1186,9 +1185,9 @@ example(5, 10); // a is bound to 5, b is bound to 10
 /**
   Type coercion in JavaScript only coerces to the string, number, and Boolean primitive types. There's no way in JavaScript to coerce a value type to object or function .
 
-Type Coercion refers to the process of automatic or implicit conversion of values from one data type to another. This includes conversion from Number to String, String to Number, Boolean to Number etc. when different types of operators are applied to the values.
+ Type Coercion refers to the process of automatic or implicit conversion of values from one data type to another. This includes conversion from Number to String, String to Number, Boolean to Number etc. when different types of operators are applied to the values.
 
-String to Number Conversion
+ String to Number Conversion
   var w = 10 - '5';//5
         var x = 10 * '5';//50
         var y = 10 / '5';// 2
@@ -1208,7 +1207,7 @@ In this case, the string "true" is not directly converted to a boolean. Instead,
 The comparison then becomes 1 == NaN, which is false because NaN is not equal to any number, including 1.
 Thus, the output of console.log(true == "true") is false.
 
-If you used strict equality (===), the result would also be false because true (boolean) and "true" (string) are different types, and === does not perform type coercion.
+If we used strict equality (===), the result would also be false because true (boolean) and "true" (string) are different types, and === does not perform type coercion.
 ------------------------------------------
 ---------------------------------------------------------*/
 // console.log(NaN == NaN, "{AAAAA@@")//false
@@ -1232,7 +1231,7 @@ test(): Checks if a string contains a pattern and returns a boolean (true if fou
 let regex = /hello /;
 // This is a regular expression that matches the exact phrase:
 // console.log(regex.test("hello world"), 'XXXXXXXx'); // true
-// console.log(regex.test("he world"), 'CCCCCCCCCCC'); // false
+// console.log(regex.test("he world"), 'CCCCC'); // false
 // -----------------------------------------------------------------------
 regex = /hello   /;
 // This is a regular expression that matches the exact phrase:
@@ -1245,7 +1244,7 @@ regex = /hello is the/;
 /*
 ===============================================================
 
-exec(): Searches a string for a pattern and returns an array with the matched text, groups, index, and input if found, or null if not.
+exec(): Checks if a string contains a pattern and returns an array with the matched text, groups, index,,,  input if found, or null if not.
 ===============================================================
 */
 
@@ -1254,7 +1253,7 @@ console.log(regex1.exec("hello world"), 'LLLLLLLLLLL'); // ["hello", index: 0, i
 console.log(regex1.exec("world")); // null
 /*
 -------------------------------------------------------------------------------------------
-Currying in JavaScript is a functional programming technique where a function with multiple arguments is transformed into a sequence of functions, each taking a single argument. Instead of taking all arguments at once, a curried (curry) function returns a new function for each argument until all arguments are provided, then it computes the result
+Currying in JavaScript is a functional programming technique where a function with multiple arguments is transformed into a sequence of functions, each taking a single argument. Instead of taking all arguments at once, a curried (curry) function returns a new function for each argument until all arguments are provided, then it computes the result.
 */
 // Regular function
 function add(a, b, c) {
@@ -1326,7 +1325,7 @@ console.log(processUser("Prabhat", greet)); // Hello, Prabhat
 -----------------------------------------------------------------------------
  => Higher-Order Functions
 ✅ A Higher-Order Function ( HOF ) is a function that:
-Takes another function as an argument, or Returns another function.
+Takes another function as an argument (callback), or Returns from another function.
 
 const numbers = [1, 2, 3, 4];
 const squared = numbers.map(num => num * num);
@@ -1361,7 +1360,38 @@ Because 'find' takes a function (callback) as an argument to decide which elemen
 🔑 In simple words:
 First-class functions = capability.
 Higher-order functions = usage of that capability.
+
 ------------------------------------------------------------------------------------....
+Why Are Higher-Order Functions Useful?
+Code Reusability: HOFs let you reuse logic by passing different functions as arguments (e.g., map can transform arrays in many ways).
+Abstraction: They hide complex details, making your code cleaner (e.g., filter handles the looping logic for you).
+
+function createCounter() {
+    let count = 0;
+    return function() {
+        return count++;
+    };
+}
+
+const counter = createCounter();
+console.log(counter()); // Outputs: 0
+console.log(counter()); // Outputs: 1
+console.log(counter()); // Outputs: 2
+.......................................................................
+
+How Does bind Relate to Higher-Order Functions?
+Answer: bind is an HOF because it returns a new function with a fixed this value.
+Example:
+javascript
+
+Copy
+function sayHi() {
+    console.log("Hi, " + this.name);
+}
+const user = { name: "Alex" };
+const boundFunction = sayHi.bind(user);
+boundFunction(); // Outputs: Hi, Alex
+
 ------------------------------------------------------------------------------------.
 Scope Chain in js. 
  if the javascript engine does not find the variable in local scope, it tries to check for the variable in the outer scope. If the variable does not exist in the outer scope, it tries to find the variable in the global scope.
@@ -1462,13 +1492,13 @@ class Animals {
     console.log(`${this.name}, and phone is ${this.phone}`)
     return `${this.name}, and phone is ${this.phone}`
   }
-}
+};
 // let newanimal = new Animals("sonu", '12')
 // console.log(newanimal, 'newanimallllllllll')
 // newanimal.info()
 // let newanimal2 = new Lion("sonu1", '12address')
 // newanimal2.info()
-// console.log(newanimal2,'newanimal2newanimal2newanimal2')
+// console.log(newanimal2,'newanial2newanmal2newnimal2')
 /*
 ------------------------------------------------------------------------------------------------
   Quick Tips
@@ -1940,3 +1970,87 @@ console.log(-9999999999 < -Infinity);  // false
 -Infinity means "super, super small" — smaller than any number you can think of.
 
  */
+
+
+
+/**
+ 
+  map Function
+ The map function takes an array, applies a transformation to each element, and returns a new array with the transformed values. The new array always has the same number of elements as the original array
+
+ filter Function
+ The filter function takes an array, checks each element against a condition, and returns a new array with only the elements that pass the condition.
+
+ Array Method.forEach()
+The .forEach() method executes a callback function on each of the elements in an array in order.
+const numbers = [28, 77, 45, 99, 27]; 
+numbers.forEach(number => {  
+  console.log(number);
+}); 
+
+-----------------------------------------------------------------------------------------------------------------
+What is an Iterator?
+An iterator is an object that allows you to iterate (loop) over a collection of data.
+-----------------------------------------------------------------------------------------------------------------
+
+48. What is variable typing?
+Variable typing assigns a number to a variable and then assigns a string to the same variable. An example is as follows:
+i= 8;
+i="john";
+
+-------------------------------------------------------------------------------------------------------------------
+ Which keywords are used to handle exceptions?
+Try… Catch—finally is used to handle exceptions in the JavaScript
+Try{
+    Code
+}
+Catch(exp){
+    Code to throw an exception.
+}
+Finally{
+    Code runs either it finishes successfully or after catch
+}
+
+**********************************************************
+What is the use of a type of operator?
+The typeof operator in JavaScript is a built-in operator that allows us to determine the data type of a value or variable.
+
+**********************************************************
+
+29. What is the function of the delete operator?
+The delete keyword is used to delete the property as well as its value.
+Example
+var student= {age:20, batch:"ABC"};
+Delete student. age;
+
+
+...................................................................................................
+How to read and write a file using JavaScript?
+we can use the File System API.
+
+........................................................
+
+Does JavaScript support automatic type conversion?
+Yes, JavaScript does support automatic type conversion. It is the common way of type conversion used by JavaScript developers.
+
+.......................................................................
+
+.......................................................................
+
+Equality Coercion
+
+ while using the ‘==’ operator, coercion takes place.
+The ‘==’ operator, converts both the operands to the same type and then compares them.
+Example:
+var a = 12;
+var b = "12";
+a == b // Returns true because both 'a' and 'b' are converted to the same type and then compared. Hence the operands are equal.
+Coercion does not take place when using the ‘===’ operator. Both operands(value) are not converted to the same type in the case of ‘===’ operator.
+
+Example:
+var a = 226;
+var b = "226";
+a === b // Returns false because coercion does not take place and the operands are of different types. Hence they are not equal.
+.......................................................................
+
+*/

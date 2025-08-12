@@ -27,10 +27,8 @@ function printCandidatesByName(startsWith) {
 }
 
 // Test
-printCandidatesByName("Ram");
+// printCandidatesByName("Ram");
 
-// /////////////////
-// /////////////////
 
 function normalizeArray(arr) {
     // Check if array contains only numbers and is not empty
@@ -52,9 +50,9 @@ function normalizeArray(arr) {
 }
 
 // Test cases
-console.log(normalizeArray([1, 2, 3, 4, 5])); // [0, 0.25, 0.5, 0.75, 1]
-console.log(normalizeArray([10, 10, 10])); // [0, 0, 0]
-console.log(normalizeArray([])); // "Array must contain only numbers and cannot be empty"
+// console.log(normalizeArray([1, 2, 3, 4, 5])); // [0, 0.25, 0.5, 0.75, 1]
+// console.log(normalizeArray([10, 10, 10])); // [0, 0, 0]
+// console.log(normalizeArray([])); // "Array must contain only numbers and cannot be empty"
 
 // ------------------------------------------------------------------------------------------------
 
@@ -82,15 +80,27 @@ function findMissingNumber(arr) {
 }
 
 // Test cases
-console.log(findMissingNumber([1, 2, 3, 5])); // Output: 
+// console.log(findMissingNumber([1, 2, 3, 5])); // Output: 
+// console.log(findMissingNumber([1, 2, 4]), 'wwwwwwwwwwwwww'); // Output: 
 // console.log(findMissingNumber([1, 2, 4, 5])); // Output: 3
 // console.log(findMissingNumber([5, 3, 2, 1])); // Output: 4
 // console.log(findMissingNumber([10, 11, 13, 14])); // Output: 12
 
 
 console.log(Boolean([]), "!!!!!!!!!!!!!!!");//true
+// function ghjkl(arr) {
+//     arr = arr.sort((a, b) => a - b)
+//     console.log(arr, "Arrrrrrrrrr")
+//     let findLength = arr.length + 1
+//     console.log(findLength, 'wwwwwwwwwwwwwe3e23r23')
+//     let find = (findLength * (arr[0] + arr[arr.length - 1])) / 2
+//     console.log(find, "fsdwfwef")
+//     let reduce = arr.reduce((a, b) => a + b, 0)
+//     console.log(reduce, 'wwwwwwwwww')
+//     console.log(find - reduce, "this value is missing ")
+// }
 
-
+// ghjkl([5, 3, 2, 1])
 
 function groupAnagrams(strs) {
     const map = new Map();
@@ -112,22 +122,50 @@ function groupAnagrams(strs) {
 
     return Array.from(map.values());
 }
-
+function as(str) {
+    let arr = {}
+    str.forEach((a, b) => {
+        // for(let le of  a){
+        let simple_name = a.split("").sort().reverse("").join("")
+        // console.log(simple_name, 'simplemanen')
+        if (arr[simple_name]) {
+            arr[simple_name].push(a)
+        } else {
+            arr[simple_name] = [a]
+        }
+    })
+    console.log(Object.values(arr), "ArrrrrrrrQWQ")
+}
 // Example usage
 const input = ["eat", "tea", "tan", "ate", "nat", "bat"];
+as(input)
 console.log(groupAnagrams(input));
 // Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
 
 
 
-// function s(arr) {
-//     for (let i = arr.length - 1; i > 0; i--) {
-//         for (let j = 0; j <= arr.length - 1; j++) {
-//             if (arr[j] > arr[j + 1]) {
-//                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
-//             }
-//         }
-//     }
-//     console.log(arr,"AAAAAAAAAAAAA")
-//     return arr
-// } s([1.9, 2.8, 3, 2, 1, 4.5, 7])
+function s(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        for (let j = 0; j <= arr.length - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+            }
+        }
+    }
+    console.log(arr, "AAAAAAAAAAAAA")
+    return arr
+}
+s([1.9, 2.8, 3, 2, 1, 4.5, 7])
+
+
+function df(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        for (let j = 0; j <= arr.length - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+            }
+        }
+    }
+    console.log(arr, "AEEEEEEEERERG")
+}
+// df([1.9, 2.8, 3, 2, 1, 4.5, 7])

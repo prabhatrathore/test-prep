@@ -1,6 +1,6 @@
 /**
 
-WebSockets provide a full-duplex, bidirectional communication channel over a single, long-lived TCP connection, enabling real-time, low-latency data exchange between a client (e.g., a browser) and a server. Unlike HTTP, which follows a request-response model, 
+WebSockets provide a full-duplex, bidirectional communication channel over a single, long-lived TCP connection, enabling real-time, low-latency data exchange between a client (e.g., a browser) and a server. Unlike HTTP, which follows a request-response model. 
 
 WebSockets allow both the client and server to send messages at any time, making them ideal for applications requiring instant updates, such as chat apps, live notifications,
 

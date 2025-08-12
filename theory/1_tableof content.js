@@ -535,10 +535,15 @@ for (let i = 0; i < 10; i++) {
 }
 */
 
-// JavaScript Loops
-
+JavaScript_For_loop
 /**
 Loops in JavaScript are used to reduce repetitive tasks by continuosly executing a block of code as long as a specified condition is true.
+
+There are four types of loops in JavaScript.
+1.for loop
+2.while loop
+3.do-while loop
+4.for-in loop
 
 1. JavaScript for Loop
 The for loop repeats a block of code a specific number of times. It contains initialization, condition, and increment/decrement in one line.
@@ -547,7 +552,8 @@ Syntax
 for (initialization; condition; increment/decrement) {
     // Code to execute
 }
-
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 2. JavaScript while Loop
 The while loop executes as long as the condition is true. It can be thought of as a repeating if statement. 
 
@@ -562,6 +568,7 @@ while (i < 5) {
     i++
 }
 /*
+
 3. JavaScript do-while Loop
 The do-while loop is similar to while loop except it executes the code block at least once before checking the condition.
 
@@ -609,6 +616,7 @@ console.log(val);
 }
 +---------------------------------------------------------------------------
 -**-*/
+
 let low_level_design_in_node_js
 /*
 *-

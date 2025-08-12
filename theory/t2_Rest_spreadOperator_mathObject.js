@@ -38,7 +38,6 @@ ab = myfunc()
 // console.log(ab())// hello
 
 /**
-
 The spread operator (...) is used to “spread” or expand elements of an array, (object,) or string into individual items.
 The spread operator is commonly used to make shallow copies of JS objects
 
@@ -123,8 +122,8 @@ const deepCopyObject = JSON.parse(JSON.stringify(originalObject));
 
 // Modifying nested object in deep copy does not affect original object
 deepCopyObject.b.c = 3;
-console.log(originalObject); // { a: 1, b: { c: 2 } }
-console.log(deepCopyObject); // { a: 1, b: { c: 3 } }
+// console.log(originalObject); // { a: 1, b: { c: 2 } }
+// console.log(deepCopyObject); // { a: 1, b: { c: 3 } }
 
 // In this example, we use the JSON.stringify() method to convert the original object to a JSON string, and then use the JSON.parse() method to create a new object from that JSON string. This method creates a new object with a new reference to all the nested objects, resulting in a deep copy of the original object.
 
@@ -311,7 +310,7 @@ console.log(err, "errrrrr")
 // Concat()
 // The concat() method provided by javascript helps in concatenation of two or more strings(String concat() ) or is used to merge two or more arrays. 
 
-// In case of arrays,concatenation method does not change the existing arrays but instead returns a new array.
+// In case of arrays, concatenation method does not change the existing arrays but instead returns a new array.
 // // normal array concat() method
 
 // let arr = [1, 2, 3];
@@ -348,6 +347,7 @@ console.log(arr); //   [1, 2, 3]
 // console.log(arr2); // [ 'a', 'b', 'c' ]
  
 // The above code works fine because we can copy the contents of one array to another, but under the hood, it’s very different as when we mutate new array it will also affect the old array(the one which we copied). See the code below:
+--------------------------------------------------------------------------------------------------------------
 
 // // changed the original array
 // let arr = ['a','b','c'];
@@ -357,6 +357,7 @@ console.log(arr); //   [1, 2, 3]
 // console.log(arr); // even affected the original array(arr)        ['a','b','c','d]
 
 // In the above code we can clearly see that when we tried to insert an element inside the array, the original array is also altered which we didn’t intended and is not recommended. We can make use of the spread operator in this case, like this:
+---------------------------------------------------------------------------------
 
 // // spread operator for copying
 // let arr = ['a','b','c'];
@@ -365,7 +366,7 @@ console.log(arr); //   [1, 2, 3]
 // arr2.push('d'); //inserting an element at the end of arr2
 // console.log(arr2); // [ 'a', 'b', 'c', 'd' ]
 // console.log(arr); // [ 'a', 'b', 'c' ]
-
+-----------------------------------------------------------------------------------------
 
 // By using the spread operator we made sure that the original array is not affected whenever we alter the new array.
 
@@ -415,6 +416,7 @@ console.log(arr); //   [1, 2, 3]
 // const user2 = {   name: "Andrew", location: "Philadelphia" };
 // const mergedUsers = {...user1, ...user2};
 // console.log(mergedUsers)   //{name :"andrew",age:22,location:"Philadelphia"}
+------------------------------------------------------------------------------------------------
 // Output:
 // mergedUsers is a copy of user1 and user2. Actually, every enumerable property on the objects will be copied to mergedUsers object. The spread operator is just a shorthand for the Object.assign() method but, they are some differences between the two.
 */
@@ -435,6 +437,7 @@ var student = {
 }
 // const age = student.age; //old methods 
 // console.log(age)
+------------------------------------------------------------------------------------------------------------
 // const { age, name, hobbies, address: { email: { first } } } = student//obj destructuring new method h 
 const { age, ...rest2 } = student
 console.log(age)

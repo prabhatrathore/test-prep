@@ -37,12 +37,12 @@ Example:
 
 Explanation: Prevents common mistakes (e.g., using undeclared variables), improving code reliability.
 
-JSON Support:
+JSON Support:----------------------
 Added JSON.parse() and JSON.stringify() for working with JSON data.
 Example: let obj = JSON.parse('{"name": "Alex"}');.
 
 Explanation: Simplifies data exchange between client and server, crucial for APIs.
-Array Methods:
+Array Methods:----------------------------------
 Introduced methods like forEach, map, filter, reduce, every, some.
 
 Example: [1, 2, 3].map(x => x * 2); → Returns [2, 4, 6].
@@ -51,7 +51,7 @@ Explanation: Makes array manipulation easier and more functional, reducing manua
 
 Object Property Enhancements:
 
-Added Object.create(), Object.defineProperty(), and getter/setter syntax.
+Added Object.create(), Object.defineProperty(), and getter/setter syntax.--------------
 
 Example: Object.defineProperty(obj, "name", { value: "Alex", writable: false });.
 Explanation: Improves object manipulation and encapsulation, useful for frameworks.

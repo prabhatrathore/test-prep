@@ -168,7 +168,7 @@ An ORM (Object-Relational Mapping) is a tool that acts as a bridge between a rel
 ✅ we can work with the database using simple code instead of writing complex SQL queries. 
 ------------------------------------------------------------------------------------------------------
 
-Q:) What is a database, 
+Q:) What is a database.  
 A database is a storage container that holds data we can access, modify, and analyze. 
 
 ------------------------------------------------------------------------------------------------------

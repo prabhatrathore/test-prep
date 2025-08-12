@@ -5,7 +5,7 @@ JavaScript provides different data-types to hold different types of Values.
 There are two types of data types in Java Script:
 
 1. Primitive data type: it means, it represent single value,pass by value, immutable
-2. Non- primitive data type: an object which represents a collection of values,an array,function
+2. Non- primitive data type: an object which represents a collection of values,an array,function 
 */
 
 // var a = 40//holding number
@@ -243,6 +243,7 @@ Typeof: Checks the type of object .
 Void : it discards the expression's return value. 
 Yield: checks what is returned in a generator by the generator's interator.
 */
+let javasccript_if_else
 /*
 Java Script If- else
 
@@ -303,65 +304,8 @@ switch(expression) {
   default:
     // code block
 }
-
-JavaScript Loops
-JavaScript loops repeat a block of code multiple times. They make code shorter and are mostly used to go through arrays.
-There are four types of loops in JavaScript.
-1.for loop
-2.while loop
-3.do-while loop
-4.for-in loop
-
-1) JavaScript For loop
-The JavaScript for loop iterates the elements for the fixed number of times. It should be used if number of iteration is known. The syntax of for loop is given below.
-for (initialization; condition; increment)  
-  {  
-      code to be executed  
-  }  
-Let’s see the simple example of for loop in javascript.
-
-for (i=1; i<=5; i++)  
-{  
-document.write(i + "<br/>")  
-}  
-----------------------------------------------------------------------------------------------------
-
-2) JavaScript while loop
-The while loop in JavaScript is a control structure that allows us to repeatedly execute a block of code as long as a certain condition is true. The basic syntax of a while loop is:
-while (condition)  
-{  
-    code to be executed  
-}  
-
-Here, condition is a boolean expression that evaluates to either true or false. If the condition is true, the code within the loop is executed. Once the code has finished executing, the condition is re-evaluated.  If the condition is still true, the code within the loop is executed again. This continues until the condition evaluates to false,
-For example:
-let count = 1;
-
-while (count <= 5) {
-  console.log(count);
-  count++;
-}
-In this example, the while loop continues to execute as long as count is less than or equal to 5. On each iteration of the loop, the value of count is printed to the console and then incremented by 1. This continues until count is 6, at which point the condition count <= 5 evaluates to false and the loop terminates. The final output of this code will be:
-
-1
-2
-3
-4
-5
-
------------------------------------------------------------------------------------------
-
-3) JavaScript do while loop
-The JavaScript do while loop iterates the elements for the infinite number of times like while loop. But, code is executed at least once whether condition is true or false. The syntax of do while loop is given below.
-do{  
-    code to be executed  
-}while (condition);  
------------------------------------------------------------------------------------
-
-4) JavaScript for in loop
-The JavaScript for in loop is used to iterate the properties of an object. 
-
 */
+
 /*
 Pre-increment (++x): Increments the variable first, then returns the new value.
 Post-increment (x++): Returns the current value, then increments the variable.

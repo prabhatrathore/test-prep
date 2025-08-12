@@ -4,11 +4,15 @@ GIT
 
 What is the difference between Git and GitHub?
 Answer:
-Git: A distributed version control system (dvcs) for tracking code changes locally.
-GitHub: A hosting service for Git repositories, adding collaboration tools like pull requests and code reviews.
+Git : Git is A distributed version control system (dvcs) for tracking code changes locally.
+GitHub: GitHub is A hosting service for Git repositories, adding collaboration tools like pull requests and code reviews.
 ----------------------------------------------------------
-
+ 
 Commands:
+git stash : git stash is a Git command that temporarily saves our uncommitted changes (both staged and unstashed) so we can work on something else without losing your progress. 
+
+git stash pop → Takes the changes back out ((from the locker)) and applies them to your current branch.
+
 git status: Shows modified files and staging status.
 git add [file]: Stages a file for the next commit.
 
@@ -22,8 +26,8 @@ git log: Shows commit history.
 git diff branchB...branchA: Shows differences in branchA not in branchB.
 -------------------------------------------------------------------------------------------------------
 
-What is a Git repository?
-Answer: A repository (repo) is a storage location for a project’s files and their version history. It can be local (on your machine) or remote (on GitHub). The .git directory stores metadata.
+What is a Git repository ? 
+ A repository (repo) is a storage location for a project’s files and their version history. It can be local (on your machine) or remote (on GitHub). The .git directory stores metadata.
 
 how do you initialize a Git repository?
 Answer: Run 'git init' in a project directory to create a new Git repository, initializing a .git subdirectory.
@@ -33,10 +37,10 @@ What is a commit?
 Answer: A commit is a snapshot of changes in a repository, saved with a descriptive message (e.g., git commit -m "Add login feature"). It’s identified by a unique SHA hash.
 
 What does git status do?
-Answer: git status Shows the current state of the working directory and staging area, listing modified, staged, and untracked files.
+ git status Shows the current state of the working directory and staging area and untracked files.
 
 What is a branch in Git?
-Answer: A branch is a separate line of development within a repository, allowing work on features or fixes without affecting the main branch (e.g., main).
+A branch is a separate line of development within a repository, allowing work on features or fixes bugs, without affecting the main branch (e.g., main).
 
 : A pull request (PR) is a GitHub feature to review changes from one branch to another
 
@@ -55,21 +59,21 @@ git config --global user.email "[email]": Sets your email.
 ----------------------------------------------------------------------------------------------------------
 
 What is the HEAD in Git?
-Answer: HEAD is a pointer of the current branch or commit we’re working on. It typically points to the latest commit in the active branch.
+ HEAD is a pointer of the current branch or commit we’re working on. It typically points to the latest commit in the active branch.
 ----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 What is a merge conflict and how do you resolve it?
-Answer: A merge conflict occurs when Git cannot automatically resolve changes (e.g., same lines edited in two branches). To resolve:
+ A merge conflict occurs when Git cannot automatically resolve changes (e.g., same lines edited in two branches). To resolve:
 
 ----------------------------------------------------------------------------------------------------------
 A fork is a copy of a repository under our GitHub account, allowing us to make changes without affecting the original. It’s used for contributing to open-source projects
 
 
 What is the staging area in Git?
-Answer: The staging area (or index) is an intermediate layer where changes are prepared before committing. Use git add [file] to stage changes
+Answer: The staging area (or index) is an intermediate layer where changes are prepared before committing. Use git add [file] to stage changes.
 
 What is GitHub Actions, and how is it used?
-Answer: GitHub Actions is a CI/CD tool for automating workflows (e.g., testing,& deployment).
+Answer: GitHub Actions is a CI/CD tool for automating workflows (e.g., testing & deployment).
 
 *******************************************************************************************************
 
@@ -139,7 +143,7 @@ Example:
   console.log(str);  → Outputs undefined.
 -------------------------------------------------------------------
 Null:
-Means "no value" and is explicitly assigned.
+Means "no value" and is explicitly assigned .
 Type of null is object.
 Treated as false in conditions.
 Example: 
@@ -224,7 +228,7 @@ Steps:
 
 // In this case, since a2 is a constant variable, any attempt to modify its value after it has been initialized will result in an error being thrown at runtime. The error message "assignment to constant variable" indicates that you are attempting to modify a constant variable, which is not allowed.
 
-// const  a2 = 10;90
+// const  a2 = 10; 90
 // function f() {
 //    let a2 = 9
 //     console.log(a2)//9
@@ -377,7 +381,7 @@ for (let i = 0; i < 1000; i++) {
 
 // console.log('after loop')
 //j.s is synchronous programming and single threaded.
-//line by line execute hota hai code..
+//line by line execute hota hai code .
 //===================================
 
 //asynchronus programming

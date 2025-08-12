@@ -33,7 +33,6 @@ obj.age = 30;
 console.log(obj.name);  // Output: John
 console.log(obj.age);  // Output: 30
 
-
 -------------------------------------------------------------------------------------
 🔵 3. Using Constructor Function
 
@@ -65,7 +64,13 @@ var source = { name: 'John', age: 30 };
 var target = { city: 'New York' };
 
 Object.assign(target, source);
-console.log(target); // outputs: { city: 'New York', name: 'John', age: 30 }
+console.log(target, 'ppqwsdcx'); // outputs: { city: 'New York', name: 'John', age: 30 }
+// ---------------------------------------------------------------------------------------------------
+var source = { name: 'John', age: 30, city: "delhi" };
+var target = { city: 'New York' };
+
+// Object.assign(target, source);
+// console.log(target, 'ppqw'); // outputs: { city: 'delhi', name: 'John', age: 30 }
 
 /*
 2. Object.create() makes a new object using another object as its prototype.
@@ -78,8 +83,10 @@ var prototype = {
 };
 
 var john = Object.create(prototype)
-user.name = "John";
+john.name = "John";
 john.sayHello(); // outputs "Hello, my name is John"
+// console.log(john,'johnnnnnnnnnnn')
+// { name: 'John' }
 
 let object_define_property
 /*
@@ -116,7 +123,7 @@ console.log(entries); // outputs: [ ['name', 'John'], ['age', 30] ]
 */
 let object_freeze
 /*
-Object.freeze() is a method in JavaScript that prevents an object from being modified. It makes the object and its properties read-only , meaning that its properties cannot be added, removed, or modified.
+Object.freeze() is a method in JavaScript that prevents an object from being modified. It makes the object and its properties read-only, meaning that its properties cannot be added, removed, or modified.
 
 Here's an example:
 var person = { name: 'John', age: 30 };
@@ -132,7 +139,7 @@ delete person.age;
 console.log(person.age); // 30
 
 */
-
+Object.getOwnPropertyNames()
 /*
 9. Object.get Own Property Names()
 The method returns an array of all properties found.
@@ -228,6 +235,7 @@ Here, new keyword is used to create instance of array.
 
  JavaScript array constructor: 
 Here, you need to create instance of array by passing arguments in constructor so that we don't have to provide value explicitly.
+
 In JavaScript, the Array constructor is used to create arrays.
 Here's an example:
 var numbers = new Array(1, 2, 3);
@@ -238,7 +246,7 @@ console.log(names); // outputs: [ 'John', 'Jane', 'Jim' ]
 
 ------------------------------------------------------------------------------------
 */
-let array_methods; 
+let array_methods;
 /*
 JavaScript Array Methods
 1. Concat()
@@ -334,6 +342,7 @@ return number % 2 === 0;
 
 */
 
+JavaScript_string
 /*  
 JavaScript string
 The JavaScript string is represents a sequence of characters.
@@ -343,7 +352,6 @@ By string literal
 The String literal is created using double quotes.
 
 Var String name = "string value";
-
 
 2: )  By string object
 The syntax of creating string object using new keyword..
@@ -472,14 +480,8 @@ pythonCopy code
 let str = "Hello World";
 console.log(str.split(" "));  // Output: [ "Hello", "World" ]
 
-
 */
-
-
 /*
-
-
-
  JavaScript Date Object:
 
 The JavaScript date object can be used to get years, month and day. You Can display a timer on the Webpage by the help of Javascript date object.

@@ -67,12 +67,14 @@ Variable can store some information, we can use that information later, We can c
 Rules for naming the variables:
 Name must start with a letter (ato z ), underscore or dollor sign.
 After first letter we can use digit (0 to 9)
+
 Javascript variable case sensitive 
 Cannot start with numbers :
 E.g. 1value (invalid)
 
 E.g. _value  OR $value (both valid)
  */
+
 /**
  Js local variable : Js local variable is declared inside block or function .it is accessible within function or block only.
 
