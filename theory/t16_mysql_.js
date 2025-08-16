@@ -70,8 +70,8 @@ function second(arr) {
 }
 
 // console.log(second([4, -1, 2, -5, 30, 5]), "find__SecondSmallest"); // Output: -1
-console.log(findSecondSmallest([4, 12, 2, -5, 10, 5]), "find__SecondSmallest"); // Output: -1
-// console.log(findSecondSmallest([1, -2, 3])); // Output: null
+console.log(findSecondSmallest([4, 12, 2, -5, 10, 5]), "find__SecondSmallest"); // Output: 2 
+// console.log(findSecondSmallest([1, -2, 3])); // Output: 1
 // console.log(findSecondSmallest([2, 2, 2])); // Output: null
 // console.log(findSecondSmallest([-5, -5, -4])); // Output: -4
 
@@ -162,7 +162,7 @@ ORM converts code objects to database tables.
 An ORM (Object-Relational Mapping) is a tool that acts as a bridge between a relational database and object-oriented programming languages like JavaScript (in the context of our Node.js/Sequelize project).
 
 👉 ORM is a tool that connects our code to our database.
-👉 It changes code objects into database tables and back.
+👉 It changes code objects into database tables.
 🔹 Why use it?
 
 ✅ we can work with the database using simple code instead of writing complex SQL queries. 
@@ -183,7 +183,7 @@ A: Scaling MySQL for handling increased transactions, users, and data volume. St
 Horizontal Scaling:
 
 ✅ Sharding
-Splits entire database data across multiple servers (each server holds a shard).
+Splits entire database data across multiple servers       (each server holds a shard).
 Each shard is a different database server with a subset of data.
 Used for horizontal scaling to handle huge traffic and data load.
 
@@ -204,7 +204,7 @@ Each one is waiting for the other to finish and release its lock. Both blocking 
 🔹 In MySQL (InnoDB)
 ✅ MySQL automatically detects deadlocks
 ✅ It stops one transaction so the other can continue
----------------
+---------------------------------------------------------------------------------------------
 
 How would you secure a MySQL database data?
 User Authentication : Create role-based users with minimal privileges.
@@ -230,12 +230,12 @@ WHERE i.stock_inventory > 0
 ---------------------------------------------------------------------------------------- 
 ----------------------------------------------------------------------------------------
 
-*****left join*******************************************************************************
+************left join**********************************************************************
 SELECT p.name, COALESCE(i.stock_quantity, 0) AS stock
 FROM products p
 LEFT JOIN inventory i ON p.product_id = i.product_id;
 
------------
+-----------------------------------------------------------------------------------
 name   | stock
 -------|------
 Laptop | 100
@@ -267,7 +267,7 @@ JSON: For storing JSON objects.
 
 String Types (CHAR, VARCHAR, TEXT, BLOB):
 
-These are for text or non-numeric data.
+These are four text or non-numeric data.
 CHAR: Stores fixed-length text (like "ABC" always takes the same space).
 VARCHAR: Stores variable-length text (like names or descriptions) that can change in size.
 TEXT: Stores large amounts of text, like paragraphs or articles.
@@ -283,8 +283,9 @@ TIMESTAMP: Similar to DATETIME but often used for tracking when something was cr
 TIME: Stores only the time (like 17:37:00).
 
 ************************************************************************************
-Q:) What is the difference between INT and DECIMAL data types?
 
+Q:) What is the difference between INT and DECIMAL data types?
+ 
 A:) INT: Stores whole numbers (like 1, 25, 100) without decimals. 
 DECIMAL: Stores numbers with exact decimal places (like 3.14 or 123.456) for precise calculations, like money.
 
@@ -302,7 +303,7 @@ Example: Storing a temperature like 25.7°C.
 
 DOUBLE:*********************************************
 
-Also stores numbers with decimals but with higher precision and a larger range.
+ stores numbers with decimals but with higher precision and a larger range.
 Takes up more storage space (usually 8 bytes).
 Better for calculations needing more accuracy or for very large/small numbers (e.g., 123456.78912345).
 Example: Storing precise scientific data like 0.000000123456789
@@ -346,7 +347,7 @@ CREATE TABLE transactions (
 );
 -----------------------------------------------------------------------------------------------------------
  Q:) What is the difference between DELETE, TRUNCATE, and DROP in MySQL?
- DELETE: Removes rows from a table based on a condition. It can be rolled back if inside a transaction. Example:
+ DELETE : DELETE means Removes rows from a table based on a condition. It can be rolled back if inside a transaction. Example:
 
  DELETE FROM employees WHERE department_id = 5;
 
@@ -413,8 +414,8 @@ Q:) What is the significance of the AUTO_INCREMENT attribute in MySQL?
 A view is a saved query that works like a virtual table. With this, we can take a complex query, give it a name, and use it like a table for future queries. This way, we don’t have to retype the entire query every time.
 ----------------------------------- --------------------------------------------------
 
-What are system-versioned tables, and how do they work? 
-System-versioned tables maintain a full history of changes made in a table. Since they keep previous versions of each row, we can use them to audit and recover data .
+Q:) What are system-versioned tables, and how do they work? 
+ System-versioned tables maintain a full history of changes made in a table. Since they keep previous versions of each row, we can use them to audit and recover data .
 -------------------------------------------------------------------------------------
 
 Q.) What are MySQL transactions, and how do you use them?
@@ -430,8 +431,7 @@ COMMIT;
  
 -------------------------------------------------------------------------------------
 What is a default constraint in MySQL? How do you set a default value for a column?
-A default constraint in MySQL assigns a default value to a column when no explicit value is provided during an INSERT operation. This ensures the column is valid even if the user omits it during data entry.
-
+A default constraint in MySQL assigns a default value to a column when no explicit value is provided during an INSERT operation. 
 -------------------------------------------------------------------------------------
 
 UPDATE movies
@@ -497,9 +497,10 @@ When a database gets very large, it’s often split into smaller pieces called s
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 ----------------
-Database Queries
-What is it? A database query is a request to retrieve, insert, update, or delete data from a database. In your case, using Sequelize, queries are written in JavaScript instead of raw SQL, but they translate to SQL under the hood.
-Why it matters: Queries let you interact with your data (e.g., find a user, add a record).
+Q:) What is Database Queries ?
+A database query is a request to retrieve, insert, update, or delete data from a database. In our case, using Sequelize, queries are written in JavaScript instead of raw SQL, but they translate to SQL under the hood.
+
+Why it matters: Queries let us interact with your data (e.g., find a user, add a record).
 
 Types of Queries:
 SELECT: Retrieve data (e.g., findOne, findAll in Sequelize).
@@ -631,7 +632,6 @@ How it works:
 The client initiates a WebSocket connection (via ws:// or wss://).
 The connection stays open, enabling the server to push data to the client (and vice versa) instantly.
 Unlike HTTP, it’s not request-response; both sides can send data anytime.
-
 ---------------------------------------------------------------------------------------------
 
 Cons:
@@ -640,10 +640,15 @@ Resource-intensive: Persistent connections consume server resources
 -----------------------------------------------------------------------------------
 
 Polling
-What is it? The client repeatedly sends HTTP requests (e.g., via AJAX) at regular intervals to check for updates from the server.
+The client repeatedly sends HTTP requests (e.g., via AJAX) at regular intervals to check for updates from the server.
 
 Long Polling
-What is it? An improvement over polling where the client sends a request, and the server holds the connection open until new data is available.
+ An improvement over polling where the client sends a request, and the server holds the connection open until new data is available.
+
+---- When to Switch Tech------------
+Small app → Node.js + MySQL is fine.
+Medium scale (many clients) → Add Redis (Pub/Sub) to avoid constant DB hits.
+Large scale (like WhatsApp) → Use WebSockets or Server-Sent Events (SSE) instead of long polling.
 -----------------------------------------------------
 
 
@@ -653,31 +658,31 @@ Feature            	WebSockets	                    Polling              |    	Lo
 Connection Type:	Persistent, two-way | 	Short-lived HTTP requests    |	   Long-held HTTP requests
 Latency	:         Low (instant updates) | 	High (depends on interval)   | 	 Medium (updates when available)
 Efficiency :   	High (single connection)|	Low (many requests)          |  	Medium (fewer requests)
-Server :    Load	Moderate (persistent)|  	High (frequent requests) | 	High (open connections)
+Server :    Load    Moderate (persistent)|  	High (frequent requests) | 	High (open connections)
 Complexity:    	High (WebSocket setup)   |	Low (simple HTTP)            | 	Medium (timeout handling)
 Use Case:  	 Live chat, real-time apps 	 | Periodic updates (e.g., news) | 	Near-real-time (e.g., notifications)
 
 */
 let mongo
 let mongo
+
 /**
- 
-What are NoSQL Databases?
+What are NoSQL Databases ?
 NoSQL databases are non-relational databases designed to handle large volumes of unstructured, semi-structured, or structured data. Unlike traditional relational databases (e.g., MySQL, PostgreSQL) that use tables and SQL for data management,
 
 NoSQL databases offer flexible schemas and are optimized for scalability, performance, and handling diverse data types. They are particularly suited for big data, real-time applications, and scenarios where data structures evolve rapidly.
 
-Key Features of NoSQL Databases
-Flexible Schema: No predefined schema; data can be added or modified without restructuring.
-Scalability: Easily scale horizontally across distributed systems (e.g., adding more servers).
+Key Features of NoSQL Databases. 
+Flexible Schema: No predefined schema; data can be added or modified without re-structuring.
+Scalability: Easily scale horizontally across distributed systems ( e.g., adding more servers).
 High Performance: Optimized for specific data access patterns, like key-value lookups or graph traversals.
-Diverse Data Types: Support for various data formats (e.g., JSON, XML, graphs).
-Eventual Consistency: Many prioritize availability and partition tolerance over immediate consistency (per CAP theorem).
+Diverse Data Types: Support for various data formats ( e.g., JSON, XML, graphs).
+Eventual Consistency: Many prioritize availability and partition tolerance over immediate consistency ( per CAP theorem ).
 
 Types of NoSQL Databases
-NoSQL databases are categorized based on their data model. The four main types are:
+NoSQL databases are categorized based on their data model. The four main types are : 
 
-Key-Value Stores
+Key-Value Stores. 
  Store data as key-value pairs, where each key is unique and maps to a value. Simplest NoSQL model, ideal for fast lookups.
 Use Cases: Caching, session management, user preferences.
 
@@ -689,7 +694,7 @@ Riak: Distributed, fault-tolerant key-value database.
 Pros: Extremely fast, simple, scalable.
 Cons: Limited querying capabilities beyond key-based access.
 
-Document Stores
+Document Stores.
 Description: Store data as semi-structured documents (e.g., JSON, BSON, XML), where each document is a self-contained unit with a unique key. Documents can have nested structures.
 
 Use Cases: Content management, e-commerce, user profiles.

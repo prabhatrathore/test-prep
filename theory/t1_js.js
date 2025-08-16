@@ -1694,6 +1694,54 @@ super() = Call parent class methods/properties
 Static Method = No need to create object
 Inheritance = extends + super()
 
+------------------------------------------------------------------------------------------------------------
+OOPs : Object Oriented Programming
+
+It is the programming paradign [pattern [step by step procedure]] that is defined using objects, ((rather than just functions and procedure)). 
+It is the most popular methodology among developers. 
+
+Objects can be considered as real-world instances of entities like class, that have some characteristics and behaviors.
+
+ Need of OOPS:
+	OOPs helps users to understand the software easily. With OOPs, the readability, understandability, and maintainability of the code increase multifold.
+	Even very big software can be easily written and managed using OOPs.
+
+3) Features of OOps are:
+ Inheritance:
+Encapsulation:
+Polymorphism :
+Abstraction:
+---------------------------------------------------------------
+Advantages Of OOPS:
+OOPS follows a bottom-up approach. OOPS allows us the reusability of code.
+Avoids unnecessary data exposure to the user by using the abstraction.
+Decompose a complex problem into smaller chunks.
+Programmer are able to reach their goals faster.
+Minimizes the complexity.
+
+5) Disadvantages Of OOps:  
+Proper planning is required.
+Program design is tricky.
+Programmer should be well skilled.
+Classes tend to be overly generalized.
+----------------------------------------------------------------------
+Difference between Classes and Object:
+	class is blueprint of object
+Classes: It is a group of similar object.It is a logical entity.
+	It is conceptual,It does not occupy space in the memory.
+	A class can be existed without any object.
+	It binds data and methods together into a single unit.
+	It is a data type that represents the blueprint of an object.
+	It uses the keyword class when declared.
+e.g : audi(category)
+
+Object:It is a real world entity such as book,car,etc.It is a physical or real world entity.
+	It occupies space in the memory.
+	Object cannot be existed without a class.
+	It is just like a variable of a class.
+	It is an instance of the class.
+	It uses the new keyword to create an object.
+  -----------------------------------------------------------------------------------
 
 🔹 Encapsulation | Abstraction | Polymorphism (OOP Pillars)-----------------------------------------
 
@@ -1734,7 +1782,8 @@ class Car {
 }
 🧠 Think of it like: You drive a car without knowing how the engine works.
 
-✅ 3. Polymorphism
+✅ 3. Polymorphism:Polymorphism is the ability to process objects differently on the basis of their class and data types.
+
 Definition:
 Same function name behaves differently for different classes.
 
@@ -1765,6 +1814,25 @@ Polymorphism	One method, many forms	override
 inheritance : 
 
 */
+/***
+ Constructor
+	A constructor is a special method of a class or structure in object-oriented programming 
+that initializes a newly created object of that type. 
+Whenever an object is created, the constructor is called automatically.
+When a class  is created, its constructor is called. 
+Constructors have the same name as the class or struct, 
+and they usually initialize the data members of the new object. 
+--------------------------------------------------------------------------------
+
+8) Sub Class Vs Super Class:
+SubClass:Subclass is known as derived class, child class.
+	A subclass can use the properties and methods of the Superclass.
+	When implementing inheritance, the class that inherits the properties and 
+	methods from the Superclass is the Subclass.
+
+Super Class:Superclass is known as base class, parent class.
+Superclass is also a part of Inheritance. The superclass is an entity, which allows subclasses or child classes to inherit from itself.
+*/
 function afg() {
 
 }
@@ -1791,7 +1859,11 @@ Explanation:
 The synchronous code runs first, logging 'A' and 'D'.
 Promise callbacks (microtasks) are executed before setTimeout (macrotasks). So 'C' is logged before 'B'.
 
+
 ***************************************************************
+
+***************************************************************
+
 What will be the output of this recursive function?
 function foo(num) {
   if (num === 0) return 1;

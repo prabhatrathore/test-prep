@@ -1,8 +1,7 @@
 /**
-
-
+ * oops ( object-oriented programming )
  * 1. Encapsulation
- Encapsulation is bundling data (properties) and the methods (functions) that work on that data into a single unit (an object), while hiding the details from the outside world.
+ Encapsulation is bundling data (properties) and the methods (functions) that work on that data into a single unit (an object), 
 
  function Person(name, age) {
     // Private data (not truly private in this example, but encapsulated)
@@ -113,7 +112,7 @@ const cat = new Cat();
 dog.makeSound(); // Outputs: Woof
 cat.makeSound(); // Outputs: Meow
  */
-
+api 
 /**
 What is an API?  
 API allows interactions between systems by following a set of standards and PROTOCOLS in order to share FEATURE, INFORMATION and DATA.
@@ -134,25 +133,34 @@ Data Transfer: It sends and receives data in formats like JSON or XML.
 
 
 What is a RESTful API?
-A RESTful API is a REST API that strictly follows REST’s rules to make communication between programs even easier and more organized. It’s like a well-mannered REST API that behaves predictably.
+(Representational State Transfer Application Programming Interface) is a set of rules that allows applications to communicate
+with each other over HTTP. 
+A RESTful API is a REST API that strictly follows REST’s rules to make communication between programs even easier and more organized.
 
 Details:
 
 Follows REST Principles:
 Uses HTTP methods properly: GET to fetch, POST to create, PUT to update, DELETE to delete.
+
 Treats everything as a “resource” (like a user, a file, or a product), and each resource has a unique address (URL).
+
 Returns data in a standard format (usually JSON or XML).
+
 Doesn’t store information about the user between requests (stateless).
+---------------------------------------------------------------------------------------------------
+
 Why “RESTful”: The term “RESTful” means it fully follows REST’s guidelines, making it easier for different programs to work together.
+------------------------------------------------------------------------------------------
 
 Key Difference Between REST API and RESTful API
 REST API: Any API that uses REST principles (like HTTP methods for communication).
 RESTful API: A REST API that fully follows REST’s strict rules (e.g., stateless, resource-based URLs, proper HTTP methods).
+------------------------------------------------------------------------------------------------4
 
 Question: “What’s the difference between a REST API and a RESTful API?”
 Answer: A REST API is a way for apps to communicate over the internet using HTTP methods like GET and POST.
  A RESTful API is a REST API that strictly follows REST rules, like using proper HTTP methods, organizing data as resources, and being stateless.
-
+---------------------------------------------------------------------------------------------------
 Question: “Why use a RESTful API?”
 Answer: It makes communication between apps easier, more predictable, and scalable because it follows standard rules that all developers understand.
 
@@ -172,50 +180,7 @@ It tranfer data through http methods.
 – DELETE: removes a resource of the server  
 
   Body-parser is the Node.js body parsing middleware. for handling json data from requestbody
-
- What are HTTP status codes and when should we use these different codes?  
-HTTP status codes is a code which we send in response when client makes request to server.  
-
-1xx: Informational – Communicates transfer protocol-level information.  
- 2xx: Success – Indicates that the client’s request was accepted successfully.  
-
-3xx: Redirection – Indicates that the client must take some additional action in order to complete their request.  
-
-400 Bad Request   
-
-The 400 Bad request status code indicates that the server was unable to process the request due to invalid information sent by the client. In other words, the client request needs modification
-
-
-5xx: Server Error – The server takes responsibility for these error status codes.  
-
-200 OK  
-Indicates that the request has succeeded.  
-201 Created  
-Indicates that the request has succeeded and a new resource has been created as a result. 
-
-
-401 Unauthorized   
-
-Indicates that the request requires user authentication information. The client MAY repeat the request with a suitable Authorization header field  
-
-402 Payment Required (Experimental)  
-Reserved for future use. It is aimed for using in the digital payment systems.  
-
-403 Forbidden  
-Unauthorized request. The client does not have access rights to the content. 
-Unlike 401, the client’s identity is known to the server.  
-
-404 Not Found  
-The server can not find the requested resource.   
-
-------------------------------------------------------------------------------------------------------------------  
- 
-What are the HTTP methods and which operations should use these methods?  
-HTTP Method  
-CRUD operation  
-Entire Collection (e.g. /users)  
-
-Specific Item (e.g. /users/{id})  
+-------------------------------------------------------------------------------------------------
 
 pagination : the process of giving a page number to each page of a book, magazine, document, etc; the page numbers given
 
@@ -227,7 +192,7 @@ perform crud operation (create, share, test and document APIs.)
 
 -------------------------------------------------------------------------------------------------------------  
 Headers : it allow sending extra information in a request, such as authentication tokens,and content types. 
-
+--------------------------------------------------------------------------------------------------------
 
 What are the key components of an HTTP request?  
  HTTP request contains the following elements:  
@@ -355,6 +320,7 @@ Every content in the REST architecture is considered a resource.
 What do you understand by RESTful Web Services?
 RESTful web services are services that follow REST architecture. REST stands for Representational State Transfer and uses HTTP protocol (web protocol) for implementation.
 -------------------------------------------------------------------------------
+
 4. What are the features of RESTful Web Services?
 Every RESTful web service has the following features:
 The service is based on the Client-Server model.
@@ -383,7 +349,7 @@ Use the technique of forward slashing to indicate the hierarchy between the reso
 Q: What is the difference between idempotent and safe HTTP methods?
   Safe methods are those that do not change any resources internally. These methods can be cached and can be retrieved without any effects on the resource.e.g. get 
 
-Idempotent methods are those methods that do not change the responses to the resources externally. They can be called multiple times without any change in the responses. 
+Idempotent methods are those methods that do not change the responses to the resources externally. They can be called multiple times without any change in the responses. 
 
 How can you test RESTful Web Services?
 RESTful web services can be tested using various tools like Postman, etc.
@@ -426,12 +392,25 @@ XML/JSON as formatting language
 Simple URI as the address for the services
 Stateless communication
 
-22`1:)what is web socket in js? 
-WebSockets is a next-generation bidirectional communication technology for web applications
-the WebSocket API is an advanced technology that makes it possible to open a two-way interactive communication session between the user's browser and a server.
-
 what is redis and whai is it used for?
 Redis is an open-source, NoSQL, in-memory data structure store that is used as a database, cache, and message broker 
+
+Datatypes of Redis:
+Strings. Redis string is a sequence of bytes. ...
+Hashes. A Redis hash is a collection of key value pairs. ...
+Lists. Redis Lists are simply lists of strings, sorted by insertion order. ...
+Sets. Redis Sets are an unordered collection of strings. ...
+Sorted Sets.
+
+TTL:Time to Live is the time that an object is stored in a caching systems before its deleted or refreshed.
+
+ -------------------------------------------------------------
+What is Caching?
+Caching is the mechanism of storing data in a temporary storage location.
+so that request to the data can be served faster.
+Caching improves performance by decreasing page load times, and reduce calls to database servers.
+Caching is a technique to store frequently used data.
+
  -------------------------------------------------------------
  whai is generator in js?
  A generator is a function that can stop midway and then continue from where it stopped. In short, a generator appears to be a function but it behaves like an iterator.
