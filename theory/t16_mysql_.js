@@ -4,10 +4,73 @@
  jpeg : Joint Photographic Experts Group 
 
  ------------------------------------------------------------------------------------
+ 1. What is SQL?
+ SQL (Structured Query Language) is a standard programming language used to
+ interact with relational databases. It is used to store, retrieve, update, and delete
+ data. SQL is also used to create and modify database structures such as tables,
+ views, and indexes.
+ Example:
+ SELECT * FROM Employees;
+ This query retrieves all the records from the Employees table.
+
+ ------------------------------------------------------------------------------------
+What is Primary Key?
+A Primary Key is a column in a table that uniquely identifies
+each row in that table. It does not allow NULL values and must always contain unique
+values.
+Key Features:
+Uniquely identifies each record
+Cannot have duplicate values
+Cannot contain NULL values
+Only one primary key is allowed per table
+
+ ------------------------------------------------------------------------------------
+What are the types of SQL commands?
+SQL commands are divided into 5 main types (categories):
+
+🔹 1. DDL (Data Definition Language)
+
+👉 Used to define or change the structure of the database (tables, schemas, indexes).
+
+Examples:
+CREATE → create table, database, etc.
+ALTER → modify table structure (add column, change type).
+DROP → delete table or database.
+TRUNCATE → remove all rows from a table (but keep structure).
+
+🔹 2. DML (Data Manipulation Language)
+👉 Used to manipulate data inside the tables.
+Examples:
+INSERT → add new records.
+UPDATE → modify existing records.
+DELETE → remove records.
+
+🔹 3. DQL (Data Query Language)
+👉 Used to query (fetch) data.
+Only main command: SELECT.
+
+🔹 4. DCL (Data Control Language)
+👉 Used to control access/permissions.
+
+Examples:
+GRANT → give access rights.
+REVOKE → remove access rights.
+
+🔹 5. TCL (Transaction Control Language)
+👉 Used to manage transactions in a database (commit, rollback).
+
+Examples:
+COMMIT → save changes permanently.
+ROLLBACK → undo changes.
+SAVEPOINT → set a checkpoint inside a transaction.
+
+👉 Interview tip: If they ask “Main 3 types?”, just say DDL, DML, DCL (older classification).
+If they ask “Modern classification?”, add DQL + TCL also.
+ ------------------------------------------------------------------------------------
 
 HTTP vs HTTPS
 HTTP (HyperText Transfer Protocol)  
-HTTP is a protocol for transferring data over the web. http is the foundation of communication between a client (e.g., browser) and a server.
+HTTP is a protocol for transferring data over the web. 'http' is the foundation of communication between a client (e.g., browser) and a server.
 
 Port: Uses port 80 by default.
 
@@ -24,6 +87,11 @@ Use Case: Essential for sensitive data (e.g., login forms, payment gateways).
 Certificate: Requires an SSL/TLS certificate issued by a Certificate Authority (CA) to verify the server’s identity.
 
 --------------------------------------------------------------------------------------------------------------
+
+🔹 Integrity (in security) means
+The data is not altered, modified, or tampered with while traveling between client and server.
+--------------------------------------------------------------------------------------------------------------
+
 How Does a URL Work?
 A URL (Uniform Resource Locator) is an address that identifies a resource on the internet.
 
@@ -57,6 +125,25 @@ function findSecondSmallest(arr) {// hard one
     console.log(first_smallest, 'first_smalless', second_smallest, "second_")
     return (second_smallest === Infinity) ? null : second_smallest;
 }
+function third(arr) {
+    let first = Infinity
+    let second = Infinity
+    let third = Infinity
+    for (let el of arr) {
+        if (el < first) {
+            third = second
+            second = first
+            first = el
+        } else if (el > first && el < second) {
+            third = second
+            second = el
+        } else if (el > second && el < third) {
+            third = el
+        }
+    }
+    console.log(first, 'fir', second, 'seco', third, 'third')
+}
+// console.log(third([4, 12, 2, 15, 10, 25]), "thirdthirdthirdthird"); // Output: 2 
 
 function second(arr) {
     if (arr.length) return null
@@ -125,35 +212,6 @@ const arr = [-1, 5, 2, 10, -8, 3, 0]; // 5, 2, 10,    --=>  -8, -1, 0, 2, 3, 5, 
 console.log(`Second smallest number::::: ${findSecondSmallest2(arr)}`); // Output: -2
 
 
-function findThirdSmallest(arr) {
-    if (arr.length < 3) return null; // Not enough elements
-
-    let smallest = Infinity;
-    let secondSmallest = Infinity;
-    let thirdSmallest = Infinity;
-
-    // Single pass to find smallest, second smallest, and third smallest
-    for (let num of arr) {
-        if (num < smallest) {
-            thirdSmallest = secondSmallest;
-            secondSmallest = smallest;
-            smallest = num;
-        } else if (num < secondSmallest && num !== smallest) {
-            thirdSmallest = secondSmallest;
-            secondSmallest = num;
-        } else if (num < thirdSmallest && num !== secondSmallest && num !== smallest) {
-            thirdSmallest = num;
-        }
-    }
-
-    // Check if third smallest exists
-    return thirdSmallest === Infinity ? null : thirdSmallest;
-}
-
-// Example usage
-const arr2 = [5, -2, 10, -8, 3, 0];
-console.log(`Third smallest number: ${findThirdSmallest(arr2)}`); // Output: 0
-
 console.log(null == undefined, " console.log(null == undefined);");
 
 /**
@@ -169,10 +227,9 @@ An ORM (Object-Relational Mapping) is a tool that acts as a bridge between a rel
 ------------------------------------------------------------------------------------------------------
 
 Q:) What is a database.  
-A database is a storage container that holds data we can access, modify, and analyze. 
+A database is a storage container that holds data we can access, modify and analyze. 
+------------------------------------------------------------------------------------------------------
 
-------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------
 Q:) How would you scale MySQL for SupplyMatch as the platform grows to millions of transactions?
 
 A: Scaling MySQL for handling increased transactions, users, and data volume. Strategies include:
@@ -194,7 +251,6 @@ All partitions are still in the same database server.
 Indexing and Optimization: Add indexes on frequently queried columns (e.g., product_id, stock_quantity) and optimize queries
 
 Caching: Use Redis. 
-
 -----------------------------------------------------------------------------------------------------------
 
 Q:) How do you handle deadlocks in MySQL for a high-concurrency platform?
@@ -283,6 +339,23 @@ TIMESTAMP: Similar to DATETIME but often used for tracking when something was cr
 TIME: Stores only the time (like 17:37:00).
 
 ************************************************************************************
+why we use timestamp in place of datetime ?
+1.) Time Zone Handling
+DATETIME: Stores the exact value you insert → no timezone conversion.
+TIMESTAMP: Internally stored in UTC, but automatically converted to your server/client time zone when you fetch it
+------------------------
+
+2.) Storage Size
+DATETIME: Takes 8 bytes.
+TIMESTAMP: Takes 4 bytes (smaller).
+Auto Update Feature
+------------------------
+
+3.) DATETIME: Static unless you manually update it.
+TIMESTAMP: Can auto-update when a row changes (perfect for updated_at).
+
+************************************************************************************
+************************************************************************************
 
 Q:) What is the difference between INT and DECIMAL data types?
  
@@ -326,8 +399,17 @@ However, the DATETIME function stores the date with the time, and it looks like 
 YYYY-MM-DD HH:MM:SS 
 
 -------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------
 Q:) What is a foreign key, and how would you use it in databases? 
-A:) A foreign key is a field in one table that links to the primary key of another table. 
+A Foreign Key is a column in one table that refers to the Primary
+Key in another table. It is used to create a relationship between two tables.
+
+Key Features:
+Establishes a relationship between two tables
+Can contain duplicate values
+Can accept NULL values
+Helps maintain data consistency
 
 For example, in a customers table that stores customer information, each customer has a unique customer_id—in another table called 'transactions' (which stores purchase records), we use customer_id as a foreign key. The customer_id in the transactions table will link each purchase to a specific customer in the customers table.
 
@@ -345,6 +427,9 @@ CREATE TABLE transactions (
     date DATE,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
+
+-----------------------------------------------------------------------------------------------------------
+
 -----------------------------------------------------------------------------------------------------------
  Q:) What is the difference between DELETE, TRUNCATE, and DROP in MySQL?
  DELETE : DELETE means Removes rows from a table based on a condition. It can be rolled back if inside a transaction. Example:
@@ -528,7 +613,7 @@ Orders Table:
 
 ---------------------------------------------------------------------
 
-. Database Design Concepts
+ Database Design Concepts
 Database design is planning how to structure our database (tables, columns, relationships) to meet our app’s needs efficiently.
 
 Relationships:
@@ -602,9 +687,10 @@ Less server load: Rendering is offloaded to the client
 Cons:
 Slow initial load: The browser must download JavaScript and fetch data before rendering.
 SEO challenges: Search engines may struggle to index content because the initial HTML is minimal.
+------------------------------------------------------------------------------------------------------
 
 Server-Side Rendering (SSR)
-What is it? The server generates the complete HTML for a page, including data, and sends it to the browser. The browser displays the page immediately
+ The server generates the complete HTML for a page, including data, and sends it to the browser. The browser displays the page immediately
 
 How it works:
 The server fetches data (e.g., from a Sequelize database), renders the HTML, and sends it.
@@ -693,9 +779,10 @@ Riak: Distributed, fault-tolerant key-value database.
 
 Pros: Extremely fast, simple, scalable.
 Cons: Limited querying capabilities beyond key-based access.
+-------------------------------------------------------------------------------------------------------
 
 Document Stores.
-Description: Store data as semi-structured documents (e.g., JSON, BSON, XML), where each document is a self-contained unit with a unique key. Documents can have nested structures.
+Store data as semi-structured documents (e.g., JSON, BSON, XML), where each document is a self-contained unit with a unique key. Documents can have nested structures.
 
 Use Cases: Content management, e-commerce, user profiles.
 
@@ -706,6 +793,7 @@ Firestore: Google Cloud’s serverless document database.
 
 Pros: Flexible schema, intuitive for developers, supports complex queries.
 Cons: Can be slower than key-value stores for simple lookups; redundancy possible.
+--------------------------------------------------------------------
 
 Column-Family Stores (Wide-Column Stores)
 Description: Store data in columns instead of rows, optimized for large-scale, columnar data access. Data is organized into column families (groupings of related columns).
@@ -720,7 +808,7 @@ Pros: Efficient for columnar data access, scalable for big data.
 Cons: Complex to set up and query; not ideal for small datasets.
 
 Additional Notes
-Multi-Model Databases: Some NoSQL databases (e.g., ArangoDB, OrientDB) support multiple data models (e.g., document and graph) in one system.
+
 When to Use NoSQL:
 Need for horizontal scaling across distributed systems.
 Handling unstructured or semi-structured data.
@@ -730,12 +818,18 @@ High-throughput, low-latency requirements.
 Trade-Offs:
 NoSQL databases may sacrifice ACID (Atomicity, Consistency, Isolation, Durability) guarantees for scalability and performance.
 Querying can be less standardized than SQL, varying by database type.
-
-
 ----------------------------------------------------------------------------------------
- What is “Namespace” in MongoDB?
-MongoDB stores BSON (Binary Interchange and Structure Object Notation) objects in the collection.
 
+MongoDB stores BSON (Binary Interchange and Structure Object Notation) objects in the collection.
+4. What is collection and Document ?
+document is order set of key-value pairs.
+collection is grp of document.
+grp of collection is known as database.
+
+A Database contains a collection, and a collection contains documents and the documents contain data, they are related to each other.
+ A collection in MongoDB is a group of documents.
+ 
+What is “Namespace” in MongoDB?
 The concatenation of the collection name and database name is called a namespace.
 
 What is Replication in Mongodb?
@@ -746,28 +840,28 @@ Comparing MySQL and MongoDB depends on your project's needs, as they serve diffe
 
 MySQL vs. MongoDB: Key Differences
 
-Aspect	MySQL	
-Type	         Relational database (uses tables with rows and columns).
-Data Structure	 Fixed schema (predefined tables with columns).
-Query Language	 Uses SQL (standardized query language).
-Scalability	     Scales vertically (needs more powerful servers).
-ACID Compliance	 Fully ACID-compliant (ensures reliable transactions).
-Data Types	     Structured data (e.g., numbers, strings in fixed columns).
-    Performance	 Fast for structured data and complex joins.
- Use Cases	     Financial systems, e-commerce, apps needing complex queries and joins.    
-Examples	     Banking systems, traditional CMS, inventory management.
+Aspect          	MySQL	
+Type	           Relational database (uses tables with rows and columns).
+Data Structure	   Fixed schema (predefined tables with columns).
+Query Language	   Uses SQL (standardized query language).
+Scalability	       Scales vertically (needs more powerful servers).
+ACID Compliance	   Fully ACID-compliant (ensures reliable transactions).
+Data Types	       Structured data (e.g., numbers, strings in fixed columns).
+    Performance	   Fast for structured data and complex joins.
+ Use Cases	       Financial systems, e-commerce, apps needing complex queries and joins.    
+Examples	       Banking systems, traditional CMS, inventory management.
 
 MongoDB
-Type	        NoSQL database (uses JSON-like documents).
-Data Structure	Flexible schema (documents can have different fields).
-Query Language	Uses MongoDB Query Language (MQL) or JavaScript-like queries.
-Scalability:	Scales horizontally (adds more servers easily).
-ACID Compliance	Offers eventual consistency; less strict on ACID for better performance.
-    Data Types  Unstructured/semi-structured data (e.g., JSON, arrays, nested objects).
- Performance    Fast for large-scale, unstructured data and simple queries.
+Type	             NoSQL database (uses JSON-like documents).
+Data Structure  	 Flexible schema (documents can have different fields).
+Query Language  	 Uses MongoDB Query Language (MQL) or JavaScript-like queries.
+Scalability:     	 Scales horizontally (adds more servers easily).
+ACID Compliance	     Offers eventual consistency; less strict on ACID for better performance.
+    Data Types       Unstructured/semi-structured data (e.g., JSON, arrays, nested objects).
+ Performance         Fast for large-scale, unstructured data and simple queries.
 
 Use Cases	    Web apps, real-time analytics, content management, IoT.
-	Examples    Social media platforms, product catalogs, event logging.
+    Examples    Social media platforms, product catalogs, event logging.
 
 
     Pros and Cons
@@ -782,6 +876,7 @@ Cons:
 Fixed schema makes changes harder (e.g., adding new columns requires altering tables).
 Vertical scaling can be expensive (needs more powerful hardware).
 Less suited for unstructured or rapidly changing data.
+-------------------------------------------------------------------------------------------
 
 MongoDB
 Pros:
@@ -789,13 +884,14 @@ Flexible schema allows easy addition or modification of data fields.
 Scales horizontally, handling large data volumes across distributed servers.
 Fast for unstructured data and simple read/write operations.
 Ideal for modern apps with dynamic data (e.g., JSON-like structures).
+
 Cons:
 Weaker ACID compliance may lead to data inconsistencies in some cases.
 Querying is less standardized, requiring learning MongoDB-specific syntax.
 Not ideal for complex relationships or heavy joins.
 
-
 ----------------------------------------------------------------------------------
+
 How does MongoDB ensure high availability?
 👉 MongoDB uses replica sets.
 ✅ Data is copied to multiple servers (replicas).
@@ -804,7 +900,7 @@ How does MongoDB ensure high availability?
 When to use MongoDB instead of MySQL?
 
 👉 Use MongoDB when:
-✅ ou have unstructured or flexible data
+✅  have unstructured or flexible data
 ✅ our data model changes frequently
 ✅ our need high write speed and scalability
 ✅  building real-time apps like chat, IoT, analytics
@@ -812,13 +908,15 @@ When to use MongoDB instead of MySQL?
 🔑 In one line:
 Choose MongoDB for flexible, fast-changing data and MySQL for structured, relational data.
 ----------------------------------------------------------------------------------
+
 🔹 What is upsert in MongoDB?
 
 👉 Upsert = Update + Insert
 ✅ If a document exists, it updates it.
 ✅ If it doesn’t exist, it inserts a new one
+
 🔑 In one line:
-Upsert updates existing data or inserts new data if not found.
+'Upsert' updates existing data or inserts new data if not found.
 
 ----------------------------------------------------------------------------------
 Explain the structure of ObjectID in MongoDB?
@@ -826,6 +924,7 @@ a 4-byte timestamp value, representing the ObjectId's creation, measured in seco
 a 5-byte random value
 a 3-byte incrementing counter, initialized to a random value
 ----------------------------------------------------------------------------------
+
 🔹 What is oplog in MongoDB?
 
 👉 Oplog (operations log) is a special log collection.
@@ -835,8 +934,13 @@ a 3-byte incrementing counter, initialized to a random value
 🔑 In one line:
 Oplog stores all database changes to keep replicas updated.
 ----------------------------------------------------------------------------------
+
 🔹 What is Aggregation in MongoDB?
-when the data is not available directly then we use aggregation pipline here in this output of one pipe will be input of second pipe and so on because we fetch data from different tables.
+aggregation is use when data is not available directly in database.
+An aggregation pipeline consists of one or more stages that process documents
+example, a stage can filter documents, group documents, and calculate values.
+
+when the data is not available directly then we use aggregation pipline, here in this output of one pipe will be input of second pipe and so on because we fetch data from different tables.
 
 👉 Aggregation is a way to process and combine data from multiple documents.
 ✅ It helps to filter, group, sort, and calculate data to get meaningful results.
@@ -880,11 +984,12 @@ Simple Explanation: You either keep related data together in one document (embed
 ---------------------------------------------------------------------------------------------
 
 ******Use of Capped Collection in MongoDB
-A capped collection is a fixed-size collection that automatically overwrites old data when it reaches its size limit, acting like a circular buffer.
+A capped collection is a fixed-size collection that automatically overwrites old data when it reaches its size limit, ((acting like a circular buffer)).
 
 Use: Ideal for logging, caching, or storing recent data (e.g., latest 1000 chat messages) where old data can be discarded.
 
 Simple Explanation: It’s a special collection with a set size that auto-deletes old entries to make room for new ones, great for time-sensitive or high-volume data.
+--------------------------------------------------------------------------------------------------------
 
 ************Splitting in MongoDB
 Splitting is part of MongoDB’s sharding process, where large datasets (shards) are divided into smaller chunks based on a shard key.
@@ -894,11 +999,15 @@ How it works: When a shard grows too large, MongoDB splits it into smaller piece
 Simple Explanation: Splitting breaks big data chunks into smaller ones to spread them across servers, helping manage large datasets efficiently.
 
 ***********Horizontal Scalability in MongoDB
-Horizontal scalability means adding more servers (nodes) to handle increased data or traffic, rather than upgrading a single server.
+ Horizontal scalability means we add more servers (nodes) to distribute the data and workload, instead of just upgrading the hardware (CPU, RAM, storage) of one server.
 
-In MongoDB: Achieved through sharding (splitting data across servers) and replica sets (duplicating data for redundancy). Sharding distributes data, while replica sets ensure availability.
+Example
+Suppose one MongoDB server can handle 10 million users.
+If your app grows to 100 million users:
+Vertical scaling → upgrade to a super expensive machine (more CPU, RAM, SSD).
+Horizontal scaling → add 10 cheaper servers, each handling 10 million users, and let MongoDB split the data automatically.
 
-Simple Explanation: MongoDB scales by spreading data and workload across multiple servers, making it easy to handle more users or data without slowing down.
+ MongoDB scales by spreading data and workload across multiple servers, making it easy to handle more users or data without slowing down.
 ----------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------

@@ -1,14 +1,13 @@
 let str = "stringgg"
-// str=str.toLocaleUpperCase()//convert to upper case
+// str = str.toLocaleUpperCase()//convert to upper case
 // console.log(str, "@@#1")
-
 
 str.toLocaleUpperCase()//anothing
 
 let obj = {
-    name: "ram",
-    address: "delhi",
-    phone: 12345
+    name : "ram",
+    address : "delhi",
+    phone : 12345
 }
 // console.log(Object.entries(obj),"entries")
 //answer [ [ 'name', 'ram' ], [ 'address', 'delhi' ], [ 'phone', 12345 ] ] 
@@ -74,9 +73,9 @@ let obj3 = new Object(null)
 // console.log(obj3, "231==")//{}
 obj3.name = "update"
 // console.log(obj3, "231")//{name :'update'}
-obj3 - Object.create({})
+obj3 = Object.create({})
 obj3.age = 9
-// console.log(obj3, "obj3333")//{ name: 'update', age: 9 }
+// console.log(obj3, "obj3333")//{  age: 9 }
 
 // ------------------------------------------------------------------------
 
@@ -222,7 +221,7 @@ Lightweight and Simple: JSON is a compact, text-based format that's easy to read
 
 Native JavaScript Support: JSON is a subset of JavaScript, so it’s directly parsed into JavaScript objects using JSON.parse(). This eliminates extra parsing steps needed for XML, making it faster and more efficient.
 
-Smaller Data Size: JSON typically results in smaller payloads compared to XML, reducing network transfer time in AJAX requests, which improves performance.
+Smaller Data Size: JSON (typically) results in smaller payloads compared to XML, reducing network transfer time in AJAX requests, which improves performance.
 
 Wide Compatibility: JSON is supported by virtually all modern APIs and programming languages, making it a universal choice for data exchange in AJAX calls.
 

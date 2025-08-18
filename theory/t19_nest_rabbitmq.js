@@ -1,18 +1,19 @@
+
 /**
- nest is a progressive node.js framework for building efficient and scalable server-side applications.
+nest is a progressive node.js framework for building efficient and scalable server-side applications.
 
 build with typescript and heavily inspired by angular. 
-uses moduler architecture for better organization . 
+uses moduler architecture for better organization. 
 
-why we need nest.js
-to simplify backend development using modern architecture 
+why we need nest.js. 
+to simplify backend development using modern architecture. 
 provide a structured way to build scalable and testable application.
-solve the limitation of traditional  express apps. 
- It uses Express.js under the hood by default and supports Fastify as well.
+solve the limitation of traditional express apps. 
+It uses Express.js under the hood by default and supports Fastify as well.
 
 express is fast, unopiniated (no proper file structure provided), minimalist web framwork for node.js 
  
-nest is opiniated framwork of node.js 
+nest is opiniated framwork of node.js.   
 
 ---------benefits of nest.js-------------- 
 opiniated framework 

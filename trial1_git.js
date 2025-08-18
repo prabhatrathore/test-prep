@@ -11,13 +11,13 @@ GitHub: GitHub is A hosting service for Git repositories, adding collaboration t
 Commands:
 git stash : git stash is a Git command that temporarily saves our uncommitted changes (both staged and unstashed) so we can work on something else without losing your progress. 
 
-git stash pop → Takes the changes back out ((from the locker)) and applies them to your current branch.
+git stash pop → Takes the changes back out ((from the locker)) and applies them to our current branch.
 
 git status: Shows modified files and staging status.
-git add [file]: Stages a file for the next commit.
+git add [file] : git add means Stages a file for the next commit.
 
 git branch: Lists branches, with * indicating the active branch.
-git branch [branch-name]: Creates a new branch.
+git checkout -b [branch-name]: Creates a new branch.
 
 git checkout [branch-name]: Switches to another branch.
 git merge [branch]: Merges the specified branch into the current branch.
@@ -37,12 +37,12 @@ What is a commit?
 Answer: A commit is a snapshot of changes in a repository, saved with a descriptive message (e.g., git commit -m "Add login feature"). It’s identified by a unique SHA hash.
 
 What does git status do?
- git status Shows the current state of the working directory and staging area and untracked files.
+ git status shows the current state of the working directory and staging area and untracked files.
 
 What is a branch in Git?
 A branch is a separate line of development within a repository, allowing work on features or fixes bugs, without affecting the main branch (e.g., main).
 
-: A pull request (PR) is a GitHub feature to review changes from one branch to another
+ A pull request (PR) is a GitHub feature to review changes from one branch to another
 
 What is the difference between git fetch and git pull?
 Answer:
@@ -59,18 +59,19 @@ git config --global user.email "[email]": Sets your email.
 ----------------------------------------------------------------------------------------------------------
 
 What is the HEAD in Git?
- HEAD is a pointer of the current branch or commit we’re working on. It typically points to the latest commit in the active branch.
+HEAD is a pointer of the current branch or commit we’re working on. It typically points to the latest commit in the active branch.
 ----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 What is a merge conflict and how do you resolve it?
- A merge conflict occurs when Git cannot automatically resolve changes (e.g., same lines edited in two branches). To resolve:
+A merge conflict occurs when Git cannot automatically resolve changes (e.g., same lines edited in two branches). To resolve:
 
 ----------------------------------------------------------------------------------------------------------
 A fork is a copy of a repository under our GitHub account, allowing us to make changes without affecting the original. It’s used for contributing to open-source projects
-
+----------------------------------------------------------------------------------------------------
 
 What is the staging area in Git?
 Answer: The staging area (or index) is an intermediate layer where changes are prepared before committing. Use git add [file] to stage changes.
+-----------------------------------------------------------------------------------
 
 What is GitHub Actions, and how is it used?
 Answer: GitHub Actions is a CI/CD tool for automating workflows (e.g., testing & deployment).
@@ -94,6 +95,7 @@ Microsoft’s Internet Explorer copied features and created JScript.
 EcmaScript:
 To standardize scripting across browsers, Ecma International (founded 1996) created EcmaScript.
 JavaScript + Ecma rules = EcmaScript.
+
 Key versions:
 ES1 (1997): First version.
 ES5 (2009): Added new features.
@@ -112,7 +114,7 @@ Example: let num = 10; console.log(typeof (num + "")); → Outputs string.
 ---------------------------------------------------------------------------------------------
 
 Strings in JavaScript
-Definition: Strings store text (words, sentences) and use zero-based indexing (first character is at index 0).
+Strings store text (words, sentences) and use zero-based indexing (first character is at index 0).
 Examples:
 let str = "pro"; 
 (stores "pro").
@@ -134,18 +136,18 @@ Undefined and Null
 
 Undefined:
 Returned when:
-A variable is declared but not assigned a value.
-Accessing a non-existing object property.
-Accessing an array's element out of bounds.
+1.) A variable is declared but not assigned a value.
+2.) Accessing a non-existing object's property.
+3.) Accessing an array's element out of bounds.
 
 Example:
  let str;
   console.log(str);  → Outputs undefined.
 -------------------------------------------------------------------
 Null:
-Means "no value" and is explicitly assigned .
+Means "no value" and is explicitly assigned value .
 Type of null is object.
-Treated as false in conditions.
+Treated as false  in conditions.
 Example: 
 let val = null;
  console.log(typeof val); 
@@ -159,9 +161,10 @@ Add n to a number: let num = 9816543219865252772n;.
 Use BigInt(): let num = BigInt(9816543219865252772);.
 
 Note: bigint Does not support decimal values.
----------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
+
 Methods in Objects
-Definition: A function inside an object is called a method.
+A function inside an object is called a method.
 
 Example:
 const person = {
@@ -280,12 +283,11 @@ string1 = Number(string1)
 
 console.log(string1, "string1string1")//    32.4 string1string1
 
-// '324e-1' is in scientific notation, meaning:
-// 324 × 10⁻¹ = 32.4
+// '324e-1' is in scientific notation, meaning:          // 324 × 10⁻¹ = 32.4
 
 // ------------------------------------------------------------------------------------------
 //setinterval 
-//setinterval ,settimeout ki tarh hee h .
+//setinterval, settimeout ki tarh hee h .
 /**
  * settimout hamare function ko call kr rha tha kuch time baad 
  */
@@ -345,23 +347,6 @@ task1(() => {
 // addTwoNumber(2, '3', onsuccess, onfailure)
 
 //e.g4======================================= same qurstion
-
-function addTwoNumber(num1, num2, onsuccess, onfailure) {
-    // console.log(`there is two num which we add ${num1},${num2}`)
-    if (typeof num1 === 'number' && typeof num2 === 'number') {
-        onsuccess(num1, num2)
-    } else {
-        onfailure()
-    }
-};
-
-// function onsuccess(number1, number2) {
-//     console.log(number1 + number2)
-// }
-// function onfailure() {
-//     console.log('wrong input')
-//     console.log('invalid input ')
-// }
 
 addTwoNumber(2, 3, (number1, number2) => {
     console.log(number1 + number2, 'onsuccess print ')
@@ -450,9 +435,7 @@ function sol2({ name, age }) {
     console.log(name, '===name')//alex ===name
     console.log(age)  //12
 };
-sol2(obj)
-console.log("=========================");
-//=========================================
+// sol2(obj)
 
 //============set========
 
@@ -464,9 +447,9 @@ set2.add('wjengwigw')
 let t = { name: 'ram' }
 set2.add(t)
 // set2.clear()     // clear property :to clear the set 
-//  set2.delete("eeeeeeeeee")//delete property :specific element to delete 
-let result = set2.has("e0ee")// has property tell the element exist or not 
-let result1 = set2.has(t)// has property tell the element exist or not 
+//  set2.delete("eeeeeeeeee")//'delete property' :specific element to delete 
+let result = set2.has("e0ee")// 'has' 'property' tell the element exist or not 
+let result1 = set2.has(t)// 'has property' tell the element exist or not 
 console.log(result, "WSDCVBVCD", result1, "resultg22222")
 // console.log('=====  ==============')
 console.log(set2, "BBBBBB")

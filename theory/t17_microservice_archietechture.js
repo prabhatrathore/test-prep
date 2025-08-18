@@ -4,25 +4,23 @@ Microservices architecture is a design approach where an application is built as
 
 Unlike monolithic architectures, where all components are tightly coupled in a single codebase, microservices are loosely coupled, independently deployable, and scalable. 
 
-
 What is Microservices Architecture?
 In microservices architecture:
 
 1:) Each service is a self-contained unit responsible for a single business capability (e.g., inventory management, order processing, notifications).
 
-2:) Services communicate via well-defined APIs
+2:) Services communicate via well-defined APIs. 
 
 3:) Services are independently deployable, allowing teams to develop, deploy, and scale them separately.
+----------------------------------------------------------------------------
 
 Key Characteristics:
 
 1:) Modularity: Each service is a small, focused module.
-
-2:) Decentralized Data: Each service typically has its own database (e.g., MySQL for SupplyMatch’s inventory service).
-
+2:) Decentralized Data: Each service (typically) has its own database (e.g., MySQL for SupplyMatch’s inventory service).
 3:) Scalability: Individual services can be scaled independently (e.g., scale the order service during peak retailer activity).
-
 4:) Resilience: Failure in one service doesn’t crash the entire system.
+
 
 Advantages of Microservices 
 1:) Scalability: Scale the Inventory Service during stock updates or the Notification Service during high WhatsApp traffic without affecting others.
