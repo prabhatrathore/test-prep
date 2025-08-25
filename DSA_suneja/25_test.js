@@ -71,3 +71,32 @@ Input -560 Output - FIve hundred and sixty
 
 
  */
+function numberToWords(num) {
+    if (num === 0) return "Zero";
+
+    const ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
+                  "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen",
+                  "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+    
+    const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty",
+                  "Sixty", "Seventy", "Eighty", "Ninety"];
+
+    function convert(n) {
+        if (n < 20) return ones[n];
+        if (n < 100) return tens[Math.floor(n / 10)] + (n % 10 !== 0 ? " " + ones[n % 10] : "");
+        if (n < 1000) {
+            return ones[Math.floor(n / 100)] + " hundred" +
+                   (n % 100 !== 0 ? " and " + convert(n % 100) : "");
+        }
+        return ""; // can extend for bigger numbers
+    }
+
+    let result = num < 0 ? convert(-num) : convert(num);
+
+    // Capitalize first letter (like your example)
+    return result.charAt(0).toUpperCase() + result.slice(1);
+}
+
+// Test cases
+console.log(numberToWords(-555)); // Five hundred and fifty five
+console.log(numberToWords(-560)); // Five hundred and sixty

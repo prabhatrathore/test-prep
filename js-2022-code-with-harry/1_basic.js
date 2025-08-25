@@ -1,8 +1,6 @@
 /* dynamic type language means hum run time pr change kr skte h kisi bhi variable ka type
 js allow krti h ek variable ke type ko runtime pr change krna
 
-
-
 */
 
 //operator in js

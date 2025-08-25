@@ -13,16 +13,26 @@
 // 
 //                     i            j 
 //    [1, 2, 3, 4, 5, 6, 7, 8, 6, 7, 8, 8]
-var arr = [1, 1, 2, 2, 3, 42];[1, 2, 2, 2, 3, 42]
+var arr = [1, 1, 2, 2, 3, 42];      //[1, 2, 2, 2, 3, 42]
 let i = 0;
 for (let j = 1; j <= arr.length; j++) {// 1 
-    console.log(arr[i], 'iiiiiiii', i, 'AAA', j)
     if (arr[i] !== arr[j]) {
+        console.log(arr[i], arr[j], 'iiiiiiii', i, 'AAA', j)
         i++;
         arr[i] = arr[j];
     };
 };
 console.log(i, "unique element==")
+// --------------------------------------------------------------------------
+var arr = [1, 1, 2, 2, 3, 42];
+let t = []
+arr.forEach((a, b) => {
+    // console.log(a, ';;;;;;;;;;')
+    if (!t.includes(a)) {
+        t.push(a)
+    }
+})
+// console.log(t, 'eeeeeeeee', t.length)
 //==================================================
 
 //solurion by technical   suneja=============
@@ -42,8 +52,10 @@ function sol(arr) {
 //          i     j           
 let result = sol([1, 1, 2, 2, 3, 4, 4, 5, 6, 7, 8, 8, 9, 10, 10, 11, 11, 11, 11, 11])
 console.log(result, '}}}}}')
+
 ///========================================================
-var arr = [2, 3, 4, 6, 5, 7, 9, 81, 343, 77, 34234] //perfect find prime number in array 
+//perfect find prime number in array. 
+var arr = [2, 3, 4, 6, 5, 7, 9, 81, 343, 77, 34234]
 var isPrime = []
 arr.forEach((num) => {
     if (num <= 1) {
@@ -60,22 +72,6 @@ arr.forEach((num) => {
 console.log(isPrime, "isPrime")
 //================================================
 let r = [3, 5, 2, 6, 1, 9]
-function rt(r) {
-    for (let i = r.length - 1; i >= 0; i--) {
-        for (let y = 0; y < r.length - 1; y++) {
-            // console.log(r[y], r[y + 1], 'pppppppp')
-            if (r[y] > r[y + 1]) {
-                [r[y], r[y + 1]] = [r[y + 1], r[y]]
-                break
-            }
-        }
-    }
-    return r
-}
-
-
-let gett = rt(r)
-console.log(gett, 'getttttttttttt')
 function j(arr) {
     for (let i = arr.length - 1; i >= 0; i--) {
         for (let j = 0; j < arr.length - 1; j++) {
@@ -89,3 +85,21 @@ function j(arr) {
 }
 let g1 = j(r)
 console.log(g1, "net")
+// --------------------------------------------------------------------------------
+
+let n = 100
+let array3 = []
+for (let i = 2; i < n; i++) {
+    array3.push(i)
+}
+let isPrime3 = []
+array3.forEach((el) => {
+    for (let i = 2; i < el; i++) {
+        if (el % i == 0) {
+            return false
+        }
+    }
+    isPrime3.push(el)
+    // console.log(isPrime3,"isprime3")
+
+})

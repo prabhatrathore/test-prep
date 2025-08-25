@@ -9,9 +9,18 @@ for (let i = 0; i < arr.length; i++) {
     };
     newArr.push(arr[i])
 };
-console.log(newArr, "==========999999999");
-console.log("=====11111111111111111111")
-
+console.log(newArr, "==========999999999",'arr');
+////////////another way to achieve the same result 
+// for (let i = 0; i < arr.length - 1; i++) {
+//     for (let j = i + 1; j < arr.length - 1; j++) {
+//         if (arr[i] == arr[j]) {
+//             arr.splice(j, 1)
+//             j--
+//         }
+//     }
+// }
+// console.log(arr, 'lengthhhhhhhhh array ')
+// ----------------------------------------------------------------------------------------
 
 obj = {};
 for (let value of arr) {
@@ -23,9 +32,9 @@ for (let value of arr) {
     // };
     obj[value] ? obj[value]++ : obj[value] = 1
 };
-console.log(obj, '9999999')
+// console.log(obj, '9999999')//{ '1': 1, '2': 3, '3': 2, '4': 3, '5': 3, '8': 1 }
 let b = Object.keys(obj);
-console.log(...b);
+// console.log(...b);// 1 2 3 4 5 8
 // console.log(obj)
 
 
@@ -34,17 +43,7 @@ let bSet = new Set(arr)
 //i have to get back array so using spread operator
 
 let bSpread = [...bSet]
-console.log(bSpread, "using set ")  //bes sol 
+// console.log(bSpread, "using set ")  //bes sol // [ 1, 2, 5, 3, 4, 8 ]
 
 
 arr.sort((x, y) => x - y)
-let e = 0
-let result4 = []
-for (let i = 1; i < arr.length; i++) {
-    if (arr[e] != arr[i]) {
-        result4.push(arr[e])
-        e++
-        arr[e] = arr[i]
-    }
-}
-console.log(result4, "result4====44444444444")

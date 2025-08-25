@@ -15,6 +15,31 @@
  * condition 
  * length check (for both strings)      
 */
+function strre(str1, str2) {
+    let result = true
+    let obj = {}
+    for (let le of str1) {
+        obj[le] = (obj[le] || 0) + 1
+    }
+    // console.log(obj, 'objbjbjbj')
+    for (let le of str2) {
+        if (!obj[le]) {
+            result = false
+        }
+        obj[le] = --obj[le]
+    }
+    // console.log(obj, 'ojjjjjj')//
+    Object.values(obj)?.forEach((a, b) => {
+        if (a > 0 || a < 0) {
+            // console.log(obj, '[[[[[[', a, ';;;')
+            result = false
+        }
+    });
+    // console.log(obj, 'ojj FGVFGV')
+    return result
+}
+var result = strre('helloe', 'olleh')
+// console.log(result, 'strrestrrestrrestrre')
 
 function sol(string1, string2) {
     if (string1.length !== string2.length) {

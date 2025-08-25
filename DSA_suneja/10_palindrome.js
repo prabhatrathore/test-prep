@@ -21,7 +21,8 @@ for (let i = 0; i < str.length; i++) {
     }
 }
 console.log(ispalindrome, "1111111111")
-console.log('=====================================')
+// ---------------------------------------------------------------------------------------------
+
 let str3 = (str) => {
     let str2 = str.split("").reverse("").join("");
     return str2 === str

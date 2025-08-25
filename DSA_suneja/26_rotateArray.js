@@ -19,7 +19,7 @@ let user = {
 };
 // console.log(Object.hasOwn(user, 'name'))
 // console.log(user.hasOwnProperty('name1'))
-console.log("===================")
+console.log("==============================================================")
 let arr = [2, 3, 5, 6, 7, 8, 9]
 let str = 'string';
 let lastno = arr.at(-1)

@@ -10,17 +10,14 @@
 var arr = [1, 2, 3, 4, 3, 5, 4, 6, 7, 8];  //not correct
 var num = 4
 var result = [];
-for (let i = 0; i < arr.length - num + 1; i++) {//not correct
-    result.push(arr[i] + arr[i + 1] + arr[i + 2] + arr[i + 3])//not correct
-};
+
 var result3 = Math.min(...result)
 console.log(result3, "11111111")
 var a = Math.max(...result)//not correct
 console.log(a, "22222222222")
 console.log(result)//not correct
 
-console.log("================33333333==============")
-
+// ----------------------------------------------------------------------------------------
 //solution by technical suneja
 function sol(arr, n) {
     if (n > arr.length) {
@@ -45,19 +42,18 @@ function sol(arr, n) {
 let result2 = sol([1, 2, 3, 4, 3, 5, 4, 6, 7, 8], 4)
 console.log(result2, "largest value")
 
-let n = 100
-let array3 = []
-for (let i = 2; i < n; i++) {
-    array3.push(i)
-}
-let isPrime3 = []
-array3.forEach((el) => {
-    for (let i = 2; i < el; i++) {
-        if (el % i == 0) {
-            return false
+let res = 0
+function g(arr, n) {
+    for (let i = 0; i < arr.length - n + 1; i++) {
+
+        let temp = 0
+        for (let j = 0; j < n; j++) {
+            temp = temp + arr[j + i]
+        }
+        if (temp > res) {
+            res = temp
         }
     }
-    isPrime3.push(el)
-    // console.log(isPrime3,"isprime3")
-
-})
+}
+g([1, 2, 3, 4, 3, 5, 4, 6], 4)
+console.log(res, "eeeee")

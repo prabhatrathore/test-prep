@@ -12,16 +12,17 @@ console.log(firstName)
 
 var firstName = 'sita'  //re declare kr ste hai 
 console.log(firstName)
+
 /**
- * rules for naming variable.
- * we cannot start with number 
- * example:- 
- * 1value (invalid)
- * value1 (valid)
- * 
- * we use only _underscore and or $ dollar sign 
- * fist_name (valid)
- * _firstName (valid)
+  rules for naming variable.
+  we cannot start with number 
+  example:- 
+  1value (invalid)
+  value1 (valid)
+  
+  we use only _underscore and or $ dollar sign 
+  fist_name (valid)
+  _firstName (valid)
  * 
  * frist$name (valid)
  * $firstName (valid)
@@ -35,7 +36,6 @@ console.log(firstName)
 /**
  * let keyword 
  * it has block scope.
- * 
  */
 let lastName = 'shyam';
 // let lastName = "sonu"// cannot redeclared the same variable
@@ -101,10 +101,9 @@ while (i < 100) {
     total += i
     // console.log(i)
     i++
-
 }
 // console.log(total)
-//====================================
+// ====================================
 let fruit = ['mango', 'apple', 'grapes']
 ab = fruit[0].charAt(3)
 // console.log(ab, '2222=2=2=2=2=2') // g
@@ -112,7 +111,7 @@ ab = fruit[0].charAt(3)
 // console.log(fruit[0].length)//5
 //==================================
 
-//==passby value
+//==> passby value
 let a = 0
 let b = a
 // console.log(a)//0
@@ -127,9 +126,9 @@ let array = [1, 2, 3, 4, 5];
 let array2 = array.slice(0);//created new array in memory and allocated new address 
 let array3 = array //allocate same array and address
 
-// console.log(array==array2) //false
-// console.log(array)//[ 1, 2, 3, 4, 5 ]
-// console.log(array2)//[ 1, 2, 3, 4, 5 ]
+// console.log(array == array2) // false
+// console.log(array) // [ 1, 2, 3, 4, 5 ]
+// console.log(array2) // [ 1, 2, 3, 4, 5 ]
 // console.log(array===array3,"????????")//pass by referenceThe  //true
 //  slice() method does not change the original array.
 //===========================================
@@ -138,7 +137,7 @@ let ab2 = '234'
 arr2 = [1, 2, 3, 4, 5]
 // console.log(arr2 == array,'-----pl,lp')// false
 // console.log(ab2.reverse)
-//=================================
+//  =================================
 
 // object store key value Pair
 // object dont have index 

@@ -7,7 +7,6 @@ function sol(a, b) {
     return new Promise((resolve, rejects) => {
         let c = a / b;
         setTimeout(() => {
-
             if (a, b) {
                 resolve(`u r answer is : ${c}`)
             } else {
@@ -21,15 +20,6 @@ sol(2, 3)
     .then((msg) => { console.log(msg, 'winn') })
     .catch((msg) => { console.log(msg, 'wrror occured') });
 console.log("==============1111111===============");
-
-/**
-* prmoise.all()
-* agar ek se jyada h promise,  10,100 to har ek ke liye possible nhi h individual case likhna 
-
-so that case promise.all() ka use kr skte ye check krega saare promise ko  
-if all promsie resolve tabhi then function call hoga , 
-saare promise resolve hote h tabhi then function call, nhi to catch function call hoga 
-*/
 
 let p1 = new Promise((resolve, rejects) => {
     setTimeout(() => {

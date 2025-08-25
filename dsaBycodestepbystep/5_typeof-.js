@@ -39,8 +39,8 @@ console.log(a)
 /**
  * https://www.youtube.com/watch?v=R-ZyQ80Bgmo&list=PL8p2I9GklV44pN_8iYi2pPl2Gw4Pwb70f&index=4&ab_channel=CodeStepByStep
  */
-console.log({} == {})
-console.log({} === {})//
+console.log({} == {})       ///  ""
+// console.log({} === {})   //  ""
 /**
  * jab hum do variable comaapre krte h waha onki value compare hoti but 
  * jb yaha do object comapre krenge to inki memory location ki value coomapre hogi

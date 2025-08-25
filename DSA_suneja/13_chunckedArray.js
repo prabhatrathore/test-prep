@@ -12,17 +12,17 @@
  * get the last chuncked array within last = 'chunked'    
  */
 function sol2(arr, n) {
-    let arr2 = []
-    let arr3 = []
-    let j = 0
+    let arr2 = [];
+    let arr3 = [];
+    let j = 0;
     for (let i = 0; i < arr.length; i++) {
-        arr2.push(arr[i])
-        j++
+        arr2.push(arr[i]);
+        j++;
         if (j == n) {
             arr3.push(arr2);
-            arr2 = []
+            arr2 = [];
             // arr2.slice(0)
-            j = 0
+            j = 0;
         }
     }
     if (arr2.length) {
@@ -33,15 +33,25 @@ function sol2(arr, n) {
 let result2 = sol2([1, 2, 3, 4, 5, 6, 7, 8, 9], 3)
 console.log(result2,"asdads")
 
+function s(arr,n){
+
+    let arr=[]
+    for(let i=0;i<arr.length;i++){
+        
+    }
+}
+ 
+
+
+
 /***
- * question2:)
+ * question2:) 
  * find an string has unique characters or not ?
  * steps:
  * 1: create an object with key and values pairs 
  * 2:check all keys'value has over 1 or not .
  * return true if all key's value has  1 value .
- * return false if all key's has value more than 1.   
- * 
+ * return false if all key's has value more than 1.    
  */
 function sol(str) {
     if (str.length) {

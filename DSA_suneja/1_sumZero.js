@@ -23,13 +23,13 @@ function sort(arr) {
     for (let i = arr.length - 1; i >= 0; i--) {//7 
         for (let j = 0; j < arr.length; j++) {//0
             if (arr[j] > arr[j + 1]) { //6>2,6>9,9>3,9>8,9>4
-                console.log(arr[j], "arr[jjjjjj");
+                // console.log(arr[j], "arr[jjjjjj");
                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
                 break
             }
         }
     }
-    console.log(arr, "22222array22")
+    // console.log(arr, "22222array22")
 }
 sort([6, 22, 9, 3, -7, 8, 4, 5, 1])//[2, 3, 4,5,1,6,8,9];
 // // answerby technical suneja
@@ -50,7 +50,7 @@ function sol9(arr2) {               //first pair chahiye jiska sum zero hai
     }
 };
 let answer = sol9([-5, -4, -3, -2, 0, 2, 4, 6, 8]);
-console.log(answer);
+// console.log(answer,'"answer of line 53333');
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // // yaha array sort mila h
 
@@ -112,9 +112,9 @@ console.log(answer);
 
 let a = 'hello world here';
 a.toUpperCase()
-// console.log(a, "aaa")
+// console.log(a, "    WQWSSSXCEVW$R@#E!aaa")//hello world here
 b = a.toUpperCase()
-// console.log(b, "bbb")
+// console.log(b, "bbb")//HELLO WORLD HERE
 // console.log(isNaN('0'),'WQWQSAXZCDFV') //false
 // console.log(isNaN(0),'AXZ') //false
 // console.log(!isNaN(0),'AZ#@') //true
@@ -128,15 +128,13 @@ function sol(a, b, ...c) {
 };
 let ab = sol(1, 2, 34, 5, 6, 7, 8)
 // console.log(ab, "aabbb")
-//////////////////////////////////////////////////////////////////////////////////
-console.log('======66666666=======')
+/////////////////////////////////////////////////////////////////////////////////
 var a1 = 6
 var b1 = a1
 a1++
-console.log(a1, "a1----")
-console.log(b1, "--- b1----")
-
-
+// console.log(a1, "a1----") //      7
+// console.log(b1, "--- b1----")  //   6
+// --------------------------------------------------------------------------------
 var a1 = [3, 2, 4, 3, 5]
 var b1 = a1
 a1.push('poppy')
@@ -146,18 +144,16 @@ b1.push('b1 add new element')
 /////////////////////////////////////////////////////////////////////////////////////
 //shallow copy an deep copy
 /*
-
 A deep copy means that all of the values of the new variable are copied and disconnected
  from the original variable.
  
  A shallow copy means that certain (sub-)values are still connected to the original variable.
   
- 
  */
 var a3 = 3
 var result = a3 < 18 ? 'no kid' : "elible"
 // console.log(result)  ///no kid
-console.log('=============898989======');
+
 var company = [
     { name: 'google', category: "product-based", start: 1991, end: 2020 },
     { name: 'amazon', category: "product-based", start: 1992, end: 2021 },
@@ -174,7 +170,7 @@ company.forEach((companies, index, abc, looper) => {
 // company.forEach((nameOfCompany) => console.log(nameOfCompany.name))
 company.filter((companies) => {
     if (companies.category == 'product-based') {
-        console.log(companies.name)
+        // console.log(companies.name)
     }
 });
 
@@ -203,21 +199,23 @@ switch (srte) {
         break
     default: console.log("heelo default")
 }
+
 let t = [1, 2, 3]
 let t1 = [...t]
 let t3 = t
-console.log(t == t1, "equal operator ")// false
-console.log(t === t1, "equalRT   ")// false
-console.log(t == t3, "equal operator 3")// true
+// console.log(t == t1, "equal operator ")// false
+// console.log(t === t1, "equalRT   ")// false
+// console.log(t == t3, "equal operator 3")// true
 t.push(4)
 t3.push(5)
 
-console.log(t == t1, "equal operator @Q")// false
-console.log(t == t3, "equal ope ")// true
+// console.log(t == t1, "equal operator @Q")// false
+// console.log(t == t3, "equal ope ")// true
+// console.log(t, t3,t1, "value value value value")// true
 
 ///////////////////////////////////////////////////////////////////////////
 const p = {
     name: "ram",
     age: 20,
 }
-console.log(Object.keys(p), '1')
+// console.log(Object.keys(p), '1')//[ 'name', 'age' ]

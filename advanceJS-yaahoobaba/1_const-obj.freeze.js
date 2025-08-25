@@ -42,14 +42,17 @@ Object.freeze(numbers);
 // numbers.push(4); // Fails: Cannot modify array
 numbers[0] = 5; // Fails: Cannot change elements
 console.log(numbers,'numbeeeeeeeeeeeeeee')
-
+// --------------------------------------------------------------------------------------------------------
 // Nested Objects (Shallow Freeze)
 const data = { user: { name: "John" } };
 Object.freeze(data);
-data.user.name = "Jan111e"; // Works: Nested o bjects are not frozen
+data.user.name = "Jan111e"; // Works: Nested objects are not frozen
 data.user = {}; // Fails: Cannot change top-level property
-// console.log(data,"dattttttttttttttttttttttt")//{ user: { name: 'Jan111e' } }
+console.log(data,"dattttttttttttttttttttttt ")//{ user: { name: 'Jan111e' } }
 //if nested object being freeze also then 
+// -------------------------------------------------------------------------------------------------
+data.user.adress = "addresss"; // Works: Nested objects are not frozen
+console.log(data,"tttttttttttt ")//{ user: { name: 'Jan111e', adress: 'addresss' } }
 
 function deepFreeze(obj) {
   // Freeze all properties that are objects
@@ -63,20 +66,18 @@ function deepFreeze(obj) {
 }
 
 // Example usage
-const data = { user: { name: "John" } };
-deepFreeze(data);
+const data1 = { user: { name: "John" } };
+deepFreeze(data1);
 
-data.user.name = "Jane"; // Fails: Nested object is now frozen
-console.log(data.user.name); // Output: "John"
+data1.user.name = "Jane"; // Fails: Nested object is now frozen
+console.log(data1.user.name); // Output: "John"
 // -------------------------------------------------------------------------------------
 
-
-// const is a keyword used to declare a variable that cannot be reassigned a new value. This means that once a const variable is assigned a value, that value cannot be changed. For example:
+// 'const' is a keyword used to declare a variable that cannot be reassigned a new value. This means that once a 'const' variable is assigned a value, that value cannot be changed. For example:
 
 // const PI = 3.14;
 // PI = 3.1415; // This will throw an error
 // freeze is a method that can be used on an object to make its properties immutable. Once an object is frozen, its properties cannot be added, deleted, or modified. For example:
-
 
 const myObj = { a: 1, b: 2 };
 Object.freeze(myObj);

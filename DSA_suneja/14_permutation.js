@@ -1,9 +1,8 @@
 /**
  * given two string write a method to decide if one is permutation of the other.
- * 
- * 
+  
  * steps:
- * 1 : check if  they are the same exact  strings -else
+ * 1 : check if they are the same exact  strings -else
  * 2: check the length of both string -else
  * 3:create object of each one.
  * 4: check if the object character count are equal -else

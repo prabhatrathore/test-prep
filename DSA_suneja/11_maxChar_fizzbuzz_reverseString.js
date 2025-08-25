@@ -1,14 +1,14 @@
 /**
  * how to find maximum charactor in an array .
- * and how many times it appears 
+ * and how many times it appears. 
  */
 /**
  * steps to proceed to answer:
  * first make key-value pairs.
- * 
  */
 // str = [...str];
 // console.log(str)
+
 let result = (string) => {
     let obj = {};
     // for (let value of str) {
@@ -112,11 +112,11 @@ function reverse(str) {
 } reverse("abcdefghijkl")
 
 let arr = [2, 3, 5, 7, 1, 3, 2];
-let sol = []
+let sol21 = []
 for (let i = 0; i < arr.length; i++) {
-    sol = arr[i] + sol
+    sol21= arr[i] + sol21
 }
-console.log(...sol, "111111111111111")
+console.log(...sol21, "111111111111111")
 
 
 

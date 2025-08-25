@@ -7,7 +7,7 @@
 
 //     for (let i = 0; i < arr1.length; i++) {
 //         let square = false;
-//         for (let j = 0; j < arr2.length; j++) {
+// for (let j = 0; j < arr2.length; j++) {
 //             // console.log(arr2[j])
 //             if (arr1[i] * arr1[i] == arr2[j]) {
 //                 // console.log(arr1[i])
