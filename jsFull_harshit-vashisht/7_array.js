@@ -2,7 +2,8 @@
  * important array method 
  * foreach
  * map
- * filter reduce
+ * filter
+ *  reduce
  */
 arr = [2, 4, 6, 8, 7, 1];
 function myfunct(num, index) { //2nd parameter idex hai default 
@@ -32,7 +33,7 @@ arr.forEach((name, index) => { console.log(`element is ${name.name}, index is ${
 arr.map((name, age) => { //2nd parameter automatically index hee hoga 
     console.log('age', age)
 });
-console.log("======1111111111111=====");
+// console.log("======1111111111111=====");
 
 arr.map((name, age) => { //2nd parameter automatically index hee hoga 
     if (name.age >= 16) {
@@ -48,12 +49,13 @@ var ab = arr.reduce((total, init) => {
     console.log(total, '=========', init)
 });
 console.log(ab)
-console.log("======2222222222222=====");
+// console.log("==========2222222222222=====");
 
 let arr1 = [2, 3, 5, 4, 3, 2]
 arr1.push(9)// add eleement to original array
 // console.log(arr1)
-//====================
+//==========================================
+
 let arr2 = ['a', 'b', 'c', 'd', 'e', 'f']
 let arr3 = arr2.push('gg')
 // console.log(arr3)//also give lenght of original array 

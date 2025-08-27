@@ -1,10 +1,11 @@
-//pass by value 
-//it create independent variable in stack 
+// pass by value 
+// it create independent variable in stack 
 // so there is no connection between these variable
 let arr = 'hello'
 console.log(arr.toUpperCase())
-console.log('=1111111111111111111=====')
+// console.log('=1111111111111111111=====')
 //==========================================
+
 let num = 9
 let num2 = num
 console.log(num) //9
@@ -20,10 +21,10 @@ console.log(arr4)  //more
 arr2 = 'vinod'
 console.log(arr2)  //vinod
 console.log(arr4)  //more
-console.log('===22222222222222222======');
+// console.log('===22222222222222222======');
 
 
-//==========passby reference
+//==========passby reference 
 //it create only one object in heap and allocated same address to both these variable 
 //so we can go to this addrress and change the data and
 // it reflect on both the objects.
@@ -37,7 +38,7 @@ console.log(obj2)
 obj.c = "plm"
 console.log(obj)
 console.log(obj2)
-console.log('===33333333333333======')
+// console.log('============33333333333333======')
 
 let arr5 = ['value1', 'value2'];
 let arr7 = arr5

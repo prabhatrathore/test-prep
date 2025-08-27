@@ -9,23 +9,27 @@ for (let i = 0; i < fruit.length; i++) {
     console.log(fruit[i].toUpperCase())
     console.log(fruit[i].toLowerCase())
 }
-console.log("22222222===========")
+// console.log("22222222===========")
+
 let i = 0
 while (i < fruit.length) {
     console.log(fruit[i])
     i++
 };
-console.log("333333333333===========")
+// console.log("333333333333===========")
 //for of loop in array
+
 for (let fruit1 of fruit) {
     console.log(fruit1, '===', fruit)
     console.log(fruit);
 };
-console.log("44444444444444===========");
+// console.log("44444444444444===========");
+
 for (let fruits in fruit) {
     console.log(fruit[fruits], '=====', fruits)
 };
-console.log("55555555555555555===========")
+// console.log("55555555555555555===========")
+
 fruit.forEach((el) => {
     if (el.includes('a')) {
         console.log(el)

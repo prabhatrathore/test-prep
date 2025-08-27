@@ -56,8 +56,8 @@
 * Common events (click, mouse events, keyboard events)
 
 10. DOM Manipulation
-* Accessing and modifying DOM elements
-* Event listeners
+* Accessing and modifying DOM elements. 
+* Event listeners. 
 * Traversing the DOM (children, parent, siblings)
 
 11. Web Storage
@@ -96,7 +96,7 @@
 * Strict mode ("use strict")
 * JSON (parsing, stringifying)
 --------------------------------------------------------------------------------------
-Data Structures and Algorithms (DSA) Topics in JavaScript
+Data Structures and Algorithms (DSA) Topics in JavaScript. 
 These topics focus on implementing and understanding data structures and algorithms, often tested through coding questions in interviews.
 
 Data Structures
@@ -143,7 +143,7 @@ Next greater element
 FIFO (First In, First Out) principle
 Variations: circular queue, priority queue, deque
 Common problems:
-Implement a queue using two stacks
+Implement a queue using two stacks 
 Task scheduling simulation
 
 7. Trees

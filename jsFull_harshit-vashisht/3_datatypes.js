@@ -6,12 +6,12 @@ console.log(typeof firstname);//string
 console.log(typeof (age + '')); //string
 age = String(age)
 console.log(typeof age);//string
-console.log("===11111111111========")
+// console.log("===11111111111========")
 
 let num1 = '23';
 console.log(typeof num1);//string
 console.log(typeof +num1)//number
-console.log('======22222222==========');
+// console.log('======22222222==========');
 
 // string concatination
 var str1 = "ram";
@@ -25,7 +25,7 @@ console.log(number);//3423
 // number = +str1 + +str2
 number = Number(str1) + Number(str2)
 console.log(number)//57
-console.log("=3333333333333========");
+// console.log("=3333333333333========");
 
 // template string
 // in this we use backtick
@@ -60,7 +60,7 @@ console.log(num4 > num5);//false
 let a = 1
 let b = ""
 // console.log(a&&b)// ""
-console.log("555555555555======")
+// console.log("555555555555======")
 let a1 = true;
 let b1 = true
 console.log(a1 && b1)//true

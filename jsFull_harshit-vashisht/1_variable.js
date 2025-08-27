@@ -180,7 +180,7 @@ person hobbies ====== [ 'guitar', 'sitar', 'hitar' ]
 email ====== qwert@gmail.com
 gender ====== male
  */
-//  console.log (Object.keys(obj))// return the key(property) name  in array format
+//  console.log (Object.keys(obj))// return the key(property) name in array format
 //  [ 'name', 'age', 'address', 'person hobbies', 'email', 'gender' ]
 
 
