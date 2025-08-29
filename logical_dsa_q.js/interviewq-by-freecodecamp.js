@@ -91,7 +91,7 @@ function findLongestWord(str) {
 }
 // findLongestWord(str1)
 /**
- * return the provided string with the first letter of each word capitalised. make sure the rest of the word is in lower case 
+  return the provided string with the first letter of each word capitalised. make sure the rest of the word is in lower case 
  */
 
 function capitalisedFirstLetter(str) {
@@ -100,11 +100,10 @@ function capitalisedFirstLetter(str) {
         // console.log(word[i].slice(1),"word[i].slice(1)")
         word[i] = word[i][0].toUpperCase() + word[i].slice(1)
     }
-
     console.log(word)
 }
 // capitalisedFirstLetter("i'm a litte tea pot")
-console.log("======11111111111=====")
+// console.log("======11111111111=====")
 let str = "i'm a litte tea pot"
 
 var convert = str.split(" ").map(word => word[0].toUpperCase()

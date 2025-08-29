@@ -40,7 +40,7 @@ for (let value in emp) {
     console.log(value, ":", emp[value])
 };
 
-console.log('====11111111111===========================')
+// console.log('====11111111111===========================')
 /**
  * by using object constructor.
  * 

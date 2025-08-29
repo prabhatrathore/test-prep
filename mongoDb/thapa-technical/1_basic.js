@@ -6,7 +6,7 @@ console.log("ppppp")
  *   
  * it stores data in form of entity as tables
  * it stores data as a form of table 
- *  it uses SQL (db mai query krne ke liye)  to query database 
+ *  it uses SQL (db mai query krne ke liye) to query database.  
  * 
  * SQL ke andar postgress, mysql aa jaate 
  * 
