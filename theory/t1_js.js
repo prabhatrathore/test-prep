@@ -449,10 +449,10 @@ let ADVANTAGES_OF_USING_JAVASCRIPT = {
  Light Weight Scripting Language******
 means it is made for data handling at the browser (only) & due to its low CPU usage, minimalist syntax, and ease of implementation.
 
---> Server interaction is less
--->  Feedback to the visitors is immediate
---> Interactivity is high
---> Interfaces are rich
+--> Server interaction is less. 
+-->  Feedback to the visitors is immediate . 
+--> Interactivity is high .
+--> Interfaces are rich.
 Speed. Client-side JavaScript is very fast because it can be run immediately within the client-side browser. ...
 Simplicity. JavaScript is relatively simple to learn and implement.
 
@@ -782,37 +782,34 @@ let SUBSTRING;
 
 /**
 The substring() method is used to extract a part of a string, between two specified indexes (positions).
-  substring()    only applicable on string not array.
+  substring() only applicable on string not array.
  The substring() method extracts characters from start to end (exclusive).
  The substring() method does not change the original string.
  If startIndex > endIndex, JavaScript automatically swaps them.
+ substring() does not support negative indexes,
+
 let str = "JavaScript";
 let result = str.substring(0, 4);
 console.log(result); // "Java"
 
 console.log("Hello".substring(3, 1)); // "el" /// swap kr dia 
-
- =======================================================================================================
- ❗Difference from slice():
-Both are similar, but:
-substring() does not support negative indexes,
-
-example: 
-*/
+=======================================================================================================
+ example: 
+ */
 let str6 = "Hello";
 // console.log(str6.substring(-2, 3),")(*&^%$#@"); // Treats -2 as 0, outputs "Hel"
 // console.log(str6.substring(-2, -3),")(*&^%$#@"); // Treats -2 as 0, & -3 as 0 outputs ""
 /*
 If we pass a negative index to substring(), it treats it as 0.
 --------------------------------------------------------------------------------------------
-slice() does support negative indexes (e.g., -1 refers to the last character)
+
+❗Difference from slice():
+slice() support negative indexes (e.g., -1 refers to the last character)
 let str = "Hello";
 console.log(str.slice(-2, 5)); // Outputs "lo"
 console.log(str.slice(-3, -1)); // Outputs "ll"
 
  ======================================================================================================= 
- 🔍 What is slice() in JavaScript?
- 
  The slice() method is used to extract a part of a string or array and returns it as a new value — without changing the original.
 
  let str = "JavaScript";
@@ -835,7 +832,7 @@ console.log(arr.slice(-4, -1));  // [20, 30, 40]
  * array shift : Removes the first element from an array and returns that element. 
  * array unshift : Adds one or more elements to the beginning of an array and returns the new length.
  * array sort : Sorts the elements of an array in place (mutates the array) and returns the sorted array..
- * array reverse:Reverses the order of elements in an array in place and returns the reversed array.
+ * array reverse:Reverses the order of elements in an array in place and returns the reversed array. modify original array . 
  let arr = [1, 2, 3];
 arr.reverse(); // [3, 2, 1] 
 
@@ -868,17 +865,17 @@ let t1 = t.reduce((a, b) => {
 
 /*
 Array.find()
-Description: Returns the first element that satisfies a provided testing function, or undefined if none found.
-------------------------------------------------------------------------------------------------
+ Returns the first element that satisfies a condition, or undefined if none found.
+-------------------------------------------------------------------------------------------------------------....
 
 Array.findIndex()
-Description: Returns the index of the first element that satisfies a testing function, or -1 if none found.
-let arr = [1, 2, 3];
+ Returns the index of the first element that satisfies a condition, or -1 if none found.
+let arr = [1, 2, 3];   
 let index = arr.findIndex(num => num > 2); // 2
 ------------------------------------------------------------------------------------------------
 
 Array.includes()
-Description: Checks if an array or string contains a specific value, returning true or false
+ Checks if an array or string contains a specific value, returning true or false
 let arr = [1, 2, 3];
 console.log(arr.includes(2)); // true
 */
@@ -886,16 +883,17 @@ console.log(arr.includes(2)); // true
 /*
 -------------------------------------------------------------------------------------------------
 Array.join()
-Description: Joins all elements of an array into a string, optionally with a separator.
+ Joins all elements of an array into a string, optionally with a separator.
 --------------------------------------------------------------------------------------------------
-Array.slice()
-Description: Returns a shallow copy of a portion of an array, specified by start and end indices (end not included). Supports negative indices.
+ Array.slice()
+ Returns a shallow copy of a portion of an array, specified by start and end indices (end not included). Supports negative indices.
 */
 let arr = [1, 2, 3, 4];
 let sliced = arr.slice(1, 3); // [2, 3]
 /*-------------------------------------------------------------------------------------------------
+
 Array.splice()
-Description: Modifies an array by removing, replacing, or adding elements at a specified index. Returns removed elements.
+Modifies an array by removing, replacing, or adding elements at a specified index. Returns removed elements.
 */
 let arr4 = [1, 2, 3, 4];
 // let tf = arr4.splice(1, 2, 'new'); // Removes [2, 3], adds 'new'
@@ -971,12 +969,13 @@ let res = ee.find(sol)
  "debugger” in JavaScript?
  debugger is helpful for finding and fixing errors in JavaScript code.
  */
-let is_nan
+let is_nan 
+
 /**
 🔍 What is NaN in JavaScript?
 NaN stands for "Not-a-Number".
 
-It’s a special value in JavaScript that means “This value is not a valid number.”
+NaN is a special value in JavaScript that means “This value is not a valid number.”
 ------------------------------------------------------------
 typeof of NaN will return a Number.
 
@@ -1051,7 +1050,6 @@ Logical errors: Logical errors occur when the JavaScript code does not do what i
 
 let memoization;
 /*
-Q:) what is memoization?
 Memoization in JavaScript is an optimization technique used to improve the performance of functions by caching their results based on the input parameters. When a function is called with the same inputs multiple times, memoization allows the function to return the cached result instead of recomputing it, saving time and computational resources.
 ----------------------------------------------------------------------------------------------------
 
@@ -1124,7 +1122,7 @@ A Set stores unique values.
 When we add objects, they are only considered unique if their reference is different — even if the content is same.
  */
 let mySet = new Set();
-let obj1 = { name: "Alice" };
+let obj1 = { name: "Alice" }; 
 let obj2 = { name: "Alice" };
 mySet.add(obj1);
 mySet.add(obj2);
