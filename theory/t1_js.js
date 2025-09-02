@@ -1284,7 +1284,7 @@ document.cookie = "token=12345; expires=Fri, 31 Dec 2025 12:00:00 UTC";
 */
 
 /**
- What Is the Difference Between an Array and an Object in JavaScript ? ? ? ? ?
+ What Is the Difference Between an Array and an Object in JavaScript ? 
  An array is a data structure that can store a collection of values. 
  An object is a data structure that can store a collection of properties.
  
@@ -1762,11 +1762,8 @@ console.log(counter()); // Outputs: 2
 .......................................................................
 
 How Does bind Relate to Higher-Order Functions?
-Answer: bind is an HOF because it returns a new function with a fixed this value.
+Answer: bind is an HOF because it returns a new function with a fixed 'this' value.
 Example:
-javascript
-
-Copy
 function sayHi() {
     console.log("Hi, " + this.name);
 }
@@ -2000,7 +1997,16 @@ for (let i = 0; i < 10; i++) {
 
 /*
 🔹 OOPs (Object-Oriented Programming) 
-A programming style that uses objects to structure code for reusability, modularity, and clarity.
+oops is the programming paradign [pattern [step by step procedure]] that uses objects,to structure code for reusability, modularity, and clarity.
+ ((rather than just functions and procedure)). 
+It is the most popular methodology among developers. 
+
+Objects can be considered as real-world instances of entities like class, that have some characteristics and behaviors.
+
+ Need of OOPS:
+	OOPs helps users to understand the software easily. With OOPs, the readability, understandability, and maintainability of the code increase multifold.
+	Even very big software can be easily written and managed using OOPs.
+
 
 Benefits:
 Reusable code (DRY).
@@ -2077,16 +2083,6 @@ Static Method = No need to create object
 Inheritance = extends + super()
 
 ------------------------------------------------------------------------------------------------------------
-OOPs : Object Oriented Programming
-
-It is the programming paradign [pattern [step by step procedure]] that is defined using objects, ((rather than just functions and procedure)). 
-It is the most popular methodology among developers. 
-
-Objects can be considered as real-world instances of entities like class, that have some characteristics and behaviors.
-
- Need of OOPS:
-	OOPs helps users to understand the software easily. With OOPs, the readability, understandability, and maintainability of the code increase multifold.
-	Even very big software can be easily written and managed using OOPs.
 
 3) Features of OOps are:
  Inheritance:

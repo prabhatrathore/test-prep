@@ -9,6 +9,7 @@
  interact with relational databases. It is used to store, retrieve, update, and delete
  data. SQL is also used to create and modify database structures such as tables,
  views, and indexes.
+
  Example:
  SELECT * FROM Employees;
  This query retrieves all the records from the Employees table.
@@ -29,7 +30,6 @@ What are the types of SQL commands?
 SQL commands are divided into 5 main types (categories):
 
 🔹 1. DDL (Data Definition Language)
-
 👉 Used to define or change the structure of the database (tables, schemas, indexes).
 
 Examples:
@@ -253,7 +253,7 @@ Indexing and Optimization: Add indexes on frequently queried columns (e.g., prod
 Caching: Use Redis. 
 -----------------------------------------------------------------------------------------------------------
 
-Q:) How do you handle deadlocks in MySQL for a high-concurrency platform?
+Q:) How do you handle deadlocks in MySQL for a high-concurrency platform ? 
 Deadlocks occur when two or more transactions lock resources in a conflicting order.
 Each one is waiting for the other to finish and release its lock. Both blocking each other’s way
 
@@ -348,9 +348,9 @@ TIMESTAMP: Internally stored in UTC, but automatically converted to your server/
 2.) Storage Size
 DATETIME: Takes 8 bytes.
 TIMESTAMP: Takes 4 bytes (smaller).
-Auto Update Feature
 ------------------------
 
+Auto Update Feature
 3.) DATETIME: Static unless you manually update it.
 TIMESTAMP: Can auto-update when a row changes (perfect for updated_at).
 

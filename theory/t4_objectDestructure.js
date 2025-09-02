@@ -1,5 +1,5 @@
 //object destructuring 
-// Object destructuring is a new way to extract elements from an object or an array
+//  destructuring is a new way to extract elements from an object or an array
 
 const obj3 = {
     band: 'annfo-=-=3',

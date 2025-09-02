@@ -32,7 +32,7 @@ WebSockets: Persistent, stateful, low-latency, ideal for SupplyMatch’s real-ti
 🕐 What is Latency?
 Latency = Time delay ⏳
 It’s the time taken between sending a request and getting a response.
-----------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 
 Polling means the client (browser/app) repeatedly asks the server:
 “Do you have new data?”
@@ -81,7 +81,7 @@ Library built on WebSockets with additional features.
 
 /**
 Containerization is a lightweight virtualization technology that allows applications and their dependencies to be packaged into standardized, isolated units called containers.
-+
+
 What is Docker?
 Docker is a tool that helps us:
 

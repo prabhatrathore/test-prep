@@ -1,10 +1,9 @@
-/**
- 
+/** 
+ What is Microservices Architecture?
 Microservices architecture is a design approach where an application is built as a collection of small, independent services that communicate over a network, each performing a specific function.
 
 Unlike monolithic architectures, where all components are tightly coupled in a single codebase, microservices are loosely coupled, independently deployable, and scalable. 
 
-What is Microservices Architecture?
 In microservices architecture:
 
 1:) Each service is a self-contained unit responsible for a single business capability (e.g., inventory management, order processing, notifications).

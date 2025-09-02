@@ -153,9 +153,8 @@ TypeScript is developed and maintained by Microsoft, it compiles down to plain J
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 */ 
-rabbitmq
+what_is_rabbitmq
 /**
-What is RabbitMQ?
 RabbitMQ is a message broker that allows applications to communicate with each other asynchronously by sending messages via queues. RabbitMQ implements the AMQP protocol. 
  
 2. How does RabbitMQ work internally?

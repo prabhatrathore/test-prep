@@ -210,7 +210,6 @@ console.log(newarr, 'spread operator')  // [ 1, 2, 3, 4, 'pppppppppp', 3, 6, 7, 
 arr1.push('new1', 'new2')
 console.log(arr1); //[ 1, 2, 3, 4, 'pppppppppp', 'new1', 'new2' ]
 
-
 console.log(newarr, '=====outer ====');//[ 1, 2, 3, 4, 'pppppppppp', 3, 6, 7, 8 ] ===outer ==
 
 //============================

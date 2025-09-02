@@ -124,7 +124,6 @@ What is a REST API?
 => it is a type of api that follow certain rules. 
  
 Details:
-
 Architecture Style: REST (Representational State Transfer) is a set of guidelines for building web applications that communicate efficiently.
 HTTP Protocol: It uses HTTP methods like GET (to fetch data), POST (to send data), PUT (to update data), and DELETE (to remove data).
 put method: used to update  existing data completely
@@ -155,7 +154,7 @@ Why “RESTful”: The term “RESTful” means it fully follows REST’s guidel
 Key Difference Between REST API and RESTful API
 REST API: Any API that uses REST principles (like HTTP methods for communication).
 RESTful API: A REST API that fully follows REST’s strict rules (e.g., stateless, resource-based URLs, proper HTTP methods).
-------------------------------------------------------------------------------------------------4
+------------------------------------------------------------------------------------------------
 
 Question: “What’s the difference between a REST API and a RESTful API?”
 Answer: A REST API is a way for apps to communicate over the internet using HTTP methods like GET and POST.
@@ -163,7 +162,6 @@ Answer: A REST API is a way for apps to communicate over the internet using HTTP
 ---------------------------------------------------------------------------------------------------
 Question: “Why use a RESTful API?”
 Answer: It makes communication between apps easier, more predictable, and scalable because it follows standard rules that all developers understand.
-
 
 --------------------------------------------------------------------------   
 
@@ -207,12 +205,6 @@ The key components of an HTTP request are:
 4.Body: The request body contains any data being sent to the server, such as form data or JSON payload.
 
 ------------------------------------------------------------------------------------------------------  
-What are the key components of an HTTP response?  
-HTTP Response broadly has 3 main components:   
-Status Line  
-Headers  
-Body (Optional)  
-
 
 The key components of an HTTP response are:
 1.Status Code: The status code indicates the result of the request, such as 200 OK, 404 Not Found, 500 Internal Server Error, etc.

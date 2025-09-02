@@ -61,7 +61,7 @@ A token is a string of characters that represents a piece of information, often 
 -------------------------------------------------------------------------------------------------------------
 
 Q4😊 What Is JSON?  
-JSON (JavaScript Object Notation) is a lightweight, text-based format for storing and exchanging data.
+JSON (JavaScript Object Notation) is a lightweight, and text-based format for storing and exchanging data.
 
 JSON is like a structured way to organize data using key-value pairs. It’s commonly used to send data between a server and a client (e.g., in web apps or APIs).
 
@@ -76,9 +76,7 @@ JSON is like a structured way to organize data using key-value pairs. It’s com
   Relation to JWT:
 JWT uses JSON to structure its header and payload (e.g., user info or permissions), which are then encoded in Base64 and signed to create a secure token.
 ---------------------------------------------------------------------------------------------
-
  */
-
 /**
 -----------------------------------------------------------------------------------------------
 HTTP status codes are three-digit numbers returned by a server to indicate the outcome of a client’s request 

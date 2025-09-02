@@ -8,11 +8,9 @@ Async/Await makes it easier to write promises.
 async function name(parameter1, parameter2, parameterN) {
     // statements
 }
-
 /**
  What is the await Keyword?
 The await keyword is used inside an async function to pause execution until a Promise resolves or rejects.
-
 */
 // let result = await promise;
 let benefit_of_async_await
