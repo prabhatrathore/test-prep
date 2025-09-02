@@ -184,8 +184,8 @@ Answer:
 AMQP (Advanced Message Queuing Protocol) is an open standard protocol for message brokers, defining how messages are formatted, stored, routed, and acknowledged.
 
 🔶 12. What is the use of dead-letter exchange?
-Answer:
 Messages that are rejected or expired can be routed to a dead-letter exchange for further inspection or retries.
+
 🔶 13. Explain publisher confirms in RabbitMQ.
 Answer:
 It ensures that the broker has received the message before publisher proceeds, providing reliability in message publishing.

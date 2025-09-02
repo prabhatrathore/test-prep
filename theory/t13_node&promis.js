@@ -123,6 +123,9 @@ Run with the inspect flag:
 Start Node with inspect:
 **************************************************
 
+ Clustering in Node.js
+Clustering in Node.js involves running multiple instances of a Node.js process to take advantage of multi-core systems. It enhances performance and reliability by distributing incoming connections across multiple workers.
+
 Clustering is a technique in Node.js to create multiple processes (workers) that run simultaneously and share the same server port.
 
 Since Node.js is single-threaded by default, node.js runs on a single process, utilizing only one CPU core. The cluster module allows us to create multiple worker processes that share the same server port, enabling parallel processing and better handling of concurrent requests.

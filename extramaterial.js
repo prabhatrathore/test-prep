@@ -1,13 +1,11 @@
 /**
  
-1. Event-Driven Programming Paradigm in Node.js
+1.Explain Event-Driven Programming Paradigm in Node.js
 Node.js follows an event-driven programming paradigm where actions are triggered by events. The core of Node.js, known as the event loop, continuously listens for events and executes associated callback functions. This non-blocking architecture enables asynchronous programming, making Node.js highly efficient and scalable.
 
 2. Non-Blocking I/O in Node.js
 Node.js utilizes non-blocking I/O operations, allowing multiple tasks to be performed concurrently without waiting for each other to complete. This asynchronous behavior enhances performance and scalability, making Node.js suitable for handling high loads.
 
-4. Clustering in Node.js
-Clustering in Node.js involves running multiple instances of a Node.js process to take advantage of multi-core systems. It enhances performance and reliability by distributing incoming connections across multiple workers.
 
 7. Popular Frameworks and Libraries in Node.js
 Node.js ecosystem boasts a plethora of frameworks and libraries catering to various needs:
