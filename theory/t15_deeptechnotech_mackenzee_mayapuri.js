@@ -22,7 +22,7 @@ how to solve this ?
  * next topic is dsa
  
 what is data structure ?
-data structure is a way to store and organize data so that it can be used effeciently.
+data structure is a way to store and organize data so that it can be used efficiently.
 as per name indicates itself that organizing the data in memory.
 
 it is a set of algorithms that we can use in any programming language to structure data in memory.

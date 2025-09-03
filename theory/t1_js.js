@@ -16,6 +16,7 @@ Renamed to LiveScript.
 Finally named JavaScript for marketing, as Java was popular, but Java and JavaScript are unrelated.
 
 -----------------------------------------------------------------------------------------------------
+
 Browser Wars:
 Netscape used JavaScript.
 Microsoft’s Internet Explorer copied features and created JScript.
@@ -122,7 +123,8 @@ Person.prototype.greet = function() {
 
 const person = new Person();
 person.greet(); // Outputs "Hi, I'm John"
------------------------------------------------------------
+--------------------------------------------------------------------------------------------
+
 How it works:
 Person is a constructor function.
 Person.prototype.greet adds the 'greet' method to the Person prototype.
@@ -157,6 +159,7 @@ Steps:
 // This behavior is different from variables declared with var or let, which can be reassigned new values.
 
 // In this case, since a2 is a constant variable, any attempt to modify its value after it has been initialized will result in an error being thrown at runtime. The error message "assignment to constant variable" indicates that you are attempting to modify a constant variable, which is not allowed.
+-------------------------------------------------------------------------------------------------------------------
 
 // const  a2 = 10; 90
 // function f() {
@@ -327,11 +330,10 @@ for (let i = 0; i < 10; i++) {
  *  to ye browser ke pass bhj dega 
  * browser ke pass rhega aur execute krke result return kr dega. 
  * 0 second baad 
- but js next line pr mmove krega aur execute krega aaage ka code 
- browser wala return last mai print hoga 
+ but js next line pr move krega aur execute krega aaage ka code browser wala return last mai print hoga 
  */
+//------------------------------------------------------------------------------------------------------------
 
-//--------------------------------------------------------=
 let promise1 = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve('promise resolve');
@@ -350,7 +352,7 @@ for (var i = 0; i < 3; i++) { //change var , let const
 }
 console.log('===i"value===', i)
 
-//=======parameter destructuring
+//=======parameter destructuring --------------
 let obj = {
     "name": "alex",
     age: 12,
@@ -371,16 +373,15 @@ set2.add('e0ee')
 set2.add('wjengwigw')
 let t3 = { name: 'ram' }
 set2.add(t3)
-// set2.clear()     // clear property :to clear the set 
-//  set2.delete("eeeeeeeeee")//'delete property' :specific element to delete 
+// set2.clear()     // clear property : to clear the set 
+//  set2.delete("eeeeeeeeee")//'delete property' : specific element to delete 
 let result = set2.has("e0ee")// 'has' 'property' tell the element exist or not 
 let result1 = set2.has(t3)// 'has property' tell the element exist or not 
-console.log(result, "WSDCVBVCD", result1, "resultg22222")
-// console.log('=====  ==============')
+console.log(result, "WSDCVBVCD", result1, "resultg22222") 
+// console.log('=====  ==============') 
 console.log(set2, "BBBBBB")
 arr = [...set2];
 console.log(arr, 'XSWEDC')
-
 
 
 let WHat_is_Javascript;
@@ -424,7 +425,7 @@ console.log(Name); // Doe
   Q: Why JavaScript is known as a lightweight programming language ?
   JavaScript is considered a lightweight language due to its low CPU usage, minimalist syntax, ease of implementation.
   
- and it was originally designed to run in browsers with minimal resource demands. It executes client-side tasks (like DOM manipulation) without requiring heavy computation
+ and it was originally designed to run in browsers with minimal resource demands. It executes client-side tasks (like DOM manipulation) without requiring heavy computation. 
   ------------------------------------------------------------------------------------------------------------
 
 Q: Is JavaScript compiled or interpreted? 
@@ -441,6 +442,10 @@ JIT Compiler: A JIT compiler converts code into byte code first. Then, at runtim
 /**
 Why is JavaScript interpreted not compiled?
  JavaScript is compiled or interpreted depends on the environment in which it is run. If it runs in older browsers, it's interpreted. If it runs in modern browsers, it's compiled. 
+
+ What is an Interpreted Programming Language?
+ Originally, JavaScript was interpreted, meaning the browser read and executed the code line-by-line at runtime.
+
 */
 
 let ADVANTAGES_OF_USING_JAVASCRIPT = {
@@ -452,8 +457,9 @@ means it is made for data handling at the browser (only) & due to its low CPU us
 --> Server interaction is less. 
 -->  Feedback to the visitors is immediate . 
 --> Interactivity is high .
---> Interfaces are rich.
-Speed. Client-side JavaScript is very fast because it can be run immediately within the client-side browser. ...
+--> Interfaces are rich .
+--> Speed. Client-side JavaScript is very fast because it can be run immediately within the client-side browser. 
+
 Simplicity. JavaScript is relatively simple to learn and implement.
 
    The biggest advantage of JavaScript having ability to support all modern browsers and produce an equivalent result.
@@ -461,30 +467,26 @@ Simplicity. JavaScript is relatively simple to learn and implement.
 -> One of the main uses of JavaScript is to create dynamic and interactive websites. JavaScript can be used to manipulate the content and styling of a web page, add interactivity through event handling, and communicate with web servers to update content without requiring a full page refresh.
 ---------------------------------------------------------------------------------------------------------
 */
-
 let DISADVANTAGES_OF_JS = {
 }
 /*
-No support for multithreading
-No support for multiprocessing
+No support for multithreading. 
+No support for multiprocessing. 
 Reading and writing of files is not allowed
 ---------------------------------------------------------------------------------------------------------
  A programming language is a type of computer language that has of a set of instructions for communicating with computers. 
  the programming languages that are compiled first before running, scripting languages do not compile the file and execute the file without being compiled.
  ******************************************************************************
  */
-
-// What is an Interpreted Programming Language?
 /*
-Originally, JavaScript was interpreted, meaning the browser read and executed the code line-by-line at runtime.
 ******************************************************************************
 
 Question: “Is JavaScript a programming language or a scripting language?”
 Answer: JavaScript is both. It began as a scripting language for web browsers, automating tasks like DOM manipulation. But with modern features (e.g., ES6 classes, modules), it’s a full programming language we used everywhere from front-end to back-end development (e.g., with Node.js).
- -----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 
 JavaScript is a programming language. explain 
-Yes, JavaScript is a programming language that is used primarily for web development, but can also be used for other purposes such as server-side programming, desktop applications, and mobile app development. 
+Yes, JavaScript is a programming language that is used ((primarily)) for web development, but can also be used for other purposes such as server-side programming, desktop applications, and mobile app development. 
 -----------------------------------------------------------------------------------------
 
 ❓ Why is JavaScript single-threaded?
@@ -505,7 +507,7 @@ How it works:
 JavaScript has a call stack (where code executes), a task queue (for pending tasks), and a web API (for async operations like timers or HTTP requests).
 
 When an async operation (e.g., setTimeout) is encountered, it’s sent away (offloaded)  to the web API. Once the operation is ready, its callback is placed in the task queue.
-The event loop continuously checks the call stack. If the stack is empty, it takes the next task from the queue and pushes it to the stack for execution.
+The event loop continuously checks the call stack. If the stack is empty, it takes the next task from the queue and pushes ((it)) to the stack for execution.
 ---------------------------------------------------------------------------------------
 console.log("Start");
 setTimeout(() => console.log("Timeout"), 0);
@@ -555,7 +557,7 @@ Instead, it waits until the Call Stack is empty.
 🔁 4. Event Loop 
 The Event Loop keeps checking:
 “Is the call stack empty?”
-If yes, it picks the next task from the Callback Queue and pushes it into the Call Stack to execute.
+If yes, it picks the next task from the Callback Queue and pushes ((it)) into the Call Stack to execute.
 
 So here:
 
@@ -592,6 +594,11 @@ Function greet() is called → New Function Execution Context (FEC) is created.
 Inside greet(), console.log("Hello") runs.
 Function context is destroyed, and control returns to the global context.
 console.log("End") runs.
+**********************************************************************************************
+
+Difference: Micro vs Macro Task
+Microtask → Promise.then, process.nextTick → runs immediately after current task.
+Macrotask → setTimeout, setInterval → runs after microtasks are done.
 **********************************************************************************************
 */
 let FUNCTION_SCOPE_AND_GLOBAL_SCOPE
@@ -697,12 +704,12 @@ An Immediately Invoked Function ( known as IIFE and pronounced as IIFY) is a fun
 
 let feature_of_js
 /*
-🌟 Core Features of JavaScript
+🌟 Core Features of JavaScript:
 ✅ Lightweight and Interpreted
 JavaScript is a lightweight language and runs directly in the browser. No need to compile manually.
 
 ✅ Dynamic Typing
-we  don’t need to declare variable types (like int, string, etc.).
+we don’t need to declare variable types (like int, string, etc.).
 Example:
 
 let x = 10;  // number  
@@ -829,7 +836,7 @@ console.log(arr.slice(-4, -1));  // [20, 30, 40]
  * array length: it return the number of elements in an array & returns the new length.
  * array push: it add element to the end of the array and returns the new length of the array. 
  * array pop: it remove the last element from an array and return removed element.
- * array shift : Removes the first element from an array and returns that element. 
+ * array shift : Removes the first element from an array and returns removed element. 
  * array unshift : Adds one or more elements to the beginning of an array and returns the new length.
  * array sort : Sorts the elements of an array in place (mutates the array) and returns the sorted array..
  * array reverse:Reverses the order of elements in an array in place and returns the reversed array. modify original array . 
@@ -838,14 +845,25 @@ arr.reverse(); // [3, 2, 1]
 
 ------------------------------------------------------------------------------------------------
  Additional Array Methods Commonly used : 
-Array.forEach() :
+
+  map Function
+ The map function takes an array, applies a transformation to each element, and returns a new array with the transformed values. The new array always has the same number of elements as the original array
+ ------------------------------------------------------------------------------------------------
+
+ filter Function
+ The filter function takes an array, checks each element against a condition, and returns a new array with only the elements that pass the condition.
+ ------------------------------------------------------------------------------------------------
+
+ Array Method.forEach()
+The .forEach() method executes a callback function on each of the elements in an array in order.
 Executes a provided function once for each array element. Does not return anything (returns undefined)
-------------------------------------------------------------------------------------------------
-Array.map()
-Description: Creates a new array with the results of calling a provided function on every element.
-------------------------------------------------------------------------------------------------
-Array.filter()
-Description: Creates a new array with all elements that pass a test.
+
+const numbers = [28, 77, 45, 99, 27]; 
+numbers.forEach(number => {  
+  console.log(number);
+}); 
+
+
 ------------------------------------------------------------------------------------------------
 Array.reduce()
 The reduce() function is used to reduce an array to a single value by applying a function to each element and accumulating the result.
@@ -2007,7 +2025,6 @@ Objects can be considered as real-world instances of entities like class, that h
 	OOPs helps users to understand the software easily. With OOPs, the readability, understandability, and maintainability of the code increase multifold.
 	Even very big software can be easily written and managed using OOPs.
 
-
 Benefits:
 Reusable code (DRY).
 Easier to manage large projects
@@ -2089,6 +2106,120 @@ Inheritance = extends + super()
 Encapsulation:
 Polymorphism :
 Abstraction:
+-------------------------------------------------------------------------
+ * 1. Encapsulation
+ Encapsulation is bundling data (properties) and the methods (functions) that work on that data into a single unit (an object), 
+
+ function Person(name, age) {
+    // Private data (not truly private in this example, but encapsulated)
+    let _name = name;
+    let _age = age;
+   
+    // Public methods to access the data
+    this.getName = function() {
+        return _name;
+    };
+    this.setAge = function(newAge) {
+        _age = newAge;
+    };
+}
+
+const person = new Person("Alex", 25);
+console.log(person.getName()); // Outputs: Alex
+person.setAge(26);
+************************************************************************************
+
+Abstraction
+ Abstraction is hiding the complex details of how something works and showing only the simple, necessary parts to the user.
+
+ function Car() {
+    // Complex details (hidden)
+    let speed = 0;
+
+    // Simple interface (public method)
+    this.drive = function() {
+        speed += 10;
+        console.log(`Driving at ${speed} km/h`);
+    };
+}
+
+const myCar = new Car();
+myCar.drive(); // Outputs: Driving at 10 km/h
+
+
+3. Inheritance
+ Inheritance lets one object (or class) “inherit” properties and methods from another, so you can reuse code and extend functionality.
+
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.sayHello = function() {
+    console.log(`Hello, I'm ${this.name}`);
+};
+--------------------------------------------------------------------------------------
+function Student(name, grade) {
+    Person.call(this, name); // Inherit Person's properties
+    this.grade = grade;
+}
+
+// Inherit Person's prototype methods
+Student.prototype = Object.create(Person.prototype);
+
+const student = new Student("Cody", "A");
+student.sayHello(); // Outputs: Hello, I'm Cody
+console.log(student.grade); // Outputs: A
+
+
+. Polymorphism
+ Polymorphism lets different objects use the same method name but behave differently based on their own rules.
+class Animal {
+  makeSound() {
+    return "Some generic sound";
+  }
+}
+
+class Dog extends Animal {
+  makeSound() {
+    return "Woof!";
+  }
+}
+
+class Cat extends Animal {
+  makeSound() {
+    return "Meow!";
+  }
+}
+
+const dog = new Dog();
+const cat = new Cat();
+
+console.log(dog.makeSound()); // Output: Woof!
+console.log(cat.makeSound()); // Output: Meow!
+---------------------------------------------------------------------------------------------
+function Animal() {}
+Animal.prototype.makeSound = function() {
+    console.log("Some sound");
+};
+
+function Dog() {}
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.makeSound = function() {
+    console.log("Woof");
+};
+
+function Cat() {}
+Cat.prototype = Object.create(Animal.prototype);
+Cat.prototype.makeSound = function() {
+    console.log("Meow");
+};
+
+const dog = new Dog();
+const cat = new Cat();
+dog.makeSound(); // Outputs: Woof
+cat.makeSound(); // Outputs: Meow
+
+
 ---------------------------------------------------------------
 Advantages Of OOPS:
 OOPS follows a bottom-up approach. OOPS allows us the reusability of code.
@@ -2103,6 +2234,7 @@ Program design is tricky.
 Programmer should be well skilled.
 Classes tend to be overly generalized.
 ----------------------------------------------------------------------
+
 Difference between Classes and Object:
 	class is blueprint of object
 Classes: It is a group of similar object.It is a logical entity.
@@ -2337,10 +2469,10 @@ console.log(arr, 'aaaaaaaa')
 // Sealed prevents adding/deleting properties.
 // Frozen prevents modifications.
 
-// Feature	Object.seal()	Object.freeze()
-// Prevents new properties?	✅ Yes	✅ Yes
-// Prevents deletion?	✅ Yes	✅ Yes
-// Prevents modification of existing properties?	❌ No	✅ Yes
+// Feature                      	                   Object.seal()	Object.freeze()
+// Prevents new properties?	                             ✅ Yes     	✅ Yes
+// Prevents deletion?	                                   ✅ Yes	✅ Yes
+// Prevents modification of existing properties?       	❌ No	✅ Yes
 // const obj = { name: "Alice" };
 // Object.seal(obj);
 // obj.name = "Bob"; // Allowed
@@ -2424,20 +2556,6 @@ console.log(-9999999999 < -Infinity);  // false
 
 
 /**
- 
-  map Function
- The map function takes an array, applies a transformation to each element, and returns a new array with the transformed values. The new array always has the same number of elements as the original array
-
- filter Function
- The filter function takes an array, checks each element against a condition, and returns a new array with only the elements that pass the condition.
-
- Array Method.forEach()
-The .forEach() method executes a callback function on each of the elements in an array in order.
-const numbers = [28, 77, 45, 99, 27]; 
-numbers.forEach(number => {  
-  console.log(number);
-}); 
-
 -----------------------------------------------------------------------------------------------------------------
 What is an Iterator?
 An iterator is an object that allows you to iterate (loop) over a collection of data.

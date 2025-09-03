@@ -1,117 +1,3 @@
-/**
- * oops ( object-oriented programming )
- * 1. Encapsulation
- Encapsulation is bundling data (properties) and the methods (functions) that work on that data into a single unit (an object), 
-
- function Person(name, age) {
-    // Private data (not truly private in this example, but encapsulated)
-    let _name = name;
-    let _age = age;
-   
-    // Public methods to access the data
-    this.getName = function() {
-        return _name;
-    };
-    this.setAge = function(newAge) {
-        _age = newAge;
-    };
-}
-
-const person = new Person("Alex", 25);
-console.log(person.getName()); // Outputs: Alex
-person.setAge(26);
-************************************************************************************
-
-Abstraction
- Abstraction is hiding the complex details of how something works and showing only the simple, necessary parts to the user.
-
- function Car() {
-    // Complex details (hidden)
-    let speed = 0;
-
-    // Simple interface (public method)
-    this.drive = function() {
-        speed += 10;
-        console.log(`Driving at ${speed} km/h`);
-    };
-}
-
-const myCar = new Car();
-myCar.drive(); // Outputs: Driving at 10 km/h
-
-
-3. Inheritance
- Inheritance lets one object (or class) “inherit” properties and methods from another, so you can reuse code and extend functionality.
-
-function Person(name) {
-    this.name = name;
-}
-
-Person.prototype.sayHello = function() {
-    console.log(`Hello, I'm ${this.name}`);
-};
---------------------------------------------------------------------------------------
-function Student(name, grade) {
-    Person.call(this, name); // Inherit Person's properties
-    this.grade = grade;
-}
-
-// Inherit Person's prototype methods
-Student.prototype = Object.create(Person.prototype);
-
-const student = new Student("Cody", "A");
-student.sayHello(); // Outputs: Hello, I'm Cody
-console.log(student.grade); // Outputs: A
-
-
-. Polymorphism
- Polymorphism lets different objects use the same method name but behave differently based on their own rules.
-class Animal {
-  makeSound() {
-    return "Some generic sound";
-  }
-}
-
-class Dog extends Animal {
-  makeSound() {
-    return "Woof!";
-  }
-}
-
-class Cat extends Animal {
-  makeSound() {
-    return "Meow!";
-  }
-}
-
-const dog = new Dog();
-const cat = new Cat();
-
-console.log(dog.makeSound()); // Output: Woof!
-console.log(cat.makeSound()); // Output: Meow!
----------------------------------------------------------------------------------------------
-function Animal() {}
-Animal.prototype.makeSound = function() {
-    console.log("Some sound");
-};
-
-function Dog() {}
-Dog.prototype = Object.create(Animal.prototype);
-Dog.prototype.makeSound = function() {
-    console.log("Woof");
-};
-
-function Cat() {}
-Cat.prototype = Object.create(Animal.prototype);
-Cat.prototype.makeSound = function() {
-    console.log("Meow");
-};
-
-const dog = new Dog();
-const cat = new Cat();
-dog.makeSound(); // Outputs: Woof
-cat.makeSound(); // Outputs: Meow
- */
 api 
 /**
 What is an API?  
@@ -166,17 +52,24 @@ Answer: It makes communication between apps easier, more predictable, and scalab
 --------------------------------------------------------------------------   
 
 What are the features of RESTful apis?  
+1:) Stateless
 
+2:) Client-Server Architecture
+   Feature: REST separates the client (e.g., a web browser or mobile app) from the server (e.g., a backend managing data). The client handles the user interface, while the server manages data and logic.
+
+   3:) Support for Multiple Data Formats
+Feature: REST APIs typically return data in formats like JSON or XML, with JSON being the most common due to its simplicity and readability.
+---------------------
 It is an architecture style to develop web application. 
 Use http protocol as a communication interface.
 It tranfer data through http methods. 
  
-
 – GET: collects information from a resource  
 – PUT:updates an api resource  
 – POST: creates a new resource in the server  
 – DELETE: removes a resource of the server  
 
+-------------------------------------------------------------------------------------------------
   Body-parser is the Node.js body parsing middleware. for handling json data from requestbody
 -------------------------------------------------------------------------------------------------
 
@@ -197,7 +90,7 @@ What are the key components of an HTTP request?
 A request line.   
 header fields.  
 A message body, if needed.  
-
+---------------------------------------------------------------------------
 The key components of an HTTP request are:
 1.HTTP Method: The HTTP method indicates the type of request being made, such as GET, POST, PUT, DELETE, HEAD, OPTIONS, etc.
 2.URL (Uniform Resource Locator): The URL specifies the location of the resource being requested, including the hostname, path, and query parameters.
@@ -214,7 +107,7 @@ Both requests and responses can also include other components, such as cookies, 
 
 ---------------------------------------------------------------------------------------------------------  
 What are the multiple ways to send data in an HTTP request. This data could be used for creating a resource or fetching a resource from a server.  
-Body ,query ,params  
+Body, query, params  
 
 Body params :
 Body of the request which contains all the data that the server needs to successfullly process the request. 
@@ -239,9 +132,12 @@ Idempotent methods are those methods that do not change the responses to the res
 DELETE method, get method, put method
 
 28. What is the maximum payload size that can be sent in POST methods?
-Theoretically, there is no restriction on the size of the payload that can be sent. 
+Theoretically, there is no restriction on the size of the payload that can be sent.
+
+node.js (with Express.js): By default, Express limits the JSON payload to 100KB (body-parser middleware setting: limit: '100kb'). This can be increased by configuring the limit option, e.g., express.json({ limit: '50mb' }). 
 ------------------------------------------------------------------------------------------------------------
- 25. What is Payload in terms of RESTful web services?
+ 
+25. What is Payload in terms of RESTful web services?
 Payload refers to the data passes in the request body.
  It is not the same as the request parameters. The payload can be sent only in POST methods as part of the request body
 ---------------------------------------------------------------------------------------------------------
@@ -313,7 +209,7 @@ What do you understand by RESTful Web Services?
 RESTful web services are services that follow REST architecture. REST stands for Representational State Transfer and uses HTTP protocol (web protocol) for implementation.
 -------------------------------------------------------------------------------
 
-4. What are the features of RESTful Web Services?
+4. What are the features of RESTful Web Services ? 
 Every RESTful web service has the following features:
 The service is based on the Client-Server model.
 The service uses HTTP Protocol for fetching data/resources, query execution, or any other functions.

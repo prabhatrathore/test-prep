@@ -3,7 +3,6 @@
 ECMAScript is the standard for JavaScript,defined by Ecma International to ensure JavaScript works the same way across different browsers and platforms.
 
 EcmaScript provides rules for JavaScript, ensuring code runs the same way everywhere.
-Significance: Standardization enabled cross-browser compatibility, making JavaScript a reliable choice for web development.
 
 2. ES1 (1997)
  The first EcmaScript version, released in 1997.
@@ -23,10 +22,19 @@ function sayHello() {
 
 
 3. ES5 (2009)
-What It Is: The fifth EcmaScript version, released in 2009, with significant new features.
+ The fifth EcmaScript version, released in 2009, with significant new features.
 
 “ES5 → 2009 (lots of new features).”
 * Key Features:
+1:) Strict Mode:
+2:) JSON Support:----------------------
+3:) Array Methods:----------------------------------
+            Introduced methods like forEach, map, filter, reduce, every, some.
+
+4:) Object Property Enhancements:
+    Added Object.create(), Object.defineProperty(), and getter/setter syntax.--------------
+
+---------------------------------------------------------------------------------------
  Strict Mode:
 Enables stricter parsing and error handling.
 Activated with "use strict"; at the start of a script or function.
@@ -69,6 +77,16 @@ Widely supported, still used in legacy projects.
  “ES6 (ES2015) → 2015 (Biggest update for JS). ES6 is also known as Modern Javascript.”
 
 Let and Const:********************************************
+Arrow Functions:************************************************
+Template Literals:***********************
+Destructuring:***********************************************
+Default Parameters:----------------------------------------------
+classes**************************************
+Spread and Rest Operators:*******************************
+Modules: import and export for modular code.***************
+
+---------------------------------------------------------------------------------
+
 let: Block-scoped variable (unlike var, which is function-scoped).
 const: Block-scoped, cannot be reassigned (but mutable for objects/arrays).
 Example:
@@ -92,8 +110,8 @@ Example:
 
 Explanation: Makes string formatting easier and more readable.
 --------------------------------------------------------------------------------------------------
-
 Destructuring:***********************************************
+
 Extracts values from arrays/objects into variables.
 Example: let {name, age} = {name: "Alex", age: 21};.
 Explanation: Simplifies data extraction, common in modern frameworks.
@@ -161,6 +179,7 @@ Known as “Modern JavaScript” due to its widespread adoption.
 
  “Ecma have a technical community known as TC39 had decided that for 2015. We release java script with new features every year (Annual release).”
 Key Features (Selected Post-ES6 Features):
+-------------------------------------------------------------------------------------------
 
 ES2016 (ES7):*--------------------------------------------
 Array.prototype.includes:
@@ -185,6 +204,7 @@ Object.entries() and Object.values():---------------------------
 
 Example: Object.entries({a: 1, b: 2}); // [['a', 1], ['b', 2]].
 Explanation: Easier object iteration.
+---------------------------------------------------------------------------------------------------------
 
 ES2018 (ES9):-----------------------------------
 Rest/Spread for Objects:
@@ -200,6 +220,9 @@ Explanation: Simplifies array processing.
 *********************************************************************************
 
 ES2020 (ES11):
+BigInt 
+Optional Chaining (?.):
+------------------------------------------------
 BigInt 
 Handles large integers.
 Example: let num = 9816543219865252772n;.
@@ -272,11 +295,6 @@ Post-ES6: Features like async/await and optional chaining are expected in 2025 i
 
 
 Common Interview Questions:
-What’s the difference between var, let, and const? (ES6)
-Answer:
- var is function-scoped and hoisted;
- let and const are block-scoped;
-  const can’t be reassigned.
 
 Explain arrow functions and their benefits. (ES6)
 Answer: Shorter syntax, lexical this, great for callbacks.

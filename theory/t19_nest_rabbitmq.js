@@ -1,6 +1,6 @@
 
 /**
-nest is a progressive node.js framework for building efficient and scalable server-side applications.
+Nest is a progressive node.js framework for building efficient and scalable server-side applications.
 
 build with typescript and heavily inspired by angular. 
 uses moduler architecture for better organization. 
@@ -167,7 +167,6 @@ Broker: The RabbitMQ server acting as an intermediary.
 
 
 🔶 3. Why do we use RabbitMQ with Node.js applications?
-Answer:
 To handle asynchronous tasks, decouple services, ensure reliable delivery, and process background jobs without blocking the event loop.
 
 🔶 4. What is the difference between RabbitMQ and Kafka?

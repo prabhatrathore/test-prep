@@ -15,15 +15,42 @@
  This query retrieves all the records from the Employees table.
 
  ------------------------------------------------------------------------------------
-What is Primary Key?
-A Primary Key is a column in a table that uniquely identifies
-each row in that table. It does not allow NULL values and must always contain unique
-values.
-Key Features:
-Uniquely identifies each record
-Cannot have duplicate values
-Cannot contain NULL values
-Only one primary key is allowed per table
+What is the Difference Between WHERE and HAVING?
+
+'where' we use filter row before 'grouping' 
+
+'filter' , filter group after 'grouping'.
+------------------
+filter type 
+'where' is row level filter 
+
+having is group level filter
+----------------------------------
+execution order 
+where, apply before GROUP BY 
+HAVING,  applied after GROUP BY
+------------------------------------------------------------------------------------
+
+What is Self Join?
+Self Join is a type of join where a table is joined with itself to compare rows within the same table.
+------------------------------------------------------------------------------------
+
+What is Cross Join?
+Cross Join returns the Cartesian product of two tables, meaning it combines every row from the
+first table with every row from the second table. It does not require any condition.
+
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+
+ What is Primary Key?
+ A Primary Key is a column in a table that uniquely identifies
+ each row in that table. It does not allow NULL values and must always contain unique
+ values.
+ Key Features:
+ Uniquely identifies each record
+ Cannot have duplicate values
+ Cannot contain NULL values
+ Only one primary key is allowed per table
 
  ------------------------------------------------------------------------------------
 What are the types of SQL commands?
@@ -228,6 +255,9 @@ An ORM (Object-Relational Mapping) is a tool that acts as a bridge between a rel
 
 Q:) What is a database.  
 A database is a storage container that holds data we can access, modify and analyze. 
+or
+A database is an organized collection of data that is stored and managed electronically. 
+
 ------------------------------------------------------------------------------------------------------
 
 Q:) How would you scale MySQL for SupplyMatch as the platform grows to millions of transactions?
@@ -237,18 +267,18 @@ A: Scaling MySQL for handling increased transactions, users, and data volume. St
   Vertical Scaling: Increase server resources (CPU, RAM, SSD) to handle more load.
 
 ------------------------------------------------------------------------------------------------------------
-Horizontal Scaling:
+Horizontal Scaling: includes
 
-✅ Sharding
-Splits entire database data across multiple servers       (each server holds a shard).
+1:) ✅ Sharding :
+splitting up data across multiple servers              (each server holds a shard).
 Each shard is a different database server with a subset of data.
 Used for horizontal scaling to handle huge traffic and data load.
 
-✅ Partitioning
+2:) ✅ Partitioning
 Splits one table into smaller parts called partitions.
 All partitions are still in the same database server.
 
-Indexing and Optimization: Add indexes on frequently queried columns (e.g., product_id, stock_quantity) and optimize queries
+3:) Indexing and Optimization: Add indexes on frequently queried columns (e.g., product_id, stock_quantity) and optimize queries
 
 Caching: Use Redis. 
 -----------------------------------------------------------------------------------------------------------
@@ -597,8 +627,9 @@ DELETE: Remove data (e.g., UserModel.destroy({ where: { id: 1 } })).
 
 Redundancy means having multiple copies of the same data in the database.
 
-Normalization :
-Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity. It involves splitting data into tables and defining relationships (e.g., one-to-many).
+Normalization : 
+Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity. 
+Normalization involves splitting data into tables and defining relationships (e.g., one-to-many).
 
 Users Table: 
 | UserID | Name  |
@@ -672,7 +703,7 @@ TRUNCATE: Resets the table to its initial state, including resetting auto-increm
  Client-Side Rendering (CSR) and Server-Side Rendering (SSR) are two approaches to rendering web pages, determining where and how the HTML content is generated.
  
  What is it? csr
-The server sends a minimal HTML page with JavaScript (e.g., a React or Vue app). The browser downloads the JavaScript,executes it, and renders the full HTML content on the client side (in the browser).
+The server sends a minimal HTML page with JavaScript (e.g., a React or Vue app). The browser downloads the JavaScript,executes it, and renders the full HTML content on the client side (in the browser) .
 
 How it works:
 The server provides a basic HTML skeleton and a JavaScript bundle.
@@ -843,11 +874,11 @@ MySQL vs. MongoDB: Key Differences
 Aspect          	MySQL	
 Type	           Relational database (uses tables with rows and columns).
 Data Structure	   Fixed schema (predefined tables with columns).
-Query Language	   Uses SQL (standardized query language).
+Query Language	   Uses SQL (structure query language).
 Scalability	       Scales vertically (needs more powerful servers).
 ACID Compliance	   Fully ACID-compliant (ensures reliable transactions).
 Data Types	       Structured data (e.g., numbers, strings in fixed columns).
-    Performance	   Fast for structured data and complex joins.
+ Performance	   Fast for structured data and complex joins.
  Use Cases	       Financial systems, e-commerce, apps needing complex queries and joins.    
 Examples	       Banking systems, traditional CMS, inventory management.
 
@@ -861,7 +892,7 @@ ACID Compliance	     Offers eventual consistency; less strict on ACID for better
  Performance         Fast for large-scale, unstructured data and simple queries.
 
 Use Cases	    Web apps, real-time analytics, content management, IoT.
-    Examples    Social media platforms, product catalogs, event logging.
+Examples    Social media platforms, product catalogs, event logging.
 
 
     Pros and Cons
@@ -928,7 +959,7 @@ a 3-byte incrementing counter, initialized to a random value
 🔹 What is oplog in MongoDB?
 
 👉 Oplog (operations log) is a special log collection.
-✅ It records all changes (insert, update, delete) in the database.
+✅ operations log records all changes (insert, update, delete) in the database.
 ✅ Used for replication – secondary servers copy data changes from it.
 
 🔑 In one line:
@@ -942,7 +973,7 @@ example, a stage can filter documents, group documents, and calculate values.
 
 when the data is not available directly then we use aggregation pipline, here in this output of one pipe will be input of second pipe and so on because we fetch data from different tables.
 
-👉 Aggregation is a way to process and combine data from multiple documents.
+((👉 Aggregation is a way to process and combine data from multiple documents.))
 ✅ It helps to filter, group, sort, and calculate data to get meaningful results.
 ----------------------------------------------------------------------------------
 
@@ -958,7 +989,7 @@ Journaling saves changes in a log first to protect data from crashes.
 🔹 Why is MongoDB schema-less?
 
 👉 MongoDB is schema-less because:
-✅ It stores data in JSON-like documents, which can have different fields and structures.
+✅ MongoDB stores data in JSON-like documents, which can have different fields and structures.
 ✅ we don’t need to define a fixed schema before adding data.
 
 🔑 In one line:
@@ -974,7 +1005,9 @@ Storage engine decides how MongoDB saves and retrieves data.
 
 ----------------------------------------------------------------------------------
 Relationships in MongoDB
-MongoDB, being a NoSQL database, handles relationships differently from relational databases like MySQL. Relationships in MongoDB are managed in two main ways:
+MongoDB, being a NoSQL database, handles relationships differently from relational databases like MySQL.
+
+Relationships in MongoDB are managed in two main ways:
 
 Embedded Documents: Store related data within a single document (like JSON). For example, a user document can include an array of addresses inside it. Best for one-to-few relationships.
 
