@@ -819,6 +819,10 @@ console.log(str.slice(-3, -1)); // Outputs "ll"
  ======================================================================================================= 
  The slice() method is used to extract a part of a string or array and returns it as a new value — without changing the original.
 
+ Returns a shallow copy of a portion of an array, specified by start and end indices (end not included). Supports negative indices.
+ let arr = [1, 2, 3, 4];
+ let sliced = arr.slice(1, 3); // [2, 3]
+
  let str = "JavaScript";
 console.log(str.slice(-6));       // "Script"
 console.log(str.slice(-6, -3));   // "Scr"
@@ -893,21 +897,19 @@ let index = arr.findIndex(num => num > 2); // 2
 ------------------------------------------------------------------------------------------------
 
 Array.includes()
- Checks if an array or string contains a specific value, returning true or false
+ Checks if an array or string contains a specific value, returning true or false .
 let arr = [1, 2, 3];
 console.log(arr.includes(2)); // true
 */
 // console.log("first".includes("f"),'PPASDWEDWEFW')//true
 /*
 -------------------------------------------------------------------------------------------------
-Array.join()
+ Array.join()
  Joins all elements of an array into a string, optionally with a separator.
+
 --------------------------------------------------------------------------------------------------
- Array.slice()
- Returns a shallow copy of a portion of an array, specified by start and end indices (end not included). Supports negative indices.
+ 
 */
-let arr = [1, 2, 3, 4];
-let sliced = arr.slice(1, 3); // [2, 3]
 /*-------------------------------------------------------------------------------------------------
 
 Array.splice()
@@ -1224,13 +1226,13 @@ Once obj is set to null, the object is eligible for garbage collection, and the 
 WeakMap is like a Map, but:
 Keys must be objects
 Entries can be garbage collected if the object is no longer used
-It’s not iterable
+It’s not iterable 
 */
 let WeakSet
 /*
 In javascript, a Set is a collection of unique and ordered elements. 
 ---------------------------------------------------------------------------------------------------------
-🔍 What is WeakSet?
+🔍 What is WeakSet ? 
 A WeakSet is a special type of Set in JavaScript where: 
 It only stores objects (no primitive values like numbers or strings).
 The objects in a WeakSet are weakly referenced, meaning:
@@ -1316,7 +1318,11 @@ let tgb = [3, "ghar", { r: 3 }, function f() { }, []]
  Browser Object Model is known as BOM.
  Browser Object Model allows users to interact with the browser. 
  ---------------------------------------------------------------------------------------------------------
- In JavaScript, the typeof operator is used to determine the type of a given value or variable.
+ What is the use of a type of operator?
+
+The typeof operator in JavaScript is a built-in operator that allows us to determine the data type of a value or variable.
+
+
  function myFunc() {}
 console.log(typeof myFunc); // "function"
 ----------------------------------------------
@@ -1382,9 +1388,7 @@ mage.greet(); // Hi, I'm Mage!
 "Can Be re-declared",   "No",   "no",  "Yes" 
  */
 
-/**
- Introduced in the ES6 version, classes are nothing but syntactic sugars for constructor functions
- */
+
 var x = 23;
 
 (function () {
@@ -1583,6 +1587,23 @@ example(5, 10); // a is bound to 5, b is bound to 10
 -----------------------------------------------------------------------------------------
 */
 /**
+ 
+loose Equality Coercion
+
+ while using the ‘==’ operator, implicit coercion takes place.
+The ‘==’ operator, converts both the operands to the same type and then compares them.
+Example:
+var a = 12;
+var b = "12";
+a == b // Returns true because both 'a' and 'b' are converted to the same type and then compared. Hence the operands are equal.
+Coercion does not take place when using the ‘===’ operator. Both operands(value) are not converted to the same type in the case of ‘===’ operator.
+
+Example:
+var a = 226;
+var b = "226";
+a === b // Returns false because coercion does not take place and the operands are of different types. Hence they are not equal.
+
+
   Type coercion in JavaScript only coerces to the string, number, and Boolean primitive types. There's no way in JavaScript to coerce a value type to object or function .
 
  Type Coercion refers to the process of automatic or implicit conversion of values from one data type to another. This includes conversion from Number to String, String to Number, Boolean to Number etc. when different types of operators are applied to the values.
@@ -2444,35 +2465,15 @@ How objects communicate and interact with each other.
 Generators pause and resume code execution.
 Async/Await waits for promises to resolve to write asynchronous code like synchronous code.
  */
-// Given the following array: [2,3,4,5,7]
-// Perform 3 right rotations:
-// First rotation : [7,2,3,4,5] , Second rotation : [5,7,2,3,4] and, Third rotation: [4,5,7,2,3]
-
-// return [4,5,7,2,3]
-arr = [2, 3, 4, 5, 7]
-
-for (let i = 0; i < 3; i++) {
-  let lastele = arr[arr.length - 1]
-  let first_ele = arr[0]
-  console.log(i, 'iiiiiiiiiiii', arr[i])
-  for (let j = arr.length - 1; j > 0; j--) {
-    arr[j + 1] = arr[j]
-    console.log(j, 'iiiiFFVVVV', arr)
-  }
-  return
-  // arr[0] = lastele
-  // arr[arr.length - 1] = lastele
-}
-console.log(arr, 'aaaaaaaa')
 
 // What is Object.seal and Object.freeze in JavaScript?
 // Sealed prevents adding/deleting properties.
 // Frozen prevents modifications.
 
-// Feature                      	                   Object.seal()	Object.freeze()
-// Prevents new properties?	                             ✅ Yes     	✅ Yes
-// Prevents deletion?	                                   ✅ Yes	✅ Yes
-// Prevents modification of existing properties?       	❌ No	✅ Yes
+// Feature                      	                       Object.seal()  	Object.freeze()
+// Prevents new properties?	                                 ✅ Yes      	✅ Yes
+// Prevents deletion?	                                       ✅ Yes	      ✅ Yes
+// Prevents modification of existing properties?            	❌ No	      ✅ Yes
 // const obj = { name: "Alice" };
 // Object.seal(obj);
 // obj.name = "Bob"; // Allowed
@@ -2499,17 +2500,17 @@ function outer() {
 
 let fn = outer();
 fn(); // Output: 20 (It uses 'a' from where inner() was defined)
--------------------------------------------------------------------------
+*/
+let Dynamic_Scoping_NOT_used_in_JavaScript
+/*-------------------------------------------------------------------------
 
 🔹 Dynamic Scoping (NOT used in JavaScript)
 🔧 Scope depends on who called the function (runtime call stack).
 
 It uses variables from the calling function, even if not defined nearby.
-
 Found in some older languages like Bash or early Lisp.
 
 🚫 JavaScript doesn’t use this.
-
 ✅ Idea (in pseudo-code):
 a=10
 
@@ -2517,21 +2518,19 @@ function outer {
   a=20
   inner
 }
-
 function inner {
   echo $a
 }
 
-outer  # Output: 20 (inner() used 'a' from outer because it was called from there)
+outer  # Output: 20 (inner() used 'a' from outer because it was called from there)*/
+
+/*
 ------------------------------------------------------------------------------------
 What is Negative Infinity?
 Negative Infinity means a value that is smaller than any other number.
 
 In JavaScript, it’s written as:
 
-js
-Copy
-Edit
 -Infinity
 
 ✅ Key Points:
@@ -2540,10 +2539,6 @@ It is a special value in JavaScript.
 Nothing is less than -Infinity.
 
 It often comes from dividing a negative number by zero:
-
-js
-Copy
-Edit
 console.log(-1 / 0); // -Infinity
 
 console.log(Number.NEGATIVE_INFINITY); // -Infinity
@@ -2554,7 +2549,7 @@ console.log(-9999999999 < -Infinity);  // false
  */
 
 
-
+let t13
 /**
 -----------------------------------------------------------------------------------------------------------------
 What is an Iterator?
@@ -2580,8 +2575,6 @@ Finally{
 }
 
 **********************************************************
-What is the use of a type of operator?
-The typeof operator in JavaScript is a built-in operator that allows us to determine the data type of a value or variable.
 
 **********************************************************
 
@@ -2604,21 +2597,6 @@ Yes, JavaScript does support automatic type conversion. It is the common way of 
 .......................................................................
 
 .......................................................................
-
-Equality Coercion
-
- while using the ‘==’ operator, coercion takes place.
-The ‘==’ operator, converts both the operands to the same type and then compares them.
-Example:
-var a = 12;
-var b = "12";
-a == b // Returns true because both 'a' and 'b' are converted to the same type and then compared. Hence the operands are equal.
-Coercion does not take place when using the ‘===’ operator. Both operands(value) are not converted to the same type in the case of ‘===’ operator.
-
-Example:
-var a = 226;
-var b = "226";
-a === b // Returns false because coercion does not take place and the operands are of different types. Hence they are not equal.
 .......................................................................
 
 */

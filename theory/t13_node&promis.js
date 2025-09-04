@@ -1,5 +1,18 @@
 // Can you describe your experience in developing RESTful APIs using Node.js and Express?
+/**
+ I have over 3 years of experience developing RESTful APIs using Node.js and Express.
+I  start by setting up an Express.js server with a clear folder structure (routes, controllers,services, models, middlewares).
 
+For database integration, I have worked with both MySQL (using Sequelize/Raw queries) and MongoDB (using Mongoose), depending on project needs.
+
+I design APIs following REST principles — clean endpoints, proper HTTP methods (GET, POST, PUT, DELETE), and meaningful status codes.
+
+I use middleware for authentication (JWT),  request validation (Joi).
+I ensure security by implementing cors, .
+
+For performance, I integrate Redis for caching frequently accessed data and implement pagination & filtering on large datasets.
+
+*/
 /**
   Definition
   Node.js is a open-source, cross-platform JavaScript runtime environment that enables server-side JavaScript execution, (( allowing developers to build web applications using a single language across client and server)).
@@ -340,9 +353,7 @@ After the client makes an API call, the event loop continues to run, and when th
 So, to summarize, the notification mechanism of Events of Node.js responds to the server from the previous API call, not directly to the client.
 
 ------------------------
-The event loop is a mechanism that processes
-asynchronous tasks in a single thread by continuously
-checking for and executing callback functions.
+The event loop is a mechanism that processes asynchronous tasks in a single thread by continuously checking and executing callback functions.
 ----------------------------------------------------------------------------------
 Node.js is very fast because it builds on Google Chrome's V8 JavaScript engine. 
 Node.js is single threaded but highly scalable.
@@ -380,6 +391,7 @@ Node.js supports two categories of data type - primitive and non-primitive.
 ----------------------------------------------------------------------------------------------
 
 */
+
 let what_are_the_api_in_nodejs
 /*
 Node.js provides a large number of built-in APIs, including but not limited to:
@@ -418,6 +430,7 @@ HTTP API - creating a simple HTTP server:
 9.});
 10.
 */
+let r;
 /*
 
 ------------------------------------------------------------------------------------------------------
@@ -428,33 +441,33 @@ HTTP API - creating a simple HTTP server:
     Platform dependency: Node.js is mostly used on the server-side and is used in server-side development.
 
 -------------------------------------------------------------------------------------------------------------*/
- Explain the working of Node.js ? 
-/*
-When clients interact with a web application, they send requests to the web server. These requests can be for getting data, deleting data, or updating data.
+ Explain the working of Node.js ?
+  /*
+  When clients interact with a web application, they send requests to the web server. These requests can be for getting data, deleting data, or updating data.
+  
+  these requests are added to the Event Queue, which is like a to-do list for the program. The Event Loop then processes the requests one by one.
+  
+  If a request is simple and doesn't require any external resources, like reading a simple file, it's processed immediately by the Event Loop and returned to the client.
+  
+  But if a request is complex and requires access to external resources, like accessing a database, a separate thread from the Thread Pool is assigned to handle that request. 
+  
+  This thread is responsible for completing the task and sending the response back to the Event Loop, which then sends the response back to the client.
+  
+  Overall, this approach allows for non-blocking requests to be processed quickly, while still allowing for complex blocking requests to be handled without slowing down the program. It's like having multiple workers completing different tasks at the same time to make the overall process more efficient.
+  
+  ----------------------------------------------------------------------------------------------
+  
+  How can you manage the packages in our Node.js project?
+  
+  To keep track of the packages we've installed, we can use a configuration file called package.json. This file lists all the packages our project depends on, along with their versions. This makes it easy to share our project with others.
+  package.json store all meta data stored .
+  
+  Another useful file is package-lock.json, which records the exact versions of packages that were installed on our system.
+  
+  ------------------------------------------------------------------------------------
+  -*/
 
-these requests are added to the Event Queue, which is like a to-do list for the program. The Event Loop then processes the requests one by one.
-
-If a request is simple and doesn't require any external resources, like reading a simple file, it's processed immediately by the Event Loop and returned to the client.
-
-But if a request is complex and requires access to external resources, like accessing a database, a separate thread from the Thread Pool is assigned to handle that request. 
-
-This thread is responsible for completing the task and sending the response back to the Event Loop, which then sends the response back to the client.
-
-Overall, this approach allows for non-blocking requests to be processed quickly, while still allowing for complex blocking requests to be handled without slowing down the program. It's like having multiple workers completing different tasks at the same time to make the overall process more efficient.
-
-----------------------------------------------------------------------------------------------
-
-How can you manage the packages in our Node.js project?
-
-To keep track of the packages we've installed, we can use a configuration file called package.json. This file lists all the packages our project depends on, along with their versions. This makes it easy to share our project with others.
-package.json store all meta data stored .
-
-Another useful file is package-lock.json, which records the exact versions of packages that were installed on our system.
-
-------------------------------------------------------------------------------------
--*/
-
-Q.1:What are modules in Nodejs. Do you know any commonly used modules 
+  Q.1:What are modules in Nodejs.Do you know any commonly used modules
 /*
 A modules in Node.js is a block of code that provides specific functionality, which can be reused across different parts of an application. 
 
@@ -487,7 +500,7 @@ Example:
  •npm install mongoose   
 
 ---------------------------------------------------------------------------------------------------------*/
-Q2 . How do you write functions and global variables in a module A and use them in module B 
+Q2.How do you write functions and global variables in a module A and use them in module B
 /*
 Module A=> 
 const isString = function (value) { 
@@ -543,7 +556,7 @@ Body-parser is third party NPM and work as a middleware which helps to convert
 app.use('/', route) is global middleware.  
 */
 
- middlewares
+middlewares
 
  /*
 6. What are middlewares and why do you need them? 
@@ -635,7 +648,7 @@ Application-Level = Global tasks.
 Route-Level = Targeted tasks.
 -------------------------------------------------------------------------------------------*/
  
-Q 9. Name the middlewares you have used in your assignments and project implementation. 
+Q 9. Name the middlewares you have used in your assignments and project implementation.
 /*
 middlewares are 
 a. multer (Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. )
@@ -776,7 +789,6 @@ Promise.resolve() and Promise.reject(): These static methods are used to create 
 -----------------------------------------------------------------------------
 
 Async/Await : Introduced in newer versions of JavaScript, the async/await syntax provides a more synchronous style of writing asynchronous code using promises. The async keyword is used to define an asynchronous function, and the await keyword is used to pause the execution of the function until a promise is fulfilled or rejected.
-
 
 */
 // Syntax defines the set of rules for writing programs. 
@@ -1127,14 +1139,158 @@ Child processes allow Node.js to handle multiple tasks concurrently by creating 
 -----------------------------------------------------------
 -----------------------------------------------------------
 
-Event loop 
-Closure 
-Memorie
-Event loop question on executing order
-For loop question on object to compare the object
-Portfolio question which have object in array to count the object values and key
-Differences between micro and macro task
-Differences between js event loop and node event loop
 
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+Differences between js event loop and node event loop ?
 
+🔹 JavaScript Event Loop (Browser)
+
+Runs inside browser's JS engine (Chrome, Firefox, etc.).
+
+Responsible for handling:
+1:)Call Stack (for executing synchronous code).
+2:) Web APIs (for handling DOM, timers, fetch, etc).
+3:) Callback Queue ((task ,message)queue ) (macrotasks)-→ e.g.,  setTimeout, setInterval, ((setImmediate (browser doesn’t have setImmediate) ))
+4:) Microtask Queue which has higher priority → e.g., Promise.then, (promises, mutation observers).
+---------------------------------------------------------------------------------
+example : 
+console.log("Start");
+
+setTimeout(() => console.log("Timeout"), 0);
+Promise.resolve().then(() => console.log("Promise"));
+
+console.log("End");
+
+-----------------------------------------------------------------------
+Start
+End
+Promise   // microtask runs before
+Timeout
+-=-=-=-=============================---------------------------------------------
+
+🔹 Node.js Event Loop
+
+Node.js uses libuv (C++ library) to handle async I/O.
+Event loop is more complex than browser because Node.js has:
+
+File system I/O
+Network calls
+Streams
+Timers
+process.nextTick
+----------------------------------------------------------------------
+Event loop in Node has 6 phases:
+1:) Timers →  Runs callbacks scheduled by setTimeout and setInterval.
+2:) Pending callbacks → executes I/O callbacks (like TCP errors).
+3:) Idle, prepare → internal use.......  Only Node’s internal modules (like libuv) use it.
+4:) Poll → 
+The most important phase. Handles:
+New incoming connections (like HTTP requests).
+Reading/writing files (fs module).
+Executing I/O callbacks.
+
+5:) Check phase →   Executes callbacks scheduled by setImmediate().
+
+6:) Close callbacks → Executes callbacks for things that are closed, like socket.on("close", ...) 
+------------------------------------------------------------------------------------
+👉 Priority of queues in Node:
+process.nextTick → Always runs before promises.
+Microtasks (Promise.then) → Runs after current phase, before going to next phase.
+-------------------------------------------------------------------------------------------------
+⚡ Example in Node:
+
+console.log("Start");
+
+setTimeout(() => console.log("Timeout"), 0);
+setImmediate(() => console.log("Immediate"));
+process.nextTick(() => console.log("NextTick"));
+Promise.resolve().then(() => console.log("Promise"));
+console.log("End");
+---------------------------------------------------------------------------------------
+
+Output in Node.js:
+
+Start
+End
+NextTick    // higher priority
+Promise
+Timeout / Immediate (order may vary)
+**************************************************************
+
+3:) Idle, prepare 
+🔹 Can developers use it?
+❌ No.
+There are no APIs (like setTimeout, setImmediate, etc.) that allow us to directly schedule callbacks into the Idle/Prepare phase.
+Only Node’s internal modules (like libuv) use it.
+--------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Differences between micro and macro task ? 
+🔹 Microtasks
+
+Very small, high-priority tasks.
+Always executed immediately after the current phase,but before moving to the next phase.
+
+Examples in Node.js:
+process.nextTick() (special, even higher priority)
+Promise.then() / catch() / finally()
+queueMicrotask()
+-------------------------------------------------------------
+👉 Key Point: Microtasks run before macrotasks.
+👉 Even if timers are ready, microtasks will empty first.
+--------------------------------------------------------------------------
+🔹 Macrotasks
+
+Bigger tasks scheduled for later phases ( of the event loop.)
+Executed one at a time in specific phases (Timers, Poll, Check).
+
+Examples in Node.js:
+setTimeout
+setInterval
+setImmediate
+
+I/O callbacks (like fs.readFile)
+👉 Key Point: Macrotasks happen after microtasks have finished.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+🔑 Rules of Execution
+
+All synchronous code runs first (top to bottom).
+Then the microtasks queue runs (e.g. Promise.then, process.nextTick).
+Then the macrotasks queue runs (e.g. setTimeout, setInterval, setImmediate).
+This repeats in cycles.
+
+example 
+console.log("A");
+setTimeout(() => console.log("B"), 0);
+Promise.resolve().then(() => console.log("C"));
+console.log("D");
+
+👉 Execution order:
+"A" → sync
+"D" → sync
+"C" → microtask (Promise)
+"B" → macrotask (setTimeout)
+--------------------------------------------------------------------------------
+🔑 Memory in JavaScript
+
+1. Memory Lifecycle
+
+Every program (including JS) goes through:
+Allocate memory → when we create variables, objects, functions, etc.
+Use memory → read/write values, execute functions.
+Release memory → when data is no longer needed, garbage collector frees it.
+
+2. Memory Types
+
+Stack (Primitive values & function calls)
+Stores simple values: numbers, strings, booleans, null, undefined.
+
+(Also stores function execution context.)
+
+Heap (Objects & reference types)
+Stores objects, arrays, functions.
+Memory is allocated dynamically.
+-------------------------------------------------------------------------------------
 */

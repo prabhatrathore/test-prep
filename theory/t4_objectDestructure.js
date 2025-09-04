@@ -9,7 +9,7 @@ const obj3 = {
     country: 'india'
 };
 
-let { band,age:f, age: val2, ...restProperty } = obj3
+let { band, age: f, age: val2, ...restProperty } = obj3
 // console.log(band) // annfo-=-=3
 // console.log(f,':::"""') // 11231
 // console.log(val2) // 11231
@@ -49,7 +49,7 @@ console.log(b)// 1
 // -----------------------------------------------------------------------------
 
 // in array destructuring
- arr = ['name', 22, 'india', ['male', 20000]];
+arr = ['name', 22, 'india', ['male', 20000]];
 var [user, age = 9, country, [gender, salary]] = arr;//age default value 9
 // console.log(user); //name
 // console.log(age);// 22

@@ -18,7 +18,6 @@ var x = 5;
 // f = 54      // f iss not defined 
 
 /**
- 
 Hoisting with var
  When we use var, the variable is hoisted to the top of its scope (like the whole function or global scope) and is automatically initialized with the value 'undefined'. This means we can use the variable before declaring it, and it won’t throw an error—it will just show 'undefined'.
 */
@@ -37,18 +36,19 @@ It is a behaviour (phase) where we try to access a variable before it is initial
 
 Examples of temporal dead zone:
 x = 23; // Gives reference error
-
 let x;
+
 -------------------------------------------------------------------------------------------
+
 function anotherRandomFunc(){
   message = "Hello"; // Throws a reference error
   let message;
 }
 anotherRandomFunc();
 
-In the code above, both in global scope and functional scope, we are trying to access variables which have not been declared yet. This is called the Temporal Dead Zone .
-✔️ let and const are hoisted but kept in "Temporal Dead Zone (TDZ)" until they are declared.
+In the code above, both in global scope and functional scope, we are trying to access variables which have not been declared yet. This is called the Temporal Dead Zone.
 
+✔️ let and const are hoisted but kept in "Temporal Dead Zone (TDZ)" until they are declared.
 
 --------------------------------------------------------------------------------------------------
 Coding problems:
@@ -197,9 +197,9 @@ function outer() {
     inner();
 }
 /**
- ✅ 2. How does lexical scoping work with this keyword?
+ ✅ 2. How does lexical scoping work with this keyword ? 
 Lexical scope and 'this' are different.
-this depends on how a function is called, not where it’s defined.
+'this' depends on how a function is called, not where it’s defined.
 Lexical scope is based on where it’s written in code.
 ---------------------------------------------------------------------------------
 
@@ -214,7 +214,7 @@ Web Workers run JavaScript in background threads, so heavy tasks don’t block U
 ---------------------------------------------------------------------------------
 
 ✅ 6. Explain debouncing and throttling.
-🔹 Debouncing: Runs a function after a delay, and resets timer if called again.
+🔹 Debouncing: Runs a function after a delay, and resets timer if called again . 
 (e.g., search bar input)
 Executes only after a pause.
 ---------------------------------------------------------------------------------

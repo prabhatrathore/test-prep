@@ -18,13 +18,12 @@
 What is the Difference Between WHERE and HAVING?
 
 'where' we use filter row before 'grouping' 
-
 'filter' , filter group after 'grouping'.
 ------------------
 filter type 
 'where' is row level filter 
 
-having is group level filter
+'having' is group level filter
 ----------------------------------
 execution order 
 where, apply before GROUP BY 

@@ -1,20 +1,18 @@
 //  Rest operator (parameter):
 
 // Rest parameter provides an improved way of handling the parameters of a function.
-// Using the rest parameter syntax, we can create functions that can take a variable number of arguments.
-// Any number of arguments will be converted into an array using the rest parameter.
+// rest parameter allows us to pass an indefinite number of parameters to a function and access them in an array.
+
 // Rest parameters can be used by applying three dots (...) before the parameters.
 // **Note- Rest parameter should always be used at the last parameter of a function:
-//  The rest operator (parameter) (...) is used to collect multiple elements into a single variable. 
-// rest parameter allows us to pass an indefinite number of parameters to a function and access them in an array.
-// Syntax: Used in function parameters (function(...args)) or destructuring 
+
+// Syntax: Rest parameters Used in function parameters (function(...args)) or destructuring 
 // const [first, ...rest] = array.
 
 function sum(name, ...ags) {  // rest operator
 }
 
 let arr = [22, 33, 44, 55, 23, 34];
-sum('function', ...arr) //spread operator means alag alag argument mai convert ho gya .
 
 // --------------------------------------------------------------------------------------------
 function sol(...numbers) {
@@ -38,6 +36,8 @@ ab = myfunc()
 // console.log(ab())// hello
 
 /**
+sum('function', ...arr) //spread operator means alag alag argument mai convert ho gya .
+ 
 The spread operator (...) is used to “spread” or expand elements of an array, (object,) or string into individual items.
 The spread operator is commonly used to make shallow copies of JS objects
 
@@ -63,17 +63,6 @@ let gq2 = 'hello'
 let t = [...gq, ...gq2]
 // console.log(...gq,'@@@',t?.toString())
 
-/*
------------------------------------------------------------------------------------------------
-
-Rest vs. Spread: Quick Comparison
-Rest: Collects multiple items into one array (used in parameters or destructuring).
-Example: function(...args) or const [first, ...rest].
-
-Spread: Expands one item (array, object, string) into multiple individual items.
-Example: [...array] or {...object}.
-
-*/
 // Note: There must be only one rest operator in javascript functions.
 
 let arr1 = [22, 33, 23, 4, 53, 3432, 42];
@@ -132,10 +121,10 @@ deepCopyObject.b.c = 3;
 //object literals
 // An object literal is a way to create an object in JavaScript using curly braces {} with key-value pairs. It’s a simple, direct way to define and store data as properties and methods in a single structure.
 
-let name = 'functionn literals';
+let name = 'function literals';
 let age = 33;
 let obj = {
-    name,       //agr property name  and variable name same h to aise likh skte  
+    name,       //agr property name and variable name same h to aise likh skte  
     age,
 };
 // console.log(obj,";[pol;[p");
@@ -180,6 +169,7 @@ let res = name2(fname, lname); //
 console.log(res);// { fname: 'fisrtname', lname: 'lastname' }
 
 console.log(typeof null, "WWWWWWWW")//object
+// typeof null is "object" because of a historical bug in JavaScript’s type system, (and it remains for compatibility reasons).
 ///////////////////////////////////////////////
 
 let num1 = 7
@@ -221,8 +211,7 @@ console.log(newarr2);
 //     '7', '8', '6', '9',
 //     '6', '8'
 //   ]
-
-
+---------------------------------------------------------------------------------- 
 // spread operator in objects
 const obj = {
     name: 'anc',
@@ -234,7 +223,7 @@ const obj2 = {
 };
 obj2.ratio = 2
 const newobj = { ...obj, ...obj2 }
-obj2.as = 112121
+obj2.as = 112121  
 console.log(newobj) // { name: 'ooooo', age: 32, addresss: 'delhi', ratio: 2}
 //==============================
 const newobj2 = { ...'abc' }
@@ -416,6 +405,7 @@ console.log(arr); //   [1, 2, 3]
 // const mergedUsers = {...user1, ...user2};
 // console.log(mergedUsers)   //{name :"andrew",age:22,location:"Philadelphia"}
 ------------------------------------------------------------------------------------------------
+
 // Output:
 // mergedUsers is a copy of user1 and user2. Actually, every enumerable property on the objects will be copied to mergedUsers object. The spread operator is just a shorthand for the Object.assign() method but, they are some differences between the two.
 */

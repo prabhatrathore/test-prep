@@ -1,21 +1,21 @@
-api 
+waht_is_an_api 
 /**
-What is an API?  
 API allows interactions between systems by following a set of standards and PROTOCOLS in order to share FEATURE, INFORMATION and DATA.
-(API ACTS AS an interface between different applications).
-api act as a bridge between frontend and backend.it allow two application to talk to each other.
+(API ACTS as a interface between different applications).
+api act as a bridge between frontend and backend.
+api allow two application to talk to each other.
 
 What is a REST API?
-=> A REST API is a way for two computer programs (like a web app and a server) to talk to each other over the internet using simple rules. It uses the HTTP protocol (the same thing our browser uses to load websites) to send and receive data.
-=> it is a type of api that follow certain rules. 
- 
+=> A REST API is a way for two computer programs (like a web app and a server) to talk to each other over the internet using simple rules. It uses the HTTP protocol to send and receive data.
+=> REST API is a type of api that follow certain rules. 
+ -------------------------------------------------------------------------------------
 Details:
 Architecture Style: REST (Representational State Transfer) is a set of guidelines for building web applications that communicate efficiently.
 HTTP Protocol: It uses HTTP methods like GET (to fetch data), POST (to send data), PUT (to update data), and DELETE (to remove data).
-put method: used to update  existing data completely
+put method: used to update existing data completely.
 patch method: used to partially update existing data. 
 Data Transfer: It sends and receives data in formats like JSON or XML.
-
+----------------------------------------------------------------------------------------------
 
 What is a RESTful API?
 (Representational State Transfer Application Programming Interface) is a set of rules that allows applications to communicate
@@ -55,7 +55,7 @@ What are the features of RESTful apis?
 1:) Stateless
 
 2:) Client-Server Architecture
-   Feature: REST separates the client (e.g., a web browser or mobile app) from the server (e.g., a backend managing data). The client handles the user interface, while the server manages data and logic.
+    REST separates the client (e.g., a web browser or mobile app) from the server (e.g., a backend managing data). The client handles the user interface, while the server manages data and logic.
 
    3:) Support for Multiple Data Formats
 Feature: REST APIs typically return data in formats like JSON or XML, with JSON being the most common due to its simplicity and readability.
@@ -86,10 +86,6 @@ Headers : it allow sending extra information in a request, such as authenticatio
 --------------------------------------------------------------------------------------------------------
 
 What are the key components of an HTTP request?  
- HTTP request contains the following elements:  
-A request line.   
-header fields.  
-A message body, if needed.  
 ---------------------------------------------------------------------------
 The key components of an HTTP request are:
 1.HTTP Method: The HTTP method indicates the type of request being made, such as GET, POST, PUT, DELETE, HEAD, OPTIONS, etc.
@@ -294,10 +290,9 @@ TTL:Time to Live is the time that an object is stored in a caching systems befor
 
  -------------------------------------------------------------
 What is Caching?
-Caching is the mechanism of storing data in a temporary storage location.
+Caching is a technique to store frequently used data in a temporary storage location.
 so that request to the data can be served faster.
-Caching improves performance by decreasing page load times, and reduce calls to database servers.
-Caching is a technique to store frequently used data.
+Caching improves performance by decreasing page load times, and reduce database calls .
 
  -------------------------------------------------------------
  whai is generator in js?

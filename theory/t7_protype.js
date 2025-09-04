@@ -1,6 +1,9 @@
-/** 
+/**
+ 
 Question: “What’s a prototype in JavaScript?”
 Answer: A prototype is an object that other objects can inherit properties and methods from. It’s like a shared toolbox. 
+
+Prototype allows objects to share common properties and methods, making it easier to manage and reuse code.
 
 For example, if we add a method to Person.prototype, all Person objects can use it without having their own copy.
 */
@@ -20,9 +23,12 @@ person2.sayHello(); // Outputs: Hello, I'm Cody
 
 /**  What is a prototype chain with code example
 
-In JavaScript, a prototype chain refers to the relationship between objects where one object can inherit properties and methods from another object. This allows objects to share common properties and methods, making it easier to manage and reuse code.
+ a prototype chain refers to the relationship between objects where one object can inherit properties and methods from another object. 
+ 
+ Prototype allows objects to share common properties and methods, making it easier to manage and reuse code.
 
-In JavaScript, every object has a prototype property that refers to another object. The prototype of an object is often referred to its "parent" or "base" object. When we try to access a property or method of an object, JavaScript first checks the object itself. If it doesn't find the property or method, it will look in its prototype and keep following the chain until it either finds the property or reaches the end of the chain (null).
+
+Every object has a prototype property that refers to another object. The prototype of an object is often referred to its "parent" or "base" object. When we try to access a property or method of an object, JavaScript first checks the object itself. If it doesn't find the property or method, it will look in its prototype and keep following the chain until it either finds the property or reaches the end of the chain (null).
 
 Here is an example that demonstrates the prototype chain:
 
@@ -57,7 +63,9 @@ When we call a method of an object in JavaScript, the JavaScript engine first lo
 In the case of cat and lion, the describe() method is not actually a property of the objects themselves, but rather a property of the animal object that they inherit from. When you call cat.describe() or lion.describe(), the JavaScript engine looks for the describe() method in cat or lion, and when it doesn't find it, it looks for the method in the animal prototype.
 Since the describe() method is not actually a property of cat or lion, cat.hasOwnProperty("describe") and lion.hasOwnProperty("describe") both return false. Instead, describe() is a property of the animal object, which is the prototype of both cat and lion.
 ---------------------------------------------------------------------------------------
+
 A pure function is a function that returns the same output for the same inputs and does not have any side effects. That means it does not modify any variables outside its scope, does not perform any I/O operations (such as reading from or writing to the file system), and does not make any API calls that can change the state of the system.
+
 Here's an example of a pure function in JavaScript:
 
 function add(a, b) {

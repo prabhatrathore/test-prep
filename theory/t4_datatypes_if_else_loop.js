@@ -4,8 +4,8 @@ JavaScript Data Types
 JavaScript provides different data-types to hold different types of Values. 
 There are two types of data types in Java Script:
 
-1. Primitive data type: it means, it represent single value,pass by value, immutable
-2. Non- primitive data type: an object which represents a collection of values,an array,function 
+1. Primitive data type: it means, it represent single value, pass by value, immutable. 
+2. Non- primitive data type: an object which represents a collection of values,an array, function 
 */
 
 // var a = 40//holding number
@@ -169,7 +169,7 @@ console.log((a1 == b1));//true
 console.log((a1 === b1));///false
 
 /*
-what is concurrent in node js
+what is concurrent in node js.
 Concurrency is an essential feature of Node. js that enables it to handle large numbers of I/O operations simultaneously, without blocking the execution thread. This concurrency model allows Node. js to handle many requests concurrently, resulting in improved application performance.
 */
 
@@ -243,6 +243,7 @@ Typeof: Checks the type of object .
 Void : it discards the expression's return value. 
 Yield: checks what is returned in a generator by the generator's interator.
 */
+
 let javasccript_if_else
 /*
 Java Script If- else
@@ -293,7 +294,6 @@ document. Write ("a is not equal to 10, 15 or 20"); 3
  JavaScript Switch Statement
 Use the switch statement to select one of many code blocks to be executed.
 
-Syntax
 switch(expression) {
   case x:
     // code block

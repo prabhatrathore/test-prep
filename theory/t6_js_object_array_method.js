@@ -64,7 +64,7 @@ var source = { name: 'John', age: 30 };
 var target = { city: 'New York' };
 
 Object.assign(target, source);
-console.log(target, 'ppqwsdcx'); // outputs: { city: 'New York', name: 'John', age: 30 }
+// console.log(target, 'ppqwsdcx'); // outputs: { city: 'New York', name: 'John', age: 30 }
 // ---------------------------------------------------------------------------------------------------
 var source = { name: 'John', age: 30, city: "delhi" };
 var target = { city: 'New York' };
@@ -121,9 +121,10 @@ var entries = Object.entries(person);
 console.log(entries); // outputs: [ ['name', 'John'], ['age', 30] ]
 
 */
+
 let object_freeze
 /*
-Object.freeze() is a method in JavaScript that prevents an object from being modified. It makes the object and its properties read-only, meaning that its properties cannot be added, removed, or modified.
+Object.freeze() is a method in JavaScript that prevents an object from being modified. It makes the object and its properties read-only, meaning that its properties cannot be added, removed, or modified. 
 
 Here's an example:
 var person = { name: 'John', age: 30 };
@@ -228,13 +229,13 @@ JavaScript array is an object that represents a collection of any type of elemen
  
 Var arrayname = [value 1, Value 2...... ValueN];
 
-  2) JavaScript Array directly
+2) JavaScript Array directly
   Var arra_name = new Array();
 Here, new keyword is used to create instance of array.
 ----------------------------------------------------------------------------
 
  JavaScript array constructor: 
-Here, you need to create instance of array by passing arguments in constructor so that we don't have to provide value explicitly.
+Here, we need to create instance of array by passing arguments in constructor so that we don't have to provide value explicitly.
 
 In JavaScript, the Array constructor is used to create arrays.
 Here's an example:
@@ -346,18 +347,19 @@ JavaScript_string
 /*  
 JavaScript string
 The JavaScript string is represents a sequence of characters.
+
 There are 2 Ways to create string in Javascript
-1
-By string literal
+
+1 By string literal
 The String literal is created using double quotes.
 
 Var String name = "string value";
 
-2: )  By string object
+2:)  By string object
 The syntax of creating string object using new keyword..
 Var String name = new String ("String literal");
 
-Java Script String Methods
+JavaScript String Methods
 1. char At()
 It provides the char value present at the specified index.
 let str = "Hello World";

@@ -1,4 +1,5 @@
 /*
+call, apply, bind   
 All three are used to set the value of 'this' inside a function.
 
 call Method.--------------
@@ -54,7 +55,7 @@ function logResult(result) {
 addNumbers(2, 3, logResult); // outputs "The result is 5"
 
 /* 
-Asynchronous Callback Example in JavaScript
+Asynchronous Callback Example in JavaScript 
 */
 function fetchData(callback) {
   // Simulate a delay (like data coming from server)

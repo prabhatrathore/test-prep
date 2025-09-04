@@ -1,18 +1,20 @@
 /**
  What is the async Keyword?
-The async keyword is used to define an asynchronous function that returns a Promise.
+The 'async' keyword is used to define an asynchronous function that returns a Promise.
+Async/Await makes (it) easier to write promises. 
+
 An async function always returns a Promise, even if we don’t explicitly return one. we can use .then() to handle the resolved value.
-Async/Await makes it easier to write promises. 
 */
 
 async function name(parameter1, parameter2, parameterN) {
     // statements
 }
 /**
- What is the await Keyword?
-The await keyword is used inside an async function to pause execution until a Promise resolves or rejects.
+ What is the await Keyword ?
+The 'await' keyword is used inside an async function to pause execution until a Promise resolves or rejects.
 */
-// let result = await promise;
+//  let result = await promise;
+
 let benefit_of_async_await
 /**
  Benefits of async/await
@@ -36,7 +38,7 @@ await Promise.all([task1(), task2(), task3()]);
  */
 /**
  Question: “What’s the difference between using .then() and async/await?”
-Answer: Both handle asynchronous operations, but .then() chains Promise results and can lead to nested code.
+ Both handle asynchronous operations, but .then() chains Promise results and can lead to nested code.
 
 async/await makes the code look synchronous, improving readability and error handling with try/catch.
 */
