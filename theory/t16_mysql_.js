@@ -1,31 +1,74 @@
 /**
+ * file:///C:/Users/prabhat%20rathore/Downloads/Boost%20Your%20SQL%20Skills%20With%20This%20Free%20100%20Question%20Guide.pdf
+ * isme question 31 se query check krna h 
  usb:-- Universal Serial Bus 
  png : Portable Network Graphics
  jpeg : Joint Photographic Experts Group 
 
  ------------------------------------------------------------------------------------
  1. What is SQL?
- SQL (Structured Query Language) is a standard programming language used to
- interact with relational databases. It is used to store, retrieve, update, and delete
- data. SQL is also used to create and modify database structures such as tables,
+ SQL (Structured Query Language) is a standard programming language used to interact with relational databases. It is used to store, retrieve, update, and delete  data. SQL is also used to create and modify database structures such as tables,
  views, and indexes.
+
+  it is a language that allows users to write queries for interacting with databases.
 
  Example:
  SELECT * FROM Employees;
  This query retrieves all the records from the Employees table.
+ ------------------------------------------------------------------------------------
 
+MySQL is a Relational Database Management System (RDBMS) developed by Oracle Corporation. It uses SQL as its query language. Unlike SQL, MySQL is actual software that stores, manages, and retrieves data.
+ ------------------------------------------------------------------------------------
+ What is CTE (Common Table Expression)?
+CTE (Common Table Expression) is a temporary result set that is defined within the
+execution of a single SQL statement.
+
+ ------------------------------------------------------------------------------------
+. What is CASE Statement in SQL?
+The CASE Statement is used to apply conditional logic in SQL queries, similar to IF-ELSE
+statements.
+
+ ------------------------------------------------------------------------------------
+What is COALESCE in SQL?
+COALESCE returns the first non-null value from a list of expressions.
+
+ ------------------------------------------------------------------------------------
+What is NVL Function in SQL?
+NVL function replaces NULL values with a specified value.
+
+ ------------------------------------------------------------------------------------
+What is Indexing in SQL?
+Indexing improves the speed of data retrieval from a table by creating a lookup structure.
+ ------------------------------------------------------------------------------------
+ What is Clustered Index in SQL?
+A Clustered Index sorts and stores the data physically in the table based on the indexed
+column.
+
+ ------------------------------------------------------------------------------------
+What is Non-Clustered Index in SQL?
+A Non-Clustered Index creates a separate structure from the table data, storing pointers to
+the actual rows
+ ------------------------------------------------------------------------------------
+ What is Stored Procedure ?
+A Stored Procedure is a group of predefined SQL statements stored in the database that can
+be executed multiple times.
+ ------------------------------------------------------------------------------------
+ What is Cursor in SQL?
+A Cursor is a database object used to retrieve, manipulate, and navigate row-by-row through
+the result set
+ ------------------------------------------------------------------------------------
  ------------------------------------------------------------------------------------
 What is the Difference Between WHERE and HAVING?
 
-'where' we use filter row before 'grouping' 
-'filter' , filter group after 'grouping'.
+'where' we use-> filter row before 'grouping' 
+'filter' ,we use-> filter group after 'grouping'.
 ------------------
 filter type 
 'where' is row level filter 
 
 'having' is group level filter
 ----------------------------------
-execution order 
+in execution order 
 where, apply before GROUP BY 
 HAVING,  applied after GROUP BY
 ------------------------------------------------------------------------------------
@@ -39,7 +82,8 @@ Cross Join returns the Cartesian product of two tables, meaning it combines ever
 first table with every row from the second table. It does not require any condition.
 
 ------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
+
+\------------------------------------------------------------------------------------
 
  What is Primary Key?
  A Primary Key is a column in a table that uniquely identifies
@@ -52,11 +96,26 @@ first table with every row from the second table. It does not require any condit
  Only one primary key is allowed per table
 
  ------------------------------------------------------------------------------------
+What is a UNIQUE Key
+A UNIQUE key (or UNIQUE constraint) ensures that all values in a column (or group of columns) are unique across rows in a table.
+It prevents duplicate values.
+ a table can have multiple UNIQUE keys.
+ ------------------------------------------------------------------------------------
+What is NOT NULL Constraint?
+The NOT NULL constraint ensures that a column cannot have NULL values. It is used to
+enforce that every row must have a value in that column.
+
+ ------------------------------------------------------------------------------------
+What is Default Constraint?
+The Default Constraint provides a default value for a column when no value is specified
+during the insertion of a new record.
+ ------------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------------
 What are the types of SQL commands?
 SQL commands are divided into 5 main types (categories):
 
 🔹 1. DDL (Data Definition Language)
-👉 Used to define or change the structure of the database (tables, schemas, indexes).
+👉 Used to define the structure of the database CREATE, ALTER, DROP, TRUNCATE.
 
 Examples:
 CREATE → create table, database, etc.
@@ -72,7 +131,7 @@ UPDATE → modify existing records.
 DELETE → remove records.
 
 🔹 3. DQL (Data Query Language)
-👉 Used to query (fetch) data.
+👉 Used to Retrieves data from the database..
 Only main command: SELECT.
 
 🔹 4. DCL (Data Control Language)
@@ -134,112 +193,6 @@ The browser establishes a connection to the server at the IP address on port 443
 For HTTPS, an SSL/TLS handshake occurs: the server presents its SSL certificate, the client verifies it, and they negotiate an encryption key.
 */
 
-function findSecondSmallest(arr) {// hard one 
-    if (arr.length < 2) return null;
-
-    let first_smallest = Infinity; // 4 , -1  , -5
-    let second_smallest = Infinity;  // infinity , 4 , 2,-1
-
-    for (let num of arr) {
-        if (num < first_smallest) {
-            second_smallest = first_smallest; // infinity
-            first_smallest = num;  // 4
-        } else if (num > first_smallest && num < second_smallest) {
-            second_smallest = num;// 2 
-        }
-    }
-    console.log(first_smallest, 'first_smalless', second_smallest, "second_")
-    return (second_smallest === Infinity) ? null : second_smallest;
-}
-function third(arr) {
-    let first = Infinity
-    let second = Infinity
-    let third = Infinity
-    for (let el of arr) {
-        if (el < first) {
-            third = second
-            second = first
-            first = el
-        } else if (el > first && el < second) {
-            third = second
-            second = el
-        } else if (el > second && el < third) {
-            third = el
-        }
-    }
-    console.log(first, 'fir', second, 'seco', third, 'third')
-}
-// console.log(third([4, 12, 2, 15, 10, 25]), "thirdthirdthirdthird"); // Output: 2 
-
-function second(arr) {
-    if (arr.length) return null
-    let firstsmallest = Infinity
-    let secondSmalles = Infinity
-    for (let lee of arr) {
-        if (lee < firstsmallest) {
-            secondSmalles = firstsmallest
-        }
-    }
-}
-
-// console.log(second([4, -1, 2, -5, 30, 5]), "find__SecondSmallest"); // Output: -1
-console.log(findSecondSmallest([4, 12, 2, -5, 10, 5]), "find__SecondSmallest"); // Output: 2 
-// console.log(findSecondSmallest([1, -2, 3])); // Output: 1
-// console.log(findSecondSmallest([2, 2, 2])); // Output: null
-// console.log(findSecondSmallest([-5, -5, -4])); // Output: -4
-
-
-function findSecondSmallest2(arr) {
-    if (arr.length < 2) return null; // Not enough elements
-
-    let smallest = Infinity;
-    let secondSmallest = Infinity;
-    let thirdSmallest = Infinity;
-    let fourthSmallest = Infinity;
-
-    // First pass to find smallest
-    for (let num of arr) {
-        if (num < smallest) {
-            smallest = num;
-        }
-    }
-    // console.log(smallest, "smalles")
-    // console.log(secondSmallest, "second smalles")
-
-    // Second pass to find second smallest
-    for (let num of arr) {
-        // console.log(num, secondSmallest, smallest, num < secondSmallest, num > smallest, 'num < > smallest',)
-        if (num < secondSmallest && num > smallest) {
-            //    return
-            // console.log(num, 'numnum')
-            secondSmallest = num;
-        }
-    }
-
-    for (let num of arr) {
-        // console.log(num, secondSmallest, smallest, num < secondSmallest, num > smallest, 'num < > smallest',)
-        if (num < thirdSmallest && num > secondSmallest) {
-            //    return
-            thirdSmallest = num;
-        }
-    }
-    console.log(thirdSmallest, 'thirdSmallestthirdSmallestthirdSmallest')
-    for (let le of arr) {
-        if (le < fourthSmallest && le > thirdSmallest) {
-            fourthSmallest = le
-        }
-    }
-    console.log(fourthSmallest, 'fourth smallestTTTTTTTTTTTTTTTTTT')
-    // Check if second smallest exists
-    return secondSmallest === Infinity ? null : secondSmallest;
-}
-// Example usage
-const arr = [-1, 5, 2, 10, -8, 3, 0]; // 5, 2, 10,    --=>  -8, -1, 0, 2, 3, 5, 10     
-console.log(`Second smallest number::::: ${findSecondSmallest2(arr)}`); // Output: -2
-
-
-console.log(null == undefined, " console.log(null == undefined);");
-
 /**
 ORM converts code objects to database tables.
 
@@ -269,7 +222,7 @@ A: Scaling MySQL for handling increased transactions, users, and data volume. St
 Horizontal Scaling: includes
 
 1:) ✅ Sharding :
-splitting up data across multiple servers              (each server holds a shard).
+splitting up data across multiple servers             (each server holds a shard).
 Each shard is a different database server with a subset of data.
 Used for horizontal scaling to handle huge traffic and data load.
 
@@ -297,15 +250,43 @@ Encryption: Enable SSL/TLS for data in transit.
 Access Control: Restrict access to specific IPs:
 role based access : 
 ---------------------------------------------------------------------------------------------------
+. What is Union and Union All?
+Criteria          UNION                                               UNION ALL
+ Duplicates      Removes duplicate rows                       Includes duplicate rows
+Performance      Slower due to duplicate removal              Faster as no duplicate removal
+Sorting          Automatically sorts the result set           Does not sort the result set
+Syntax: UNION                                Syntax: UNION ALL
+---------------------------------------------------------------------------------------------------
+What is Auto Increment in SQL?
+Auto Increment is a property in SQL that automatically generates a unique sequential number
+whenever a new row is inserted into a table.
+---------------------------------------------------------------------------------------------------
+What is Denormalization?
+Denormalization is the process of combining tables or adding redundant data into a database
+to improve read performance at the cost of data redundancy.
+It is the opposite of Normalization, used when fast data retrieval is more important than
+maintaining data integrity.
 
-MySQL supports several JOIN types, each serving specific purposes:
+Key Features:
+Improves data retrieval speed
+Increases data redundancy
+Reduces the number of joins required
+Used in data warehouses and reporting systems
+---------------------------------------------------------------------------------------------------
+What is GROUP BY in SQL?
+The GROUP BY clause in SQL is used to group rows that have the same values into summary
+rows
+---------------------------------------------------------------------------------------------------
+
+MySQL supports several JOINs types, each serving specific purposes:
 
 INNER JOIN: INNER JOIN means Returns only matching records from both tables.
 LEFT (OUTER) JOIN: Returns all records from the left table, with matching records from the right ( NULL if no match ).
 RIGHT (OUTER) JOIN: Returns all records from the right table, with matching records from the left (NULL if no match).
 
 FULL (OUTER) JOIN: Returns all records from both tables, with NULLs for non-matching rows (not natively supported in MySQL, emulated with UNION).
-
+SELF JOIN – Joins a table with itself.
+CROSS JOIN – Returns the Cartesian product of both tables (all possible combinations)
 ****INNER JOIN*************************************************************************** 
 
 SELECT p.name, i.stock_quantity
@@ -525,7 +506,7 @@ Q:) What is the significance of the AUTO_INCREMENT attribute in MySQL?
 
 -------------------------------------------------------------------------------------
  What is a view in MySQL? 
-A view is a saved query that works like a virtual table. With this, we can take a complex query, give it a name, and use it like a table for future queries. This way, we don’t have to retype the entire query every time.
+A view is a saved query that works like a virtual table. With this, we can take a complex query, give ((it)) a name, and use it like a table for future queries. This way, we don’t have to retype the entire query every time.
 ----------------------------------- --------------------------------------------------
 
 Q:) What are system-versioned tables, and how do they work? 
@@ -533,7 +514,7 @@ Q:) What are system-versioned tables, and how do they work?
 -------------------------------------------------------------------------------------
 
 Q.) What are MySQL transactions, and how do you use them?
-A:) Transactions are a set of operations executed as a single unit. They ensure data integrity by allowing all operations to succeed or fail together.
+A:) Transactions are a set of operations executed as a single unit. transactions ensure data integrity by allowing all operations to succeed or fail together.
 -------------------------------------------------------------------------------------
 
 START TRANSACTION;
@@ -778,6 +759,8 @@ Server :    Load    Moderate (persistent)|  	High (frequent requests) | 	High (o
 Complexity:    	High (WebSocket setup)   |	Low (simple HTTP)            | 	Medium (timeout handling)
 Use Case:  	 Live chat, real-time apps 	 | Periodic updates (e.g., news) | 	Near-real-time (e.g., notifications)
 
+---------------------------------------------------------------------------------------------------
+
 */
 let mongo
 let mongo
@@ -798,7 +781,11 @@ Eventual Consistency: Many prioritize availability and partition tolerance over 
 Types of NoSQL Databases
 NoSQL databases are categorized based on their data model. The four main types are : 
 
-Key-Value Stores. 
+1:Key-Value Stores. 
+2:Document Stores.
+3:Column-Family Stores (Wide-Column Stores)
+
+1:Key-Value Stores. 
  Store data as key-value pairs, where each key is unique and maps to a value. Simplest NoSQL model, ideal for fast lookups.
 Use Cases: Caching, session management, user preferences.
 
@@ -811,7 +798,7 @@ Pros: Extremely fast, simple, scalable.
 Cons: Limited querying capabilities beyond key-based access.
 -------------------------------------------------------------------------------------------------------
 
-Document Stores.
+2:Document Stores.
 Store data as semi-structured documents (e.g., JSON, BSON, XML), where each document is a self-contained unit with a unique key. Documents can have nested structures.
 
 Use Cases: Content management, e-commerce, user profiles.
@@ -825,7 +812,7 @@ Pros: Flexible schema, intuitive for developers, supports complex queries.
 Cons: Can be slower than key-value stores for simple lookups; redundancy possible.
 --------------------------------------------------------------------
 
-Column-Family Stores (Wide-Column Stores)
+3:Column-Family Stores (Wide-Column Stores)
 Description: Store data in columns instead of rows, optimized for large-scale, columnar data access. Data is organized into column families (groupings of related columns).
 
 Use Cases: Time-series data, analytics, IoT applications.
@@ -851,6 +838,8 @@ Querying can be less standardized than SQL, varying by database type.
 ----------------------------------------------------------------------------------------
 
 MongoDB stores BSON (Binary Interchange and Structure Object Notation) objects in the collection.
+--------------------------------------
+
 4. What is collection and Document ?
 document is order set of key-value pairs.
 collection is grp of document.
@@ -961,6 +950,8 @@ a 3-byte incrementing counter, initialized to a random value
 ✅ operations log records all changes (insert, update, delete) in the database.
 ✅ Used for replication – secondary servers copy data changes from it.
 
+Purpose: Replication (data sync across replica set members).
+
 🔑 In one line:
 Oplog stores all database changes to keep replicas updated.
 ----------------------------------------------------------------------------------
@@ -981,15 +972,27 @@ when the data is not available directly then we use aggregation pipline, here in
 👉 Journaling keeps a log of all write operations before applying them to the database.
 ✅ If MongoDB crashes, it uses the journal file to recover and restore data safely.
 
+Purpose: Crash recovery (durability).
 🔑 In one line:
 Journaling saves changes in a log first to protect data from crashes.
 
 ----------------------------------------------------------------------------------
-🔹 Why is MongoDB schema-less?
+🔹 Why is MongoDB schema-less? (by design)
 
 👉 MongoDB is schema-less because:
 ✅ MongoDB stores data in JSON-like documents, which can have different fields and structures.
 ✅ we don’t need to define a fixed schema before adding data.
+
+1:Flexibility
+Fields can vary between documents.
+Easier to evolve data models (add new fields without schema migration).
+
+2:Speed of development
+No need for ALTER TABLE or migrations when requirements change.
+Useful for agile, rapidly evolving applications.
+
+3:JSON-like storage
+Naturally stores semi-structured data (nested documents, arrays).
 
 🔑 In one line:
 MongoDB is schema-less to let us store flexible and varied data easily.

@@ -193,7 +193,7 @@ Purpose: Ensures confidentiality by protecting data from unauthorized access. On
 Types:
 Symmetric Encryption: Uses the same key for encryption and decryption (e.g., AES, DES).
 Asymmetric Encryption: Uses a pair of keys— public for encryption, private for decryption (e.g., RSA, ECC).
-
+-------------------------------------------------------------------------------------------------------
 Hashing
  Hashing converts data into a fixed-length string (hash value or digest) using a hash function. It’s a one-way process, meaning the original data cannot be retrieved from the hash.
 
@@ -204,6 +204,20 @@ Irreversible (cannot be decrypted).
 Deterministic: Same input always produces the same hash.
 Collision-resistant: Hard to find two different inputs producing the same hash.
 Common algorithms: SHA-256, MD5 (outdated), bcrypt (for passwords).
+----------------------------------------------------------------------------------------------------------
+
+🔹 1. Encoding
+Purpose: To transform data into a different format so it can be properly transmitted or stored.
+Not for security → anyone can decode it back.
+----------------------------------------------------------------------------------------------------
+// Base64 Encoding
+let str = "Hello World!";
+let encoded = Buffer.from(str).toString("base64");
+console.log(encoded); // SGVsbG8gV29ybGQh
+
+// Decoding back
+let decoded = Buffer.from(encoded, "base64").toString("utf-8");
+console.log(decoded); // Hello World!
 
 */
 console.log([] + [], "11")/// empty string ""

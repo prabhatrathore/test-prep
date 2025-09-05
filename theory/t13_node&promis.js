@@ -1,7 +1,7 @@
 // Can you describe your experience in developing RESTful APIs using Node.js and Express?
 /**
  I have over 3 years of experience developing RESTful APIs using Node.js and Express.
-I  start by setting up an Express.js server with a clear folder structure (routes, controllers,services, models, middlewares).
+I start by setting up an Express.js server with a clear folder structure (routes, controllers,services, models, middlewares).
 
 For database integration, I have worked with both MySQL (using Sequelize/Raw queries) and MongoDB (using Mongoose), depending on project needs.
 
@@ -137,9 +137,8 @@ Start Node with inspect:
 **************************************************
 
  Clustering in Node.js
-Clustering in Node.js involves running multiple instances of a Node.js process to take advantage of multi-core systems. It enhances performance and reliability by distributing incoming connections across multiple workers.
-
 Clustering is a technique in Node.js to create multiple processes (workers) that run simultaneously and share the same server port.
+ It enhances performance and reliability by distributing incoming connections across multiple workers.
 
 Since Node.js is single-threaded by default, node.js runs on a single process, utilizing only one CPU core. The cluster module allows us to create multiple worker processes that share the same server port, enabling parallel processing and better handling of concurrent requests.
 
@@ -267,11 +266,9 @@ Use worker threads (via the worker_threads module) within workers for CPU-intens
 If you need a deeper dive into any specific aspect (e.g., IPC, sticky sessions, or performance testing), let me know!
 */
 
-fork and spawn in node.js
-/*/+--
-
+fork_and_spawn_in_node.js
+/*
 Node’s child_process module gives several ways to create child processes. Two commonly used ones are:
-
 
 Key Differences
 
@@ -345,15 +342,15 @@ What are security implementations within Node.js?
 The different types of security implementations within Node.js include error handling, authentications and authorization, data sanitization, encryption, logging and monitoring.
 -------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------
-*/
-Node.js uses an event loop to handle multiple requests at the same time.
-/*
-After the client makes an API call, the event loop continues to run, and when the API call completes, a notification mechanism called an event emitter sends an event to the server with the result of the API call. The server send back responds to the client with the result.
+  */
+  Node.js uses an event loop to handle multiple requests at the same time.
+  /*
+  After the client makes an API call, the event loop continues to run, and when the API call completes, a notification mechanism called an event emitter sends an event to the server with the result of the API call. The server send back responds to the client with the result.
 
-So, to summarize, the notification mechanism of Events of Node.js responds to the server from the previous API call, not directly to the client.
+  So, to summarize, the notification mechanism of Events of Node.js responds to the server from the previous API call, not directly to the client.
 
-------------------------
-The event loop is a mechanism that processes asynchronous tasks in a single thread by continuously checking and executing callback functions.
+  ------------------------
+  The event loop is a mechanism that processes asynchronous tasks in a single thread by continuously checking and executing callback functions.
 ----------------------------------------------------------------------------------
 Node.js is very fast because it builds on Google Chrome's V8 JavaScript engine. 
 Node.js is single threaded but highly scalable.
@@ -432,27 +429,24 @@ HTTP API - creating a simple HTTP server:
 */
 let r;
 /*
-
 ------------------------------------------------------------------------------------------------------
 -------------------------------------------
 -----------------------------------------------------------------------------------------
-
 	
     Platform dependency: Node.js is mostly used on the server-side and is used in server-side development.
 
 -------------------------------------------------------------------------------------------------------------*/
  Explain the working of Node.js ?
   /*
-  When clients interact with a web application, they send requests to the web server. These requests can be for getting data, deleting data, or updating data.
-  
-  these requests are added to the Event Queue, which is like a to-do list for the program. The Event Loop then processes the requests one by one.
-  
-  If a request is simple and doesn't require any external resources, like reading a simple file, it's processed immediately by the Event Loop and returned to the client.
-  
-  But if a request is complex and requires access to external resources, like accessing a database, a separate thread from the Thread Pool is assigned to handle that request. 
-  
-  This thread is responsible for completing the task and sending the response back to the Event Loop, which then sends the response back to the client.
-  
+  Client sends request → Example: browser hitting your Node.js server (get data, update, delete, etc.).
+ 
+  Request goes into Event Queue → Think of it as a waiting line (to-do list).
+ Event Loop checks requests one by one:
+ If it’s a simple task (like returning “Hello World” or reading a cached file), the Event Loop itself handles it and sends response back.
+If it’s a complex task (like DB query, file read/write, network call), the Event Loop passes  to the Thread Pool (libuv).
+Thread Pool does heavy work in background and, once done, gives result back to the Event Loop.
+Event Loop finally sends response to client.
+
   Overall, this approach allows for non-blocking requests to be processed quickly, while still allowing for complex blocking requests to be handled without slowing down the program. It's like having multiple workers completing different tasks at the same time to make the overall process more efficient.
   
   ----------------------------------------------------------------------------------------------
@@ -787,7 +781,78 @@ Promise.race() : The Promise.race() method takes an array of promises as an argu
 
 Promise.resolve() and Promise.reject(): These static methods are used to create already fulfilled or already rejected promises, respectively. Promise.resolve() creates a promise that is resolved with a given value, while Promise.reject() creates a promise that is rejected with a given reason.
 -----------------------------------------------------------------------------
+Promise.allSettled()
+It takes an array of promises and returns a single promise.
+That promise always resolves when all input promises have settled (either fulfilled or rejected).
 
+--------------------------------------------------------------------------------------
+exxample: 
+const p1 = Promise.resolve(42);
+const p2 = Promise.reject("Error happened");
+const p3 = new Promise(resolve => setTimeout(() => resolve("Done!"), 500));
+
+Promise.allSettled([p1, p2, p3])
+  .then(results => {
+    console.log(results);
+  });
+output :::::::::::::::::::::::::::::::::
+[
+  { status: 'fulfilled', value: 42 },
+  { status: 'rejected', reason: 'Error happened' },
+  { status: 'fulfilled', value: 'Done!' }
+]
+
+--------------------------------------------------------------------------------------
+🔹 Example 2 – Compare with Promise.all()
+const p1 = Promise.resolve("A");
+const p2 = Promise.reject("B failed");
+const p3 = Promise.resolve("C");
+
+Promise.all([p1, p2, p3])
+  .then(values => console.log("All success:", values))
+  .catch(err => console.log("Stopped at error:", err));
+
+// With allSettled
+Promise.allSettled([p1, p2, p3])
+  .then(results => console.log("All results:", results));
+
+  --------------------------------------------------------------------------------------
+  
+  Promise.any()
+  🔹 What is Promise.any()?
+It takes an array of promises and returns a single promise.
+It resolves as soon as the first promise fulfills.
+If all promises reject, it rejects with an AggregateError (special error type that holds all rejection reasons).
+
+example 1::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+const p1 = Promise.reject("❌ Failed 1");
+const p2 = new Promise(resolve => setTimeout(() => resolve("✅ Success 2"), 200));
+const p3 = new Promise(resolve => setTimeout(() => resolve("✅ Success 3"), 500));
+
+Promise.any([p1, p2, p3])
+  .then(value => console.log("First fulfilled:", value))
+  .catch(err => console.log("All failed:", err));
+solution : 
+First fulfilled: ✅ Success 2
+
+example 2::::::::::::::::::::::::::::::::::::::::::::::::::::All Fail
+const p1 = Promise.reject("❌ Error 1");
+const p2 = Promise.reject("❌ Error 2");
+
+Promise.any([p1, p2])
+  .then(value => console.log("First fulfilled:", value))
+  .catch(err => {
+    console.log("All failed!");
+    console.log(err instanceof AggregateError); // true
+    console.log(err.errors); // [ '❌ Error 1', '❌ Error 2' ]
+  });
+result:::::::::::::::::::::::::
+  All failed!
+true
+[ '❌ Error 1', '❌ Error 2' ]
+
+
+--------------------------------------------------------------------------------------
 Async/Await : Introduced in newer versions of JavaScript, the async/await syntax provides a more synchronous style of writing asynchronous code using promises. The async keyword is used to define an asynchronous function, and the await keyword is used to pause the execution of the function until a promise is fulfilled or rejected.
 
 */

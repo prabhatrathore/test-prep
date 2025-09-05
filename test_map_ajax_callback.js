@@ -168,9 +168,9 @@ promise.then((msg) => {
     console.log('not having', msg);
 });
 // then and catch , method hai 
-//promise j.s ka feature nhi h ,,,browser ka feature h
+
+// Promise is a JavaScript feature (part of ES6).
 //promise ek object hee hai 
-// promise ko consume browser and result dega object ke andar
 console.log("script end");
 // -----------------------------------------------------------------------------------------
 
@@ -215,7 +215,8 @@ sol2()
 
 // why json over ajax
 /**
- JSON (JavaScript Object Notation) is preferred over other data formats when used with AJAX (Asynchronous JavaScript and XML) for the following reasons, explained simply:
+ JSON (JavaScript Object Notation) is preferred over other data formats 
+ 
 
 Lightweight and Simple: JSON is a compact, text-based format that's easy to read and write for both humans and machines. It uses key-value pairs, making it simpler than XML, which has verbose tags.
 

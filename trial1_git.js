@@ -85,3 +85,17 @@ let array = [2, 3, 4, 5, 7]
 
 // return [4,5,7,2,3]
 
+let t = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, [22, 34, 55], 11], 12], [13, 14, 15]];
+
+let g = []
+function simplify(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            simplify(arr[i])
+        } else {
+            g.push(arr[i])
+        }
+    }   
+}
+simplify(t)
+console.log(g)
