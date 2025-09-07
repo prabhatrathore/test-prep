@@ -76,26 +76,3 @@ What is GitHub Actions, and how is it used?
 Answer: GitHub Actions is a CI/CD tool for automating workflows (e.g., testing & deployment).
 
 *******************************************************************************************************/
-
-// Given the following
-let array = [2, 3, 4, 5, 7]
-// for(let i=3;i)
-// Perform 3 right rotations:
-// First rotation : [7,2,3,4,5] , Second rotation : [5,7,2,3,4] and, Third rotation: [4,5,7,2,3]
-
-// return [4,5,7,2,3]
-
-let t = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, [22, 34, 55], 11], 12], [13, 14, 15]];
-
-let g = []
-function simplify(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (Array.isArray(arr[i])) {
-            simplify(arr[i])
-        } else {
-            g.push(arr[i])
-        }
-    }   
-}
-simplify(t)
-console.log(g)

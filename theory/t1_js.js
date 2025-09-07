@@ -682,7 +682,7 @@ function addNumbers(a, b) {
   return a + b;
 }
 
-An anonymous function is a function that does not have a name. It can be defined using the function keyword, followed by a set of parentheses and a set of curly braces that enclose the function's body, without any function name. Anonymous functions are often used as callback functions, as function arguments or in immediately invoked function expressions (IIFE).
+An anonymous function is a function that does not have a name. It can be defined using the function keyword, followed by a set of parentheses and a set of curly braces that enclose the function's body, without any function name. Anonymous functions are often used as callback functions, as function arguments or in immediately invoked function expressions (IIFE) or Self Invoking Functions.
 
 Here's an example of an anonymous function:
 let sum = function(a, b) {
@@ -1061,11 +1061,27 @@ let Closures
 let different_type_of_errors_in_js
 /*
 What Are the Different Types of Errors in JavaScript?
-JavaScript can throw a variety of errors, including:
+
+Syntax errors
+Runtime errors
+Logical errors
+Reference Errors
 
 Syntax errors: Syntax errors occur when the JavaScript code is not syntactically correct.
+console.log("Hello"  // Missing closing parenthesis ❌
+output: 
+Uncaught SyntaxError: missing ) after argument list
+------------------------------------------------------------------------------------------------------
 Runtime errors: Runtime errors occur when the JavaScript code is executed and there is a problem.
 Logical errors: Logical errors occur when the JavaScript code does not do what it is supposed to do.
+----------------------------------------------------------------------------------------------------
+Reference Errors: Happen when you try to use a variable that doesn’t exist or is out of scope.
+console.log(x);  // ❌ x is not defined
+output:
+Uncaught ReferenceError: x is not defined
+
+
+
 */
 
 let memoization;

@@ -57,6 +57,21 @@ be executed multiple times.
 A Cursor is a database object used to retrieve, manipulate, and navigate row-by-row through
 the result set
  ------------------------------------------------------------------------------------
+ What are ACID properties?
+
+ACID properties are a set of properties that ensure reliable and secure transactions among databases. To maintain data consistency, ACID
+properties are followed. ACID stands for Atomicity, Consistency, Isolation, Durability.
+Atomicity: Either the entire transaction takes place at once or not at
+all.
+
+Consistency: The database must be consistent before and after a
+transaction
+
+Isolation: No other transaction can alter the data during a transaction
+is in progress
+
+Durability: The transactions made should be durable and must persist
+
  ------------------------------------------------------------------------------------
 What is the Difference Between WHERE and HAVING?
 

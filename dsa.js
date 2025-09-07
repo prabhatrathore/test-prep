@@ -104,3 +104,41 @@ console.log(`Second smallest number::::: ${findSecondSmallest2(arr)}`); // Outpu
 
 
 console.log(null == undefined, " console.log(null == undefined);");
+
+
+
+// Given the following
+let array = [2, 3, 4, 5, 7]
+function rotateArr(arr, num) {
+    for (let i = 0; i < num; i++) {
+        let lastlement = arr[arr.length - 1]
+        arr.pop()
+        for (let j = arr.length - 1; j >= 0; j--) {
+            // console.log(arr[j + 1],)
+            arr[j + 1] = arr[j]
+            // console.log(arr[j + 1], 'first', j, ';iiii', i)
+        }
+        arr[0] = lastlement
+    }
+    console.log(arr, 'arrrrrrrrr')
+}
+rotateArr(array, 6)
+// Perform 3 right rotations:
+// First rotation : [7,2,3,4,5] , Second rotation : [5,7,2,3,4] and, Third rotation: [4,5,7,2,3]
+
+// return [4,5,7,2,3]
+
+let t = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, [22, 34, 55], 11], 12], [13, 14, 15]];
+
+let g = []
+function simplify(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            simplify(arr[i])
+        } else {
+            g.push(arr[i])
+        }
+    }
+}
+// simplify(t)
+console.log(g)

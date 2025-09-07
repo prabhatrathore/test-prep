@@ -39,13 +39,13 @@ let, const for block-scoped variables
 Arrow functions () => {}
 Template literals `Hello ${name}`
 Destructuring { name } = obj
-Classes, Promises
+Classes, 
+Promises
 ----------------------------------------------------------------------
 
-The nullish coalescing operator (??) in JavaScript is a logical operator, pick a default value if a variable is null or undefined. It returns the left-hand value if it's not null or undefined, otherwise it returns the right-hand value.
+The nullish coalescing operator (??) in JavaScript is a logical operator. 
 
-How It Works
-The ?? operator checks if the left-hand operand is nullish (null or undefined).
+The nullish coalescing ?? operator checks if the left-hand operand is nullish (null or undefined).
 If the left-hand operand is nullish, then it return right-hand operand.
 Nullish means only null or undefined. Other falsy values like 0, false, or "" (empty string) are not considered nullish.
 
@@ -64,7 +64,6 @@ defaultName = undefined;
 user = undefined;
 defaultName = null;
 // console.log(user ?? defaultName);// null   
-
 /*----------------------------------------------------------------------------------
 
 user = "Alice";
@@ -157,14 +156,15 @@ git log                   # View commit history
 
 📌 Branching
 git branch                # List branches
-git checkout -b feature   # New branch
+git branch -a             # List all branches
+git checkout -b feature   #create New branch
 git merge feature         # Merge branch
 git rebase main           # Rebase
 
 📌 Remote Commands
 git remote -v             # Show remotes
-git push origin main      # Push code
-git pull origin main      # Pull code
+git push origin main      # Push code to main branch 
+git pull origin main      # get Pull code from main branch into current branch.  
 
 📌 Undo/Reset
 git reset --soft HEAD~1   # Undo last commit (keep changes)
@@ -233,16 +233,11 @@ Trigger via HTTP or S3 events
 let Variables_and_Datatypes_in_JavaScript
 /**
 A variable is like a container that holds data that can be reused or updated later in the program. In JavaScript, variables are declared using the keywords var, let, or const.
-
-2. datatypes
-primitive datatypes : number, string, boolean, undefined, null, symbol, bigint.
-non-primitive datatypes : object, arrray, function
 ===========================================================================
 */
-// 3. Global and Local variables in JavaScript
 /*
 ---------------------------------------------------------------------------
- * JavaScript Let
+ JavaScript Let
 
  Key Features of let
 1. Block Scope
@@ -250,7 +245,6 @@ non-primitive datatypes : object, arrray, function
 3. No Redeclaration.
 4. re-assign can possible.
 ------------------------------------------------------------------
-Temporal Dead Zone (TDZ)
 ---------------------------------------------------------------------------
 
 JavaScript const
@@ -494,6 +488,7 @@ let type_of_statement_in_js
  2. Assignment Statement: An assignment statement is used to assign a value to a variable.
  3. Expression Statements.
  4. Control Flow Statements.
+ 
  Control flow statements are used to control the order in which statements are executed in a program. Examples include if, else, switch, while, and for loops.
 
 5. Function Declarations.
