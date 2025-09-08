@@ -267,7 +267,7 @@ role based access :
 ---------------------------------------------------------------------------------------------------
 . What is Union and Union All?
 Criteria          UNION                                               UNION ALL
- Duplicates      Removes duplicate rows                       Includes duplicate rows
+ Duplicates      Removes duplicate rows                       Includes duplicate rows 
 Performance      Slower due to duplicate removal              Faster as no duplicate removal
 Sorting          Automatically sorts the result set           Does not sort the result set
 Syntax: UNION                                Syntax: UNION ALL

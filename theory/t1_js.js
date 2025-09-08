@@ -464,7 +464,7 @@ Simplicity. JavaScript is relatively simple to learn and implement.
 
    The biggest advantage of JavaScript having ability to support all modern browsers and produce an equivalent result.
 
--> One of the main uses of JavaScript is to create dynamic and interactive websites. JavaScript can be used to manipulate the content and styling of a web page, add interactivity through event handling, and communicate with web servers to update content without requiring a full page refresh.
+-> One of the main uses of JavaScript is use to create dynamic and interactive websites. JavaScript can be used to manipulate the content and styling of a web page, add interactivity through event handling, and communicate with web servers to update content without requiring a full page refresh.
 ---------------------------------------------------------------------------------------------------------
 */
 let DISADVANTAGES_OF_JS = {
@@ -482,7 +482,7 @@ Reading and writing of files is not allowed
 ******************************************************************************
 
 Question: “Is JavaScript a programming language or a scripting language?”
-Answer: JavaScript is both. It began as a scripting language for web browsers, automating tasks like DOM manipulation. But with modern features (e.g., ES6 classes, modules), it’s a full programming language we used everywhere from front-end to back-end development (e.g., with Node.js).
+Answer: JavaScript is both. It began as a scripting language for web browsers, automating tasks like DOM manipulation. But with modern features (e.g., ES6-> classes, modules), it’s a full programming language we used everywhere from front-end to back-end development (e.g., with Node.js).
 ----------------------------------------------------------------------------------------
 
 JavaScript is a programming language. explain 
@@ -1080,8 +1080,6 @@ console.log(x);  // ❌ x is not defined
 output:
 Uncaught ReferenceError: x is not defined
 
-
-
 */
 
 let memoization;
@@ -1303,7 +1301,7 @@ console.log(ad(2,3)) //5
 ---------------------------------------------------------------------------------------------------------
 Both localStorage and sessionStorage are web storage objects in JavaScript, but they have different scopes and lifetimes.
 
-localStorage save data even after the browser window is closed and is accessible across different browser tabs/windows of the same origin.
+localStorage save data even after the browser window is closed and is accessible across different browser's tabs/windows of the same origin.
 
 session Storage stores data for a single browser session and is accessible only within the same tab or window open.
 Once the tab or window is closed, the data is cleared
@@ -1858,7 +1856,7 @@ var person3 = new Person("Lilly", 17, "female");
 The above line of code will create a new object of the type Person. Constructor functions allow us to group similar objects.
 ------------------------------------------------------------------------------------------------
 
-What is DOM?
+What is DOM ?
 DOM stands for Document Object Model.  DOM is a programming interface for HTML and XML documents.
 When the browser tries to render an HTML document, it creates an object based on the HTML document called DOM. Using this DOM, we can manipulate or change various elements inside the HTML document.
 ------------------------------------------------------------------------------------------------

@@ -103,9 +103,7 @@ const arr = [-1, 5, 2, 10, -8, 3, 0]; // 5, 2, 10,    --=>  -8, -1, 0, 2, 3, 5, 
 console.log(`Second smallest number::::: ${findSecondSmallest2(arr)}`); // Output: -2
 
 
-console.log(null == undefined, " console.log(null == undefined);");
-
-
+console.log(null == undefined, " console.log(null == undefined);");// true
 
 // Given the following
 let array = [2, 3, 4, 5, 7]

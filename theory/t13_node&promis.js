@@ -1064,11 +1064,9 @@ process.nextTick() is a function in Node.js that schedules a callback to run imm
 ✅ setImmediate()
 setImmediate() is a function in Node.js that schedules a callback to run on the next iteration (cycle) of the event loop, after I/O events are processed.
 
-
 What is Libuv?
 Libuv is a library used by Node.js to handle asynchronous I/O operations in a non-blocking way.
 Libuv is the engine that powers Node.js to handle multiple tasks without getting blocked.
-
 
 Libuv provides the event loop.
 The event loop is the mechanism that uses Libuv to run asynchronous tasks efficiently.
@@ -1213,10 +1211,10 @@ Differences between js event loop and node event loop ?
 
 Runs inside browser's JS engine (Chrome, Firefox, etc.).
 
-Responsible for handling:
-1:)Call Stack (for executing synchronous code).
+Responsible for handling: 
+1:) Call Stack (for executing synchronous code).
 2:) Web APIs (for handling DOM, timers, fetch, etc).
-3:) Callback Queue ((task ,message)queue ) (macrotasks)-→ e.g.,  setTimeout, setInterval, ((setImmediate (browser doesn’t have setImmediate) ))
+3:) Callback Queue ((task ,message)queue ) (macrotasks)-→ e.g.,  setTimeout, setInterval, ((setImmediate (browser doesn’t have             setImmediate) ))
 4:) Microtask Queue which has higher priority → e.g., Promise.then, (promises, mutation observers).
 ---------------------------------------------------------------------------------
 example : 
@@ -1250,13 +1248,11 @@ Event loop in Node has 6 phases:
 2:) Pending callbacks → executes I/O callbacks (like TCP errors).
 3:) Idle, prepare → internal use.......  Only Node’s internal modules (like libuv) use it.
 4:) Poll → 
-The most important phase. Handles:
-New incoming connections (like HTTP requests).
+The most important phase. Handles: New incoming connections (like HTTP requests).
 Reading/writing files (fs module).
 Executing I/O callbacks.
 
 5:) Check phase →   Executes callbacks scheduled by setImmediate().
-
 6:) Close callbacks → Executes callbacks for things that are closed, like socket.on("close", ...) 
 ------------------------------------------------------------------------------------
 👉 Priority of queues in Node:
@@ -1341,14 +1337,12 @@ console.log("D");
 🔑 Memory in JavaScript
 
 1. Memory Lifecycle
-
 Every program (including JS) goes through:
 Allocate memory → when we create variables, objects, functions, etc.
 Use memory → read/write values, execute functions.
 Release memory → when data is no longer needed, garbage collector frees it.
 
 2. Memory Types
-
 Stack (Primitive values & function calls)
 Stores simple values: numbers, strings, booleans, null, undefined.
 
