@@ -42,7 +42,7 @@ help separate concerns : routing vs business logic.
 make code scalable and maintainable 
 
 ------------------------------------------------------------
-create a project , command is 
+create a project, command is 
 nest new project_name 
 nest new nest_app
 

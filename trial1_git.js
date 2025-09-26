@@ -76,3 +76,81 @@ What is GitHub Actions, and how is it used?
 Answer: GitHub Actions is a CI/CD tool for automating workflows (e.g., testing & deployment).
 
 *******************************************************************************************************/
+console.log('first')
+let arr = [1, 1, 1, , , , , 2, 3, 4, 5, , 5, 9, , 86, 53]
+let tempArr = []
+
+for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] == 'number') {
+        if (!tempArr.includes(arr[i])) {
+            tempArr.push(arr[i])
+        }
+    }
+}
+// console.log(tempArr, 'tempArrtempArre')   //
+// [
+//   1, 2,  3,  4,
+//   5, 9, 86, 53
+// ]
+
+let t = []
+let t_min = []
+for (let i = 0; i < tempArr.length; i++) {
+    let getMax = Math.max(...tempArr)
+    // console.log(getMax, 'getmax')
+    t.push(getMax)
+    let findIndex = tempArr.indexOf(getMax)
+    tempArr.splice(findIndex, 1)
+    i--
+    //------------------------fetch ascending order 
+    //------------------------fetch ascending order 
+    // let getMin=Math.min(...tempArr)
+    // t_min.push(getMin)
+    // let findIndex=tempArr.indexOf(getMin)
+    // tempArr.splice(findIndex,1)
+    // i--
+}
+console.log(tempArr, 'temppp', t)  //  [ 86, 53, 9, 5, 4,  3, 2, 1 ]
+console.log(t_min, "tmiiiiiiiii")   // [ 1, 2, 3, 4, 5, 9, 53, 86]
+// What is a first order function
+// What are the differences between cookie, local storage and session storage
+// What is eval
+
+// What is the difference between window and document
+
+function squre(num, power) {
+    let tem = 1n
+    for (let i = 0; i < power; i++) {
+        tem = BigInt(tem) * BigInt(num)
+        console.log(tem, "w", i)
+    }
+    console.log(tem, 'power value')
+}
+// squre(2, 534267)
+// squre(2, 57)
+function isPrime(num) {
+    let isPrime = true
+    for (let i = 2; i < num; i++) {
+        if (num % i == 0) {
+            isPrime = false
+        }
+    }
+    return isPrime
+}
+function findPrime(num) {
+    let arr = []
+    for (let i = 2; i < num; i++) {
+        arr.push(i)
+    }
+    let finalArr = [2]
+    // console.log(arr, 'aaaaa')
+    for (let j = 2; j < arr.length; j++) {
+        let findPrimeNumber = isPrime(arr[j])
+        if (findPrimeNumber) {
+            finalArr.push(arr[j])
+        }
+    }
+    console.log(finalArr, 'finalArrfinalArrfinalArr')
+
+}
+findPrime(1000)

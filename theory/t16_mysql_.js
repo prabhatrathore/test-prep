@@ -49,18 +49,21 @@ What is Non-Clustered Index in SQL?
 A Non-Clustered Index creates a separate structure from the table data, storing pointers to
 the actual rows
  ------------------------------------------------------------------------------------
+ 
  What is Stored Procedure ?
-A Stored Procedure is a group of predefined SQL statements stored in the database that can
-be executed multiple times.
+A Stored Procedure is a group of predefined SQL statements stored in the database that can be executed multiple times.
  ------------------------------------------------------------------------------------
+
  What is Cursor in SQL?
-A Cursor is a database object used to retrieve, manipulate, and navigate row-by-row through
-the result set
+ A Cursor in SQL is a database object that lets us retrieve and process query results row by row, instead of all at once.
  ------------------------------------------------------------------------------------
+
  What are ACID properties?
 
-ACID properties are a set of properties that ensure reliable and secure transactions among databases. To maintain data consistency, ACID
-properties are followed. ACID stands for Atomicity, Consistency, Isolation, Durability.
+ACID properties are a set of properties that ensure reliable and secure transactions among databases.
+
+ACID stands for Atomicity, Consistency, Isolation, Durability.
+
 Atomicity: Either the entire transaction takes place at once or not at
 all.
 
@@ -237,7 +240,7 @@ A: Scaling MySQL for handling increased transactions, users, and data volume. St
 Horizontal Scaling: includes
 
 1:) ✅ Sharding :
-splitting up data across multiple servers             (each server holds a shard).
+Sharding means splitting up data across multiple servers             (each server holds a shard).
 Each shard is a different database server with a subset of data.
 Used for horizontal scaling to handle huge traffic and data load.
 
@@ -259,23 +262,26 @@ Each one is waiting for the other to finish and release its lock. Both blocking 
 ✅ It stops one transaction so the other can continue
 ---------------------------------------------------------------------------------------------
 
-How would you secure a MySQL database data?
+How would you secure a MySQL database data ?
 User Authentication : Create role-based users with minimal privileges.
 Encryption: Enable SSL/TLS for data in transit.
 Access Control: Restrict access to specific IPs:
 role based access : 
 ---------------------------------------------------------------------------------------------------
+
 . What is Union and Union All?
 Criteria          UNION                                               UNION ALL
  Duplicates      Removes duplicate rows                       Includes duplicate rows 
 Performance      Slower due to duplicate removal              Faster as no duplicate removal
 Sorting          Automatically sorts the result set           Does not sort the result set
-Syntax: UNION                                Syntax: UNION ALL
+Syntax:              UNION                                     UNION ALL
 ---------------------------------------------------------------------------------------------------
+
 What is Auto Increment in SQL?
 Auto Increment is a property in SQL that automatically generates a unique sequential number
 whenever a new row is inserted into a table.
 ---------------------------------------------------------------------------------------------------
+
 What is Denormalization?
 Denormalization is the process of combining tables or adding redundant data into a database
 to improve read performance at the cost of data redundancy.

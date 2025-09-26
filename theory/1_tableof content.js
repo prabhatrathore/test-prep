@@ -1,7 +1,7 @@
 /**
 🔹 JavaScript Cheat Sheet
 📌 Basics
-var / let / const – Variable declarations
+var / let / const – Variable declarations 
 Data Types – primitive ( string, number, boolean, null, undefined, symbol, bigint,) & non-primitive data type(object,array,function).
 Type Coercion – Implicit vs Explicit
 == vs === –> Loose equality comparision vs Strict equality comparision
@@ -15,7 +15,7 @@ Higher-Order Functions –> Accept/return functions
 
 📌 Scope & Closures
 Global vs Local Scope
-Lexical Scope: (also called Static Scope) means:
+Lexical Scope: (also called Static Scope) means :
 👉 The accessibility of variables, where they are written in the code — at the time of writing, not at runtime.
 A variable is accessible only inside the block/function where it is defined, and inside its inner (nested) functions
 
@@ -25,7 +25,7 @@ Closure – Inner function remembers outer function's variables.
  Callbacks
 Promises
 Async/Await
-Event Loop -> (Call Stack, Callback Queue, Web APIs). 
+Event Loop -> ( Call Stack, Callback Queue, Web APIs). 
 
 📌 Objects & Arrays
 Object.assign(), spread/rest, destructuring, map(), filter(), reduce(), forEach()
@@ -194,6 +194,7 @@ LRANGE list 0 -1          # Get all list items
 📌 Pub/Sub
 PUBLISH channel msg
 SUBSCRIBE channel
+
 📌 Node Integration
 Use ioredis or redis npm package
 */
@@ -250,7 +251,7 @@ A variable is like a container that holds data that can be reused or updated lat
 JavaScript const
 1. Block Scope.
 2. No Reassignment.
-3. Must Be Initialized at the time of declaration.
+3. Must Be Initialized at the time of declaration .
 4. Immutable Binding, Not Value.
 'const' makes the 'variable' binding immutable, but if the value is an object or array, we can still modify its properties or contents.
 5. No Redeclaration.
@@ -305,7 +306,7 @@ Output
 --------------------------------------------------------------------------------------------------
 
 2. JavaScript Assignment Operators
-Assignment operators are used to assign values to variables. They can also perform operations like addition or multiplication before assigning the value.
+Assignment operators are used to assign values to variables. (They can also perform operations like addition or multiplication before assigning the value.)
 
 let n = 10;
 n += 5;
@@ -343,6 +344,7 @@ Example:
 true || false  // true
 false || false // false
 -------------------------------------------------------------
+
 3.NOT (!)
 
 Flips the value.
@@ -642,6 +644,12 @@ Event Handling. Thus, JS handles the HTML events via Event Handlers.
 
 onclick - The event occurs when the user clicks on an element.
 
+---------------------------------------------------------------------------------------
+✅ In short:
+
+HLD = What to build (architecture, big picture).
+
+LLD = How to build (modules, functions, schema, logic).
 ---------------------------------------------------------------------------------------
 what is getter -
 we use getter to access the properties.

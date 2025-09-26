@@ -8,7 +8,7 @@ Node.js utilizes non-blocking I/O operations, allowing multiple tasks to be perf
 
 
 7. Popular Frameworks and Libraries in Node.js
-Node.js ecosystem boasts a plethora of frameworks and libraries catering to various needs:
+Node.js ecosystem has lot of frameworks and libraries catering to various needs:
 
 Express.js: A minimalist web framework for building robust web applications and APIs.
 Koa.js: A next-generation web framework developed by the creators of Express, emphasizing modularity and async/await.

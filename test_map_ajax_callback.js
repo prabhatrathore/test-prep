@@ -2,7 +2,7 @@ let str = "stringgg"
 // str = str.toLocaleUpperCase()//convert to upper case
 // console.log(str, "@@#1")
 
-str.toLocaleUpperCase()//anothing
+str.toLocaleUpperCase()//anothing happen here because we ccannot assign this to variable 
 
 let obj = {
     name : "ram",
@@ -217,7 +217,6 @@ sol2()
 /**
  JSON (JavaScript Object Notation) is preferred over other data formats 
  
-
 Lightweight and Simple: JSON is a compact, text-based format that's easy to read and write for both humans and machines. It uses key-value pairs, making it simpler than XML, which has verbose tags.
 
 Native JavaScript Support: JSON is a subset of JavaScript, so it’s directly parsed into JavaScript objects using JSON.parse(). This eliminates extra parsing steps needed for XML, making it faster and more efficient.

@@ -44,6 +44,7 @@ Example: let num = 10; console.log(typeof (num + "")); → Outputs string.
 
 Strings in JavaScript
 Strings store text (words, sentences) and use zero-based indexing (first character is at index 0).
+
 Examples:
 let str = "pro"; 
 (stores "pro").
@@ -386,7 +387,7 @@ console.log(arr, 'XSWEDC')
 
 let WHat_is_Javascript;
 /*
-JavaScript is a scripting programming language used in client side that allows us (developers) to make web pages interactive.***
+JavaScript is a scripting (programming) language used in client side that allows us (developers) to make web pages interactive.***
 
  A scripting language is a kind of programming language that is used to automate the execution of operations in a runtime environment. 
 
@@ -438,7 +439,7 @@ Instead of just interpreting code line-by-line (slow), JIT compiles JavaScript i
 ------------------------------------------------------------------------
 JIT Compiler: A JIT compiler converts code into byte code first. Then, at runtime, it changes the byte code into machine - readable code, which makes the program run faster.
 --------------------------------------------------------------------------------------------
-*/
+*/  
 /**
 Why is JavaScript interpreted not compiled?
  JavaScript is compiled or interpreted depends on the environment in which it is run. If it runs in older browsers, it's interpreted. If it runs in modern browsers, it's compiled. 
@@ -497,7 +498,7 @@ let event_loop
 /*
 🔷 Event Loop is the mechanism that makes asynchronous programming possible in JS.
 🔷 Node.js uses JavaScript + Event Loop to build fast, scalable, non-blocking server-side applications.
-----------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 
 The Event Loop and Asynchronous Behavior:
 JavaScript uses single-threaded, non-blocking model with an event loop to handle concurrency without multiple threads.
@@ -699,7 +700,7 @@ Anonymous functions can also be immediately invoked by enclosing the function de
 
 in this case, the function is defined and invoked immediately without being assigned to a variable
 
-An Immediately Invoked Function ( known as IIFE and pronounced as IIFY) is a function that runs as soon as it is defined.
+An Immediately Invoked Function ( known as IIFE ) is a function that runs as soon as it is defined.
  */
 
 let feature_of_js
@@ -737,7 +738,6 @@ Lots of built-in methods for arrays, strings, objects, dates, math, etc.
 
 ✅ Browser Integration.
 JavaScript can directly manipulate the DOM, handle events, interact with browser APIs (like localStorage, fetch, etc.)
- 
 */
 
 // string method 
@@ -807,7 +807,7 @@ let str6 = "Hello";
 // console.log(str6.substring(-2, 3),")(*&^%$#@"); // Treats -2 as 0, outputs "Hel"
 // console.log(str6.substring(-2, -3),")(*&^%$#@"); // Treats -2 as 0, & -3 as 0 outputs ""
 /*
-If we pass a negative index to substring(), it treats it as 0.
+If we pass a negative index to substring(), it treats as 0.
 --------------------------------------------------------------------------------------------
 
 ❗Difference from slice():
@@ -819,7 +819,8 @@ console.log(str.slice(-3, -1)); // Outputs "ll"
  ======================================================================================================= 
  The slice() method is used to extract a part of a string or array and returns it as a new value — without changing the original.
 
- Returns a shallow copy of a portion of an array, specified by start and end indices (end not included). Supports negative indices.
+ Returns a shallow copy of a portion of an array, specified by start and end indices (end not included). 
+ Supports negative indices.
  let arr = [1, 2, 3, 4];
  let sliced = arr.slice(1, 3); // [2, 3]
 
@@ -843,7 +844,7 @@ console.log(arr.slice(-4, -1));  // [20, 30, 40]
  * array shift : Removes the first element from an array and returns removed element. 
  * array unshift : Adds one or more elements to the beginning of an array and returns the new length.
  * array sort : Sorts the elements of an array in place (mutates the array) and returns the sorted array..
- * array reverse:Reverses the order of elements in an array in place and returns the reversed array. modify original array . 
+ * array reverse : Reverses the order of elements in an array in place and returns the reversed array. modify original array . 
  let arr = [1, 2, 3];
 arr.reverse(); // [3, 2, 1] 
 
@@ -1013,8 +1014,7 @@ isNaN(undefined) // Returns true
    */
 let strict
 /**
-Strict mode in JavaScript is a feature introduced in ECMAScript 5 (ES5), 2009, to enforce (implement)
- stricter parsing and error handling in our code.
+Strict mode in JavaScript is a feature introduced in ECMAScript 5 (ES5), 2009, to implement stricter parsing and error handling in our code.
 
 characteristics:
 Duplicate parameter are not allowed by developers:
@@ -1079,7 +1079,6 @@ Reference Errors: Happen when you try to use a variable that doesn’t exist or 
 console.log(x);  // ❌ x is not defined
 output:
 Uncaught ReferenceError: x is not defined
-
 */
 
 let memoization;
@@ -1152,6 +1151,7 @@ map.set("name", "Alice");
 let set = new Set([1, 2, 3, 3]);
 console.log(set); // {1, 2, 3} (duplicates removed)
 ------------------------------------------------------------------------------------
+
 A Set stores unique values.
 When we add objects, they are only considered unique if their reference is different — even if the content is same.
  */
@@ -1334,7 +1334,7 @@ let tgb = [3, "ghar", { r: 3 }, function f() { }, []]
  ---------------------------------------------------------------------------------------------------------
  What is the use of a type of operator?
 
-The typeof operator in JavaScript is a built-in operator that allows us to determine the data type of a value or variable.
+The typeof operator in JavaScript is a built-in operator that allows us to tell the data type of a value or variable.
 
 
  function myFunc() {}
@@ -1857,7 +1857,8 @@ The above line of code will create a new object of the type Person. Constructor 
 ------------------------------------------------------------------------------------------------
 
 What is DOM ?
-DOM stands for Document Object Model.  DOM is a programming interface for HTML and XML documents.
+
+DOM stands for Document Object Model. DOM is a programming interface for HTML and XML documents.
 When the browser tries to render an HTML document, it creates an object based on the HTML document called DOM. Using this DOM, we can manipulate or change various elements inside the HTML document.
 ------------------------------------------------------------------------------------------------
 
@@ -1866,7 +1867,7 @@ Browser Object Model is known as BOM. It allows users to interact with the brows
 ------------------------------------------------------------------------------------------------
 
  What are classes in javascript?
-Introduced in the ES6 version, classes are nothing but syntactic sugars for constructor functions. They provide a new way of declaring constructor functions in javascript.  Below are the examples of how classes are declared and used:
+Introduced in the ES6 version, classes are nothing but syntactic sugars for constructor functions. classes provide a new way of declaring constructor functions in javascript. Below are the examples of how classes are declared and used:
 
 // Before ES6 version, using constructor functions*/
 function Student(name, rollNumber, grade, section) {
@@ -1984,9 +1985,9 @@ var Student = {
 var stud1 = Object.create(Student);
 
 delete stud1.college;
-// delete Student.college;
-
 // console.log(stud1.college, "eeeeeeeeeeeeeeeeee!!!!!!");//abc
+
+// delete Student.college;
 /*
 This is essentially a simple example of object-oriented programming. Therefore, the output will be ‘abc’ as we are accessing the property of the student object.
 
