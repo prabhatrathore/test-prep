@@ -13,7 +13,7 @@ git stash : git stash is a Git command that temporary saves our uncommitted chan
 
 git stash pop → Takes the changes back out from temporary location ((from the locker)) and applies them to our current branch.
 
-git status: git status shows the current state of the working directory and staging area and untracked files.
+git status: git status shows the current state of the working directory, staging area and untracked files.
  
 git add [file] : git add means Stages a file for the next commit.
 

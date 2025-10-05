@@ -308,6 +308,7 @@ RIGHT (OUTER) JOIN: Returns all records from the right table, with matching reco
 FULL (OUTER) JOIN: Returns all records from both tables, with NULLs for non-matching rows (not natively supported in MySQL, emulated with UNION).
 SELF JOIN – Joins a table with itself.
 CROSS JOIN – Returns the Cartesian product of both tables (all possible combinations)
+
 ****INNER JOIN*************************************************************************** 
 
 SELECT p.name, i.stock_quantity
@@ -349,12 +350,10 @@ Numeric: INT, DECIMAL, FLOAT, DOUBLE etc.
 String: CHAR, VARCHAR, TEXT, BLOB.
 Date/time: DATE, DATETIME, TIMESTAMP, TIME.
 JSON: For storing JSON objects.
-
 ************************************************************************************
 
 String Types (CHAR, VARCHAR, TEXT, BLOB):
 
-These are four text or non-numeric data.
 CHAR: Stores fixed-length text (like "ABC" always takes the same space).
 VARCHAR: Stores variable-length text (like names or descriptions) that can change in size.
 TEXT: Stores large amounts of text, like paragraphs or articles.
@@ -370,10 +369,11 @@ TIMESTAMP: Similar to DATETIME but often used for tracking when something was cr
 TIME: Stores only the time (like 17:37:00).
 
 ************************************************************************************
+
 why we use timestamp in place of datetime ?
 1.) Time Zone Handling
-DATETIME: Stores the exact value you insert → no timezone conversion.
-TIMESTAMP: Internally stored in UTC, but automatically converted to your server/client time zone when you fetch it
+DATETIME: Stores the exact value we insert → no timezone conversion.
+TIMESTAMP: Internally stored in UTC, but automatically converted to our server/client time zone when we fetch it
 ------------------------
 
 2.) Storage Size
@@ -463,7 +463,7 @@ CREATE TABLE transactions (
 
 -----------------------------------------------------------------------------------------------------------
  Q:) What is the difference between DELETE, TRUNCATE, and DROP in MySQL?
- DELETE : DELETE means Removes rows from a table based on a condition. It can be rolled back if inside a transaction. Example:
+ DELETE : DELETE means Removes rows from a table based on a condition. ( It can be rolled back if inside a transaction.) Example:
 
  DELETE FROM employees WHERE department_id = 5;
 
@@ -526,7 +526,8 @@ Q:) What is the significance of the AUTO_INCREMENT attribute in MySQL?
 👉 Usually used for ID columns to keep them unique.
 
 -------------------------------------------------------------------------------------
- What is a view in MySQL? 
+
+What is a view in MySQL? 
 A view is a saved query that works like a virtual table. With this, we can take a complex query, give ((it)) a name, and use it like a table for future queries. This way, we don’t have to retype the entire query every time.
 ----------------------------------- --------------------------------------------------
 
@@ -753,7 +754,7 @@ Unlike HTTP, it’s not request-response; both sides can send data anytime.
 ---------------------------------------------------------------------------------------------
 
 Cons:
-Complex setup: Requires a WebSocket server (e.g., ws library in Node.js).
+Complex setup: Requires a WebSocket server (e.g., ws library in Node.js). 
 Resource-intensive: Persistent connections consume server resources
 -----------------------------------------------------------------------------------
 
@@ -788,7 +789,7 @@ let mongo
 
 /**
 What are NoSQL Databases ?
-NoSQL databases are non-relational databases designed to handle large volumes of unstructured, semi-structured, or structured data. Unlike traditional relational databases (e.g., MySQL, PostgreSQL) that use tables and SQL for data management,
+NoSQL databases are non-relational databases designed to handle large volumes of unstructured, semi-structured, (or structured) data. Unlike traditional relational databases (e.g., MySQL, PostgreSQL) that use tables and SQL for data management,
 
 NoSQL databases offer flexible schemas and are optimized for scalability, performance, and handling diverse data types. They are particularly suited for big data, real-time applications, and scenarios where data structures evolve rapidly.
 
