@@ -14,21 +14,21 @@ let obj = {
 Object.freeze(obj)
 obj.name = "next-value "//neither we change the value nor create a new property
 obj.age = 22
-console.log(obj,"object21")
+console.log(obj,"object21")//  {    "name": "hello-world" } 
 
 function sol() {
     const a = b = 3
 }
 sol()
-// console.log(a)//a is not defined
+// console.log(a) //  a is not defined
 console.log(b)// 3
 console.log(typeof a)// undefined
-console.log(typeof b)// 3 
+console.log(typeof b)// number
 
 
-let arr = [1, 2];
+const arr = [1, 2];
 arr.push(3); // Works (modifies content)
-arr = [4, 5]; // Error (can't reassign)
+arr = [4, 5]; // Error (can't reassign in const case)
 
 // const obj = { a: 1 };
 // Object.freeze(obj);
@@ -41,8 +41,9 @@ const numbers = [1, 2, 3];
 Object.freeze(numbers);
 // numbers.push(4); // Fails: Cannot modify array
 numbers[0] = 5; // Fails: Cannot change elements
-console.log(numbers,'numbeeeeeeeeeeeeeee')
+console.log(numbers,'numbeeeeeeeeeeeeeee')// [1, 2, 3]
 // --------------------------------------------------------------------------------------------------------
+
 // Nested Objects (Shallow Freeze)
 const data = { user: { name: "John" } };
 Object.freeze(data);

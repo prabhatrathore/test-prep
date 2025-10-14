@@ -154,12 +154,12 @@ Steps:
 // }
 // f();
 
-// The code snippet provided declares a constant variable a2 and initializes it with the value of 10. Then, it defines a function f that attempts to reassign a new value of 9 to a2. However, when f is executed, it throws an error "assignment to constant variable" because a2 is a constant variable and cannot be reassigned a new value.
+//a constant variable a2 and initializes it with the value of 10. Then, it defines a function f that attempts to reassign a new value of 9 to a2. However, when f is executed, it throws an error "assignment to constant variable" because a2 is a constant variable and cannot be reassigned a new value.
 
 // In JavaScript, 'const' is a keyword used to declare a variable whose value cannot be reassigned once it has been initialized. 
 // This behavior is different from variables declared with var or let, which can be reassigned new values.
 
-// In this case, since a2 is a constant variable, any attempt to modify its value after it has been initialized will result in an error being thrown at runtime. The error message "assignment to constant variable" indicates that you are attempting to modify a constant variable, which is not allowed.
+// In this case, since a2 is a constant variable, any attempt to modify its value after it has been initialized will result in an error being thrown at runtime. The error message "assignment to constant variable" indicates that we are attempting to modify a constant variable, which is not allowed.
 -------------------------------------------------------------------------------------------------------------------
 
 // const  a2 = 10; 90
@@ -508,7 +508,7 @@ How it works:
 JavaScript has a call stack (where code executes), a task queue (for pending tasks), and a web API (for async operations like timers or HTTP requests).
 
 When an async operation (e.g., setTimeout) is encountered, it’s sent away (offloaded)  to the web API. Once the operation is ready, its callback is placed in the task queue.
-The event loop continuously checks the call stack. If the stack is empty, it takes the next task from the queue and pushes ((it)) to the stack for execution.
+The event loop continuously checks the call stack. If the stack is empty, it takes the next task from the queue and pushes to the stack for execution.
 ---------------------------------------------------------------------------------------
 console.log("Start");
 setTimeout(() => console.log("Timeout"), 0);
@@ -558,7 +558,7 @@ Instead, it waits until the Call Stack is empty.
 🔁 4. Event Loop 
 The Event Loop keeps checking:
 “Is the call stack empty?”
-If yes, it picks the next task from the Callback Queue and pushes ((it)) into the Call Stack to execute.
+If yes, it picks the next task from the Callback Queue and pushes into the Call Stack to execute.
 
 So here:
 
@@ -1137,7 +1137,7 @@ clear(): Removes all key-value pairs.
 has(key): Checks if a key exists (returns true or false).
 keys(): Returns an iterator of all keys.
 -----------------------------------------------------------------------
-Map: A key-value pair collection where keys can be of any type.
+Map: A key-value pair collection where keys and values can be of any type.
 Set: A collection of unique values.
 -------------------------------------------------------------------------------------------
 Feature                     	Map      	Set
@@ -1798,7 +1798,7 @@ Higher-order functions = usage of that capability.
 
 ------------------------------------------------------------------------------------....
 Why Are Higher-Order Functions Useful?
-Code Reusability: HOFs let you reuse logic by passing different functions as arguments (e.g., map can transform arrays in many ways).
+Code Reusability: HOFs let us reuse logic by passing different functions as arguments (e.g., map can transform arrays in many ways).
 Abstraction: They hide complex details, making your code cleaner (e.g., filter handles the looping logic for you).
 
 function createCounter() {

@@ -4,9 +4,9 @@
  * result,output index :+>  6
  * 
  * condition :
- * min=0;
- * max=arr.length-1,  14 (element =15)
- *  mid = (min+max)/2  =>7
+ * min =  0;
+ * max =  arr.length - 1,  14 (element = 15)
+ * mid =  (min+max)/2  => 7
  * if arr[mid]<target
  * left = mid+1; 
  * arr[mid]>target

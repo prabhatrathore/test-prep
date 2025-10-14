@@ -28,7 +28,7 @@ git diff branchB...branchA: Shows differences in branchA not in branchB.
 -------------------------------------------------------------------------------------------------------
 
 What is a Git repository ? 
- A repository (repo) is a storage location for a project’s files and their version history. It can be local (on your machine) or remote (on GitHub). The .git directory stores metadata.
+ A repository (repo) is a storage location for a project’s files and their version history. It can be local (on our machine) or remote (on GitHub). The .git directory stores metadata.
 
 how do you initialize a Git repository?
 Answer: Run 'git init' in a project directory to create a new Git repository, initializing a .git subdirectory.

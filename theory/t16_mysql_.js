@@ -48,6 +48,7 @@ column.
 What is Non-Clustered Index in SQL?
 A Non-Clustered Index creates a separate structure from the table data, storing pointers to
 the actual rows
+
  ------------------------------------------------------------------------------------
  
  What is Stored Procedure ?
@@ -73,7 +74,7 @@ transaction
 Isolation: No other transaction can alter the data during a transaction
 is in progress
 
-Durability: The transactions made should be durable and must persist
+Durability: The transactions made should be durable and must persist . 
 
  ------------------------------------------------------------------------------------
 What is the Difference Between WHERE and HAVING?
@@ -528,7 +529,7 @@ Q:) What is the significance of the AUTO_INCREMENT attribute in MySQL?
 -------------------------------------------------------------------------------------
 
 What is a view in MySQL? 
-A view is a saved query that works like a virtual table. With this, we can take a complex query, give ((it)) a name, and use it like a table for future queries. This way, we don’t have to retype the entire query every time.
+A view is a saved query that works like a virtual table. With this, we can take a complex query, give a name, and use it like a table for future queries. This way, we don’t have to retype the entire query every time.
 ----------------------------------- --------------------------------------------------
 
 Q:) What are system-versioned tables, and how do they work? 

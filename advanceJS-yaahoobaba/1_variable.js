@@ -3,7 +3,7 @@
 var x = 'hello';
 var x = 'abd' //we can re-declare the variable 
 x = 'change-value' // reassign the variable as well. 
-// ---------------------------------------------
+// ----------------------------------------------------
 // in let
 let y = 'hello ';
 // let y='world'  //cannot re-declare the same variable
@@ -26,7 +26,7 @@ if (true) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-// initialization, condition, increment
+// initialization, condition, increment 
 for (var i1 = 1;    i1 <= 5;    i1++) {
 }
 console.log(i1, "line 3111")//  can access the variable   -- answer --- 6 , line 31 

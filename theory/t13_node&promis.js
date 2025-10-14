@@ -819,7 +819,7 @@ Promise.allSettled([p1, p2, p3])
   --------------------------------------------------------------------------------------
   
   Promise.any()
-  🔹 What is Promise.any()?
+
 It takes an array of promises and returns a single promise.
 It resolves as soon as the first promise fulfills.
 If all promises reject, it rejects with an AggregateError (special error type that holds all rejection reasons).
@@ -1155,8 +1155,7 @@ AJAX is a client-side technique for asynchronously
 updating parts of a web page.
 
 -----------------------------------------------------------
-What is event-driven programming
-in Node.js?
+What is event-driven programming in Node.js ?
 Event-driven programming synchronizes multiple
 events using event loops and callback functions to
 simplify program flow.
@@ -1165,8 +1164,7 @@ simplify program flow.
 What is callback hell?
 Callback hell refers to the problematic situation caused by deeply nested callbacks, making code difficult to read and maintain.
 -----------------------------------------------------------
-Explain the use of timers module in
-Node.js.
+Explain the use of timers module in Node.js.
 The timers module allows execution of code after a specified delay or immediately in the next event loop cycle using functions like setTimeout() and setImmediate()
 -----------------------------------------------------------
 

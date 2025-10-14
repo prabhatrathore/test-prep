@@ -31,7 +31,7 @@ Event Loop -> ( Call Stack, Callback Queue, Web APIs).
 Object.assign(), spread/rest, destructuring, map(), filter(), reduce(), forEach()
 
 📌 Modern JavaScript, ES6 ( 2015 ) Features : 
-Modules (import/export)
+Modules ( import/export )
 Default Parameters
 Optional Chaining (?.)
 Nullish Coalescing (??) 
@@ -46,7 +46,7 @@ Promises
 The nullish coalescing operator (??) in JavaScript is a logical operator. 
 
 The nullish coalescing ?? operator checks if the left-hand operand is nullish (null or undefined).
-If the left-hand operand is nullish, then it return right-hand operand.
+ then it return right-hand operand.
 Nullish means only null or undefined. Other falsy values like 0, false, or "" (empty string) are not considered nullish.
 
 It’s different from the logical OR operator (||), which treats all falsy values (e.g., 0, false, "", NaN) as conditions to fall back to the default.
@@ -57,10 +57,12 @@ let user = null;
 let defaultName = "Guest";
 console.log(user ?? defaultName); // Output: "Guest"
 // ------------------------------------------------------------------------------
+
 user = null;
 defaultName = undefined;
 // console.log(user ?? defaultName);// undefined 
 // ------------------------------------------------------------------------------
+
 user = undefined;
 defaultName = null;
 // console.log(user ?? defaultName);// null   
@@ -113,10 +115,10 @@ In Node.js, modules are reusable pieces of code that we can include in our progr
 1. require
  A 'require' function used in Node.js to load modules (built-in, external, or your own files).
 Used in: CommonJS modules (the older, default module system in Node.js).
----------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 
 2. import
- A modern way to load modules, part of the ES Modules..
+ A modern way to load modules, part of the ES javascript version.
 How it works:
 have "type": "module" in package.json file.
 ---------------------------------------------------------------------------
@@ -195,8 +197,6 @@ LRANGE list 0 -1          # Get all list items
 PUBLISH channel msg
 SUBSCRIBE channel
 
-📌 Node Integration
-Use ioredis or redis npm package
 */
 let aws
 /*
@@ -218,7 +218,7 @@ aws s3 ls                   # List buckets
 aws ec2 describe-instances  # List EC2s
 
 📌 EC2
-Launch VM
+Launch VM 
 Use SSH to connect
 Install apps manually
 
@@ -242,7 +242,7 @@ A variable is like a container that holds data that can be reused or updated lat
 
  Key Features of let
 1. Block Scope
-2. Hoisting  :  While variables declared with let  are hoisted, but they are not initialized.
+2. Hoisting  :  While variables declared with let are hoisted, but they are not initialized.
 3. No Redeclaration.
 4. re-assign can possible.
 ------------------------------------------------------------------
@@ -251,7 +251,7 @@ A variable is like a container that holds data that can be reused or updated lat
 JavaScript const
 1. Block Scope.
 2. No Reassignment.
-3. Must Be Initialized at the time of declaration .
+3. Must Be Initialized at the time of declaration.
 4. Immutable Binding, Not Value.
 'const' makes the 'variable' binding immutable, but if the value is an object or array, we can still modify its properties or contents.
 5. No Redeclaration.
@@ -268,6 +268,7 @@ arr.push(4);
 /*
 --------------------------------------------------------------------------------------------
  Features of var Keyword
+ 
 function testVar() {
     var x = 10;
     console.log(x); // Output: 10
@@ -277,7 +278,7 @@ console.log(x); // Error: x is not defined
 The variable "x" is declared using 'var' inside the 'testVar' function, so it is only accessible within that function. Trying to access 'x' outside the function results in an 'error'.
 Since 'x' is not defined globally, calling console.log(x); outside testVar causes a ReferenceError, as 'x' does not exist in the global scope.
 
-3. Re-declaration of Variables
+3. Re-declaration of variables
  */
 
 let JS_Operators_or_operation
@@ -329,7 +330,7 @@ false
 Other operators include <, <=, >=, and !==.
 --------------------------------------------------------------------------------------------------------
 JavaScript Logical Operators:
-✅ They manipulate Boolean values (true/false).
+ They manipulate Boolean values (true/false).
 
 AND (&&)
 Returns true if both sides are true.
