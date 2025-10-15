@@ -16,7 +16,7 @@ Authorization is the process of identifying (determining) what resources or acti
 There are four types of Authorization – API keys, Basic Auth, HMAC, and OAuth.  
 1: API keys.
 
- API key like a special ID card. When we want to use a service (like an app or website feature), we include this key in our request. we usually get this key by signing up with the service.
+ API key like a special ID card. When we want to use a service (like an app or website feature), we include this 'key' in our request. we usually get this key by signing up with the service.
 
 An application programming interface key is a unique identifier used to authenticate a user
 
@@ -192,7 +192,7 @@ Purpose: Ensures confidentiality by protecting data from unauthorized access. On
 
 Types:
 Symmetric Encryption: Uses the same key for encryption and decryption (e.g., AES, DES).
-Asymmetric Encryption: Uses a pair of keys— public for encryption, private for decryption (e.g., RSA, ECC).
+Asymmetric Encryption: Uses a pair of keys — public for encryption, private for decryption (e.g., RSA, ECC).
 -------------------------------------------------------------------------------------------------------
 Hashing
  Hashing converts data into a fixed-length string (hash value or digest) using a hash function. It’s a one-way process, meaning the original data cannot be retrieved from the hash.
@@ -207,7 +207,7 @@ Common algorithms: SHA-256, MD5 (outdated), bcrypt (for passwords).
 ----------------------------------------------------------------------------------------------------------
 
 🔹 1. Encoding
-Purpose: To transform data into a different format so it can be properly transmitted or stored.
+Encoding means to transform data into a different format so it can be properly transmitted or stored.
 Not for security → anyone can decode it back.
 ----------------------------------------------------------------------------------------------------
 // Base64 Encoding

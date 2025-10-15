@@ -3,7 +3,6 @@
 GIT 
 
 What is the difference between Git and GitHub?
-Answer:
 Git : Git is a distributed version control system (dvcs) for tracking code changes locally.
 GitHub: GitHub is A hosting service for Git repositories, adding collaboration tools like pull requests and code reviews.
 ----------------------------------------------------------
@@ -69,7 +68,7 @@ A fork is a copy of a repository under our GitHub account, allowing us to make c
 ----------------------------------------------------------------------------------------------------
 
 What is the staging area in Git?
-Answer: The staging area (or index) is an intermediate layer where changes are prepared before committing. Use git add [file] to stage changes.
+Answer: The staging area is an intermediate layer where changes are prepared before committing. Use git add [file] to stage changes.
 -----------------------------------------------------------------------------------
 
 What is GitHub Actions, and how is it used?

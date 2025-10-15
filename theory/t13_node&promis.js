@@ -7,14 +7,13 @@ For database integration, I have worked with both MySQL (using Sequelize/Raw que
 
 I design APIs following REST principles — clean endpoints, proper HTTP methods (GET, POST, PUT, DELETE), and meaningful status codes.
 
-I use middleware for authentication (JWT),  request validation (Joi).
-I ensure security by implementing cors, .
+I use middleware for authentication (JWT), request validation (Joi).
+I ensure security by implementing cors.
 
 For performance, I integrate Redis for caching frequently accessed data and implement pagination & filtering on large datasets.
 
 */
 /**
-  Definition
   Node.js is a open-source, cross-platform JavaScript runtime environment that enables server-side JavaScript execution, (( allowing developers to build web applications using a single language across client and server)).
   
  Purpose -----------------------------------------------------------------------------------------------
@@ -23,15 +22,11 @@ Ideal for real-time applications, such as chat apps, streaming services, and e-c
 
 Core Architecture-------------------------
 
-node.js Built on chrome's V8 JavaScript Engine for speed.
-
-1. Utilizes Google chrome’s V8 engine, which compiles JavaScript to native machine code for fast execution.
-Inherits a single-threaded design from V8, aligning with JavaScript’s browser-based origins.
+node.js Built on chrome's V8 JavaScript Engine for speed, which compiles JavaScript to native machine code for fast execution.
 
 2. Single-Threaded Event Loop
 Processes tasks (e.g., HTTP requests) asynchronously using a single-threaded event loop.
 Queues incoming requests and responds when data is ready, avoiding the need for multiple threads.
-(Simplifies development by eliminating complexities of multi-threaded programming.)
 
 Event-Driven, Non-Blocking I/O Model-----------------
 Handles I/O operations (e.g., file system, network requests) asynchronously, preventing blocking of the main thread.
@@ -121,10 +116,10 @@ Can you describe your experience with using npm, the Node.js package manager?
 or 
 How do you manage packages in your NodeJS project?
 
-Npm is a package manager for Node.js that allows us to install and manage third-party libraries and packages in our Node.js projects. 
+Npm is a Node package manager allows us to install and manage third-party libraries and packages in our projects. 
 ******************************************************************************************
 
-How do you debug Node.js applications
+How do you debug Node.js applications    ---************-------
 ✅ 1. Using console.log()
 The simplest method.
 
@@ -138,7 +133,7 @@ Start Node with inspect:
 
  Clustering in Node.js
 Clustering is a technique in Node.js to create multiple processes (workers) that run simultaneously and share the same server port.
- It enhances performance and reliability by distributing incoming connections across multiple workers.
+Clustering enhances performance and reliability by distributing incoming connections across multiple workers.
 
 Since Node.js is single-threaded by default, node.js runs on a single process, utilizing only one CPU core. The cluster module allows us to create multiple worker processes that share the same server port, enabling parallel processing and better handling of concurrent requests.
 
@@ -281,12 +276,12 @@ Performance	       Lightweight for external commands	                     Slight
 Node.js Specific  	No, works with any command                  	         Yes, only for Node.js scripts
 
 ----------------------------------------------------------------------------------------------------------------
-The spawn function is designed to run any command or executable as a general child process, using streams (stdin, stdout, stderr) for communication, making it lightweight for external commands and streaming data, and is not specific to Node.js. 
+The spawn function is designed to run any command (or executable) as a general child process, using streams (stdin, stdout, stderr) for communication, making it lightweight for external commands (and streaming data,) and is not specific to Node.js. 
 
 ((In contrast, the fork function is tailored for running Node.js scripts as a Node.js-specific child process, utilizing an IPC channel alongside streams for communication, suited for parallel tasks in Node.js, but is slightly heavier due to the Node.js environment setup.)))
 ----------------------------------------------------------------------------------------------------
 
-What is a, fork in NodeJS?
+What is a fork in NodeJS?
 Fork is a method in NodeJS that is used to create child processes. It helps to handle the increasing workload. It creates a new instance of the v8 engine which enables multiple processes to run the code.
 ----------------------------------------------------------------------------------------------------
 */

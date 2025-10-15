@@ -19,7 +19,7 @@
 
 MySQL is a Relational Database Management System (RDBMS) developed by Oracle Corporation. It uses SQL as its query language. Unlike SQL, MySQL is actual software that stores, manages, and retrieves data.
  ------------------------------------------------------------------------------------
- What is CTE (Common Table Expression)?
+ What is CTE (Common Table Expression) ?
 CTE (Common Table Expression) is a temporary result set that is defined within the
 execution of a single SQL statement.
 
@@ -34,7 +34,7 @@ COALESCE returns the first non-null value from a list of expressions.
 
  ------------------------------------------------------------------------------------
 What is NVL Function in SQL?
-NVL function replaces NULL values with a specified value.
+NVL function in SQL replaces NULL values with a specified value.
 
  ------------------------------------------------------------------------------------
 What is Indexing in SQL?
@@ -69,7 +69,7 @@ Atomicity: Either the entire transaction takes place at once or not at
 all.
 
 Consistency: The database must be consistent before and after a
-transaction
+transaction.
 
 Isolation: No other transaction can alter the data during a transaction
 is in progress

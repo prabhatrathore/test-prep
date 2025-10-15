@@ -9,7 +9,7 @@ Full-duplex means:
 👉 Both client and server can send messages to each other at the same time.
 ----------------------------------------------------------------------------
 
-🔹 2. TCP (Transmission Control Protocol).
+🔹 2. TCP (Transmission Control Protocol) . 
 TCP is a reliable connection-based protocol used to send data over the internet.
 
 Key points:

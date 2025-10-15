@@ -3,7 +3,7 @@ https://www.youtube.com/watch?v=QI5WRCdp0vs
 
 kafka 
  real time data streaming.  
- we use in delivery, stock price, health monitor 
+ kafka use in delivery, stock price, health monitor 
 
  what is kafka ? 
  kafka is distributed streaming platform. 
