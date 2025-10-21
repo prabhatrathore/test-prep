@@ -80,7 +80,7 @@ command : nest generate controller product
 short command : nest g c product
 ------------------------------------------------------
 what is data transfer object in nest.js?
-A DTO (Data Transfer Object) is an object that send data from client (frontend) to server (backend).
+we define the structure in dto for checking data which comes from client side 
 
 it’s mainly used to:
 Define and validate the structure of incoming data (like request bodies)
@@ -93,9 +93,36 @@ interface define the structure (type) of an object.
 ------------------------------------------------------
 
 ------------------------------------------------------
+pipes in nest.js 
+pipes are used to transform or validate incoming data . 
+nestjs allow us to create our own custom pipes 
+pipes can be used for custom validation, data transformation, or business logic filtering
+ 
+build-in pipe or custom pipe run before the data hit the route handler (controller method)
+we can apply pipes at method level, controller level, or globally. 
 
+command : nest g pipe nameofpipe   example nest g pipe common/pipe/uppercase  
 
+custom pipe will use 'PipeTransform' from @nest/common module for creating custom pipe. 
+--------------------------------------------------------------------------
+protecting routes ::::: means 
+it means restricting access to specific API routes. 
+only authorized users ( like logged-in users  or admin ) can access them . 
 
+what are guards? 
+guards are classes  that implement logic to decide  whether a request is allowed or not     
+mostly used for authentication  and authorization 
+3. guards implement the CanActivate interface  and run   before the route  handler
+
+why use guards : 
+to secure private routes 
+to avoid duplicating checks in every controller 
+to build role-based access control system . 
+
+command: nest g guard  guards/auth 
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 --------------------------------------------------------------------------
 🔶 2. Why use NestJS over Express.js directly?
 Answer:

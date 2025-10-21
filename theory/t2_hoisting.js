@@ -1,6 +1,6 @@
 /**
 ✖✖✖✖ ✖✖✖✖
-Hoisting is a default behaviour of javascript where all the variable and function declarations are moved on top of their scope before code execution.
+Hoisting is a default behaviour of javascript where all the variable declarations and function declarations are moved on top of their scope before code execution.
 
 ✔️ Function declarations are fully hoisted (both declaration + definition).
 ✔️ Variable declarations are hoisted but not their initializations.

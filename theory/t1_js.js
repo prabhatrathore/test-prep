@@ -278,12 +278,12 @@ task1(() => {
 
 //e.g4======================================= same qurstion
 
-addTwoNumber(2, 3, (number1, number2) => {
-    console.log(number1 + number2, 'onsuccess print ')
-}, () => {
-    console.log('wrong input')
-    console.log('invalid input ')
-});
+// addTwoNumber(2, 3, (number1, number2) => {
+//     console.log(number1 + number2, 'onsuccess print ')
+// }, () => {
+//     console.log('wrong input')
+//     console.log('invalid input ')
+// });
 
 // -------------------------------------------------------------------
 //synchronous programmig vs asynchronous programming
@@ -1109,7 +1109,7 @@ let gene = generator1()
 //  second
 // { value: 2000, done: false } {{{{{}}}}}{
 //  console.log(gene.next(),"{{{{{???????????{")
-let js_map
+let js_map 
 /**
 In JavaScript, new Map() creates a Map object, which is a collection of key-value pairs where keys and values can be of any type (e.g., strings, numbers, objects, etc.). Unlike regular objects,
 
@@ -1399,7 +1399,7 @@ mage.greet(); // Hi, I'm Mage!
 "Function Scope",     "Yes",   "Yes",  "Yes"
 "Block Scope",        "Yes",   "Yes",  "No"
 "Can Be Reassigned",   "No",   "Yes",  "Yes" 
-"Can Be re-declared",   "No",   "no",  "Yes" 
+"Can Be re-declared",  "No",   "no",  "Yes" 
  */
 
 
@@ -2058,7 +2058,7 @@ It is the most popular methodology among developers.
 Objects can be considered as real-world instances of entities like class, that have some characteristics and behaviors.
 
  Need of OOPS:
-	OOPs helps users to understand the software easily. With OOPs, the readability, understandability, and maintainability of the code increase multifold.
+	OOPs helps 'dev' to understand the software easily. With OOPs, the readability, understandability, and maintainability of the code increase multifold.
 	Even very big software can be easily written and managed using OOPs.
 
 Benefits:
@@ -2458,7 +2458,6 @@ dog.eat(); // Eating...
 dog.bark(); // Barking...
 /*
 ✅ What are JavaScript Design Patterns?
-🔹 Meaning:
 Common solutions to problems that come up while building apps. They make code cleaner, reusable, and stable.
 
 🔹 Three main types:

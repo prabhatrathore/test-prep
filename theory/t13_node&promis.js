@@ -285,7 +285,7 @@ What is a fork in NodeJS?
 Fork is a method in NodeJS that is used to create child processes. It helps to handle the increasing workload. It creates a new instance of the v8 engine which enables multiple processes to run the code.
 ----------------------------------------------------------------------------------------------------
 */
-explain the different purposes of Node.js:
+explain_the_different_purposes_of_Node.js
 /*
 1.Real-time web applications: Node.js is great for building web applications that require real-time communication between the server and the client, such as chat applications, online gaming platforms, and live streaming services.
 
@@ -356,7 +356,7 @@ Node.js provides a facility of no buffering. Its application never buffers any d
 let Nodejs_web_application_architecture
 /*
 --------------------------------------------------------------------------------------------------------
-Explain Node.js web application architecture?
+Explain Node.js web application architecture ?
 A web application distinguishes into 4 layers:
 
 Client Layer: Web browsers or mobile apps that send HTTP requests to the server.
@@ -434,7 +434,7 @@ let r;
  Explain the working of Node.js ?
   /*
   Client sends request → Example: browser hitting your Node.js server (get data, update, delete, etc.).
- 
+
   Request goes into Event Queue → Think of it as a waiting line (to-do list).
  Event Loop checks requests one by one:
  If it’s a simple task (like returning “Hello World” or reading a cached file), the Event Loop itself handles it and sends response back.
@@ -456,7 +456,7 @@ Event Loop finally sends response to client.
   ------------------------------------------------------------------------------------
   -*/
 
-  Q.1:What are modules in Nodejs.Do you know any commonly used modules
+  Q.1 : What are modules in Nodejs.Do you know any commonly used modules 
 /*
 A modules in Node.js is a block of code that provides specific functionality, which can be reused across different parts of an application. 
 
@@ -770,7 +770,7 @@ Chaining: Promises allow us to chain multiple asynchronous operations together. 
 
 Handling Errors: Promises provide a mechanism to handle errors using the catch() method or by attaching a rejection handler using then(). If any promise in a chain is rejected, the control skips to the nearest rejection handler, allowing you to handle errors gracefully.
 
-Promise.all(): The Promise.all() method takes an array of promises as an argument and returns a new promise. This new promise is fulfilled when all the promises in the array are fulfilled, or it is rejected when any of the promises in the array is rejected. It allows you to wait for multiple asynchronous operations to complete simultaneously.
+Promise.all(): The Promise.all() method takes an array of promises as an argument and returns a new promise. This new promise is fulfilled when all the promises in the array are fulfilled, or it is rejected when any of the promises in the array is rejected. It allows us to wait for multiple asynchronous operations to complete simultaneously.
 
 Promise.race() : The Promise.race() method takes an array of promises as an argument and returns a new promise. This new promise is settled as soon as any of the promises in the array is settled, whether fulfilled or rejected. It can be used when we want to respond to the result of the first asynchronous operation that completes.
 
@@ -778,7 +778,7 @@ Promise.resolve() and Promise.reject(): These static methods are used to create 
 -----------------------------------------------------------------------------
 Promise.allSettled()
 It takes an array of promises and returns a single promise.
-That promise always resolves when all input promises have settled (either fulfilled or rejected).
+That promise always resolves when all array's promises have settled (either fulfilled or rejected).
 
 --------------------------------------------------------------------------------------
 exxample: 
@@ -1021,7 +1021,7 @@ cors decides which websites can request data from our server.
 📌 Why is it needed?
 By default, browsers block requests coming from different origins (domain, port, or protocol) for security reasons.
 -----------------------------------------------------------------------------------------
-Explain the tls module in NodeJS..
+Explain the tls module in NodeJS.
 The tls module provides an implementation of the Transport Layer Security (TLS) and Secure Socket Layer (SSL) protocols that are built on top of OpenSSL. 
 It helps us to establish a secure connection on the network.
 ----------------------------------------------------------------------------------------------

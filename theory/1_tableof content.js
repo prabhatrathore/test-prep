@@ -1,3 +1,5 @@
+
+
 /**
 🔹 JavaScript Cheat Sheet
 📌 Basics
@@ -45,8 +47,7 @@ Promises
 
 The nullish coalescing operator (??) in JavaScript is a logical operator. 
 
-The nullish coalescing ?? operator checks if the left-hand operand is nullish (null or undefined).
- then it return right-hand operand.
+The nullish coalescing ?? operator checks if the left-hand operand is nullish then it return right-hand operand.
 Nullish means only null or undefined. Other falsy values like 0, false, or "" (empty string) are not considered nullish.
 
 It’s different from the logical OR operator (||), which treats all falsy values (e.g., 0, false, "", NaN) as conditions to fall back to the default.
@@ -60,7 +61,7 @@ console.log(user ?? defaultName); // Output: "Guest"
 
 user = null;
 defaultName = undefined;
-// console.log(user ?? defaultName);// undefined 
+// console.log(user ?? defaultName);// undefined  (if bot h value are nullish then it return right most value)
 // ------------------------------------------------------------------------------
 
 user = undefined;
@@ -245,7 +246,7 @@ A variable is like a container that holds data that can be reused or updated lat
 2. Hoisting  :  While variables declared with let are hoisted, but they are not initialized.
 3. No Redeclaration.
 4. re-assign can possible.
-------------------------------------------------------------------
+------------------------------------------------------------------------
 ---------------------------------------------------------------------------
 
 JavaScript const
@@ -602,7 +603,7 @@ Syntax
 ------------------------------------------------------------------------------------------------
 
 5. JavaScript for-of Loop
-The for...of loop is used to iterate over iterable objects like arrays, strings, or sets. It directly iterate the value and has more concise syntax than for loop.
+The for...of loop is used to iterate over iterable objects like arrays, strings. It directly iterate the value and has more concise syntax than for loop.
 
 Syntax
 for (let value of iterable) {

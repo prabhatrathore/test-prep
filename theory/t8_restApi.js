@@ -70,7 +70,7 @@ It tranfer data through http methods.
 – DELETE: removes a resource of the server  
 
 -------------------------------------------------------------------------------------------------
-  Body-parser is the Node.js body parsing middleware. for handling json data from requestbody
+Body-parser is the Node.js body parsing middleware. for handling json data from requestbody
 -------------------------------------------------------------------------------------------------
 
 pagination : the process of giving a page number to each page of a book, magazine, document, etc; the page numbers given

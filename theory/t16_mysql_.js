@@ -40,6 +40,7 @@ NVL function in SQL replaces NULL values with a specified value.
 What is Indexing in SQL?
 Indexing improves the speed of data retrieval from a table by creating a lookup structure.
  ------------------------------------------------------------------------------------
+ 
  What is Clustered Index in SQL?
 A Clustered Index sorts and stores the data physically in the table based on the indexed
 column.
@@ -49,7 +50,7 @@ What is Non-Clustered Index in SQL?
 A Non-Clustered Index creates a separate structure from the table data, storing pointers to
 the actual rows
 
- ------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
  
  What is Stored Procedure ?
 A Stored Procedure is a group of predefined SQL statements stored in the database that can be executed multiple times.
