@@ -49,12 +49,53 @@ npm i express graphql express-graphql
 ------------------------------------------------------------------------------------------------
 
 
+polymorphic relationship: 
 
+waht is apolla server 
+it is open source graphql implementation server 
 
+benefit
+easy intigration 
+schema first development
+powerful feature: caching, performance monitoring 
 
+-------------------------------------------------------------------------------------------
+typedefs means graphql type definitions 
+what is 'gql'? 
+gql, we use write schema 
+we give gql string to apollo server so that apollo server can understand gql string(schema) 
+with gql , we write graphql 's schema. 
 
+It’s used to write and parse GraphQL schema definitions (typeDefs) or queries in JavaScript.  
 
+Without gql
 
+-------------------------------------------------------------------------------------------
+graphQl resolvers
+in graphql , resolver is function which is use to run query and mutation 
+-------------------------------------------------------------------------------------------\
+graphql with subscription 
+when we need real-time updates (like chat,notification, stock price,  online users) we use subscription 
+subscription work on websocket protocol (a long live connection) 
+
+the client subscribe and as soon as the data changes , server immidiately pushes to client side
+
+HOW IT WORKS-----------
+the client send  a asubscription request (e.g userCreated)
+the server establishes a websocket connection. 
+    whenever the userCreated mutation run on the server ->server publishes an event. 
+
+    all client subscribed to that subscription immidiately recieve the updated data. 
+    this means   asubscription works like an 'event listener' that pushes real time data
+
+    ------------------------------
+    keyword to remember 
+    pub/sub -> publish/subcribe -> the server's internal system that handle events. 
+subscription type -> need to be defined in the graphql schema . 
+
+websocket connection -> a long-live connection that remain between the client and server 
+    -------------------------------------------------------------
+-------------------------------------------------------------------------------------------
 
 
 

@@ -1,4 +1,4 @@
-const { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLList } = require('graphql')
+const { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLList, GraphQLInputObjectType, GraphQLNonNull } = require('graphql')
 /**
   GraphQLSchema defines the structure of our entire GraphQL API — it tells GraphQL what kind of data can be fetched and how.
 
@@ -21,6 +21,14 @@ const UserType = new GraphQLObjectType({
 })
 const user = [{ id: 1, name: 'AONE', age: 20 }, { id: 2, name: 'TWO', age: 30 },]
 
+const userInputType = new GraphQLInputObjectType({
+    name: "UserInput",
+    fields: {
+        name: { type: GraphQLNonNull(GraphQLString) },
+        age: { type: GraphQLInt }
+    }
+
+})
 const RootQuery = new GraphQLObjectType({
     name: "RootQueryType",
     fields: {
@@ -79,15 +87,18 @@ const mutationUser = new GraphQLObjectType({
         addUser: {
             type: UserType,
             args: {
-                name: { type: GraphQLString },
-                age: { type: GraphQLInt },
-
+                // name: { type: GraphQLString },
+                // age: { type: GraphQLInt },
+                input: { type: userInputType }
             },
-            resolve(parentId, args) {
+            resolve(_, { input }) {
+                if (!input?.name || input?.name.length < 3) {
+                    throw new Error("Name must be atleast three character long")
+                }
                 const tempUser = {
                     id: user?.length + 1 + '',
-                    name: args?.name,
-                    age: args?.age
+                    name: input?.name,
+                    age: input?.age
                 }
                 user.push(tempUser)
                 console.log(user, 'tttttttttt')
@@ -97,18 +108,17 @@ const mutationUser = new GraphQLObjectType({
         addUserDb: {
             type: UserType,
             args: {
-                name: { type: GraphQLString },
-                age: { type: GraphQLInt }
+                input: { type: userInputType }
             },
-            async resolve(parent, args) {
+            async resolve(_, { input }) {
                 try {
-
+                    if (!input?.name || input?.name.length < 3) {
+                        throw new Error("Name must be atleast three character long")
+                    }
                     let user = new User({
-                        name: args?.name, age: args?.age
+                        name: input?.name, age: input?.age
                     })
-                    // console.log(user,'ooooooooooooooo')
                     let obj = await user.save()
-                    // console.log(obj,'bbbbbb')
                     return obj
                 } catch (error) {
                     console.log(error, 'erororo in add user')
