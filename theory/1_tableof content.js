@@ -12,7 +12,7 @@ Type Coercion – Implicit vs Explicit
 Function Declaration
 Function Expression
 Arrow Functions
-First-Class Functions –> Functions as values
+First-Class Functions –> Functions as variable
 Higher-Order Functions –> Accept/return functions
 
 📌 Scope & Closures
@@ -109,13 +109,13 @@ console.log(theme); // Output: "default"
 
 🔹 Node.js Cheat Sheet
 📌 Core Concepts -->  Single-threaded, Non-blocking I/O
+---------------------------------------------------------------------------------------------
 
 Modules: require / import
----------------------------------------------------------------------------------------------
 In Node.js, modules are reusable pieces of code that we can include in our program.
 1. require
  A 'require' function used in Node.js to load modules (built-in, external, or your own files).
-Used in: CommonJS modules (the older, default module system in Node.js).
+Used in: CommonJS modules (the older,or default module system in Node.js).
 ------------------------------------------------------------------------------------------
 
 2. import
@@ -176,11 +176,10 @@ git checkout -- <file>    # Discard changes in file
 let redis
 /*
 🔹 Redis Cheat Sheet
-📌 Basics
 Redis is a free, open-source tool that stores data in memory instead on disk, which makes it super fast.
 
-It's mainly used for:
-Storing data temporarily (cache)
+Redis mainly used for:
+Storing temporary data  (cache)
 Saving key-value data (like a simple database)
 Sharing messages between different parts of an app (message broker)
 
@@ -197,7 +196,6 @@ LRANGE list 0 -1          # Get all list items
 📌 Pub/Sub
 PUBLISH channel msg
 SUBSCRIBE channel
-
 */
 let aws
 /*
@@ -284,7 +282,7 @@ Since 'x' is not defined globally, calling console.log(x); outside testVar cause
 
 let JS_Operators_or_operation
 /**
-  JavaScript operators are symbols or keywords used to perform operations on values and variables. They are the building blocks of JavaScript expressions and can manipulate data in various ways.
+  JavaScript operators are symbols or keywords used to perform operations on values or variables. They are the building blocks of JavaScript expressions and can manipulate data in various ways.
 
 1. JavaScript Arithmetic Operators.
 2. JavaScript Assignment Operators.
@@ -471,7 +469,7 @@ Hello World
 += appends to an existing string.
 
 ---------------------------------------------------------------------------------------------
-12. JavaScript Chaining Operator (?.)
+ JavaScript optional Chaining Operator (?.)
 The optional chaining operator allows safe access to deeply nested properties without throwing errors if the property doesn’t exist.
 ------------------------------------------------------------------------------------------------
 

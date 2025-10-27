@@ -1,12 +1,12 @@
 const { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLList, GraphQLInputObjectType, GraphQLNonNull } = require('graphql')
 /**
-  GraphQLSchema defines the structure of our entire GraphQL API — it tells GraphQL what kind of data can be fetched and how.
+  GraphQLSchema defines the structure of our entire GraphQL API — it tells GraphQL what kind of data can be fetched (and how).
 
 it's a blueprint of our API ,
 Query → for reading data
 Mutation → for changing data
    -----------------------------------------------------------------------------
- GraphQLObjectType  in this we add query and mutation .
+ GraphQLObjectType  in this we add 'query' and 'mutation' .
  GraphQLString  :GraphQLString is a datatype, it will return string data 
  */
 const User = require('../models/User')
@@ -71,10 +71,10 @@ const RootQuery = new GraphQLObjectType({
 })
 
 /**
- name and fields are required, 
- name must be unique, name is query name  
-  field is method , hello is query , in field we can define multiple queries. 
-  in field , there iss 'type' means what we want to return in this query
+ 'name' and 'fields' are required, 
+ 'name' must be unique, 'name' is 'query-name'  
+  'fields' is method , 'hello' is query , in field we can define multiple queries. 
+  in fields , there iss 'type' means what we want to return in this query
    resolve means the actual data return in this function 
    resolve is graphql backend 's brain
    -------------------------------------------------------------------------------

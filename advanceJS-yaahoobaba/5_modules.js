@@ -1,4 +1,5 @@
 // what is modules
+
 // ek file ke variable, function hum dusri file mai use kr skte h
 //  with the help of export, import method
 
@@ -18,11 +19,6 @@
  * in HTML file
  * <script type = 'module' src='./file2.js'></script>
  * 
- *   make pc to live server
- * using XAMPP or WAMP server 
- * live server extension on editors 
-  
-   
  * import * as yaho from './file1' 
  * means file1 ki jitni bhi variable ,function class sb ko import kr liya 
  * console.log(yaho.name) 
