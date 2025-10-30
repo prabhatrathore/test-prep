@@ -4,7 +4,7 @@
 // rest parameter allows us to pass an indefinite number of parameters to a function and access them in an array.
 
 // Rest parameters can be used by applying three dots (...) before the parameters.
-// **Note- Rest parameter should always be used at the last parameter of a function:
+// **Note- Rest parameter should always be used at the last parameter of a function
 
 // Syntax: Rest parameters Used in function parameters (function(...args)) or destructuring 
 // const [first, ...rest] = array.
@@ -19,7 +19,7 @@ function sol(...numbers) {
     let total = 0
     for (let number of numbers) {
         total += number
-        console.log(number, 'elelelel')
+        console.log(number, 'elelelel')//
     }
 }
 // sol(1, 2, 3, 4, 5, 6, 7)
@@ -27,7 +27,7 @@ function sol(...numbers) {
 //function returning function 
 function myfunc() {
     function hello() {
-        console.log(';hellow orld')
+        console.log('hellow orld')
         return "hello"
     }
     return hello
@@ -36,10 +36,8 @@ ab = myfunc()
 // console.log(ab())// hello
 
 /**
-sum('function', ...arr) //spread operator means alag alag argument mai convert ho gya .
- 
 The spread operator (...) is used to “spread” or expand elements of an array, (object,) or string into individual items.
-The spread operator is commonly used to make shallow copies of JS objects
+The spread operator is commonly used to make shallow copies of JS objects.
 
 Examples:
 With arrays:
@@ -168,16 +166,16 @@ function name2() {
 let res = name2(fname, lname); //
 console.log(res);// { fname: 'fisrtname', lname: 'lastname' }
 
-console.log(typeof null, "WWWWWWWW")//object
+console.log(typeof null, "WWW")//object
 // typeof null is "object" because of a historical bug in JavaScript’s type system, (and it remains for compatibility reasons).
 ///////////////////////////////////////////////
 
 let num1 = 7
 let num2 = '7'
 // console.log(num1 == num2, 'wwwaaaawwwws') //true
-console.log(num1 === num2, 'wwwaaaawwwws')//false
-console.log(num1 != num2, 'wwwaaaawwwws')//false
-console.log(num1 !== num2, 'wwwaaaawwwws')//true
+console.log(num1 === num2, 'wws')//false
+console.log(num1 != num2, 'ww')//false
+console.log(num1 !== num2, 'wws')//true
 ///////////////////////////////////////////////////////////////
 
 let st = 'world hello'
@@ -186,7 +184,7 @@ st = st.concat(" ", st2, "dasdf", 'pppp', 'dd', 'vv')
 // const ad=st.concat(st2)
 // console.log(st, "Wddd")// world hello JS node.jsdasdfppppddvv Wddd
 // console.log(st2, "WASDd") // JS node.js WASDd
-const ad = st.concat(" ", st2, "dasdf", 'pppp', 'dd','vv')
+const ad = st.concat(" ", st2, "dasdf", 'pppp', 'dd', 'vv')
 // console.log(ad, "adddddddd")//world hello JS node.jsdasdfppppddvv JS node.jsdasdfppppddvv adddddddd
 
 /**
@@ -296,7 +294,7 @@ console.log(err, "errrrrr")
 
 // ////////////////////////////////////
 // Concat()
-// The concat() method provided by javascript helps in concatenation of two or more strings(String concat() ) or is used to merge two or more arrays. 
+// The concat() method provided by javascript helps in concatenation of two or more strings(String concat() ) or is used to merge two or more arrays.
 
 // In case of arrays, concatenation method does not change the existing arrays but instead returns a new array.
 // // normal array concat() method
@@ -306,7 +304,7 @@ console.log(err, "errrrrr")
 // let arr3 = arr.concat(arr2);
 
 // console.log(arr); //   [1, 2, 3]
-// console.log(arr3);//  [1, 2, 3, 4 ,5] 
+// console.log(arr3);//  [1, 2, 3, 4 ,5]
 
 // arr=arr.concat(arr2)
 // console.log(arr); //   [1, 2, 3, 4 ,5]
@@ -333,7 +331,7 @@ console.log(arr); //   [1, 2, 3]
 // let arr = ['a','b','c'];
 // let arr2 = arr;
 // console.log(arr2); // [ 'a', 'b', 'c' ]
- 
+
 // The above code works fine because we can copy the contents of one array to another, but under the hood, it’s very different as when we mutate new array it will also affect the old array(the one which we copied). See the code below:
 --------------------------------------------------------------------------------------------------------------
 
@@ -409,20 +407,20 @@ console.log(arr); //   [1, 2, 3]
 // Output:
 // mergedUsers is a copy of user1 and user2. Actually, every enumerable property on the objects will be copied to mergedUsers object. The spread operator is just a shorthand for the Object.assign() method but, they are some differences between the two.
 */
- /**
+/**
 //object => rest
 var student = {
-    name: "ram",
-    age: 3,
-    hobbies: ['as', 'sd', 'df'],
-    address: {
-        street: 2,
-        name: 'wert',
-        email: {
-            first: 'a@gmail.com',
-            second: "b@gmail.com"
-        }
-    }
+   name: "ram",
+   age: 3,
+   hobbies: ['as', 'sd', 'df'],
+   address: {
+       street: 2,
+       name: 'wert',
+       email: {
+           first: 'a@gmail.com',
+           second: "b@gmail.com"
+       }
+   }
 }
 // const age = student.age; //old methods 
 // console.log(age)
@@ -435,10 +433,10 @@ console.log(rest2)
 
 //spread operator 
 var newStudent = {
-    ...student,
-    age: 33 //overrite kr diya new method h 
+   ...student,
+   age: 33 //overrite kr diya new method h 
 }
 // console.log(student);
 console.log(newStudent);
 *
- */
+*/

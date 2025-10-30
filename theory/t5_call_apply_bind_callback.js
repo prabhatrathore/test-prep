@@ -41,7 +41,6 @@ let callback
 In JavaScript, a callback function is a function that is passed as an argument to another function and is executed by that function. Callbacks can be either synchronous or asynchronous, depending on how they are implemented.
 
 A synchronous callback function is executed immediately by the function that it is passed to. The program will wait for the callback to finish executing before it moves on to the next line of code. Here's an example:
-
 */
 function addNumbers(x, y, callback) {
   const result = x + y;

@@ -170,79 +170,9 @@ console.log((a1 === b1));///false
 
 /*
 what is concurrent in node js.
-Concurrency is an essential feature of Node. js that enables it to handle large numbers of I/O operations simultaneously, without blocking the execution thread. This concurrency model allows Node. js to handle many requests concurrently, resulting in improved application performance.
+Concurrency is an essential feature of Node. js that enables it to handle large numbers of I/O operations simultaneously, without blocking the execution thread. This concurrency model allows Node.js to handle many requests concurrently, resulting in improved application performance.
 */
 
-/*
-JavaScript Operators
-JavaScript Operators are symbols that are used to perform Operations on operands.
-
-Arithmetic Operators: use to perform arithmetic operation on the operands.
-E.g:
-Operator	Description	Example
-+	Addition	10+20 = 30
--	Subtraction	20-10 = 10
-*	Multiplication	10*20 = 200
-/	Division	20/10 = 2
-%	Modulus (Remainder)	20%10 = 0
-++	Increment	var a=10; a++; Now a = 11
---	Decrement	var a=10; a--; Now a = 9
--------------------------------------------------------------------------------------
-
-Comparison Operators:
-
-The JavaScript comparison operator compares the two operands. The comparison operators are as follows:
-Operator	Description	Example
-==	Is equal to	10==20 = false
-===	Identical (equal and of same type)	10==20 = false
-!=	Not equal to	10!=20 = true
-!==	Not Identical	20!==20 = false
->	Greater than	20>10 = true
->=	Greater than or equal to	20>=10 = true
-<	Less than	20<10 = false
-<=	Less than or equal to	20<=10 = false
-
-Logical Operators:
-
-The following operators are known as JavaScript logical operators.
-
-&&	Logical AND	(10==20 && 20==33) = false
-||	Logical OR	(10==20 || 20==33) = false
-!	Logical Not	!(10==20) = true
-
-OR ( | | ) operator - If the first value is truthy, then the first value is returned. Otherwise, always the second value gets returned.
-
-AND ( && ) operator - If both the values are truthy, always the second value is returned. If the first value is falsy then the first value is returned or if the second value is falsy then the second value is returned.
---------------------------------------------------------------------------------------------
-
-Assignment Operators: 
-Operator	Description	Example
-=	Assign	10+10 = 20
-+=	Add and assign	var a=10; a+=20; Now a = 30
--=	Subtract and assign	var a=20; a-=10; Now a = 10
-*=	Multiply and assign	var a=10; a*=20; Now a = 200
-/=	Divide and assign	var a=10; a/=2; Now a = 5
-%=	Modulus and assign	var a=10; a%=2; Now a = 0
-
-Java Script Special Operators
-The following Operators are known as JavaScript Special operators.
-
-(?:) : Conditional Operator returns Value based on
-the Condition. It is like if- else. Comma Operator allows multiple expressions to be evaluated as single statement.
-
-Delete: Delete Operator deletes a property from the object.
-
-In: In Operator checks if object has the given property.
-
-Instanceof: Checks if the object is an instance of given type
-
-New: 	Creates an instance
-
-Typeof: Checks the type of object .
-
-Void : it discards the expression's return value. 
-Yield: checks what is returned in a generator by the generator's interator.
-*/
 
 let javasccript_if_else
 /*
@@ -306,65 +236,80 @@ switch(expression) {
 }
 */
 
-/*
-Pre-increment (++x): Increments the variable first, then returns the new value.
-Post-increment (x++): Returns the current value, then increments the variable.
+//object destructuring 
+//  destructuring is a new way to extract elements from an object or an array
 
-*/
-let x2 = 5;
-console.log(++x2, 'WWWWWW');// 6
-console.log(x2, "!!!!!!!!!!");// 6 
+const obj3 = {
+    band: 'annfo-=-=3',
+    age: 11231,
+    adrress: 'rza 31 dabri',
+    city: 'new delhi',
+    country: 'india'
+};
 
-let y2 = 10;
-console.log(y2++); //10 
-console.log(y2, "hj22"); // 11
+let { band, age: f, age: val2, ...restProperty } = obj3
+// console.log(band) // annfo-=-=3
+// console.log(f,':::"""') // 11231
+// console.log(val2) // 11231
+// console.log(restProperty) // { adrress: 'rza 31 dabri ', city: 'new delhi', country: 'india' };
 
+//====================object inside array 
 
-let a4 = 3;
-let b2 = a4++ + ++a4;  //(3 + 5 )
-console.log(b2); //8  ...
-console.log(a4); //5
+let arr = [
+    { userId: 2, abc: 21, firstname: 'ram' },
+    { userId: 3, city: "new-delhi" },
+    { name: "ram", userId: 32, address: "rza 31 dabri" }
+];
 
+for (let value of arr) {
+    // console.log(value)
+    // console.log(value.userId, '///////')
+};
+//2   ////////
+// 3  /////////
+// 32 ////////
 
-let n = 2;
-let result = n++ * ++n;  // ( 2 * 4 )
-console.log(result);//8
-console.log(n); //4
+const [user1, { city }, { name: username }] = arr
+// const [user1, city2,] = arr
 
-for (let i = 0; i < 3; i++) {
-  console.log(i++);
-}
-// 0
-// 2
+// console.log(user1, '=========');//{ userId: 2, abc: 21, firstname: 'ram' } =========
+// console.log(city2); //{ userId: 3, city: 'new-delhi' }
+// console.log(username,"nhy")//ram 
 
-function test(x) {
-  return ++x + x++;    //  2 + 2
-}
-let x3 = 1;
-console.log(test(x3));  //  4  --doubt
-console.log(x3);   // 1
+var a;
+b = null
+// console.log(a == b, '///////') //true
+a++
+b++
+console.log(a)  // NaN
+console.log(b)// 1
 
+// -----------------------------------------------------------------------------
 
-let x4 = 5;
-console.log(x4++ + ++x4 + x4);  // 19  --doubt // (5+7+7)
-console.log(x4);  //  7
-// JavaScript evaluates expressions left-to-right, and each increment changes x.
+// in array destructuring
+arr = ['name', 22, 'india', ['male', 20000]];
+var [user, age = 9, country, [gender, salary]] = arr;//age default value 9
+// console.log(user); //name
+// console.log(age);// 22
+// console.log(country);//india
+// console.log(salary);//20000
+// console.log(gender);//male
 
-let num = 0;
-if (++num) {
-  console.log("Positive: " + num);
-} else {
-  console.log("Zero or Negative: " + num);
-}
-//Positive: 1
+//=================================================
+let arr2 = ['nme', 22, 'india', ['male', 20000]];
+var [user, ...args] = arr2;
+// console.log(user);// nme
+// console.log(args[2][1], 'argu');//20000 argu
 
-let arr = [10, 20, 30];
-let i = 0;
-console.log(arr[i++]);//10 
-console.log(arr[i]);  // 20
+let obj = {
+    name: "qwert",
+    age: 22,
+    address: { a: "india", b: { c: "inside", d: { e: "finally" } } }
 
-
-let a = 4;
-let b5 = a++ + ++a + a--;   // 4  + 6 +6
-console.log(a, b5);  // 5, 16
-
+};
+let { name: n, age: a13, address: { a: example, b: { c: pop } } } = obj;
+console.log(a13);//22
+console.log(n)//qwert
+console.log(example)//india
+// console.log(b)//
+console.log(pop)//inside

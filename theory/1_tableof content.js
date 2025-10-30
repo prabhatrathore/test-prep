@@ -280,9 +280,34 @@ Since 'x' is not defined globally, calling console.log(x); outside testVar cause
 3. Re-declaration of variables
  */
 
+/*
+JavaScript Operators
+--------------------------------------------------------------------------------------------
+
+Java Script Special Operators
+The following Operators are known as JavaScript Special operators.
+
+(?:) : Conditional Operator returns Value based on
+the Condition. It is like if- else. Comma Operator allows multiple expressions to be evaluated as single statement.
+
+Delete: Delete Operator deletes a property from the object.
+
+In: In Operator checks if object has the given property.
+
+Instanceof: Checks if the object is an instance of given type
+
+New: 	Creates an instance
+
+Typeof: Checks the type of object .
+
+Void : it discards the expression's return value. 
+Yield: checks what is returned in a generator by the generator's interator.
+*/
+
 let JS_Operators_or_operation
 /**
   JavaScript operators are symbols or keywords used to perform operations on values or variables. They are the building blocks of JavaScript expressions and can manipulate data in various ways.
+JavaScript Operators are symbols that are used to perform Operations on operands.
 
 1. JavaScript Arithmetic Operators.
 2. JavaScript Assignment Operators.
@@ -292,9 +317,10 @@ let JS_Operators_or_operation
 6. JavaScript Unary Operators.
 7. JavaScript Comma Operator
 -----------------------------------------------------------------------------------------------
-
+Arithmetic Operators: 
+E.g:
 1. JavaScript Arithmetic Operators
-Arithmetic Operators perform mathematical calculations like addition, subtraction, multiplication, etc.
+Arithmetic Operators use to perform arithmetic operation on the operands like addition, subtraction, multiplication, etc.
 
 const sum = 5 + 3; // Addition
 const diff = 10 - 2; // Subtraction
@@ -303,10 +329,25 @@ const q = 8 / 2; // Division
 console.log(sum, diff, p, q);
 Output
 8 8 8 4
+/////////////////////////////////////////////////////////////
+Operator	Description	Example
+
+%	Modulus (Remainder)	20%10 = 0
+++	Increment	var a=10; a++; Now a = 11
+--	Decrement	var a=10; a--; Now a = 9
 --------------------------------------------------------------------------------------------------
 
 2. JavaScript Assignment Operators
 Assignment operators are used to assign values to variables. (They can also perform operations like addition or multiplication before assigning the value.)
+
+Operator	          Description                 	Example
+=	                   Assign                   	10+10 = 20
++=	            Add and assign           	var a=10; a+=20; Now a = 30
+-=	        Subtract and assign          	var a=20; a-=10; Now a = 10
+*=	        Multiply and assign           	var a=10; a*=20; Now a = 200
+/=	          Divide and assign           	var a=10; a/=2; Now a = 5
+%=	         Modulus and assign          	var a=10; a%=2; Now a = 0
+
 
 let n = 10;
 n += 5;
@@ -327,9 +368,29 @@ false
 > checks if the left value is greater than the right.
 === checks for strict equality (both type and value).
 Other operators include <, <=, >=, and !==.
+
+Operator    	Description	                    Example
+==	          Is equal to	                    10==20 = false
+=== 	Identical (equal and of same type)  	10==20 = false
+!=	           Not equal to	                    10!=20 = true
+!==	            Not Identical	                 20!==20 = false
+>            	Greater than                   	20>10 = true
+>=	       Greater than or equal  to          	20>=10 = true
+<	           Less than                     	20<10 = false
+<=	        Less than or equal to              	20  <=10 = false
+
 --------------------------------------------------------------------------------------------------------
+
 JavaScript Logical Operators:
- They manipulate Boolean values (true/false).
+They manipulate Boolean values (true/false).
+
+&&	Logical AND	(10==20 && 20==33) = false
+||	Logical OR	(10==20 || 20==33) = false
+!	Logical Not	!(10==20) = true
+
+OR ( | | ) operator - If the first value is truthy, then the first value is returned. Otherwise, always the second value gets returned.
+
+AND ( && ) operator - If both the values are truthy, always the second value is returned. If the first value is falsy then the first value is returned or if the second value is falsy then the second value is returned.
 
 AND (&&)
 Returns true if both sides are true.
@@ -425,8 +486,68 @@ Output
 
 --> typeof returns the type of a variable.
 
---------------------------------------------------------------------------------------------------
+/*
+Pre-increment (++x): Increments the variable first, then returns the new value.
+Post-increment (x++): Returns the current value, then increments the variable.
 
+*/
+let x2 = 5;
+console.log(++x2, 'WWWWWW');// 6
+console.log(x2, "!!!!!!!!!!");// 6 
+
+let y2 = 10;
+console.log(y2++); //10 
+console.log(y2, "hj22"); // 11
+
+
+let a4 = 3;
+let b2 = a4++ + ++a4;  //(3 + 5 )
+console.log(b2); //8  ...
+console.log(a4); //5
+
+
+let n = 2;
+let result = n++ * ++n;  // ( 2 * 4 )
+console.log(result);//8
+console.log(n); //4
+
+for (let i = 0; i < 3; i++) {
+  console.log(i++);
+}
+// 0
+// 2
+
+function test(x) {
+  return ++x + x++;    //  2 + 2
+}
+let x3 = 1;
+console.log(test(x3));  //  4  --doubt
+console.log(x3);   // 1
+
+
+let x4 = 5;
+console.log(x4++ + ++x4 + x4);  // 19  --doubt // (5+7+7)
+console.log(x4);  //  7
+// JavaScript evaluates expressions left-to-right, and each increment changes x.
+
+let num = 0;
+if (++num) {
+  console.log("Positive: " + num);
+} else {
+  console.log("Zero or Negative: " + num);
+}
+//Positive: 1
+
+let arr45 = [10, 20, 30];
+let ig = 0;
+console.log(arr45[ig++]);//10 
+console.log(arr45[ig]);  // 20
+
+let a = 4;
+let b5 = a++ + ++a + a--;   // 4  + 6 +6
+console.log(a, b5);  // 5, 16
+
+/*
 9. JavaScript Relational Operators
 JavaScript Relational operators are used to compare its operands and find (determine) the relationship between them. They return a Boolean value (true or false) based on the comparison result.
 

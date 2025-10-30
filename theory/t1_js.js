@@ -4,11 +4,11 @@
 // ""
 // 0
 // nan 
-console.log(true+true) //2 
-console.log(true+false) //1 
+console.log(true + true) //2 
+console.log(true + false) //1 
 
 let history_of_js
-/**
+/** 
 1995: Brendan Eich at Netscape created a scripting language in 10 days.
 Original Names:
 First called Mocha.
@@ -129,7 +129,7 @@ person.greet(); // Outputs "Hi, I'm John"
 How it works:
 Person is a constructor function.
 Person.prototype.greet adds the 'greet' method to the Person prototype.
-All instances of Person (like person) inherit the greet method via the prototype chain.
+All instances of Person (like person) inherit the 'greet' method via the prototype chain.
 Calling person.greet() accesses this.name from the instance, outputting "Hi, I'm John".
 
 Prototypes are shared across all instances, making them memory-efficient for methods.
@@ -169,7 +169,7 @@ Steps:
 // }
 // f();
 ////////////////////////////////////////////////////////////////////
-// let  a2 = 10;
+// let a2 = 10;
 // function f() {
 //     a2 = 9  
 //     console.log(a2)//9
@@ -196,16 +196,16 @@ a[b] = 98
 console.log(a, "aaaaaa ")//{ '[object Object]': 98 }
 console.log(JSON.stringify(a), "a22222aaaaa ")//{"[object Object]":98} 
 console.log(a[b], "a[bbbbbb")//98
-console.log(a, "##AS()*")//123   // { '[object Object]': 98 }
+console.log(a,)//   // { '[object Object]': 98 }
 a[c] = 123
-console.log(a, "@@AS()*")//123   // { '[object Object]': 123 }
+console.log(a )//   // { '[object Object]': 123 }
 a[d] = 6
-console.log(a, "!!AS()*")//123  // { '[object Object]': 6 }
+console.log(a)//  // { '[object Object]': 6 }
 a['e'] = 1
 a[{ d: 'update' }] = 31
 a[{}] = 32
-console.log(a[b], "()*")//123  //32 
-console.log(a, "AS()*")//123    { '[object Object]': 32, e: 1 } AS()*
+console.log(a[b]) //   //32 
+console.log(a) //     { '[object Object]': 32, e: 1 } 
 ---------------------------------------------------------------------------------------
 
 let string1 = '324e-1'
@@ -223,16 +223,16 @@ console.log(string1, "string1string1")//    32.4 string1string1
  */
 console.log('script start');
 setInterval(() => {
-    let sum = 0
-    // for (let i = 10; i >= 0; i--) {
-    //     sum += i
-    // }
-    // console.log('setinterval===', sum)
-    while (sum < 10) {
-        sum++
-    };
+  let sum = 0
+  // for (let i = 10; i >= 0; i--) {
+  //     sum += i
+  // }
+  // console.log('setinterval===', sum)
+  while (sum < 10) {
     sum++
-    // console.log("setinterval", Math.floor(Math.random() * 10));
+  };
+  sum++
+  // console.log("setinterval", Math.floor(Math.random() * 10));
 }, 1000);
 
 console.log('after script')
@@ -240,19 +240,19 @@ console.log('after script')
 
 let kl = 4
 function so() {
-    console.log(kl)//Cannot access 'kl' before initialization
-    let kl = 9
+  console.log(kl) // Cannot access 'kl' before initialization
+  let kl = 9
 }
 // so()
 
-//callback understand
+//callback understand 
 function task1(caalback) {
-    console.log('function 1 is done')
-    caalback()
+  console.log('function 1 is done')
+  caalback()
 };
 
 task1(() => {
-    console.log("2nd function is print")
+  console.log("2nd function is print")
 });
 
 //e.g3 on callback ==================
@@ -291,7 +291,7 @@ task1(() => {
 //synchronous programming 
 // console.log('beforee loop')
 for (let i = 0; i < 1000; i++) {
-    // console.log("inside", i)
+  // console.log("inside", i)
 }
 
 // console.log('after loop')
@@ -308,20 +308,20 @@ for (let i = 0; i < 1000; i++) {
 // console.log('script-start')
 
 function start() {
-    console.log('hello world,inside setitmeout =====')
+  console.log('hello world,inside setitmeout =====')
 }
 setTimeout(start, 2000)
 
 // console.log('script-end')
 
-//e.g.2.==============settime out with 0 sec
+//e.g.2.============== settime out with 0 sec
 // console.log('strart file ')
 // setTimeout(() => { console.log('hello,settimeout with zero second') }, 0)
 
 // console.log("befre looping")
 //====================
 for (let i = 0; i < 10; i++) {
-    // console.log('inside for-loop', i)
+  // console.log('inside for-loop', i)
 }
 // console.log("after settimenot")
 //analyse
@@ -336,39 +336,57 @@ for (let i = 0; i < 10; i++) {
 //------------------------------------------------------------------------------------------------------------
 
 let promise1 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve('promise resolve');
-    }, 2000);
+  setTimeout(() => {
+    resolve('promise resolve');
+  }, 2000);
 });
 // console.log('inbetween promise');
 async function sol(req, res) {
-    let arr = await promise1
-    console.log(arr)
-    console.log('promise after')
+  let arr = await promise1
+  console.log(arr)
+  console.log('promise after')
 };
 // sol()
 
-for (var i = 0; i < 3; i++) { //change var , let const
-    // change let ,var const 
+for (var i = 0; i < 3; i++) { //change var -> let, const
+  // change let ,var const  
 }
-console.log('===i"value===', i)
+// console.log('===i"value===', i)// 3
+//--------------------------------------------------------------
+for (let i = 0; i < 3; i++) { //
+  // change let ,var const  
+}
+
+// console.log('===i"value===', i)// 3
+// for (const i = 0; i < 3; i++) { //
+//   // change let ,var const  
+// }
+//---------------------------------------------------------
+// console.log('===i"value===', i)// assignment to constant variable
 
 //=======parameter destructuring --------------
 let obj = {
-    "name": "alex",
-    age: 12,
-    address: 'delhi'
+  "name": "alex",
+  age: 12,
+  address: 'delhi'
 };
 function sol2({ name, age }) {
-    console.log(name, '===name')//alex ===name
-    console.log(age)  //12
+  console.log(name, '===name')//alex ===name
+  console.log(age)  //12
 };
 // sol2(obj)
 
 //============set========
 
 let set2 = new Set()
-// A JavaScript Set is a collection of unique values. Each value can only occur once in a Set. A Set can hold any value of any data type.
+// A JavaScript Set is a collection of unique values-> that means no duplicates allowed. A Set can hold any value of any data type.
+// ⚙️ Common Methods: 
+// add ->   Adds a new value     mySet.add(10)
+// get-> 
+// has-> Checks if value exists
+// delete ->Removes a value
+// clear -> Removes all values
+// size -> Returns number of items 
 
 set2.add('e0ee')
 set2.add('wjengwigw')
@@ -378,11 +396,11 @@ set2.add(t3)
 //  set2.delete("eeeeeeeeee")//'delete property' : specific element to delete 
 let result = set2.has("e0ee")// 'has' 'property' tell the element exist or not 
 let result1 = set2.has(t3)// 'has property' tell the element exist or not 
-console.log(result, "WSDCVBVCD", result1, "resultg22222") 
+// console.log(result, "WSDCVBVCD", result1, "resultg22222")//true WSDCVBVCD true resultg22222
 // console.log('=====  ==============') 
-console.log(set2, "BBBBBB")
+// console.log(set2, "BBBBBB")// Set(3) { 'e0ee', 'wjengwigw', { name: 'ram' } } 
 arr = [...set2];
-console.log(arr, 'XSWEDC')
+// console.log(arr, 'XSWEDC')// [ 'e0ee', 'wjengwigw', { name: 'ram' } ]
 
 
 let WHat_is_Javascript;
@@ -420,7 +438,6 @@ let Name = "Doe";
 console.log(name); // John
 console.log(Name); // Doe
  */
-
 /*
   ------------------------------------------------------------------------------------------------------------
   Q: Why JavaScript is known as a lightweight programming language ?
@@ -439,21 +456,20 @@ Instead of just interpreting code line-by-line (slow), JIT compiles JavaScript i
 ------------------------------------------------------------------------
 JIT Compiler: A JIT compiler converts code into byte code first. Then, at runtime, it changes the byte code into machine - readable code, which makes the program run faster.
 --------------------------------------------------------------------------------------------
-*/  
-/**
+*/
+/** 
 Why is JavaScript interpreted not compiled?
  JavaScript is compiled or interpreted depends on the environment in which it is run. If it runs in older browsers, it's interpreted. If it runs in modern browsers, it's compiled. 
 
  What is an Interpreted Programming Language?
  Originally, JavaScript was interpreted, meaning the browser read and executed the code line-by-line at runtime.
-
 */
 
 let ADVANTAGES_OF_USING_JAVASCRIPT = {
 }
 /*
  Light Weight Scripting Language******
-means it is made for data handling at the browser (only) & due to its low CPU usage, minimalist syntax, and ease of implementation.
+means js is made for data handling at the browser (only) & due to its low CPU usage, minimalist syntax, and ease of implementation.
 
 --> Server interaction is less. 
 -->  Feedback to the visitors is immediate . 
@@ -468,6 +484,42 @@ Simplicity. JavaScript is relatively simple to learn and implement.
 -> One of the main uses of JavaScript is use to create dynamic and interactive websites. JavaScript can be used to manipulate the content and styling of a web page, add interactivity through event handling, and communicate with web servers to update content without requiring a full page refresh.
 ---------------------------------------------------------------------------------------------------------
 */
+let feature_of_js
+/*
+🌟 Core Features of JavaScript:
+✅ Lightweight and Interpreted
+JavaScript is a lightweight language and runs directly in the browser. No need to compile manually.
+
+✅ Dynamic Typing
+we don’t need to declare variable types (like int, string, etc.).
+Example:
+
+let x = 10;  // number  
+x = "Hello"; // now it's a string
+✅ Object-Oriented
+JavaScript supports objects, classes (ES6), inheritance, etc.
+
+✅ Event-Driven Programming
+It's perfect for reacting to user actions like clicks, keypress, form submission.
+
+✅ Functional Programming
+Functions are first-class citizens. we can assign functions to variables, pass them as arguments, and return function from other functions.
+
+✅ Prototype-based Inheritance
+Instead of class-based inheritance (like Java or C++), JavaScript uses prototypes.
+
+✅ Asynchronous and Single-threaded
+JavaScript uses an event loop and callbacks, promises, and async/await to handle async code (like API calls) in a non-blocking way.
+
+✅ Runs Everywhere (Cross-platform)
+JS runs on browsers, mobile, desktop (with Electron), and servers (Node.js).
+
+✅ Rich Standard Library.
+Lots of built-in methods for arrays, strings, objects, dates, math, etc.
+
+✅ Browser Integration.
+JavaScript can directly manipulate the DOM, handle events, interact with browser APIs (like localStorage, fetch, etc.)
+*/
 let DISADVANTAGES_OF_JS = {
 }
 /*
@@ -475,7 +527,7 @@ No support for multithreading.
 No support for multiprocessing. 
 Reading and writing of files is not allowed
 ---------------------------------------------------------------------------------------------------------
- A programming language is a type of computer language that has of a set of instructions for communicating with computers. 
+ A programming language is a type of computer language that has set of instructions for communicating with computers. 
  the programming languages that are compiled first before running, scripting languages do not compile the file and execute the file without being compiled.
  ******************************************************************************
  */
@@ -500,9 +552,9 @@ let event_loop
 🔷 Node.js uses JavaScript + Event Loop to build fast, scalable, non-blocking server-side applications.
 -----------------------------------------------------------------------------------------
 
-The Event Loop and Asynchronous Behavior:
+((   ((The Event Loop and Asynchronous Behavior:))
 JavaScript uses single-threaded, non-blocking model with an event loop to handle concurrency without multiple threads.
-The event loop manages the execution of code, handling tasks like DOM events, timers (setTimeout), and asynchronous operations (e.g., fetching data with fetch).
+The event loop manages the execution of code, handling tasks like DOM events, timers (setTimeout), and asynchronous operations (e.g., fetching data with fetch).))
 ---------------------------------------------------------------------------
 How it works:
 JavaScript has a call stack (where code executes), a task queue (for pending tasks), and a web API (for async operations like timers or HTTP requests).
@@ -574,7 +626,7 @@ process.nextTick() (Node.js only)
 -------------------------------------------------------------------------
 
 Execution Context
-An Execution Context is the environment in which JavaScript code is executed. It consists of
+An Execution Context is the environment where JavaScript code is executed. It consists of
 
 Global Execution Context (GEC) – Created when the JavaScript file runs.
 Function Execution Context (FEC) – Created when a function is invoked.
@@ -615,7 +667,7 @@ A variable declared with var outside any function ((or without 'var' in non-stri
 Example with our code:
 
 var ret = 2; // Globally scoped because it’s not inside a function
-console.log(ret ** 2, 'line 75******@@***'); // ret is accessible
+console.log(ret ** 2, 'l'); // ret is accessible
 
 function test() {
     console.log(ret); // ret is still accessible inside this function
@@ -693,6 +745,7 @@ let sum = function(a, b) {
 Note that in the example above, the function is assigned to a variable (sum), so it can be invoked later by calling that variable as a function.
 
 Anonymous functions can also be immediately invoked by enclosing the function definition in parentheses followed by an additional set of parentheses:
+
 -----------------------------------------------------------------------------------------------------------
 (function() {
   console.log("This is an immediately invoked anonymous function.");
@@ -703,42 +756,7 @@ in this case, the function is defined and invoked immediately without being assi
 An Immediately Invoked Function ( known as IIFE ) is a function that runs as soon as it is defined.
  */
 
-let feature_of_js
-/*
-🌟 Core Features of JavaScript:
-✅ Lightweight and Interpreted
-JavaScript is a lightweight language and runs directly in the browser. No need to compile manually.
 
-✅ Dynamic Typing
-we don’t need to declare variable types (like int, string, etc.).
-Example:
-
-let x = 10;  // number  
-x = "Hello"; // now it's a string
-✅ Object-Oriented
-JavaScript supports objects, classes (ES6), inheritance, etc.
-
-✅ Event-Driven Programming
-It's perfect for reacting to user actions like clicks, keypress, form submission.
-
-✅ Functional Programming
-Functions are first-class citizens. we can assign functions to variables, pass them as arguments, and return function from other functions.
-
-✅ Prototype-based Inheritance
-Instead of class-based inheritance (like Java or C++), JavaScript uses prototypes.
-
-✅ Asynchronous and Single-threaded
-JavaScript uses an event loop and callbacks, promises, and async/await to handle async code (like API calls) in a non-blocking way.
-
-✅ Runs Everywhere (Cross-platform)
-JS runs on browsers, mobile, desktop (with Electron), and servers (Node.js).
-
-✅ Rich Standard Library.
-Lots of built-in methods for arrays, strings, objects, dates, math, etc.
-
-✅ Browser Integration.
-JavaScript can directly manipulate the DOM, handle events, interact with browser APIs (like localStorage, fetch, etc.)
-*/
 
 // string method 
 var str = '   hello-world   '
@@ -747,11 +765,11 @@ var str2 = str.trim()
 // console.log(str.length,"line567") //17
 // console.log(str2.length) //// 11 
 let temp = str.slice(0, 4)  // 
-// console.log(temp, "@@@ slice first ") // h 
-// console.log(typeof temp, "@@@ slice typeof check ") // string
-// console.log(str.slice(0, 4), "a slice first ") // h 
-// console.log(typeof str.slice(0, 4), "a slice typeof check ") // string 
-// console.log(str2.slice(0, 4), "a slice seclond ")  // hell 
+// console.log(temp, "@@ ") // h 
+// console.log(typeof temp, "@@@ ") // string
+// console.log(str.slice(0, 4), "a") // h 
+// console.log(typeof str.slice(0, 4) ) // string 
+// console.log(str2.slice(0, 4) )  // hell 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 // console.log(str.charAt(4))  //e 
@@ -760,38 +778,35 @@ let temp = str.slice(0, 4)  //
 // console.log(str.lastIndexOf('h')) //3
 // console.log('================================================================ =======')
 let tempAr = [3, 4, 5, 6, 6, 2, 1]
-// console.log(tempAr?.slice(0, 2), "+=== ==")//[ 3, 4 ] 
+// console.log(tempAr?.slice(0, 2), "+==")//[ 3, 4 ] 
+//-----------------------------------------------------------------------------------------
 tempAr = 'tempArRDRFRGR'
 let th = tempAr.substring(3, 1)
-// console.log(th, "popop@!@#") // em popop@!@# // swap krra
+// console.log(th, "p#") // em  // swap krra
 // ----------------------------------------------------------------------
 
 th = tempAr.substring(-3, 1)
-// console.log(th, "popop@!@#") // t popop@!@# // minus index will be treated as 0.
+// console.log(th ) // t  // minus index will be treated as 0.
 // ----------------------------------------------------------------------
 
 th = tempAr.substring(3, -1)
-// console.log(th, "popop@!@#") // tem popop@!@# // 
+// console.log(th) // tem  
 
 // ----------------------------------------------------------------------
 let thj = tempAr.slice(2, 3)
 // console.log(thj, "!lice p!@#")//m 
 let thj1 = tempAr.slice(2, 2)
-// console.log(thj1, "@!@#")//"" return nothing
+// console.log(thj1) //"" return nothing
 tempAr = [3, 4, 5, 6, 6, 2, 1]
-// console.log(tempAr.slice(2, 2), "!@#######3opop@!@#")//"" []  // empty array
-
-//tostring()
-//toUpperCase()
-//toLowerCase()
+// console.log(tempAr.slice(2, 2) ) // "" []  // empty array
 
 let SUBSTRING;
 
 /**
 The substring() method is used to extract a part of a string, between two specified indexes (positions).
-  substring() only applicable on string not array.
- The substring() method extracts characters from start to end (exclusive).
- The substring() method does not change the original string.
+ substring() only applicable on string not array.
+ substring() method extracts characters from start to end (exclusive).
+ substring() method does not change the original string.
  If startIndex > endIndex, JavaScript automatically swaps them.
  substring() does not support negative indexes,
 
@@ -902,7 +917,7 @@ Array.includes()
 let arr = [1, 2, 3];
 console.log(arr.includes(2)); // true
 */
-// console.log("first".includes("f"),'PPASDWEDWEFW')//true
+// console.log("first".includes("f") )//true
 /*
 -------------------------------------------------------------------------------------------------
  Array.join()
@@ -914,13 +929,15 @@ console.log(arr.includes(2)); // true
 /*-------------------------------------------------------------------------------------------------
 
 Array.splice()
-Modifies an array by removing, replacing, or adding elements at a specified index. Returns removed elements.
+Modifies an array by removing, replacing, or adding elements at a specified index.it Returns removed elements.
 */
 let arr4 = [1, 2, 3, 4];
 // let tf = arr4.splice(1, 2, 'new'); // Removes [2, 3], adds 'new'
-// console.log(arr4, 'AAAAAAA', 'tftftftf', tf); // [1, 'new', 4] tftftftf [ 2, 3 ]
+// console.log(arr4,  tf); // [1, 'new', 4]  [ 2, 3 ]
+
 arr4.splice(1, -10, 'new'); // Removes nothing, adds 'new'
-// console.log(arr4, 'AAAAAAA'); // [ 1, 'new', 2, 3, 4 ]
+// console.log(arr4); // [ 1, 'new', 2, 3, 4 ]
+
 /*
 Array.concat()
 Merges two or more arrays, returning a new array without modifying the originals.
@@ -942,15 +959,16 @@ obj = {
 for (let value in obj) {
   // console.log(value)
 }
-// console.log(Object.values(obj), "{{{{{{{{{{{{{{{{{{{")//[3,4,5,6]
 // firstName
 // lastname
 // age
 // address
+
+// console.log(Object.values(obj) )//[3,4,5,6]
 /**
  * Object.entries takes an object and return the key value pairs in array.
  */
-// console.log(Object.entries(obj), "Object.entries(obj)")
+// console.log(Object.entries(obj) )
 // [
 //   ['firstName', 3],
 //   ['lastname', 4],
@@ -990,7 +1008,8 @@ let res = ee.find(sol)
  "debugger” in JavaScript?
  debugger is helpful for finding and fixing errors in JavaScript code.
  */
-let is_nan 
+
+let is_nan
 
 /**
 🔍 What is NaN in JavaScript?
@@ -1101,32 +1120,31 @@ function* generator1() {
   yield 2000
 }
 let gene = generator1()
-//  console.log(gene.next(),"{{{{{{{{{{{")
+//  console.log(gene.next() )
 //  first
-// { value: 100, done: false } {{{{{{{{{{{
+// { value: 100, done: false } 
 // -------------------------------------------------------------------------------------------------
-//  console.log(gene.next(),"{{{{{}}}}}{")
+//  console.log(gene.next() )
 //  second
-// { value: 2000, done: false } {{{{{}}}}}{
-//  console.log(gene.next(),"{{{{{???????????{")
-let js_map 
+// { value: 2000, done: false } 
+//  console.log(gene.next())
+let js_map
 /**
 In JavaScript, new Map() creates a Map object, which is a collection of key-value pairs where keys and values can be of any type (e.g., strings, numbers, objects, etc.). Unlike regular objects,
 
-Maps maintain the insertion order of elements and allow keys of any data type, not just strings or symbols.
-
+Maps maintain the insertion order of elements and allow keys of any data-type, not just strings or symbols.
 we can add, retrieve, update, or remove key-value pairs, and it remembers the order in which we added them.
 
 Purpose: Similar to objects but allows any value as keys.
 Example:*/
 const person = new Map();
 person.set("Name", "Alex");
-// console.log(person,"{{{{{"); // Outputs: Map { "Name" => "Alex" }
-// console.log(person.keys(),"{{{{{"); // Outputs: [Map Iterator] { 'Name' }
-// console.log(person.has("Name"),"+_+_+{"); // true
-// console.log(person.has("Name1"),"+_+_+{"); // false
-// console.log(person.get("Name1"),"+_+_+{"); // undefined
-// console.log(person.get("Name"),"+_+_+{"); // Alex
+// console.log(person ); // Outputs: Map { "Name" => "Alex" }
+// console.log(person.keys() ); // Outputs: [Map Iterator] { 'Name' }
+// console.log(person.has("Name") );    // true
+// console.log(person.has("Name1") );  // false
+// console.log(person.get("Name1") ); // undefined
+// console.log(person.get("Name") ); // Alex
 /*
 -----------------------------------------------------------------------------
 Methods:
@@ -1156,7 +1174,7 @@ A Set stores unique values.
 When we add objects, they are only considered unique if their reference is different — even if the content is same.
  */
 let mySet = new Set();
-let obj1 = { name: "Alice" }; 
+let obj1 = { name: "Alice" };
 let obj2 = { name: "Alice" };
 mySet.add(obj1);
 mySet.add(obj2);
@@ -1257,13 +1275,13 @@ If no other reference to an object exists, it can be garbage collected.
 let weakSet = new WeakSet();
 */
 
-// console.log(typeof WeakSet, '>>>>>>>>>>>>>>>>>>>'); // Should print "function".
+// console.log(typeof WeakSet); // Should print "function".
 let user = { name: "Alice" };
 console.log(typeof globalThis.WeakSet, "/////////\\\\\\\\\\\\"); // Should print "function"
 // let weakSet = new WeakSet();
-// console.log(weakSet.has(user),'::::::::::::::::::::'); // true
+// console.log(weakSet.has(user) ); // true
 // weakSet.add(user);
-// console.log(weakSet.has(user)); // true
+// console.log(weakSet.has(user) ); // true
 
 user = null;
 // Now the object may be garbage collected.
@@ -1315,6 +1333,40 @@ localStorage.setItem("user", "Alice");
 sessionStorage.setItem("session", "active");
 document.cookie = "token=12345; expires=Fri, 31 Dec 2025 12:00:00 UTC";
 ---------------------------------------------------------------------------------------------------------
+which one more secure in term of data storage session storage or cookie ?
+👉 Cookies (with HttpOnly + Secure flags) are more secure for sensitive data (like login tokens).
+Session storage is fine for temporary client-only data, but not for authentication.
+
+---------------------------------------------------------------------------------------------------------
+dynamo db how to store data ? 
+Think of DynamoDB like a giant JSON table, not like MySQL.
+Each record = Item
+Each table = Collection of items
+Each item = Key-Value pairs (flexible schema)
+
+---------------------------------------------------------------------------------------------------------
+🔹 What happens when we clear browser cache
+“Cache” mainly means stored static files like images, CSS, JS — it helps pages load faster.
+But depending on what we select while clearing, it can also include cookies and site data.
+
+🚦 Three types of storage — and what happens when we clear cache:
+
+1️⃣ Cookies
+Cookies usually store session info, login tokens, etc.
+If we clear cookies, we’ll be logged out — because the site loses our login token.
+✅ So: Clear cookies = Login gone.
+
+2️⃣ Local Storage
+Data stored here stays even after closing the browser.
+If we only clear cache (not site data), localStorage remains safe.
+
+But if we clear “cookies and site data”, then localStorage also gets deleted → we’ll need to log in again (if site depends on it).
+
+3️⃣ Session Storage
+Data lasts only till the tab or window is open.
+Once you close the tab/browser, sessionStorage data is automatically gone.
+💀 So it’s temporary anyway.
+---------------------------------------------------------------------------------------------------------
 */
 
 /**
@@ -1327,12 +1379,12 @@ document.cookie = "token=12345; expires=Fri, 31 Dec 2025 12:00:00 UTC";
 let tgb = [3, "ghar", { r: 3 }, function f() { }, []]
 /*
  Objects are indexed by strings.  
- Objects can store primitive data types, objects,function and arrays.
+(( Objects can store primitive data types, objects,function and arrays.))
  ---------------------------------------------------------------------------------------------------------
  Browser Object Model is known as BOM.
- Browser Object Model allows users to interact with the browser. 
+ Browser Object Model allows users to interact with the browser.
  ---------------------------------------------------------------------------------------------------------
- What is the use of a type of operator?
+ What is the use of a type-of operator?
 
 The typeof operator in JavaScript is a built-in operator that allows us to tell the data type of a value or variable.
 
@@ -1349,7 +1401,14 @@ console.log(typeof myArrowFunc); // "function"
 const obj = { method: function() {} };
 console.log(typeof obj.method); // "function"
 console.log(typeof NaN); // "number"
-console.log(typeof {}); // "object"
+           typeof Infinity;   // "number"
+
+           isNaN(NaN);           // true (but beware: converts non-numbers)
+           Number.isNaN(NaN);    // true (strict, recommended)
+           globalThis.isNaN(NaN);     // true
+           Number.isNaN(NaN);         // true
+           
+           console.log(typeof {}); // "object"
 console.log(typeof []); // "object"
 console.log(typeof null); // "object" (common interview gotcha)
 const isFunction = fn => typeof fn === "function";
@@ -1390,7 +1449,6 @@ const mage = createCharacter("Mage");
 // console.log(mage); // { name: "Mage", health: 100, attack: 10 }
 warrior.greet(); // Hi, I'm Warrior!
 mage.greet(); // Hi, I'm Mage!
-
 ///
 // 
 /**
@@ -1401,7 +1459,6 @@ mage.greet(); // Hi, I'm Mage!
 "Can Be Reassigned",   "No",   "Yes",  "Yes" 
 "Can Be re-declared",  "No",   "no",  "Yes" 
  */
-
 
 var x = 23;
 
@@ -1552,7 +1609,6 @@ function test(x = 1) {
   console.log(x);
 }
 // passing undefined
-
 // takes default value 1
 test(undefined); // 1
 */
@@ -1560,7 +1616,6 @@ test(undefined); // 1
 function test(x = 19) {
   console.log(x, "pppppppppp");
 }
-// passing undefined
 
 // takes default value 19
 // test(undefined); // 19
@@ -1580,7 +1635,7 @@ now if condition is true then just after question mark ? statement is run else a
 Template Strings (also called Template Literals):
 A feature in JavaScript introduced in ES6.
 
-Template literals in JavaScript use backticks (`) instead of quotes to create strings, allowing us to easily add variables and expressions inside them without concatenation.
+Template literals use backticks (`) instead of quotes to create strings, allowing us to add variables and expressions inside them without concatenation.
 With template literals, we can use both single and double quotes inside a string.
 
 🔁 Summary:
@@ -1617,7 +1672,6 @@ var a = 226;
 var b = "226";
 a === b // Returns false because coercion does not take place and the operands are of different types. Hence they are not equal.
 
-
   Type coercion in JavaScript only coerces to the string, number, and Boolean primitive types. There's no way in JavaScript to coerce a value type to object or function .
 
  Type Coercion refers to the process of automatic or implicit conversion of values from one data type to another. This includes conversion from Number to String, String to Number, Boolean to Number etc. when different types of operators are applied to the values.
@@ -1627,8 +1681,8 @@ a === b // Returns false because coercion does not take place and the operands a
         var x = 10 * '5';//50
         var y = 10 / '5';// 2
         var z = 10 % '5';//0
-Boolean to Number
-var x = true + 2;//3  
+        Boolean to Number
+        var x = true + 2;//3  
         var y = false + 2;//2
         ---------------------------------------------------------------*/
 // console.log(true=="true","{{{{{{{{{}}}}}}}}@@@")//false
@@ -1649,8 +1703,8 @@ If we used strict equality (===), the result would also be false because true (b
 
 /*
 4. The Equality Operator
-      var x = (10 == '10');//true
-      var y = (true == 1);//true
+      var x = (10 == '10'); // true
+      var y = (true == 1);  // true
       var z = (true == 'true');//false
 
 Scope chain: Whenever our code tries to access a variable during the function call, it starts the searching from local variables. And if the variable is not found, it'll continue searching in its outer scope or parent functions' scope until it reaches the global scope and completes searching for the variable there.
@@ -1742,7 +1796,7 @@ function add(a, b) {
 ------------------------------------------------------------------
 First-Class Functions
 
- In JavaScript, functions are first-class citizens.
+In JavaScript, functions are first-class citizens.
 ➡️ This means:
     Functions can be stored in variables.
     Passed as arguments to other functions.
@@ -1799,7 +1853,7 @@ Higher-order functions = usage of that capability.
 ------------------------------------------------------------------------------------....
 Why Are Higher-Order Functions Useful?
 Code Reusability: HOFs let us reuse logic by passing different functions as arguments (e.g., map can transform arrays in many ways).
-Abstraction: They hide complex details, making your code cleaner (e.g., filter handles the looping logic for you).
+Abstraction: They hide complex details, making our code cleaner (e.g., filter handles the looping logic for you).
 
 function createCounter() {
     let count = 0;
@@ -1845,10 +1899,10 @@ function Person(name, age, gender) {
 }
 
 var person1 = new Person("Vivek", 76, "male");
-// console.log(person1,':::::::::::::::::');//Person { name: 'Vivek', age: 76, gender: 'male' }
+// console.log(person1,':::::::'); // Person { name: 'Vivek', age: 76, gender: 'male' }
 
 var person2 = new Person("Courtney", 34, "female");
-// console.log(person2,'??????????????????????????');//Person { name: 'Courtney', age: 34, gender: 'female' }
+// console.log(person2,'?????????'); // Person { name: 'Courtney', age: 34, gender: 'female' }
 
 /*In the code above, we have created a constructor function named Person. Whenever we want to create a new object of the type Person, we need to create it using the 'new' keyword:
 
@@ -1866,7 +1920,7 @@ What do you mean by BOM?
 Browser Object Model is known as BOM. It allows users to interact with the browser. A browser's initial object is a window. As a result, we may call all of the window's functions directly or by referencing the window. The document, history, screen, navigator, location, and other attributes are available in the window object.
 ------------------------------------------------------------------------------------------------
 
- What are classes in javascript?
+ What are classes in javascript ? 
 Introduced in the ES6 version, classes are nothing but syntactic sugars for constructor functions. classes provide a new way of declaring constructor functions in javascript. Below are the examples of how classes are declared and used:
 
 // Before ES6 version, using constructor functions*/
@@ -1905,8 +1959,8 @@ class Student1 {
 let student2 = new Student1("Garry", 673, "7th", "C");
 let gh = student2.getDetails()
   ;
-// console.log(gh,'ggggggggggggggg')//Name: Garry, Roll no: 673, Grade:7th, Section:C
-// Returns Name: Garry, Roll no:673, Grade: 7th, Section:C
+// console.log(gh ) // Name: Garry, Roll no: 673, Grade:7th, Section:C
+// Returns             Name: Garry, Roll no:673, Grade: 7th, Section:C
 
 /*
 Key points to remember about classes:
@@ -1927,11 +1981,11 @@ class Animals {
   }
 };
 // let newanimal = new Animals("sonu", '12')
-// console.log(newanimal, 'newanimallllllllll')
+// console.log(newanimal, 'newall')
 // newanimal.info()
 // let newanimal2 = new Lion("sonu1", '12address')
 // newanimal2.info()
-// console.log(newanimal2,'newanial2newanmal2newnimal2')
+// console.log(newanimal2,'newimal2')
 /*
 ------------------------------------------------------------------------------------------------
   Quick Tips
@@ -1985,7 +2039,7 @@ var Student = {
 var stud1 = Object.create(Student);
 
 delete stud1.college;
-// console.log(stud1.college, "eeeeeeeeeeeeeeeeee!!!!!!");//abc
+// console.log(stud1.college, "!!!");//abc
 
 // delete Student.college;
 /*
@@ -2033,7 +2087,7 @@ undefined
 ------------------------------------------------------------------------------------------------
 */
 for (let i = 0; i < 10; i++) {
-  // setTimeout(() => console.log(b[i],';;;llp   '), 1000);
+  // setTimeout(() => console.log(b[i],';;;  '), 1000);
 }
 
 /**
@@ -2058,8 +2112,8 @@ It is the most popular methodology among developers.
 Objects can be considered as real-world instances of entities like class, that have some characteristics and behaviors.
 
  Need of OOPS:
-	OOPs helps 'dev' to understand the software easily. With OOPs, the readability, understandability, and maintainability of the code increase multifold.
-	Even very big software can be easily written and managed using OOPs.
+  OOPs helps 'dev' to understand the software easily. With OOPs, the readability, understandability, and maintainability of the code increase multifold.
+  Even very big software can be easily written and managed using OOPs.
 
 Benefits:
 Reusable code (DRY).
@@ -2272,21 +2326,21 @@ Classes tend to be overly generalized.
 ----------------------------------------------------------------------
 
 Difference between Classes and Object:
-	class is blueprint of object
+  class is blueprint of object
 Classes: It is a group of similar object.It is a logical entity.
-	It is conceptual,It does not occupy space in the memory.
-	A class can be existed without any object.
-	It binds data and methods together into a single unit.
-	It is a data type that represents the blueprint of an object.
-	It uses the keyword class when declared.
+  It is conceptual,It does not occupy space in the memory.
+  A class can be existed without any object.
+  It binds data and methods together into a single unit.
+  It is a data type that represents the blueprint of an object.
+  It uses the keyword class when declared.
 e.g : audi(category)
 
 Object:It is a real world entity such as book,car,etc.It is a physical or real world entity.
-	It occupies space in the memory.
-	Object cannot be existed without a class.
-	It is just like a variable of a class.
-	It is an instance of the class.
-	It uses the new keyword to create an object.
+  It occupies space in the memory.
+  Object cannot be existed without a class.
+  It is just like a variable of a class.
+  It is an instance of the class.
+  It uses the new keyword to create an object.
   -----------------------------------------------------------------------------------
 
 🔹 Encapsulation | Abstraction | Polymorphism (OOP Pillars)-----------------------------------------
@@ -2362,7 +2416,7 @@ inheritance :
 */
 /***
  Constructor
-	A constructor is a special method of a class or structure in object-oriented programming 
+  A constructor is a special method of a class or structure in object-oriented programming 
 that initializes a newly created object of that type. 
 Whenever an object is created, the constructor is called automatically.
 When a class  is created, its constructor is called. 
@@ -2372,9 +2426,9 @@ and they usually initialize the data members of the new object.
 
 8) Sub Class Vs Super Class:
 SubClass:Subclass is known as derived class, child class.
-	A subclass can use the properties and methods of the Superclass.
-	When implementing inheritance, the class that inherits the properties and 
-	methods from the Superclass is the Subclass.
+  A subclass can use the properties and methods of the Superclass.
+  When implementing inheritance, the class that inherits the properties and 
+  methods from the Superclass is the Subclass.
 
 Super Class:Superclass is known as base class, parent class.
 Superclass is also a part of Inheritance. The superclass is an entity, which allows subclasses or child classes to inherit from itself.
@@ -2382,9 +2436,9 @@ Superclass is also a part of Inheritance. The superclass is an entity, which all
 function afg() {
 
 }
-console.log(typeof afg, "aaaaaaaaaaaaaaaa")//function 
-console.log(typeof NaN, "aaaaaaaaaaaaaaaa")//number 
-// What will be the result of the following code?
+console.log(typeof afg, "aaaa")//function 
+console.log(typeof NaN, "aa")//number 
+// What will be the result of the following code ?
 // let x = 10;
 // let y = (x++, x + 1, x * 2);
 // console.log(y);//22

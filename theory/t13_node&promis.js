@@ -93,6 +93,7 @@ console.log("Main thread keeps working!");
 1.How do you handle requests and responses in a Node.js server?
 In Node.js, we can use the built-in http module to create a server that listens for incoming requests and sends back responses. To handle requests, we can use the request event on the server object, which provides information about the request such as the HTTP method, URL, and headers. To send a response, we can use the response object, which has methods like write() and end() to send data back to the client
 ------------------------------------------------------------------
+
 const express = require('express');
 const app = express();
 app.use(express.json())
@@ -115,7 +116,7 @@ Instead of writing logic for different methods and URLs manually, Express provid
 Can you describe your experience with using npm, the Node.js package manager?
 or 
 How do you manage packages in your NodeJS project?
-
+ 
 Npm is a Node package manager allows us to install and manage third-party libraries and packages in our projects. 
 ******************************************************************************************
 

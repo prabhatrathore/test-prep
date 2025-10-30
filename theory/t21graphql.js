@@ -1,45 +1,492 @@
 /**
  1. What is GraphQL?
-
-GraphQL is Query Language for APIs that describe api's request. it's not a technology or database. 
-It lets clients ask exactly what they need, and nothing more.
+GraphQL is Query Language for APIs that describe api's request. ((it's not a technology or database)). 
+GraphQL ask clients exactly what they need, and nothing more.
 
 📦 Developed by: Facebook (2012)
-🌐 Released: 2015
+🌐 Released: 2015 (open-sourced in 2015)
 🔗 Used by: GitHub, Shopify, Netflix, etc.
 --------------------------------------------------------------------------------
 ⚖️ REST API vs GraphQL (Main Comparison)
 
 Feature	                       REST API                               	GraphQL
-Data Fetching   	Multiple endpoints (e.g. /users, /posts)   	        Single endpoint (/graphql)
+Endpoints      	Multiple endpoints (e.g. /users, /posts)   	        Single endpoint (/graphql)
 
 over-fetching             common                                             never
-under-fetching            often                                                never
+under-fetching            often                                              never
 
-Versioning	      Usually requires /v1, /v2 etc.	                    No versioning needed, schema evolves
-Request Type	  Uses HTTP methods (GET, POST, PUT, DELETE)	        Always POST (usually) with query body
-Performance	         Multiple network calls	                              Single request with nested data
-Error Handling	     Status codes	                                    Errors field in JSON response
+Versioning	      Usually requires /v1, /v2 etc.	                     No versioning needed, schema evolves
+Request Type	  Uses HTTP methods (GET, POST, PUT, DELETE)	           POST (usually) with query body
+-------------------------------------------------------------------------------------------
 Flexibility	          Fixed structure	                                         Dynamic and flexible
 
+--------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
 
 why graphql ? 
-at time of fetching data from server side , client tell specificallly which data they want. 
+at time of fetching data from server side, client tell specificallly which data they want. 
 
 what it solved ?
 it solved overfetching
 2. multiple apli call . 
-3. subscribtion :   if server got new data then in rest api server can't possible to send but in graphql with some configuration we server can send data . 
+3. subscription :   if server got new data then in rest api server can't possible to send but in graphql with some configuration, server can send data . 
 
 ------ ------------------------------------------------------------------------------------------
-query : it's for just fetching the data 
-mutation :create, update, delete 
-subscription : 4 realtime send data, we use subscription 
+What are the main components of GraphQL?
+
+Schema – defines structure of API (types, queries, mutations)
+Resolvers – functions that return data for schema fields
+Queries – used to read data from the server. 
+Mutations – used to write/update/delete data . 
+Subscriptions – used for real-time data send from server . 
+------------------------------------------------------------------------------------------------
+*/
+/*
+What is a GraphQL Schema?
+GraphQL Schema defines what data types exist and what operations can be performed.
+
+Example:
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Query {
+  getUser(id: ID!): User
+}
+  ---------------------------------------------------------------------
+What is SDL (Schema Definition Language)?
+SDL (Schema Definition Language) is A human-readable syntax use to define GraphQL schema.
+
+type Book {
+  id: ID!
+  title: String!
+  author: Author!
+}
+
+type Author {
+  id: ID!
+  name: String!
+  books: [Book!]!
+}
+
+type Query {
+  book(id: ID!): Book
+  books: [Book!]!
+  author(id: ID!): Author
+}
+------------------------------------------------------------------------------------------------
+difference betweeen both.
+GraphQL Schema → The actual structure that defines what data can be queried, including types, fields, and relationships (it’s what the server uses).
+
+Schema Definition Language (SDL) → The syntax or language used to write that schema (like writing the blueprint).
+/*------------------------------------------------------------------------------------------------
+
+How does GraphQL work with Node.js?
+Answer:  Use Apollo Server or Express GraphQL
+Define a schema
+Write resolvers
+Start the server
+
+------ ------------------------------------------------------------------------------------------
+const { ApolloServer, gql } = require('apollo-server');
+
+const typeDefs = gql`
+  type Query {
+    hello: String
+  }
+`;
+const resolvers = {
+  Query: {
+    hello: () => 'Hello GraphQL with Node.js!',
+  },
+};
+
+const server = new ApolloServer({ typeDefs, resolvers });
+server.listen().then(({ url }) => console.log(`Server ready at ${url}`));
+
+------ ------------------------------------------------------------------------------------------
+BASIC TYPES & OPERATIONS 
+Q7. What are Scalar Types?
+Scalars are the basic data types in GraphQL.
+
+Default Scalars:
+Int → Integer
+Float → Decimal
+String → Text
+Boolean → true/false
+ID → Unique identifier
+
+------------------------------------------------------------------------
+
+What are GraphQL Types?
+Answer:
+Object Type → Defines fields (e.g., User)
+Input Type → Used in mutations
+Enum Type → Fixed values
+Interface & Union Types → Used for polymorphism
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+Q8. What are the 3 Operation Types ?
+
+Operation               Purpose                    Example
+Query              Fetch data (GET)              query { user(id:1) { name } }
+Mutation          Modify data (POST/PUT)         mutation { createUser(...) }
+Subscription       Real-time updates             subscription { messageAdded }
+------------------------------------------------------------------------------------------------
+------
+
+OBJECT TYPES & NESTING 
+Q10. How to define nested types?
+
+type Post {
+  id: ID!
+  title: String!
+  content: String
+  author: User!
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  posts: [Post!]!
+}
+---------------------------------------------------------------------------------------------
+What are Input Types in GraphQL?
+Answer:
+Used in mutations to pass structured input.
+
+Example:
+input CreateUserInput {
+  name: String!
+  email: String!
+}
+type Mutation {
+  createUser(input: CreateUserInput): User
+}
+------ ------------------------------------------------------------------------------------------
+What is Apollo Server?
+
+Answer:
+Apollo Server is the most popular GraphQL server for Node.js.
+It handles schema creation, query execution, and integrations easily.
+
+benefit: 
+easy intigration 
+schema first development
+powerful feature: caching, performance monitoring 
+
+------ ------------------------------------------------------------------------------------------
+What is the difference between Apollo Server and Express GraphQL?
+Feature	                   Apollo Server                  	Express GraphQL
+Popularity	                 High                           	Moderate
+Performance	              Slightly better                    	Basic
+Features         	Subscriptions, caching, federation        	Basic only
+Integration	            Built-in tools                   	Requires manual setup
+------ ------------------------------------------------------------------------------------------
+
+What is a Resolver Map?
+
+Answer:
+Resolvers are grouped as a map matching the schema.
+
+Example:
+
+const resolvers = {
+  Query: { getUser: () => {...} },
+  Mutation: { createUser: () => {...} }
+}
+------ ------------------------------------------------------------------------------------------
+What is Context in GraphQL?
+
+Answer:
+The context object is shared across all resolvers in a single request.
+It’s useful for authentication or database access.
+
+Example:
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: ({ req }) => {
+    const token = req.headers.authorization;
+    return { token };
+  },
+});
+------ ------------------------------------------------------------------------------------------
+------ ------------------------------------------------------------------------------------------
+What are Relationships in GraphQL?
+
+Answer:
+Relationships define how types are linked.
+
+Example:
+
+type Author {
+  id: ID!
+  name: String!
+  books: [Book]
+}
+
+type Book {
+  id: ID!
+  title: String!
+  author: Author
+}
+
+
+Resolvers must handle how these linked data are fetched.
+
+------ ------------------------------------------------------------------------------------------
+How to connect GraphQL with MongoDB using Mongoose?
+
+Answer:
+Steps:
+
+Connect MongoDB
+
+Define Mongoose models
+
+Use them inside resolvers
+
+Example:
+
+const User = mongoose.model('User', new mongoose.Schema({ name: String }));
+
+const resolvers = {
+  Query: {
+    users: async () => await User.find(),
+  },
+};
+------ ------------------------------------------------------------------------------------------
+How do you do Authentication in GraphQL?
+
+Answer:
+Use middleware or context to validate tokens (like JWT).
+
+Example:
+
+context: ({ req }) => {
+  const token = req.headers.authorization;
+  const user = verifyToken(token);
+  return { user };
+}
+
+
+Then access context.user inside resolvers
+------ ------------------------------------------------------------------------------------------
+How do you handle Authorization?
+
+Answer:
+Use custom directives or guards.
+
+Example:
+
+directive @auth on FIELD_DEFINITION
+
+type Query {
+  secretData: String @auth
+}
+
+
+And in Node:
+
+schemaDirectives: {
+  auth: AuthDirective
+}
+------ ------------------------------------------------------------------------------------------
+What is a Fragment in GraphQL?
+
+Answer:
+Fragments help to reuse field selections.
+
+Example:
+
+fragment userFields on User {
+  id
+  name
+}
+
+{
+  getUser(id: 1) {
+    ...userFields
+  }
+}
+------ ------------------------------------------------------------------------------------------
+What is Batching in GraphQL?
+
+Answer:
+Batching combines multiple requests into a single round trip to reduce network overhead.
+
+Usually implemented via DataLoader.
+
+Example:
+
+const DataLoader = require('dataloader');
+const userLoader = new DataLoader(keys => getUsersByIds(keys));
+------ ------------------------------------------------------------------------------------------
+What is Error Handling in GraphQL?
+
+Answer:
+GraphQL returns both data and errors in the same response.
+
+Example Response:
+
+{
+  "data": null,
+  "errors": [{ "message": "User not found" }]
+}
+------ ------------------------------------------------------------------------------------------
+What are Interfaces and Unions in GraphQL?
+
+Answer:
+Used for polymorphic types.
+
+Interface Example:
+
+interface Character {
+  name: String!
+}
+
+type Human implements Character {
+  name: String!
+  homePlanet: String
+}
+
+************************************
+Union Example:
+
+union SearchResult = User | Post
+------ ------------------------------------------------------------------------------------------
+What are Directives in GraphQL?
+
+Answer:
+Directives modify query behavior dynamically.
+
+Example:
+
+query {
+  users {
+    name @include(if: true)
+    age @skip(if: false)
+  }
+}
+------ ------------------------------------------------------------------------------------------
+How can you Optimize GraphQL Performance?
+
+Answer:
+
+Use DataLoader to batch database calls
+
+Apply query complexity limits
+
+Use caching for repeated queries
+
+Avoid deep nested queries
+
+Use pagination and filtering
+------ ------------------------------------------------------------------------------------------
+What are Common Security Practices in GraphQL?
+
+Answer:
+
+Validate and sanitize inputs
+
+Limit query depth and complexity
+
+Use authentication on context
+
+Disable introspection in production
+
+Rate-limit requests
+------ ------------------------------------------------------------------------------------------
+How to Implement Pagination in GraphQL?
+
+Answer:
+Use arguments like limit and offset in queries.
+
+Example:
+
+type Query {
+  users(limit: Int, offset: Int): [User]
+}
+------ ------------------------------------------------------------------------------------------
+What are GraphQL Variables?
+
+Answer:
+Variables make queries reusable.
+
+Example:
+
+query GetUser($id: ID!) {
+  getUser(id: $id) {
+    name
+  }
+}
+------ ------------------------------------------------------------------------------------------
+What are Aliases in GraphQL?
+
+Answer:
+Aliases allow renaming fields in a query.
+
+Example:
+
+{
+  firstUser: getUser(id: 1) { name }
+  secondUser: getUser(id: 2) { name }
+}
+------ ------------------------------------------------------------------------------------------
+What is Introspection in GraphQL?
+
+Answer:
+It’s the ability to query the schema itself, helping tools like GraphiQL auto-generate docs.
+(Disable in production for security reasons.)
+
+🟩 35. What is the N+1 problem in GraphQL?
+
+Answer:
+When resolvers make too many database calls (one per item).
+Fix: Use DataLoader to batch those queries.
+
+🟩 36. How to handle File Uploads in GraphQL?
+
+Answer:
+Apollo supports multipart uploads using graphql-upload package.
+------ ------------------------------------------------------------------------------------------
+What are Custom Scalars in GraphQL?
+
+Answer:
+You can define your own scalar types like Date or Email.
+
+Example:
+
+scalar Date
+------ ------------------------------------------------------------------------------------------
+What is GraphQL Playground?
+
+Answer:
+An interactive IDE to test GraphQL queries and mutations (like Postman for REST).
+
+🟩 40. How to Deploy a GraphQL Server?
+
+Answer:
+Same as Node.js app:
+
+npm run build
+
+Deploy on platforms like Render, Vercel, AWS, or Heroku
+
+Expose the /graphql endpoint
+------ ------------------------------------------------------------------------------------------
+subscription : 4 realtime send data from server to UI(client), we use subscription 
  
-for all this method in graphql we have 'POST' method only 
 
 ------------------------------------------------------------------------------------------------
-resolver : it is a function 
 
 ------------------------------------------------------------------------------------------------
 npm i express graphql express-graphql 
@@ -48,14 +495,6 @@ npm i express graphql express-graphql
 ------------------------------------------------------------------------------------------------
 
 polymorphic relationship: 
-
-waht is apolla server 
-it is open source graphql implementation server 
-
-benefit
-easy intigration 
-schema first development
-powerful feature: caching, performance monitoring 
 
 -------------------------------------------------------------------------------------------
 typedefs means graphql type definitions 
@@ -188,27 +627,6 @@ if (invalidData) throw new UserInputError("Invalid input")
 -------------------------------------------------------------------------------------------
 What are the advantages and disadvantages of GraphQL?
  
-advantages
-1. 🎯 Fetch only what we need
-In REST, you often get too much or too little data.
-
-In GraphQL, the client decides what fields it wants.
-👉 No over-fetching or under-fetching!
-
-2. 🚀 Single Endpoint
-
-Instead of multiple REST endpoints (/users, /posts, /comments),
-GraphQL uses one single endpoint (/graphql) for all queries and mutations.
-
-3. 🧩 Strongly Typed Schema
-
-GraphQL uses a schema that defines all data types and relations.
-Makes the API self-documented and easy to understand.
-
-4. 🔄 Real-Time Data (with Subscriptions)
-
-You can use GraphQL Subscriptions to get real-time updates (like chat apps 🔔).
--*************************************
 
 ⚠️ Disadvantages of GraphQL
 1. 🧠 Complex Setup

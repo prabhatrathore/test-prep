@@ -1,22 +1,22 @@
-const arrw = [1, 2, 3, 4, 2, 3, 5, 6, 3,5];
+const arrw = [1, 2, 3, 4, 2, 3, 5, 6, 3, 5];
 let td = []
 let objg = {}
+
 for (let el of arrw) {
-    console.log(el, 'eeeeee'
-    )
+    console.log(el, 'eeeeee')
     // td?.push(el)
     // if (td?.includes(el)) {
-        objg[el] = (objg[el] || 0) + 1
+    objg[el] = (objg[el] || 0) + 1
     // } 
-    
+
 }
-for(let le in objg){
-    if(objg[le]>1){
+for (let le in objg) {
+    if (objg[le] > 1) {
         td?.push(le)
     }
 }
 
-console.log(objg, 'wwwwwww',td,'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww')
+console.log(objg, 'wwww', td, 'wwww')
 
 let str = 'second'
 function sa(s) {

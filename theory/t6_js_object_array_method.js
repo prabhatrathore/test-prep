@@ -85,7 +85,7 @@ var prototype = {
 var john = Object.create(prototype)
 john.name = "John";
 john.sayHello(); // outputs "Hello, my name is John"
-// console.log(john,'johnnnnnnnnnnn')
+// console.log(john)
 // { name: 'John' }
 
 let object_define_property
@@ -202,7 +202,7 @@ console.log(obj.greet()); // Hello
 ------------------------------------------------------------------------------------------------
 
 19. Object.Seal()
-Prevents adding/deleting properties but allows modifying existing property values.
+Prevents adding/deleting properties but allows modifying of existing property's values.
 const obj = { name: "John" };
 Object.seal(obj);
 obj.name = "Jane"; // Allowed
