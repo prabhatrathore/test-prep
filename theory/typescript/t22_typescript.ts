@@ -1,14 +1,14 @@
 /**
  waht is typescript? 
  it is programming laguage, made by microsoft 
+ ts is superset of js 
  typescript is javascript with syntax for types .
-ts is superset of js 
 ts, first convert into js code & then run 
 ------------------------------------------------------------------------------------
 difference between 🧠 TypeScript vs JavaScript — Quick Intro
- JavaScript (JS) is a dynamically typed language → meaning you can assign any type to any variable anytime.
+ JavaScript (JS) is a dynamically typed language → meaning we can assign any type to any variable anytime.
 
-TypeScript (TS) is a superset of JS that adds static typing, meaning it checks variable types before running the code
+TypeScript (TS) is a superset of JS that adds static typing, meaning it checks variable types before running the code.
 
 ------------------------------------------------------------
 
@@ -34,7 +34,6 @@ Powerful OOP Support ⚙️
 TypeScript supports classes, interfaces, inheritance, and access modifiers like public, private, protected.
 
 ------------------------------------------------------------
-
 
 feature of typeescript
 type alias

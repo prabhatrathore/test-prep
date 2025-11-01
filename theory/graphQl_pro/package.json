@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@graphql-tools/schema": "^10.0.26",
     "apollo-server-express": "^3.13.0",
     "bcrypt": "^6.0.0",
     "dotenv": "^17.2.3",

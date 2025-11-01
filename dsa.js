@@ -140,3 +140,6 @@ function simplify(arr) {
 }
 // simplify(t)
 console.log(g)
+
+
+

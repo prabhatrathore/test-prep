@@ -10,7 +10,7 @@ GraphQL ask clients exactly what they need, and nothing more.
 ⚖️ REST API vs GraphQL (Main Comparison)
 
 Feature	                       REST API                               	GraphQL
-Endpoints      	Multiple endpoints (e.g. /users, /posts)   	        Single endpoint (/graphql)
+Endpoints      	Multiple endpoints (e.g. /users, /posts)   	        Single endpoint (/graphql) 
 
 over-fetching             common                                             never
 under-fetching            often                                              never
@@ -21,6 +21,7 @@ Request Type	  Uses HTTP methods (GET, POST, PUT, DELETE)	           POST (usual
 Flexibility	          Fixed structure	                                         Dynamic and flexible
 
 --------------------------------------------------------------------------------------------
+(/graphql -> we can chnge this endpoint but it is convention)
 -------------------------------------------------------------------------------------------
 
 why graphql ? 
@@ -28,15 +29,16 @@ at time of fetching data from server side, client tell specificallly which data 
 
 what it solved ?
 it solved overfetching
-2. multiple apli call . 
-3. subscription :   if server got new data then in rest api server can't possible to send but in graphql with some configuration, server can send data . 
+2. multiple api call . 
+3. subscription : if server got new data then in rest api, server can't possible to send but in graphql with some configuration, server can send data . 
 
 ------ ------------------------------------------------------------------------------------------
+
 What are the main components of GraphQL?
 
-Schema – defines structure of API (types, queries, mutations)
-Resolvers – functions that return data for schema fields
-Queries – used to read data from the server. 
+Schema – defines structure of API means what data types exist and what operations can be performed. (types, queries, mutations)
+Resolvers – Resolver is a functions that return data for schema fields
+Queries – Queries is used to read data from the server. 
 Mutations – used to write/update/delete data . 
 Subscriptions – used for real-time data send from server . 
 ------------------------------------------------------------------------------------------------
@@ -78,9 +80,9 @@ type Query {
 }
 ------------------------------------------------------------------------------------------------
 difference betweeen both.
-GraphQL Schema → The actual structure that defines what data can be queried, including types, fields, and relationships (it’s what the server uses).
+GraphQL Schema → The actual structure that defines what data can be queried, (including types, fields, and relationships (it’s what the server uses) ) .
 
-Schema Definition Language (SDL) → The syntax or language used to write that schema (like writing the blueprint).
+Schema Definition Language (SDL) → The syntax (or language) used to write that schema (like writing the blueprint).
 /*------------------------------------------------------------------------------------------------
 
 How does GraphQL work with Node.js?
@@ -91,6 +93,7 @@ Start the server
 
 ------ ------------------------------------------------------------------------------------------
 const { ApolloServer, gql } = require('apollo-server');
+gql--> graphql
 
 const typeDefs = gql`
   type Query {
@@ -101,7 +104,7 @@ const resolvers = {
   Query: {
     hello: () => 'Hello GraphQL with Node.js!',
   },
-};
+}
 
 const server = new ApolloServer({ typeDefs, resolvers });
 server.listen().then(({ url }) => console.log(`Server ready at ${url}`));
@@ -120,8 +123,7 @@ ID → Unique identifier
 
 ------------------------------------------------------------------------
 
-What are GraphQL Types?
-Answer:
+What are GraphQL Types ?
 Object Type → Defines fields (e.g., User)
 Input Type → Used in mutations
 Enum Type → Fixed values
@@ -191,25 +193,21 @@ Integration	            Built-in tools                   	Requires manual setup
 ------ ------------------------------------------------------------------------------------------
 
 What is a Resolver Map?
-
 Answer:
 Resolvers are grouped as a map matching the schema.
 
 Example:
-
 const resolvers = {
   Query: { getUser: () => {...} },
   Mutation: { createUser: () => {...} }
 }
 ------ ------------------------------------------------------------------------------------------
 What is Context in GraphQL?
-
 Answer:
 The context object is shared across all resolvers in a single request.
 It’s useful for authentication or database access.
 
 Example:
-
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -221,12 +219,10 @@ const server = new ApolloServer({
 ------ ------------------------------------------------------------------------------------------
 ------ ------------------------------------------------------------------------------------------
 What are Relationships in GraphQL?
-
 Answer:
 Relationships define how types are linked.
 
 Example:
-
 type Author {
   id: ID!
   name: String!
@@ -244,7 +240,6 @@ Resolvers must handle how these linked data are fetched.
 
 ------ ------------------------------------------------------------------------------------------
 How to connect GraphQL with MongoDB using Mongoose?
-
 Answer:
 Steps:
 
@@ -306,7 +301,6 @@ Answer:
 Fragments help to reuse field selections.
 
 Example:
-
 fragment userFields on User {
   id
   name
@@ -319,19 +313,16 @@ fragment userFields on User {
 }
 ------ ------------------------------------------------------------------------------------------
 What is Batching in GraphQL?
-
 Answer:
 Batching combines multiple requests into a single round trip to reduce network overhead.
 
 Usually implemented via DataLoader.
 
 Example:
-
 const DataLoader = require('dataloader');
 const userLoader = new DataLoader(keys => getUsersByIds(keys));
 ------ ------------------------------------------------------------------------------------------
 What is Error Handling in GraphQL?
-
 Answer:
 GraphQL returns both data and errors in the same response.
 
@@ -343,7 +334,6 @@ Example Response:
 }
 ------ ------------------------------------------------------------------------------------------
 What are Interfaces and Unions in GraphQL?
-
 Answer:
 Used for polymorphic types.
 
@@ -380,7 +370,6 @@ query {
 How can you Optimize GraphQL Performance?
 
 Answer:
-
 Use DataLoader to batch database calls
 
 Apply query complexity limits
