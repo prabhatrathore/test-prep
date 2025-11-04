@@ -27,12 +27,13 @@ let benefit_of_async_await
 let negative_or_demerits_of_using_async_Await
 /**
  1. Sequential by Default (Slower if Not Managed)
-Using await in a loop or multiple times runs tasks one after another, not in parallel.
+Using 'await' in a loop or multiple times runs tasks one after another, not in parallel.
 
 // Bad: These run one after the other (slow)
 await task1();
 await task2();
 await task3();
+
 ✅ Better (parallel)
 await Promise.all([task1(), task2(), task3()]);
  */

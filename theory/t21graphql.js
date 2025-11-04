@@ -25,12 +25,12 @@ Flexibility	          Fixed structure	                                         D
 -------------------------------------------------------------------------------------------
 
 why graphql ? 
-at time of fetching data from server side, client tell specificallly which data they want. 
+at time of fetching data from server side, client tell specificallly what data they want. 
 
 what it solved ?
 it solved overfetching
 2. multiple api call . 
-3. subscription : if server got new data then in rest api, server can't possible to send but in graphql with some configuration, server can send data . 
+3. subscription : if server got new data,-> in rest api, server can't possible to send but in graphql with some configuration, server can send data . 
 
 ------ ------------------------------------------------------------------------------------------
 
@@ -78,11 +78,13 @@ type Query {
   books: [Book!]!
   author(id: ID!): Author
 }
+
 ------------------------------------------------------------------------------------------------
+
 difference betweeen both.
 GraphQL Schema → The actual structure that defines what data can be queried, (including types, fields, and relationships (it’s what the server uses) ) .
 
-Schema Definition Language (SDL) → The syntax (or language) used to write that schema (like writing the blueprint).
+Schema Definition Language (SDL)→ SDL is A human-readable syntax use to define GraphQL schema (like writing the blueprint).
 /*------------------------------------------------------------------------------------------------
 
 How does GraphQL work with Node.js?
@@ -111,8 +113,9 @@ server.listen().then(({ url }) => console.log(`Server ready at ${url}`));
 
 ------ ------------------------------------------------------------------------------------------
 BASIC TYPES & OPERATIONS 
-Q7. What are Scalar Types?
-Scalars are the basic data types in GraphQL.
+
+Q7. What are Scalar Types in GraphQL?
+Scalars are the basic data types in GraphQL that represent single values.
 
 Default Scalars:
 Int → Integer
@@ -130,7 +133,18 @@ Enum Type → Fixed values
 Interface & Union Types → Used for polymorphism
 
 ------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+What are Input Types in GraphQL?
+Input Types in GraphQL used in mutations to pass structured input.
 
+Example:
+input CreateUserInput {
+  name: String!
+  email: String!
+}
+type Mutation {
+  createUser(input: CreateUserInput): User
+}
 ------------------------------------------------------------------------
 
 Q8. What are the 3 Operation Types ?
@@ -158,30 +172,16 @@ type User {
   email: String!
   posts: [Post!]!
 }
----------------------------------------------------------------------------------------------
-What are Input Types in GraphQL?
-Answer:
-Used in mutations to pass structured input.
 
-Example:
-input CreateUserInput {
-  name: String!
-  email: String!
-}
-type Mutation {
-  createUser(input: CreateUserInput): User
-}
 ------ ------------------------------------------------------------------------------------------
 What is Apollo Server?
-
-Answer:
 Apollo Server is the most popular GraphQL server for Node.js.
-It handles schema creation, query execution, and integrations easily.
+Apollo Server handles schema creation, query execution, and integrations easily.
 
-benefit: 
+----- benefit of Apollo Server----- : 
 easy intigration 
 schema first development
-powerful feature: caching, performance monitoring 
+((powerful feature: caching, performance monitoring ))
 
 ------ ------------------------------------------------------------------------------------------
 What is the difference between Apollo Server and Express GraphQL?
@@ -193,19 +193,41 @@ Integration	            Built-in tools                   	Requires manual setup
 ------ ------------------------------------------------------------------------------------------
 
 What is a Resolver Map?
-Answer:
-Resolvers are grouped as a map matching the schema.
+ Resolver Map is an object that connects our schema fields to their resolver functions — 
 
-Example:
-const resolvers = {
-  Query: { getUser: () => {...} },
-  Mutation: { createUser: () => {...} }
+((it tells GraphQL how to fetch the data for each field.))
+
+🧩 Example:
+
+Schema (definition):
+type Query {
+  getUser: User
+}
+
+type Mutation {
+  createUser(name: String): User
 }
 ------ ------------------------------------------------------------------------------------------
+Resolvers (map):
+
+const resolvers = {
+  Query: {
+    getUser: () => {
+      // code to fetch a user from database
+      return { id: 1, name: "Prabhat" };
+    }
+  },
+  Mutation: {
+    createUser: (_, { name }) => {
+      // code to create a user in database
+      return { id: 2, name };
+    }
+  }
+};
+------ ------------------------------------------------------------------------------------------
 What is Context in GraphQL?
-Answer:
 The context object is shared across all resolvers in a single request.
-It’s useful for authentication or database access.
+It’s useful for authentication ((or database access)).
 
 Example:
 const server = new ApolloServer({
@@ -219,7 +241,6 @@ const server = new ApolloServer({
 ------ ------------------------------------------------------------------------------------------
 ------ ------------------------------------------------------------------------------------------
 What are Relationships in GraphQL?
-Answer:
 Relationships define how types are linked.
 
 Example:
@@ -240,13 +261,10 @@ Resolvers must handle how these linked data are fetched.
 
 ------ ------------------------------------------------------------------------------------------
 How to connect GraphQL with MongoDB using Mongoose?
-Answer:
 Steps:
-
 Connect MongoDB
 
 Define Mongoose models
-
 Use them inside resolvers
 
 Example:
@@ -260,44 +278,82 @@ const resolvers = {
 };
 ------ ------------------------------------------------------------------------------------------
 How do you do Authentication in GraphQL?
-
 Answer:
 Use middleware or context to validate tokens (like JWT).
 
 Example:
-
 context: ({ req }) => {
   const token = req.headers.authorization;
   const user = verifyToken(token);
   return { user };
 }
 
-
 Then access context.user inside resolvers
 ------ ------------------------------------------------------------------------------------------
 How do you handle Authorization?
 
-Answer:
-Use custom directives or guards.
+we usually handle it inside our resolvers or middleware (context).
+*******************************************************************************
 
-Example:
+1️⃣ User logs in → get a JWT token
 
-directive @auth on FIELD_DEFINITION
+When a user logs in, we generate a JWT token:
+const jwt = require("jsonwebtoken");
 
-type Query {
-  secretData: String @auth
-}
+const token = jwt.sign({ userId: user.id, role: user.role }, "SECRET_KEY", { expiresIn: "1h" });
+***************************************************************
+2️⃣ Client sends token in headers
 
+Every GraphQL request will include the token:
 
-And in Node:
+{
+  "Authorization": "Bearer <token>"
+  }
+  
+  ***************************************************************
+ 3️⃣ Verify token in Apollo Server context
 
-schemaDirectives: {
-  auth: AuthDirective
-}
------- ------------------------------------------------------------------------------------------
+This is where we decode the token and attach user info to the request:
+
+const { ApolloServer } = require('@apollo/server');
+const jwt = require('jsonwebtoken');
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: ({ req }) => {
+    const authHeader = req.headers.authorization || '';
+    const token = authHeader.split(' ')[1]; // remove 'Bearer '
+    if (token) {
+      try {
+        const user = jwt.verify(token, "SECRET_KEY");
+        return { user }; // available in resolvers
+      } catch (err) {
+        throw new Error("Invalid or expired token");
+      }
+    }
+    return {};
+  },
+});
+  ***************************************************************
+  4️⃣ Check Authorization inside Resolver
+
+Now inside any resolver, we can check the user’s role/permission:
+const resolvers = {
+  Query: {
+    getAllUsers: (_, __, { user }) => {
+      if (!user) throw new Error("Not authenticated");
+      if (user.role !== "admin") throw new Error("Not authorized");
+      
+      // fetch users from DB
+      return users;
+      }
+      }
+      };    
+      ------ ------------------------------------------------------------------------------------------
+      ******************************************************************
+
 What is a Fragment in GraphQL?
-
-Answer:
 Fragments help to reuse field selections.
 
 Example:
@@ -312,18 +368,51 @@ fragment userFields on User {
   }
 }
 ------ ------------------------------------------------------------------------------------------
-What is Batching in GraphQL?
-Answer:
-Batching combines multiple requests into a single round trip to reduce network overhead.
+
+What is batching in GraphQL, and what is its impact on performance?
+🧠 Batching means combining multiple GraphQL operations (queries or mutations) into a single request — instead of sending many separate requests.
 
 Usually implemented via DataLoader.
 
 Example:
 const DataLoader = require('dataloader');
 const userLoader = new DataLoader(keys => getUsersByIds(keys));
+--------------------------------------------------------------------------------------
+
+📦 Example:
+
+Instead of:
+
+// 3 separate requests
+query { user(id: 1) { name } }
+query { post(id: 1) { title } }
+query { comment(id: 1) { text } }
+
+You can batch them together:
+
+[
+  { query: "{ user(id: 1) { name } }" },
+  { query: "{ post(id: 1) { title } }" },
+  { query: "{ comment(id: 1) { text } }" }
+]
+
+********************************************
+🚀 Impact on Performance
+✅ Advantages:
+
+Fewer network requests → reduces network overhead.
+Better speed → improves performance, especially for mobile or slow networks.
+Less server load → server handles one combined request instead of many small ones.
+************************************************
+
+⚠️ Disadvantages:
+
+Large batched requests can become heavy and slower to parse.
+Harder debugging → if one operation fails inside the batch, finding the issue takes more effort.
+Server must support batching (not all GraphQL servers handle it automatically).
+
 ------ ------------------------------------------------------------------------------------------
 What is Error Handling in GraphQL?
-Answer:
 GraphQL returns both data and errors in the same response.
 
 Example Response:
@@ -334,27 +423,78 @@ Example Response:
 }
 ------ ------------------------------------------------------------------------------------------
 What are Interfaces and Unions in GraphQL?
-Answer:
-Used for polymorphic types.
 
-Interface Example:
+🧩 Interfaces and Unions in GraphQL
+🧠 1. Interface (like a common blueprint)
 
-interface Character {
+👉 Interface defines common fields that multiple types must have.
+(Think of it like a “contract” — any type that implements it must include those fields.)
+
+📦 Example:
+interface Animal {
+  id: ID!
   name: String!
 }
 
-type Human implements Character {
+type Dog implements Animal {
+  id: ID!
   name: String!
-  homePlanet: String
+  breed: String
 }
 
-************************************
-Union Example:
+type Cat implements Animal {
+  id: ID!
+  name: String!
+  color: String
+}
 
-union SearchResult = User | Post
+type Query {
+  animals: [Animal]
+}
+
+✅ Now animals can return both Dog and Cat, because both follow the Animal structure.
+-------------------------------------------------------------------------------------
+
+🧩 2. Union (like an OR relationship)
+
+👉 Union combines completely different types that don’t share common fields.
+(Think of it as: “this can be either A or B”.)
+
+📦 Example:
+union SearchResult = User | Post | Comment
+
+type User {
+  id: ID!
+  name: String!
+}
+
+type Post {
+  id: ID!
+  title: String!
+}
+
+type Comment {
+  id: ID!
+  text: String!
+}
+
+type Query {
+  search(keyword: String!): [SearchResult]
+}
+
+
+✅ search can return a mix of users, posts, or comments —
+and the client will check the type using inline fragments.
+
+⚔️ Difference (Simple Table)
+Feature	                     Interface                            	Union
+🧱 Structure    	Common fields (like a shared blueprint)     	No common fields required
+🧩 Use case	        Types share similar structure	           Types are totally different
+🔗 Keyword	             implements                          	union =
+🧠 Example	            Animal → Dog, Cat	                     SearchResult → User, Post
+
 ------ ------------------------------------------------------------------------------------------
 What are Directives in GraphQL?
-
 Answer:
 Directives modify query behavior dynamically.
 
@@ -369,7 +509,6 @@ query {
 ------ ------------------------------------------------------------------------------------------
 How can you Optimize GraphQL Performance?
 
-Answer:
 Use DataLoader to batch database calls
 
 Apply query complexity limits
@@ -405,78 +544,48 @@ type Query {
   users(limit: Int, offset: Int): [User]
 }
 ------ ------------------------------------------------------------------------------------------
-What are GraphQL Variables?
-
-Answer:
-Variables make queries reusable.
-
-Example:
-
-query GetUser($id: ID!) {
-  getUser(id: $id) {
-    name
-  }
-}
 ------ ------------------------------------------------------------------------------------------
 What are Aliases in GraphQL?
-
-Answer:
 Aliases allow renaming fields in a query.
 
 Example:
-
 {
   firstUser: getUser(id: 1) { name }
   secondUser: getUser(id: 2) { name }
 }
 ------ ------------------------------------------------------------------------------------------
 What is Introspection in GraphQL?
-
-Answer:
-It’s the ability to query the schema itself, helping tools like GraphiQL auto-generate docs.
+Introspection is the ability to query the schema itself, helping tools like GraphiQL auto-generate docs.
 (Disable in production for security reasons.)
 
 🟩 35. What is the N+1 problem in GraphQL?
-
-Answer:
 When resolvers make too many database calls (one per item).
 Fix: Use DataLoader to batch those queries.
 
 🟩 36. How to handle File Uploads in GraphQL?
+Apollo supports multipart uploads using 'graphql-upload' package.
 
-Answer:
-Apollo supports multipart uploads using graphql-upload package.
 ------ ------------------------------------------------------------------------------------------
-What are Custom Scalars in GraphQL?
 
-Answer:
-You can define your own scalar types like Date or Email.
+What are Custom Scalars in GraphQL?
+we can define your own scalar types like Date or Email.
 
 Example:
-
 scalar Date
 ------ ------------------------------------------------------------------------------------------
 What is GraphQL Playground?
+GraphQL Playground is an interactive IDE to test GraphQL queries and mutations (like Postman for REST).
 
-Answer:
-An interactive IDE to test GraphQL queries and mutations (like Postman for REST).
-
+------ ------------------------------------------------------------------------------------------
 🟩 40. How to Deploy a GraphQL Server?
 
 Answer:
 Same as Node.js app:
-
 npm run build
-
 Deploy on platforms like Render, Vercel, AWS, or Heroku
-
 Expose the /graphql endpoint
 ------ ------------------------------------------------------------------------------------------
-subscription : 4 realtime send data from server to UI(client), we use subscription 
- 
-
 ------------------------------------------------------------------------------------------------
-
 ------------------------------------------------------------------------------------------------
 npm i express graphql express-graphql 
  for intigrating 'express' with 'graphql'  the middleware we need  which come from 'express-graphql' module
@@ -539,8 +648,6 @@ A GraphQL schema is like a blueprint (or map) 🗺️ that tells our API:
 👉 what clients can ask for,
 👉 and what type of data (each field) will return.
 -------------------------------------------------------------------------------------------
-What are scalar types in GraphQL?
-Scalar types are basic atomic data types in GraphQL that represent single values. They include types like String for text, Int for integers, Boolean for true or false values, and ID for unique identifiers. Scalars are used to represent the leaves of the GraphQL query tree, serving as the foundation for more complex data structures.
 -------------------------------------------------------------------------------------------
 What is an exclamation point in GraphQL?
 In GraphQL, an exclamation point (!)  means that the field must contain a value and cannot be empty.
@@ -563,11 +670,6 @@ Variables in GraphQL are dynamic values that can be passed as arguments in queri
 What is introspection in GraphQL, and how is it useful?
 GraphQL introspection enables clients to ask the GraphQL server questions about the schema, including available types, fields, and directives. It’s useful for building client-side tools that need to understand the schema,
 -------------------------------------------------------------------------------------------
-
-How do you do authentication and authorization in GraphQL?
-both are handled in the GraphQL context (where we verify the token and attach user info), and then checked inside resolvers.
-
-Authorization is implemented in GraphQL resolvers by checking permissions before returning data or performing mutations
 -------------------------------------------------------------------------------------------
 
 How do you do error handling in GraphQL?
@@ -616,7 +718,6 @@ if (invalidData) throw new UserInputError("Invalid input")
 -------------------------------------------------------------------------------------------
 What are the advantages and disadvantages of GraphQL?
  
-
 ⚠️ Disadvantages of GraphQL
 1. 🧠 Complex Setup
 
@@ -630,46 +731,12 @@ REST uses URL-based caching easily.
 
 In GraphQL, since everything is one endpoint, caching needs special handling.
 -------------------------------------------------------------------------------------------
-
-What is batching in GraphQL, and what is its impact on performance?
-🧠 Batching means combining multiple GraphQL operations (queries or mutations) into a single network request — instead of sending many separate requests.
-
-📦 Example:
-
-Instead of:
-
-// 3 separate requests
-query { user(id: 1) { name } }
-query { post(id: 1) { title } }
-query { comment(id: 1) { text } }
-
-
-You can batch them together:
-
-[
-  { query: "{ user(id: 1) { name } }" },
-  { query: "{ post(id: 1) { title } }" },
-  { query: "{ comment(id: 1) { text } }" }
-]
-
-********************************************
-🚀 Impact on Performance
-✅ Advantages:
-
-Fewer network requests → reduces network overhead.
-Better speed → improves performance, especially for mobile or slow networks.
-Less server load → server handles one combined request instead of many small ones.
-************************************************
-
-⚠️ Disadvantages:
-
-Large batched requests can become heavy and slower to parse.
-Harder debugging → if one operation fails inside the batch, finding the issue takes more effort.
-Server must support batching (not all GraphQL servers handle it automatically).
 -------------------------------------------------------------------------------------------
 
 What are some security considerations and best practices when exposing a GraphQL API to the public internet?
-Strong authentication and authorization procedures,( input validation and sanitization, and limitations on query complexity) are essential when opening a GraphQL API to public access.
+Strong authentication and authorization procedures, (input validation and sanitization, and limitations on query complexity) 
+
+are essential when opening a GraphQL API to public access.
  It’s also important to use API monitoring and rate-limiting techniques to identify and stop (abusive) traffic patterns. 
 
 -------------------------------------------------------------------------------------------
@@ -724,81 +791,10 @@ How would you protect against common security vulnerabilities, like SQL injectio
 1. Use ORM/ODM like Sequelize or Mongoose (they sanitize queries automatically).
 2. Validate all inputs before using them.
 -------------------------------------------------------------------------------------------
-
-🧩 Interfaces and Unions in GraphQL
-🧠 1. Interface (like a common blueprint)
-
-👉 Interface defines common fields that multiple types must have.
-(Think of it like a “contract” — any type that implements it must include those fields.)
-
-📦 Example:
-interface Animal {
-  id: ID!
-  name: String!
-}
-
-type Dog implements Animal {
-  id: ID!
-  name: String!
-  breed: String
-}
-
-type Cat implements Animal {
-  id: ID!
-  name: String!
-  color: String
-}
-
-type Query {
-  animals: [Animal]
-}
-
-
-✅ Now animals can return both Dog and Cat, because both follow the Animal structure.
-
-🧩 2. Union (like an OR relationship)
-
-👉 Union combines completely different types that don’t share common fields.
-(Think of it as: “this can be either A or B”.)
-
-📦 Example:
-union SearchResult = User | Post | Comment
-
-type User {
-  id: ID!
-  name: String!
-}
-
-type Post {
-  id: ID!
-  title: String!
-}
-
-type Comment {
-  id: ID!
-  text: String!
-}
-
-type Query {
-  search(keyword: String!): [SearchResult]
-}
-
-
-✅ search can return a mix of users, posts, or comments —
-and the client will check the type using inline fragments.
-
-⚔️ Difference (Simple Table)
-Feature	                     Interface                            	Union
-🧱 Structure    	Common fields (like a shared blueprint)     	No common fields required
-🧩 Use case	        Types share similar structure	           Types are totally different
-🔗 Keyword	             implements                          	union =
-🧠 Example	            Animal → Dog, Cat	                     SearchResult → User, Post
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
-
-
 */

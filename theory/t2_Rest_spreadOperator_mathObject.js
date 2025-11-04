@@ -125,7 +125,7 @@ let obj = {
     name,       //agr property name and variable name same h to aise likh skte  
     age,
 };
-// console.log(obj,";[pol;[p");
+// console.log(obj );
 //{ name: 'functionn literals', age: 33 }
 //=========================111111111111111=====================
 
@@ -137,7 +137,7 @@ let obj2 = {
         return `${this.nofstudent} is in the fucntion  `
     }
 }
-// console.log(obj2)//
+// console.log(obj2)
 // {
 //   nameofstudent: 'qwert222222',
 //   course: 'b.a.',
@@ -155,7 +155,7 @@ let obj3 = {
     }
 }
 // console.log(obj3)// { nameofstudent: 'qwert', course: 'b.a.', about: [Function: about] }
-// console.log(obj3['about'](), "about33");//qwert is in the function   about33
+// console.log(obj3['about']());//qwert is in the function 
 //================================================
 
 let fname = 'fisrtname';
@@ -166,13 +166,13 @@ function name2() {
 let res = name2(fname, lname); //
 console.log(res);// { fname: 'fisrtname', lname: 'lastname' }
 
-console.log(typeof null, "WWW")//object
+console.log(typeof null)//object
 // typeof null is "object" because of a historical bug in JavaScript’s type system, (and it remains for compatibility reasons).
 ///////////////////////////////////////////////
 
 let num1 = 7
 let num2 = '7'
-// console.log(num1 == num2, 'wwwaaaawwwws') //true
+// console.log(num1 == num2 ) //true
 console.log(num1 === num2, 'wws')//false
 console.log(num1 != num2, 'ww')//false
 console.log(num1 !== num2, 'wws')//true
@@ -192,9 +192,11 @@ const ad = st.concat(" ", st2, "dasdf", 'pppp', 'dd', 'vv')
 const arr1 = [1, 2, 3, 4,]
 const arr2 = [3, 6, 7, 8]
 arr1.push('pppppppppp')
+
 const newarr = [...arr1, ...arr2] //spread operator create shallow copy (new copy)
 // newarr.push('ppp')
 console.log(newarr, 'spread operator')  // [ 1, 2, 3, 4, 'pppppppppp', 3, 6, 7, 8 ] spread operator
+
 arr1.push('new1', 'new2')
 console.log(arr1); //[ 1, 2, 3, 4, 'pppppppppp', 'new1', 'new2' ]
 
@@ -202,6 +204,7 @@ console.log(newarr, '=====outer ====');//[ 1, 2, 3, 4, 'pppppppppp', 3, 6, 7, 8 
 
 //============================
 // const newarr2=[...'abc'];
+
 const newarr2 = [...'1234786968'];
 console.log(newarr2);
 //[
@@ -223,7 +226,9 @@ obj2.ratio = 2
 const newobj = { ...obj, ...obj2 }
 obj2.as = 112121  
 console.log(newobj) // { name: 'ooooo', age: 32, addresss: 'delhi', ratio: 2}
+
 //==============================
+
 const newobj2 = { ...'abc' }
 // console.log(newobj2)//{ '0': 'a', '1': 'b', '2': 'c' }
 
@@ -246,9 +251,12 @@ const obj3 = {
 };
 let { band, age: val2, adrress } = obj3
 console.log(band) //annfo
+
 console.log(val2) //11
+
 // console.log(value3)
 console.log(adrress)  //rza 31 dabri
+
 //========================================
 */
 
@@ -262,13 +270,13 @@ console.log(adrress)  //rza 31 dabri
 let obj2 = { ...obj }
 obj2.name.lastName = "changesd"
 obj2.a = "heeloo"
-// console.log(obj2,"obj222")//{ a: 'heeloo', b: 2, c: 5, name: { lastName: 'changesd' } }
+// console.log(obj2) // { a: 'heeloo', b: 2, c: 5, name: { lastName: 'changesd' } }
 
-// console.log(obj,"object")//{ a: 322, b: 2, c: 5, name: { lastName: 'changesd' } }
+// console.log(obj) // { a: 322, b: 2, c: 5, name: { lastName: 'changesd' } }
 
 let objDeep = JSON.parse(JSON.stringify(obj))
 objDeep.name.lastName = "qwerty"
- console.log(objDeep,"objDeep") // { a: 322, b: 2, c: 5, name: { lastName: 'qwerty' } } 
+ console.log(objDeep ) // { a: 322, b: 2, c: 5, name: { lastName: 'qwerty' } } 
 */
 
 let promise1 = new Promise((resolve, reject) => {

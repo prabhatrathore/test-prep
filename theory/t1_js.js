@@ -11,7 +11,7 @@ let history_of_js
 /** 
 1995: Brendan Eich at Netscape created a scripting language in 10 days.
 Original Names:
-First called Mocha.
+First name called Mocha.
 Renamed to LiveScript.
 Finally named JavaScript for marketing, as Java was popular, but Java and JavaScript are unrelated.
 
@@ -73,7 +73,7 @@ Returned when:
 Example:
  let str;
   console.log(str);  → Outputs undefined.
--------------------------------------------------------------------
+---------------------------------------------------------------------------------
 Null:
 Means "no value" and is explicitly assigned value .
 Type of null is object.
@@ -82,7 +82,7 @@ Example:
 let val = null;
  console.log(typeof val); 
  → Outputs object.
--------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 BigInt
 Purpose: Handles large numbers beyond 2^53 - 1 (JavaScript’s safe integer limit).
@@ -193,9 +193,9 @@ const b = { key: "b" }
 const c = { key: "n" }
 const d = { n: 3 }
 a[b] = 98
-console.log(a, "aaaaaa ")//{ '[object Object]': 98 }
-console.log(JSON.stringify(a), "a22222aaaaa ")//{"[object Object]":98} 
-console.log(a[b], "a[bbbbbb")//98
+console.log(a )//{ '[object Object]': 98 }
+console.log(JSON.stringify(a) ) // {"[object Object]":98} 
+console.log(a[b] ) // 98
 console.log(a,)//   // { '[object Object]': 98 }
 a[c] = 123
 console.log(a )//   // { '[object Object]': 123 }
@@ -211,7 +211,7 @@ console.log(a) //     { '[object Object]': 32, e: 1 }
 let string1 = '324e-1'
 string1 = Number(string1)
 
-console.log(string1, "string1string1")//    32.4 string1string1
+console.log(string1, "ng1")//    32.4 
 
 // '324e-1' is in scientific notation, meaning:          // 324 × 10⁻¹ = 32.4
 
@@ -296,7 +296,7 @@ for (let i = 0; i < 1000; i++) {
 
 // console.log('after loop')
 //j.s is synchronous programming and single threaded.
-//line by line execute hota hai code .
+//line by line execute code .
 //===================================
 
 //asynchronus programming
@@ -351,20 +351,23 @@ async function sol(req, res) {
 for (var i = 0; i < 3; i++) { //change var -> let, const
   // change let ,var const  
 }
-// console.log('===i"value===', i)// 3
+// console.log( i)// 3
 //--------------------------------------------------------------
 for (let i = 0; i < 3; i++) { //
   // change let ,var const  
 }
 
-// console.log('===i"value===', i)// 3
+// console.log( i)// 3
+//-----------------------------------------------------------------------------------------
 // for (const i = 0; i < 3; i++) { //
-//   // change let ,var const  
+//   // change let, var const  
 // }
 //---------------------------------------------------------
-// console.log('===i"value===', i)// assignment to constant variable
+// console.log( i)// assignment to constant variable
 
 //=======parameter destructuring --------------
+// Parameter destructuring in JavaScript allows the unpacking of properties from objects or elements from arrays directly within a function's parameter list
+
 let obj = {
   "name": "alex",
   age: 12,
@@ -465,8 +468,7 @@ Why is JavaScript interpreted not compiled?
  Originally, JavaScript was interpreted, meaning the browser read and executed the code line-by-line at runtime.
 */
 
-let ADVANTAGES_OF_USING_JAVASCRIPT = {
-}
+let ADVANTAGES_OF_USING_JAVASCRIPT;
 /*
  Light Weight Scripting Language******
 means js is made for data handling at the browser (only) & due to its low CPU usage, minimalist syntax, and ease of implementation.
@@ -481,7 +483,7 @@ Simplicity. JavaScript is relatively simple to learn and implement.
 
    The biggest advantage of JavaScript having ability to support all modern browsers and produce an equivalent result.
 
--> One of the main uses of JavaScript is use to create dynamic and interactive websites. JavaScript can be used to manipulate the content and styling of a web page, add interactivity through event handling, and communicate with web servers to update content without requiring a full page refresh.
+-> JavaScript is use to create dynamic and interactive websites. JavaScript can be used to manipulate the content and styling of a web page, add interactivity through event handling, and communicate with web servers to update content without requiring a full page refresh.
 ---------------------------------------------------------------------------------------------------------
 */
 let feature_of_js
@@ -662,7 +664,7 @@ A variable declared with var is function-scoped, meaning it’s only accessible 
 **********************************************************************************************
 
 Globally Scoped.......
-A variable declared with var outside any function ((or without 'var' in non-strict mode)) is globally scoped, meaning it’s accessible everywhere in our program, including inside functions, loops, or any other code.
+A variable declared with 'var' outside any function ((or without 'var' in non-strict mode)) is globally scoped, meaning it’s accessible everywhere in our program, including inside functions, loops, or any other code.
 
 Example with our code:
 
@@ -735,7 +737,7 @@ function addNumbers(a, b) {
   return a + b;
 }
 
-An anonymous function is a function that does not have a name. It can be defined using the function keyword, followed by a set of parentheses and a set of curly braces that enclose the function's body, without any function name. Anonymous functions are often used as callback functions, as function arguments or in immediately invoked function expressions (IIFE) or Self Invoking Functions.
+An anonymous function is a function that does not have a name. It can be defined using the function keyword, followed by a set of parentheses and a set of curly braces that enclose the function's body, without any function name. Anonymous functions are often used as callback functions, as function arguments or immediately invoked function expressions (IIFE) or Self Invoking Functions.
 
 Here's an example of an anonymous function:
 let sum = function(a, b) {
@@ -753,21 +755,22 @@ Anonymous functions can also be immediately invoked by enclosing the function de
 
 in this case, the function is defined and invoked immediately without being assigned to a variable
 
-An Immediately Invoked Function ( known as IIFE ) is a function that runs as soon as it is defined.
+An Immediately Invoked Function expression ( known as IIFE ) is a function that runs as soon as it is defined.
  */
-
 
 
 // string method 
 var str = '   hello-world   '
 // str.trim()// not working here becos we cannot assign here, in variable.
 var str2 = str.trim()
-// console.log(str.length,"line567") //17
+// console.log(str.length ) //17
 // console.log(str2.length) //// 11 
 let temp = str.slice(0, 4)  // 
-// console.log(temp, "@@ ") // h 
-// console.log(typeof temp, "@@@ ") // string
-// console.log(str.slice(0, 4), "a") // h 
+// console.log(temp ) // h 
+
+// console.log(typeof temp ) // string
+
+// console.log(str.slice(0, 4) ) // h 
 // console.log(typeof str.slice(0, 4) ) // string 
 // console.log(str2.slice(0, 4) )  // hell 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -777,12 +780,14 @@ let temp = str.slice(0, 4)  //
 // console.log(str.indexOf('h'))  //3
 // console.log(str.lastIndexOf('h')) //3
 // console.log('================================================================ =======')
+
 let tempAr = [3, 4, 5, 6, 6, 2, 1]
-// console.log(tempAr?.slice(0, 2), "+==")//[ 3, 4 ] 
+// console.log(tempAr?.slice(0, 2) ) // [ 3, 4 ] 
 //-----------------------------------------------------------------------------------------
+
 tempAr = 'tempArRDRFRGR'
 let th = tempAr.substring(3, 1)
-// console.log(th, "p#") // em  // swap krra
+// console.log(th ) // em  // swap krra
 // ----------------------------------------------------------------------
 
 th = tempAr.substring(-3, 1)
@@ -794,9 +799,11 @@ th = tempAr.substring(3, -1)
 
 // ----------------------------------------------------------------------
 let thj = tempAr.slice(2, 3)
-// console.log(thj, "!lice p!@#")//m 
+// console.log(thj ) // m 
+
 let thj1 = tempAr.slice(2, 2)
 // console.log(thj1) //"" return nothing
+
 tempAr = [3, 4, 5, 6, 6, 2, 1]
 // console.log(tempAr.slice(2, 2) ) // "" []  // empty array
 
@@ -819,8 +826,9 @@ console.log("Hello".substring(3, 1)); // "el" /// swap kr dia
  example: 
  */
 let str6 = "Hello";
-// console.log(str6.substring(-2, 3),")(*&^%$#@"); // Treats -2 as 0, outputs "Hel"
-// console.log(str6.substring(-2, -3),")(*&^%$#@"); // Treats -2 as 0, & -3 as 0 outputs ""
+// console.log(str6.substring(-2, 3) ); // Treats -2 as 0, outputs "Hel"
+
+// console.log(str6.substring(-2, -3) ) ; // Treats -2 as 0, & -3 as 0 outputs ""
 /*
 If we pass a negative index to substring(), it treats as 0.
 --------------------------------------------------------------------------------------------
@@ -882,7 +890,6 @@ const numbers = [28, 77, 45, 99, 27];
 numbers.forEach(number => {  
   console.log(number);
 }); 
-
 
 ------------------------------------------------------------------------------------------------
 Array.reduce()
@@ -1103,14 +1110,17 @@ Uncaught ReferenceError: x is not defined
 let memoization;
 /*
 Memoization in JavaScript is an optimization technique used to improve the performance of functions by caching their results based on the input parameters. When a function is called with the same inputs multiple times, memoization allows the function to return the cached result instead of recomputing it, saving time and computational resources.
-----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 
 Recursion is a technique where a function call itself until it arrive at a result.
    
-----------------------------------------------------------------------------------------------------
-
-Arrow functions were introduced in the ES6 version of javascript. They provide us with a new and shorter syntax for declaring functions. Arrow functions can only be used as a function expression.
 ---------------------------------------------------------------------------------------------------------
+
+Arrow functions were introduced in the ES6 version of javascript. They provide us with a new and shorter syntax for declaring functions. 
+((Arrow functions can only be used as a function expression.))
+
+---------------------------------------------------------------------------------------------------------
+
 A generator function is a special type of function that can be paused and resumed during its execution.
   */
 function* generator1() {
@@ -1323,7 +1333,9 @@ localStorage save data even after the browser window is closed and is accessible
 
 session Storage stores data for a single browser session and is accessible only within the same tab or window open.
 Once the tab or window is closed, the data is cleared
+
 ---------------------------------------------------------------------------------------------------------
+
 Storage                         	Expiry      	Max_Size	     Accessible_by_JS?
 localStorage	                Never expires     	~5MB	            ✅ Yes
 sessionStorage     	      Expires on page close	  ~5MB	            ✅ Yes
@@ -1333,6 +1345,7 @@ localStorage.setItem("user", "Alice");
 sessionStorage.setItem("session", "active");
 document.cookie = "token=12345; expires=Fri, 31 Dec 2025 12:00:00 UTC";
 ---------------------------------------------------------------------------------------------------------
+
 which one more secure in term of data storage session storage or cookie ?
 👉 Cookies (with HttpOnly + Secure flags) are more secure for sensitive data (like login tokens).
 Session storage is fine for temporary client-only data, but not for authentication.
@@ -1364,7 +1377,7 @@ But if we clear “cookies and site data”, then localStorage also gets deleted
 
 3️⃣ Session Storage
 Data lasts only till the tab or window is open.
-Once you close the tab/browser, sessionStorage data is automatically gone.
+Once we close the tab/browser, sessionStorage data is automatically gone.
 💀 So it’s temporary anyway.
 ---------------------------------------------------------------------------------------------------------
 */
@@ -1379,11 +1392,14 @@ Once you close the tab/browser, sessionStorage data is automatically gone.
 let tgb = [3, "ghar", { r: 3 }, function f() { }, []]
 /*
  Objects are indexed by strings.  
+
 (( Objects can store primitive data types, objects,function and arrays.))
  ---------------------------------------------------------------------------------------------------------
+ 
  Browser Object Model is known as BOM.
  Browser Object Model allows users to interact with the browser.
  ---------------------------------------------------------------------------------------------------------
+ 
  What is the use of a type-of operator?
 
 The typeof operator in JavaScript is a built-in operator that allows us to tell the data type of a value or variable.
@@ -1625,12 +1641,6 @@ function test(x = 19) {
 // test(NaN); // NaN
 /*
 ---------------------------------------------------------------------------------------
-ternary operator
-
-The ternary operator in JavaScript is a shorthand for an if-else statement, written as condition ? valueIfTrue_statement : valueIfFalse_statement,
-
-now if condition is true then just after question mark ? statement is run else after colon statement run.
-
 -----------------------------------------------------------------------------------------
 Template Strings (also called Template Literals):
 A feature in JavaScript introduced in ES6.
@@ -1661,9 +1671,11 @@ loose Equality Coercion
 
  while using the ‘==’ operator, implicit coercion takes place.
 The ‘==’ operator, converts both the operands to the same type and then compares them.
-Example:
+
+Example :
 var a = 12;
 var b = "12";
+
 a == b // Returns true because both 'a' and 'b' are converted to the same type and then compared. Hence the operands are equal.
 Coercion does not take place when using the ‘===’ operator. Both operands(value) are not converted to the same type in the case of ‘===’ operator.
 
@@ -1719,13 +1731,15 @@ test(): Checks if a string contains a pattern and returns a boolean (true if fou
 
 let regex = /hello /;
 // This is a regular expression that matches the exact phrase:
-// console.log(regex.test("hello world"), 'XXXXXXXx'); // true
-// console.log(regex.test("he world"), 'CCCCC'); // false
+// console.log(regex.test("hello world"), ); // true
+// console.log(regex.test("he world"), ); // false
 // -----------------------------------------------------------------------
+
 regex = /hello   /;
 // This is a regular expression that matches the exact phrase:
 // console.log(regex.test("hello world"), 'XXXXXXXx'); // false
 // -----------------------------------------------------------------------
+
 regex = /hello is the/;
 // This is a regular expression that matches the exact phrase:
 // console.log(regex.test("hello world"), 'XXXXXXXx'); // false
@@ -1742,7 +1756,9 @@ console.log(regex1.exec("hello world"), 'LLLLLLLLLLL'); // ["hello", index: 0, i
 console.log(regex1.exec("world")); // null
 /*
 -------------------------------------------------------------------------------------------
-Currying in JavaScript is a functional programming technique where a function with multiple arguments is transformed into a sequence of functions, each taking a single argument. Instead of taking all arguments at once, a curried (curry) function returns a new function for each argument until all arguments are provided, then it computes the result.
+Currying in JavaScript is a functional programming technique where a function with multiple arguments is transformed into a sequence of functions, each taking a single argument.
+
+Instead of taking all arguments at once, a curried (curry) function returns a new function for each argument until all arguments are provided, then it computes the result.
 */
 // Regular function
 function add(a, b, c) {
@@ -1769,6 +1785,7 @@ console.log(add1and2(3)); // Output: 6
  Benefits of Currying in JavaScript
  Function Reusability:
 Curried (curry) functions are modular, enabling us to reuse logic with different arguments.
+
 Delayed Execution:
 Arguments are evaluated only when all are provided, allowing flexible control over when the function runs. This is useful for lazy evaluation or deferred computations.
 
@@ -1880,7 +1897,8 @@ boundFunction(); // Outputs: Hi, Alex
 
 ------------------------------------------------------------------------------------.
 Scope Chain in js. 
- if the javascript engine does not find the variable in local scope, it tries to check for the variable in the outer scope. If the variable does not exist in the outer scope, it tries to find the variable in the global scope.
+ if the javascript engine does not find the variable in local scope, it tries to check the variable in the outer scope. If the variable does not exist in the outer scope, it tries to find the variable in the global scope.
+ 
 --------------------------------------------------------------------------------------
  
 What is the use of a constructor function in javascript?       
@@ -1938,9 +1956,11 @@ Student.prototype.getDetails = function () {
 
 let student1 = new Student("Vivek", 354, "6th", "A");
 let ge = student1.getDetails();
-// console.log(ge,'geeeeeeeeeeeeeeee')//Name: Vivek, Roll no: 354, Grade: 6th, Section:A
+// console.log(ge ) // Name: Vivek, Roll no: 354, Grade: 6th, Section:A
 // Returns Name: Vivek, Roll no:354, Grade: 6th, Section:A
+
 // -------------------------------------------------------------------------------------------------
+
 // ES6 version classes
 class Student1 {
   constructor(name, rollNumber, grade, section) {
@@ -1982,16 +2002,19 @@ class Animals {
 };
 // let newanimal = new Animals("sonu", '12')
 // console.log(newanimal, 'newall')
+
 // newanimal.info()
+
 // let newanimal2 = new Lion("sonu1", '12address')
 // newanimal2.info()
+
 // console.log(newanimal2,'newimal2')
 /*
 ------------------------------------------------------------------------------------------------
   Quick Tips
 ✅ map, filter, reduce, find are Higher - Order Functions
-✅ splice, sort, reverse, push, pop, shift, unshift modify original array
-✅ slice, map, filter, concat return new arrays(don’t mutate original)
+✅ splice, sort, reverse, push, pop, shift, unshift --> modify original array
+✅ slice, map, filter, concat return new arrays ( don’t mutate original )
 ------------------------------------------------------------------------------------------------
   What would be the output of the below JavaScript code ?
 var a = 10;
@@ -2009,7 +2032,7 @@ function abc() { } evaluates to the function object itself, which is truthy.
 
 🔍 Key Point
 In this context:
-abc is NOT defined in the outer scope.
+'abc' is NOT defined in the outer scope.
 The function expression function abc() { } does not create abc in the outer scope.
 In function expressions with names(named function expressions), the name is only available inside the function itself, not outside.
 ------------------------------------------------------------------------------------------------
@@ -2018,15 +2041,15 @@ let t4 = 2
 if (function el() { }) {
   t4 = t4 + typeof el
 }
-// console.log(t4, "tWWWWWWWWWWw44444444444")//2undefined
+// console.log(t4 ) // 2undefined
 /*
-. What will be the output of the following code?
+What will be the output of the following code?
 */
 var Bar = function Foo() {
   return 11;
 };
 
-// console.log(typeof Foo(), "llllllllll")//ReferenceError: Foo is not defined
+// console.log(typeof Foo() ) // ReferenceError: Foo is not defined
 /*
 The output would be a reference error since a function definition can only have a single reference variable as its name.  
 ------------------------------------------------------------------------------------------------
@@ -2087,7 +2110,7 @@ undefined
 ------------------------------------------------------------------------------------------------
 */
 for (let i = 0; i < 10; i++) {
-  // setTimeout(() => console.log(b[i],';;;  '), 1000);
+  // setTimeout(() => console.log(b[i] ), 1000);
 }
 
 /**
@@ -2105,11 +2128,14 @@ for (let i = 0; i < 10; i++) {
 
 /*
 🔹 OOPs (Object-Oriented Programming) 
-oops is the programming paradign [pattern [step by step procedure]] that uses objects,to structure code for reusability, modularity, and clarity.
+oops is the programming paradign that uses objects to represent data and functionality 
+
+(structure code for reusability, modularity, and clarity.) 
  ((rather than just functions and procedure)). 
+
 It is the most popular methodology among developers. 
 
-Objects can be considered as real-world instances of entities like class, that have some characteristics and behaviors.
+Objects is real-world instances of entities like class that have some characteristics and behaviors.
 
  Need of OOPS:
   OOPs helps 'dev' to understand the software easily. With OOPs, the readability, understandability, and maintainability of the code increase multifold.
@@ -2127,7 +2153,7 @@ Class	        Blueprint of an object (like a template)
 Object	      Instance of a class (actual usable thing made from blueprint)
 Constructor	  Special method called when object is created (used for initialization)
 Method	      Function inside a class
-Inheritance	  One class can use properties/methods of another using extends & super()
+Inheritance	  One class can use properties/methods of another class using extends & super()
 Encapsulation	: Wrapping data (variables) and methods (functions) into a single unit — a class.
 Polymorphism  :  Same method behaves differently in different classes
 abstruction   :  show only relevant details for users and hide other details
@@ -2150,7 +2176,7 @@ car1.drive(); // BMW is driving
 -------------------------------------------------------------------------------
 🔸 Types of Methods:
 Type	                 Syntax Example               	Notes
-Constructor	          constructor() {}	          Auto-called on object creation
+Constructor	          constructor() {}	         Auto-called on object creation
 Normal Method        	drive() {}	               Called via object like car.drive()
 Static Method	        static details() {}	       Called via class, not object (Car.details())
 
@@ -2438,6 +2464,7 @@ function afg() {
 }
 console.log(typeof afg, "aaaa")//function 
 console.log(typeof NaN, "aa")//number 
+
 // What will be the result of the following code ?
 // let x = 10;
 // let y = (x++, x + 1, x * 2);
@@ -2569,28 +2596,6 @@ function outer() {
 let fn = outer();
 fn(); // Output: 20 (It uses 'a' from where inner() was defined)
 */
-let Dynamic_Scoping_NOT_used_in_JavaScript
-/*-------------------------------------------------------------------------
-
-🔹 Dynamic Scoping (NOT used in JavaScript)
-🔧 Scope depends on who called the function (runtime call stack).
-
-It uses variables from the calling function, even if not defined nearby.
-Found in some older languages like Bash or early Lisp.
-
-🚫 JavaScript doesn’t use this.
-✅ Idea (in pseudo-code):
-a=10
-
-function outer {
-  a=20
-  inner
-}
-function inner {
-  echo $a
-}
-
-outer  # Output: 20 (inner() used 'a' from outer because it was called from there)*/
 
 /*
 ------------------------------------------------------------------------------------

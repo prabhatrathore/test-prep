@@ -1,11 +1,9 @@
-
-
 /**
 🔹 JavaScript Cheat Sheet
 📌 Basics
 var / let / const – Variable declarations 
 Data Types – primitive ( string, number, boolean, null, undefined, symbol, bigint,) & non-primitive data type(object,array,function).
-Type Coercion – Implicit vs Explicit
+Type Coercion – Implicit Coercion  vs Explicit Coercion .
 == vs === –> Loose equality comparision vs Strict equality comparision
 
 📌 Functions
@@ -16,10 +14,13 @@ First-Class Functions –> Functions as variable
 Higher-Order Functions –> Accept/return functions
 
 📌 Scope & Closures
-Global vs Local Scope
+Global vs Local Scope.
 Lexical Scope: (also called Static Scope) means :
 👉 The accessibility of variables, where they are written in the code — at the time of writing, not at runtime.
+
 A variable is accessible only inside the block/function where it is defined, and inside its inner (nested) functions
+
+---------------------------------------------------------------------------------------
 
 Closure – Inner function remembers outer function's variables.
 
@@ -47,10 +48,11 @@ Promises
 
 The nullish coalescing operator (??) in JavaScript is a logical operator. 
 
-The nullish coalescing ?? operator checks if the left-hand operand is nullish then it return right-hand operand.
+The nullish coalescing ?? operator checks if the left-hand operand is nullish then it return right-hand operand else it return left hand operand.
+
 Nullish means only null or undefined. Other falsy values like 0, false, or "" (empty string) are not considered nullish.
 
-It’s different from the logical OR operator (||), which treats all falsy values (e.g., 0, false, "", NaN) as conditions to fall back to the default.
+(( It’s different from the logical OR operator (||), which treats all falsy values (e.g., 0, false, "", NaN) as conditions to fall back to the default. ))
 ------------------------------------------------------------------------------
 
 Example 1: */
@@ -114,7 +116,7 @@ console.log(theme); // Output: "default"
 Modules: require / import
 In Node.js, modules are reusable pieces of code that we can include in our program.
 1. require
- A 'require' function used in Node.js to load modules (built-in, external, or your own files).
+ A 'require' function used in Node.js to load modules ( module can be built-in, external, or your own files).
 Used in: CommonJS modules (the older,or default module system in Node.js).
 ------------------------------------------------------------------------------------------
 
@@ -132,6 +134,8 @@ path – File paths
 http – Server creation
 events – EventEmitter
 worker_threads – CPU intensive task handling
+
+-----------------------------------------------------------------
 
 📌 Package Management
 npm / yarn
@@ -160,7 +164,7 @@ git log                   # View commit history
 📌 Branching
 git branch                # List branches
 git branch -a             # List all branches
-git checkout -b feature   #create New branch
+git checkout -b feature   # create New branch
 git merge feature         # Merge branch
 git rebase main           # Rebase
 
@@ -283,12 +287,8 @@ Since 'x' is not defined globally, calling console.log(x); outside testVar cause
 /*
 JavaScript Operators
 --------------------------------------------------------------------------------------------
-
 Java Script Special Operators
 The following Operators are known as JavaScript Special operators.
-
-(?:) : Conditional Operator returns Value based on
-the Condition. It is like if- else. Comma Operator allows multiple expressions to be evaluated as single statement.
 
 Delete: Delete Operator deletes a property from the object.
 
@@ -317,9 +317,10 @@ JavaScript Operators are symbols that are used to perform Operations on operands
 6. JavaScript Unary Operators.
 7. JavaScript Comma Operator
 -----------------------------------------------------------------------------------------------
+
 Arithmetic Operators: 
 E.g:
-1. JavaScript Arithmetic Operators
+1.JavaScript Arithmetic Operators
 Arithmetic Operators use to perform arithmetic operation on the operands like addition, subtraction, multiplication, etc.
 
 const sum = 5 + 3; // Addition
@@ -549,7 +550,7 @@ console.log(a, b5);  // 5, 16
 
 /*
 9. JavaScript Relational Operators
-JavaScript Relational operators are used to compare its operands and find (determine) the relationship between them. They return a Boolean value (true or false) based on the comparison result.
+JavaScript Relational operators are used to compare its operands and find the relationship between them. They return a Boolean value (true or false) based on the comparison result.
 
 const obj = { length: 10 };
 console.log("length" in obj);
@@ -738,8 +739,12 @@ console.log(val);
 let low_level_design_in_node_js
 /*
 *-
-low level design in node js
-Low-Level Design (LLD) in Node.js focuses on the detailed implementation of individual components, modules, and functions within a larger system. It translates the high-level architectural decisions into concrete blueprints for coding, ensuring maintainability, scalability, and efficiency.
+Low-Level Design (LLD) in Node.js focuses on the detailed implementation of individual components, modules, and functions within a larger system. 
+👉 Focuses on how things work internally — actual code, functions, classes, database schema, APIs, etc.
+It is like writing the detailed blueprint of our project.
+
+((Example:
+In Node.js — deciding how our routes, controllers, and services interact, what functions we will write, how data flows, error handling, etc.
 
 Key aspects of LLD in Node.js:
 Module Design and Organization:
@@ -748,9 +753,18 @@ Data Structures and Algorithms
 Database Interactions:
 Error Handling and Logging:
 Security Considerations:
-Testing Strategy:
+Testing Strategy: )) 
+
 ------------------------------------------------------------------------------------------------
-High-level design (HLD) in Node.js focuses on defining the overall architecture and structure of a system, outlining its major components and their interactions without delving into specific implementation details. It provides a blueprint for the system, ensuring scalability, maintainability, and efficient performance. 
+
+High-level design (HLD) in Node.js
+
+focuses on defining the overall architecture and structure of a system. It’s about what components exist and how they connect.
+
+Example:
+In Node.js — deciding to use Express, PostgreSQL, Redis, and how microservices or modules will talk to each other.
+
+🌐 “What will our system look like overall?”
 
 Key aspects of HLD in Node.js include:
 System Architecture:
@@ -758,7 +772,9 @@ Data Flow and Control Flow:
 Service and API Design:
 Database Architecture:
 Technology Stack:
+
 ----------------------------------------------------------------------------------------------
+
 Events
 The change in the state of an object is known as an Event. This process of reacting over the events is called
 Event Handling. Thus, JS handles the HTML events via Event Handlers.

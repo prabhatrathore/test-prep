@@ -6,6 +6,7 @@ Username and password combination is the most popular authentication mechanism, 
   
 In simple terms, authentication is the process of verifying who a user is, while authorization is the process of verifying what they have access to.
 
+👉 Authorization means checking what a user is allowed to do (after login).
 -------------------------------------------------------------------------------------------------
 
 Q1:  What is Authorization ? 
