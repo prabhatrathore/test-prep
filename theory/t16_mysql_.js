@@ -284,7 +284,7 @@ Auto Increment is a property in SQL that automatically generates a unique sequen
 whenever a new row is inserted into a table.
 ---------------------------------------------------------------------------------------------------
 
-What is Denormalization?
+What is Denormalization ?
 Denormalization is the process of combining tables or adding redundant data into a database
 to improve read performance at the cost of data redundancy.
 It is the opposite of Normalization, used when fast data retrieval is more important than
@@ -299,6 +299,17 @@ Used in data warehouses and reporting systems
 What is GROUP BY in SQL?
 The GROUP BY clause in SQL is used to group rows that have the same values into summary
 rows
+---------------------------------------------------------------------------------------------------
+SQL  
+Definition       
+1. Structured Query Language used to manage and  manipulate databases
+2. sql is language
+3. Used to write queries to interact with databases
+-------------------------------------------
+MySQL
+1. Relational Database Management System (RDBMS) that uses SQL
+2. mysql is Software
+3. Used to store, manage, and retrieve data
 ---------------------------------------------------------------------------------------------------
 
 MySQL supports several JOINs types, each serving specific purposes:
@@ -470,12 +481,14 @@ CREATE TABLE transactions (
  DELETE FROM employees WHERE department_id = 5;
 
  ---------*****************************
- TRUNCATE: Deletes all rows from a table, but the table structure remains intact (same). It is faster than DELETE and cannot be rolled back. Example:
+ TRUNCATE: Deletes all rows from a table, but the table structure remains intact (same). It is faster than DELETE and cannot be rolled back.
+  Example:
  TRUNCATE TABLE employees;
 
 ---------*****************************
  
- DROP: Completely removes the table structure and data, along with any dependencies like indexes. Example:
+ DROP: Completely removes the table structure and data, along with any dependencies like indexes. 
+ Example:
  DROP TABLE employees;
 
 -------------------------------------------------------------------------------------
@@ -757,7 +770,7 @@ Unlike HTTP, it’s not request-response; both sides can send data anytime.
 
 Cons:
 Complex setup: Requires a WebSocket server (e.g., ws library in Node.js). 
-Resource-intensive: Persistent connections consume server resources
+Resource-intensive: Persistent connections consume server resources. 
 -----------------------------------------------------------------------------------
 
 Polling
@@ -1040,6 +1053,7 @@ Embedded Documents: Store related data within a single document (like JSON). For
 References: Store IDs linking to other documents (similar to foreign keys). For example, a user document might reference a separate posts collection. Best for one-to-many or many-to-many relationships.
 
 Simple Explanation: You either keep related data together in one document (embedding) or link documents using IDs (referencing), depending on your data needs.
+
 ---------------------------------------------------------------------------------------------
 
 ******Use of Capped Collection in MongoDB

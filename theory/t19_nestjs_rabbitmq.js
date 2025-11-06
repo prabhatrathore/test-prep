@@ -16,11 +16,11 @@ nest is opiniated framwork of node.js.
 Why use Nest.js over Express.js?
 
 Feature                 	Express.js              	Nest.js
-Architecture	          Unstructured	             Modular (MVC + DI)
-Language	               JavaScript	              TypeScript
+Architecture	            Unstructured	             Modular (MVC + DI)
+Language	                JavaScript	              TypeScript
 Dependency Injection	     Manual	                 Built-in
-Testing	                   Manual setup          	 Built-in tools
-Scalability                  Moderate                	High
+Testing	                  Manual setup          	 Built-in tools
+Scalability                 Moderate                	High
 Code Maintainability	        Low                  	High
 
 
@@ -34,7 +34,7 @@ active & growing community support.
 
 3. Core Concepts of Nest.js
 
-Modules — Group related files (like controllers, services)
+Modules — a Module is a way to organize our code — module groups related files (like controllers, services)
 Controllers — Handle incoming requests and responses
 Providers -> 
  Services — Contain business logic
@@ -189,7 +189,7 @@ createUser(@Body() createUserDto: CreateUserDto) {}
 ------------------------------------------------------------------------------------
 
 What are Guards?
-Guards decide whether a request can access a route or not, mainly used for authentication and authorization.
+in nestjs, Guards decide whether a request can access a route or not, mainly used for authentication and authorization.
 
 Example:
 @Injectable()
@@ -277,8 +277,7 @@ Example (TypeORM):
 })
 
 🟩 15. What is DTO in Nest.js?
-DTO = Data Transfer Object
-Used to define the structure (shape) of the data we expect in a request.
+ Data Transfer Object Used to define the structure (shape) of the data we expect in a request.
 
 Example:
 export class CreateUserDto {

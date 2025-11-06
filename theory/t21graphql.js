@@ -7,6 +7,7 @@ GraphQL ask clients exactly what they need, and nothing more.
 🌐 Released: 2015 (open-sourced in 2015)
 🔗 Used by: GitHub, Shopify, Netflix, etc.
 --------------------------------------------------------------------------------
+
 ⚖️ REST API vs GraphQL (Main Comparison)
 
 Feature	                       REST API                               	GraphQL
@@ -14,7 +15,7 @@ Endpoints      	Multiple endpoints (e.g. /users, /posts)   	        Single endpo
 
 over-fetching             common                                             never
 under-fetching            often                                              never
-
+ 
 Versioning	      Usually requires /v1, /v2 etc.	                     No versioning needed, schema evolves
 Request Type	  Uses HTTP methods (GET, POST, PUT, DELETE)	           POST (usually) with query body
 -------------------------------------------------------------------------------------------
@@ -88,10 +89,10 @@ Schema Definition Language (SDL)→ SDL is A human-readable syntax use to define
 /*------------------------------------------------------------------------------------------------
 
 How does GraphQL work with Node.js?
-Answer:  Use Apollo Server or Express GraphQL
-Define a schema
-Write resolvers
-Start the server
+Answer: 1. Use Apollo Server or Express GraphQL
+2. Define a schema
+3. Write resolvers
+4. Start the server
 
 ------ ------------------------------------------------------------------------------------------
 const { ApolloServer, gql } = require('apollo-server');
@@ -118,24 +119,25 @@ Q7. What are Scalar Types in GraphQL?
 Scalars are the basic data types in GraphQL that represent single values.
 
 Default Scalars:
-Int → Integer
-Float → Decimal
-String → Text
+Int     → Integer
+Float   →  Decimal
+String  → Text
 Boolean → true/false
-ID → Unique identifier
+ID      → Unique identifier
 
 ------------------------------------------------------------------------
 
 What are GraphQL Types ?
-Object Type → Defines fields (e.g., User)
-Input Type → Used in mutations
-Enum Type → Fixed values
-Interface & Union Types → Used for polymorphism
+1. Object Type → Defines fields (e.g., User)
+2. Input Type → Used in mutations
+3. Enum Type → Fixed values
+4. Interface & Union Types → Used for polymorphism
 
-------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
+
 What are Input Types in GraphQL?
-Input Types in GraphQL used in mutations to pass structured input.
+Input Types in GraphQL used in mutations ((to pass structured input.))
 
 Example:
 input CreateUserInput {
@@ -192,7 +194,7 @@ Features         	Subscriptions, caching, federation        	Basic only
 Integration	            Built-in tools                   	Requires manual setup
 ------ ------------------------------------------------------------------------------------------
 
-What is a Resolver Map?
+What is a Resolver Map ? 
  Resolver Map is an object that connects our schema fields to their resolver functions — 
 
 ((it tells GraphQL how to fetch the data for each field.))
@@ -277,6 +279,7 @@ const resolvers = {
   },
 };
 ------ ------------------------------------------------------------------------------------------
+
 How do you do Authentication in GraphQL?
 Answer:
 Use middleware or context to validate tokens (like JWT).
@@ -301,7 +304,9 @@ When a user logs in, we generate a JWT token:
 const jwt = require("jsonwebtoken");
 
 const token = jwt.sign({ userId: user.id, role: user.role }, "SECRET_KEY", { expiresIn: "1h" });
+
 ***************************************************************
+
 2️⃣ Client sends token in headers
 
 Every GraphQL request will include the token:
@@ -355,6 +360,8 @@ const resolvers = {
 
 What is a Fragment in GraphQL?
 Fragments help to reuse field selections.
+
+a Fragment is a reusable piece of a query — it lets us define a set of fields once and use it in multiple queries or mutations.
 
 Example:
 fragment userFields on User {

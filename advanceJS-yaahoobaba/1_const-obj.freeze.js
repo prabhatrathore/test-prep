@@ -4,8 +4,8 @@
   difference between const and object.freeze()
  
  const: Prevents reassigning a variable to a new value, but allows modifying the content of objects or arrays.
- Object.freeze(): Makes an object's properties immutable, so we can't be changed, added, or removed.
-  
+ Object.freeze(): Makes an object's properties immutable, so we can't changed, added, or removed.
+
  */
 
 let obj = {
@@ -13,7 +13,7 @@ let obj = {
 };
 Object.freeze(obj)
 obj.name = "next-value "//neither we change the value nor create a new property
-obj.age = 22
+obj.age = 22// not possible 
 console.log(obj,"object21")//  {    "name": "hello-world" } 
 
 function sol() {
@@ -28,7 +28,7 @@ console.log(typeof b)// number
 
 const arr = [1, 2];
 arr.push(3); // Works (modifies content)
-arr = [4, 5]; // Error (can't reassign in const case)
+arr = [4, 5]; // Error (can't reassign in 'const' case)
 
 // const obj = { a: 1 };
 // Object.freeze(obj);
@@ -39,9 +39,9 @@ arr = [4, 5]; // Error (can't reassign in const case)
 
 const numbers = [1, 2, 3];
 Object.freeze(numbers);
-// numbers.push(4); // Fails: Cannot modify array
-numbers[0] = 5; // Fails: Cannot change elements
-console.log(numbers,'numbeeeeeeeeeeeeeee')// [1, 2, 3]
+// numbers.push(4);     // Fails: Cannot modify array
+numbers[0] = 5;        // Fails: Cannot change elements
+console.log(numbers ) // [1, 2, 3]
 // --------------------------------------------------------------------------------------------------------
 
 // Nested Objects (Shallow Freeze)

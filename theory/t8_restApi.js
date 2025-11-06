@@ -7,6 +7,7 @@ api allow two application to talk to each other.
 
 What is a REST API?
 => A REST API is a way for two computer programs (like a web app and a server) to talk to each other over the internet using simple rules. It uses the HTTP protocol to send and receive data.
+
 => REST API is a type of api that follow certain rules. 
  -------------------------------------------------------------------------------------
 Details:
@@ -166,7 +167,7 @@ SOAP supports only XML transmission between the client and the server.
 SOAP reads are not cacheable.	
 REST read requests can be cached.	
 SOAP is slower.
-    REST is faster.
+ REST is faster.
 Since SOAP is a protocol, it defines its own security measures.	
 SOAP is not commonly preferred, but they are used in cases which require stateful data transfer and more reliability.
 

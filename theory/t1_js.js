@@ -1346,6 +1346,23 @@ sessionStorage.setItem("session", "active");
 document.cookie = "token=12345; expires=Fri, 31 Dec 2025 12:00:00 UTC";
 ---------------------------------------------------------------------------------------------------------
 
+---------------------------------------------------------------------------------------------------------
+IndexedDB is a client-side database technology in JavaScript that allows us to store data locally in a user's browser, making it accessible offline. It's a low-level API that provides a more powerful and efficient way of storing data compared to other client-side storage solutions like localStorage and cookies.
+
+IndexedDB provides a way to store large amounts of structured data and enables search and retrieval of data, making it a good choice for applications that need to store large amounts of data and search it quickly. Some use cases of IndexedDB include:
+
+Storing offline data: An application can store data locally using IndexedDB and use it even when the user is offline.
+Caching data: An application can cache data in IndexedDB and reduce the number of network requests, resulting in faster page load times.
+Data management: IndexedDB can be used to manage data in a structured manner, making it easier to work with and maintain.
+In general, IndexedDB is a useful tool for web developers who need to store and manage large amounts of data on the client-side.
+
+What is web storage 
+Web storage is an API that provides a mechanism by which browsers can store key/value pairs locally within the user's browser, in a much more intuitive way than using cookies. The web storage provides two mechanisms for storing data on the client.
+i.Local storage: It stores data for current origin with no expiration date. 
+ii. Session storage: It stores data for one session and the data is lost when the browser tab is closed.
+
+-------------------------------------------------------------------------------------------------------------
+
 which one more secure in term of data storage session storage or cookie ?
 👉 Cookies (with HttpOnly + Secure flags) are more secure for sensitive data (like login tokens).
 Session storage is fine for temporary client-only data, but not for authentication.
@@ -2668,7 +2685,10 @@ Does JavaScript support automatic type conversion?
 Yes, JavaScript does support automatic type conversion. It is the common way of type conversion used by JavaScript developers.
 
 .......................................................................
-
+What is a first order function
+First-order function is a function that doesn’t accept another function as an argument and
+doesn’t return a function as its return value.
+const firstOrder = () => console.log ('I am a first order function!');
 .......................................................................
 .......................................................................
 

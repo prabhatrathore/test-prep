@@ -40,7 +40,7 @@ git stash : git stash is a Git command that temporary saves our uncommitted chan
 
 git stash pop → Takes the changes back out from temporary location ((from the locker)) and applies them to our current branch.
 
-git status: git status shows the current state of the working directory, staging area and untracked files.
+git status: git status shows the current state of the working directory, staging area and untracked files. 
  
 git add [file] : git add means Stages a file for the next commit.
 
@@ -70,9 +70,10 @@ A branch is a separate line of development within a repository, allowing work on
  A pull request (PR) is a GitHub feature to review changes from one branch to another
 ----------------------------------------------------------------------------------------------------------
 
-What is the difference between git fetch and git pull?
+What is the difference between git fetch and git pull ? 
 git fetch [alias]: Downloads updates from a remote repository without merging.
-git pull: Fetches and merges remote changes into the current branch.
+git pull: Fetch and merge remote changes into the current branch.
+
 ------------------------------------------------------------------------------------------------------------
 
 What is a .gitignore file?
@@ -85,25 +86,29 @@ git config --global user.email "[email]": Sets your email.
 ----------------------------------------------------------------------------------------------------------
 
 What is the HEAD in Git?
-HEAD is a pointer of the current branch or commit we’re working on. It typically points to the latest commit in the active branch.
+HEAD is a pointer of the current branch or commit we’re working on. (It typically points to the latest commit in the active branch.)
 ----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 What is a merge conflict and how do you resolve it?
 A merge conflict occurs when Git cannot automatically resolve changes (e.g., same lines edited in two branches). To resolve:
 
 ----------------------------------------------------------------------------------------------------------
+
 A fork is a copy of a repository under our GitHub account, allowing us to make changes without affecting the original. It’s used for contributing to open-source projects
-----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------
 
 What is the staging area in Git?
 Answer: The staging area is an intermediate layer where changes are prepared before committing. Use git add [file] to stage changes.
------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
 
 What is GitHub Actions, and how is it used?
 Answer: GitHub Actions is a CI/CD tool for automating workflows (e.g., testing & deployment).
 
 *******************************************************************************************************/
-console.log('first')
+
+console.log('first');
 let arr = [1, 1, 1, , , , , 2, 3, 4, 5, , 5, 9, , 86, 53]
 let tempArr = []
 
@@ -137,8 +142,8 @@ for (let i = 0; i < tempArr.length; i++) {
     // tempArr.splice(findIndex,1)
     // i--
 }
-console.log(tempArr, 'temppp', t)  //  [ 86, 53, 9, 5, 4,  3, 2, 1 ]
-console.log(t_min, "tmiiiiiiiii")   // [ 1, 2, 3, 4, 5, 9, 53, 86]
+// console.log(tempArr, 'temppp', t)  //[]  temppp  [ 86, 53, 9, 5, 4,  3, 2, 1 ]
+// console.log(t_min, "tmiiiiiiiii")   // [ 1, 2, 3, 4, 5, 9, 53, 86]
 // What is a first order function
 // What are the differences between cookie, local storage and session storage
 // What is eval
@@ -180,4 +185,50 @@ function findPrime(num) {
     console.log(finalArr, 'finalArrfinalArrfinalArr')
 
 }
-findPrime(1000)
+// findPrime(100) 
+
+/**
+ 
+console.log(a)// [Function: a]
+console.log(a() )// first  aaa
+console.log(b)  // undefined 
+console.log(bg)  // bg is not defined
+function a() {
+    console.log("first  aaa")
+}
+var b = function bg() {
+    console.log("bbbb")
+}
+*/
+
+/**
+ updates
+
+04-11-25
+Surya hirepool -> isko Friday (07-11-25) ka time dia h -> interview ka link nhi aaya h abhi tk
+
+techfourTechnology -> resume dia ->update lena h   
+
+GRAPHQL-> hr nodejs 16 1025 delhi -> updatelena h -> screening round ho gya tha
+----------------------------------------------------------------------------------------------
+
+oodles tech 1st round virtual second round/manager round will be onsite,, 7 de rhe
+
+
+05-11-2025
+apply 
+https://www.neuriot.com/join.html    -> 
+ */
+
+/**
+ order module discussion 
+ 05-11-25
+ https://www.ubereats.com/gb/store/colony-restaurant/XHwlKF22Wzetl3xtWvlDUg?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas
+ yaha pr 
+ 
+ 1. modules 
+ featured items kaisa aayenge ? 
+ kon select krega ? konssa product konse number pr h ? 
+
+ 
+ */
