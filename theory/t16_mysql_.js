@@ -18,8 +18,10 @@
  ------------------------------------------------------------------------------------
 
 MySQL is a Relational Database Management System (RDBMS) developed by Oracle Corporation. It uses SQL as its query language. Unlike SQL, MySQL is actual software that stores, manages, and retrieves data.
- ------------------------------------------------------------------------------------
- What is CTE (Common Table Expression) ?
+
+------------------------------------------------------------------------------------
+
+What is CTE (Common Table Expression) ?
 CTE (Common Table Expression) is a temporary result set that is defined within the
 execution of a single SQL statement.
 
@@ -35,7 +37,7 @@ COALESCE returns the first non-null value from a list of expressions.
  ------------------------------------------------------------------------------------
 What is NVL Function in SQL?
 NVL function in SQL replaces NULL values with a specified value.
-
+NVL-> (null value logic)
  ------------------------------------------------------------------------------------
 What is Indexing in SQL?
 Indexing improves the speed of data retrieval from a table by creating a lookup structure.
@@ -54,15 +56,16 @@ the actual rows
  
  What is Stored Procedure ?
 A Stored Procedure is a group of predefined SQL statements stored in the database that can be executed multiple times.
- ------------------------------------------------------------------------------------
+ 
+------------------------------------------------------------------------------------
 
  What is Cursor in SQL?
- A Cursor in SQL is a database object that lets us retrieve and process query results row by row, instead of all at once.
+ A Cursor in SQL is a database object that (lets us) retrieve and process query results row by row, instead of all at once.
  ------------------------------------------------------------------------------------
 
  What are ACID properties?
 
-ACID properties are a set of properties that ensure reliable and secure transactions among databases.
+ACID properties are a set of properties that ensure ( reliable and) secure transactions among databases.
 
 ACID stands for Atomicity, Consistency, Isolation, Durability.
 
@@ -81,7 +84,7 @@ Durability: The transactions made should be durable and must persist .
 What is the Difference Between WHERE and HAVING?
 
 'where' we use-> filter row before 'grouping' 
-'filter' ,we use-> filter group after 'grouping'.
+'filter', we use-> filter group after 'grouping'.
 ------------------
 filter type 
 'where' is row level filter 

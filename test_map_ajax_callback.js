@@ -2,12 +2,12 @@ let str = "stringgg"
 // str = str.toLocaleUpperCase()//convert to upper case
 // console.log(str, "@@#1")
 
-str.toLocaleUpperCase()//anothing happen here because we ccannot assign this to variable 
+str.toLocaleUpperCase()//anothing happen here because we cannot assign 'this' to variable 
 
 let obj = {
-    name : "ram",
-    address : "delhi",
-    phone : 12345
+    name: "ram",
+    address: "delhi",
+    phone: 12345
 }
 // console.log(Object.entries(obj),"entries")
 //answer [ [ 'name', 'ram' ], [ 'address', 'delhi' ], [ 'phone', 12345 ] ] 

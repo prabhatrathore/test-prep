@@ -1,4 +1,5 @@
 /**
+nest is opiniated framwork of node.js.   
 Nest is a progressive node.js framework for building efficient and scalable server-side applications.
 Nest uses moduler architecture for better organization. 
 
@@ -11,7 +12,6 @@ solve the limitation of traditional express apps.
 It uses Express.js under the hood by default and supports Fastify as well.
 
 express is fast, unopiniated (no proper file structure provided), minimalist web framwork for node.js 
-nest is opiniated framwork of node.js.   
 
 Why use Nest.js over Express.js?
 
@@ -21,7 +21,7 @@ Language	                JavaScript	              TypeScript
 Dependency Injection	     Manual	                 Built-in
 Testing	                  Manual setup          	 Built-in tools
 Scalability                 Moderate                	High
-Code Maintainability	        Low                  	High
+Code Maintainability	       Low                  	High
 
 
 ---------benefits of nest.js-------------- 
@@ -37,11 +37,11 @@ active & growing community support.
 Modules — a Module is a way to organize our code — module groups related files (like controllers, services)
 Controllers — Handle incoming requests and responses
 Providers -> 
- Services — Contain business logic
-Dependency Injection (DI) — Automatically provide class instances
-Pipes — Validate and transform incoming data
-Guards — Handle authorization (before route access)
-Interceptors — Modify request/response globally
+Services —> Contain business logic
+Dependency Injection (DI) —> Automatically provide class instances
+Pipes —> Validate and transform incoming data
+Guards —> Handle authorization (before route access)
+Interceptors —> Modify request/response globally
 Filters — Handle exceptions globally
 Middleware — Run logic before route handlers
 Decorators — Add metadata (e.g., @Controller(), @Get())
@@ -277,7 +277,7 @@ Example (TypeORM):
 })
 
 🟩 15. What is DTO in Nest.js?
- Data Transfer Object Used to define the structure (shape) of the data we expect in a request.
+Data Transfer Object Used to define the structure (shape) of the data we expect in a request.
 
 Example:
 export class CreateUserDto {
@@ -296,10 +296,9 @@ Usually done using Passport.js or JWT (JSON Web Token) strategies.
 Steps:
 
 User logs in → generates JWT token
-
 Token sent in headers (Authorization)
-
 Guard checks token before accessing routes
+
 ------------------------------------------------------------------------------
 
 🟩 17. What are Async Providers?
@@ -383,9 +382,7 @@ ConfigModule.forRoot({
     Special methods that run at specific times:
     
     onModuleInit()
-    
     onModuleDestroy()
-    
     beforeApplicationShutdown()
 
     ------------------------------------------------------------------------------------

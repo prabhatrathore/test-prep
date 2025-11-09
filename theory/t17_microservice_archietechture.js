@@ -27,9 +27,6 @@ Advantages of Microservices
 2:) Resilience: If the Notification Service fails, orders and stock updates continue functioning.
 3:) Team Autonomy: Different teams can work on Supplier, Order, and Notification Services independently, using JavaScript/Node.js.
 
-
-
-
  */
 /**
  // inventory-service/index.js

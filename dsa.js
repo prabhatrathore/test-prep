@@ -101,7 +101,11 @@ function findSecondSmallest2(arr) {
 // Example usage
 const arr = [-1, 5, 2, 10, -8, 3, 0]; // 5, 2, 10,    --=>  -8, -1, 0, 2, 3, 5, 10     
 console.log(`Second smallest number::::: ${findSecondSmallest2(arr)}`); // Output: -2
+//-------------------------------------------------------------------------------------------------
 
+
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
 
 console.log(null == undefined, " console.log(null == undefined);");// true
 
@@ -123,7 +127,7 @@ function rotateArr(arr, num) {
 rotateArr(array, 6)
 // Perform 3 right rotations:
 // First rotation : [7,2,3,4,5] , Second rotation : [5,7,2,3,4] and, Third rotation: [4,5,7,2,3]
-
+//----------------------------------------------------------------------------------------------
 // return [4,5,7,2,3]
 
 let t = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, [22, 34, 55], 11], 12], [13, 14, 15]];
@@ -139,7 +143,41 @@ function simplify(arr) {
     }
 }
 // simplify(t)
-console.log(g)
+console.log(g, 'eeeeeeeeeee')
 
+//-----------------nth highest-----------------------------
+function nthhigh(arr, n) {
+    let unique = [...new Set(arr)]
+    let obj = {}
+    for (let el of arr) {
+        if (obj[el]) {
+            obj[el]++
+        } else {
+            obj[el] = 1
+        }
+    }
+    let newArr = Object.keys(obj)
+    let max
+    console.log(obj, "obbjjbj", newArr)
 
+    for (let i = 0; i < n; i++) {
+        max = Math.max(...newArr)
+        newArr = newArr?.filter((a, b) => a != max)
+    }
+    return max
+}
+// console.log(nthhigh([5, 6, 7, 8, 9, 2, 3, 4], 1), "eeeeeeeeeeeee")
+//-----------------nth highest-----------------------------
+
+function nthhighest(arr, n) {
+    let unique = [...new Set(arr)]
+    let max;
+    for (let i = 0; i < n; i++) {
+        max = Math.max(...unique)
+        unique = unique.filter(x => x !== max)
+        // console.log(max, 'max', unique, 'uniququq')
+    }
+    return max
+}
+// console.log(nthhighest([4, 2, 1, 6, 5], 1))
 

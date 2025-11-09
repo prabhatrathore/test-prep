@@ -1,38 +1,10 @@
-const arrw = [1, 2, 3, 4, 2, 3, 5, 6, 3, 5];
-let td = []
-let objg = {}
-
-for (let el of arrw) {
-    console.log(el, 'eeeeee')
-    // td?.push(el)
-    // if (td?.includes(el)) {
-    objg[el] = (objg[el] || 0) + 1
-    // } 
-
-}
-for (let le in objg) {
-    if (objg[le] > 1) {
-        td?.push(le)
-    }
-}
-
-console.log(objg, 'wwww', td, 'wwww')
-
-let str = 'second'
-function sa(s) {
-    s = 'third'/// variable 's value not changed
-    str = 'changed'// this work
-}
-console.log(str, 'sss')
-sa(str)
-console.log(str, 'sss')
 /**
 -----------------------------------------------------------------------------------------------------------
 GIT 
 
 What is the difference between Git and GitHub?
 Git : Git is a distributed version control system (dvcs) for tracking code changes locally.
-GitHub: GitHub is A hosting service for Git repositories, adding collaboration tools like pull requests and code reviews.
+GitHub: GitHub is A hosting service provider for Git repositories, adding collaboration tools like pull requests and code reviews.
 ----------------------------------------------------------
  
 Commands:
@@ -52,6 +24,23 @@ git merge [branch]: Merges the specified branch into the current branch.
 git log: Shows commit history.
 
 git diff branchB...branchA: Shows differences in branchA not in branchB.
+--------------------------------------------------------------------------------
+
+git clone <repo-url>	Copies a remote repo to your machine.
+git commit -m "message"	Saves/stores staged changes with a message.
+git push	Sends your commits to the remote repository (GitHub/GitLab).
+git pull	Gets latest changes from remote and merges into your branch.
+git branch	Shows all branches.
+git checkout <branch-name>	Switches to another branch.
+git checkout -b <new-branch>	Creates & switches to a new branch.
+git merge <branch>	Merges a branch into the current branch.
+git cherry-pick <commit-hash>	✅ Takes a specific commit from another branch and applies it to our current branch .
+git stash	Temporarily saves uncommitted changes.
+git stash pop	Restores stashed changes.
+git log	Shows commit history.
+git revert <commit-hash>	Reverts a commit safely (makes a new commit).
+git reset --hard <commit-hash>	Resets to a previous commit (dangerous — deletes changes)
+
 -------------------------------------------------------------------------------------------------------
 
 What is a Git repository ? 
@@ -106,7 +95,22 @@ Answer: The staging area is an intermediate layer where changes are prepared bef
 What is GitHub Actions, and how is it used?
 Answer: GitHub Actions is a CI/CD tool for automating workflows (e.g., testing & deployment).
 
-*******************************************************************************************************/
+****************************************************************** 
+which git command allow you to extract commit from one branch with in repository and intigrate them into another ?
+
+✅ git cherry-pick
+
+Simple meaning:
+git cherry-pick lets us take a specific commit from one branch and apply it to another branch.
+
+Example:
+git checkout main
+git cherry-pick <commit-hash>
+****************************************************************** 
+****************************************************************** 
+
+
+*************************************/
 
 console.log('first');
 let arr = [1, 1, 1, , , , , 2, 3, 4, 5, , 5, 9, , 86, 53]
@@ -169,6 +173,7 @@ function isPrime(num) {
     }
     return isPrime
 }
+
 function findPrime(num) {
     let arr = []
     for (let i = 2; i < num; i++) {
@@ -185,6 +190,7 @@ function findPrime(num) {
     console.log(finalArr, 'finalArrfinalArrfinalArr')
 
 }
+
 // findPrime(100) 
 
 /**
@@ -200,35 +206,70 @@ var b = function bg() {
     console.log("bbbb")
 }
 */
+const arrw = [1, 2, 3, 4, 2, 3, 5, 6, 3, 5];
+let td = []
+let objg = {}
 
-/**
- updates
+for (let el of arrw) {
+    console.log(el, 'eeeeee')
+    // td?.push(el)
+    // if (td?.includes(el)) {
+    objg[el] = (objg[el] || 0) + 1
+    // } 
 
-04-11-25
-Surya hirepool -> isko Friday (07-11-25) ka time dia h -> interview ka link nhi aaya h abhi tk
+}
+for (let le in objg) {
+    if (objg[le] > 1) {
+        td?.push(le)
+    }
+}
 
-techfourTechnology -> resume dia ->update lena h   
+console.log(objg, 'wwww', td, 'wwww')
 
-GRAPHQL-> hr nodejs 16 1025 delhi -> updatelena h -> screening round ho gya tha
-----------------------------------------------------------------------------------------------
+let str = 'second'
+function sa(s) {
+    s = 'third'/// variable 's value not changed
+    str = 'changed'// this work
+}
+console.log(str, 'sss')
+sa(str)
+console.log(str, 'sss')
 
-oodles tech 1st round virtual second round/manager round will be onsite,, 7 de rhe
+    
+    /**
+     updates
+    
+    04-11-25
+    Surya hirepool -> isko Friday (07-11-25) ka time dia h -> interview ka link nhi aaya h abhi tk
+    
+    techfourTechnology -> resume dia ->update lena h   
+    
+    GRAPHQL-> hr nodejs 16 1025 delhi -> updatelena h -> screening round ho gya tha
+    ----------------------------------------------------------------------------------------------
+    
+    oodles tech 1st round virtual second round/manager round will be onsite,, 7 de rhe
+    
+    
+    05-11-2025
+    apply 
+    https://www.neuriot.com/join.html    -> 
+     */
+    
+    /**
+     order module discussion 
+     05-11-25
+     https://www.ubereats.com/gb/store/colony-restaurant/XHwlKF22Wzetl3xtWvlDUg?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas
+     yaha pr 
+     
+     1. modules 
+     featured items kaisa aayenge ? 
+     kon select krega ? konssa product konse number pr h ? 
+    
+     -----------------------------------------------------------07-11-25
+     oodless tech mai monday ko jana h main round ke liye 
+     -------------------------------------------------------------
+     0-11-2025
+     applied
+     https://www.revinfotech.com/careers/node-js-developer/
 
-
-05-11-2025
-apply 
-https://www.neuriot.com/join.html    -> 
- */
-
-/**
- order module discussion 
- 05-11-25
- https://www.ubereats.com/gb/store/colony-restaurant/XHwlKF22Wzetl3xtWvlDUg?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas
- yaha pr 
- 
- 1. modules 
- featured items kaisa aayenge ? 
- kon select krega ? konssa product konse number pr h ? 
-
- 
- */
+     */
