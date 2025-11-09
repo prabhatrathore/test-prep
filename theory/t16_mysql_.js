@@ -6,7 +6,7 @@
  jpeg : Joint Photographic Experts Group 
 
  ------------------------------------------------------------------------------------
- 1. What is SQL?
+ 1. What is SQL ?
  SQL (Structured Query Language) is a standard programming language used to interact with relational databases. It is used to store, retrieve, update, and delete  data. SQL is also used to create and modify database structures such as tables,
  views, and indexes.
 

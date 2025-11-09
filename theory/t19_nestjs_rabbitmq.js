@@ -92,8 +92,8 @@ What_is_a_Controller
 What is a Controller?
 Controllers handle incoming HTTP requests and return responses to the client.
 
-controller_file trigger  'service_file' for getting response 
-in controllers, routes are  define (e.g. GET, POST, PUT, DELETE)
+controller_file trigger 'service_file' for getting response 
+in controllers, routes are define (e.g. GET, POST, PUT, DELETE)
 bridge between client and business logic(service)
 organize api endpoints clearly and modularly.
 make code scalable and maintainable 
@@ -125,7 +125,7 @@ find(@Query('name') name: string) { ... }
 ------------------------------------------------------------------------------------
 
 What is a Provider?
-A Provider is anything that can be injected using Nest.js dependency injection system — usually this includes services,
+A Provider is anything that can be injected using Nest.js dependency injection system — usually 'this' includes services,
 (( repositories, factories, or even plain values.))
 
 ( Any class that can be injected using Dependency Injection, Usually services.)
