@@ -107,6 +107,13 @@ Example:
 git checkout main
 git cherry-pick <commit-hash>
 ****************************************************************** 
+first time code push to github  repo
+git add . 
+git commit -m "add"
+git remote add origin https://github.com/yourusername/my-node-app.git
+git branch -M main
+git push -u origin main
+
 ****************************************************************** 
 
 
@@ -244,10 +251,10 @@ console.log(str, 'sss')
     
     techfourTechnology -> resume dia ->update lena h   
     
-    GRAPHQL-> hr nodejs 16 1025 delhi -> updatelena h -> screening round ho gya tha
+    GRAPHQL-> hr nodejs 16 1025 delhi -> updatelena h -> screening round ho gya tha -->hold pr daal dia 
     ----------------------------------------------------------------------------------------------
     
-    oodles tech 1st round virtual second round/manager round will be onsite,, 7 de rhe
+    oodles tech 1st round virtual second round/manager round will be onsite,, 7 de rhe  --waiting 4 offer letter
     
     
     05-11-2025

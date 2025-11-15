@@ -7,7 +7,7 @@
 
  ------------------------------------------------------------------------------------
  1. What is SQL ?
- SQL (Structured Query Language) is a standard programming language used to interact with relational databases. It is used to store, retrieve, update, and delete  data. SQL is also used to create and modify database structures such as tables,
+ SQL (Structured Query Language) is a standard programming language used to interact with relational databases. It is used to store, retrieve, update, and delete data. SQL is also used to create and modify database structures such as tables,
  views, and indexes.
 
   it is a language that allows users to write queries for interacting with databases.
@@ -72,7 +72,7 @@ ACID stands for Atomicity, Consistency, Isolation, Durability.
 Atomicity: Either the entire transaction takes place at once or not at
 all.
 
-Consistency: The database must be consistent before and after a
+Consistency: The database must be consistent before and after a0
 transaction.
 
 Isolation: No other transaction can alter the data during a transaction
