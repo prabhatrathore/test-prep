@@ -1,7 +1,7 @@
 /**
  waht is typescript? 
  it is programming laguage, made by microsoft 
- ts is superset of js 
+ ts is superset of js .
 
  ((typescript is javascript with syntax for types .))
 
@@ -46,13 +46,13 @@ TypeScript supports classes, interfaces, inheritance, and access modifiers like 
 
 var feature_of_ty
 /*
-feature of typeescript
+feature of typescript
 1. type alias
 2. interface
 3. decorators
 4. generics 
 5. namespaces 
-6.type inference 
+6. type inference 
 7. advance features
 
 number,string,arr[] --> this are inbuild type 

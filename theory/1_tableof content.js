@@ -63,7 +63,7 @@ console.log(user ?? defaultName); // Output: "Guest"
 
 user = null;
 defaultName = undefined;
-// console.log(user ?? defaultName);// undefined  (if bot h value are nullish then it return right most value)
+// console.log(user ?? defaultName);// undefined  (if both value are nullish, then it return right most value)
 // ------------------------------------------------------------------------------
 
 user = undefined;
@@ -116,7 +116,7 @@ console.log(theme); // Output: "default"
 Modules: require / import
 In Node.js, modules are reusable pieces of code that we can include in our program.
 1. require
- A 'require' function used in Node.js to load modules ( module can be built-in, external, or your own files).
+A 'require' function used in Node.js to load modules ( module can be built-in, external, or your own files).
 Used in: CommonJS modules (the older,or default module system in Node.js).
 ------------------------------------------------------------------------------------------
 
@@ -307,7 +307,8 @@ Yield: checks what is returned in a generator by the generator's interator.
 let JS_Operators_or_operation
 /**
   JavaScript operators are symbols or keywords used to perform operations on values or variables. They are the building blocks of JavaScript expressions and can manipulate data in various ways.
-JavaScript Operators are symbols that are used to perform Operations on operands.
+
+  JavaScript Operators are symbols that are used to perform Operations on operands.
 
 1. JavaScript Arithmetic Operators.
 2. JavaScript Assignment Operators.

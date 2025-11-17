@@ -34,12 +34,17 @@ Since 2015, new features are released yearly by the TC39 committee
 
 Convert String to Number:
 Add a plus sign (+) before a string.
-Example: let str = "169"; console.log(typeof (+str)); → Outputs number.
+Example:
+ let str = "169";
+  console.log(typeof (+str)); → Outputs number.
 ---------------------------------------------------------------------------------------------
 
 Convert Number to String:
 Add an empty string ("") to a number.
-Example: let num = 10; console.log(typeof (num + "")); → Outputs string.
+Example: 
+let num = 10; 
+console.log(typeof (num + ""));
+ → Outputs string.
 ---------------------------------------------------------------------------------------------
 
 Strings in JavaScript
@@ -175,7 +180,7 @@ Steps:
 //     console.log(a2)//9
 // }
 // f();
-// console.log(a2,"aaaaa")//9
+// console.log(a2) // 9
 ////////////////////////////////////////////////////////////////
 let  a2 = 10;
 function f(a2) {
@@ -183,8 +188,7 @@ function f(a2) {
     console.log(a2)//9
 }
 f(a2);
-console.log(a2,"2222222222222")//  10  
-// //========================================
+console.log(a2) //  10  
 
 // //====================
 
@@ -213,7 +217,7 @@ string1 = Number(string1)
 
 console.log(string1, "ng1")//    32.4 
 
-// '324e-1' is in scientific notation, meaning:          // 324 × 10⁻¹ = 32.4
+// '324e-1' is in scientific notation, meaning:    // 324 × 10⁻¹ = 32.4
 
 // ------------------------------------------------------------------------------------------
 //setinterval 
@@ -237,7 +241,6 @@ setInterval(() => {
 
 console.log('after script')
 
-
 let kl = 4
 function so() {
   console.log(kl) // Cannot access 'kl' before initialization
@@ -247,9 +250,9 @@ function so() {
 
 //callback understand 
 function task1(caalback) {
-  console.log('function 1 is done')
-  caalback()
-};
+    console.log('function 1 is done')
+    caalback()
+ };
 
 task1(() => {
   console.log("2nd function is print")
@@ -257,7 +260,7 @@ task1(() => {
 
 //e.g3 on callback ==================
 
-// function addTwoNumber(num1, num2, onsuccess, onfailure) {
+//   function addTwoNumber(num1, num2, onsuccess, onfailure) {
 //     console.log(`there is two num which we add ${num1},${num2}`)
 //     if (typeof num1 === 'number' && typeof num2 === 'number') {
 //         onsuccess(num1, num2)
@@ -299,7 +302,7 @@ for (let i = 0; i < 1000; i++) {
 //line by line execute code .
 //===================================
 
-//asynchronus programming
+// asynchronus programming
 /** 
  * first take a look at set time out function
  * set time out ek function lega as a input and saath mai lega time 
@@ -363,7 +366,7 @@ for (let i = 0; i < 3; i++) { //
 //   // change let, var const  
 // }
 //---------------------------------------------------------
-// console.log( i)// assignment to constant variable
+// console.log(i)// assignment to constant variable
 
 //=======parameter destructuring --------------
 // Parameter destructuring in JavaScript allows the unpacking of properties from objects or elements from arrays directly within a function's parameter list
@@ -401,9 +404,9 @@ let result = set2.has("e0ee")// 'has' 'property' tell the element exist or not
 let result1 = set2.has(t3)// 'has property' tell the element exist or not 
 // console.log(result, "WSDCVBVCD", result1, "resultg22222")//true WSDCVBVCD true resultg22222
 // console.log('=====  ==============') 
-// console.log(set2, "BBBBBB")// Set(3) { 'e0ee', 'wjengwigw', { name: 'ram' } } 
+// console.log(set2 ) // Set(3) { 'e0ee', 'wjengwigw', { name: 'ram' } } 
 arr = [...set2];
-// console.log(arr, 'XSWEDC')// [ 'e0ee', 'wjengwigw', { name: 'ram' } ]
+// console.log(arr) // [ 'e0ee', 'wjengwigw', { name: 'ram' } ]
 
 
 let WHat_is_Javascript;
@@ -461,7 +464,7 @@ JIT Compiler: A JIT compiler converts code into byte code first. Then, at runtim
 --------------------------------------------------------------------------------------------
 */
 /** 
-Why is JavaScript interpreted not compiled?
+ Why is JavaScript interpreted not compiled?
  JavaScript is compiled or interpreted depends on the environment in which it is run. If it runs in older browsers, it's interpreted. If it runs in modern browsers, it's compiled. 
 
  What is an Interpreted Programming Language?
@@ -563,11 +566,12 @@ JavaScript has a call stack (where code executes), a task queue (for pending tas
 
 When an async operation (e.g., setTimeout) is encountered, it’s sent away (offloaded)  to the web API. Once the operation is ready, its callback is placed in the task queue.
 The event loop continuously checks the call stack. If the stack is empty, it takes the next task from the queue and pushes to the stack for execution.
+
 ---------------------------------------------------------------------------------------
 console.log("Start");
 setTimeout(() => console.log("Timeout"), 0);
 console.log("End");
-0
+
 Output: Start, End, Timeout
 -------------------------------------------------------------------------------------------------
 ---example---------------------------------------------
@@ -1039,6 +1043,7 @@ isNaN(undefined) // Returns true
 ---------------------------------------------------------------
    */
 let strict
+
 /**
 Strict mode in JavaScript is a feature introduced in ECMAScript 5 (ES5), 2009, to implement stricter parsing and error handling in our code.
 
@@ -1146,7 +1151,7 @@ Maps maintain the insertion order of elements and allow keys of any data-type, n
 we can add, retrieve, update, or remove key-value pairs, and it remembers the order in which we added them.
 
 Purpose: Similar to objects but allows any value as keys.
-Example:*/
+Example: */
 const person = new Map();
 person.set("Name", "Alex");
 // console.log(person ); // Outputs: Map { "Name" => "Alex" }
@@ -1181,7 +1186,7 @@ console.log(set); // {1, 2, 3} (duplicates removed)
 ------------------------------------------------------------------------------------
 
 A Set stores unique values.
-When we add objects, they are only considered unique if their reference is different — even if the content is same.
+When we add objects, they only considered unique if their reference is different — even if the content is same.
  */
 let mySet = new Set();
 let obj1 = { name: "Alice" };
@@ -1280,8 +1285,6 @@ It only stores objects (no primitive values like numbers or strings).
 The objects in a WeakSet are weakly referenced, meaning:
 If no other reference to an object exists, it can be garbage collected.
 
-(automatically removes objects when they are no longer in use)
-
 let weakSet = new WeakSet();
 */
 
@@ -1363,7 +1366,7 @@ ii. Session storage: It stores data for one session and the data is lost when th
 
 -------------------------------------------------------------------------------------------------------------
 
-which one more secure in term of data storage session storage or cookie ?
+which one more secure in term of data storage, session storage or cookie ?
 👉 Cookies (with HttpOnly + Secure flags) are more secure for sensitive data (like login tokens).
 Session storage is fine for temporary client-only data, but not for authentication.
 
@@ -1375,7 +1378,7 @@ Each table = Collection of items
 Each item = Key-Value pairs (flexible schema)
 
 ---------------------------------------------------------------------------------------------------------
-🔹 What happens when we clear browser cache
+🔹 What happens when we clear browser cache 
 “Cache” mainly means stored static files like images, CSS, JS — it helps pages load faster.
 But depending on what we select while clearing, it can also include cookies and site data.
 
@@ -1422,9 +1425,10 @@ let tgb = [3, "ghar", { r: 3 }, function f() { }, []]
 The typeof operator in JavaScript is a built-in operator that allows us to tell the data type of a value or variable.
 
 
- function myFunc() {}
+function myFunc() {}
 console.log(typeof myFunc); // "function"
 ----------------------------------------------
+
 const myFunc = function() {};
 console.log(typeof myFunc); // "function"
 
@@ -1682,11 +1686,10 @@ example(5, 10); // a is bound to 5, b is bound to 10
 -----------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------
 */
-/**
- 
+/** 
 loose Equality Coercion
 
- while using the ‘==’ operator, implicit coercion takes place.
+while using the ‘==’ operator, implicit coercion takes place.
 The ‘==’ operator, converts both the operands to the same type and then compares them.
 
 Example :
@@ -1781,7 +1784,7 @@ Instead of taking all arguments at once, a curried (curry) function returns a ne
 function add(a, b, c) {
   return a + b + c;
 }
-// ---------------------------------------------------------------------------------------0
+// ---------------------------------------------------------------------------------------
 // Curried version
 function curryAdd(a) {
   return function (b) {
@@ -2305,7 +2308,7 @@ console.log(student.grade); // Outputs: A
 
 
 . Polymorphism
- Polymorphism lets different objects use the same method name but behave differently based on their own rules.
+ Same method behaves differently in different classes
 class Animal {
   makeSound() {
     return "Some generic sound";
@@ -2425,7 +2428,7 @@ class Car {
 }
 🧠 Think of it like: You drive a car without knowing how the engine works.
 
-✅ 3. Polymorphism:Polymorphism is the ability to process objects differently on the basis of their class and data types.
+✅ 3. Polymorphism:Same method behaves differently in different classes
 
 Definition:
 Same function name behaves differently for different classes.
@@ -2447,14 +2450,6 @@ d.sound(); // Dog barks
 
 /*
 
-🧠 Think of it like: Same remote button — controls TV, AC, Fan differently.
-
-⚡ Final One-Liner Recap:
-Pillar	Purpose	Keyword
-Encapsulation	Protect and bundle data	class
-Abstraction	Show only required details	methods
-Polymorphism	One method, many forms	override
-inheritance : 
 
 */
 /***
@@ -2554,6 +2549,7 @@ dog.bark = function () {
 
 dog.eat(); // Eating...
 dog.bark(); // Barking...
+
 /*
 ✅ What are JavaScript Design Patterns?
 Common solutions to problems that come up while building apps. They make code cleaner, reusable, and stable.
