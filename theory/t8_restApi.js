@@ -10,13 +10,14 @@ What is a REST API?
 
 => REST API is a type of api that follow certain rules. 
  -------------------------------------------------------------------------------------
-Details:
+
+ Details:
 Architecture Style: REST (Representational State Transfer) is a set of guidelines for building web applications that communicate efficiently.
 HTTP Protocol: It uses HTTP methods like GET (to fetch data), POST (to send data), PUT (to update data), and DELETE (to remove data).
 put method: used to update existing data completely.
 patch method: used to partially update existing data. 
 Data Transfer: It sends and receives data in formats like JSON or XML.
-----------------------------------------------------------------------------------------------
+ ----------------------------------------------------------------------------------------------
 
 What is a RESTful API?
 (Representational State Transfer Application Programming Interface) is a set of rules that allows applications to communicate
@@ -47,6 +48,7 @@ Question: “What’s the difference between a REST API and a RESTful API?”
 Answer: A REST API is a way for apps to communicate over the internet using HTTP methods like GET and POST.
  A RESTful API is a REST API that strictly follows REST rules, like using proper HTTP methods, organizing data as resources, and being stateless.
 ---------------------------------------------------------------------------------------------------
+
 Question: “Why use a RESTful API?”
 Answer: It makes communication between apps easier, more predictable, and scalable because it follows standard rules that all developers understand.
 
@@ -75,7 +77,6 @@ Body-parser is the Node.js body parsing middleware. for handling json data from 
 -------------------------------------------------------------------------------------------------
 
 pagination : the process of giving a page number to each page of a book, magazine, document, etc; the page numbers given
-
 
 =================================================================
 Postman is an application used for API testing. It is an HTTP client that tests HTTP requests.
@@ -138,12 +139,14 @@ node.js (with Express.js): By default, Express limits the JSON payload to 100KB 
 Payload refers to the data passes in the request body.
  It is not the same as the request parameters. The payload can be sent only in POST methods as part of the request body
 ---------------------------------------------------------------------------------------------------------
- 23. Can we implement transport layer security (TLS) in REST?
+
+23. Can we implement transport layer security (TLS) in REST?
 Yes, we can. TLS does the task of encrypting the communication between the REST client and the server
 It is used for secure communication as it is the successor of the Secure Socket Layer (SSL). 
 ---------------------------------------------------------------------------------------------------------
+
 What makes REST services to be easily scalable?
-REST services follow the concept of statelessness which essentially means no storing of any data across the requests on the server.
+REST services follow the concept of statelessness which (essentially) means no storing of any data across the requests on the server.
 
 What are the differences between REST and AJAX?
 REST	
@@ -258,7 +261,7 @@ Memory/Buffers are not needed to store data here.
 
 Web Socket************------------------------
 
--- Web Socket APIs follow the stateful protocol as it necessitates session-based data storage.
+-- Web Socket APIs follow the stateful protocol as it necessary session-based data storage.
 	The communication is bi-directional, communication can be done by both client or server at a time.
 	Web Socket follows the full-duplex model.
 	Web sockets do not have any overhead and hence suited for real-time communication.
@@ -268,7 +271,7 @@ Web Socket************------------------------
 	Message transmission happens very faster than REST API.
 	Memory is required to store data.
 
-full-duplex model  means support for data transmission between two points in both directions at exactly the same time.
+full-duplex model means support for data transmission between two points in both directions at same time.
 
 
 Explain the architectural style for creating web API?

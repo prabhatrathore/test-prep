@@ -1,6 +1,6 @@
 /**
- * file:///C:/Users/prabhat%20rathore/Downloads/Boost%20Your%20SQL%20Skills%20With%20This%20Free%20100%20Question%20Guide.pdf
- * isme question 31 se query check krna h 
+  file:///C:/Users/prabhat%20rathore/Downloads/Boost%20Your%20SQL%20Skills%20With%20This%20Free%20100%20Question%20Guide.pdf
+  isme question 31 se query check krna h 
  usb:-- Universal Serial Bus 
  png : Portable Network Graphics
  jpeg : Joint Photographic Experts Group 
@@ -10,7 +10,7 @@
  SQL (Structured Query Language) is a standard programming language used to interact with relational databases. It is used to store, retrieve, update, and delete data. SQL is also used to create and modify database structures such as tables,
  views, and indexes.
 
-  it is a language that allows users to write queries for interacting with databases.
+  it is a language that allows us to write queries for interacting with databases.
 
  Example:
  SELECT * FROM Employees;
@@ -39,6 +39,7 @@ What is NVL Function in SQL?
 NVL function in SQL replaces NULL values with a specified value.
 NVL-> (null value logic)
  ------------------------------------------------------------------------------------
+
 What is Indexing in SQL?
 Indexing improves the speed of data retrieval from a table by creating a lookup structure.
  ------------------------------------------------------------------------------------
@@ -72,25 +73,28 @@ ACID stands for Atomicity, Consistency, Isolation, Durability.
 Atomicity: Either the entire transaction takes place at once or not at
 all.
 
-Consistency: The database must be consistent before and after a0
+Consistency: The database must be consistent before and after a
 transaction.
 
 Isolation: No other transaction can alter the data during a transaction
 is in progress
 
-Durability: The transactions made should be durable and must persist . 
+Durability: The transactions made should be durable and data saved permanaent in db. 
 
  ------------------------------------------------------------------------------------
 What is the Difference Between WHERE and HAVING?
 
 'where' we use-> filter row before 'grouping' 
 'filter', we use-> filter group after 'grouping'.
-------------------
+----------------------------------------------------------------------
+
 filter type 
 'where' is row level filter 
 
 'having' is group level filter
-----------------------------------
+
+------------------------------------------------------------------
+
 in execution order 
 where, apply before GROUP BY 
 HAVING,  applied after GROUP BY
@@ -124,16 +128,18 @@ A UNIQUE key (or UNIQUE constraint) ensures that all values in a column (or grou
 It prevents duplicate values.
  a table can have multiple UNIQUE keys.
  ------------------------------------------------------------------------------------
-What is NOT NULL Constraint?
+
+ What is NOT NULL Constraint?
 The NOT NULL constraint ensures that a column cannot have NULL values. It is used to
 enforce that every row must have a value in that column.
 
  ------------------------------------------------------------------------------------
+
 What is Default Constraint?
-The Default Constraint provides a default value for a column when no value is specified
-during the insertion of a new record.
+The Default Constraint provides a default value for a column when no value is specified during the insertion of a new record.
  ------------------------------------------------------------------------------------
  ------------------------------------------------------------------------------------
+
 What are the types of SQL commands?
 SQL commands are divided into 5 main types (categories):
 
@@ -269,8 +275,8 @@ Each one is waiting for the other to finish and release its lock. Both blocking 
 
 How would you secure a MySQL database data ?
 User Authentication : Create role-based users with minimal privileges.
-Encryption: Enable SSL/TLS for data in transit.
-Access Control: Restrict access to specific IPs:
+Encryption          : Enable SSL/TLS for data in transit.
+Access Control      : Restrict access to specific IPs:
 role based access : 
 ---------------------------------------------------------------------------------------------------
 

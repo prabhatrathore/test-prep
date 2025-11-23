@@ -1,7 +1,7 @@
 /**
  What is the async Keyword?
 The 'async' keyword is used to define an asynchronous function that returns a Promise.
-Async/Await makes (it) easier to write promises. 
+Async/Await makes easier to write promises. 
 
 An async function always returns a Promise, even if we don’t explicitly return one. we can use .then() to handle the resolved value.
 */

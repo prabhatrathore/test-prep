@@ -1,6 +1,6 @@
 // Can you describe your experience in developing RESTful APIs using Node.js and Express?
 /**
- I have over 3 years of experience developing RESTful APIs using Node.js and Express.
+ I have 3 years of experience developing RESTful APIs using Node.js and Express.js.
 I start by setting up an Express.js server with a clear folder structure (routes, controllers,services, models, middlewares).
 
 For database integration, I have worked with both MySQL (using Sequelize/Raw queries) and MongoDB (using Mongoose), depending on project needs.
@@ -54,7 +54,7 @@ Key Advantages
 Node.js is asynchronous and event-driven. All API's of Node.js library are non-blocking, and its server doesn't wait for an API to return data. It moves to the next API after calling it, and a notification mechanism of Events of Node.js responds to the server from the previous API call.
  -------------------------------------------------------------------------------------
 
-(Cryptography is the process of hiding (or coding) information)
+(Cryptography is the process of hiding information)
  
  Limitations of node.js
  🔹 Single-threaded problem:
@@ -137,7 +137,7 @@ Start Node with inspect:
 
  Clustering in Node.js
 Clustering is a technique in Node.js to create multiple process (workers) that run simultaneously and share the same server port.
-Clustering enhances performance (and reliability) by distributing incoming connections across multiple workers.
+Clustering enhances performance by distributing incoming connections across multiple workers.
 
 Since Node.js is single-threaded by default, node.js runs on a single process, utilizing only one CPU core. The cluster module allows us to create multiple worker (processes) that share the same server port, enabling parallel processing and better handling of concurrent requests.
 
@@ -438,7 +438,7 @@ let r;
 -------------------------------------------------------------------------------------------------------------*/
  Explain the working of Node.js ?
   /*
-  Client sends request → Example: browser hitting your Node.js server (get data, update, delete, etc.).
+  Client sends request → Example: browser hitting our Node.js server (get data, update, delete, etc.).
 
   Request goes into Event Queue → Think of it as a waiting line (to-do list).
  Event Loop checks requests one by one:
@@ -641,14 +641,14 @@ Route-Level = Targeted tasks.
 -------------------------------------------------------------------------------------------*/
 /**
  Vertical Scaling
- add more power to one server — like upgrading our system’s CPU, RAM, or storage.
+ add more power to one server —  upgrading our system’s CPU, RAM, or storage.
 
  👉 Example:
 We have 1 Node.js server → we give it more memory (RAM) or a faster processor so it can handle more users.
 
 🟢 Pros:
 Easy to do (just upgrade hardware)
-No need to change much in your app
+No need to change much in our app
 
 🔴 Cons:
 There’s a limit — we can’t keep upgrading forever
@@ -722,7 +722,6 @@ b.Where we dont need to work sequentially
 c. we can achieve the outcomes much faster
  
  14. Where would you use synchronous functions? 
- Answer 
 a. when our project or peace of project works on Serialization. Or performing dependent tasks in sequence. 
 b.Where we need to work sequentially.  
 c. we can achieve the outcomes accurately and it makes our system easier to evolve and more resilient to failure.  
@@ -732,8 +731,8 @@ For example- let take a project where product, customer and order is their here 
 /**
  // promise.resolve
  /**
- * ye koi bhi value lega aur return mai promise dega.
- * //then method hamesha promise return krta hai isse fir hum promise ki chain create kr skte .
+  ye koi bhi value lega aur return mai promise dega.
+  then method hamesha promise return krta hai isse fir hum promise ki chain create kr skte .
  */
 
 
@@ -793,7 +792,7 @@ In JavaScript, promises are a way to handle asynchronous operations. promise are
 
 Promise States: A promise can be in one of three states:
 
-Pending: The initial state before the promise is fulfilled or rejected.
+Pending: The initial state of promise is pending.
 Fulfilled: The state when the promise is successfully resolved with a value.
 Rejected: The state when the promise encounters an error or fails, providing a reason for the failure.
 Settled - This state represents that the promise has been either rejected or fulfilled.
@@ -814,7 +813,7 @@ Promise.resolve() and Promise.reject(): These static methods are used to create 
   Promise.any()
 
 It takes an array of promises and returns a single promise.
-It resolves as soon as the first promise fulfills.
+now this promise is  resolves as soon as the first promise in array is fulfills.
 If all promises reject, it rejects with an AggregateError (special error type that holds all rejection reasons).
 
 -----------------------------------------------------------------------------
@@ -1156,6 +1155,7 @@ Asynchronous I/O Efficiency: The V8 engine can handle the non-blocking, asynchro
 What tools can be used to assure consistent code style?
 ESLint can be used with any IDE to ensure a consistent coding style which further helps in maintaining the codebase.
 --------------------------------------------------------------------------------
+
 Why is Node.js single-threaded?
 node.js was designed to be single thredded.
 Node.js was created explicitly as an experiment in async processing. 
@@ -1275,7 +1275,7 @@ Streams
 Timers
 process.nextTick
 ----------------------------------------------------------------------
-Event loop in Node has 6 phases:
+Event loop in Node has 6 phases:   (EVENT LOOP PHASES )*****************************************
 1:) Timers →  Runs callbacks scheduled by setTimeout and setInterval.
 2:) Pending callbacks → executes I/O callbacks (like TCP errors).
 3:) Idle, prepare → internal use.......  Only Node’s internal modules (like libuv) use it.

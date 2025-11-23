@@ -22,7 +22,7 @@ Request Type	  Uses HTTP methods (GET, POST, PUT, DELETE)	           POST (usual
 Flexibility	          Fixed structure	                                         Dynamic and flexible
 
 --------------------------------------------------------------------------------------------
-(/graphql -> we can chnge this endpoint but it is convention)
+(/graphql -> we can change this endpoint but it is convention)
 -------------------------------------------------------------------------------------------
 
 why graphql ? 
@@ -37,10 +37,11 @@ it solved overfetching
 
 What are the main components of GraphQL?
 
-Schema – defines structure of API means what data types exist and what operations can be performed. (types, queries, mutations)
-Resolvers – Resolver is a functions that return data for schema fields
-Queries – Queries is used to read data from the server. 
-Mutations – used to write/update/delete data . 
+Schema        – defines structure of API means what data types exist and what operations can be performed. (types, queries,  mutations)
+
+Resolvers     – Resolver is a functions that return data for schema fields
+Queries       – Queries is used to read data from the server. 
+Mutations     – used to write/update/delete data . 
 Subscriptions – used for real-time data send from server . 
 ------------------------------------------------------------------------------------------------
 */
@@ -85,7 +86,7 @@ type Query {
 difference betweeen both.
 GraphQL Schema → The actual structure that defines what data can be queried, (including types, fields, and relationships (it’s what the server uses) ) .
 
-Schema Definition Language (SDL)→ SDL is A human-readable syntax use to define GraphQL schema (like writing the blueprint).
+Schema Definition Language (SDL)→ SDL is a human-readable syntax use to define GraphQL schema (like writing the blueprint).
 /*------------------------------------------------------------------------------------------------
 
 How does GraphQL work with Node.js?
@@ -98,7 +99,7 @@ Answer: 1. Use Apollo Server or Express GraphQL
 const { ApolloServer, gql } = require('apollo-server');
 gql--> graphql
 
-const typeDefs = gql`
+const typeDefs = gql`   
   type Query {
     hello: String
   }
@@ -204,12 +205,13 @@ What is a Resolver Map ?
 Schema (definition):
 type Query {
   getUser: User
-}
+ }
 
 type Mutation {
   createUser(name: String): User
 }
------- ------------------------------------------------------------------------------------------
+
+------- ------------------------------------------------------------------------------------------
 Resolvers (map):
 
 const resolvers = {

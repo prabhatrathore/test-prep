@@ -1,8 +1,8 @@
 let str = "stringgg"
-// str = str.toLocaleUpperCase()//convert to upper case
+// str = str.toLocaleUpperCase() // convert to upper case
 // console.log(str, "@@#1")
 
-str.toLocaleUpperCase()//anothing happen here because we cannot assign 'this' to variable 
+str.toLocaleUpperCase()//anothing happen here because we cannot assign 'this data' to variable 
 
 let obj = {
     name: "ram",
@@ -12,7 +12,7 @@ let obj = {
 // console.log(Object.entries(obj),"entries")
 //answer [ [ 'name', 'ram' ], [ 'address', 'delhi' ], [ 'phone', 12345 ] ] 
 
-//callback example
+//callback example 
 function first(ab) {
     console.log(ab, "1234")
 }
@@ -23,8 +23,8 @@ function second(cb1) {
 
 let arr = [1, 2, 2, 2, 3, 3, 4, 4]
 // let items = new Set(arr)
-// console.log(items,"it222")//Set(4) { 1, 2, 3, 4 }
-// console.log([...items],"items2222")//[ 1, 2, 3, 4 ] 
+// console.log(items,"it222") // Set(4) { 1, 2, 3, 4 }
+// console.log([...items] ) // [ 1, 2, 3, 4 ] 
 
 // // items.clear()
 let singeValue = []

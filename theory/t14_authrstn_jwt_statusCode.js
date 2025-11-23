@@ -1,4 +1,4 @@
-/**
+/*
  What is Authentication? 
 Authentication is the process of recognizing a user's identity.
 
@@ -211,6 +211,7 @@ Common algorithms: SHA-256, MD5 (outdated), bcrypt (for passwords).
 Encoding means to transform data into a different format so it can be properly transmitted or stored.
 Not for security → anyone can decode it back.
 ----------------------------------------------------------------------------------------------------
+
 // Base64 Encoding
 let str = "Hello World!";
 let encoded = Buffer.from(str).toString("base64");

@@ -1,7 +1,7 @@
 let JavaScript_Objects
 /*
 JavaScript is object-based and prototype-based, but now also supports class-based syntax (from ES6).
-we can create objects with or without using classes
+we can create objects with or without using classes.
 
 Creating Objects in JavaScript
 
@@ -160,7 +160,7 @@ const obj = Object.create(proto);
 console.log(Object.getPrototypeOf(obj) === proto); // true
 ----------------------------------------------------------------------------------
 
-2. Object. is ()
+ Object.is ()
 Checks if two values are the same, handling edge cases like NaN and -0.
 
 console.log(Object.is(NaN, NaN)); // true
@@ -168,7 +168,7 @@ console.log(Object.is(0, -0)); // false
 console.log(NaN === NaN); // false (Object.is is stricter)
 
 ----------------------------------------------------------------------------------
-14 Object. is Frozen()
+ Object.is Frozen()
 This method determines if an object was frozen…
 Checks if an object is frozen (non-extensible, all properties non-writable and non-configurable).
 
@@ -177,8 +177,7 @@ Object.freeze(obj);
 console.log(Object.isFrozen(obj)); // true
 
 ----------------------------------------------------------------------------------
-
-16 Object.keys()
+ Object.keys()
 This method returns an array of a given object's own property names.
 const obj = { name: "John", age: 30 };
 console.log(Object.keys(obj)); // ["name", "age"]
@@ -294,12 +293,11 @@ fruits.pop();
 console.log(fruits); // Output: ['apple', 'banana']
 
 1.unshift() - Adds an element to the beginning of an array.
-
 let fruits = ['apple', 'banana', 'cherry'];
 fruits.unshift('orange');
 console.log(fruits); // Output: ['orange', 'apple', 'banana', 'cherry']
-1.shift() - Removes the first element of an array.
 
+1.shift() - Removes the first element of an array & Return that removed element.
 let fruits = ['apple', 'banana', 'cherry'];
 fruits.shift();
 console.log(fruits); // Output: ['banana', 'cherry']
@@ -406,7 +404,12 @@ let str = "Hello World";
 console.log(str.replace("World", "Universe")); // Output: "Hello Universe"
 
 9. Substr()
-It is used to fetch the part of the given string On the basis of the specified starting position and length.
+📌 Not recommended / deprecated
+📌 Takes start index and length
+
+✔ When to use
+When we want N characters from a start point
+But avoid it because it’s deprecated
 
 let str = "Hello World";
 console.log(str.substr(0, 5)); // Output: "Hello"
@@ -417,7 +420,7 @@ It is used to fetch the part of the given string On the basis of the specified i
 let str = "Hello World";
 console.log(str.substring(0, 5)); // Output: "Hello"
 
-11.toLowerCase()
+11. toLowerCase()
 It converts the given string into lowercase letter.
 
 let str = "Hello World";
@@ -461,16 +464,6 @@ let str = "Hello World";console.log(str.indexOf("o"));  // Output: 4
 1.lastIndexOf(): Returns the last index of a specified character or substring in a string, or -1 if the character or substring is not found.
 javascriptCopy code
 let str = "Hello World";console.log(str.lastIndexOf("o"));  // Output: 7
-
-1.slice(): Extracts a section of a string and returns a new string. The first argument is the starting index, and the second argument is the ending index.
-pythonCopy code
-let str = "Hello World";
-console.log(str.slice(0, 5));  // Output: "Hello"
-
-1.substring(): Extracts a part of a string and returns a new string. The first argument is the starting index, and the second argument is the ending index.
-pythonCopy code
-let str = "Hello World";
-console.log(str.substring(0, 5));  // Output: "Hello"
 
 1.replace(): Replaces a specified character or substring in a string with another character or substring.
 pythonCopy code

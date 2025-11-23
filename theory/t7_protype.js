@@ -1,7 +1,7 @@
 /**
  
 Question: “What’s a prototype in JavaScript?”
-Answer: A prototype is an object that other objects can inherit properties and methods from. It’s like a shared toolbox. 
+A prototype is an object that other objects can inherit properties and methods from. It’s like a shared toolbox. 
 
 Prototype allows objects to share common properties and methods, making it easier to manage and reuse code.
 
@@ -32,7 +32,7 @@ Every object has a prototype property that refers to another object. The prototy
 
 Here is an example that demonstrates the prototype chain:
 
-// Define a base object with a property and method
+Define a base object with a property and method
 
 let animal = {
   type: "Unknown",

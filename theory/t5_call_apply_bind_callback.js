@@ -3,13 +3,14 @@ call, apply, bind
 All three are used to set the value of 'this' inside a function.
 
 call Method.--------------
-'call' invoke a function immediately and set the value of 'this' inside that function. we can also pass arguments to the function one by one.
+'call' invoke a function immediately and set the value of 'this' inside that function. we can (also) pass arguments to the function one by one.
 */
-function say(greet) {
-    console.log(`${greet} ${this.name}`);
+function say1(greet,extra,extra2) {
+    console.log(`${greet} ${this.name} ${extra} ${extra2}`);
 }
 const user = { name: "Alex" };
-say.call(user, "Hello"); // Outputs: Hello Alex
+// say1.call(user, "Hello",'lok','nayak'); // Outputs: Hello Alex lok nayak
+// say1.call(user, "gm",'lok'); // Outputs: Hello Alex lok undefined
 
 /*
 2. apply Method
@@ -17,12 +18,12 @@ apply is similar to call, but instead of passing arguments one by one, we pass t
   It also invokes the function immediately and sets the value of 'this' .  
 */
 
-function say(greet) {
-    console.log(`${greet} ${this.name}`);
+function say21(greet,extra1) {
+    console.log(`${greet} ${extra1} ${this.name}`);
 }
 
-const user1 = { name: "Alex" };
-say.apply(user1, ["Hi"]); // Outputs: Hi Alex
+const user1 = { name: "Alex1" };
+say21.apply(user1, ["Hi","world"]); // Outputs: Hi Alex
 
 /* . bind Method
  bind doesn’t calls the function immediately. Instead, it creates a new function with a fixed 'this' value (and optional arguments) that we can call later.

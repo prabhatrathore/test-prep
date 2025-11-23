@@ -6,7 +6,7 @@
 // Rest parameters can be used by applying three dots (...) before the parameters.
 // **Note- Rest parameter should always be used at the last parameter of a function
 
-// Syntax: Rest parameters Used in function parameters (function(...args)) or destructuring 
+// Syntax: Rest parameters used in function parameters (function(...args)) or destructuring 
 // const [first, ...rest] = array.
 
 function sum(name, ...ags) {  // rest operator
@@ -126,7 +126,7 @@ let obj = {
     age,
 };
 // console.log(obj );
-//{ name: 'functionn literals', age: 33 }
+// { name: 'functionn literals', age: 33 }
 //=========================111111111111111=====================
 
 let n = 'name'
@@ -154,7 +154,7 @@ let obj3 = {
         return `${this.nameofstudent} is in the fucntion`
     }
 }
-// console.log(obj3)// { nameofstudent: 'qwert', course: 'b.a.', about: [Function: about] }
+// console.log(obj3) // { nameofstudent: 'qwert', course: 'b.a.', about: [Function: about] }
 // console.log(obj3['about']());//qwert is in the function 
 //================================================
 
@@ -185,7 +185,7 @@ st = st.concat(" ", st2, "dasdf", 'pppp', 'dd', 'vv')
 // console.log(st, "Wddd")// world hello JS node.jsdasdfppppddvv Wddd
 // console.log(st2, "WASDd") // JS node.js WASDd
 const ad = st.concat(" ", st2, "dasdf", 'pppp', 'dd', 'vv')
-// console.log(ad, "adddddddd")//world hello JS node.jsdasdfppppddvv JS node.jsdasdfppppddvv adddddddd
+// console.log(ad, "adddddddd") // world hello JS node.jsdasdfppppddvv JS node.jsdasdfppppddvv adddddddd
 
 /**
 //spread operator 
@@ -367,30 +367,30 @@ console.log(arr); //   [1, 2, 3]
 // Expand
 // Whenever we want to expand an array into another we do something like this:
 
-// // normally used expand method
+// normally used expand method
 // let arr = ['a','b'];
 // let arr2 = [arr,'c','d'];
 // console.log(arr2); // [ [ 'a', 'b' ], 'c', 'd' ]
-// Even though we get the content on one array inside the other one, but actually it is array inside another array which is definitely what we didn’t want. If we want the content to be inside a single array we can make use of the spread operator.
-// // expand using spread operator
+// Even though we get the content of one array inside the other one, but actually it is array inside another array which is   definitely what we didn’t want. If we want the content to be inside a single array we can make use of the spread operator.
+// expand using spread operator
 // let arr = ['a','b'];
 // let arr2 = [...arr,'c','d'];
 // console.log(arr2); // [ 'a', 'b', 'c', 'd' ]
 -------------------------------------------------------------------------------------------------
 
 // Math
-// The Math object in javascript has different properties that we can make use of to do what we want like finding the minimum from a list of numbers, finding maximum etc.
+// The Math object in javascript has different properties that we can use, to do what we want like finding the minimum from a list of numbers, finding maximum etc.
 // Consider the case that we want to find the minimum from a list of numbers,we will write something like this:
 */
-// console.log(Math.min(...[-1,2,3,11]),'[[[[[['); //-1
+// console.log(Math.min(...[-1,2,3,11]) ) ; //-1
 /*
-// Now consider that we have an array instead of a list, this above Math object method won’t work and will return NaN, like:
-// // min in an array using Math.min()
-// let arr = [1,2,3,-1];
-// console.log(Math.min(arr)); //NaN
+ Now consider, we have an array instead of a list, this above Math object method won’t work and will return NaN, like:
+ min in an array using Math.min()
+ let arr = [1,2,3,-1];
+ console.log(Math.min(arr)); //NaN
 
-// When …arr is used in the function call, it “expands” an iterable object 'arr' into the list of arguments
-// In order to avoid this 'NaN' output, we make use of spread operator, like:
+ When …arr is used in the function call, it “expands” an iterable object 'arr' into the list of arguments
+ In order to avoid this 'NaN' output, we make use of spread operator, like:
 // with spread
 // let arr = [1,2,3,-1];
 // console.log(Math.min(...arr)); //-1
@@ -403,13 +403,14 @@ console.log(arr); //   [1, 2, 3]
 // const clonedUser = { ...user1 };
 // console.log(clonedUser);  //{ name:"jen", age:22}
 
-// =======================================================================
+// ==============================================================================
 
 // Here we are spreading the 'user1' object. All key-value pairs of the 'user1' object are copied into the clonedUser object. Let’s look on another example of merging two objects using the spread operator.
 // const user1 = {   name: 'Jen',   age: 22,  };
 // const user2 = {   name: "Andrew", location: "Philadelphia" };
 // const mergedUsers = {...user1, ...user2};
 // console.log(mergedUsers)   //{name :"andrew",age:22,location:"Philadelphia"}
+
 ------------------------------------------------------------------------------------------------
 
 // Output:
@@ -417,6 +418,7 @@ console.log(arr); //   [1, 2, 3]
 */
 /**
 //object => rest
+
 var student = {
    name: "ram",
    age: 3,

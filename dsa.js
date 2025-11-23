@@ -180,4 +180,11 @@ function nthhighest(arr, n) {
     return max
 }
 // console.log(nthhighest([4, 2, 1, 6, 5], 1))
+console.log(the, "theeee", s1)
 
+function s1() {
+
+}
+var the = function s() {
+
+}

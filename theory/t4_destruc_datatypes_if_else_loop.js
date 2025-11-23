@@ -5,7 +5,7 @@ JavaScript provides different data-types to hold different types of Values.
 There are two types of data types in Java Script:
 
 1. Primitive data type: it means, it represent single value, pass by value, immutable. 
-2. Non- primitive data type: an object which represents a collection of values,an array, function 
+2. Non-primitive data type: an object which represents a collection of values,an array, function 
 */
 
 // var a = 40//holding number
@@ -13,15 +13,16 @@ var b = "Rahul"; // holding String
 
 /*
 JavaScript Primitive data types
-String: represents Sequence of characters e.g. "hello"
-Number: represents numeric Values e.g. 100
-Boolean Represents boolean Value either false or true
-Undefined: represents undefined Value.
-Null: represents null i.e. no value at all.
+String : represents Sequence of characters e.g. "hello"
+Number : represents numeric Values e.g. 100
+Boolean : Represents boolean Value either false or true
+Undefined : represents undefined Value.
+Null : represents null i.e. no value at all.
 BigInt - This data type is used to store numbers which are above the limitation of the Number data type.
-Symbol - It is a new data type introduced in the ES6 version of javascript. It is used to store an anonymous and unique value.
-Example :
+Symbol - It is a new data type introduced in the ES6 version of javascript.
+    Symbol is used to store an anonymous and unique value.
 
+Example :
 var symbol1 = Symbol('symbol');
 typeof Symbol('symbol') // Returns Symbol
 -------------------------------------------------------
@@ -82,7 +83,7 @@ var z = #5411; // z pointing to a completely new address of the value 234
 y = 23;
 console.log(z);  // Returns 234, since z points to a new address in the memory so changes in y will not effect z .
 
-From the above example, we can see that primitive data types when passed to another variable, are passed by value. Instead of just assigning the same address to another variable, the value is passed and new space of memory is created.
+From the above example, we can see that primitive data types when passed to another variable, are passed by value. Instead of just assigning the same address to another variable, the value is passed and new space in memory is created.
  
  */
 /*
@@ -99,14 +100,12 @@ changeValue(x);
 console.log(x);  // Output : 10
 
 /*
-In this example, the 'changeValue' function takes a num parameter, which is a primitive data type (Number). When we call changeValue(x), a copy of the value of x (10) is passed to the function. Within the function, we assign a new value of 20 to num. However, this change does not affect the original value of x, which remains 10.
+In this example, the 'changeValue' function takes a num parameter, which is a primitive data type (Number). When we call changeValue(x), a copy of the value of x (10) is passed to the function. Within the function, we assign a new value of 20 to num.
+However, this change does not affect the original value of x, which remains 10.
 This is because primitive data types are passed by value in JavaScript, meaning that a copy of the value is created and passed to the function, so that the original value remains unchanged.
 
 2:) Non Primitive
 (To store multiple values)->( value are mutable) (pass by reference):Object, Array, function.
-
-Non-primitive types
-To store multiple and complex values, non-primitive data types are used.
 
 In JavaScript, when we pass an object (including arrays and functions) to a function, it is passed by reference. This means that a reference to the object is passed to the function.
 For example:
@@ -170,7 +169,7 @@ console.log((a1 === b1));///false
 
 /*
 what is concurrent in node js.
-Concurrency is an essential feature of Node. js that enables it to handle large numbers of I/O operations simultaneously, without blocking the execution thread. This concurrency model allows Node.js to handle many requests concurrently, resulting in improved application performance.
+Concurrency is an essential feature of Node.js that enables (it) to handle large numbers of I/O operations simultaneously, without blocking the execution thread. This concurrency model allows Node.js to handle many requests concurrently, resulting in improved application performance.
 */
 
 
@@ -178,10 +177,8 @@ let javasccript_if_else
 /*
 Java Script If- else
 
-The Java Script if-else statement is used to
-execute the code whether condition is true or false. 
-There are three forms of if statement in
-JavaScript.
+The Java Script if-else statement is used to execute the code whether condition is true or false. 
+There are three forms of 'if statement' in JavaScript.
 1.If Statement
 2.If else statement. 
 3.If else if statement.
