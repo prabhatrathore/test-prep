@@ -5,5 +5,5 @@ docus on component, interaction, architecture
 
  2. low-level design 
 focus on classes, function, databases schema. 
-
+....
  */
