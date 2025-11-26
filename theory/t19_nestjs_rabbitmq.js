@@ -1,6 +1,6 @@
 /**
+ Nest is a progressive node.js framework for building efficient and scalable server-side applications.
 nest is opiniated framwork of node.js.   
-Nest is a progressive node.js framework for building efficient and scalable server-side applications.
 Nest uses moduler architecture for better organization. 
 
 build with typescript and heavily inspired by angular. 
@@ -18,10 +18,10 @@ Why use Nest.js over Express.js?
 Feature                 	Express.js              	Nest.js
 Architecture	            Unstructured	             Modular (MVC + DI)
 Language	                JavaScript	              TypeScript
-Dependency Injection	     Manual	                 Built-in
-Testing	                  Manual setup          	 Built-in tools
+Dependency Injection	     Manual	                   Built-in
+Testing	                  Manual setup            	 Built-in tools
 Scalability                 Moderate                	High
-Code Maintainability	       Low                  	High
+Code Maintainability	       Low                    	High
 
 
 ---------benefits of nest.js-------------- 
@@ -59,7 +59,8 @@ Example:
 })
 export class UserModule {}
 
-***********************************************************
+******************************************************00
+
 Types of Modules
 Root Module → AppModule
 Feature Module → e.g., UsersModule, AuthModule
@@ -95,7 +96,7 @@ Controllers handle incoming HTTP requests and return responses to the client.
 controller_file trigger 'service_file' for getting response 
 in controllers, routes are define (e.g. GET, POST, PUT, DELETE)
 bridge between client and business logic(service)
-organize api endpoints clearly and modularly.
+organize api endpoints clearly (and modularly).
 make code scalable and maintainable 
 
 Example:
@@ -124,7 +125,7 @@ find(@Query('name') name: string) { ... }
 
 ------------------------------------------------------------------------------------
 
-What is a Provider?
+What is a Provider ? 
 A Provider is anything that can be injected using Nest.js dependency injection system — usually 'this' includes services,
 (( repositories, factories, or even plain values.))
 
@@ -277,7 +278,7 @@ Example (TypeORM):
 })
 
 🟩 15. What is DTO in Nest.js?
-Data Transfer Object Used to define the structure (shape) of the data we expect in a request.
+Data Transfer Object used to define the structure (shape) of the data we expect in a request.
 
 Example:
 export class CreateUserDto {

@@ -27,8 +27,7 @@ execution of a single SQL statement.
 
  ------------------------------------------------------------------------------------
 . What is CASE Statement in SQL?
-The CASE Statement is used to apply conditional logic in SQL queries, similar to IF-ELSE
-statements.
+The CASE Statement is used to apply conditional logic in SQL queries, similar to IF-ELSE statements.
 
  ------------------------------------------------------------------------------------
 What is COALESCE in SQL?
@@ -110,7 +109,7 @@ first table with every row from the second table. It does not require any condit
 
 ------------------------------------------------------------------------------------
 
-\------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 
  What is Primary Key?
  A Primary Key is a column in a table that uniquely identifies
@@ -135,7 +134,7 @@ enforce that every row must have a value in that column.
 
  ------------------------------------------------------------------------------------
 
-What is Default Constraint?
+What is Default Constraint ?
 The Default Constraint provides a default value for a column when no value is specified during the insertion of a new record.
  ------------------------------------------------------------------------------------
  ------------------------------------------------------------------------------------
@@ -333,9 +332,8 @@ CROSS JOIN – Returns the Cartesian product of both tables (all possible combin
 
 ****INNER JOIN*************************************************************************** 
 
-SELECT p.name, i.stock_quantity
-FROM product p 
-INNER JOIN inventory i ON p.product_id = i.product_id
+SELECT p.name, i.stock_quantity FROM product p 
+INNER JOIN inventory i ON p.id = i.product_id
 WHERE i.stock_inventory > 0 
 ---------------------------------------------------------------------------------------- 
 ----------------------------------------------------------------------------------------

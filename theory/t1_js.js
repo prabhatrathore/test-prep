@@ -2307,7 +2307,7 @@ student.sayHello(); // Outputs: Hello, I'm Cody
 console.log(student.grade); // Outputs: A
 
 
-. Polymorphism
+ Polymorphism
  Same method behaves differently in different classes
 class Animal {
   makeSound() {

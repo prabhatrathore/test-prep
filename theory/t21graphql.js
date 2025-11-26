@@ -22,7 +22,7 @@ Request Type	  Uses HTTP methods (GET, POST, PUT, DELETE)	           POST (usual
 Flexibility	          Fixed structure	                                         Dynamic and flexible
 
 --------------------------------------------------------------------------------------------
-(/graphql -> we can change this endpoint but it is convention)
+(/graphql -> we can change this endpoint but it's a convention)
 -------------------------------------------------------------------------------------------
 
 why graphql ? 
@@ -90,7 +90,7 @@ Schema Definition Language (SDL)→ SDL is a human-readable syntax use to define
 /*------------------------------------------------------------------------------------------------
 
 How does GraphQL work with Node.js?
-Answer: 1. Use Apollo Server or Express GraphQL
+Answer: 1. Use Apollo Server or Express GraphQL, package 
 2. Define a schema
 3. Write resolvers
 4. Start the server
@@ -132,7 +132,7 @@ What are GraphQL Types ?
 1. Object Type → Defines fields (e.g., User)
 2. Input Type → Used in mutations
 3. Enum Type → Fixed values
-4. Interface & Union Types → Used for polymorphism
+4. Interface & Union Types → Used for polymorphism.
 
 ---------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
@@ -366,7 +366,7 @@ Fragments help to reuse field selections.
 a Fragment is a reusable piece of a query — it lets us define a set of fields once and use it in multiple queries or mutations.
 
 Example:
-fragment userFields on User {
+fragment userFields on User { 
   id
   name
 }
