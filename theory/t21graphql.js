@@ -28,7 +28,7 @@ Flexibility	          Fixed structure	                                         D
 why graphql ? 
 at time of fetching data from server side, client tell specificallly what data they want. 
 
-what it solved ?
+graphql-> what it solved ?
 it solved overfetching
 2. multiple api call . 
 3. subscription : if server got new data,-> in rest api, server can't possible to send but in graphql with some configuration, server can send data . 
@@ -39,7 +39,8 @@ What are the main components of GraphQL?
 
 Schema        – defines structure of API means what data types exist and what operations can be performed. (types, queries,  mutations)
 
-Resolvers     – Resolver is a functions that return data for schema fields
+Resolvers     – Resolver is a functions that return data for schema fields.
+              in graphql , resolver is function which is use to run query and mutation 
 Queries       – Queries is used to read data from the server. 
 Mutations     – used to write/update/delete data . 
 Subscriptions – used for real-time data send from server . 
@@ -90,7 +91,7 @@ Schema Definition Language (SDL)→ SDL is a human-readable syntax use to define
 /*------------------------------------------------------------------------------------------------
 
 How does GraphQL work with Node.js?
-Answer: 1. Use Apollo Server or Express GraphQL, package 
+1. Use Apollo Server or Express GraphQL package 
 2. Define a schema
 3. Write resolvers
 4. Start the server
@@ -136,7 +137,6 @@ What are GraphQL Types ?
 
 ---------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
-
 What are Input Types in GraphQL?
 Input Types in GraphQL used in mutations ((to pass structured input.))
 
@@ -233,7 +233,7 @@ What is Context in GraphQL?
 The context object is shared across all resolvers in a single request.
 It’s useful for authentication ((or database access)).
 
-Example:
+Example: 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -360,7 +360,7 @@ const resolvers = {
       ------ ------------------------------------------------------------------------------------------
       ******************************************************************
 
-What is a Fragment in GraphQL?
+What is a Fragment in GraphQL ?
 Fragments help to reuse field selections.
 
 a Fragment is a reusable piece of a query — it lets us define a set of fields once and use it in multiple queries or mutations.
@@ -496,7 +496,7 @@ type Query {
 and the client will check the type using inline fragments.
 
 ⚔️ Difference (Simple Table)
-Feature	                     Interface                            	Union
+   Feature	                     Interface                            	Union
 🧱 Structure    	Common fields (like a shared blueprint)     	No common fields required
 🧩 Use case	        Types share similar structure	           Types are totally different
 🔗 Keyword	             implements                          	union =
@@ -530,7 +530,7 @@ Use pagination and filtering
 ------ ------------------------------------------------------------------------------------------
 What are Common Security Practices in GraphQL?
 
-Answer:
+Answer:////////
 
 Validate and sanitize inputs
 
@@ -563,6 +563,7 @@ Example:
   secondUser: getUser(id: 2) { name }
 }
 ------ ------------------------------------------------------------------------------------------
+
 What is Introspection in GraphQL?
 Introspection is the ability to query the schema itself, helping tools like GraphiQL auto-generate docs.
 (Disable in production for security reasons.)
@@ -574,10 +575,10 @@ Fix: Use DataLoader to batch those queries.
 🟩 36. How to handle File Uploads in GraphQL?
 Apollo supports multipart uploads using 'graphql-upload' package.
 
------- ------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
 What are Custom Scalars in GraphQL?
-we can define your own scalar types like Date or Email.
+we can define our own scalar types like Date or Email.
 
 Example:
 scalar Date
@@ -605,6 +606,7 @@ polymorphic relationship:
 
 -------------------------------------------------------------------------------------------
 typedefs means graphql type definitions 
+
 what is 'gql'? 
 with gql, we write graphql's schema. 
 we give gql string to apollo server so that apollo server can understand gql string(schema) 
@@ -614,12 +616,11 @@ It’s used to write and parse GraphQL schema definitions (typeDefs) or queries 
 Without gql it is string 
 
 -------------------------------------------------------------------------------------------
-graphQl resolvers
-in graphql , resolver is function which is use to run query and mutation 
+
 --------------------------------------------------------------------------------------------
 
 graphql with subscription 
-when we need real-time updates (like chat,notification, stock price,  online users) we use subscription 
+when we need real-time updates (like chat, notification, stock price, online users) we use subscription 
 subscription work on websocket protocol (a long live connection) 
 
 the client subscribe and as soon as the data changes , server immidiately pushes to client side
@@ -630,22 +631,22 @@ the server establishes a websocket connection.
     whenever the userCreated mutation run on the server ->server publishes an event. 
 
     all client subscribed to that subscription immidiately receive the updated data. 
-    this means asubscription works like an 'event listener' that pushes real time data. 
+    this means subscription works like an 'event listener' that pushes real time data. 
 
     -----------------------------------------------------------
     keyword to remember 
     pub/sub -> publish/subcribe -> the server's internal system that handle events. 
-subscription type -> need to be defined in the graphql schema . 
+  subscription type -> need to be defined in the graphql schema . 
 
-websocket connection -> a long-live connection that remain between the client and server 
+  websocket connection -> a long-live connection that remain between the client and server 
     -------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 const { ApolloServer } = require("apollo-server-express")
 
 means 👇
-👉 You are importing the ApolloServer class from the apollo-server-express package.
+👉 we are importing the ApolloServer class from the apollo-server-express package.
 
-🧠 In simple words:
+🧠 In simple words :
 apollo-server-express = library that helps connect Apollo GraphQL with Express.js.
 ApolloServer = main class used to create a GraphQL server.
 -------------------------------------------------------------------------------------------
@@ -661,8 +662,7 @@ A GraphQL schema is like a blueprint (or map) 🗺️ that tells our API:
 What is an exclamation point in GraphQL?
 In GraphQL, an exclamation point (!)  means that the field must contain a value and cannot be empty.
 -------------------------------------------------------------------------------------------
-What are resolvers in GraphQL?
- The resolver returns the value for a given field in an operation
+
 -------------------------------------------------------------------------------------------
 
 When is GraphQL useful?

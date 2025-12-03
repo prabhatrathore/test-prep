@@ -20,7 +20,6 @@ Key Characteristics:
 3:) Scalability: Individual services can be scaled independently (e.g., scale the order service during peak retailer activity).
 4:) Resilience: Failure in one service doesn’t crash the entire system.
 
-
 Advantages of Microservices 
 1:) Scalability: Scale the Inventory Service during stock updates or the Notification Service during high WhatsApp traffic without affecting others.
 
@@ -147,6 +146,7 @@ Service A → Service B (HTTP call)
 Order Service calls Payment Service using REST and waits for the response.
 
 🔷 Payment Service (Service B)
+
 // payment-service/index.js
 const express = require("express");
 const app = express();
@@ -160,6 +160,7 @@ app.post("/pay", (req, res) => {
 
 app.listen(4000, () => console.log("Payment Service running on port 4000"));
 -----------------------------------------------------------------------------------
+
 🔷 Order Service (Service A)
 // order-service/index.js
 const express = require("express");
@@ -184,14 +185,12 @@ app.post("/order", async (req, res) => {
 app.listen(3000, () => console.log("Order Service running on port 3000"));
 
 
-📌 Here REST call waits for response ↴
+📌 Here REST call waits for response 
 Order → Payment → Response → Complete Order.
-
 
 -----------------------------------------------------------------------------------
 
-
-✅ 1. Fault Tolerance (Simple Explanation)
+✅ 1. Fault Tolerance 
 Fault tolerance means our system keeps working even if some microservices fail.
 
 Example in Node.js microservices:
@@ -214,8 +213,9 @@ How to achieve fault tolerance:
 
 /*---------------------------------------------------------------------------
 
-✅ 2. API Gateway (Simple Explanation)
+✅ 2. API Gateway 
 API Gateway is the single entry point for all our microservices.
+It handles routing, auth, rate-limiting, logging, etc
 
 Without API Gateway:
 Frontend → Auth-Service
@@ -243,10 +243,9 @@ Using Express Gateway, Kong, NGINX, or AWS API Gateway
 
 ----------------------------------------------------------------------------------------
 */
-
 /*
 ✅ 3. Discovery Server / Service Discovery
-Service Discovery helps microservices find each other automatically.
+Service Discovery helps microservices, to find each other automatically.
 
 In microservices we do NOT hardcode:
 http://localhost:3002
@@ -260,7 +259,7 @@ Their IPs
 Their ports
 Health status
 
-example of diiscovery 
+example of discovery 
 🔥 Register a microservice with Consul (Node.js example)
 User-Service registration
 const express = require("express");
@@ -319,9 +318,9 @@ app.listen(PORT, () => console.log(`Order-Service running on ${PORT}`));
  🚀 1. Small, Independent Services
 
 Each service handles one small business function only (e.g., Auth Service, Payment Service, Order Service).
-They work independently — you can update one service without touching others.
+They work independently — we can update one service without touching others.
 
-🌐 2. Independent Deployment
+🌐 2. Independent Deployment.
 
 Every service can be deployed separately.
 Example: You can deploy new version of User Service without redeploying the whole project.
@@ -370,8 +369,8 @@ Eventual Consistency is a data consistency model used in distributed systems and
 🔥 Simple Definition
 Eventual Consistency means data will not be consistent immediately across all services, but it will become consistent after some time.
 
-In short — not instantly correct, but eventually correct.
-
+In microservices, data is not updated instantly across services.
+It synchronizes after some time through events/messages.
 🧠 Why it happens? 
 
 In microservices, each service has its own database.
@@ -391,15 +390,17 @@ An idempotent operation produces the same result no matter how many times it’s
 
 -------------------------------------------------------------------------------------------
 What is Circuit Breaker in Microservices?
+If one service is failing, circuit breaker stops requests to avoid full system crash
+
 A circuit breaker prevents a service from repeatedly calling another service that is failing.
 If failures exceed a threshold → circuit opens → calls are stopped temporarily → system avoids overload and recovers gracefully.
 
 -------------------------------------------------------------------------------------------
 What is the role of Load Balancer in Microservices? 
 A load balancer distributes incoming requests across multiple instances of a microservice to:
-improve performance
+improve performance   
 avoid overload
-increase availability and fault tolerance
+increase availability (and fault tolerance)
 -------------------------------------------------------------------------------------------
 
 What is Event Sourcing in Microservices?
@@ -513,9 +514,33 @@ Header versioning: Accept: application/vnd.api.v1+json.
 Query parameters: ?version=1.
 
 
+-------------------------------------------------------------------------------------------
+What is Inter-service communication?
 
+How two microservices talk to each other:
+Sync → REST, gRPC
+Async → Message queues (Kafka, RabbitMQ)
+  -------------------------------------------------------------------------------------------
+What is a message queue?
+
+A system that stores and delivers messages between services.
+Used for async communication.
+Examples: Kafka, RabbitMQ, SQS
+  -------------------------------------------------------------------------------------------
+
+  What is service registry?
+ service registry is a directory where all services register themselves so others can find them.
+-------------------------------------------------------------------------------------------
+
+13. What is distributed tracing?
+distributed tracing means Tracking a request across multiple services
 
 -------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
 
 
 */

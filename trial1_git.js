@@ -29,10 +29,11 @@ git diff branchB...branchA: Shows differences in branchA not in branchB.
 git clone <repo-url>	Copies a remote repo to your machine.
 git commit -m "message"	Saves/stores staged changes with a message.
 git push	Sends your commits to the remote repository (GitHub/GitLab).
-git pull	Gets latest changes from remote and merges into your branch.
+git pull	Gets latest changes from remote and merges into our branch.
 git branch	Shows all branches.
-git checkout <branch-name>	Switches to another branch.
+git checkout <branch-name>  	Switches to another branch.
 git checkout -b <new-branch>	Creates & switches to a new branch.
+
 git merge <branch>	Merges a branch into the current branch.
 git cherry-pick <commit-hash>	✅ Takes a specific commit from another branch and applies it to our current branch .
 git stash	Temporarily saves uncommitted changes.
@@ -101,12 +102,13 @@ which git command allow you to extract commit from one branch with in repository
 ✅ git cherry-pick
 
 Simple meaning:
-git cherry-pick lets us take a specific commit from one branch and apply it to another branch.
+git cherry-pick lets us take a specific commit from one branch and apply (it) to another branch.
 
 Example:
 git checkout main
 git cherry-pick <commit-hash>
 ****************************************************************** 
+
 first time code push to github  repo
 git add . 
 git commit -m "add"
@@ -115,7 +117,15 @@ git branch -M main
 git push -u origin main
 
 ****************************************************************** 
+✅ 2. Remove a file from Git tracking but keep it on disk
 
+This is used when a file is committed or staged, but you now want Git to stop tracking it.
+
+Single file
+git rm --cached fileName
+-------------------------------------------------
+Folder
+git rm -r --cached folderName
 
 *************************************/
 

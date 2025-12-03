@@ -69,13 +69,16 @@ function sol(parm, arr) {
 }
 // sol(obj2,["hi"])
 // ------------------------------------------------------------------------
+
 let obj3 = new Object(null)
 // console.log(obj3, "231==")//{}
+
 obj3.name = "update"
-// console.log(obj3, "231")//{name :'update'}
+// console.log(obj3) // {name :'update'}
+
 obj3 = Object.create({})
 obj3.age = 9
-// console.log(obj3, "obj3333")//{  age: 9 }
+// console.log(obj3 ) // {  age: 9 }
 
 // ------------------------------------------------------------------------
 
