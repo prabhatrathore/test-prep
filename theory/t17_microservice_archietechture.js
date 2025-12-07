@@ -25,7 +25,55 @@ Advantages of Microservices
 
 2:) Resilience: If the Notification Service fails, orders and stock updates continue functioning.
 3:) Team Autonomy: Different teams can work on Supplier, Order, and Notification Services independently, using JavaScript/Node.js.
+-----------------------------------------------------------------------------------
 
+ . What are the key features of microservices architecture?
+ 🚀 1. Small, Independent Services
+
+Each service handles one small business function only (e.g., Auth Service, Payment Service, Order Service).
+They work independently — we can update one service without touching others.
+
+🌐 2. Independent Deployment.
+
+Every service can be deployed separately.
+Example: You can deploy new version of User Service without redeploying the whole project.
+
+📦 3. Decentralized Data Storage
+Each microservice can have its own database.
+Example:
+User Service → MySQL
+Product Service → MongoDB
+This avoids a single DB becoming a bottleneck.
+
+🔌 4. Communication via APIs
+Services talk to each other through:
+REST API
+gRPC
+Message Brokers (RabbitMQ, Kafka, Redis Pub/Sub)
+No direct function calling like monolithic.
+
+🔁 5. Scalability (Easily Scalable)
+Only the service that needs more traffic can be scaled.
+Example: Product Service is in high demand → scale only that service.
+
+🧱 6. Loose Coupling
+Services are not tightly connected.
+So, if Payment Service crashes, entire system doesn’t go down — remaining services still work.
+
+📊 7. Technology Flexibility
+Each service can use different tech.
+Example:
+Node.js for Auth
+Python for Recommendation Engine
+Java for Payment
+Node.js fits well because it's lightweight and high-performance for API services.
+
+🛡 8. Fault Isolation
+If one service fails, only that part is affected.
+Better reliability + easy debugging.
+
+🧪 9. Easy Testing
+Since services are small, unit testing & integration testing become easier and faster.
  */
 /**
  // inventory-service/index.js
@@ -184,7 +232,6 @@ app.post("/order", async (req, res) => {
 
 app.listen(3000, () => console.log("Order Service running on port 3000"));
 
-
 📌 Here REST call waits for response 
 Order → Payment → Response → Complete Order.
 
@@ -210,7 +257,6 @@ How to achieve fault tolerance:
 ✔ Replicas (multiple instances of each service)
 ✔ Auto restart (PM2 / Docker / Kubernetes)
 --------------*/
-
 /*---------------------------------------------------------------------------
 
 ✅ 2. API Gateway 
@@ -310,61 +356,12 @@ app.get("/orders", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Order-Service running on ${PORT}`));
-
 */
-
-/**
- . What are the key features of microservices architecture?
- 🚀 1. Small, Independent Services
-
-Each service handles one small business function only (e.g., Auth Service, Payment Service, Order Service).
-They work independently — we can update one service without touching others.
-
-🌐 2. Independent Deployment.
-
-Every service can be deployed separately.
-Example: You can deploy new version of User Service without redeploying the whole project.
-
-📦 3. Decentralized Data Storage
-Each microservice can have its own database.
-Example:
-User Service → MySQL
-Product Service → MongoDB
-This avoids a single DB becoming a bottleneck.
-
-🔌 4. Communication via APIs
-Services talk to each other through:
-REST API
-gRPC
-Message Brokers (RabbitMQ, Kafka, Redis Pub/Sub)
-No direct function calling like monolithic.
-
-🔁 5. Scalability (Easily Scalable)
-Only the service that needs more traffic can be scaled.
-Example: Product Service is in high demand → scale only that service.
-
-🧱 6. Loose Coupling
-Services are not tightly connected.
-So, if Payment Service crashes, entire system doesn’t go down — remaining services still work.
-
-📊 7. Technology Flexibility
-Each service can use different tech.
-Example:
-Node.js for Auth
-Python for Recommendation Engine
-Java for Payment
-Node.js fits well because it's lightweight and high-performance for API services.
-
-🛡 8. Fault Isolation
-If one service fails, only that part is affected.
-Better reliability + easy debugging.
-
-🧪 9. Easy Testing
-Since services are small, unit testing & integration testing become easier and faster.
+/*
 ---------------------------------------------------------------------------------------------
 
 What is eventual consistency ? 
-Eventual Consistency is a data consistency model used in distributed systems and microservices.
+((Eventual Consistency is a data consistency model used in distributed systems and microservices.))
 
 🔥 Simple Definition
 Eventual Consistency means data will not be consistent immediately across all services, but it will become consistent after some time.
@@ -385,27 +382,27 @@ in microservices architecture, a sidecar is a separate helper container/process 
 -------------------------------------------------------------------------------------------
 What are idempotent operations in microservices?
 An idempotent operation produces the same result no matter how many times it’s executed (e.g., DELETE request in REST)
-
+-------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------------------
 What is Circuit Breaker in Microservices?
-If one service is failing, circuit breaker stops requests to avoid full system crash
+((If one service is failing, circuit breaker stops requests, to avoid full system crash.))
 
-A circuit breaker prevents a service from repeatedly calling another service that is failing.
-If failures exceed a threshold → circuit opens → calls are stopped temporarily → system avoids overload and recovers gracefully.
+A circuit breaker prevents a service from repeatedly calling,-> another service that is failing.
+((If failures exceed a threshold → circuit opens → calls are stopped temporarily → system avoids overload and recovers gracefully.))
 
 -------------------------------------------------------------------------------------------
 What is the role of Load Balancer in Microservices? 
 A load balancer distributes incoming requests across multiple instances of a microservice to:
 improve performance   
 avoid overload
-increase availability (and fault tolerance)
+((increase availability (and fault tolerance) ))
 -------------------------------------------------------------------------------------------
 
 What is Event Sourcing in Microservices?
 In event sourcing, the state of an application is stored as a sequence of events rather than persisting the latest state only.
 To rebuild data, events are replayed in order.
+
 -------------------------------------------------------------------------------------------
 
 What is the role of a message broker in Microservices?
@@ -427,19 +424,19 @@ auditing
 performance monitoring
 Centralized logging tools: ELK, Grafana Loki, Splunk.
 -------------------------------------------------------------------------------------------
-
 -------------------------------------------------------------------------------------------
 
-What is the role of orchestration in Microservices?
+What is the role of orchestration in Microservices ?
 Orchestration automates deployment, scaling, and management of microservices.
-Tools like Kubernetes control:
+
+(( Tools like Kubernetes control:
 container start/stop
 scaling
 health checks
-networking
+networking ))
 -------------------------------------------------------------------------------------------
 
-How do you handle data consistency in Microservices?
+How do you handle data consistency in Microservices????????????????????????????????????????????
 Since every service has its own DB, consistency is handled using patterns:
 
 Saga Pattern (most common)
@@ -458,11 +455,11 @@ observability and tracing
 traffic control
 No code changes required.
 -------------------------------------------------------------------------------------------
-
 -------------------------------------------------------------------------------------------
-What is Domain-Driven Design (DDD) and how is it related to microservices? 
-Domain-Driven Design (DDD) is an approach that focuses on designing software around business domains rather than technology.
 
+What is Domain-Driven Design (DDD) and how is it related to microservices?
+Domain-Driven Design (DDD) is an approach that focuses on designing software around business domains (rather than technology).
+ 
 Key concepts in DDD:
 Domain → Business area (e.g., Orders, Payments, Inventory)
 Bounded Context → Clear boundary where a domain model applies
@@ -516,16 +513,15 @@ Query parameters: ?version=1.
 
 -------------------------------------------------------------------------------------------
 What is Inter-service communication?
-
-How two microservices talk to each other:
+Inter-service communication means How two microservices talk to each other:
 Sync → REST, gRPC
 Async → Message queues (Kafka, RabbitMQ)
   -------------------------------------------------------------------------------------------
-What is a message queue?
 
-A system that stores and delivers messages between services.
+What is a message queue?
+ message queue is a system that stores and delivers messages between services.
 Used for async communication.
-Examples: Kafka, RabbitMQ, SQS
+Examples: Kafka, RabbitMQ, SQS 
   -------------------------------------------------------------------------------------------
 
   What is service registry?
@@ -536,8 +532,190 @@ Examples: Kafka, RabbitMQ, SQS
 distributed tracing means Tracking a request across multiple services
 
 -------------------------------------------------------------------------------------------
+What is centralized logging?
+All microservice logs are stored in one place.
+Tools: ELK, Loki, Graylog
 -------------------------------------------------------------------------------------------
+What is configuration server?
+Stores config for all services in one place.
+Example: Spring Cloud Config, Consul
 -------------------------------------------------------------------------------------------
+What is Docker and why used?
+
+Docker packages applications in containers so they run the same everywhere.
+-------------------------------------------------------------------------------------------
+What is Kubernetes in microservices?
+Kubernetes handles:
+Deployment
+Scaling
+Load balancing
+Service discovery --> for microservices.
+-------------------------------------------------------------------------------------------
+What is database per service?
+Each microservice maintains its own database (to avoid tight coupling).
+-------------------------------------------------------------------------------------------
+How do microservices share data?
+They don’t share DB, they share data through:
+1.) API calls
+2.) Events
+3.) Message queues
+-------------------------------------------------------------------------------------------
+
+What is scalability?
+Ability to increase or decrease service instances based on load.
+-------------------------------------------------------------------------------------------
+
+What is horizontal vs vertical scaling?
+Horizontal → Add more servers (it is cheaper as compare to vertical).
+Vertical → Increase RAM/CPU of existing server (it is expensive as compare to horizontal)
+
+-------------------------------------------------------------------------------------------
+How do you secure microservices?
+JWT / OAuth2
+API Gateway
+HTTPS
+Service-to-service auth
+-------------------------------------------------------------------------------------------
+
+What is CI/CD for microservices?
+Automatically:
+Build
+Test
+Deploy
+each service separately.
+-------------------------------------------------------------------------------------------
+
+How do you handle API failures between microservices?
+Retry
+Timeout
+Circuit Breaker
+Fallback response
+-------------------------------------------------------------------------------------------
+
+What is distributed caching?
+Shared cache across services: Redis, Memcached
+Boosts speed + reduces DB calls.
+-------------------------------------------------------------------------------------------
+
+🟩 2. SCENARIO-BASED QUESTIONS (MOST ASKED) + ANSWERS
+Scenario 1:
+“If an order is created but payment fails, what should happen?”
+Use Saga Pattern:
+Order Service → “OrderCreated” event
+Payment Service → fails → emits “PaymentFailed”
+Order Service → receives event → changes status to CANCELLED
+
+Scenario 2:
+“How do you update user details across multiple microservices?”
+Use event-driven approach:
+User Service → emits “UserUpdated” event
+Other services (order, payment, profile) listen and update their DB
+
+Scenario 3:
+“You have high traffic on one service only. How do you scale?”
+Use horizontal scaling:
+Increase Pods in Kubernetes
+Auto-scaling (HPA) → based on CPU/Memory/Requests
+API Gateway load balances across instances
+
+Scenario 4:
+“What if one critical service goes down?”
+Implement:
+Circuit breaker
+Fallback response
+Retry + exponential backoff
+Use Kubernetes auto-restart
+
+Scenario 5:
+“Your microservices have a lot of logs from different services. How do you analyze them?”
+Use Centralized Logging:
+Logstash → Elasticsearch → Kibana
+or
+
+Grafana Loki
+---------------------------------------------------------------------------------------------
+
+Scenario 6:
+“How do two microservices share data without sharing database?”
+Use:
+REST API
+gRPC
+Events
+Message Queue (Kafka/RabbitMQ)
+
+Scenario 7:
+“How do you ensure request tracing across services?”
+
+Use:
+Correlation ID in headers
+Jaeger / Zipkin for tracing
+
+Scenario 8:
+“How do you handle schema changes in microservices?”
+Solve using:
+API versioning
+DB versioning
+
+Backward compatibility
+ 
+🟧 4. NODE.JS MICROSERVICES CODING QUESTIONS + ANSWERS
+Q1. How to build a simple microservice in Node.js?
+Answer:
+import express from "express";
+const app = express();
+app.use(express.json());
+
+app.get("/users", (req, res) => {
+    res.json({ message: "User Service running" });
+});
+
+app.listen(3001, () => console.log("User Service running on 3001"));
+
+Q2. How to call another microservice (Service-to-Service call)?
+import axios from "axios";
+
+export const getOrders = async (req, res) => {
+    const response = await axios.get("http://order-service:3002/orders");
+    res.json({ orders: response.data });
+};
+
+Q3. How to use JWT in microservices?
+import jwt from "jsonwebtoken";
+
+export const verifyToken = (req, res, next) => {
+    const token = req.headers.authorization?.split(" ")[1];
+    if (!token) return res.status(401).json({ error: "No token provided" });
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        if (err) return res.status(403).json({ error: "Invalid token" });
+        req.user = user;
+        next();
+    });
+};
+
+Q4. How to implement event-based microservices (Kafka Example)?
+import { Kafka } from "kafkajs";
+
+const kafka = new Kafka({ brokers: ["localhost:9092"] });
+
+const consumer = kafka.consumer({ groupId: "order-group" });
+await consumer.connect();
+await consumer.subscribe({ topic: "order_created" });
+
+await consumer.run({
+    eachMessage: async ({ message }) => {
+        console.log("Received Event:", message.value.toString());
+    }
+});
+
+Q5. Example of Circuit Breaker (using opossum)
+import CircuitBreaker from "opossum";
+import axios from "axios";
+
+const options = { timeout: 3000, errorThresholdPercentage: 50 };
+const breaker = new CircuitBreaker(() => axios.get("http://payment:3003/pay"), options);
+
+breaker.fallback(() => ({ message: "Payment service unavailable" }));
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 

@@ -862,7 +862,6 @@ console.log(arr.slice(-3));      // [30, 40, 50]
 console.log(arr.slice(-4, -1));  // [20, 30, 40]
  =======================================================================================================
  */
-
 /**
  * array method:
  * array length: it return the number of elements in an array & returns the new length.
@@ -914,7 +913,7 @@ let t1 = t.reduce((a, b) => {
 
 /*
 Array.find()
- Returns the first element that satisfies a condition, or undefined if none found.
+Returns the first element that satisfies a condition, or undefined if none found.
 -------------------------------------------------------------------------------------------------------------....
 
 Array.findIndex()
@@ -1082,7 +1081,7 @@ let Closures
 /**
  What Are Closures in JavaScript?
  
- Closures are functions that have access to the variables from their outer function scope even after the outer function has finished executing. They “remember” the environment in which they were created.
+ Closures are an ability of a functions that have access to the variables from their outer function scope even after the outer function has finished executing. They “remember” the environment in which they were created.
  
  -> Closures are an ability of a function to remember the variables that are declared in its outer scope.
  -> Inner function remembers outer function's variables. 
@@ -1147,7 +1146,7 @@ let js_map
 /**
 In JavaScript, new Map() creates a Map object, which is a collection of key-value pairs where keys and values can be of any type (e.g., strings, numbers, objects, etc.). Unlike regular objects,
 
-Maps maintain the insertion order of elements and allow keys of any data-type, not just strings or symbols.
+Maps maintain the insertion order of elements (and allow keys of any data-type, not just strings or symbols.)
 we can add, retrieve, update, or remove key-value pairs, and it remembers the order in which we added them.
 
 Purpose: Similar to objects but allows any value as keys.
@@ -2379,9 +2378,9 @@ Classes: It is a group of similar object.It is a logical entity.
   It binds data and methods together into a single unit.
   It is a data type that represents the blueprint of an object.
   It uses the keyword class when declared.
-e.g : audi(category)
+  e.g : audi(category)
 
-Object:It is a real world entity such as book,car,etc.It is a physical or real world entity.
+Object : It is a real world entity such as book,car,etc.It is a physical or real world entity.
   It occupies space in the memory.
   Object cannot be existed without a class.
   It is just like a variable of a class.
@@ -2569,7 +2568,7 @@ How objects communicate and interact with each other.
 (e.g., Observer, Strategy)
 
 
-✅ Difference between Async/Await and Generators
+✅ Difference between Async/Await and Generators.
 Generators pause and resume code execution.
 Async/Await waits for promises to resolve to write asynchronous code like synchronous code.
  */

@@ -229,6 +229,7 @@ const resolvers = {
   }
 };
 ------ ------------------------------------------------------------------------------------------
+
 What is Context in GraphQL?
 The context object is shared across all resolvers in a single request.
 It’s useful for authentication ((or database access)).

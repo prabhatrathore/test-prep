@@ -291,7 +291,6 @@ export class CreateUserDto {
 --------------------------------------------------------------------------
 
 🟩 16. How Authentication works in Nest.js?
-
 Answer:
 Usually done using Passport.js or JWT (JSON Web Token) strategies.
 Steps:

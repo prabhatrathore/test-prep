@@ -25,7 +25,7 @@ A variable is accessible only inside the block/function where it is defined, and
 Closure – Inner function remembers outer function's variables.
 
 📌 Asynchronous JS
- Callbacks
+Callbacks
 Promises
 Async/Await
 Event Loop -> ( Call Stack, Callback Queue, Web APIs). 
@@ -116,7 +116,7 @@ console.log(theme); // Output: "default"
 Modules: require / import
 In Node.js, modules are reusable pieces of code that we can include in our program.
 1. require
-A 'require' function used in Node.js to load modules ( module can be built-in, external, or your own files).
+A 'require' function used in Node.js to load modules ( module can be built-in, external, or our own files).
 Used in: CommonJS modules (the older,or default module system in Node.js).
 ------------------------------------------------------------------------------------------
 
@@ -245,7 +245,7 @@ A variable is like a container that holds data that can be reused or updated lat
 
  Key Features of let
 1. Block Scope
-2. Hoisting  :  While variables declared with let are hoisted, but they are not initialized.
+2. Hoisting : While variables declared with let are hoisted, but they are not initialized.
 3. No Redeclaration.
 4. re-assign can possible.
 ------------------------------------------------------------------------
@@ -265,6 +265,7 @@ obj.new = "Nanda-new";
 // console.log(obj.name); // nanda
 // console.log(obj); // { name: 'Nanda', new: 'Nanda-new' }
 // ------------------------------------------------------------------------------
+
 const arr = [1, 2, 3];
 arr.push(4);
 // console.log(arr);  // [ 1, 2, 3, 4 ]
@@ -390,9 +391,9 @@ They manipulate Boolean values (true/false).
 ||	Logical OR	(10==20 || 20==33) = false
 !	Logical Not	!(10==20) = true
 
-OR ( | | ) operator - If the first value is truthy, then the first value is returned. Otherwise, always the second value gets returned.
+OR ( | | ) operator - If the first value is truthy but second value ia falsy, then the first value is returned. Otherwise, if both value is truthy always the second value gets returned.
 
-AND ( && ) operator - If both the values are truthy, always the second value is returned. If the first value is falsy then the first value is returned or if the second value is falsy then the second value is returned.
+AND ( && ) operator - If both the values are truthy, always the second value is returned. If the first value is falsy then the first value is returned or if first value is truthy but the second value is falsy then the second value is returned.
 
 AND (&&)
 Returns true if both sides are true.
@@ -486,7 +487,7 @@ Output
 ++ increments the value by 1.
 -- decrements the value by 1.
 
---> typeof returns the type of a variable.
+--> 'typeof' returns the type of a variable.
 
 /*
 Pre-increment (++x): Increments the variable first, then returns the new value.

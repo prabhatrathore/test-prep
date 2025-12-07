@@ -18,6 +18,28 @@ put method: used to update existing data completely.
 patch method: used to partially update existing data. 
 Data Transfer: It sends and receives data in formats like JSON or XML.
  ----------------------------------------------------------------------------------------------
+ ✅ PUT vs PATCH (HTTP Methods)
+1. PUT Method
+PUT is used to update or replace an entire resource.
+It is idempotent, meaning making the same request multiple times will not change the result after the first time.
+
+Key Points:
+Requires full data of the resource.
+If any field is missing, it might overwrite it with null or default.
+Use when you want to replace the complete object.
+
+----------------------------------------------------------------------------------------------
+2. PATCH Method
+PATCH is used to partially update a resource.
+It updates only specific fields you send.
+It is not guaranteed to be idempotent (depends on implementation), but usually treated safely.
+
+Key Points:
+Only modifies the provided fields.
+Does not overwrite unspecified fields.
+Use when updating only a part of the resource.
+----------------------------------------------------------------------------------------------
+
 
 What is a RESTful API?
 (Representational State Transfer Application Programming Interface) is a set of rules that allows applications to communicate

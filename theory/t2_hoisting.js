@@ -209,7 +209,7 @@ Often used in <a href="javascript:void(0)"> to do nothing and prevent page reloa
 ---------------------------------------------------------------------------------
 
 ✅ 5. What are Web Workers?
-Web Workers run JavaScript in background threads, so heavy tasks don’t block UI.
+Web Workers run JavaScript in background (threads), so heavy tasks don’t block UI.
 💡 Use case: Data processing without freezing the page.
 ---------------------------------------------------------------------------------
 

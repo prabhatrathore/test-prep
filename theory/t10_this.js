@@ -7,7 +7,7 @@ When this is used alone, this refers to the global object (window object in brow
 
 'this' refers to the object that is currently executing the function or method.
 
-'this' keyword is used in a constructor function, this refers to the object when the object is created using constructor function
+'this' keyword is used in a constructor function, 'this' refers to the object,  when the object is created using constructor function
 
 Example:
 ----------------------------------------------------------------------

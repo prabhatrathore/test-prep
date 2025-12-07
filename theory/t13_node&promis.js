@@ -139,7 +139,7 @@ Start Node with inspect:
 Clustering is a technique in Node.js to create multiple process (workers) that run simultaneously and share the same server port.
 Clustering enhances performance by distributing incoming connections across multiple workers.
 
-Since Node.js is single-threaded by default, node.js runs on a single process, utilizing only one CPU core. The cluster module allows us to create multiple worker (processes) that share the same server port, enabling parallel processing and better handling of concurrent requests.
+Since Node.js is single-threaded by default, node.js runs on a single process, utilizing only one CPU core.
 
 Key Concepts of Clustering
 Master Process: The main process that spawns and manages worker processes.
@@ -733,6 +733,11 @@ For example- let take a project where product, customer and order is their here 
  /**
   ye koi bhi value lega aur return mai promise dega.
   then method hamesha promise return krta hai isse fir hum promise ki chain create kr skte .
+
+  --------------------------------------------------------------------------------------------
+  What is the easiest way to ignore promise errors?
+The easiest and safest way to ignore promise errors is void that error. This approach is ESLint
+friendly too.
  */
 
 

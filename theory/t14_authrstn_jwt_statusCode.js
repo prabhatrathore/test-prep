@@ -196,7 +196,8 @@ Symmetric Encryption: Uses the same key for encryption and decryption (e.g., AES
 Asymmetric Encryption: Uses a pair of keys — public for encryption, private for decryption (e.g., RSA, ECC).
 -------------------------------------------------------------------------------------------------------
 Hashing
- Hashing converts data into a fixed-length string (hash value or digest) using a hash function. It’s a one-way process, meaning the original data cannot be retrieved from the hash.
+ Hashing converts data into a fixed-length string (hash value or digest) using a hash function. 
+ It’s a one-way process, meaning the original data cannot be retrieved from the hash.
 
 Purpose: Ensures data integrity and is commonly used for password storage, digital signatures, and verifying file authenticity.
 

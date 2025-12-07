@@ -12,13 +12,13 @@
 
   it is a language that allows us to write queries for interacting with databases.
 
- Example:
+ Example : 
  SELECT * FROM Employees;
  This query retrieves all the records from the Employees table.
  ------------------------------------------------------------------------------------
 
-MySQL is a Relational Database Management System (RDBMS) developed by Oracle Corporation. It uses SQL as its query language. Unlike SQL, MySQL is actual software that stores, manages, and retrieves data.
-
+MySQL is a Relational Database Management System (RDBMS) developed by Oracle Corporation. It uses SQL as its query language. 
+ MySQL is actual software that stores, manages, and retrieves data.
 ------------------------------------------------------------------------------------
 
 What is CTE (Common Table Expression) ?
@@ -66,7 +66,7 @@ A Stored Procedure is a group of predefined SQL statements stored in the databas
  What are ACID properties?
 
 ACID properties are a set of properties that ensure ( reliable and) secure transactions among databases.
-
+ 
 ACID stands for Atomicity, Consistency, Isolation, Durability.
 
 Atomicity: Either the entire transaction takes place at once or not at
@@ -110,11 +110,15 @@ first table with every row from the second table. It does not require any condit
 ------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------
+ What is a Primary Key in MongoDB?
+_id is the unique identifier for every document (auto-generated if not provided) 
+------------------------------------------------------------------------------------
 
  What is Primary Key?
- A Primary Key is a column in a table that uniquely identifies
- each row in that table. It does not allow NULL values and must always contain unique
- values.
+ A Primary Key is a column in a table that uniquely identifies each row in that table. 
+ It does not allow NULL values and must always contain unique values.
+
+
  Key Features:
  Uniquely identifies each record
  Cannot have duplicate values
@@ -163,7 +167,7 @@ DELETE → remove records.
 Only main command: SELECT.
 
 🔹 4. DCL (Data Control Language)
-👉 Used to control access/permissions.
+👉 Used to control (access/) permissions.
 
 Examples:
 GRANT → give access rights.
@@ -179,7 +183,7 @@ SAVEPOINT → set a checkpoint inside a transaction.
 
 👉 Interview tip: If they ask “Main 3 types?”, just say DDL, DML, DCL (older classification).
 If they ask “Modern classification?”, add DQL + TCL also.
- ------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 
 HTTP vs HTTPS
 HTTP (HyperText Transfer Protocol)  
@@ -202,7 +206,7 @@ Certificate: Requires an SSL/TLS certificate issued by a Certificate Authority (
 --------------------------------------------------------------------------------------------------------------
 
 🔹 Integrity (in security) means
-The data is not altered, modified, or tampered with while traveling between client and server.
+The data is not altered, modified, ((or tampered with)) while traveling between client and server.
 --------------------------------------------------------------------------------------------------------------
 
 How Does a URL Work?
@@ -215,6 +219,7 @@ How a URL Works (Step-by-Step)
 (domain name system)
 
 2:) DNS Resolution: The browser sends the domain (www.example.com) to a DNS server, which resolves it to an IP address (e.g., 192.0.2.1).
+DNS Resolution is like a phone book which maintain this data 
 
 3:) Connection to Server:
 The browser establishes a connection to the server at the IP address on port 443 (for HTTPS).
@@ -228,8 +233,8 @@ An ORM (Object-Relational Mapping) is a tool that acts as a bridge between a rel
 
 👉 ORM is a tool that connects our code to our database.
 👉 It changes code objects into database tables.
-🔹 Why use it?
 
+🔹 Why use it?
 ✅ we can work with the database using simple code instead of writing complex SQL queries. 
 ------------------------------------------------------------------------------------------------------
 
@@ -281,7 +286,7 @@ role based access :
 
 . What is Union and Union All?
 Criteria          UNION                                               UNION ALL
- Duplicates      Removes duplicate rows                       Includes duplicate rows 
+Duplicates      Removes duplicate rows                       Includes duplicate rows 
 Performance      Slower due to duplicate removal              Faster as no duplicate removal
 Sorting          Automatically sorts the result set           Does not sort the result set
 Syntax:              UNION                                     UNION ALL
@@ -480,7 +485,6 @@ CREATE TABLE transactions (
 );
 
 -----------------------------------------------------------------------------------------------------------
-
 -----------------------------------------------------------------------------------------------------------
  Q:) What is the difference between DELETE, TRUNCATE, and DROP in MySQL?
  DELETE : DELETE means Removes rows from a table based on a condition. ( It can be rolled back if inside a transaction.) Example:
@@ -554,7 +558,7 @@ A view is a saved query that works like a virtual table. With this, we can take 
 ----------------------------------- --------------------------------------------------
 
 Q:) What are system-versioned tables, and how do they work? 
- System-versioned tables maintain a full history of changes made in a table. Since they keep previous versions of each row, we can use them to audit and recover data .
+ System-versioned tables maintain a full history of changes made in a table. (Since they keep previous versions of each row, we can use them to audit and recover data .)
 -------------------------------------------------------------------------------------
 
 Q.) What are MySQL transactions, and how do you use them?
@@ -701,6 +705,7 @@ example of many to many
 | 2      | 2       | // Jane in Editors
 | 2      | 3       | // Jane in Guests
 
+
 -------------------------------------------------------------------------------------
 If we can delete all rows with DELETE id > 0, why do we use TRUNCATE? 
 
@@ -836,7 +841,7 @@ Use Cases: Caching, session management, user preferences.
 Examples:
 Redis: In-memory, high-speed database for caching and real-time analytics.
 DynamoDB: AWS-managed, scalable key-value store.
-Riak: Distributed, fault-tolerant key-value database.
+((Riak: Distributed, fault-tolerant key-value database.))
 
 Pros: Extremely fast, simple, scalable.
 Cons: Limited querying capabilities beyond key-based access.
@@ -850,7 +855,7 @@ Use Cases: Content management, e-commerce, user profiles.
 Examples:
 MongoDB: Popular document store with rich querying and indexing.
 CouchDB: Focuses on replication and offline-first applications.
-Firestore: Google Cloud’s serverless document database.
+((Firestore: Google Cloud’s serverless document database.))
 
 Pros: Flexible schema, intuitive for developers, supports complex queries.
 Cons: Can be slower than key-value stores for simple lookups; redundancy possible.
@@ -865,6 +870,7 @@ Examples:
 Cassandra: Distributed database for high availability and large datasets.
 HBase: Runs on Hadoop HDFS, suited for large-scale data processing.
 ScyllaDB: High-performance, Cassandra-compatible database.
+
 Pros: Efficient for columnar data access, scalable for big data.
 Cons: Complex to set up and query; not ideal for small datasets.
 
@@ -881,22 +887,25 @@ NoSQL databases may sacrifice ACID (Atomicity, Consistency, Isolation, Durabilit
 Querying can be less standardized than SQL, varying by database type.
 ----------------------------------------------------------------------------------------
 
-MongoDB stores BSON (Binary Interchange and Structure Object Notation) objects in the collection.
+1. What is MongoDB?
+MongoDB is a NoSQL, document-oriented database that stores data as JSON-like BSON documents.
+BSON-> binary json ?????????????????????????????????????????????????????/
 --------------------------------------
 
 4. What is collection and Document ?
 document is order set of key-value pairs.
+
 collection is grp of document.
 grp of collection is known as database.
 
 A Database contains a collection, and a collection contains documents and the documents contain data, they are related to each other.
- A collection in MongoDB is a group of documents.
+-------------------------------------------------------------------------------
  
 What is “Namespace” in MongoDB?
 The concatenation of the collection name and database name is called a namespace.
 
 What is Replication in Mongodb?
-Replication in MongoDB is the process of keeping multiple copies of the same data on different servers
+Replication is the process of keeping multiple copies of the same data on different servers
 -------------------------------------------------------------------------------
 
 Comparing MySQL and MongoDB depends on your project's needs, as they serve different purposes. MySQL is a relational database, while MongoDB is a NoSQL database. Below is a simple comparison to help you understand their differences and decide which is better for your use case.
@@ -920,11 +929,11 @@ Data Structure  	 Flexible schema (documents can have different fields).
 Query Language  	 Uses MongoDB Query Language (MQL) or JavaScript-like queries.
 Scalability:     	 Scales horizontally (adds more servers easily).
 ACID Compliance	     Offers eventual consistency; less strict on ACID for better performance.
-    Data Types       Unstructured/semi-structured data (e.g., JSON, arrays, nested objects).
+ Data Types       Unstructured/semi-structured data (e.g., JSON, arrays, nested objects).
  Performance         Fast for large-scale, unstructured data and simple queries.
 
-Use Cases	    Web apps, real-time analytics, content management, IoT.
-Examples    Social media platforms, product catalogs, event logging.
+Use Cases	   Web apps, real-time analytics, content management, IoT.
+Examples      Social media platforms, product catalogs, event logging.
 
 
     Pros and Cons
@@ -994,21 +1003,58 @@ a 3-byte incrementing counter, initialized to a random value
 ✅ operations log records all changes (insert, update, delete) in the database.
 ✅ Used for replication – secondary servers copy data changes from it.
 
-Purpose: Replication (data sync across replica set members).
-
 🔑 In one line:
 Oplog stores all database changes to keep replicas updated.
 ----------------------------------------------------------------------------------
 
 🔹 What is Aggregation in MongoDB?
-aggregation is use when data is not available directly in database.
-An aggregation pipeline consists of one or more stages that process documents
+aggregation is use when data is not available directly (in database).
+An aggregation pipeline consists of one or more stages that process documents. 
+here in this, output of one pipe will be input of second pipe and so on because we fetch data from different tables.
+
 example, a stage can filter documents, group documents, and calculate values.
+stages like $match, $group, $sort, etc.
 
-when the data is not available directly then we use aggregation pipline, here in this output of one pipe will be input of second pipe and so on because we fetch data from different tables.
-
-((👉 Aggregation is a way to process and combine data from multiple documents.))
 ✅ It helps to filter, group, sort, and calculate data to get meaningful results.
+----------------------------------------------------------------------------------
+What is the Aggregation Pipeline?
+Series of stages like:
+$match
+$group
+$project
+$sort
+$limit
+$lookup
+$unwind
+
+----------------------------------------------------------------------------------
+example : 
+db.orders.aggregate([
+  { $match: { status: "completed" }},
+  { $group: { _id: "$customerId", total: { $sum: "$amount" }}}
+])
+
+----------------------------------------------------------------------------------
+What is $lookup? (MongoDB Join)
+Used to join two collections.
+{
+  $lookup: {
+    from: "orders",
+    localField: "_id",
+    foreignField: "userId",
+    as: "userOrders"
+  }
+}
+----------------------------------------------------------------------------------
+How GridFS works?
+GridFS works by splitting large files (over 16 MB) into smaller, fixed-size chunks and storing each chunk as a separate document in a MongoDB collection
+----------------------------------------------------------------------------------
+
+MongoDB Compass vs Mongo Shell ? 
+Compass → GUI (Globally Unique Identifier)
+Shell → Command line
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------
 
 🔹 How does journaling work in MongoDB?
@@ -1027,7 +1073,7 @@ Journaling saves changes in a log first to protect data from crashes.
 ✅ MongoDB stores data in JSON-like documents, which can have different fields and structures.
 ✅ we don’t need to define a fixed schema before adding data.
 
-1:Flexibility
+1: Flexibility
 Fields can vary between documents.
 Easier to evolve data models (add new fields without schema migration).
 
@@ -1051,16 +1097,18 @@ Storage engine decides how MongoDB saves and retrieves data.
 
 ----------------------------------------------------------------------------------
 Relationships in MongoDB
-MongoDB, being a NoSQL database, handles relationships differently from relational databases like MySQL.
+ managed in two main ways:
 
-Relationships in MongoDB are managed in two main ways:
+Embedded Documents: Store related data within a single document (like JSON).
+ For example, a user document can include an array of addresses inside it. Best for one-to-few relationships.
 
-Embedded Documents: Store related data within a single document (like JSON). For example, a user document can include an array of addresses inside it. Best for one-to-few relationships.
+References Documents: Store IDs linking to other documents (similar to foreign keys).
+ For example, a user document might reference a separate "posts" collection. Best for one-to-many or many-to-many relationships.
 
-References: Store IDs linking to other documents (similar to foreign keys). For example, a user document might reference a separate posts collection. Best for one-to-many or many-to-many relationships.
+Simple Explanation: You either keep related data together in one document (embedding) or link documents using IDs (referencing), depending on our data needs.
 
-Simple Explanation: You either keep related data together in one document (embedding) or link documents using IDs (referencing), depending on your data needs.
-
+Embedded → Fast reads
+Referenced → Better normalization
 ---------------------------------------------------------------------------------------------
 
 ******Use of Capped Collection in MongoDB
@@ -1071,7 +1119,7 @@ Use: Ideal for logging, caching, or storing recent data (e.g., latest 1000 chat 
 Simple Explanation: It’s a special collection with a set size that auto-deletes old entries to make room for new ones, great for time-sensitive or high-volume data.
 --------------------------------------------------------------------------------------------------------
 
-************Splitting in MongoDB
+************Splitting in MongoDB**************** 
 Splitting is part of MongoDB’s sharding process, where large datasets (shards) are divided into smaller chunks based on a shard key.
 
 How it works: When a shard grows too large, MongoDB splits it into smaller pieces, which are then distributed across servers.
@@ -1089,9 +1137,280 @@ Horizontal scaling → add 10 cheaper servers, each handling 10 million users, a
 
  MongoDB scales by spreading data and workload across multiple servers, making it easy to handle more users or data without slowing down.
 ----------------------------------------------------------------------------------
+
+Q1: Your MongoDB queries are slow. What steps will you take?
+
+✔ Check with explain()
+✔ Add indexes
+✔ Avoid $regex on big collections
+✔ Use projections to reduce fields
+✔ Avoid large $lookup
+✔ Use pagination with _id or index
 ----------------------------------------------------------------------------------
+
+Q2: How will you design a large e-commerce product catalog?
+Use sharding
+Product → embedded variants
+Index on category, price
+Use text index for search
 ----------------------------------------------------------------------------------
+Q3: User collection is 10M+ and queries slowing down. What to do?
+Create compound indexes
+Archive old data
+Shard by user region
+Cache with Redis
 ----------------------------------------------------------------------------------
+
+How do you implement pagination efficiently?
+
+Bad:
+skip().limit()
+
+
+Good:
+find({_id: {$gt: lastId}}).limit(20)
+----------------------------------------------------------------------------------
+You need to implement soft delete
+{ isDeleted: true, deletedAt: Date }
+
+=========================================
+Filter:
+find({ isDeleted: false })
+----------------------------------------------------------------------------------
+
+Aggregation example
+db.orders.aggregate([
+  { $match: { status: "paid" }},
+  { $group: { _id: "$userId", total: { $sum: "$amount" }}},
+  { $sort: { total: -1 }}
+])
+
+----------------------------------------------------------------------------------
+
+cursor method in mongodb 
+✅ What is a Cursor in MongoDB?
+Cursor is a pointer returned by MongoDB when a query is executed.
+It helpsto  read documents in batches, improving performance and preventing memory overload.
+We can use methods like limit(), skip(), sort(), forEach() to control how documents are fetched.
+
+we can then:
+
+✔ iterate through documents
+✔ limit results
+✔ sort results
+✔ skip results
+✔ convert cursor to array
+----------------------------------------------------------------------------------
+
+✅ Basic Example
+db.users.find()
+This returns a cursor, not actual documents.
+
+To see documents:
+db.users.find().toArray()
+----------------------------------------------------------------------------------
+
+⭐ Why Cursor Exists?
+Because:
+Returning 10 lakh (1M) documents at once will crash memory
+Cursor gives data in batches (default 101 docs)
+Faster, efficient, and safe
+
+----------------------------------------------------------------------------------
+🟦 2. Why Cursor Is Important?
+✔ Prevents memory overload
+
+If 10 million documents match a query, cursor returns them in small batches (101 docs default).
+
+✔ Supports streaming
+You can read documents gradually, not all at once.
+
+✔ Supports pagination
+skip() and limit() work only on cursor.
+
+✔ Efficient for large datasets
+Cursor fetches the next batch only when needed.
+----------------------------------------------------------------------------------
+⭐ Basic Cursor Methods
+✔ 1. cursor.toArray()
+
+Converts the entire cursor result into an array.
+
+db.users.find().toArray()
+----------------------------------------------------------------------------------
+✔ 2. cursor.forEach()
+
+Iterates over each document.
+
+db.users.find().forEach(doc => print(doc.name))
+----------------------------------------------------------------------------------
+✔ 3. cursor.limit(n)
+
+Limit number of documents.
+
+db.users.find().limit(10)
+----------------------------------------------------------------------------------
+⭐ Full Example of Cursor Usage
+const cursor = db.users.find({ active: true });
+
+while (cursor.hasNext()) {
+    print(cursor.next().name);
+}
+
+This reads documents one-by-one without loading all at once.
+----------------------------------------------------------------------------------
+⭐ When to Use Cursor?
+✔ Large datasets
+✔ Streaming data
+✔ Reading documents one-by-one
+((✔ Pagination))
+----------------------------------------------------------------------------------
+🟦 3. Types of Cursors
+
+MongoDB provides multiple cursor types:
+
+✔ 1. Non-Tailable Cursor (Default)
+Stops when last document is reached.
+Used in normal queries.
+
+✔ 2. Tailable Cursor (Like Kafka Stream)
+Keeps cursor open and waits for new documents.
+Used in capped collections.
+
+db.logs.find().tailable().forEach(doc => print(doc))
+----------------------------------------------------------------------------------
+Important Cursor Methods (Interview Focus)
+🔹 cursor.hasNext()
+
+Checks if more documents exist.
+
+while (cursor.hasNext()) {
+    print(cursor.next());
+}
+----------------------------------------------------------------------------------
+cursor.toArray()
+
+Returns all results as an array (only for small data).
+
+const arr = db.users.find().toArray();
+
+🔹 cursor.limit(n)
+
+Limits number of documents.
+Used for pagination.
+
+🔹 cursor.skip(n)
+
+Skips documents.
+Used for pagination:
+
+db.users.find().skip(10).limit(10)
+
+🔹 cursor.sort()
+Sort documents in cursor:
+db.users.find().sort({ age: -1 })
+
+🔹 cursor.count()
+Count documents WITHOUT applying skip/limit.
+db.users.find({ status: "active" }).count()
+----------------------------------------------------------------------------------
+🟦 6. Cursor Lifecycle
+
+Query executed → returns cursor
+Cursor loads first batch
+Application reads documents
+Cursor requests next batch
+When no more docs → cursor closes
+Idle cursors auto-close after 10 minutes
+----------------------------------------------------------------------------------
+Why does MongoDB use cursor instead of returning array?
+To prevent memory overload and improve performance for large datasets.
+----------------------------------------------------------------------------------
+What is batchSize?
+
+Number of documents MongoDB returns per batch.
+
+db.users.find().batchSize(50)
+----------------------------------------------------------------------------------
+1️⃣2️⃣ What is $facet?
+
+with facet we, Runs multiple pipelines at the same time.
+
+Example:
+db.products.aggregate([
+  {
+    $facet: {
+      count: [{ $count: "total" }],
+      latest: [{ $sort: { createdAt: -1 } }, { $limit: 5 }]
+    }
+  }
+  ])
+  ----------------------------------------------------------------------------------
+  1️⃣3️⃣ What is MongoDB Change Stream?
+
+Allows real-time notifications on:
+insert
+update
+delete
+
+Example:
+db.collection.watch()
+
+Used for:
+Real-time dashboards
+Notifications
+Syncing microservices
+
+----------------------------------------------------------------------------------
+  1️⃣4️⃣ What is Index Intersection?
+
+MongoDB can use multiple indexes to satisfy one query.
+
+Example:
+Query: { age: 25, city: "Delhi" }
+Indexes: age, city
+
+MongoDB may combine both.
+  ----------------------------------------------------------------------------------
+  2️⃣0️⃣ What is Fsync?
+
+Flushes data from memory to disk.
+Used during maintenance.
+  
+----------------------------------------------------------------------------------
+1️⃣ What is Write Concern in MongoDB?
+Write Concern tells MongoDB how many nodes must confirm a write before returning success.
+
+Example:
+{ w: "majority" }
+
+Means:
+Write is successful only when majority nodes write it.
+-----------------------------------------------------------------------------------
+2️⃣ What is Read Concern?
+
+Read Concern controls consistency level for reads.
+Levels:
+Read Concern	                   Meaning
+local	                  Read from primary’s memory (fastest, may be uncommitted)
+majority	              Read only data committed by majority nodes
+linearizable	          Strongest consistency guarantee
+
+-----------------------------------------------------------------------------------
+
+3️⃣ What is Read Preference?
+Defines from which node the reads should happen.
+
+Types:
+
+primary
+primaryPreferred
+secondary
+secondaryPreferred
+nearest
+
+Example:
+db.collection.find().readPref("secondary")
 ----------------------------------------------------------------------------------
 
 */
