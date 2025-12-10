@@ -46,12 +46,11 @@ Indexing improves the speed of data retrieval from a table by creating a lookup 
  What is Clustered Index in SQL?
 A Clustered Index sorts and stores the data physically in the table based on the indexed
 column.
-
  ------------------------------------------------------------------------------------
-What is Non-Clustered Index in SQL?
+
+ What is Non-Clustered Index in SQL?
 A Non-Clustered Index creates a separate structure from the table data, storing pointers to
 the actual rows
-
 -------------------------------------------------------------------------------------
  
  What is Stored Procedure ?
@@ -78,9 +77,9 @@ transaction.
 Isolation: No other transaction can alter the data during a transaction
 is in progress
 
-Durability: The transactions made should be durable and data saved permanaent in db. 
+Durability: The transactions made should be durable and data saved permanaent in db.
+------------------------------------------------------------------------------------
 
- ------------------------------------------------------------------------------------
 What is the Difference Between WHERE and HAVING?
 
 'where' we use-> filter row before 'grouping' 
@@ -571,7 +570,23 @@ SET genre = 'Sci-Fi', description = 'temporary'
 WHERE movie_title = 'Inception' AND year = 2010;
 COMMIT;
 -- Use ROLLBACK if something goes wrong
- 
+-------------------------------------------------------------------------------------
+ example :
+await dbconnection.beginTransaction();   // 🔥 Start transaction
+
+        // 1. Deduct money from User A
+        await dbconnection.execute(
+            "UPDATE users SET balance = balance - 100 WHERE id = 1"
+        );
+
+        // 2. Add money to User B
+        await dbconnection.execute(
+            "UPDATE users SET balance = balance + 100 WHERE id = 2"
+        );
+
+        await dbconnection.commit();             // 🔥 Commit if both queries succeed
+        console.log("Transaction Successful");
+
 -------------------------------------------------------------------------------------
 What is a default constraint in MySQL? How do you set a default value for a column?
 A default constraint in MySQL assigns a default value to a column when no explicit value is provided during an INSERT operation. 
@@ -1154,6 +1169,7 @@ Product → embedded variants
 Index on category, price
 Use text index for search
 ----------------------------------------------------------------------------------
+
 Q3: User collection is 10M+ and queries slowing down. What to do?
 Create compound indexes
 Archive old data
@@ -1170,6 +1186,7 @@ skip().limit()
 Good:
 find({_id: {$gt: lastId}}).limit(20)
 ----------------------------------------------------------------------------------
+
 You need to implement soft delete
 { isDeleted: true, deletedAt: Date }
 
@@ -1190,7 +1207,7 @@ db.orders.aggregate([
 cursor method in mongodb 
 ✅ What is a Cursor in MongoDB?
 Cursor is a pointer returned by MongoDB when a query is executed.
-It helpsto  read documents in batches, improving performance and preventing memory overload.
+It helps to read documents in batches, improving performance and preventing memory overload.
 We can use methods like limit(), skip(), sort(), forEach() to control how documents are fetched.
 
 we can then:
@@ -1218,8 +1235,8 @@ Faster, efficient, and safe
 
 ----------------------------------------------------------------------------------
 🟦 2. Why Cursor Is Important?
-✔ Prevents memory overload
 
+✔ Prevents memory overload
 If 10 million documents match a query, cursor returns them in small batches (101 docs default).
 
 ✔ Supports streaming

@@ -84,7 +84,8 @@ What are the features of RESTful apis?
 
    3:) Support for Multiple Data Formats
 Feature: REST APIs typically return data in formats like JSON or XML, with JSON being the most common due to its simplicity and readability.
----------------------
+--------------------------------------------------------------------------------
+
 It is an architecture style to develop web application. 
 Use http protocol as a communication interface.
 It tranfer data through http methods. 

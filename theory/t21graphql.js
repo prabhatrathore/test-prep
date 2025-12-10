@@ -19,7 +19,7 @@ under-fetching            often                                              nev
 Versioning	      Usually requires /v1, /v2 etc.	                     No versioning needed, schema evolves
 Request Type	  Uses HTTP methods (GET, POST, PUT, DELETE)	           POST (usually) with query body
 -------------------------------------------------------------------------------------------
-Flexibility	          Fixed structure	                                         Dynamic and flexible
+Flexibility	          Fixed structure	                                    Dynamic and flexible
 
 --------------------------------------------------------------------------------------------
 (/graphql -> we can change this endpoint but it's a convention)
@@ -245,6 +245,7 @@ const server = new ApolloServer({
 });
 ------ ------------------------------------------------------------------------------------------
 ------ ------------------------------------------------------------------------------------------
+
 What are Relationships in GraphQL?
 Relationships define how types are linked.
 
@@ -319,7 +320,7 @@ Every GraphQL request will include the token:
   }
   
   ***************************************************************
- 3️⃣ Verify token in Apollo Server context
+ 3️⃣ Verify token in Apollo Server context : 
 
 This is where we decode the token and attach user info to the request:
 

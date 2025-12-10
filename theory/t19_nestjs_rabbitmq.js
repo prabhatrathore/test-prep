@@ -13,7 +13,7 @@ It uses Express.js under the hood by default and supports Fastify as well.
 
 express is fast, unopiniated (no proper file structure provided), minimalist web framwork for node.js 
 
-Why use Nest.js over Express.js?
+Why use Nest.js over Express.js ?
 
 Feature                 	Express.js              	Nest.js
 Architecture	            Unstructured	             Modular (MVC + DI)
@@ -88,6 +88,7 @@ export class ConfigModule {
 })
 export class AppModule {}
 ------------------------------------------------------------------------------------*/
+
 What_is_a_Controller
 /*
 What is a Controller?
@@ -261,7 +262,6 @@ Examples:
 @Post()
 @Injectable()
 @Module()
-
 -----------------------------------------------------------------------
 
 🟩 14. How to handle Database in Nest.js?

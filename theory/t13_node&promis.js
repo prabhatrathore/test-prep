@@ -161,12 +161,12 @@ Here’s a simple example using the cluster module to create a clustered HTTP se
 --------------------------------------------------------------------------
 
 Explain some of the cluster methods in NodeJS
-Fork(): It creates a new child process from the master. The isMaster returns true if the current process is master or else false.
+Fork() : It creates a new child process from the master. The isMaster returns true if the current process is master or else false.
 
-isWorker: It returns true if the current process is a worker or else false.
-process: It returns the child process which is global.
-send(): It sends a message from worker to master or vice versa. 
-kill(): It is used to kill the current worker.
+isWorker : It returns true if the current process is a worker or else false.
+process  : It returns the child process which is global.
+send()   : It sends a message from worker to master or vice versa. 
+kill()   : It is used to kill the current worker.
 --------------------------------------------------------------------------
 
 const cluster = require('cluster');
@@ -252,10 +252,12 @@ API Servers: Distributes API requests across workers for better throughput.
 Real-Time Apps: For apps using WebSockets (e.g., with Socket.IO), clustering can help scale connections.
 
 ----------------------------------------------------------------------------
+
 When Not to Use Clustering 
 Single-Threaded Tasks: If your app is heavily CPU-bound (e.g., machine learning inference), consider worker threads or offloading to a separate service.
 Low Traffic: For small-scale apps, the overhead of managing workers may not be worth it.
 --------------------------------------------------------------------------------
+
 Advanced Clustering
 For more complex scenarios, you can:
 
@@ -299,6 +301,7 @@ explain_the_different_purposes_of_Node.js
 3. General purpose applications: Node.js can also be used for building general purpose applications, such as command line tools, desktop applications, and serverless applications. Its flexibility and ease of use make it a popular choice for developers working on a wide range of projects.
 
 -------------------------------------------------------------------------------------------------------------
+
 some features of Node.js?
 Node.js is fast, scalable, open-source, and asynchronous.
 
@@ -405,7 +408,6 @@ Node.js provides a large number of built-in APIs, including but not limited to:
 10.Timers (timers) API - for scheduling code execution after a certain delay or at certain intervals.
 
 These are just a few examples of the many built-in APIs that Node.js provides. Additionally, there are numerous third-party modules and libraries available for Node.js that provide additional APIs and functionality
-
 
 const fs = require('fs');
 fs.readFile('myfile.txt', 'utf8', (err, data) => {

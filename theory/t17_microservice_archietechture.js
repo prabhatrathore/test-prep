@@ -67,6 +67,7 @@ Node.js for Auth
 Python for Recommendation Engine
 Java for Payment
 Node.js fits well because it's lightweight and high-performance for API services.
+-----------------------------------------------------------------
 
 🛡 8. Fault Isolation
 If one service fails, only that part is affected.
@@ -304,7 +305,7 @@ Which services are running
 Their IPs
 Their ports
 Health status
-
+-----------------------------------------------------------------------------
 example of discovery 
 🔥 Register a microservice with Consul (Node.js example)
 User-Service registration
@@ -449,10 +450,10 @@ Instead of ACID transactions across services.
 What is the role of a Service Mesh in Microservices?
 A service mesh manages service-to-service communication via sidecar proxies, providing:
 
-security (mTLS)
-retries, timeouts, circuit breakers
-observability and tracing
-traffic control
+security (mTLS).
+retries, timeouts, circuit breakers.
+observability and tracing.
+traffic control.
 No code changes required.
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
@@ -516,10 +517,10 @@ What is Inter-service communication?
 Inter-service communication means How two microservices talk to each other:
 Sync → REST, gRPC
 Async → Message queues (Kafka, RabbitMQ)
-  -------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
 
 What is a message queue?
- message queue is a system that stores and delivers messages between services.
+message queue is a system that stores and delivers messages between services.
 Used for async communication.
 Examples: Kafka, RabbitMQ, SQS 
   -------------------------------------------------------------------------------------------
@@ -536,6 +537,7 @@ What is centralized logging?
 All microservice logs are stored in one place.
 Tools: ELK, Loki, Graylog
 -------------------------------------------------------------------------------------------
+
 What is configuration server?
 Stores config for all services in one place.
 Example: Spring Cloud Config, Consul

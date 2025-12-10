@@ -30,5 +30,56 @@ Child Processes: Offload heavy tasks to child processes using the child_process 
 Worker Threads: Leverage Worker Threads API for running CPU-intensive tasks in parallel.
 Queues: Implement a message queue system like RabbitMQ or Redis to process tasks asynchronously.
 Streams: Use streams for processing large data sets without loading everything into memory at once.
+--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
+✅ Socket.io — Most Important Methods (Node.js)
 
+1. io.on(event, callback)
+Listens for new client connections.
+io.on("connection", (socket) => {
+    console.log("User connected:", socket.id);
+});
+
+2. socket.on(event, callback)
+Listens for an event from a specific client.
+socket.on("message", (data) => {
+    console.log("Message received:", data);
+});
+
+3. socket.emit(event, data)
+Sends a message to only the connected client.
+socket.emit("welcome", "Welcome to the server!");
+
+4. io.emit(event, data)
+Broadcasts to all connected clients.
+io.emit("newUser", "A new user just joined!");
+
+5. socket.broadcast.emit(event, data)
+Sends to everyone except the sender.
+socket.broadcast.emit("userTyping", "Someone is typing...");
+
+6. socket.join(roomName)
+Adds a user to a room.
+socket.join("chat-room-1");
+
+7. socket.leave(roomName)
+Removes a user from a room.
+socket.leave("chat-room-1");
+
+8. io.to(roomName).emit(event, data)
+Sends message to everyone in a room.
+io.to("chat-room-1").emit("roomMessage", "Hello Room!");
+
+9. socket.to(roomName).emit(event, data)
+Broadcasts message to a room excluding sender.
+socket.to("chat-room-1").emit("roomTyping", "A user is typing...");
+
+10. socket.disconnect()
+Manually disconnect a client.
+socket.disconnect();
+
+11. socket.id
+Returns the unique ID of the connected client.
+console.log(socket.id);
+--------------------------------------------------------------------------------------------
  */
