@@ -21,8 +21,6 @@ git branch: Lists branches, with * indicating the active branch.
 git checkout -b [branch-name]: Creates a new branch.
 
 git checkout [branch-name]: Switches to another branch.
-git merge [branch]: Merges the specified branch into the current branch.
-git log: Shows commit history.
 
 git diff branchB...branchA: Shows differences in branchA not in branchB.
 --------------------------------------------------------------------------------
@@ -220,17 +218,17 @@ var b = function bg() {
     console.log("bbbb")
 }
 */
+
 const arrw = [1, 2, 3, 4, 2, 3, 5, 6, 3, 5];
 let td = []
 let objg = {}
 
 for (let el of arrw) {
-    console.log(el, 'eeeeee')
+    // console.log(el, 'eeeeee')
     // td?.push(el)
     // if (td?.includes(el)) {
     objg[el] = (objg[el] || 0) + 1
     // } 
-
 }
 for (let le in objg) {
     if (objg[le] > 1) {
@@ -238,18 +236,20 @@ for (let le in objg) {
     }
 }
 
-console.log(objg, 'wwww', td, 'wwww')
+console.log(objg, )  // { '1': 1, '2': 2, '3': 3, '4': 1, '5': 2, '6': 1 } 
+console.log( td, 'wwww')  // [ '2', '3', '5' ]
+//-----------------------------------------------
 
 let str = 'second'
 function sa(s) {
-    s = 'third'/// variable 's value not changed
+    s = 'third'/// variable 's value not changed here
     str = 'changed'// this work
 }
-console.log(str, 'sss')
+// console.log(str, 'sss')// second
 sa(str)
-console.log(str, 'sss')
+// console.log(str, 'sss') // changed
 
-    
+
 
 /**
 -------------------------------------------------------------------------------------------------------
@@ -293,7 +293,8 @@ Easier to maintain
 
 Problem-Solving Scenario: Describe a time a live application experienced a performance degradation or bug that was difficult to reproduce locally. How did you approach debugging and identifying the root cause in the production/staging environment? (Focus on tools/process.)
 I first checked production logs (and metrics using)
-PM2 logs,
+PM2 logs,   (process manager)
+
 Since the issue didn’t appear locally, I added lightweight logging around suspicious code paths:
 (console.time() in Node)
 Database response time (mongoose.set("debug", true))
@@ -378,7 +379,7 @@ Security consideration: Also accessible via JS, same security limitations as Loc
 Performance consideration: Data is cleared automatically when the tab closes, preventing memory bloat.
 
 Cookies:
-I use Cookies when I need data to be sent to the server on every request, like session identifiers or auth tokens (with HttpOnly, Secure, SameSite).
+we use Cookies when I need data to be sent to the server on every request, like session identifiers or auth tokens (with HttpOnly, Secure, SameSite).
 
 Security consideration: Can be secured using HttpOnly to prevent XSS token theft.
 
@@ -408,7 +409,7 @@ If I had limited time and needed to test a critical business logic function, I w
 Reason: Unit tests give fast feedback, isolate edge cases, and ensure the core logic is mathematically and functionally correct before integrating it with other parts. Once the core is stable, integration testing can be added later to validate end-to-end behavior.
 ---------------------------------------------------------------------------------------------
 
-Git Workflow & Conflict: Describe the Git branching strategy you prefer for collaborative feature development. Detail the steps you take to safely and systematically resolve a complex merge conflict.
+Git Workflow & Conflict: Describe the Git branching strategy we prefer for collaborative feature development. Detail the steps you take to safely and systematically resolve a complex merge conflict.
 
 I prefer using a Feature Branch Workflow on top of a stable main (or master) branch. Each developer creates a separate feature branch from main, works independently, and submits a Pull Request for review before merging back.
 ---------------------------------------------------------------------------------------------
@@ -420,4 +421,136 @@ Continuous Integration (CI):
 When I push or merge code to the main branch, a CI pipeline triggers. It runs automated tests, linting, type checks, and builds the application. If any step fails, the pipeline stops to prevent bad code from moving forward.
 ---------------------------------------------------------------------------------------------
 
+1️⃣ Amazon ECS (Elastic Container Service)
+What it is:
+A service to run and manage Docker containers.
+
+Simple words:
+ECS runs your Node.js app inside Docker containers and keeps them running, scaling, and restarting if they crash.
+
+-------------------------------------------------------------------------------------------------------------------
+2️⃣ Amazon RDS (PostgreSQL)
+What it is:
+A managed relational database service.
+
+Simple words:
+RDS is a ready-made SQL database (PostgreSQL) that AWS installs, updates, and backs up for you.
+-------------------------------------------------------------------------------------------------------------------
+
+3️⃣ Amazon DynamoDB
+A serverless NoSQL database.
+
+Simple words:
+DynamoDB stores fast, flexible data without fixed tables or joins.
+
+Example:
+Store sessions, tokens, logs
+Handle millions of requests automatically
+No server management
+-------------------------------------------------------------------------------------------------------------------
+4️⃣ Amazon S3 (Simple Storage Service)
+
+What it is:
+An object storage service.
+
+Simple words:
+S3 stores files like images, videos, PDFs, and backup
+-------------------------------------------------------------------------------------------------------------------
+5️⃣ Amazon Elasticsearch (OpenSearch)
+What it is:
+A search and analytics engine.
+
+Simple words:
+Elasticsearch helps you search data very fast and analyze logs.
+
+Example:
+Search products by name
+Full-text search
+Analyze application logs
+--------------------------------------------------
+6️⃣ Amazon CloudFront
+What it is:
+A Content Delivery Network (CDN).
+
+Simple words:
+CloudFront delivers your images and static files from servers closest to users.
+
+Example:
+Faster image loading
+Less load on backend
+Global users get fast access
+-----------------------------------------------------------------
+7️⃣ Amazon ECR (Elastic Container Registry)
+What it is:
+A Docker image storage service.
+
+Simple words:
+ECR stores your Docker images securely so ECS can run them.
+
+Example:
+
+Push Docker image after build
+ECS pulls image from ECR
+Deploy new versions easily
+-------------------------------------------------------------------------------------------------------------------
+
+
+
  */
+
+const input = ["caa", "aaa", "aab"];
+
+let tg = ''
+let temp = []
+const output = input.map((str) => {
+    if (str[0] === 'a') {
+        // console.log(str[str.length-1],'@@@@@@@@@@@@@@@pppp')
+        temp.push(str[str.length-1])
+    } else {
+        // console.log(str[0],'!!!!!pppp')
+        temp.push(str[0])
+    }
+}
+);
+// console.log(temp, 'tempppppppp')
+
+console.log(output);
+// ---------------------------------------------------
+
+function longestConsecutive(nums) {
+    if (nums.length === 0) return [];
+    // console.log(nums, "before")
+
+    // for (let i = nums.length; i > 0; i--) {
+    //     for (let j = 0; j < i; j++) {
+    //         if (nums[j] > nums[j + 1]) {
+    //             [nums[j], nums[j + 1]] = [nums[j + 1], nums[j]]
+    //         }
+    //     }
+    // }
+    // console.log(nums, "after----------------------------")
+    // return
+    // nums = [...new Set(nums)].sort((a, b) => a - b);
+    // console.log(nums, "after")
+
+    // let longest = [];
+    // let current = [nums[0]];
+
+    // for (let i = 1; i < nums.length; i++) {
+    //     if (nums[i] === nums[i - 1] + 1) {
+    //         current.push(nums[i]);
+    //     } else {
+    //         if (current.length > longest.length) {
+    //             longest = current;
+    //         }
+    //         current = [nums[i]];
+    //     }
+    // }
+    // console.log(current, 'current', longest, "longestt")
+    // return current.length > longest.length ? current : longest;
+    //----------------------------------------------------------
+
+}
+
+const arrr = [201, 100, 4, 200, 1, 3, 2, 199, 203, 202, 204];
+// console.log(longestConsecutive(arrr));

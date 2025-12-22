@@ -2,6 +2,7 @@
  1. What is GraphQL?
 GraphQL is Query Language for APIs that describe api's request. ((it's not a technology or database)). 
 GraphQL ask clients exactly what they need, and nothing more.
+we use graphql for fetching structure data 
 
 📦 Developed by: Facebook (2012)
 🌐 Released: 2015 (open-sourced in 2015)
@@ -32,7 +33,6 @@ graphql-> what it solved ?
 it solved overfetching
 2. multiple api call . 
 3. subscription : if server got new data,-> in rest api, server can't possible to send but in graphql with some configuration, server can send data . 
-
 ------ ------------------------------------------------------------------------------------------
 
 What are the main components of GraphQL?
@@ -41,7 +41,7 @@ Schema        – defines structure of API means what data types exist and what 
 
 Resolvers     – Resolver is a functions that return data for schema fields.
               in graphql , resolver is function which is use to run query and mutation 
-Queries       – Queries is used to read data from the server. 
+Queries       – Queries is used to read data from the server.  
 Mutations     – used to write/update/delete data . 
 Subscriptions – used for real-time data send from server . 
 ------------------------------------------------------------------------------------------------
@@ -156,8 +156,7 @@ Operation               Purpose                    Example
 Query              Fetch data (GET)              query { user(id:1) { name } }
 Mutation          Modify data (POST/PUT)         mutation { createUser(...) }
 Subscription       Real-time updates             subscription { messageAdded }
-------------------------------------------------------------------------------------------------
-------
+------------------------------------------------------------------------------------------------------
 
 OBJECT TYPES & NESTING 
 Q10. How to define nested types?
@@ -175,8 +174,8 @@ type User {
   email: String!
   posts: [Post!]!
 }
-
 ------ ------------------------------------------------------------------------------------------
+
 What is Apollo Server?
 Apollo Server is the most popular GraphQL server for Node.js.
 Apollo Server handles schema creation, query execution, and integrations easily.
@@ -196,7 +195,7 @@ Integration	            Built-in tools                   	Requires manual setup
 ------ ------------------------------------------------------------------------------------------
 
 What is a Resolver Map ? 
- Resolver Map is an object that connects our schema fields to their resolver functions — 
+Resolver Map is an object that connects our schema fields to their resolver functions — 
 
 ((it tells GraphQL how to fetch the data for each field.))
 
@@ -285,7 +284,6 @@ const resolvers = {
 ------ ------------------------------------------------------------------------------------------
 
 How do you do Authentication in GraphQL?
-Answer:
 Use middleware or context to validate tokens (like JWT).
 
 Example:
@@ -381,7 +379,7 @@ fragment userFields on User {
 ------ ------------------------------------------------------------------------------------------
 
 What is batching in GraphQL, and what is its impact on performance?
-🧠 Batching means combining multiple GraphQL operations (queries or mutations) into a single request — instead of sending many separate requests.
+Batching means combining multiple GraphQL operations (queries or mutations) into a single request — instead of sending many separate requests.
 
 Usually implemented via DataLoader.
 
@@ -438,7 +436,7 @@ What are Interfaces and Unions in GraphQL?
 🧩 Interfaces and Unions in GraphQL
 🧠 1. Interface (like a common blueprint)
 
-👉 Interface defines common fields that multiple types must have.
+👉 Interface defines common fields that multiple types ((must)) have.
 (Think of it like a “contract” — any type that implements it must include those fields.)
 
 📦 Example:
@@ -450,7 +448,7 @@ interface Animal {
 type Dog implements Animal {
   id: ID!
   name: String!
-  breed: String
+  breed: String 
 }
 
 type Cat implements Animal {
@@ -546,7 +544,6 @@ Rate-limit requests
 ------ ------------------------------------------------------------------------------------------
 How to Implement Pagination in GraphQL?
 
-Answer:
 Use arguments like limit and offset in queries.
 
 Example:

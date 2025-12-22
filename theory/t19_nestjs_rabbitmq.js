@@ -1,5 +1,5 @@
 /**
- Nest is a progressive node.js framework for building efficient and scalable server-side applications.
+Nest is a progressive node.js framework for building efficient and scalable server-side applications.
 nest is opiniated framwork of node.js.   
 Nest uses moduler architecture for better organization. 
 
@@ -145,7 +145,6 @@ constructor(private catsService: CatsService) {}
 ----------------------------------------------------------------------------
 
 Q12. How to register a Provider?
-A:
 In module:
 @Module({
   providers: [CatsService],
@@ -166,7 +165,7 @@ export class UserService {
     return ['Prabhat', 'John', 'Riya'];
   }
 }
-  ------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 
 What is Dependency Injection (DI)?
 Dependency Injection is a design pattern where Nest automatically injects class instances (like services) wherever needed, instead of manually creating them.
@@ -291,14 +290,12 @@ export class CreateUserDto {
 --------------------------------------------------------------------------
 
 🟩 16. How Authentication works in Nest.js?
-Answer:
 Usually done using Passport.js or JWT (JSON Web Token) strategies.
-Steps:
 
+Steps:
 User logs in → generates JWT token
 Token sent in headers (Authorization)
 Guard checks token before accessing routes
-
 ------------------------------------------------------------------------------
 
 🟩 17. What are Async Providers?

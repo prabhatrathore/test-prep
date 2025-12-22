@@ -371,6 +371,20 @@ Client Layer: Web browsers or mobile apps that send HTTP requests to the server.
 Server Layer: Web server that receives client requests and sends responses.
 Business Layer: Application server that processes requests, interacting with the data layer.
 Data Layer: The Data layer contains databases or any source of data.
+
+e.g. 
+Client (Web / Mobile / API Consumer)
+        ↓
+Routes (API Endpoints)
+        ↓
+Controllers (Request–Response Handling)
+        ↓
+Services (Business Logic)
+        ↓
+Data Access Layer (Models / Repositories)
+        ↓
+Database (MongoDB / PostgreSQL / MySQL)
+
 ------------------------------------------------------
 
  In simple terms, I/O (input/output) refers to the process of transferring data between our program and anything outside.
@@ -818,7 +832,6 @@ Promise.resolve() and Promise.reject(): These static methods are used to create 
 
 
   Promise.any()
-
 It takes an array of promises and returns a single promise.
 now this promise is  resolves as soon as the first promise in array is fulfills.
 If all promises reject, it rejects with an AggregateError (special error type that holds all rejection reasons).

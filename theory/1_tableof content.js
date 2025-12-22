@@ -503,10 +503,10 @@ console.log(y2++); //10
 console.log(y2, "hj22"); // 11
 
 
-let a4 = 3;
-let b2 = a4++ + ++a4;  //(3 + 5 )
-console.log(b2); //8  ...
-console.log(a4); //5
+  let a4 = 3;
+  let b2 = a4++ + ++a4;  //(3 + 5 )
+  console.log(b2); //8  ...
+  console.log(a4); //5
 
 
 let n = 2;

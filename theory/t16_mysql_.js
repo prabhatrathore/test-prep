@@ -7,10 +7,17 @@
 
  ------------------------------------------------------------------------------------
  1. What is SQL ?
- SQL (Structured Query Language) is a standard programming language used to interact with relational databases. It is used to store, retrieve, update, and delete data. SQL is also used to create and modify database structures such as tables,
+ SQL (Structured Query Language) is a (standard programming) language used to interact with relational databases. It is used to store, retrieve, update, and delete data. SQL is also used to create and modify database structures such as tables,
  views, and indexes.
 
-  it is a language that allows us to write queries for interacting with databases.
+it is a language that allows us to write queries for interacting with databases.
+
+  Why SQL is Called a Programming Language?
+Because it:
+Uses commands
+Has rules (syntax)
+Produces results
+But it is simpler than JavaScript or Java and is mainly used only for databases.
 
  Example : 
  SELECT * FROM Employees;
@@ -928,15 +935,15 @@ Comparing MySQL and MongoDB depends on your project's needs, as they serve diffe
 MySQL vs. MongoDB: Key Differences
 
 Aspect          	MySQL	
-Type	           Relational database (uses tables with rows and columns).
+Type	            Relational database (uses tables with rows and columns).
 Data Structure	   Fixed schema (predefined tables with columns).
 Query Language	   Uses SQL (structure query language).
 Scalability	       Scales vertically (needs more powerful servers).
 ACID Compliance	   Fully ACID-compliant (ensures reliable transactions).
 Data Types	       Structured data (e.g., numbers, strings in fixed columns).
- Performance	   Fast for structured data and complex joins.
+ Performance	    Fast for structured data and complex joins.
  Use Cases	       Financial systems, e-commerce, apps needing complex queries and joins.    
-Examples	       Banking systems, traditional CMS, inventory management.
+Examples	        Banking systems, traditional CMS, inventory management.
 
 MongoDB
 Type	             NoSQL database (uses JSON-like documents).

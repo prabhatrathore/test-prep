@@ -248,5 +248,3 @@ fetch('/api/data')
   Why JSON Wins:
 JSON’s simplicity, speed, and ease of use in JavaScript make it the go-to choice for AJAX over XML or other formats. If you need specific use cases or examples, let me know!
  */
-
-

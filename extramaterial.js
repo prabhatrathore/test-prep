@@ -1,6 +1,5 @@
-/**
- 
-1.Explain Event-Driven Programming Paradigm in Node.js
+/*
+1. Explain Event-Driven Programming Paradigm in Node.js
 Node.js follows an event-driven programming paradigm where actions are triggered by events. The core of Node.js, known as the event loop, continuously listens for events and executes associated callback functions. This non-blocking architecture enables asynchronous programming, and making Node.js highly efficient and scalable.
 
 2. Non-Blocking I/O in Node.js
